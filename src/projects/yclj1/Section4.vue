@@ -1,37 +1,72 @@
 <template>
     <div class="section4">
       <div class="box">
-      <div class="title" data-aos="fade-down" data-aos-delay="0">繁華之心</div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+      <div class="title" data-aos="fade" data-aos-delay="0">以靜御繁</div>
+
+      <div class="list">
+              <div class="swipe swipe1" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
           </div>
         </div>
       </div>
-      <div class="txt">
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="200" >北歐莊園好宅幸福樂聚</div>
-      <hr class="hr">
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
-      宜誠【樂聚】穩踞「四鄉鎮重畫區」多核心：<br>
-新屋頭洲、中壢、大園、青埔交界，<br>
-享城際中心樞紐地位，擁城市繁華更擁自然綠意。
-      </div>
+        <div class="txt">
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >交通樞紐悠遊城市之間</div>
+      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="desc" data-aos="fade" data-aos-delay="400">
+      由高鐵南路（台31線）直通桃園高鐵站，高鐵、機捷南北暢行無阻，<br v-if="isPC">
+66快速道路橫貫東西，串接國道1號、2號、3號高速暢遊，<br v-if="isPC">
+新屋中壢線巴士車班暢行交通便利。</div>
      <!-- <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
         <li data-aos="fade-up" data-aos-delay="400">清水國小＋中正國中，書香校園承載孩子金色未來</li>
         <li data-aos="fade-up" data-aos-delay="500">土城體育場 + 運動中心＋大清運動公園運森度呼吸</li>
       </ul>  -->
+        </div>
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(1, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+          </div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div class="list">
+      <div class="swipe swipe2" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
+          </div>
+        </div>
+      </div>
+        <div class="txt">
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >可繁華可靜謐隨心所欲</div>
+      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="desc" data-aos="fade" data-aos-delay="400">
+        近取中壢好市多商場，連步行都好方便的怡然自得！<br v-if="isPC">
+區域有多座公園與民族路一線豐富生活機能，<br v-if="isPC">
+中壢地政事務所的公托、社福中心便民又利民。</div>
+     <!-- <ul class="desc">
+        <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
+        <li data-aos="fade-up" data-aos-delay="400">清水國小＋中正國中，書香校園承載孩子金色未來</li>
+        <li data-aos="fade-up" data-aos-delay="500">土城體育場 + 運動中心＋大清運動公園運森度呼吸</li>
+      </ul>  -->
+        </div>
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+          </div>
       </div>
     </div>
     </div>
@@ -43,13 +78,12 @@
   width:100%;
   height:auto;
   position: relative;
-  background: #FFF;
 
   font-stretch: normal;
   font-style: normal;
-  text-align: justify;
+  text-align: center;
   line-height: 1.2;
-  color: #666;
+  color: #fff;
   font-weight: 400;
   padding: 0;
   font-size: size(17);
@@ -65,21 +99,25 @@
   position: relative;
   }
 }
-
+.list{
+  flex:0 0 size(728);
+  width: size(728);
+  position: relative;
+}
 .title{
   position: relative;
   font-size: size(40);
-  padding: 2em 0 .8em;
+  padding: 2.2em 0 .8em;
   letter-spacing:0.06em;
-  color: #51858a;
+  color: #FFF;
   font-weight: 800;
   text-align: center;
   width: 100%;
+      transform:translateY(-10%) scale(1.2);
 }
 
 .txt{
   position: relative;
-  width: size(610);
   z-index: 3;
   }
 
@@ -87,18 +125,22 @@
 .subtitle {
   position: relative;
   font-size: size(30);
-  margin:4em auto 0.8em;
+  margin:1.5em auto 0.6em;
   letter-spacing:0.04em;
-  color: #51858a;
+  color: #80c5b6;
+  font-weight: 500;
+      transform: scale(1.2);
 }
 
 .hr{background: none;border: 0;opacity: .5;
+      transform: scale(1.2);
 border-bottom:1px solid currentColor;}
 .desc {
   margin:1em auto;
   line-height: 2;
   letter-spacing:0.05em;
   list-style: circle;
+      transform: scale(1.2);
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
@@ -107,8 +149,8 @@ border-bottom:1px solid currentColor;}
 /* Swipe */
 .swipe {
 //  position: absolute;
-  width: size(840);
-  height: size(469);
+  width:100%;
+  height: size(477);
   top: size(185);
   right: size(199);
   object-fit: cover;
@@ -170,8 +212,8 @@ border-bottom:1px solid currentColor;}
 
 .pagination {
   width: auto;
-  bottom: size(0);
-  left:0;
+  bottom:16em;
+  right:0;
   justify-content: center;
   font-size:size(13);
 }
@@ -197,7 +239,7 @@ border-bottom:1px solid currentColor;}
       width: 100%;
       height: 100%;
       display: block;
-   background: #245367;
+   background: #80c5b6;
    // border-radius: 50%;
    // border: 2.1px solid  #e38023;
       opacity: 1;
@@ -252,27 +294,23 @@ border-bottom:1px solid currentColor;}
 
     font-size: sizem(14);
     text-align: justify;
+  padding: 0 0 3em;
   .box{
   width:100%;
-  margin:0em auto 0em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:space-between;
-    align-items:stretch;
+  flex-direction:column;
+  }
+
+  }
+.list{
+  flex:0 0 100%;
+  width: 100%;
   position: relative;
-  }
-
-  }
-  .light{
-  top:sizem(410);
-  left:sizem(190);
-  width:sizem(200);
-
-  }
+}
   .txt{
   position: relative;
     width: sizem(320);
-margin:1.5em auto 3em;
+margin:0em auto 0em;
+padding: 0 0 3em;
   left:0;
   top:0;
   }
@@ -283,7 +321,7 @@ margin:1.5em auto 3em;
   .subtitle {
     font-size: sizem(17.6);
   letter-spacing:0em;
-  margin:1em auto 0em;
+  margin:1.5em auto 0em;
   }
   .desc {
   margin:0em auto;
@@ -294,7 +332,7 @@ margin:1.5em auto 3em;
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(250);
+    height: sizem(246);
     min-height: auto;
     top:0;
     left:0;
@@ -335,14 +373,49 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+      slideList1: [
         {
-          img: require('./s3/1.jpg'),
-          name: '3D透視僅供參考',
+          img: require('./s4/1-1.jpg'),
+          name: '中壢交流道',
         },
         {
-          img: require('./s3/2.jpg'),
-          name: '室內創意表現僅供參考',
+          img: require('./s4/1-2.jpg'),
+          name: 'A19',
+        },
+        {
+          img: require('./s4/1-3.jpg'),
+          name: 'A19',
+        },
+        {
+          img: require('./s4/1-4.jpg'),
+          name: '66快速道路',
+        },
+        {
+          img: require('./s4/1-5.jpg'),
+          name: 'A18',
+        },
+      ],
+
+      slideList2: [
+        {
+          img: require('./s4/2-1.jpg'),
+          name: '松勇公園',
+        },
+        {
+          img: require('./s4/2-2.jpg'),
+          name: 'Costco',
+        },
+        {
+          img: require('./s4/2-3.jpg'),
+          name: '華泰名品城',
+        },
+        {
+          img: require('./s4/2-4.jpg'),
+          name: '中央大學',
+        },
+        {
+          img: require('./s4/2-5.jpg'),
+          name: '中壢地政暨婦幼館',
         },
       ],
     }

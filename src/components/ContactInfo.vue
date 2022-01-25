@@ -1,11 +1,13 @@
 <template>
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
-
+ <!--
      <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="@/projects/yclj1/all/6.png" :alt="`${info.caseName}_bg`" class="c6">
       <img src="@/projects/yclj1/all/4.png" :alt="`${info.caseName}_bg`" class="c4">
     </div>
+
+    -->
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
@@ -93,7 +95,7 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background: $contact_bg;
+ // background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');/
   background-size: cover;
   //box-shadow: $contact_shadow;

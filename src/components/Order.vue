@@ -424,7 +424,7 @@ export default {
   width: size(1500);
     padding-top:0;
     padding-bottom:0;
-    font-weight:500;
+    font-weight:800;
   line-height:2.222;
   font-size: size(49);
     letter-spacing: size(10);

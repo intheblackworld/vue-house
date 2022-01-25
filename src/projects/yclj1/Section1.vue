@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
-    <!--  -->
-    <img src="./s1/0.jpg" :alt="`${info.caseName}_bg`" class="t0">
-  
+    <!--  
+    <img src="./s1/0m.jpg" :alt="`${info.caseName}_bg`" class="t0">
+  -->
     <div class="box">
       <div class="box1"></div>
       <div class="box2"></div>
@@ -13,9 +13,9 @@
     <img src="./s1/img.png" data-aos="fade" data-aos-delay="100" :alt="`${info.caseName}_img`" class="img">
     
     <div class="txt">
-      <img src="./s1/logo.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="logo" data-aos="fade-down" data-aos-delay="300">
+      <img src="./s1/logo.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="logo" data-aos="fade" data-aos-delay="300">
       <div class="t2" data-aos="fade" data-aos-delay="400">北歐莊園城堡</div>
-      <div class="t3" data-aos="fade" data-aos-delay="400">中壢COSTCO SRC安心地標</div>
+      <div class="t3" data-aos="fade" data-aos-delay="500">中壢COSTCO SRC安心地標</div>
     </div>
     <!--   <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
@@ -68,10 +68,13 @@
 .img{
   position: absolute;left: size(80);
       top:calc(50% + (110 - 540) * 100vw / 1920);
-      width:size(630);}
+      width:size(630);
+      transform: translate(-20%, 10%) scale(0.8);
+      }
 
 .logo{
       width:size(480);
+      transform: scale(1.2);
   }
 .txt{
   position: absolute;
@@ -86,18 +89,21 @@
   .t2{
     letter-spacing: 0.01em;
     margin:0.5em 0 0em;
+      transform: scale(3,.8);
   }
   .t3{
   font-size:.8em;
   font-weight: 800;
   letter-spacing:0em;
   transform: scaleX(0.95);
+      transform: scale(3,.8); 
   }
 }
 .box {
 position: absolute;
-top: 0;
+  top:calc(50% + (0 - 540) * 100vw / 1920);
   left:size(235);
+  font-size: size(20);
 div{
 position: absolute;
 top: 0;opacity:.5;
@@ -107,33 +113,33 @@ animation: an infinite;
 }
 .box1{
   left: 0;
-width: size(12);
-height:size(515);
+width: 0.48em;
+height:25.75em;
 animation-duration:5s;
 animation-delay:-1s;}
 
 .box2{
-  left:  size(130);
-width: size(32);
-height:size(377);
+  left: 6.5em;
+width:1.6em;
+height:18.85em;
 animation-duration:6s;
 animation-delay:-3s;}
 .box3{
-  left:  size(180);
-width: size(15);
-height:size(600);
+  left:  9em;
+width:0.75em;
+height:30em;
 animation-duration:8s;
 animation-delay:-2s;}
 .box4{
-  left:  size(340);
-width: size(23);
-height:size(423);
+  left:   17em;
+width: 1.15em;
+height:21.15em;
 animation-duration:5s;
 animation-delay:-0s;}
 .box5{
-  left:  size(400);
-width: size(32);
-height:size(377);
+  left: 20em;
+width: 1.6em;
+height:19em;
 animation-duration:7s;}
 
 
@@ -154,50 +160,55 @@ animation-duration:7s;}
 
 @media screen and (max-width: 767px) {
   .section1 {
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
-  margin: 0 0 25vw;
-  }
-
-.bg{
-  position: absolute;
-  width:100%;
-  top:calc(50% - 43vw);
-  left: 0;
-  }
-.c{
-   top:calc(50% + (0 - 302) * 100vw / 375);
-    .c1{width:sizem(230);top:sizem(570);left: sizem(-60);}
-    .c2{width:sizem(280);top:sizem(573);left: sizem(210);}
-    .c3{width:sizem(208);top:sizem(180);right:sizem(-140);}
-    .c4{width:sizem(200);top:sizem(369);right:sizem(275);}
-    .c5{width:sizem(170);top:sizem(85);left: sizem(270);}
-    .c7{width:sizem(70);top:sizem(574);right:sizem(83);}
-}
-
-.logo{
-   width:sizem(190);
-   top:calc(50% + (222 - 302) * 100vw / 375);
-   left:sizem(85);
+    min-height: sizem(667);
+    max-height: sizem(812);
+    height:100vh;
   }
 .txt{
-   left:sizem(0);
-   top:calc(50% + (470 - 302) * 100vw / 375);
-   width: 100%;
-  font-size: sizem(20);
-  .t1{
-     width:sizem(283);
-    }
-  .t2{
-    letter-spacing: 0.04em;
-        margin:0;
-        b{margin: auto 0.4em .1em 0.4em;
-    }
-    }
+  
+      left:0;
+      width: 100%;
+      top:sizem(90);
+  top:calc(50% + (90 - 333.5) * 100vw / 375);
+
+  font-size: sizem(28);
+  }
+
+.img{
+      width:sizem(193);
+      top:sizem(310);
+      left:sizem(90);
+  top:calc(50% + (310 - 333.5) * 100vw / 375);
+
+      }
+.logo{
+      width:sizem(251);
+  }
+
+.box {
+  
+div{
+
+  top:calc(50% + (0 - 333.5) * 100vw / 375);
+animation: an linear infinite;
 }
-
-
+  left: sizem(60);
+  font-size: sizem(10);
+}
+}
+@keyframes an{
+    0%{
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50%{
+      transform: translateY(40%);
+      opacity:.5;
+    }
+    100%{
+      transform: translateY(180%);
+      opacity: 0;
+    }
 }
 </style>
 <script>

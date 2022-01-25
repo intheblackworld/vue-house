@@ -17,7 +17,7 @@
             <div :class="`menu-icon ${isOpen ? 'open': ''}`" ></div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: item.offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span :class="`link ${item.type}`">
                 <span>
                   <p :class="`title`" v-html="item.name"></p>
@@ -143,7 +143,7 @@ export default {
 
   .link {
     color: $nav_link_color;
-    height:80%;
+    height:60%;
     text-align: center;
     cursor: pointer;
     padding: 0 .5em;
@@ -160,20 +160,22 @@ export default {
 
     &.btn{
     color: $nav_btn_color;
-     background:$nav_btn_bg;
+     //background:$nav_btn_bg;
     padding: 0 1.5em;
     border-radius:1.5em ;
+      border:1px solid $nav_btn_bg;
 
     &:hover {
       color: $nav_btn_hover_color;
       background: $nav_btn_hover_bg;
+     // border-color: $nav_btn_hover_bg;
     }
 
     }
 
 
     .title {
-      font-weight: bold;
+      font-weight: 500;
       position: relative;
       z-index: 3;
       > span {
@@ -394,7 +396,7 @@ export default {
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: #d3e7bbbb;
+      background-color:  rgba(3,80,113,.8);
     }
     .link {
       width: 10em;

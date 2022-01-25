@@ -1,7 +1,6 @@
 <template>
-  <div>
     <div class="section2">
-      <div class="title" data-aos="fade-down" data-aos-delay="0" >城青好境</div>
+      <div class="title" data-aos="fade" data-aos-delay="0" >城青好境</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -20,14 +19,12 @@
         </div>
       </div>
       <div class="txt">
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="200" >後疫時代繁華靜境，剛剛好的生活心選擇</div>
-      <hr class="hr">
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-      宜誠【樂聚】著眼建築環境立地條件的人居尺度，唯美距離適當的相處，鄰綠近水眺望藍天寬敞景緻，走在寧靜氛圍基地上，<br>
-宜誠【樂聚】繁華喧囂一下轉靜，幸福設籍就是這裡了！</div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >後疫時代繁華靜境，剛剛好的生活心選擇</div>
+      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="desc" data-aos="fade" data-aos-delay="400">
+      宜誠【樂聚】著眼建築環境立地條件的人居尺度，唯美距離適當的相處，鄰綠近水眺望藍天寬敞景緻，走在寧靜氛圍基地上，<br v-if="isPC">宜誠【樂聚】繁華喧囂一下轉靜，幸福設籍就是這裡了！</div>
       </div>
     </div>
-  </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -48,32 +45,38 @@
 .title{
   position: relative;
   font-size: size(40);
-  padding: 2em 0 .8em;
+  padding: 2.2em 0 .8em;
   letter-spacing:0.06em;
   font-weight: 800;
+      transform:translateY(-10%) scale(1.2);
 }
 .txt{
   position: relative;
   width: size(1500);
-  margin:0em auto 6em;
+  margin:0 auto 0;
+  padding: 0 0 6em;
   z-index: 3;
   }
 
 .subtitle{
   position: relative;
   font-size: size(31);
-  margin:1.5em auto 0.6em;
+  margin:1.5em auto 0.8em;
   letter-spacing:0.04em;
   color: #80c5b6;
+  font-weight: 500;
+      transform: scale(1.2);
 }
 .hr{background: none;border: 0;opacity: .5;
-border-bottom:1px solid currentColor;}
+border-bottom:1px solid currentColor;
+      transform: scale(1.2);}
 .desc {
   margin:1em auto;
   line-height: 1.6;
   letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
+      transform: scale(1.2);
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
@@ -229,7 +232,7 @@ border-bottom:1px solid currentColor;}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 13em;
+    //margin:1.5em auto 13em;
     left:0;
     top:0;
   }
@@ -250,7 +253,7 @@ border-bottom:1px solid currentColor;}
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(220);
+    height: sizem(194);
     top:0;
     left:0;
   }
@@ -282,7 +285,7 @@ export default {
       slideList: [
         {
           img: require('./s2/1.jpg'),
-          name: '3D透視圖僅供參',
+          name: '空拍示意圖',
         },
       ],
     }

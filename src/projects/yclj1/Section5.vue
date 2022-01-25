@@ -1,11 +1,7 @@
 <template>
   <div>
     <div class="section5">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/4.png" :alt="`${info.caseName}_bg`" class="c4">
-      <img src="./s2/2.png" :alt="`${info.caseName}_bg`" class="c2">
-      <img src="./all/1.png" :alt="`${info.caseName}_bg`" class="c1">
-    </div>
+      <div class="title" data-aos="fade" data-aos-delay="0" >北歐莊園</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -24,10 +20,10 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >自漫美學 珍稀之作</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        「悅峰釀」外觀選用高質感冠軍磁磚配上不同深淺的顏色，使外牆層次分明有氣勢，運用淺色木紋隔柵帶入柔和日式氛圍，陽台搭配植栽呈現活潑朝氣之感，落地窗帶入自然風光，連結窗外自然風然景與建築的聯繫，集結現代美感與內在涵養的獨棟別墅，大氣而細緻優雅。
-      </div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >稀有千坪水公園正鄰，城市親景難能可貴</div>
+      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="desc" data-aos="fade" data-aos-delay="400">
+        稀有埤塘水綠好風光，自然調節微氣候機制無價！宜誠【樂聚】輕騎散步好時光，下樓更有官方養護籃球運動場，質感設計，樂感生活宜誠【樂聚】剛剛好的Balance life幸福很近！</div>
       </div>
     </div>
   </div>
@@ -39,51 +35,51 @@
   width:100%;
   height:auto;
   position: relative;
+  background: #FFF;
+
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  line-height: 1.2;
+  color: #666;
+  font-weight: 400;
+  font-size: size(17);
 }
-
-.c{
-      position: absolute;left:0;right:0;
-      top:0;
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c1{width:size(451);top:size(500);right: size(-10);transform: translateX(-8%);animation-delay: -1s;}
-    .c2{width:size(246);top:size(950);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
-    .c4{width:size(533);top:size(950);left:size(-300);transform: translateX(-15%);animation-delay: -1s;}
-  }
-
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
+.title{
+  position: relative;
+  font-size: size(40);
+  padding: 2.2em 0 .8em;
+  letter-spacing:0.06em;
+  font-weight: 800;
+  color: #51858a;
+      transform:translateY(-10%) scale(1.2);
 }
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 10em;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(17);
-  font-weight: 400;
-  line-height: 1.2;
+  margin:0 auto 0;
+  padding: 0 0 6em;
   z-index: 3;
-  color: #666;
   }
 
-.title{
+.subtitle{
   position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
+  font-size: size(31);
+  margin:1.5em auto 0.6em;
   letter-spacing:0.04em;
-  color: #52b559;
+  color: #51858a;
   font-weight: 500;
+      transform: scale(1.2);
 }
+.hr{background: none;border: 0;opacity: .5;
+      transform: scale(1.2);
+border-bottom:1px solid currentColor;}
 .desc {
   margin:1em auto;
-  line-height: 2;
+  line-height: 1.6;
   letter-spacing:0.05em;
   list-style: circle;
+      transform: scale(1.2);
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
@@ -93,7 +89,7 @@
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(840);
+  height: size(844);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -234,34 +230,34 @@
     height: auto;
     min-height: auto;
     max-height: initial;
-  }
-
-.c{
-    .c1{width:sizem(230);top:sizem(600);right: sizem(60);}
-    .c2{width:sizem(120);top:sizem(500);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
-    .c4{width:sizem(300);top:sizem(530);left:sizem(-80);}
+    font-size: sizem(14);
+    text-align: justify;
   }
   .txt{
     position: relative;
-    width: sizem(310);
-    margin:1.5em auto 13em;
+    width: sizem(320);
+    margin:0em auto 0em;
     left:0;
     top:0;
-    font-size: sizem(15);
   }
 .title{
     font-size: sizem(30);
   letter-spacing:0.01em;
+  text-align: center;
+}
+.subtitle{
+    font-size: sizem(17.6);
+  letter-spacing:0em;
 }
   .desc {
   margin:0em auto;
-  font-size: sizem(15);
+  letter-spacing:0em;
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(220);
+    height: sizem(211);
     top:0;
     left:0;
   }
@@ -293,7 +289,7 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
-          name: '3D透視圖僅供參',
+          name: '外觀3D情境示意圖',
         },
       ],
     }

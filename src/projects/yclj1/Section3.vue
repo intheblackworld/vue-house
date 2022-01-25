@@ -1,7 +1,7 @@
 <template>
     <div class="section3">
       <div class="box">
-      <div class="title" data-aos="fade-down" data-aos-delay="0">繁華之心</div>
+      <div class="title" data-aos="fade" data-aos-delay="0">繁華之心</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,9 +17,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="200" >北歐莊園好宅幸福樂聚</div>
-      <hr class="hr">
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >北歐莊園好宅幸福樂聚</div>
+      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="desc" data-aos="fade" data-aos-delay="400">
       宜誠【樂聚】穩踞「四鄉鎮重畫區」多核心：<br>
 新屋頭洲、中壢、大園、青埔交界，<br>
 享城際中心樞紐地位，擁城市繁華更擁自然綠意。
@@ -69,12 +69,13 @@
 .title{
   position: relative;
   font-size: size(40);
-  padding: 2em 0 .8em;
+  padding: 2.2em 0 .8em;
   letter-spacing:0.06em;
   color: #51858a;
   font-weight: 800;
   text-align: center;
   width: 100%;
+      transform:translateY(-10%) scale(1.2);
 }
 
 .txt{
@@ -90,16 +91,20 @@
   margin:4em auto 0.8em;
   letter-spacing:0.04em;
   color: #51858a;
+  font-weight: 500;
+      transform: scale(1.2);
 }
 
 .hr{background: none;border: 0;opacity: .5;
+      transform: scale(1.2);
 border-bottom:1px solid currentColor;}
 .desc {
   margin:1em auto;
-  line-height: 2;
+  line-height: 1.6;
   letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
+      transform: scale(1.2);
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
@@ -263,16 +268,10 @@ border-bottom:1px solid currentColor;}
   }
 
   }
-  .light{
-  top:sizem(410);
-  left:sizem(190);
-  width:sizem(200);
-
-  }
   .txt{
   position: relative;
     width: sizem(320);
-margin:1.5em auto 3em;
+margin:0em auto 0em;
   left:0;
   top:0;
   }
@@ -283,7 +282,7 @@ margin:1.5em auto 3em;
   .subtitle {
     font-size: sizem(17.6);
   letter-spacing:0em;
-  margin:1em auto 0em;
+  margin:1.5em auto 0em;
   }
   .desc {
   margin:0em auto;
@@ -294,7 +293,7 @@ margin:1.5em auto 3em;
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(250);
+    height: sizem(210);
     min-height: auto;
     top:0;
     left:0;
@@ -338,11 +337,11 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          name: '3D透視僅供參考',
+          name: '四鄉鎮計畫參考',
         },
         {
           img: require('./s3/2.jpg'),
-          name: '室內創意表現僅供參考',
+          name: '特色發展核心',
         },
       ],
     }

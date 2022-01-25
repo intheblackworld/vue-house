@@ -1,9 +1,7 @@
 <template>
-  <div>
     <div class="section7">
-<img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile"  >開車15分鐘，房價省一半</div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="box">
+      <div class="swipe" data-aos="fade" data-aos-delay="0" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -11,109 +9,114 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-        <!--  <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>  -->
+          </div>
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isPC">開車15分鐘，房價省一半</div>
-     <!--  <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" >文創氣質相乘土城心驛站</div>  -->
-      <ul class="desc">
-        <li data-aos="fade-up" data-aos-delay="300">南北快捷：4~5分鐘上北二高-斗六交流道，往返南北快捷。</li>
-        <li data-aos="fade-up" data-aos-delay="400">輕鬆通勤：10~15分鐘斗六上班輕鬆行。</li>
-        <li data-aos="fade-up" data-aos-delay="500">完整學區：鄰近九芎國小、林內國中、義峰高中完整學區。</li>
-        <li data-aos="fade-up" data-aos-delay="500">雙城機能：5~15分鐘樂享林內、斗六雙商圈完善機能。</li>
-      </ul>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >全齡化公設，一次精彩到位無需代言！</div>
+      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="desc" data-aos="fade" data-aos-delay="400">
+      全齡化公設All in one敬邀菁英家庭同賞入主～<br v-if="isPC">
+日光Lobby社區迎賓門廳、Lagom樂感Lounge bar恰好空間、<br v-if="isPC">
+兒童遊戲區Aurora樂園、Gym健身房、Hygge 樂趣健美，<br v-if="isPC">
+健康諮詢教練顧問、舒壓樂活安心住好一次買好！
+
       </div>
-     <!--   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+     <!-- <ul class="desc">
+        <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
+        <li data-aos="fade-up" data-aos-delay="400">清水國小＋中正國中，書香校園承載孩子金色未來</li>
+        <li data-aos="fade-up" data-aos-delay="500">土城體育場 + 運動中心＋大清運動公園運森度呼吸</li>
+      </ul>  -->
+      </div>
+      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> -->
+      </div>
     </div>
-  </div>
+    </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section7 {
-  width: size(1920);
-  height: size(900);
+  width:100%;
+  height:auto;
   position: relative;
-  overflow: hidden;
-}
+  background: #e4e4e4;
 
-  .light{
-  position: absolute;
-  top:size(630);
-  right:size(-20);
-  width:size(420);
-  transform: translate(40%,-20%) rotate(-30deg) scale(0.4);
-
-  }
-.txt{
-  position: absolute;
-  width: size(610);
-  right:size(200);
-  top: size(185);
   font-stretch: normal;
   font-style: normal;
-  text-align: left;
-  font-size: size(18);
-  font-weight: 500;
+  text-align: justify;
   line-height: 1.2;
-  z-index: 3;
+  color: #666;
+  font-weight: 400;
+  padding: 0;
+  font-size: size(17);
+  padding: 0 0 6em;
+
+  .box{
+  width: size(1500);
+  margin:0em auto 0em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+    align-items:stretch;
+  position: relative;
   }
+}
 
 .title{
   position: relative;
-  font-size:2.5em;
-  font-weight: 500;
-  line-height:2.22;
-  letter-spacing: normal;
-  color: #fff;
-  z-index: 3;
-  &::before{content:"";position: absolute;z-index:-1;top: 0;left:-3%;
-  height: 100%;width: 150%;
-  background: url("./all/r_bg.png");
-  background-size: 100% 100%;
-  }
+  font-size: size(40);
+  padding: 2.2em 0 .8em;
+  letter-spacing:0.06em;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+  color: #51858a;
+      transform:translateY(-10%) scale(1.2);
 }
+
+.txt{
+  position: relative;
+  width: size(610);
+  z-index: 3;
+  }
+
 
 .subtitle {
   position: relative;
   font-size: size(30);
-  margin:1.5em auto 0.8em;
+  margin:4em auto 0.8em;
   letter-spacing:0.04em;
-  color: #52b559;
+  color: #51858a;
+  font-weight: 500;
+      transform: scale(1.2);
 }
-.line {
-  position: relative;
-  background-color: #888;
-  width:100%;
-  height: size(2);
-  margin: 2em 0 0.5em 0;
-}
+
+.hr{background: none;border: 0;opacity: .5;
+      transform: scale(1.2);
+border-bottom:1px solid currentColor;}
 .desc {
   margin:1em auto;
-  font-size: size(18);
   line-height: 2;
   letter-spacing:0.05em;
-  color: #666666;
   list-style: circle;
   overflow: hidden;
+      transform: scale(1.2);
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
 
 /* Swipe */
 .swipe {
-  position: absolute;
+//  position: absolute;
   width: size(840);
   height: size(560);
   top: size(185);
-  left: size(210);
+  right: size(199);
   object-fit: cover;
   z-index: 3;
 }
@@ -165,41 +168,43 @@
     line-height: 1;
     letter-spacing: 0.89px;
     text-align: left;
-    color: #ffffff;
+    color: #fff;
    text-shadow:0 0.1em 0.3em #000;
   }
-
 }
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  left:calc(50% + 6.95vw);
+  bottom: size(0);
+  right:0;
   justify-content: center;
+  font-size:size(13);
 }
 
 .pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
+  padding:0.3em;
+  margin: 0 0.3em;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 4px solid  #ccc;
+    width: 1em;
+    height: 1em;
+   // border-radius: 50%;
+   // border: 4px solid  #ccc;
+   background: #ccc;
     position: relative;
     transition: all 0.5s;
 
     &::before {
       content: '';
-      width: 60%;
-      height: 60%;
+      width: 100%;
+      height: 100%;
       display: block;
-    border-radius: 50%;
-    border: 2.1px solid  #d4a680;
+   background: #245367;
+   // border-radius: 50%;
+   // border: 2.1px solid  #e38023;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -211,11 +216,9 @@
     &.active {
       box-shadow: none;
       &::before {
-        width: 100%;
-        height: 100%;
         top: 0%;
         left: 0%;
-        transform: scale(1.6);
+        transform: scale(1);
       }
     }
   }
@@ -251,51 +254,56 @@
   .section7 {
     width: 100vw;
     height: auto;
+
+    font-size: sizem(14);
+    text-align: justify;
+  .box{
+  width:100%;
+  margin:0em auto 0em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+    align-items:stretch;
+  position: relative;
+  }
+
   }
   .light{
-  top:auto;
-bottom: 0;
+  top:sizem(410);
   left:sizem(190);
   width:sizem(200);
 
   }
-
   .txt{
   position: relative;
-  width: sizem(310);
-margin:1.5em auto 3em;
+    width: sizem(320);
+margin:0em auto 0em;
   left:0;
   top:0;
-  font-size: sizem(15);
   }
 .title{
     font-size: sizem(30);
-  &::before{width: 100vw;
-  left: calc(50% - 50vw);
-  }
+  letter-spacing:0.01em;
 }
-  .line {
-    width: sizem(310);
-    height: sizem(2);
-  margin: 1.1em auto 1em auto;
-  }
   .subtitle {
-    font-size: sizem(18);
-  margin:1em auto 0em;
+    font-size: sizem(17.6);
+  letter-spacing:0em;
+  margin:1.5em auto 0em;
   }
   .desc {
-   //line-height: 1.73;
   margin:0em auto;
-  font-size: sizem(15);
+  letter-spacing:0em;
   }
+
   /* Swipe */
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(250);
+    height: sizem(211);
     min-height: auto;
     top:0;
     left:0;
+  order:initial;
   }
 
   .swipe-item {
@@ -335,15 +343,15 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: '',
+          name: '大廳3D示意圖',
         },
         {
           img: require('./s7/2.jpg'),
-          name: '',
+          name: '兒童遊戲室3D示意圖',
         },
         {
           img: require('./s7/3.jpg'),
-          name: '',
+          name: 'LOUNGE 3D示意圖',
         },
       ],
     }
