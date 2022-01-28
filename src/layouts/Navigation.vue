@@ -17,31 +17,10 @@
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: -70}">
+            <li class="flex-ac" v-for="item in list" :key="item.name" @click="$router.push(item.link)">
               <span class="link">
                 <span>
-                  <div class="title">立即來電</div>
-                </span>
-              </span>
-            </li>
-            <li class="flex-ac">
-              <span class="link">
-                <span>
-                  <div class="title">LINE諮詢</div>
-                </span>
-              </span>
-            </li>
-            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: -70}">
-              <span class="link">
-                <span>
-                  <div class="title">粉絲專頁</div>
-                </span>
-              </span>
-            </li>
-            <li class="flex-ac" v-scroll-to="{element: '#contact-info', offset: -70}">
-              <span class="link">
-                <span>
-                  <div class="title">地圖導航</div>
+                  <div class="title">{{item.name}}</div>
                 </span>
               </span>
             </li>
@@ -139,7 +118,6 @@ export default {
   line-height: 1.5;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   .logo {
-    opacity: 0;
     transition: all 0.3s;
   }
   &.min {
@@ -201,17 +179,13 @@ export default {
   padding-left: 30px;
   li {
     height: 100%;
-    &:nth-child(1) {
-      .link {
-        border-left: 1px solid #FFF6;
-      }
-    }
   }
 
   .link {
     color: $nav_link_color;
     //height: 22px;
     width: 7em;
+    height: 100%;
     text-align: center;
     display: block;
     cursor: pointer;
@@ -223,11 +197,10 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid #FFF6;
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
+      background: $nav_link_hover_bg;
     }
 
     // &::before {

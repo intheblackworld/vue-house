@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './pages/Home.vue'
+import Main from './pages/Main.vue'
 import FormThanks from './pages/FormThanks.vue'
-import PhoneThanks from './pages/PhoneThanks.vue'
 
 Vue.use(Router)
 
@@ -12,8 +11,86 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'Main',
+      component: Main,
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: () =>
+            import(/* webpackChunkName: "abou_ust" */ './pages/Home.vue')
+        },
+        // 關於我們
+        {
+          path: '/about_us',
+          name: 'about_us',
+          component: () =>
+            import(/* webpackChunkName: "abou_ust" */ './pages/about_us.vue')
+        },
+        // 熱銷個案
+        {
+          path: '/hot_case',
+          name: 'hot_case',
+          component: () =>
+            import(/* webpackChunkName: "hot_case" */ './pages/hot_case.vue')
+        },
+
+        // 經典案例
+        {
+          path: '/classic_case',
+          name: 'classic_case',
+          component: () =>
+            import(/* webpackChunkName: "classic_case" */ './pages/classic_case.vue')
+        },
+
+        // 最新消息
+        {
+          path: '/news',
+          name: 'news',
+          component: () =>
+            import(/* webpackChunkName: "news" */ './pages/news.vue')
+        },
+
+        // 影音專區
+        {
+          path: '/medias',
+          name: 'medias',
+          component: () =>
+            import(/* webpackChunkName: "medias" */ './pages/medias.vue')
+        },
+
+        // 企業責任
+        {
+          path: '/company',
+          name: 'company',
+          component: () =>
+            import(/* webpackChunkName: "company" */ './pages/company.vue')
+        },
+
+        // 都更專區
+        {
+          path: '/renewal',
+          name: 'renewal',
+          component: () =>
+            import(/* webpackChunkName: "renewal" */ './pages/renewal.vue')
+        },
+
+        // 會員專區
+        {
+          path: '/member',
+          name: 'member',
+          component: () =>
+            import(/* webpackChunkName: "member" */ './pages/member.vue')
+        },
+
+        // 聯絡我們
+        {
+          path: '/contacts',
+          name: 'contacts',
+          component: () =>
+            import(/* webpackChunkName: "contacts" */ './pages/contacts.vue')
+        },
+      ]
     },
     {
       path: '/formThanks',
@@ -40,6 +117,6 @@ export default new Router({
     {
       path: '*', // 此处需特别注意至于最底部
       redirect: '/404'
-    }
+    },
   ]
 })
