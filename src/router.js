@@ -22,38 +22,57 @@ export default new Router({
         },
         // 關於我們
         {
-          path: '/about_us',
+          path: 'about_us',
           name: 'about_us',
           component: () =>
             import(/* webpackChunkName: "abou_ust" */ './pages/about_us.vue')
         },
         // 熱銷個案
         {
-          path: '/hot_case',
+          path: 'hot_case',
           name: 'hot_case',
           component: () =>
             import(/* webpackChunkName: "hot_case" */ './pages/hot_case.vue')
         },
+        {
+          path: 'hot_case/:id',
+          name: 'hot_case_detail',
+          component: () =>
+            import(/* webpackChunkName: "hot_case" */ './pages/hot_case_detail.vue')
+        },
 
         // 經典案例
         {
-          path: '/classic_case',
+          path: 'classic_case',
           name: 'classic_case',
           component: () =>
             import(/* webpackChunkName: "classic_case" */ './pages/classic_case.vue')
         },
+        {
+          path: 'classic_case/:type/:id',
+          name: 'classic_case_detail',
+          component: () =>
+            import(/* webpackChunkName: "classic_case" */ './pages/classic_case_detail.vue')
+        },
 
         // 最新消息
         {
-          path: '/news',
+          path: 'news',
           name: 'news',
           component: () =>
             import(/* webpackChunkName: "news" */ './pages/news.vue')
         },
 
+        {
+          path: 'news/:id',
+          name: 'news_detail',
+          component: () =>
+            import(/* webpackChunkName: "news" */ './pages/news_detail.vue')
+        },
+
         // 影音專區
         {
-          path: '/medias',
+          path: 'medias',
           name: 'medias',
           component: () =>
             import(/* webpackChunkName: "medias" */ './pages/medias.vue')
@@ -61,7 +80,7 @@ export default new Router({
 
         // 企業責任
         {
-          path: '/company',
+          path: 'company',
           name: 'company',
           component: () =>
             import(/* webpackChunkName: "company" */ './pages/company.vue')
@@ -69,7 +88,7 @@ export default new Router({
 
         // 都更專區
         {
-          path: '/renewal',
+          path: 'renewal',
           name: 'renewal',
           component: () =>
             import(/* webpackChunkName: "renewal" */ './pages/renewal.vue')
@@ -77,7 +96,7 @@ export default new Router({
 
         // 會員專區
         {
-          path: '/member',
+          path: 'member',
           name: 'member',
           component: () =>
             import(/* webpackChunkName: "member" */ './pages/member.vue')
@@ -85,7 +104,7 @@ export default new Router({
 
         // 聯絡我們
         {
-          path: '/contacts',
+          path: 'contacts',
           name: 'contacts',
           component: () =>
             import(/* webpackChunkName: "contacts" */ './pages/contacts.vue')
@@ -114,9 +133,9 @@ export default new Router({
       path: '/404',
       component: () => import('@/pages/404.vue')
     },
-    {
-      path: '*', // 此处需特别注意至于最底部
-      redirect: '/404'
-    },
+    // {
+    //   path: '*', // 此处需特别注意至于最底部
+    //   redirect: '/404'
+    // },
   ]
 })

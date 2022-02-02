@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+          <img class="logo" src="@/assets/img/nav-logo.png" alt @click="$router.push({path: '/'})" />
           <!-- <div
             class="menu"
             @click="toggleSidebar"
@@ -17,10 +17,23 @@
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li class="flex-ac" v-for="item in list" :key="item.name" @click="$router.push(item.link)">
+            <li v-show="item.link" class="flex-ac" v-for="item in list" :key="item.name" @click="$router.push({path: item.link})">
               <span class="link">
                 <span>
                   <div class="title">{{item.name}}</div>
+                </span>
+              </span>
+            </li>
+            <a href="" target="_blank" class="social-link">
+              <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
+            </a>
+            <a href="" target="_blank" class="social-link">
+              <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
+            </a>
+            <li class="flex-ac">
+              <span class="link">
+                <span>
+                  <div class="title">登入</div>
                 </span>
               </span>
             </li>
@@ -184,7 +197,7 @@ export default {
   .link {
     color: $nav_link_color;
     //height: 22px;
-    width: 7em;
+    width: size(120);
     height: 100%;
     text-align: center;
     display: block;
@@ -197,6 +210,7 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    font-size: size(15);
 
     &:hover {
       color: $nav_link_hover_color;
@@ -269,6 +283,26 @@ export default {
 
 .menu {
   display: none;
+}
+
+.social-link {
+  width: size(35);
+  margin-right: 5px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.login {
+  font-size: size(15);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(1.11);
+  text-align: left;
+  color: #000;
 }
 /*
 .link {

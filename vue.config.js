@@ -9,7 +9,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
+        '@': path.resolve(__dirname, 'src'),
+        '@/shin-lan': path.resolve(__dirname, 'src/projects/shin-lan')
       },
     },
     // optimization: {
@@ -24,7 +25,14 @@ module.exports = {
 
   devServer: {
     port: 9000, // CHANGE YOUR PORT HERE!
-    https: false
+    https: false,
+    proxy: {
+      '/api': {
+        target: 'https://api.shin-hai.com',
+        pathRewrite: { '^/api': '' },
+        secure: false,
+      },
+    },
   },
 
   chainWebpack: config => {

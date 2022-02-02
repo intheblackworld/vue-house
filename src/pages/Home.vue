@@ -1,8 +1,8 @@
 <template>
   <div>
-    <vue-lazy-component class="" id="section1" @init="init">
+    <div class="section" id="section1" @init="init">
       <Section1 />
-    </vue-lazy-component>
+    </div>
     <vue-lazy-component class="section" id="section2" style="">
       <Section2 />
     </vue-lazy-component>
@@ -27,9 +27,9 @@
     <vue-lazy-component class="section" id="section9">
       <Section9 />
     </vue-lazy-component>
-    <vue-lazy-component class="section" id="section10">
+    <!-- <vue-lazy-component class="section" id="section10">
       <Section10 />
-    </vue-lazy-component>
+    </vue-lazy-component> -->
     <ContactSection />
     <!-- <vue-lazy-component class="section" id="section11">
         <Section11 />
@@ -120,25 +120,25 @@ import ContactSection from '@/layouts/ContactSection.vue'
 // import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/pjr/Section1.vue'
-import Section2 from '@/projects/pjr/Section2.vue'
-import Section3 from '@/projects/pjr/Section3.vue'
-import Section4 from '@/projects/pjr/Section4.vue'
-import Section5 from '@/projects/pjr/Section5.vue'
-import Section6 from '@/projects/pjr/Section6.vue'
-import Section7 from '@/projects/pjr/Section7.vue'
-import Section8 from '@/projects/pjr/Section8.vue'
-import Section9 from '@/projects/pjr/Section9.vue'
-import Section10 from '@/projects/pjr/Section10.vue'
-// import Section11 from '@/projects/pjr/Section11.vue'
-// import Section12 from '@/projects/pjr/Section12.vue'
-// import Section13 from '@/projects/pjr/Section13.vue'
-// import Section14 from '@/projects/pjr/Section14.vue'
-// import Section15 from '@/projects/pjr/Section15.vue'
-// import Section16 from '@/projects/pjr/Section16.vue'
-// import Section17 from '@/projects/pjr/Section17.vue'
-// import Section18 from '@/projects/pjr/Section18.vue'
-// import Section19 from '@/projects/pjr/Section19.vue'
+import Section1 from '@/projects/shin-lan/Section1.vue'
+import Section2 from '@/projects/shin-lan/Section2.vue'
+import Section3 from '@/projects/shin-lan/Section3.vue'
+import Section4 from '@/projects/shin-lan/Section4.vue'
+import Section5 from '@/projects/shin-lan/Section5.vue'
+import Section6 from '@/projects/shin-lan/Section6.vue'
+import Section7 from '@/projects/shin-lan/Section7.vue'
+import Section8 from '@/projects/shin-lan/Section8.vue'
+import Section9 from '@/projects/shin-lan/Section9.vue'
+// import Section10 from '@/projects/shin-lan/Section10.vue'
+// import Section11 from '@/projects/shin-lan/Section11.vue'
+// import Section12 from '@/projects/shin-lan/Section12.vue'
+// import Section13 from '@/projects/shin-lan/Section13.vue'
+// import Section14 from '@/projects/shin-lan/Section14.vue'
+// import Section15 from '@/projects/shin-lan/Section15.vue'
+// import Section16 from '@/projects/shin-lan/Section16.vue'
+// import Section17 from '@/projects/shin-lan/Section17.vue'
+// import Section18 from '@/projects/shin-lan/Section18.vue'
+// import Section19 from '@/projects/shin-lan/Section19.vue'
 // import Section9 from '@/projects/jcs/Section9.vue'
 // import Section10 from '@/projects/jcs/Section10.vue'
 
@@ -161,7 +161,7 @@ export default {
     Section7,
     Section8,
     Section9,
-    Section10,
+    // Section10,
     // Section11,
     // Section12,
     // Section13,

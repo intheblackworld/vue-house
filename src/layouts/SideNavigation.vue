@@ -1,19 +1,19 @@
 <template>
   <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="nav relative">
-      <div class="nav-item" v-scroll-to="{ element: `#contact-info` }">來電洽詢</div>
+      <!-- <div class="nav-item" v-scroll-to="{ element: `#contact-info` }">來電洽詢</div>
       <div class="nav-item" v-scroll-to="{ element: `#contact` }">立即預約</div>
-      <div class="nav-item" v-scroll-to="{ element: `#google-map` }">地圖導航</div>
-      <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
+      <div class="nav-item" v-scroll-to="{ element: `#google-map` }">地圖導航</div> -->
+      <img class="logo" src="@/assets/img/nav-logo.png" @click="$router.push('/');isOpen && toggleSidebar()" alt />
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" /> -->
       <div class="menu" @click="toggleSidebar">
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
-      <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+      <!-- <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" /> -->
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }" v-for="item in list" class="flex-ac" @click="toggleSidebar">
+        <li :key="item.name" v-for="item in list" class="flex-ac" @click="$router.push(item.link);toggleSidebar()">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -22,6 +22,23 @@
             </span>
           </span>
         </li>
+        <div class="social-footer flex-ac flex-jb">
+          <li class="flex-ac">
+            <a href="" target="_blank" class="social-link">
+              <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
+            </a>
+            <a href="" target="_blank" class="social-link">
+              <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
+            </a>
+          </li>
+          <li class="flex-ac">
+            <span class="link">
+              <span>
+                <div class="title">登入</div>
+              </span>
+            </span>
+          </li>
+        </div>
       </ul>
     </div>
   </div>
@@ -68,7 +85,7 @@ export default {
 .navigation {
   height: $nav_phone_height;
   z-index: 110;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #bababa;
 }
 
 .nav-container {
@@ -183,13 +200,13 @@ export default {
   transform: translateX(40%);
 
   li {
-    height: 3.5em;
+    height: 2.5em;
     margin-bottom: 0;
     width: 100%;
-    font-size:calc(1800vw / 1920);
+    font-size: calc(1800vw / 1920);
     &:nth-child(1) {
       .link {
-       border-top: 1px solid #FFF6;
+        //  border-top: 1px solid #FFF6;
       }
     }
   }
@@ -206,7 +223,7 @@ export default {
     display: none;
     background-size: cover;
     position: relative;
-       border-bottom: 1px solid #FFF6;
+    //  border-bottom: 1px solid #FFF6;
     // border-bottom: 1px solid $nav_link_hover_bg;
     img,
     span {
@@ -248,7 +265,7 @@ export default {
     transform: translateX(0%);
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: flex-start;
 
     .link {
       display: flex;
@@ -355,7 +372,7 @@ export default {
     position: fixed;
 
     .logo {
-      opacity: 0;
+      // opacity: 0;
       transition: all 0.3s;
     }
     &.min {
@@ -373,6 +390,7 @@ export default {
       left: size-m(20);
       top: 50%;
       transform: translate(0, -40%);
+      z-index: 100;
       // left: 45px;
     }
   }
@@ -426,17 +444,17 @@ export default {
     z-index: 111;
     width: 0%;
     right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    top: 60px;
+    height: calc(100vh - 60px);
     text-align: center;
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
     background: center 0 no-repeat;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $nav_bg;
     background-size: cover;
-  li {
-    font-size:calc(1800vw / 375);
+    li {
+      font-size: calc(1800vw / 375);
     }
 
     .link {
@@ -454,9 +472,11 @@ export default {
     &.open {
       width: 100%;
       transform: translateX(0%);
+      padding-top: sizem(60);
       .link {
         display: flex;
         justify-content: center;
+        font-weight: 500;
         span {
           white-space: nowrap;
         }
@@ -468,6 +488,11 @@ export default {
       li:nth-last-child(1) {
         .link {
         }
+      }
+
+      .social-footer {
+        display: flex;
+        padding: 0 sizem(60);
       }
     }
   }
@@ -486,8 +511,29 @@ export default {
       width: 100vw;
       right: 0;
       opacity: 1;
+      background-color: transparent;
       z-index: 110;
     }
+  }
+}
+
+.social-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #eee;
+  display: none;
+}
+
+.social-link {
+  display: block;
+  width: sizem(35);
+  margin-right: 5px;
+
+  img {
+    width: 100%;
   }
 }
 

@@ -1,18 +1,30 @@
 <template>
-  <div class="home no-padding-top">
-    <div class="bg-img">
-      <Loading :loading="load" />
-      <Navigation v-if="!isMobile" />
-      <SideNavigation v-else />
-      <router-view></router-view>
-      <!-- <ContactSection /> -->
-      <InfoFooter />
-      <!-- </vue-lazy-component> -->
+  <div id="app">
+    <div ref="gtmNoScript" />
+    <AstrictMask />
+    <div class="home no-padding-top">
+      <div class="bg-img">
+        <Loading :loading="load" />
+        <Navigation v-if="!isMobile" />
+        <SideNavigation v-else />
+        <router-view></router-view>
+        <!-- <ContactSection /> -->
+        <InfoFooter />
+        <!-- </vue-lazy-component> -->
+      </div>
+      <!-- <MobileNav /> -->
     </div>
-    <!-- <MobileNav /> -->
   </div>
 </template>
-
+<style lang="scss">
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:600&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:500&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:600&subset=chinese-traditional');
+// @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+</style>
 <style lang="scss" scoped>
 // @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 @import '../assets/style/variableColor.scss';
@@ -21,6 +33,7 @@
 .section,
 .section .fp-slide,
 .section .fp-tableCell {
+  min-height: 400px;
   height: auto !important;
 }
 #contact {
@@ -55,6 +68,8 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import InfoFooter from '@/layouts/InfoFooter.vue'
 import Loading from '@/components/Loading.vue'
 import gtm from '@/mixins/gtm.js'
+import AstrictMask from '@/components/AstrictMask'
+import { get_ip } from '@/http/api'
 
 export default {
   name: 'Main',
@@ -66,7 +81,8 @@ export default {
     SideNavigation,
     // LeafFlow,
     // ContactSection,
-    InfoFooter
+    InfoFooter,
+    AstrictMask,
   },
 
   data() {
@@ -95,6 +111,14 @@ export default {
     }
   },
   created() {
+    get_ip().then((res) => {
+      if (res.ip) {
+        this.$store.commit('user/setInfo', {
+          key: 'ip',
+          value: res.ip,
+        })
+      }
+    })
     // $(document).ready(() => {
     //   // Images loaded is zero because we're going to process a new set of images.
     //   var imagesLoaded = 0
@@ -122,6 +146,15 @@ export default {
     //   this.$refs.fullPage.api.setResponsive(true)
     // }
   },
+
+  watch: {
+    $route: function () {
+      this.load = true
+      setTimeout(() => {
+        this.load = false
+      }, 200)
+    },
+  },
   methods: {
     init() {},
     onScroll() {
@@ -129,7 +162,6 @@ export default {
       //   document.documentElement.scrollTop || document.body.scrollTop
       // 定义当前点亮的导航下标
       // let navIndex = 0
-
       // if (document.body.getBoundingClientRect().top > this.scrollPos) {
       //   this.isHide = false
       // } else {

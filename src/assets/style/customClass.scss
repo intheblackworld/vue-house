@@ -137,7 +137,6 @@
     right: 0;
     margin: 0 auto;
     overflow: auto;
-
   }
   .close {
     right: 10px;
@@ -223,5 +222,107 @@
   .flex-mobile-jr {
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+.shin-lan-title-v {
+  font-family: "Noto Serif TC", serif;
+  color: #000; // 顏色
+  font-size: size(47); // size(47)
+  font-weight: 1100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.06;
+  letter-spacing: 0.06em;
+  text-align: left;
+  width: 1.2em;
+  span {
+    display: block;
+    width: 3em;
+    height: size(1);
+    background: currentColor;
+    margin: 0.2em 0 0.1em 0;
+    transform-origin: 0 0;
+  }
+
+  &.gold {
+    color: #b18863;
+  }
+}
+
+.shin-lan-title-h {
+  font-family: "Noto Serif TC", serif;
+  color: #000; // 顏色
+  font-size: size(47); // size(47)
+  font-weight: 1200;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.06;
+  letter-spacing: 0.06em;
+  text-align: left;
+  span {
+    display: inline-block;
+    width: size(1);
+    height: 1em;
+    background: currentColor;
+    margin: -0.1em 0.15em 0.1em 0.1em;
+    transform-origin: 50% 50%;
+    vertical-align: middle;
+  }
+
+  &.gold {
+    color: #b18863;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .shin-lan-title-h-m {
+    font-family: "Noto Serif TC", serif;
+    color: #000; // 顏色
+    font-size: sizem(28);
+    font-weight: 1100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.06;
+    letter-spacing: 0.06em;
+    text-align: left;
+    span {
+      display: inline-block;
+      width: sizem(1);
+      height: 1em;
+      background: currentColor;
+      margin: -0.1em 0.15em 0.1em 0.1em;
+      transform-origin: 50% 50%;
+      vertical-align: middle;
+    }
+
+    &.gold {
+      color: #b18863;
+    }
+  }
+
+  .shin-lan-title-v-m {
+    font-family: "Noto Serif TC", serif;
+    color: #000; // 顏色
+    font-size: sizem(28); // size(47)
+    font-weight: 1100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.06;
+    letter-spacing: 0.06em;
+    text-align: left;
+    width: 1.2em;
+    span {
+      display: block;
+      width: 3em;
+      height: sizem(1);
+      background: currentColor;
+      margin: 0.2em 0 0.1em 0;
+      transform-origin: 0 0;
+    }
+
+    &.gold {
+      color: #b18863;
+    }
   }
 }
