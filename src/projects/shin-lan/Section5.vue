@@ -5,7 +5,7 @@
       <div class="shin-lan-title-v title" data-aos="fade">
         最新<span data-aos="flip-right"></span>消息
       </div>
-      <div class="btn-more flex-c">
+      <div class="btn-more flex-c" @click="$router.push('/news')">
         了解更多
       </div>
       <div class="item-list">

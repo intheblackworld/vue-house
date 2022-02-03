@@ -8,7 +8,7 @@
             會員<span data-aos="flip-right"></span>專區
           </div>
           <div class="case-desc" v-html="current_case.desc"></div>
-          <div class="case-more flex-c" @click="current_case.more_link">了解更多</div>
+          <div class="case-more flex-c" @click="$router.push('/member')">了解更多</div>
         </div>
         <img :src="current_case.img" alt="" class="case-thumb">
       </div>

@@ -30,8 +30,8 @@
   display: inline-block;flex: 0 1 auto;width: 100% !important;
 
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #c9a063 !important;
-    font-weight: 600;
+    color: $order_input_placeholder !important;
+    // font-weight: 600;
     opacity: 1; /* Firefox */
   }  
 }
@@ -59,8 +59,8 @@
 }
 
 .el-textarea {
-  width: 95% !important;
-  height: 95% !important;
+  width: 100% !important;
+  height: 100% !important;
   .el-textarea__inner {
     height: 100% !important;
     border-radius: 0 !important;
@@ -94,8 +94,12 @@
   }
 }
 
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: #000 !important;
+}
+
 .form-submit {
-  width: 100% !important;
+  width: 50% !important;
   height: 54px !important;
   // opacity: 0 !important;
   border-radius: 0 !important;
@@ -106,8 +110,8 @@
   background-position: center !important;
   background-color: $order_submit_bg;
   background-image: $order_submit_bg;
-  border: 1px solid #eb5500 !important;
-  border-radius: 8px / 8px !important;
+  // border: 1px solid #eb5500 !important;
+  // border-radius: 8px / 8px !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;

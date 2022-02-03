@@ -16,7 +16,7 @@
             <div class="item-title" v-html="item.title"></div>
             <div class="item-subtitle" v-html="item.subtitle"></div>
             <div class="item-desc" v-html="item.desc"></div>
-            <div class="btn-more flex-c">
+            <div class="btn-more flex-c" @click="$router.push('/company')">
               了解更多
             </div>
           </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="section2">
     <div class="container">
-      <div class="shin-lan-title-v title" data-aos="fade">
+      <div class="shin-lan-title-v shin-lan-title-h-m title" data-aos="fade">
         關於<span data-aos="flip-right"></span>我們
       </div>
       <div class="mid">
@@ -13,11 +13,11 @@
         </div>
         <img src="../../assets/img/shin-lan/index/2/30.png" alt="" class="img30">
       </div>
-      <div class="btn-more flex-c">
+      <div class="btn-more flex-c" @click="$router.push('/about_us')">
         了解更多
       </div>
       <div class="item-list flex">
-        <div class="item" v-for="(item, index) in item_list" :key="item.name + index">
+        <div class="item" v-for="(item, index) in item_list" :key="item.name + index" @click="$router.push(item.link)">
           <img :src="item.img" alt="" class="item-img">
           <div class="item-desc" v-html="item.desc"></div>
         </div>
@@ -113,7 +113,7 @@
   @include img_l_pc(67, 0, 0);
 
   @include md {
-    @include img_l_m(126, 0, 33);
+    @include img_l_m(186, 0, 33);
     font-size: sizem(28);
     font-weight: bold;
     font-stretch: normal;
@@ -533,22 +533,27 @@ export default {
         {
           img: require('../../assets/img/shin-lan/index/2/1.jpg'),
           desc: '誠信服務',
+          link: '/about_us',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/2.jpg'),
           desc: '堅持品質',
+          link: '/about_us',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/3.jpg'),
           desc: '專業創新',
+          link: '/about_us',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/4.jpg'),
           desc: '永續經營',
+          link: '/about_us',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/5.jpg'),
           desc: '營造基石',
+          link: '/about_us',
         },
       ],
     }

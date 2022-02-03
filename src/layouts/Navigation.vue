@@ -24,10 +24,10 @@
                 </span>
               </span>
             </li>
-            <a href="" target="_blank" class="social-link">
+            <a :href="info.fbLink" target="_blank" class="social-link">
               <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
             </a>
-            <a href="" target="_blank" class="social-link">
+            <a :href="info.lineLink" target="_blank" class="social-link">
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
             <li class="flex-ac">
@@ -47,6 +47,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
+import info from '@/info'
 
 export default {
   name: 'navigation',
@@ -57,6 +58,7 @@ export default {
       isMobile,
       isTablet,
       list: navList,
+      info,
     }
   },
 

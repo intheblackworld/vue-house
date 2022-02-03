@@ -1,173 +1,158 @@
 <template>
   <div class="section6">
-    <img src="./shin-lan/index/6/bg.png" :alt="info.caseName" class="bg-img">
     <div class="shin-lan-title-h title" data-aos="fade">
       影音<span data-aos="flip-right"></span>專區
     </div>
-    <div class="container">
-      <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade" data-aos-delay="800">
-        <div class="slide-title" v-html="slideList[slideIndex].title"></div>
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex" @click="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img + i" :class="`swipe-item flex absolute`">
-              <div>
-                <img :src="slide.img" :alt="info.caseName" class="">
-                <div class="slide-title" v-html="slide.title1"></div>
-                <hr class="slide-hr">
-                <div class="slide-desc" v-html="slide.desc1"></div>
-              </div>
-              <div>
-                <img :src="slide.img" :alt="info.caseName" class="">
-                <div class="slide-title" v-html="slide.title2"></div>
-                <hr class="slide-hr">
-                <div class="slide-desc" v-html="slide.desc2"></div>
-              </div>
-            </div>
-          </transition-group>
+    <div class="container container1">
+      <transition-group class="item-list flex" name="slide-fade" mode="out-in" tag="div">
+        <div class="item" v-for="(item) in current_media_list" :key="item.title + item.index" @click="handlePlay(item.index);isDialog=true">
+          <img :src="item.img" alt="" class="video-img">
+          <div>
+            <div class="video-title" v-html="item.title"></div>
+            <div class="video-hr"></div>
+            <div class="video-desc" v-html="item.desc"></div>
+          </div>
         </div>
-        <div class="prev-btn" @click="decIndex"></div>
-        <div class="next-btn" @click="addIndex"></div>
-      </div>
-      <div class="pagination absolute flex-ac" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </transition-group>
+      <img src="./shin-lan/all/arrow-left.png" alt="" class="arrow-left" v-if="isMobile" @click="prevPage">
+      <img src="./shin-lan/all/arrow-right.png" alt="" class="arrow-right" v-if="isMobile" @click="nextPage">
+      <div class="head flex-c">
+        <div class="pages flex-ac" v-if="isPC">
+          <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">
+            <span :class="`${pageIndex === index ? 'active' : ''}`"></span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="btn-more flex-c">
-      更多影音
+    <!-- <div class="container container2" id="container2" v-if="isPC">
+      <div class="video_box">
+        <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
+        <div class="video-title" v-html="media_list[media_index].title"></div>
+        <div class="video-hr"></div>
+        <div class="video-desc" v-html="media_list[media_index].desc"></div>
+      </div>
+    </div> -->
+    <!-- <div class="isDialog" v-if="isMobile" @click="isDialog = true">
+    </div> -->
+    <div class="video video-dialog" v-if="isDialog">
+      <div class="mask" @click="isDialog = false"></div>
+      <div class="video-bg">
+        <div class="video_box">
+          <iframe title="youtube" :src="`https://www.youtube.com/embed/${id}`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+// begin
+.slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  // margin-top: 50px !important;
+  opacity: 0;
+}
+// end
+.slide-fade-enter {
+  margin-top: 10px !important;
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
 .section6 {
   width: 100%;
-  height: size(750 + 74);
-  min-height: size(750 + 74);
-  max-height: auto;
-  background-size: cover;
-  background-attachment: fixed;
-
-  @include md {
-    width: 100vw;
-    height: sizem(763);
-    min-height: auto;
-    max-height: initial;
-    overflow: visible;
-  }
-}
-
-.bg-img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
   height: size(750);
-  object-fit: cover;
-}
-
-.shin-lan-title {
-  color: #000; // 顏色
-  font-size: size(47); // size(47)
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.06;
-  letter-spacing: 0.06em;
-  text-align: left;
-  span {
-    display: inline-block;
-    width: size(1);
-    height: 1em;
-    background: currentColor;
-    margin: -0.1em 0.15em 0.1em 0.1em;
-    transform-origin: 50% 50%;
-    vertical-align: middle;
-  }
-}
-
-.container {
-  width: size(1240);
-  margin: 0 auto size(76);
   position: relative;
-}
+  margin: 0;
+  background: url('./shin-lan/index/6/bg.png') center;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  // background-color: rgba(17, 17, 3, 0.11);
 
-.logo {
-  @include img_l_pc(111, 248, 185);
-
+  // 手機版
   @include md {
-    @include img_l_m(69, 60, 28);
+    // height: 100vh;
+    // height: size(604);
+    // min-height: calc(604 * 100vw / 375);
+    // max-height: calc(812 * 100vw / 375);
   }
 }
 
 .title {
-  @include img_c_pc(604, 60);
+  margin: size(60) auto size(20);
   text-align: center;
+}
+
+.container {
+  width: size(1240);
+  min-height: size(680);
+  margin: 0 auto size(53);
+  position: relative;
 
   @include md {
-    @include img_l_m(209, 140, 28);
-    font-size: sizem(20);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: sizem(1);
-    text-align: left;
-    color: #3e3a39;
+    width: sizem(310);
+    margin: sizem(80) auto;
   }
 }
 
-.desc {
-  @include img_l_pc(660, 476, 185);
-  font-size: size(20);
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.76;
-  letter-spacing: 0.05em;
-  text-align: justify;
-  color: #3e3a39;
-
-  @include md {
-    @include img_l_m(320, 210, 28);
-    font-size: sizem(13);
-    line-height: 2;
-  }
+.container1 {
+  margin-top: size(0);
 }
 
-.btn-more {
-  @include img_c_pc(158, 0);
-  top: auto;
-  bottom: size(55 + 74);
-  height: size(40);
-  border: solid 1px #707070;
-  font-size: size(15);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3);
-  text-align: center;
-  color: #000;
+.item-list {
+  width: 100%;
+}
+
+.item {
+  width: 50%;
   cursor: pointer;
-  transition: all 0.3s;
-
-  &:hover {
-    background-color: #000009;
-    color: #fff;
-  }
-}
-
-/* Swipe */
-.swipe {
-  @include div_c_pc(1240, 482, 152);
-  object-fit: cover;
 
   @include md {
-    @include div_c_m(320, 213, 420);
+    width: 100%;
   }
 }
 
-.slide-title {
+.video-img {
+  width: 100%;
+  height: size(330);
+  @include md {
+    height: sizem(165);
+  }
+}
+
+.container2 {
+  height: size(880);
+}
+
+.video_box {
+  width: 100%;
+  height: size(698);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 3;
+  // overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  animation: op 1s 3s ease-out forwards;
+}
+@keyframes op {
+  to {
+    opacity: 1;
+  }
+}
+
+.video-title {
   font-size: size(28);
   font-weight: 500;
   font-stretch: normal;
@@ -176,13 +161,32 @@
   letter-spacing: size(1.4);
   text-align: left;
   color: #000;
-  margin-top: 0.5rem;
+  margin-top: size(25);
+  @include md {
+    margin-top: sizem(25);
+    font-size: sizem(24);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+  }
 }
-.slide-hr {
-  width: 10%;
-  margin-left: 0;
+
+.video-hr {
+  margin: size(10) 0 size(10);
+  width: size(35);
+  border-bottom: 1px solid #000;
+  @include md {
+    margin: sizem(10) auto;
+    width: sizem(70);
+  }
 }
-.slide-desc {
+
+.video-desc {
+  width: 60%;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -191,100 +195,51 @@
   letter-spacing: size(1.44);
   text-align: left;
   color: #000;
-  width: 80%;
-}
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
 
-.swipe-fade-enter-active {
-  transition: all 1s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 1s ease;
-}
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  > div {
-    width: 50%;
-  }
-
-  img {
+  @include md {
     width: 100%;
-    height: size(330);
-    object-fit: cover;
-  }
-
-  .slide-name {
-    right: 1.2em;
-    bottom: 0.6em;
-    color: #fff;
-    font-size: size(16);
-    font-weight: 300;
+    font-size: sizem(15);
+    font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.6;
-    letter-spacing: 0.03em;
+    line-height: 1.73;
+    letter-spacing: normal;
     text-align: left;
-    text-shadow: 0 0.3em 1em #000;
+    color: #000;
   }
+}
 
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
+.pages {
+  font-size: size(25);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  text-align: right;
+  color: #333;
 
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
+  // @include md {
+  //   display: none;
   // }
 }
 
-.pagination {
-  width: auto;
-  top: size(115);
-  left: auto;
-  right: size(0);
-  margin: 0 auto;
-  justify-content: center;
+.pages {
+  margin: size(40) auto;
 }
 
-.pagination-dot {
-  padding: 5px;
-  margin: 0 0px;
+.page-btn {
+  margin: 0 10px;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 0px;
-    box-shadow: 0 0 0 1px #c9a063;
+    width: 20px;
+    height: 20px;
+    // border-radius: 20px;
+    // box-shadow: 0 0 0 1px #000;
     position: relative;
-    background-color: transparent;
+    background-color: #000;
     transition: all 0.5s;
 
     &::before {
@@ -292,8 +247,8 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: transparent;
-      border-radius: 20px;
+      background: #000;
+      // border-radius: 20px;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -304,18 +259,16 @@
       transform: scale(0);
     }
     &.active {
-      box-shadow: none;
       &::before {
         content: '';
         width: 100%;
         height: 100%;
         display: block;
-        background: #c9a063;
-        border-radius: 0px;
+        background: #b18863;
+        // border-radius: 20px;
         opacity: 1;
         position: absolute;
         top: 0%;
-        box-shadow: 0 0 0 1px #c9a063;
         // transform: translateY(-50%);
         left: 0%;
         transform: scale(1);
@@ -324,230 +277,90 @@
   }
 }
 
-// .swipe-btns {
-// width: 100%;
-// height: 100%;
-// padding: 0 0;
-// z-index: 3;
-// overflow: hidden;
-// position: absolute;
-// top: 0;
-// left: 0;
-
-.prev-btn {
-  top: 0;
-  left: 0;
+.mask {
+  @include md {
+  }
+  @include img_c_pc(1920, 0);
+  top: auto;
+  bottom: size(-245);
+  z-index: 8;
 }
 
-.next-btn {
-  top: 0;
-  right: 0;
-}
-.prev-btn,
-.next-btn {
-  position: absolute;
-  z-index: 3;
-  height: 100%;
-  width: 2em;
-  font-size: size(20);
-  cursor: pointer;
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   top: 0;
-  //   left: 0;
-  //   transform: translateX(100%);
-  //   background-color: #0004;
-  //   transition: all 0.3s;
-  // }
-  &::after {
-    content: '';
-    width: 1em;
-    height: 1em;
-    position: absolute;
-    top: calc(50% - 0.5em);
-    left: calc(50% - 0.75em);
-    border: solid #fff;
-    border-width: 0.1em 0.1em 0 0;
-    transform: rotate(45deg) translate(-10%, 10%);
-  }
-  &:hover:before {
-    transform: translateX(0%);
-  }
-  &:hover:after {
-    animation: btn 0.5s ease-in-out infinite alternate;
-  }
-}
-.prev-btn {
-  transform: scaleX(-1);
-}
-// }
-@keyframes btn {
-  to {
-    transform: rotate(45deg) translate(10%, -10%);
-  }
+.arrow-left {
+  @include img_l_m(30, 195, 0);
+  background-color: #000;
 }
 
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.arrow-right {
+  @include img_r_m(30, 195, 0);
+  background-color: #000;
 }
 
-@media screen and (max-width: 767px) {
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
+.mask {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
     z-index: 1;
+    background: #000 no-repeat center;
+    background-size: size-m(50);
+    opacity: 0.5;
   }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
+  .video_box {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+    position: fixed;
+    height: calc(100% + 200px * 2);
+    top: -200px;
+    left: 0;
+    z-index: 5;
 
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
+    iframe {
+      position: absolute;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 0.8em;
-      right: 0.8em;
-      font-size: sizem(12);
+      left: 0;
     }
   }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
+  .video-bg {
+    width: 100%;
+    position: fixed;
+    height: size-m(212);
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
+    z-index: 5;
+    background-color: #000;
+    @include xl {
+      width: size(1240);
+      height: 60%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
   }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
+  .close {
+    position: fixed;
     cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
+    right: 15px;
+    top: calc(50% - 47vw);
+    width: size-m(30);
+    z-index: 100;
+    @include xl {
+      width: size(40);
+      top: 150px;
+      right: 10%;
     }
   }
 
-  .prev-btn,
-  .next-btn {
-    width: 2em;
-    font-size: sizem(15);
-    &::before {
-      background-color: #cc5b4e00;
-    }
-    &::after {
-      width: 1em;
-      height: 1em;
-      border-color: #fff;
-      border-width: 0.15em 0.15em 0 0;
-      animation: btn 0.5s ease-in-out infinite alternate;
-    }
+@media screen and (max-width: 767px) {
+  .isDialog {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 }
 </style>
@@ -555,13 +368,11 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
-import slider from '@/mixins/slider.js'
+import { medias } from '@/info/shin-lan'
+import _ from 'lodash'
 
 export default {
   name: 'section6',
-
-  mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
@@ -569,39 +380,124 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      pageIndex: 0,
+      count: 2,
+      media_list: [...medias],
+      // blockIndex: 0,
+      player: '',
       isDialog: false,
-      slideList: [
-        {
-          img: require('./s6/1情境示意圖.jpg'),
-          title1: '東園綻',
-          title2: '幸福好境',
-          desc1:
-            '民國107年由欣聯建設開發投資興建，近華江高中及西園國小，生活機能方便。',
-          desc2: '50米微距離<br />萬坪公園深呼吸',
-          img1: require('./shin-lan/video/東園綻.jpg'),
-          img2: require('./shin-lan/video/幸福好境.jpg'),
-          video1: '',
-          video2: '',
-        },
-      ],
+      media_index: 0,
     }
   },
+  computed: {
+    total() {
+      return this.media_list.length
+    },
+    totalPage() {
+      return (
+        Math.floor(this.total / this.count) +
+          (this.total % this.count > 0 ? 1 : 0) || 1
+      )
+    },
+    current_media_list() {
+      return this.media_list.slice(
+        this.pageIndex * this.count,
+        this.count * (this.pageIndex + 1),
+      )
+    },
+    pages() {
+      return _.range(1, this.totalPage + 1)
+    },
 
-  methods: {},
+    id() {
+      return this.media_list[this.media_index].id
+    },
+  },
 
-  created() {},
+  methods: {
+    init() {
+      this.pageIndex = 0
+      if (this.isPC) {
+        this.count = 2
+      } else {
+        this.count = 1
+      }
+    },
+    changePage(index) {
+      this.pageIndex = index
+    },
 
-  mounted() {},
+    nextPage() {
+      this.pageIndex =
+        this.pageIndex === this.total - 1 ? 0 : this.pageIndex + 1
+    },
 
-  computed: {},
+    prevPage() {
+      this.pageIndex =
+        this.pageIndex === 0 ? this.total - 1 : this.pageIndex - 1
+    },
 
-  watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
+    handlePlay(index) {
+      this.media_index = index
+      // if (this.isPC) {
+      //   this.player.loadVideoById(this.id)
+      // }
+    },
+
+    onPlayerReady(event) {
+      console.log('load')
+      event.target.playVideo()
+    },
+    loadVideo() {
+      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
+        videoId: this.id,
+        width: '100%',
+        height: '100%',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          controls: 0,
+          showinfo: 0,
+          autohide: 1,
+          modestbranding: 1,
+          mute: 0,
+          suggestedQuality: 'default',
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: this.onPlayerReady,
+          onStateChange: this.onPlayerStateChange,
+        },
+      })
+    },
+
+    onPlayerStateChange(e) {
+      if (e.data === window.YT.PlayerState.ENDED) {
+        this.player.loadVideoById(this.id)
+      }
+    },
+  },
+
+  mounted() {
+    this.init()
+    setTimeout(() => {
+      if (!this.isMobile) {
+        if (!window.YT) {
+          window.onYouTubeIframeAPIReady = this.loadVideo
+        } else {
+          this.loadVideo()
+        }
+      }
+    }, 2500)
+  },
+
+  watch: {},
+
+  created() {
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
   },
 }
 </script>

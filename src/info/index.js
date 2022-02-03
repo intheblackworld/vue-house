@@ -1,13 +1,16 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '接待會館｜台北市士林區中山北路五段512號1樓',
+  address: '台北市中山區長安東路2段88號6樓',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.2572972709113!2d121.5260833!3d25.0931502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aea4802a1839%3A0xe686305dd1e54a2d!2zMTEx5Y-w5YyX5biC5aOr5p6X5Y2A5Lit5bGx5YyX6Lev5LqU5q61NTEy6Jmf!5e0!3m2!1szh-TW!2stw!4v1621474761676!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/7LUNotAvbRr7vEPR6',
-  phone: '02-28830808',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.333423672077!2d121.5345917!3d25.0482098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2d7a815359c62452!2z5ZCI6IGv54ef6YCg6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1643792797513!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/nUqkb7Ect26yfqwb6',
+  phone: '02-25153700',
+  fax: '02-25153611',
+  email: 'service@shin-lan.com',
   fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
+  lineLink: '',
   fbMessage: 'https://m.me/108764311348067/',
-  caseName: '璞真之道',
+  caseName: 'shin-lan',
   indigatorLength: 10,
 
   houseInfos: [
@@ -21,13 +24,14 @@ export default {
     ['不動產經紀人', 'XXX'],
     ['企劃執行', 'XXX'],
   ],
-  
+
   gtmCode: ['TDJZ5DF'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: isMobile ? '中山北路 看見璞真' : '中山北路 看見璞真',
-    subTitle: 'Zhongshan Art Mansion'
+    title: '',
+    subTitle: '',
+    desc: '感謝您對「欣聯建設」的支持與肯定，如果您有任何相關問題、批評指教，跨界結盟提議等，都歡迎您與我們聯絡！<br />為方便您的使用，請填寫並送出下列表單，我們將盡快與您聯繫，謝謝。'
   }
 }

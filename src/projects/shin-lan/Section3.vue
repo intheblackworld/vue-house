@@ -2,34 +2,131 @@
   <div class="section3">
     <img src="./shin-lan/index/3/img.png" alt="" class="dec-img">
     <div class="container">
-      <div class="shin-lan-title-v title gold" data-aos="fade">
+      <div class="shin-lan-title-v shin-lan-title-h-m title gold" data-aos="fade">
         熱銷<span data-aos="flip-right"></span>個案
       </div>
       <div class="case-info">
         <div class="case-card">
-          <div class="flex-ac flex-jb">
-            <img :src="current_case.img1" alt="" class="case-img">
-            <img :src="current_case.img1" alt="" class="case-img">
-            <img :src="current_case.img1" alt="" class="case-img">
+          <div class="flex-ac flex-jb" v-if="isPC">
+            <img :src="current_case.imgs[1].img" alt="" class="case-img">
+            <img :src="current_case.imgs[2].img" alt="" class="case-img">
+            <img :src="current_case.imgs[3].img" alt="" class="case-img">
           </div>
-          <div class="flex-ac flex-jb">
+          <div class="flex-ac flex-jb case-head">
             <div class="case-title" v-html="current_case.title"></div>
             <div class="case-btns flex-ac flex-jb">
-              <div v-show="current_case.case_link" @click="$router.push(current_case.case_link)">個案介紹</div>
+              <div v-show="current_case.link" @click="$router.push(current_case.link)">個案介紹</div>
               <div v-show="current_case.media_link" @click="$router.push(current_case.media_link)">個案影片</div>
             </div>
           </div>
-          <div class="case-desc" v-html="current_case.desc"></div>
-          <div class="case-more flex-c" @click="$router.push(current_case.more_link)">更多精彩個案</div>
+          <div class="case-desc" v-html="current_case.desc_home" v-if="isPC"></div>
+          <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged" v-if="isMobile">
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index">
+              <img :src="slide.img" :class="`item-img`" />
+              <div class="card-content"></div>
+            </swiper-slide>
+            <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
+              <img src="../shin-lan/shin-lan/all/arrow-left.png" alt="" class="arrow-left">
+            </div>
+            <div class="swiper-button-next" slot="button-next" v-if="isMobile">
+              <img src="../shin-lan/shin-lan/all/arrow-right.png" alt="" class="arrow-next">
+            </div>
+          </swiper>
+          <div class="case-more flex-c" @click="$router.push('/hot_case')">更多精彩個案</div>
         </div>
-        <img :src="current_case.img" alt="" class="case-thumb">
+        <img :src="current_case.imgs[0].img" alt="" class="case-thumb" v-if="isPC">
       </div>
     </div>
   </div>
 </template>
+<style lang="scss">
+.swiper-container-vertical > .swiper-pagination-bullets {
+  display: flex;
+}
 
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  top: auto;
+  bottom: 15px;
+  left: -10px;
+  width: auto;
+}
+.swiper-container-vertical
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet,
+.swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  margin: 0 10px;
+  background: #333;
+  opacity: 1;
+  position: relative;
+  border-radius: 0;
+  z-index: 2;
+
+  &.swiper-pagination-bullet-active {
+    background: #b18863;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 100%;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+// begin
+.slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  // margin-top: 50px !important;
+  opacity: 0;
+}
+// end
+.slide-fade-enter {
+  margin-top: 10px !important;
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.swiper-container {
+  width: size(370);
+  margin-right: size(20);
+  margin-top: size(20);
+  @include md {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.item-img {
+  width: size(370);
+  height: size(370);
+  object-fit: cover;
+  // height: size(333);
+
+  @include md {
+    width: 100%;
+    height: sizem(286);
+  }
+}
+
+.card-content {
+  @include md {
+    height: sizem(30);
+  }
+}
+
 .section3 {
   width: 100%;
   height: size(630 + 144);
@@ -78,6 +175,12 @@
   position: absolute;
   right: 0;
   top: size(144);
+
+  @include md {
+    width: sizem(355);
+    left: sizem(15);
+    top: sizem(160);
+  }
 }
 
 .case-card {
@@ -85,8 +188,18 @@
   height: size(630);
   padding: 2rem 1.5rem 2rem 2.5rem;
   background-color: #fff;
-}
 
+  @include md {
+    width: 100%;
+    height: auto;
+    padding: sizem(24) 0;
+  }
+}
+.case-head {
+  @include md {
+    padding: 0 sizem(24);
+  }
+}
 .case-title {
   font-size: size(28);
   font-weight: 500;
@@ -97,6 +210,16 @@
   text-align: left;
   color: #000;
   margin: size(20) 0;
+  @include md {
+    font-size: sizem(24);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
 }
 
 .case-desc {
@@ -128,6 +251,12 @@
   position: relative;
   z-index: 3;
 
+  @include md {
+    width: sizem(160);
+    height: sizem(40);
+    margin: sizem(15) auto;
+  }
+
   &:hover {
     background-color: #000009;
     color: #fff;
@@ -136,6 +265,10 @@
 
 .case-btns {
   width: size(180);
+
+  @include md {
+    width: auto;
+  }
 
   > div {
     width: 48%;
@@ -149,7 +282,11 @@
     color: #000;
     cursor: pointer;
     border-bottom: solid 1.1px #4d4d4d;
-    transition: all .3s;
+    transition: all 0.3s;
+
+    @include md {
+      width: auto;
+    }
 
     &:hover {
       color: #b18863;
@@ -171,15 +308,15 @@
   @include img_l_pc(60, 514, 342);
 
   @include md {
-    @include img_c_m(167, 62);
-    font-size: sizem(20);
-    font-weight: 600;
+    @include img_l_m(167, 112, 22);
+    font-size: sizem(28);
+    font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.45;
-    letter-spacing: sizem(1);
-    text-align: center;
-    color: #3e3a39;
+    line-height: 1.07;
+    letter-spacing: sizem(1.68);
+    text-align: left;
+    color: #b18863;
   }
 }
 
@@ -206,16 +343,31 @@
 
 .dec-img {
   @include img_l_pc(520, 60, 0);
+  @include md {
+    @include img_r_m(176, 3, 0);
+    transform: rotateY(180deg);
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import { hot_case } from '@/info/shin-lan'
+import slider from '@/mixins/slider.js'
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 // import { get_category } from '@/http/api'
 
 export default {
   name: 'section3',
+  mixins: [slider],
+
+  components: {
+    swiper,
+    swiperSlide,
+  },
 
   data() {
     return {
@@ -225,27 +377,54 @@ export default {
       isTablet,
       // blockIndex: 0,
       current_case: {
-        img: require('@/assets/img/shin-lan/work/2欣聯詠心/0.jpg'),
-        img1: require('@/assets/img/shin-lan/work/2欣聯詠心/1.jpg'),
-        img2: require('@/assets/img/shin-lan/work/2欣聯詠心/2.jpg'),
-        img3: require('@/assets/img/shin-lan/work/2欣聯詠心/3.jpg'),
-        case_link: '', // 個案介紹連結
-        media_link: '', // 個案影片連結
-        desc: `
-        新北市｜三重區<br />
-        27-54坪  仁義核心 綠景帝王<br />
-        企劃銷售｜大心廣告有限公司<br />
-        坪數規劃｜23-33坪  6000坪綠景大棟距<br />三重都心最珍稀「欣聯詠心」<br />鄰近溪尾、碧華熱鬧商圈，隔壁走兩步就有全聯<br />
-        貴賓專線｜02-2980-0888<br />
-        接待會館｜新北市三重區元富二街&元信一街旁`,
-        more_link: '', // 更多精采個案連結
+        ...hot_case[0],
       },
+
+      swiperOption: {
+        // direction: isMobile ? 'horizontal' : 'vertical',
+        slidesPerView: isMobile ? 1 : 1,
+        spaceBetween: isTablet ? 20 : 0,
+        slidesPerColumn: isMobile ? 1 : 1,
+        // allowSlidePrev: isMobile ? true : true,
+        // allowSlideNext: isMobile ? true : true,
+        // centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        // effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      slideList: [],
+      // blockIndex: 0,
+      current_case: {},
     }
   },
 
-  methods: {},
+  methods: {
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      console.log(swiper.activeIndex, swiper.slides.length, 'eeee')
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else {
+        this.slideIndex =
+          ((swiper.activeIndex - 1) % this.current_case.imgs.length)
+      }
+    },
+  },
 
   mounted() {
+    this.current_case = hot_case[0]
+    this.slideList = this.current_case.imgs
     // get_category().then((res) => {
     //   console.log(res, 'get_category')
     //   if (res.data.categories) {

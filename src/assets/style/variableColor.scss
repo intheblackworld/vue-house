@@ -33,21 +33,21 @@ $mask_icon_color: #c82514;
 
 /* contactSection */
 // order
-$order_bg_color: #ccc;
+$order_bg_color: rgba(17, 17, 3, 0.11);
 $order_bg_image: url('~@/projects/pjr/s1/bg.jpg');
 $order_bg_image_m: url('~@/projects/pjr/s1/bgm.jpg');
 $order_title_color: #fff;
 $order_subtitle_color: #c9a063;
 $order_input_label_color: #231815;
 $order_input_color: #1a1a1a !important;
-$order_input_placeholder: #666 !important;
+$order_input_placeholder: #999999 !important;
 $order_input_bg: #fff !important;
-$order_input_border: solid 1px #fff;
+$order_input_border: solid 1px #c59c63;
 $order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
 $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
-$order_check_desc_color: #fff !important;
-$order_check_span_color: #fff !important;
-$order_submit_bg: #c9a063 !important;
+$order_check_desc_color: #000 !important;
+$order_check_span_color: #000 !important;
+$order_submit_bg: #c59c63 !important;
 $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: rgba(243, 149, 1, .4) !important;
 

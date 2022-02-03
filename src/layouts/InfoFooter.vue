@@ -24,8 +24,8 @@
             聯絡資訊
           </div>
           <div class="info-list">
-            TEL｜02-25153700<br />
-            FAX｜02-25153611
+            TEL｜{{info.phone}}<br />
+            FAX｜{{info.fax}}
           </div>
         </div>
         <div v-if="isPC">
@@ -33,11 +33,11 @@
             關於欣聯
           </div>
           <div class="info-list">
-            <div>關於我們</div>
-            <div>最新消息</div>
-            <div>影音專區</div>
-            <div>企業責任</div>
-            <div>都更專區</div>
+            <div @click="$router.push('/about_us')">關於我們</div>
+            <div @click="$router.push('/news')">最新消息</div>
+            <div @click="$router.push('/medias')">影音專區</div>
+            <div @click="$router.push('/company')">企業責任</div>
+            <div @click="$router.push('/renewal')">都更專區</div>
           </div>
         </div>
         <div v-if="isPC">
@@ -45,8 +45,8 @@
             建案資訊
           </div>
           <div class="info-list">
-            <div>熱銷個案</div>
-            <div>經典案例</div>
+            <div @click="$router.push('/hot_case')">熱銷個案</div>
+            <div @click="$router.push('/classic_case')">經典案例</div>
           </div>
         </div>
         <div v-if="isPC">
@@ -54,8 +54,8 @@
             客戶專區
           </div>
           <div class="info-list">
-            <div>會員專區</div>
-            <div>聯絡我們</div>
+            <div @click="$router.push('/member')">會員專區</div>
+            <div @click="$router.push('/contacts')">聯絡我們</div>
           </div>
         </div>
       </div>
@@ -68,6 +68,7 @@
 // import info from '@/info'
 import { isPC } from '@/utils'
 import Footer from '@/layouts/Footer.vue'
+import info from '@/info'
 export default {
   name: 'info_footer',
   components: {
@@ -76,6 +77,7 @@ export default {
   data() {
     return {
       isPC,
+      info,
       // houseInfos: info.houseInfos,
     }
   },
@@ -90,7 +92,7 @@ export default {
   height: size(352);
   position: relative;
   z-index: 1;
-  background-color: rgba(17, 17, 3, 0.11);
+  background-color: rgba(17, 17, 3, 0.22);
   @include md {
     height: sizem(374);
   }

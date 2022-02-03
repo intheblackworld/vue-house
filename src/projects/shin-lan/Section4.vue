@@ -12,10 +12,10 @@
           </div>
           <div class="case-desc" v-html="current_case.desc"></div>
           <div class="case-btns flex-ac flex-js">
-            <a :href="current_case.link1" target="_blank" v-html="current_case.link1_text"></a>
-            <a :href="current_case.link2" target="_blank" v-html="current_case.link2_text"></a>
+            <div @click="$router.push('/classic_case?type=1')">欣聯建設Shin-Lan</div>
+            <div @click="$router.push('/classic_case?type=2')">合聯營造Heran</div>
           </div>
-          <div class="case-more flex-c" @click="current_case.more_link">了解更多</div>
+          <div class="case-more flex-c" @click="$router.push('/classic_case')">了解更多</div>
         </div>
         <img :src="current_case.img" alt="" class="case-thumb">
       </div>
@@ -129,7 +129,7 @@
 .case-btns {
   width: 100%;
   margin-bottom: size(20);
-  > a {
+  > div {
     width: 40%;
     margin-right: 1.5rem;
     font-size: size(16);
@@ -190,6 +190,7 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import { case_list_1 } from '@/info/shin-lan'
 // import { get_category } from '@/http/api'
 
 export default {
@@ -203,15 +204,7 @@ export default {
       isTablet,
       // blockIndex: 0,
       current_case: {
-        img: require('@/assets/img/shin-lan/work/3東園綻/0.jpg'),
-        title: '東園綻',
-        link1_text: '欣聯建設Shin-Lan', // 連結1
-        link2_text: '合聯營造Heran', // 連結2
-        link1: '', // 連結1
-        link2: '', // 連結2
-        desc: `
-        「東園綻」於民國107年由欣聯建設開發投資興建，限量2房，近華江高中及西園國小，生活機能方便。`,
-        more_link: '', // 了解更多
+        ...case_list_1[0]
       },
     }
   },
