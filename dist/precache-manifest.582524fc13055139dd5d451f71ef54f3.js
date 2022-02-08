@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/js/abou_ust~classic_case~hot_case~news.0dd4727b.js"
   },
   {
-    "revision": "347f8e3ef71dffda1f78",
-    "url": "/css/abou_ust~contacts.02bab3f8.css"
+    "revision": "baa13b2f8bdd332e5ddc",
+    "url": "/css/abou_ust~contacts.9e33a922.css"
   },
   {
-    "revision": "347f8e3ef71dffda1f78",
-    "url": "/js/abou_ust~contacts.2c6e377f.js"
+    "revision": "baa13b2f8bdd332e5ddc",
+    "url": "/js/abou_ust~contacts.cf1b055e.js"
   },
   {
     "revision": "c0fddcde338fe69d0cfc",
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/js/about.95f11830.js"
   },
   {
-    "revision": "7ce7ef120bd41e96d4c5",
+    "revision": "ceed76f4b36aea6a80f3",
     "url": "/css/app.a847ff69.css"
   },
   {
-    "revision": "7ce7ef120bd41e96d4c5",
-    "url": "/js/app.2b3510f1.js"
+    "revision": "ceed76f4b36aea6a80f3",
+    "url": "/js/app.7f704670.js"
   },
   {
     "revision": "32f9fa3b15d5947fbf20",
@@ -520,7 +520,7 @@ self.__precacheManifest = [
     "url": "/img/img2.f80ca124.jpg"
   },
   {
-    "revision": "d264b528d2691a3ec5bee709d828bdf7",
+    "revision": "6da9a339a902bf19413d4fabfcb8fea1",
     "url": "/index.html"
   },
   {
