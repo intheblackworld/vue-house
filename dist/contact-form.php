@@ -2,6 +2,7 @@
 #下3段式抓 為案件編號 $case_code
 #$case_code_test 是用來判斷是否為1的測試頁
 #$case_code = "jw";特殊案使用
+ini_set('display_errors', 1);
 $src =$_SERVER['SERVER_NAME']; 
 $case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
 $case_code = substr($src,0,strpos($src,$case_code_test=='1'?'1':$case_code_test=='5'?'-':'.'));

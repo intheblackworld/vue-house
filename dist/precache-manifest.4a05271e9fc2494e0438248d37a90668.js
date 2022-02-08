@@ -524,11 +524,11 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "f531ba8af97d10a3aa0d7dfd238fd498",
-    "url": "/favicon.png"
-  },
-  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "f531ba8af97d10a3aa0d7dfd238fd498",
+    "url": "/favicon.png"
   }
 ];
