@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/9/S__14008337.jpg'),
+          title: '立瑾建築虎年開工大吉，一整年虎虎生威！',
+        },
+        {
           img: require('../news/s2/8/01.jpg'),
           title: '立瑾綻於鳳鳴預定地隆重開工 祈求一切平安、順遂',
         },

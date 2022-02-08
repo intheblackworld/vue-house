@@ -431,6 +431,28 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '立瑾建築虎年開工大吉，一整年虎虎生威！',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/9/178735.jpg'),
+            require('../news/s2/9/178736.jpg'),
+            require('../news/s2/9/178739.jpg'),
+            require('../news/s2/9/S__14008331.jpg'),
+            require('../news/s2/9/S__14008337.jpg'),
+          ],
+
+          desc: '虎年開工，立瑾建築機構林志郎總經理帶領同仁開工祈福，祈求虎年大發利市、順遂平安！也祝願立瑾建築的所有好友們，虎年虎虎生風、行大運！',
+          links: [
+        /*    {
+              title: '立瑾WAY官網',
+              id: '1',
+              url: 'https://way.h35.tw/',
+            },*/
+          ],
+        },
+        {
           title: '立瑾綻於鳳鳴預定地隆重開工 祈求一切平安、順遂',
           subtitle: '',
           date: '2021/3/4(四)',
