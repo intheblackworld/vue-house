@@ -284,15 +284,21 @@
 }
 
 .container4 {
-  width: 100%;
-  height: sizem(550);
+  @include md {
+    width: 100%;
+    height: sizem(550);
+  }
 
   .title2 {
-    @include img_r_m(126, 111, 81);
+    @include md {
+      @include img_r_m(126, 111, 81);
+    }
   }
 
   .desc2 {
-    @include img_c_m(310, 160);
+    @include md {
+      @include img_c_m(310, 160);
+    }
   }
 
   .bottom-img {
