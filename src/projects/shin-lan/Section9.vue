@@ -4,7 +4,10 @@
     <div class="container">
       <div class="case-info">
         <div class="case-card">
-          <div class="shin-lan-title-v title" data-aos="fade">
+          <div v-if="isPC" class="shin-lan-title-v title" data-aos="fade">
+            會員<span data-aos="flip-right"></span>專區
+          </div>
+          <div v-if="isMobile" class="shin-lan-title-h title" data-aos="fade">
             會員<span data-aos="flip-right"></span>專區
           </div>
           <div class="case-desc" v-html="current_case.desc"></div>
@@ -29,14 +32,15 @@
 
   @include md {
     width: 100vw;
-    height: 176vw;
+    height: sizem(650);
     min-height: auto;
     max-height: initial;
     overflow: visible;
+    margin-top: sizem(30);
   }
 }
 
-.shin-lan-title {
+/* .shin-lan-title {
   color: #000; // 顏色
   font-size: size(47); // size(47)
   font-weight: bold;
@@ -54,7 +58,7 @@
     margin: 0.2em 0 0.1em 0;
     transform-origin: 0 0;
   }
-}
+} */
 
 .case-info {
   width: size(1330);
@@ -62,6 +66,11 @@
   position: absolute;
   right: 0;
   top: size(270);
+  @include md {
+    width: sizem(355);
+    left: sizem(15);
+    top: sizem(80);
+  }
 }
 
 .case-card {
@@ -69,6 +78,11 @@
   height: size(630);
   padding: 3rem 0.2rem 2rem 4.8rem;
   background-color: #fff;
+  @include md {
+    width: 100%;
+    height: auto;
+    padding: sizem(20);
+  }
 }
 
 .case-desc {
@@ -81,7 +95,18 @@
   letter-spacing: size(1.44);
   text-align: left;
   color: #000;
-  margin-top:  size(100);
+  margin-top: size(100);
+  @include md {
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    height: auto;
+  }
 }
 
 .case-more {
@@ -97,9 +122,15 @@
   color: #000;
   cursor: pointer;
   border: solid 1px #707070;
-  transition: all .3s;
+  transition: all 0.3s;
   position: relative;
   z-index: 3;
+
+  @include md {
+    width: sizem(160);
+    height: sizem(40);
+    margin: sizem(15) auto;
+  }
 
   &:hover {
     background-color: #000009;
@@ -124,7 +155,7 @@
     cursor: pointer;
     border-bottom: solid 1.1px #4d4d4d;
     text-decoration: none;
-    transition: all .3s;
+    transition: all 0.3s;
     display: block;
     position: relative;
     z-index: 3;
@@ -143,6 +174,11 @@
   @include img_r_pc(723, 0, 0);
   height: 100%;
   object-fit: cover;
+
+  @include md {
+    @include img_l_m(311, 280, -15);
+    height: sizem(271);
+  }
 }
 
 .title {
@@ -150,14 +186,14 @@
   // @include img_l_pc(220, 514, 342);
 
   @include md {
-    @include img_c_m(167, 62);
-    font-size: sizem(20);
+    @include img_l_m(127, -50, 15);
+    font-size: sizem(28);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.45;
     letter-spacing: sizem(1);
-    text-align: center;
+    text-align: left;
     color: #3e3a39;
   }
 }
@@ -165,6 +201,11 @@
 .dec-img {
   @include img_l_pc(671, 219, 0);
   z-index: 2;
+
+  @include md {
+    @include img_r_m(141, 0, 0);
+    transform: rotateY(180deg);
+  }
 }
 </style>
 <script>

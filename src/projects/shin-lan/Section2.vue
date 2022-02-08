@@ -17,7 +17,7 @@
         了解更多
       </div>
       <div class="item-list flex">
-        <div class="item" v-for="(item, index) in item_list" :key="item.name + index" @click="$router.push(item.link)">
+        <div class="item" v-for="(item, index) in item_list" :key="item.desc + 'item'" @click="$router.push(item.link)">
           <img :src="item.img" alt="" class="item-img">
           <div class="item-desc" v-html="item.desc"></div>
         </div>

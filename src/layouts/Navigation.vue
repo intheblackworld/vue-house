@@ -17,7 +17,7 @@
             </div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li v-show="item.link" class="flex-ac" v-for="item in list" :key="item.name" @click="$router.push({path: item.link})">
+            <li v-show="item.link" class="flex-ac" v-for="item in list" :key="item.name" @click="enterPage(item)">
               <span class="link">
                 <span>
                   <div class="title">{{item.name}}</div>
@@ -30,10 +30,17 @@
             <a :href="info.lineLink" target="_blank" class="social-link">
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
-            <li class="flex-ac">
+            <li class="flex-ac" @click="$router.push('/login')" v-if="!$store.getters['user/isLogin']">
               <span class="link">
                 <span>
                   <div class="title">登入</div>
+                </span>
+              </span>
+            </li>
+            <li class="flex-ac" @click="$store.dispatch('user/logout')" v-else>
+              <span class="link">
+                <span>
+                  <div class="title">登出</div>
                 </span>
               </span>
             </li>
@@ -41,6 +48,9 @@
         </div>
       </div>
     </div>
+    <el-dialog title :visible.sync="isShowHintDialog" :width="isMobile ? '90%' : '90%'" :modal-append-to-body="false">
+      <LoginHint />
+    </el-dialog>
   </div>
 </template>
 
@@ -48,10 +58,13 @@
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
 import info from '@/info'
+import LoginHint from '@/components/LoginHint.vue'
 
 export default {
   name: 'navigation',
-  components: {},
+  components: {
+    LoginHint,
+  },
   data() {
     return {
       isOpen: false,
@@ -59,6 +72,7 @@ export default {
       isTablet,
       list: navList,
       info,
+      isShowHintDialog: false,
     }
   },
 
@@ -81,6 +95,14 @@ export default {
   methods: {
     toggleSidebar() {
       this.isOpen = !this.isOpen
+    },
+
+    enterPage(item) {
+      if (!this.$store.getters['user/isLogin'] && item.link == '/member') {
+        this.isShowHintDialog = true
+      } else {
+        this.$router.push({ path: item.link })
+      }
     },
   },
 }

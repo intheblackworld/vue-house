@@ -1,8 +1,12 @@
 <template>
   <div class="section5">
-    <img src="./shin-lan/index/5/img.jpg" alt="" class="thumb">
+    <img src="./shin-lan/index/5/img.jpg" alt="" class="thumb" v-if="isPC">
+    <img src="./shin-lan/mo/index/5/img.jpg" alt="" class="thumb" v-if="isMobile">
+    <div v-if="isMobile" class="shin-lan-title-h title" data-aos="fade">
+      最新<span data-aos="flip-right"></span>消息
+    </div>
     <div class="container">
-      <div class="shin-lan-title-v title" data-aos="fade">
+      <div v-if="isPC" class="shin-lan-title-v title" data-aos="fade">
         最新<span data-aos="flip-right"></span>消息
       </div>
       <div class="btn-more flex-c" @click="$router.push('/news')">
@@ -79,21 +83,28 @@
   width: size(1240);
   margin: size(76) auto size(76);
   position: relative;
+  @include md {
+    width: sizem(310);
+    margin: sizem(100) auto sizem(0);
+    padding-bottom: sizem(40);
+  }
 }
 
 .title {
   @include img_l_pc(67, 0, 0);
 
   @include md {
-    @include img_c_m(167, 62);
-    font-size: sizem(20);
+    @include img_l_m(310, 248, 32.5);
+    font-size: sizem(28);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.45;
     letter-spacing: sizem(1);
-    text-align: center;
-    color: #3e3a39;
+    text-align: left;
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
   }
 }
 
@@ -102,11 +113,22 @@
   position: absolute;
   top: 0;
   left: size(200);
+  @include md {
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
 }
 
-.item  {
+.item {
   margin-bottom: 1.5rem;
   cursor: pointer;
+  @include md {
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: sizem(70);
+    border-bottom: 1px solid #000;
+  }
 }
 
 .item-date {
@@ -119,6 +141,22 @@
   text-align: left;
   color: #000;
   margin-bottom: 0.3rem;
+  @include md {
+    @include img_l_m(77, 0, 0);
+    width: sizem(106);
+    height: sizem(20);
+    top: auto;
+    bottom: sizem(25);
+
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
 }
 .item-btn {
   width: size(106);
@@ -133,6 +171,22 @@
   text-align: center;
   color: #fff;
   margin-right: 1.5rem;
+  @include md {
+    width: sizem(106);
+    height: sizem(20);
+    @include img_r_m(105, 0, 0);
+    top: auto;
+    bottom: sizem(25);
+
+    font-size: sizem(13);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: sizem(2.6);
+    text-align: center;
+    color: #fff;
+  }
 }
 
 .item-title {
@@ -145,6 +199,16 @@
   text-align: left;
   color: #000;
   margin-bottom: 0.2rem;
+  @include md {
+    font-size: sizem(18);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
 }
 
 .item-desc {
@@ -157,6 +221,17 @@
   letter-spacing: size(1.44);
   text-align: left;
   color: #000;
+  @include md {
+    width: 100%;
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
 }
 
 .btn-more {
@@ -178,178 +253,20 @@
     background-color: #000009;
     color: #fff;
   }
-}
 
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
-
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
-
-@media screen and (max-width: 767px) {
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 0.8em;
-      right: 0.8em;
-      font-size: sizem(12);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    left: 0%;
-    .prev-btn,
-    .next-btn {
-      width: 2em;
-      font-size: sizem(15);
-      &::before {
-        background-color: #cc5b4e00;
-      }
-      &::after {
-        width: 1em;
-        height: 1em;
-        border-color: #fff;
-        border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
-    }
+  @include md {
+    @include img_c_m(160, 0);
+    height: sizem(40);
+    top: auto;
+    bottom: 0;
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(3);
+    text-align: center;
+    color: #000;
   }
 }
 </style>
@@ -364,7 +281,6 @@ export default {
   name: 'section5',
 
   // mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {
@@ -373,9 +289,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      item_list: [
-        ...news.slice(0, 3)
-      ],
+      item_list: [...news.slice(0, 3)],
     }
   },
 

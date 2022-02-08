@@ -111,14 +111,18 @@ export default {
     }
   },
   created() {
-    get_ip().then((res) => {
-      if (res.ip) {
-        this.$store.commit('user/setInfo', {
-          key: 'ip',
-          value: res.ip,
-        })
-      }
+    this.$store.commit('user/setInfo', {
+      key: 'ip',
+      value: '127.0.0.1',
     })
+    // get_ip().then((res) => {
+    //   if (res.ip) {
+    //     this.$store.commit('user/setInfo', {
+    //       key: 'ip',
+    //       value: res.ip,
+    //     })
+    //   }
+    // })
     // $(document).ready(() => {
     //   // Images loaded is zero because we're going to process a new set of images.
     //   var imagesLoaded = 0

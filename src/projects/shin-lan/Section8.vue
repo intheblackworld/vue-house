@@ -4,7 +4,7 @@
     <div class="shin-lan-title-h title gold" data-aos="fade">
       都更<span data-aos="flip-right"></span>專區
     </div>
-    <img src="./shin-lan/index/8/img2.jpg" alt="" class="item-img">
+    <img src="./shin-lan/index/8/img2.jpg" alt="" class="item-img" v-if="isPC">
     <div class="item-list">
       <div class="item flex-c flex-jb" v-for="(item, index) in item_list" :key="item.name + index" @click="$router.push(item.link)">
         <div>
@@ -16,6 +16,7 @@
         </div>
       </div>
     </div>
+    <img src="./shin-lan/index/8/img2.jpg" alt="" class="b-img" v-if="isMobile">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -35,58 +36,31 @@
     min-height: auto;
     max-height: initial;
     overflow: visible;
-    padding-bottom: sizem(65);
+    padding-bottom: sizem(0);
   }
 }
 
 .img {
   @include img_l_pc(446, 60, 0);
   object-fit: cover;
-}
-
-.shin-lan-title {
-  color: #000; // 顏色
-  font-size: size(47); // size(47)
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.06;
-  letter-spacing: 0.06em;
-  text-align: left;
-  span {
-    display: inline-block;
-    width: size(1);
-    height: 1em;
-    background: currentColor;
-    margin: -0.1em 0.15em 0.1em 0.1em;
-    transform-origin: 50% 50%;
-    vertical-align: middle;
+  @include md {
+    @include img_r_m(175, -40, 0);
+    transform: rotateY(180deg);
   }
-
-  &.gold {
-    color: #b18863;
-  }
-}
-
-.container {
-  width: size(1240);
-  margin: size(76) auto size(76);
-  position: relative;
 }
 
 .title {
   @include img_l_pc(267, 300, 335);
 
   @include md {
-    @include img_c_m(167, 62);
-    font-size: sizem(20);
+    @include img_l_m(167, 62, 32);
+    font-size: sizem(28);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.45;
     letter-spacing: sizem(1);
-    text-align: center;
-    color: #3e3a39;
+    text-align: left;
   }
 }
 
@@ -105,6 +79,13 @@
 
 .item-list {
   @include img_c_pc(1220, 370);
+  @include md {
+    position: relative;
+    width: sizem(310);
+    top: 0;
+    padding-top: sizem(142);
+    padding-bottom: sizem(40);
+  }
 }
 
 .item {
@@ -113,6 +94,10 @@
 
   > div {
     width: size(550);
+
+    @include md {
+      width: 100%;
+    }
   }
 }
 
@@ -120,17 +105,7 @@
   @include img_r_pc(960, 60, 0);
 }
 
-.item-date {
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.3rem;
-}
+
 
 .item-title {
   display: inline-block;
@@ -145,6 +120,19 @@
   color: #000;
   margin-bottom: 0.2rem;
   border-bottom: 1px solid #000;
+
+  @include md {
+    font-size: sizem(24);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.92;
+    letter-spacing: sizem(1.2);
+    text-align: left;
+    color: #000;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
 }
 
 .item-subtitle {
@@ -169,6 +157,18 @@
   text-align: left;
   color: #000;
   margin-bottom: 1rem;
+
+  @include md {
+    width: 100%;
+    font-size: sizem(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
 }
 
 .item-btn {
@@ -201,184 +201,33 @@
   cursor: pointer;
   transition: all 0.3s;
 
+  @include md {
+    @include img_c_m(160, 0);
+    height: sizem(40);
+    top: auto;
+    bottom: 0;
+    font-size: sizem(15);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: sizem(3);
+    text-align: center;
+    color: #000;
+  }
+
   &:hover {
     background-color: #000009;
     color: #fff;
   }
 }
 
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
+.b-img {
+  width: 100%;
+  margin-top: sizem(40);
 }
 
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
 
-@media screen and (max-width: 767px) {
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 0.8em;
-      right: 0.8em;
-      font-size: sizem(12);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    width: 100%;
-    left: 0%;
-    .prev-btn,
-    .next-btn {
-      width: 2em;
-      font-size: sizem(15);
-      &::before {
-        background-color: #cc5b4e00;
-      }
-      &::after {
-        width: 1em;
-        height: 1em;
-        border-color: #fff;
-        border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
-    }
-  }
-}
 </style>
 <script>
 // @ is an alias to /src
@@ -390,7 +239,6 @@ export default {
   name: 'section8',
 
   // mixins: [slider],
-  props: ['viewIndex'],
 
   data() {
     return {

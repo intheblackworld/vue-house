@@ -5,7 +5,7 @@ export const get_ip = () => get('https://api.ipify.org?format=json')
 export const get_article = ({ limit = 8, page = 1 }) => get('/article/index', { limit, page, })
 
 // /article/categories 所屬建案的工程進度列表
-export const get_article_categories = ({ limit = 8, page = 1, category_id = 0 }) => get('/article/categories', { limit, page, category_id })
+export const get_article_categories = ({ limit = 99, page = 1, category_id = 0 }) => get('/article/categories', { limit, page, category_id })
 
 // /article/detail 工程進度詳情
 export const get_article_detail = ({ id }) => get('/article/detail', { id })

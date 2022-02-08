@@ -4,23 +4,12 @@
       <Section1 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="section2" style="">
-      <div class="container">
-        <router-view></router-view>
-      </div>
+      <Section2 />
     </vue-lazy-component>
   </div>
 </template>
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
-.container {
-  width: size(1240);
-  margin: size(90) auto;
-
-  @include md {
-    width: 100%;
-    margin: sizem(30) auto;
-  }
-}
+@import '@/assets/style/variableColor.scss';
 // .bg {
 //   background-size: cover;
 //   background-position: center;
@@ -34,13 +23,14 @@
 </style>
 
 <script>
-import Section1 from '@/projects/shin-lan/member/Section1.vue'
+import Section1 from '@/projects/shin-lan/login/Section1.vue'
+import Section2 from '@/projects/shin-lan/login/Section2.vue'
 
 export default {
-  name: 'member',
+  name: 'login',
   components: {
     Section1,
-    // Section2,
+    Section2,
   },
 
   data() {
@@ -54,7 +44,7 @@ export default {
   },
 
   mounted() {
-    if (!this.$store.getters['user/isLogin']) {
+    if (this.$store.getters['user/isLogin']) {
       this.$router.push('/member')
     }
   },

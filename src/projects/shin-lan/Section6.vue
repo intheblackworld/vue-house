@@ -1,6 +1,6 @@
 <template>
   <div class="section6">
-    <div class="shin-lan-title-h title" data-aos="fade">
+    <div class="shin-lan-title-h shin-lan-title-h-m title" data-aos="fade">
       影音<span data-aos="flip-right"></span>專區
     </div>
     <div class="container container1">
@@ -24,6 +24,7 @@
         </div>
       </div>
     </div>
+    <div class="case-more flex-c" @click="$router.push('/medias')">更多影音</div>
     <!-- <div class="container container2" id="container2" v-if="isPC">
       <div class="video_box">
         <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
@@ -70,7 +71,7 @@
 
 .section6 {
   width: 100%;
-  height: size(750);
+  height: size(850);
   position: relative;
   margin: 0;
   background: url('./shin-lan/index/6/bg.png') center;
@@ -81,7 +82,7 @@
 
   // 手機版
   @include md {
-    // height: 100vh;
+    height: sizem(543);
     // height: size(604);
     // min-height: calc(604 * 100vw / 375);
     // max-height: calc(812 * 100vw / 375);
@@ -297,63 +298,95 @@
 }
 
 .mask {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #000 no-repeat center;
+  background-size: size-m(50);
+  opacity: 0.5;
+}
+.video_box {
+  width: 100%;
+  position: fixed;
+  height: calc(100% + 200px * 2);
+  top: -200px;
+  left: 0;
+  z-index: 5;
+
+  iframe {
+    position: absolute;
     width: 100%;
-    position: fixed;
     height: 100%;
-    top: 0;
     left: 0;
-    z-index: 1;
-    background: #000 no-repeat center;
-    background-size: size-m(50);
-    opacity: 0.5;
   }
-  .video_box {
-    width: 100%;
-    position: fixed;
-    height: calc(100% + 200px * 2);
-    top: -200px;
+}
+.video-bg {
+  width: 100%;
+  position: fixed;
+  height: size-m(212);
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 5;
+  background-color: #000;
+  @include xl {
+    width: size(1240);
+    height: 60%;
+    margin: 0 auto;
     left: 0;
-    z-index: 5;
+    right: 0;
+  }
+}
+.close {
+  position: fixed;
+  cursor: pointer;
+  right: 15px;
+  top: calc(50% - 47vw);
+  width: size-m(30);
+  z-index: 100;
+  @include xl {
+    width: size(40);
+    top: 150px;
+    right: 10%;
+  }
+}
 
-    iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-    }
-  }
-  .video-bg {
-    width: 100%;
-    position: fixed;
-    height: size-m(212);
-    overflow: hidden;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: 5;
-    background-color: #000;
-    @include xl {
-      width: size(1240);
-      height: 60%;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-    }
-  }
-  .close {
-    position: fixed;
-    cursor: pointer;
-    right: 15px;
-    top: calc(50% - 47vw);
-    width: size-m(30);
-    z-index: 100;
-    @include xl {
-      width: size(40);
-      top: 150px;
-      right: 10%;
-    }
+.case-more {
+  width: size(160);
+  height: size(41);
+  font-size: size(15);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: size(3);
+  text-align: left;
+  color: #000;
+  cursor: pointer;
+  border: solid 1px #707070;
+  transition: all 0.3s;
+  position: absolute;
+  bottom: size(30);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+
+  @include md {
+    width: sizem(160);
+    height: sizem(40);
+    margin: sizem(15) auto;
   }
 
+  &:hover {
+    background-color: #000009;
+    color: #fff;
+  }
+}
 @media screen and (max-width: 767px) {
   .isDialog {
     width: 100%;

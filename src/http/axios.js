@@ -19,7 +19,7 @@ axios.defaults.timeout = 100000
 
 // post请求头
 axios.defaults.headers.post['Content-Type'] =
-  'application/json'
+  'application/x-www-form-urlencoded'
 
 // 请求拦截器
 axios.interceptors.request.use(
@@ -29,7 +29,8 @@ axios.interceptors.request.use(
     // tslint:disable-next-line: no-unused-expression
     // const token = store.state.layouts.token
     const token = store.state.user.token || ''
-    const ip = store.state.user.ip || '123'
+    // const ip = store.state.user.ip || '123'
+    const ip = '123'
     // secret_word && (config.params.secret_word = store.state.user.secret_word)
     token && (config.headers.token = `${token}`)
     ip && (config.headers['hbr-client-ip'] = `${ip}`)
@@ -135,9 +136,13 @@ export function get(url, params) {
 export function post(url, params) {
   store.commit('setLoading', true)
   // app.$Progress.start()
+  const urlParams = new URLSearchParams()
+  Object.keys(params).forEach(key => {
+    urlParams.append(key, params[key])
+  })
   return new Promise((resolve, reject) => {
     axios
-      .post(url, params)
+      .post(url, urlParams)
       .then((res) => {
         store.commit('setLoading', false)
         // app.$Progress.finish()

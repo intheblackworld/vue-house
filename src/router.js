@@ -8,7 +8,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
   routes: [
@@ -102,7 +102,39 @@ export default new Router({
           path: 'member',
           name: 'member',
           component: () =>
-            import(/* webpackChunkName: "member" */ './pages/member.vue')
+            import(/* webpackChunkName: "member" */ './pages/member.vue'),
+          children: [
+            {
+              path: '/',
+              name: 'member', // 會員專區首頁，個案列表
+              component: () =>
+                import(/* webpackChunkName: "abou_ust" */ './pages/member_case.vue')
+            },
+            {
+              path: '/case/:id',
+              name: 'member_case_detail', // 會員專區首頁，個案詳細
+              component: () =>
+                import(/* webpackChunkName: "abou_ust" */ './pages/case_detail.vue')
+            },
+            {
+              path: '/case/:id/process/:process_id',
+              name: 'member_case_process', // 會員專區首頁，個案 進度工程
+              component: () =>
+                import(/* webpackChunkName: "abou_ust" */ './pages/case_process.vue')
+            },
+            {
+              path: '/case/files/:id',
+              name: 'member_case_files', // 會員專區首頁，檔案下載
+              component: () =>
+                import(/* webpackChunkName: "abou_ust" */ './pages/case_files.vue')
+            },
+          ]
+        },
+        {
+          path: 'login',
+          name: 'login',
+          component: () =>
+            import(/* webpackChunkName: "login" */ './pages/login.vue')
         },
 
         // 聯絡我們

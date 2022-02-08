@@ -29,8 +29,8 @@ export default {
     logout(context, isLogout = true, params) {
       // 清空資料狀態
       // const { user } = store.state
-      context.commit('setInfo', { key: 'isLogin', value: isLogout })
-      context.commit('clearInfo', ['refresh_token', 'token', 'name', 'email'])
+      context.commit('setInfo', { key: 'token', value: '' })
+      // context.commit('clearInfo', ['refresh_token', 'token', 'name', 'email'])
       router.replace({ name: 'home', params })
     }
   },
