@@ -38,13 +38,13 @@
               </div>
             </el-checkbox>
           </div>
-          <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <!-- <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
             <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
           </div>
           <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
             <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
-          </div>
-          <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
+          </div> -->
+          <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
         <div class="group">
           <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="535" frameborder="0" style="border: 0" allowfullscreen data-aos="fade-down" data-aos-delay="300" />
@@ -105,7 +105,7 @@ export default {
       },
       checked: false,
       isSubmit: false,
-      isVerify: false, // google 機器人驗證
+      // isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
     }
@@ -136,7 +136,7 @@ export default {
 
     submit() {
       if (this.isSubmit) return
-      if (!this.isVerify) return
+      // if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
       if (
