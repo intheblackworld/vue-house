@@ -30,7 +30,7 @@ axios.interceptors.request.use(
     // const token = store.state.layouts.token
     const token = store.state.user.token || ''
     // const ip = store.state.user.ip || '123'
-    const ip = '123'
+    const ip = '127.0.0.1'
     // secret_word && (config.params.secret_word = store.state.user.secret_word)
     token && (config.headers.token = `${token}`)
     ip && (config.headers['hbr-client-ip'] = `${ip}`)
