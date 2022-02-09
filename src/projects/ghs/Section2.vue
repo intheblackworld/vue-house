@@ -334,6 +334,7 @@ margin:1.5em auto 3em;
 </style>
 <script>
 // @ is an alias to /src
+import info from "@/info";
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
@@ -345,6 +346,7 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
