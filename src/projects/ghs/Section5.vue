@@ -1,25 +1,29 @@
 <template>
   <div>
     <div class="section5">
-      <img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+      <img loading="lazy" src="./all/light.png"
+          :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
       <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile" >姮興實績，有目共睹</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img"
+          :alt="`${info.caseName}img`">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png"
+          :alt="`${info.caseName}prev-btn`" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png"
+          :alt="`${info.caseName}next-btn`" class="next-btn" @click="addIndex">
           </div>  
         </div>
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200"  v-if="isPC" >姮興實績，有目共睹</div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" ><img src="./s5/logo.png" alt="光禾墅"><br>百戶透天建設，真正深耕在地</div>
+      <div class="subtitle" data-aos="fade-down" data-aos-delay="300" ><img loading="lazy" src="./s5/logo.png" alt="光禾墅"><br>百戶透天建設，真正深耕在地</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
 ＜德安恆星1～6＞ 數百戶幸福家庭的暖心口碑，感謝知音相知相惜！姮興開發將持續打造您心中的夢想宅邸，敬邀收藏。

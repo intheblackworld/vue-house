@@ -1,14 +1,16 @@
 <template>
   <div>
     <div class="section4">
-      <div class="flip"  v-if="!isMobile"><img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light"></div>
-      <img src="./all/light.png" v-if="isMobile" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+      <div class="flip"  v-if="!isMobile"><img loading="lazy" src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light"></div>
+      <img loading="lazy" src="./all/light.png" v-if="isMobile" 
+          :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
       <div class="title" data-aos="fade-down" data-aos-delay="200" >熱浪不怕，隔熱又省電</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" 
+          :alt="`${info.caseName}img`">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -16,8 +18,10 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png"
+          :alt="`${info.caseName}prev-btn`" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png"
+          :alt="`${info.caseName}next-btn`" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>

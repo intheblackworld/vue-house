@@ -2,17 +2,22 @@
   <div class="section1">
     <div>
  	<!-- <img src="./s1/1.jpg" alt="" class="t0"> -->
-      <img src="./s1/bg.jpg" alt="" class="bg" v-if="isPC">
-      <img src="./s1/bg-m.jpg" alt="" class="bg" v-if="isMobile">
+      <img loading="lazy" src="./s1/bg.jpg" 
+          :alt="`${info.caseName}bg`" class="bg" v-if="isPC">
+      <img loading="lazy" src="./s1/bg-m.jpg" 
+          :alt="`${info.caseName}bg`" class="bg" v-if="isMobile">
 
    	<!--   <img src="./s1/bg.jpg" alt="" class="bg">
 	<img src="./s1/pc.jpg" alt="" class="t0">
 		<img src="./s1/imgbg.png" alt="" data-aos="fade" data-aos-duration="2000" data-aos-delay="0" class="imgbg">
 		<img src="./s1/img.png" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="700" class="img">  -->
 <div class="txt">
-		<img src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
-		<img src="./s1/logo.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
-		<img src="./s1/t.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="300" class="t">
+		<img loading="lazy" src="./all/light.png" 
+          :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
+		<img loading="lazy" src="./s1/logo.png" 
+          :alt="`${info.caseName}logo`" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
+		<img loading="lazy" src="./s1/t.png" 
+          :alt="`${info.caseName}t`" data-aos="fade" data-aos-duration="1500" data-aos-delay="300" class="t">
     </div>
     </div>
   </div>
@@ -109,6 +114,7 @@
 </style>
 <script>
 // @ is an alias to /src
+import info from "@/info";
 import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
@@ -116,6 +122,7 @@ export default {
 
   data() {
     return {
+      info,
       isPC,
       isMobile,
       isTablet,
