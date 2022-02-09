@@ -20,6 +20,8 @@ axios.defaults.timeout = 100000
 // post请求头
 axios.defaults.headers.post['Content-Type'] =
   'application/x-www-form-urlencoded'
+axios.defaults.headers.get['Content-Type'] =
+  'application/x-www-form-urlencoded'
 
 // 请求拦截器
 axios.interceptors.request.use(
