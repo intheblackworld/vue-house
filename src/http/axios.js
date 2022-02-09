@@ -30,11 +30,11 @@ axios.interceptors.request.use(
     // 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断
     // tslint:disable-next-line: no-unused-expression
     // const token = store.state.layouts.token
-    // const token = store.state.user.token || ''
+    const token = store.state.user.token || ''
     // const ip = store.state.user.ip || '123'
     const ip = '127.0.0.1'
     // secret_word && (config.params.secret_word = store.state.user.secret_word)
-    // token && (config.headers.token = `${token}`)
+    token && (config.headers.token = `${token}`)
     ip && (config.headers['hbr-client-ip'] = `${ip}`)
     return config
   },
