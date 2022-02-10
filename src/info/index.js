@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '桃園市中壢區民族路6段360號對面',
+  address: '桃園市新屋區民族路六段341號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.1168196807002!2d121.1563332150049!3d24.962139784006087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468253da5118539%3A0x1fb24f4c54e19faa!2z5a6c6Kqg5qiC6IGa!5e0!3m2!1szh-TW!2stw!4v1642122962353!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/gspbxmVVQ6E81xKp8',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.1168196807002!2d121.1563332150049!3d24.962139784006087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468253da5118539%3A0x1fb24f4c54e19faa!2z5a6c6Kqg5qiC6IGa!5e0!3m2!1szh-TW!2stw!4v1644475897821!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/w5r8TteuQCeRvJ9W6',
   phone: '03-490-9129',
   fbLink: 'https://www.facebook.com/108931748200345/',
   fbMessage: 'https://m.me/108931748200345',
@@ -17,7 +17,7 @@ export default {
     ['基地面績', '約1945坪'],
     ['棟戶規劃', '三幢，232戶'],
     ['基地地址', '桃園市新屋區民族路六段&高洲五街'],
-    ['接待中心', '桃園市中壢區民族路6段360號對面'],
+    ['接待中心', '桃園市新屋區民族路六段341號'],
   ],
   gtmCode: ['KLXJ64S'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
