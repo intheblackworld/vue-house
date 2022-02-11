@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
     <!--  
-    <img src="./s1/0m.jpg" :alt="`${info.caseName}_bg`" class="t0">
+    <img loading="lazy" src="./s1/0m.jpg" :alt="`${info.caseName}_bg`" class="t0">
   -->
     <div class="box">
       <div class="box1"></div>
@@ -10,30 +10,30 @@
       <div class="box4"></div>
       <div class="box5"></div>
     </div>
-    <img src="./s1/img.png" data-aos="fade" data-aos-delay="100" :alt="`${info.caseName}_img`" class="img">
+    <img loading="lazy" src="./s1/img.png" data-aos="fade" data-aos-delay="100" :alt="`${info.caseName}_img`" class="img">
     
     <div class="txt">
-      <img src="./s1/logo.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="logo" data-aos="fade" data-aos-delay="300">
+      <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="logo" data-aos="fade" data-aos-delay="300">
       <div class="t2" data-aos="fade" data-aos-delay="400">北歐莊園城堡</div>
       <div class="t3" data-aos="fade" data-aos-delay="500">中壢COSTCO SRC安心地標</div>
     </div>
-    <!--   <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
+    <!--   <img loading="lazy" src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/7.png" :alt="`${info.caseName}_bg`" class="c7">
-      <img src="./all/6.png" :alt="`${info.caseName}_bg`" class="c6" v-if="!isMobile">
-      <img src="./all/5.png" :alt="`${info.caseName}_bg`" class="c5">
-      <img src="./all/4.png" :alt="`${info.caseName}_bg`" class="c4">
-      <img src="./all/8.png" :alt="`${info.caseName}_bg`" class="c3" v-if="isMobile">
-      <img src="./all/3.png" :alt="`${info.caseName}_bg`" class="c3" v-if="!isMobile">
-      <img src="./all/2.png" :alt="`${info.caseName}_bg`" class="c2">
-      <img src="./all/1.png" :alt="`${info.caseName}_bg`" class="c1">
+      <img loading="lazy" src="./all/7.png" :alt="`${info.caseName}_bg`" class="c7">
+      <img loading="lazy" src="./all/6.png" :alt="`${info.caseName}_bg`" class="c6" v-if="!isMobile">
+      <img loading="lazy" src="./all/5.png" :alt="`${info.caseName}_bg`" class="c5">
+      <img loading="lazy" src="./all/4.png" :alt="`${info.caseName}_bg`" class="c4">
+      <img loading="lazy" src="./all/8.png" :alt="`${info.caseName}_bg`" class="c3" v-if="isMobile">
+      <img loading="lazy" src="./all/3.png" :alt="`${info.caseName}_bg`" class="c3" v-if="!isMobile">
+      <img loading="lazy" src="./all/2.png" :alt="`${info.caseName}_bg`" class="c2">
+      <img loading="lazy" src="./all/1.png" :alt="`${info.caseName}_bg`" class="c1">
     </div>
     <div class="logo">
-      <img src="./s1/logo1.png" data-aos="fade-down" data-aos-delay="0" :alt="`${info.caseName}_logo`" class="logo1">
-      <img src="./s1/logo2.png" data-aos="fade-down" data-aos-delay="100" :alt="`${info.caseName}_logo`" class="logo2">
+      <img loading="lazy" src="./s1/logo1.png" data-aos="fade-down" data-aos-delay="0" :alt="`${info.caseName}_logo`" class="logo1">
+      <img loading="lazy" src="./s1/logo2.png" data-aos="fade-down" data-aos-delay="100" :alt="`${info.caseName}_logo`" class="logo2">
     </div>
     <div class="txt">
-      <img src="./s1/t.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="t1" data-aos="fade-down" data-aos-delay="300">
+      <img loading="lazy" src="./s1/t.png" :alt="`${info.caseName}_時光淬鍊．豐釀生活`" class="t1" data-aos="fade-down" data-aos-delay="300">
       <div class="t2" v-if="!isMobile" data-aos="fade-down" data-aos-delay="400">日式前院美墅<b></b>高規精品建材<b></b>國際雙語學區</div>
       <div class="t2" v-if="isMobile" data-aos="fade-down" data-aos-delay="400"><b></b>日式前院美墅<b></b>03-3855000<b></b></div>
       <div class="t3" v-if="!isMobile" data-aos="fade-down" data-aos-delay="500"><span class="button" v-scroll-to="{ element: `#contact`, offset: 0 }">立即預約</span>03-3855000</div>

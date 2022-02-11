@@ -8,13 +8,13 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
           </div>
         </div>
       </div>
@@ -40,14 +40,14 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
 
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
           </div>
         </div>
       </div>
