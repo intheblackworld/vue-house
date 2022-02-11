@@ -29,6 +29,6 @@ export default {
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
     title: isMobile ? '立即預約直賞' : '立即預約直賞',
-    subTitle: ''
+    subTitle: '目前僅提供預約賞屋，請先聯繫專人服務'
   }
 }

@@ -385,7 +385,7 @@ export default {
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 0px;
-    padding-bottom: 8px;
+    padding-bottom: 20px;
   }
 
   .order {
@@ -514,7 +514,7 @@ export default {
 
     .order-subtitle {
       // display: none;
-      font-size: 21px;
+      font-size: 15px;
     }
     .order {
       width: 84%;
