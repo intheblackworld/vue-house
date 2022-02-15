@@ -6,6 +6,7 @@
       <img src="./s1/bg4s.png" alimg="" class="bg-img">
       <img src="./s1/logo.png" alt="" class="logo absolute">
       <img src="./s1/t.png" alt="" class="t absolute">
+      <div class="t-red absolute">目前僅提供預約賞屋，請先聯繫專人服務</div>
       <div class="btn absolute" v-scroll-to="{ element: `#contact` }">立即預約</div>
     </div>
     <div v-else>
@@ -19,6 +20,7 @@
       <div class="fade-in">
         <img src="./s1/logo_m.png" alt="" class="logo absolute">
         <img src="./s1/t.png" alt="" class="t absolute">
+      <div class="t-red absolute">目前僅提供預約賞屋，請先聯繫專人服務</div>
       </div>
     </div>
   </div>
@@ -66,22 +68,32 @@ canvas {
 
 .logo {
   width: size(404);
-  top: calc(50% - 8vw);
+  top: calc(50% - 10vw);
   right: size(442);
 }
 
 .t {
   width: size(404);
-  top: calc(50% + 3.5vw);
+  top: calc(50% + 1.5vw);
   right: size(442);
+}
+.t-red {
+  width: size(445);
+  top: calc(50% + 17vw);
+  right: size(422);
+  font-size: size(14);
+  color: #444;
+  text-align: center;
+  letter-spacing:0.07em;
+  //font-weight: 700;
 }
 
 .btn {
-  width: size(165);
-  top: calc(50% + 15vw);
-  right: size(562);
-  font-size: size(18);
-  letter-spacing: size(2);
+  width: size(325);
+  top: calc(50% + 14.1vw);
+  right: size(482);
+  font-size: size(24);
+  letter-spacing:0.2em;
   white-space: nowrap;
   cursor: pointer;
   color: #9e0d1b;
@@ -89,6 +101,7 @@ canvas {
   padding: size(10) 0;
   z-index: 10;
   transition: all .3s;
+  font-weight: 600;
 
   &:hover {
     background: #9e0d1b;
@@ -163,15 +176,22 @@ canvas {
 
   .logo {
     width: sizem(172);
-    top:calc(50% - 43vw);
+    top:calc(50% - 48vw);
     right: sizem(101);
   }
 
   .t {
     width: sizem(300);
-    top: calc(50% + 35vw);
+    top: calc(50% + 30vw);
     right: sizem(37);
   }
+.t-red {
+    width: sizem(375);
+    top: auto;
+    bottom:sizem(20);
+  right: 0;
+  font-size: sizem(14);
+}
 }
 </style>
 <script>

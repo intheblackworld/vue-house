@@ -17,6 +17,8 @@
       <div
         class="order-subtitle"
         v-html="order.subTitle"
+        data-aos="fade-down"
+        data-aos-delay="100"
       ></div>
       <div class="order">
         <div class="form">
@@ -24,7 +26,7 @@
             <div
               class="row"
               data-aos="fade-down"
-              data-aos-delay="100"
+              data-aos-delay="300"
             >
               <label for="form-name">姓名</label>
               <el-input id="form-name"
@@ -35,7 +37,7 @@
             <div
               class="row"
               data-aos="fade-down"
-              data-aos-delay="200"
+              data-aos-delay="300"
             >
               <label for="form-phone">手機</label>
               <el-input id="form-phone"
@@ -110,7 +112,7 @@
             <div
               class="row"
               data-aos="fade-down"
-              data-aos-delay="400"
+              data-aos-delay="300"
             >
               <label for="form-area">居住地區</label>
               <el-select id="form-area"
@@ -130,7 +132,7 @@
           <div
             class="group"
             data-aos="fade-down"
-            data-aos-delay="600"
+            data-aos-delay="300"
           >
             <div class="row">
               <el-input
@@ -183,6 +185,8 @@
           :disabled="!checked || !isVerify"
           @click="submit"
           :loading="isSubmit"
+          data-aos="fade-down"
+          data-aos-delay="700"
         >立即預約</el-button>
         <Loading
           :loading="isSubmit"
@@ -374,6 +378,7 @@ export default {
     font-weight: 700;
     line-height: 1.7;
     letter-spacing: 20px;
+    padding-left: 20px;
     font-size: calc(100vw * 36 / 1920);
     text-align: center;
     color: $order_title_color;
@@ -381,7 +386,7 @@ export default {
 
   .order-subtitle {
     width: 100vw;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 0px;

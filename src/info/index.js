@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台北市中山區民生東路一段31號',
+  address: '台北市中山區新生北路二段76巷10號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1807.144524956971!2d121.523773!3d25.0581904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a942c98ae91f%3A0xd85e809b42298290!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmsJHnlJ_mnbHot6_kuIDmrrUzMeiZnw!5e0!3m2!1szh-TW!2stw!4v1602555349295!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/kcDeza3vcYhne5SA6',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.309046954436!2d121.52519106903382!3d25.057512371674253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95d6a059ed5%3A0xbb5a898e1e245fdf!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmlrDnlJ_ljJfot6_kuozmrrU3NuW3tzEw6Jmf!5e0!3m2!1szh-TW!2stw!4v1644826953519!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/fnmvdCnLXQCgfKGJA',
   phone: '02-2541-0606',
   fbLink: 'https://www.facebook.com/中山直美-115702496966413',
   fbMessage: 'https://m.me/115702496966413',
