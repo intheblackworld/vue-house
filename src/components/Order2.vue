@@ -221,7 +221,7 @@ export default {
   }
 }
 .order-bg {
-  background-color: $order_bg_color;
+  //background-color: $order_bg_color;
   width: 100vw;
   height: auto;
   // background-image: $order_bg_image;
@@ -257,18 +257,19 @@ export default {
   }
 
   .order-desc {
-    width: 40%;
+    width: 50%;
     font-size: size(18);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.67;
     letter-spacing: size(1.44);
-    text-align: left;
+    text-align: justify;
     color: #000;
-    margin-bottom: size(15);
+    margin-bottom:2em;
     @include md {
       width: 100%;
+    font-size: sizem(15);
       margin-bottom: sizem(25);
     }
   }
@@ -287,7 +288,7 @@ export default {
 
   .order {
     width: size(1440);
-    margin: 3vw auto;
+    margin: 6vw auto 3vw auto;
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
@@ -382,7 +383,7 @@ export default {
   }
 
   .control-desc {
-    font-size: size(20);
+    font-size: size(18);
     font-weight: 400;
     font-stretch: normal;
     font-style: normal;
@@ -392,8 +393,7 @@ export default {
     color: #000;
 
     p {
-      line-height: 1.5;
-      margin-bottom: 12px;
+      margin-bottom: 0.8em;
     }
   }
 

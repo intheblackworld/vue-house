@@ -2,8 +2,10 @@
   <div class="section1">
     <img src="../shin-lan/1-20補/csr/topbg.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="../shin-lan/mo/csr/topbg.jpg" alt="" class="bg-img" v-else>
+    <div class="box">
     <div class="shin-lan-title-v shin-lan-title-v-m title" data-aos="fade">
       企業<span data-aos="flip-right"></span>責任
+    </div>
     </div>
   </div>
 </template>
@@ -16,7 +18,7 @@
   // min-height: calc(900 * 100vw / 1920);
   // max-height: calc(1080 * 100vw / 1920);
   position: relative;
-  margin: 0;
+  margin:56px 0 0 0;
   // background: url('s1/bg.jpg') center;
   background-size: cover;
   overflow: hidden;
@@ -24,10 +26,21 @@
 
   // 手機版
   @include md {
-    // height: 100vh;
-    height: size(604);
-    min-height: calc(604 * 100vw / 375);
-    max-height: calc(812 * 100vw / 375);
+   margin:60px 0 0 0;
+   height: sizem(607);
+  }
+  .box{
+    width: 100%;
+    height: 100vh;
+    min-height: calc(900 * 100vw / 1920);
+    max-height: calc(1080 * 100vw / 1920);
+    position: relative;
+  
+    @include md {
+      height: 100%;
+      min-height:0;
+      max-height: initial;
+    }
   }
 }
 
@@ -35,7 +48,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: size(60);
+  top:0;
   left: 0;
 
   @include md {
@@ -49,18 +62,18 @@
 
 .title {
   @include img_l_pc(60, 362, 341);
+  top: calc(50% + (362 - 1080 * .5) * 100vw / 1920);
   color: #000;
 
   @include md {
-    @include img_l_m(40, 177, 56);
+    @include img_l_m(40, 150, 56);
     font-size: sizem(28);
-    font-weight: bold;
+    font-weight: 700;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.07;
     letter-spacing: sizem(1.68);
     text-align: left;
-    color: #000;
   }
 }
 

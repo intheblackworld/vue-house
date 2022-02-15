@@ -2,9 +2,11 @@
   <div class="section1">
     <img src="../shin-lan/hot/topbg.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="../shin-lan/mo/hot/topbg.jpg" alt="" class="bg-img" v-else>
+    <div class="box">
     <img src="../shin-lan/all/logo.png" alt="" class="logo">
     <div class="shin-lan-title-h shin-lan-title-h-m title gold" data-aos="fade">
       熱銷<span data-aos="flip-right"></span>個案
+    </div>
     </div>
   </div>
 </template>
@@ -14,6 +16,7 @@
 .section1 {
   width: 100%;
   height: size(1085);
+  margin:56px 0 0 0;
   // min-height: calc(900 * 100vw / 1920);
   // max-height: calc(1080 * 100vw / 1920);
   position: relative;
@@ -26,9 +29,19 @@
   // 手機版
   @include md {
     // height: 100vh;
-    height: size(604);
-    min-height: calc(604 * 100vw / 375);
-    max-height: calc(812 * 100vw / 375);
+   margin:60px 0 0 0;
+   height: sizem(607);
+  }
+  .box{
+  width: 100%;
+  height: 100vh;
+  min-height: calc(900 * 100vw / 1920);
+  max-height: calc(1080 * 100vw / 1920);
+  position: relative;
+  @include md {
+      height: 100%;
+      min-height:0;
+      max-height: initial;}
   }
 }
 
@@ -41,16 +54,18 @@
 }
 
 .logo {
-  @include img_l_pc(563, 790, 341);
+  @include img_l_pc(563, 727, 341);
+  top: calc(20% + (727 - 1080 * .2) * 100vw / 1920);
   @include md {
     @include img_c_m(310, 0);
     top: auto;
-    bottom: sizem(30);
+    bottom: sizem(60);
   }
 }
 
 .title {
   @include img_r_pc(240, 727, 412);
+  top: calc(20% + (727 - 1080 * .2) * 100vw / 1920);
 
   @include md {
     @include img_r_m(160, 400, 40);

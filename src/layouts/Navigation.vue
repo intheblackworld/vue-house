@@ -146,7 +146,7 @@ export default {
   z-index: 10;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   display: flex !important;
   align-items: center;
   transition: all 0.3s;
@@ -156,6 +156,7 @@ export default {
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   .logo {
     transition: all 0.3s;
+    cursor: pointer;
   }
   &.min {
     height: 70px;

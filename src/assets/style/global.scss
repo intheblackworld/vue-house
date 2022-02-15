@@ -42,7 +42,6 @@ body {
 
 .home {
   background-image: $bg;
-  background-image: url('../img/shin-lan/all/bg.jpg');
   background-repeat: repeat;
   // background-image: url('~@/projects/lj/s1/bg.png');
   // padding-top: $nav_pc_height;
@@ -256,11 +255,10 @@ img[lazy="loaded"] {
     padding-top: $nav_tablet_height;
     // background-color: $order_bg_color;
     // background-image: $order_bg_image;
-    background-repeat: no-repeat;
+   /* background-repeat: no-repeat;
     background-size: 100vw auto;
     background-attachment: fixed;
-    background-position: 0% 50%;
-
+    background-position: 0% 50%; */
     &.no-padding-top {
       padding-top: 0;
     }
@@ -352,9 +350,10 @@ img[lazy="loaded"] {
     //background-image: url('~@/projects/tsi/s1/bg_m.jpg');
     // background-image: $order_bg_image_m;
     // background-repeat: no-repeat;
-    background-size: auto size-m(750);
-    background-attachment: fixed;
+    // background-size: auto size-m(750);
+    // background-attachment: fixed;
     // background-position: 0% 50%;
+    background-image:none;
     &::before{content: ' ';
       position: fixed;
       z-index: -1;
@@ -362,9 +361,10 @@ img[lazy="loaded"] {
       right: 0;
       bottom: 0;
       left: 0;
-      background: center 0 no-repeat;
+      background: center 0;
       background-image: $bg;
-      background-size: cover;}
+     //background-size: cover;
+    }
 
     &.no-padding-top {
       padding-top: 0;

@@ -18,11 +18,8 @@
 </template>
 <style lang="scss">
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:600&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:500&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:600&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:700&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,600&subset=chinese-traditional');
 // @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 </style>
 <style lang="scss" scoped>

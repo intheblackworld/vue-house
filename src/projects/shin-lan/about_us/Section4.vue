@@ -36,9 +36,9 @@
   // 手機版
   @include md {
     // height: 100vh;
-    height: size(604);
-    min-height: calc(604 * 100vw / 375);
-    max-height: calc(812 * 100vw / 375);
+    background-position: 10.5% 100%;
+  background-size:auto sizem(389);
+    height: sizem(589);
   }
 }
 
@@ -54,15 +54,10 @@
   color: #000;
 
   @include md {
-    @include img_c_m(310, 280);
+    @include img_c_m(310, 290);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
     letter-spacing: normal;
-    text-align: center;
-    color: #000;
   }
 }
 
@@ -80,7 +75,7 @@
   margin-bottom: size(50);
 
   @include md {
-    @include img_c_m(126, 230);
+    @include img_c_m(126, 240);
     font-size: sizem(28);
     font-weight: bold;
     font-stretch: normal;
