@@ -25,6 +25,12 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
+      id="section8"
+    >
+      <Section8 :viewIndex="viewIndex" />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
       id="section4"
     >
       <Section4 />

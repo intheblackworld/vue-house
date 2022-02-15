@@ -1,10 +1,8 @@
 <template>
-  <div>
     <div class="section8">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Caring</span>極致體貼 滿心呵護</div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="300">乘載全家理想的貼心家</div>
-      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
-      <div class="desc">您想到的，沒想到的，安全的家，安心的住<br>多一份心的巧思，讓生活感受更暖心</div>
+  <!--    <img src="./s2/hr.png" alt="" class="hr absolute">  -->
+  <img src="./s1/imgbg.png" alt="" class="imgbg">
+   <!--   <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Moving</span>登樂時尚 快線如風</div> -->
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -13,14 +11,25 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
+        <!--    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+          </div> -->
         </div>
       </div>
+    <!--  <div class="subtitle" data-aos="fade-down" data-aos-delay="300">15分鐘雙北生活輕盈入手</div>
+      <div class="line" data-aos="fade" data-aos-delay="200" ></div>
+      <ul class="desc">
+        <li data-aos="fade-up" data-aos-delay="300">捷運海山站＋萬大線LG10清水站，快捷遊城隨心遊</li>
+        <li data-aos="fade-up" data-aos-delay="400">西門町＋台北東區＋信義計劃，時尚匯流一線到位</li>
+        <li data-aos="fade-up" data-aos-delay="500">國道三號 +台三線＋65快，高速連結雙北市心精華</li>
+        <li data-aos="fade-up" data-aos-delay="600">國道三號北土城交流道增設計劃，未來動能再提升</li>
+      </ul>
+      -->
     </div>
-  </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -29,9 +38,10 @@
   width:100%;
   height:auto;
   position: relative;
-  //background: #fff;
+  background: #b81c2a;
    overflow: hidden;
 }
+.imgbg{position: fixed;bottom: 0;right: size(-520);width: size(805);z-index: 1;opacity: 0.6;}
 
 .title{
   position: relative;
@@ -77,7 +87,7 @@
 .desc {
   position: relative;
   width: size(1500);
-  margin:1em auto 3em auto;
+  margin:1em auto 6em auto;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -95,9 +105,9 @@
 /* Swipe */
 .swipe {
   position: relative;
-  margin: auto auto 5vw auto;
+  margin:3vw auto;
   width: size(1500);
-  height: size(740);
+  height: size(900);
   // left: size(210);
   object-fit: cover;z-index: 3;
 }
@@ -156,7 +166,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(0);
+  bottom: size(-50);
   right: size(-10);
   justify-content: center;
  // display: none;
@@ -276,7 +286,7 @@
   .swipe {
     position: relative;
     width: 100vw;
-    height: sizem(660);
+    height: sizem(260);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
@@ -443,24 +453,9 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-       slideList:isMobile? [
+      slideList: [
         {
-          img:require('./s8/1m.png'),
-          name: '',
-        },
-        {
-          img:require('./s8/2m.png'),
-          name: '',
-        },
-        {
-          img: require('./s8/3m.png'),
-          name: '',
-        },
-      ]
-      :
-      [
-        {
-          img:require('./s8/1.png'),
+          img: require('./s8/1.png'),
           name: '',
         },
       ],
