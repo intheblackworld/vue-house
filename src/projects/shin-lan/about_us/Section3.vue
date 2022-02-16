@@ -346,6 +346,9 @@ export default {
 
   mounted() {
     // setTimeout(() => {
+    //   this.$scrollTo(this.$route.hash, 500)
+    // }, 500)
+    // setTimeout(() => {
     //   this.blockIndex = 1
     // }, 6000)
   },

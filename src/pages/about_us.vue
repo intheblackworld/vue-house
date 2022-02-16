@@ -3,18 +3,18 @@
     <div class="section" id="section1" style="">
       <Section1 />
     </div>
-    <vue-lazy-component class="section" id="section2" style="">
+    <div class="section" id="section2" style="">
       <Section2 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section3" style="">
+    </div>
+    <div class="section" id="section3" style="">
       <Section3 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section4" style="">
+    </div>
+    <div class="section" id="section4" style="">
       <Section4 />
-    </vue-lazy-component>
-    <vue-lazy-component class="section" id="section5" style="">
+    </div>
+    <div class="section" id="section5" style="">
       <Section5 />
-    </vue-lazy-component>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -58,7 +58,9 @@ export default {
   },
 
   mounted() {
-
+    setTimeout(() => {
+      this.$scrollTo(this.$route.hash, 500)
+    }, 500)
   },
 
   methods: {},
