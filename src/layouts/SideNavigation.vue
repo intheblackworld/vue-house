@@ -31,14 +31,14 @@
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
           </li>
-          <li class="flex-ac" @click="$router.push('/login')" v-if="!$store.getters.isLogin">
+          <li class="flex-ac" @click="$router.push('/login')" v-if="!$store.getters['user/isLogin']">
             <span class="link">
               <span>
                 <div class="title">登入</div>
               </span>
             </span>
           </li>
-          <li class="flex-ac" @click="$store.dispatch('logout')" v-else>
+          <li class="flex-ac" @click="$store.dispatch('user/logout')" v-else>
             <span class="link">
               <span>
                 <div class="title">登出</div>
