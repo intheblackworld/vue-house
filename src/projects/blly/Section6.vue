@@ -283,8 +283,7 @@
 
 
   .title {
-    width: sizem(310);
-    top: sizem(50);
+    top: sizem(40);
     left: sizem(32);
     font-size: sizem(28.5);
     line-height: 1.44;

@@ -28,6 +28,12 @@
     >
       <Section7 />
     </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section4"
+    >
+      <Section4 :viewIndex="viewIndex" />
+    </vue-lazy-component>
 
     <vue-lazy-component
       class="section"
@@ -37,21 +43,15 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
-      id="section3"
-    >
-      <Section3 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section4"
-    >
-      <Section4 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
       id="section5"
     >
       <Section5 :viewIndex="viewIndex" />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section3"
+    >
+      <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <!-- <vue-lazy-component
       class="section"

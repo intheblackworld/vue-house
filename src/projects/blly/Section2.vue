@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s2/bg.jpg" alt="bg" class="bg-img" v-if="isPC">
+      <img src="./newspc/2.jpg" alt="bg" class="bg-img" v-if="isPC">
       <img src="./m/2/bg.jpg" alt="bg" class="bg-img" v-if="isMobile">
       <h3 class="title absolute" data-aos="fade" data-aos-delay="400">
-        你的左岸
+        被人們遺忘的八里
       </h3>
       <div class="desc absolute" data-aos="fade" data-aos-delay="600">
-        這是淡水河岸最美的一角，迎面藍帶涓流波潾，後倚綠意青山壯闊，蟠踞270度藍天碧水，釋放身心壓力，給心靈一個安適的停靠，到這裡重新感受生活，順著季節四季變化，入住山水懷抱的「八里 龍躍」。
+        大台北外圍房地產發展區有中壢、桃園、青埔、南崁、林口、三峽、鶯歌、礁溪這些環大台北的城鎮中交通距離大台北最近的地區還是八里，從關渡大橋約10多分鐘左右的車程就可以進入台北市區但上述地區房價都比八里貴，今日八里發展迅速遊客眾多，人們已經改變對八里的觀感，此時需快速入主美麗新世界。
       </div>
     </div>
   </div>
@@ -37,9 +37,9 @@
 }
 
 .title {
-  width: size(640);
+  width: auto;
   top:calc(50% + (227 - 540) * 100vw / 1920);
-  left: size(958);
+  left: size(100);
   font-size: size(54.9);
   font-weight: 700;
   font-stretch: normal;
@@ -47,7 +47,7 @@
   line-height: 1.44;
   letter-spacing:0.06em;
   text-align: left;
-  color: #c20000;
+  color: #FFF;
   white-space: nowrap;
 
 }
@@ -63,15 +63,15 @@
   line-height: 1.85;
   letter-spacing:-0.04em;
   text-align: left;
-  color: #808080;
+  color: #FFF;
   white-space: nowrap;
   font-family: "TrajanPro";
 }
 
 .desc {
-  width: 36em;
+  width: 26em;
   top:calc(50% + (332 - 540) * 100vw / 1920);
-  left: size(960);
+  left: size(100);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -79,7 +79,7 @@
   line-height: 1.7;
   letter-spacing: 0.06em;
   text-align: justify;
-  color: #000;
+  color: #FFF;
 }
 
 @media only screen and (max-width: 1440px) {

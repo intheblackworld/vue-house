@@ -5,10 +5,10 @@
       <img v-if="isMobile" class="bg-img" src="./newsmo/5.jpg" alt="八里龍躍_1">
 
       <h3 class="title absolute">
-        山水之中 尋回真實人生
+       城市與河岸最舒適的距離
       </h3>
       <div class="desc absolute">
-        前擁河川壯闊，後倚青山翠毓，「八里 龍躍」如同一座獨立的綠色島嶼，給您一間無價景觀的書房，給您一間會呼吸的屋子，用心生活、大口呼吸，在這的每一天都是享受。
+        八里，擁有宜居環境，左右更是環雙北生活圈，透過64號快速道路連接了一高、二高、濱海公路串連台北港與桃園國際機場。附近有著名十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，真正有著深度的文化蘊藏及便利交通的就只有「八里龍躍」
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
 }
 
 .title {
-  width: size(481);
+  width: auto;
   top: size(70);
   left: size(160);
   font-size: size(55.1);
@@ -76,7 +76,7 @@
   white-space: nowrap;
 }
 .desc {
-  width: size(600);
+  width: size(650);
   top: size(160);
   left: size(160);
   font-size: size(19);

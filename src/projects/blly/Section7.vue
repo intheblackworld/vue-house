@@ -66,39 +66,57 @@
   }
 }
 .txt{
-  width: size(635);
+  width: size(580);
+  height: 80%;
   font-stretch: normal;
   font-style: normal;
-  bottom: size(240);
+  top: 10%;
   left: size(80);
-  text-align: justify;}
+  line-height: 1.2;
+  text-align: justify;
+  }
 
 .title {
-  font-size: size(55.1);
+  font-size: size(60);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: size(3.31);
   color: #FFF;
   background: #ff0000;
+  text-align: center;
+  padding: 0 0 0.1em;
  // white-space: nowrap;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
 }
 .subtitle {
   color: #FFF;
   background: #ff0000;
+  text-align: center;
+  font-size: size(30);
+  letter-spacing: 0.1em;
+  margin: 0.5em 0 0.4em;
+  padding: 0 0 0.1em;
 }
 .desc {
-  font-size: size(19);
+  font-size: size(25);
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.7;
   letter-spacing: 0.06em;
-  text-align: justify;
+  line-height: 1.7;
   color: #FFF;
+    font-family: 'Noto Sans TC';
   background: #ff0000;
   //text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
 }
-
+.b-txt{
+  font-weight: 700;
+  font-size: size(36);
+  letter-spacing: 0.1em;
+  color: #430808;
+  background: #FFF;
+  text-align: center;
+  padding: 0 0 0.1em;
+  position: absolute;
+  bottom: 0;
+}
 /* Swipe */
 .swipe {
   width: 100%;
@@ -285,24 +303,32 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
   }
+.txt{
+  width: sizem(310);
+  height:auto;
+  font-stretch: normal;
+  font-style: normal;
+  top: 10%;
+  left: sizem(32);
+  line-height: 1.2;
+  text-align: justify;
+  }
 
   .title {
-    width: sizem(218);
-    top: sizem(57);
-    top: calc(50% + (57 - 604 * .5) * 100vw / 375);
-    left: sizem(32);
     font-size: sizem(25);
-    line-height: 1.44;
-    letter-spacing: sizem(1.5);
-    text-align: left;
-    white-space: nowrap;
+  }
+.subtitle {
+    font-size: sizem(19);
   }
 
   .desc {
-    width: sizem(310);
-    top: calc(50% + (121 - 604 * .5) * 100vw / 375);
-    left: sizem(32);
     font-size: sizem(15);
+}
+.b-txt{
+  margin: 0.5em 0 0;
+  position: relative;
+    font-size: sizem(19);
+  background: #CCC;
   }
 
   .hr {

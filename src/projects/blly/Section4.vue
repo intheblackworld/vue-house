@@ -24,11 +24,12 @@
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>  -->
       <h3 class="title absolute">
-        河岸 開卷一日散策
+     <span>   八里龍躍採用日久如新的玉晶石外牆<br>
+雙層隔熱玻璃、全大樓採用頂級建材</span>
       </h3>
-      <div class="desc absolute">
+    <!--   <div class="desc absolute">
         步行即可抵台灣十大經典單車路線之一的「八里左岸自行車道」，沿途有關渡大橋、八里渡船頭、挖子尾生態保護區、十三行博物館等景點，依傍於淡水河邊，或騎車或鍛鍊，享受湖光山色，欣賞淡水落日餘暉，沉浸於古蹟與美食的一日散策。
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -88,11 +89,14 @@
   font-weight: 700;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.44;
+  line-height: 1.8;
   letter-spacing: size(3.31);
   text-align: left;
-  color: #c20000;
   white-space: nowrap;
+  span{
+  color: #b80000;
+    font-family: 'Noto Sans TC';
+  background: #FFF;}
 }
 .desc {
   width: size(580);
