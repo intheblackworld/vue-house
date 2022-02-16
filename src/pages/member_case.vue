@@ -18,7 +18,7 @@
       <div class="content-item" v-for="(case_item, index) in case_list" :key="case_item.id + 'item'" @click="$router.push(`/case/${case_item.id}`)">
         <div class="item-title">{{case_item.title}}</div>
         <div class="item-content">
-          <img :src="find_img(case_item.title)" alt="" class="item-img">
+          <img :src="find_img(case_item.title, index)" alt="" class="item-img">
           <div class="add-btn">+</div>
         </div>
       </div>
@@ -176,6 +176,7 @@ export default {
 
   methods: {
     find_img(name, index) {
+      console.log(name, index)
       if (this.case_list[index].channel_covers.length > 0) {
         return this.case_list[index].channel_covers[0]
       }
