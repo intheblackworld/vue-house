@@ -88,7 +88,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .info-footer {
-  width: 100vw;
+  width: 100%;
   height: size(352);
   position: relative;
   z-index: 1;

@@ -34,7 +34,7 @@
   // 手機版
   @include md {
     // height: 100vh;
-    height: sizem(624);
+    height: sizem(530);
     // min-height: calc(604 * 100vw / 375);
     // max-height: calc(812 * 100vw / 375);
   }
@@ -44,7 +44,7 @@
   @include img_c_pc(564, 73);
 
   @include md {
-    @include img_c_m(310, 120);
+    @include img_c_m(310, 60);
   }
 }
 
@@ -55,20 +55,16 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
-  letter-spacing: size(1.44);
+  letter-spacing: 0.08em;
   text-align: center;
   color: #000;
 
   @include md {
-    @include img_c_m(310, 180);
+    @include img_c_m(310, 120);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
     letter-spacing: normal;
-    text-align: left;
-    color: #000;
+    text-align: justify;
   }
 }
 
@@ -76,7 +72,7 @@
   @include img_c_pc(1234, 321);
   @include md {
     width: 100vw;
-    top: sizem(420);
+    top: sizem(380);
   }
 }
 </style>
@@ -97,8 +93,13 @@ export default {
       // blockIndex: 0,
     }
   },
-
-  methods: {},
+  methods: {
+    scrollFix: function(hash5) {
+      setTimeout(() => $('html, body').animate({
+      scrollTop: $(hash5).offset().top
+      }, 1000), 1)
+    }
+  },
 
   mounted() {
     // setTimeout(() => {

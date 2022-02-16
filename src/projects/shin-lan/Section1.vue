@@ -7,13 +7,17 @@
       <source media="(max-width: 767px)" srcset="./s1/bgm.jpg" type="image/jpeg" />
       <img src="./s1/bg.jpg" :alt="info.caseName" class="bg-img">
     </picture> -->
-    <img src="../../assets/img/shin-lan/index/1/topbg.jpg" alt="" class="bg-img">
+    <img src="./shin-lan/index/1/topbg.jpg" alt="" class="bg-img" v-if="isPC">
+    <img src="./shin-lan/mo/index/1/topbg.jpg" alt="" class="bg-img" v-else>
+    
+    <div class="box">
     <div class="title" data-aos="fade-up" data-aos-delay="200">
       建築不只是良心事業，更是腳踏實地<br />始終如一的堅持
     </div>
 
     <img src="@/assets/img/shin-lan/all/logo.png" alt="" class="logo">
 
+    </div>
     <!-- <picture>
       <source srcset="./webp/s1/25675888.webp" type="image/webp" />
       <source srcset="./s1/25675888.png" type="image/jpeg" />
@@ -36,23 +40,32 @@
 @import '@/assets/style/function.scss';
 .section1 {
   width: 100%;
-  height: 100vh;
-  min-height: calc(900 * 100vw / 1920);
-  max-height: calc(1080 * 100vw / 1920);
+  height: calc(1085 * 100vw / 1920);
   position: relative;
-  margin: 0;
-  // background: url('s1/bg.jpg') center;
+  margin:56px 0 0 0;
   background-size: cover;
   overflow: hidden;
   text-align: center;
 
   // 手機版
   @include md {
-    // height: 100vh;
-    height: size(604);
-    min-height: calc(604 * 100vw / 375);
-    max-height: calc(812 * 100vw / 375);
+   margin:60px 0 0 0;
+   height: sizem(607);
   }
+  .box{
+    width: 100%;
+    height: 100vh;
+    min-height: calc(900 * 100vw / 1920);
+    max-height: calc(1080 * 100vw / 1920);
+    position: relative;
+  
+    @include md {
+      height: 100%;
+      min-height:0;
+      max-height: initial;
+    }
+  }
+
 }
 .bg-img {
   position: absolute;
@@ -64,35 +77,37 @@
 }
 .logo {
   @include img_c_pc(614, 410);
+  top: calc(50% + (410 - 1080 * .5) * 100vw / 1920);
 
   @include md {
-    @include img_c_m(325, 237);
+    @include img_c_m(325, 187);
   }
 }
 
 .title {
   @include img_c_pc(600, 536);
+  top: calc(50% + (536 - 1080 * .5) * 100vw / 1920);
   font-size: size(21);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.9;
-  letter-spacing: size(17.64);
+  letter-spacing:0.84em;
   text-align: center;
   color: #333;
   white-space: nowrap;
 
   @include md {
-    font-size: size(15);
+    font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.93;
-    letter-spacing: size(3.3);
+    letter-spacing:0.22em;
     text-align: center;
     color: #333;
 
-    @include img_c_m(290, 295);
+    @include img_c_m(290, 242);
   }
 }
 

@@ -27,49 +27,9 @@
     <vue-lazy-component class="section" id="section9">
       <Section9 />
     </vue-lazy-component>
-    <!-- <vue-lazy-component class="section" id="section10">
-      <Section10 />
-    </vue-lazy-component> -->
+    <div style="background:rgba(17, 17, 3, 0.11);">
     <ContactSection />
-    <!-- <vue-lazy-component class="section" id="section11">
-        <Section11 />
-      </vue-lazy-component> -->
-    <!-- <vue-lazy-component class="section" id="section12">
-        <Section12 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section13">
-        <Section13 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section14">
-        <Section14 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section15">
-        <Section15 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section16">
-        <Section16 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section17">
-        <Section17 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section18">
-        <Section18 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section19">
-        <Section19 />
-      </vue-lazy-component> -->
-    <!-- <vue-lazy-component class="section" id="section10">
-        <Section10 :viewIndex="viewIndex" />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section7">
-          <Section7 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section8">
-         <Section8 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section9">
-        <Section9 :viewIndex="viewIndex" />
-      </vue-lazy-component> -->
+    </div>
     <!-- <vue-lazy-component class="section" id="contact"> -->
     <!-- </vue-lazy-component> -->
     <!-- <MobileNav /> -->

@@ -14,7 +14,7 @@
       <img src="../shin-lan/mo/abont/2/img2.jpg" alt="" class="right-img" v-else>
     </div>
 
-    <div class="container flex container2">
+    <div class="container flex container2" id="container2">
       <div>
         <img src="../shin-lan/abont/2/img3.jpg" alt="" class="top-img">
         <div class="shin-lan-title-h title2" data-aos="fade">
@@ -27,7 +27,7 @@
       <img src="../shin-lan/abont/2/img4.jpg" alt="" class="bottom-img">
     </div>
 
-    <div class="container container3">
+    <div class="container container3" id="container3">
       <img src="../shin-lan/abont/2/img5.jpg" alt="" class="full-img" v-if="isPC">
       <img src="../shin-lan/mo/abont/2/img5.jpg" alt="" class="full-img" v-else>
       <div>
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="container flex container4">
+    <div class="container flex container4" id="container4">
       <div>
         <img src="../shin-lan/abont/2/img6.jpg" alt="" class="top-img">
         <div class="shin-lan-title-h title2" data-aos="fade">
@@ -57,6 +57,8 @@
       </div>
       <img src="../shin-lan/abont/2/img7.jpg" alt="" class="bottom-img no-margin">
     </div>
+      <img src="../shin-lan/abont/2/pic2.png" alt="" class="pic2" v-if="isPC">
+      <img src="../shin-lan/mo/abont/2/pic2.png" alt="" class="pic2" v-else>
   </div>
 </template>
 
@@ -71,7 +73,7 @@
   margin: 0;
   // background: url('s1/bg.jpg') center;
   background-size: cover;
-  // overflow: hidden;
+  overflow: hidden;
   text-align: center;
 
   // 手機版
@@ -85,7 +87,7 @@
 
 .container {
   width: size(1234);
-  margin: size(162) auto size(300);
+  margin: size(162) auto size(240);
   position: relative;
 
   @include md {
@@ -99,7 +101,7 @@
   @include img_l_pc(240, 148, 330);
 
   @include md {
-    @include img_r_m(126, 75, 15);
+    @include img_r_m(126, 60, 15);
     font-size: sizem(28);
     font-weight: bold;
     font-stretch: normal;
@@ -115,7 +117,7 @@
   @include img_l_pc(618, -180, -300);
 
   @include md {
-    @include img_l_m(180, -70, -30);
+    @include img_l_m(180, -50, -30);
   }
 }
 
@@ -126,7 +128,7 @@
 
   @include md {
     width: 100%;
-    height: sizem(320);
+    height: sizem(290);
   }
 }
 
@@ -147,33 +149,20 @@
   font-style: normal;
   line-height: 1.67;
   letter-spacing: size(1.44);
-  text-align: left;
+  text-align: justify;
   color: #000;
   @include md {
-    @include img_c_m(310, 180);
+    @include img_c_m(310, 190);
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
     letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
 .desc1 {
   @include img_l_pc(487, 357, 61);
   @include md {
-    @include img_c_m(310, 130);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+    @include img_c_m(310, 115);
   }
 }
 
@@ -237,6 +226,17 @@
   }
 }
 
+.pic2{
+  @include img_r_pc(363, 0, 0);
+  top: auto;
+  bottom: 0;
+  @include md {
+    width:sizem(108);
+  bottom:sizem(230);
+  }
+
+}
+
 .full-img {
   width: 100%;
   height: auto;
@@ -251,7 +251,7 @@
 
 .container3 {
   @include md {
-    height: sizem(660);
+    height: sizem(490);
   }
 }
 .title3 {
@@ -267,7 +267,7 @@
     font-style: normal;
     line-height: 1.07;
     letter-spacing: sizem(1.68);
-    text-align: left;
+    text-align: justify;
     color: #b18863;
   }
 }
@@ -316,7 +316,7 @@
     @include md {
       width: sizem(342);
       height: auto;
-      top: sizem(385);
+      top: sizem(380);
       position: absolute;
       right: 0;
       left: auto;

@@ -533,27 +533,27 @@ export default {
         {
           img: require('../../assets/img/shin-lan/index/2/1.jpg'),
           desc: '誠信服務',
-          link: '/about_us',
+          link: '/about_us/#section3',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/2.jpg'),
           desc: '堅持品質',
-          link: '/about_us',
+          link: '/about_us/#container2',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/3.jpg'),
           desc: '專業創新',
-          link: '/about_us',
+          link: '/about_us/#container3',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/4.jpg'),
           desc: '永續經營',
-          link: '/about_us',
+          link: '/about_us/#container4',
         },
         {
           img: require('../../assets/img/shin-lan/index/2/5.jpg'),
           desc: '營造基石',
-          link: '/about_us',
+          link: '/about_us/#section5',
         },
       ],
     }
