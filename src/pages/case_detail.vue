@@ -9,7 +9,7 @@
         <div class="item flex-ac flex-jb">
           <div>客戶專區</div>
         </div>
-        <div class="item flex-ac flex-jb">
+        <div class="item flex-ac flex-jb" v-if="process_list">
           <div>進度工程</div>
         </div>
         <div class="sub-item flex-ac flex-jb" v-for="process in process_list" :key="process.code" @click="$router.push(`/case/${$route.params.id}/process/${process.id}`)">
@@ -30,13 +30,13 @@
         <div class="item-title gold">客戶專區</div>
         <div class="item-content">
           <img :src="current_item.img" alt="" class="item-img">
-          <div class="download-btn flex-c" @click="$router.push(`/case/files/${$route.params.id}`)">觀看下載列表</div>
+          <div v-if="has_files" class="download-btn flex-c" @click="$router.push(`/case/files/${$route.params.id}`)">觀看下載列表</div>
         </div>
       </div>
     </div>
-    <div class="flex-jr" style="width: 100%;">
+    <div class="flex-jr" style="width: 100%;" v-if="process_list">
       <div class="content">
-        <div class="item-title gold">客戶專區</div>
+        <div class="item-title gold">進度工程</div>
         <div class="content-item" v-for="process in process_list" :key="process.id + process.code + process.title">
           <div class="item-title">{{process.title}}</div>
           <div class="item-content">
@@ -279,7 +279,7 @@
 <script>
 // import Section1 from '@/projects/shin-lan/member/Section1.vue'
 import { isPC } from '@/utils'
-import { get_category_by_user, get_article_categories } from '@/http/api'
+import { get_category_by_user, get_article_categories, get_files } from '@/http/api'
 import { hot_case } from '@/info/shin-lan'
 
 export default {
@@ -294,6 +294,7 @@ export default {
       isPC,
       case_list: [],
       process_list: [],
+      file_list: [],
     }
   },
 
@@ -321,6 +322,13 @@ export default {
         }
       }
     },
+    has_files() {
+      if (!this.files) {
+        return false
+      } else  {
+        return this.file_list.length > 0
+      }
+    },
   },
 
   mounted() {
@@ -336,6 +344,16 @@ export default {
     }).then((res) => {
       if (res.error_code == 0) {
         this.process_list = res.data
+      }
+    })
+
+    get_files({
+      category_id: this.$route.params.id,
+      limit: 99,
+      page: 1,
+    }).then((res) => {
+      if (res.error_code == 0) {
+        this.file_list = res.data
       }
     })
   },

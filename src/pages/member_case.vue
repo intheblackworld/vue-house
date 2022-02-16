@@ -86,6 +86,7 @@
   text-align: left;
   color: #000;
   font-family: 'Noto Serif TC', serif;
+  margin-top: size(20);
   margin-bottom: size(20);
 
   @include md {
