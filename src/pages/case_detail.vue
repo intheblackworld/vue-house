@@ -323,7 +323,7 @@ export default {
       }
     },
     has_files() {
-      if (!this.files) {
+      if (!this.file_list) {
         return false
       } else  {
         return this.file_list.length > 0
