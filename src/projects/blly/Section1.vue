@@ -1,8 +1,11 @@
 <template>
   <div>
     <div class="section1">
-      <img v-if="isPC" class="bg-img" src="./newspc/1.jpg" alt="八里龍躍_1">
-      <img v-if="isMobile" class="bg-img" src="./newsmo/1.jpg" alt="八里龍躍_1">
+      <img v-if="isPC" class="bg-img" src="./newspc/bg1.jpg" alt="八里龍躍_bg">
+      <img v-if="isMobile" class="bg-img" src="./newsmo/bg1.jpg" alt="八里龍躍_bg">
+      <img class="logo" src="./newspc/txt1.png" alt="八里龍躍_logo">
+
+
     </div>
   </div>
 </template>
@@ -28,6 +31,12 @@
   position: relative;
   object-fit: cover;
 }
+.logo{
+  position: absolute;
+  width:size(520);
+  top: calc(50% + (180 - 1080 * .5) * 100vw / 1920);
+  right: size(565);
+  }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -38,6 +47,12 @@
     height:calc(100vh - 63px);
     min-height:sizem(604);
     max-height:sizem(750);
+  }
+.logo{
+  position: absolute;
+  width:sizem(310);
+  top: calc(50% + (100 - 604 * .5) * 100vw / 375);
+  right: sizem(40);
   }
 
 }

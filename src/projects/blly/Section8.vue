@@ -93,7 +93,7 @@
 @import '@/assets/style/function.scss';
 
 .section8 {
-  width: size(1920);
+  width:100%;
   height: size(825);
   // min-height: size(900);
   // background-image: url('./s2/bg.jpg');
@@ -104,8 +104,8 @@
 }
 
 .bg-img {
-  width: 100vw;
-  height: 100vh;
+  width:100%;
+  height: 100%;
   min-height: size(900);
   position: absolute;
   display: block;

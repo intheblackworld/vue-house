@@ -32,14 +32,14 @@
     }
 }
 .section6 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(1080);
   background-color: #fff;
 }
 
 .bg-img {
-  width: 100vw;
+  width: 100%;
   height: size(1080);
   min-height: size(1080);
   position: absolute;

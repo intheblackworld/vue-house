@@ -24,7 +24,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .cls-1{fill:none;stroke:#FFF;stroke-miterlimit:10;stroke-width:2.01px;
-width: size(1920);
+width:100%;
   height:100%;
   left:size(0);
   top:0;
@@ -45,7 +45,7 @@ width: size(1920);
     }
 }
 .section5 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);

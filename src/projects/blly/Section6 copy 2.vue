@@ -5,10 +5,10 @@
       <img v-if="isMobile" class="img absolute" src="./s6/img.jpg" alt="八里龍躍_1" data-aos="fade" data-aos-delay="200">
 
       <h3 class="title absolute">
-        小龍邀您 與其共舞
+        至此境 得從容 享自在
       </h3>
       <div class="desc absolute">
-        大台北盆地外唯一空氣清新能深呼吸的宅地
+        大台北盆地外唯一能深呼的環境
       </div>
     </div>
   </div>
@@ -56,36 +56,34 @@
 }
 
 .title {
-  width: auto;
-  top: size(130);
-  left: size(1150);
-  font-size: size(55);
+  width: size(700);
+  top: size(70);
+  right: size(10);
+  font-size: size(60);
   font-weight: 700;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.44;
   letter-spacing: size(3.31);
   text-align: left;
-  color: #FFF;
-  background: #ff0000;
+  color: #fe0000;
   white-space: nowrap;
- //text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
   
 }
 .desc {
-  width: auto;
-  top: size(220);
-  left: size(1150);
-  font-size: size(28);
+  width: size(700);
+  top: size(160);
+  right: size(10);
+  font-size: size(38);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.7;
   letter-spacing: 0.15em;
   text-align: justify;
-  color: #FFF;
-  background: #ff0000;
- // text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  color: #000;
+  text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
 }
 
 /* Swipe */

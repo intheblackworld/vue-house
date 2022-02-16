@@ -16,6 +16,18 @@
     >
       <Section1 />
     </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section6"
+    >
+      <Section6 :viewIndex="viewIndex" />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section7"
+    >
+      <Section7 />
+    </vue-lazy-component>
 
     <vue-lazy-component
       class="section"
@@ -40,18 +52,6 @@
       id="section5"
     >
       <Section5 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
     </vue-lazy-component>
     <!-- <vue-lazy-component
       class="section"

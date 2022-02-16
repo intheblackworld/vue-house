@@ -1,14 +1,19 @@
 <template>
-  <div>
     <div class="section7">
       <img v-if="isPC" class="bg-img" src="./newspc/7.jpg" alt="八里龍躍_1">
       <img v-if="isMobile" class="bg-img" src="./newsmo/7.jpg" alt="八里龍躍_1">
-
-      <h3 class="title absolute">
-        與大自然共舞的居所
+<div class="txt absolute">
+      <h3 class="title">
+        靈魂之窗的饗宴
       </h3>
-      <div class="desc absolute">
-        居住的空間如同一座巨大的有機體，萬事萬物蘊含著無窮的能量，林木、水流、空氣，都是我們與自然溝通的方式，而陽光、空氣、水更是構成建築最重要的部分，充分的陽光，流動的空氣，適當的濕度，才是最宜居的住所；入住山水懷抱的「八里龍躍」，入住充滿自然的建築。
+      <h3 class="subtitle">
+        28.51.62.141坪 戶戶超級景觀
+      </h3>
+      <span class="desc">
+        買屋最擔心的就是室內閣局不符合使用需求，「八里龍躍」所提供的半客製化服務，包括選擇磁磚、室內隔間裝潢都可以依照你的需求跟設計師一對一溝通選擇您想要的樣式與風格，堪稱最溫馨的住宅服務。
+      </span>
+      <div class="b-txt">
+        購屋前一定要來八里龍躍看一看
       </div>
     </div>
   </div>
@@ -34,7 +39,7 @@
   }
 }
 .section7 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -60,25 +65,28 @@
     position: relative;
   }
 }
-
-.title {
-  width: size(481);
-  bottom: size(240);
-  left: size(80);
-  font-size: size(55.1);
-  font-weight: 700;
+.txt{
+  width: size(635);
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.44;
+  bottom: size(240);
+  left: size(80);
+  text-align: justify;}
+
+.title {
+  font-size: size(55.1);
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: size(3.31);
-  text-align: left;
-  color: #ff3f3f;
-  white-space: nowrap;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  color: #FFF;
+  background: #ff0000;
+ // white-space: nowrap;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+}
+.subtitle {
+  color: #FFF;
+  background: #ff0000;
 }
 .desc {
-  width: size(600);
-  bottom: size(70);
-  left: size(80);
   font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
@@ -86,7 +94,9 @@
   line-height: 1.7;
   letter-spacing: 0.06em;
   text-align: justify;
-  color: #000;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  color: #FFF;
+  background: #ff0000;
+  //text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
 }
 
 /* Swipe */
