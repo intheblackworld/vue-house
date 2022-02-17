@@ -903,6 +903,26 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
+         //快樂王國
+        {
+          title: '快樂<br />王國',
+          title2: '快樂王國',
+          desc:
+            '預推個案',
+          img: require('../works/8/0.jpg'),
+          isEmpty: false,
+          info1:
+            '預推個案',
+          info2: '',
+          info3:
+            '敬請期待',
+          contact:
+            '',
+          link: 'https://wl.debang.tw/',
+          logo: require('../works/8/0.jpg'),
+          imgs: [require('../works/8/1.jpg')],
+          hint: '',
+        },
          //太陽
         {
           title: '太陽<br />帝國',
