@@ -18,15 +18,15 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
-      id="section6"
+      id="section2"
     >
-      <Section6 :viewIndex="viewIndex" />
+      <Section2 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
-      id="section7"
+      id="section3"
     >
-      <Section7 />
+      <Section3 />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
@@ -37,21 +37,21 @@
 
     <vue-lazy-component
       class="section"
-      id="section2"
-    >
-      <Section2 :viewIndex="viewIndex" />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
       id="section5"
     >
       <Section5 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
-      id="section3"
+      id="section6"
     >
-      <Section3 :viewIndex="viewIndex" />
+      <Section6 :viewIndex="viewIndex" />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section7"
+    >
+      <Section7 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <!-- <vue-lazy-component
       class="section"

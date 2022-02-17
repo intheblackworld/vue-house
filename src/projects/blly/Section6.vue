@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="section6">
-      <img v-if="isPC" class="bg-img" src="./newspc/6.jpg" alt="八里龍躍_1">
-      <img v-if="isMobile" class="img absolute" src="./s6/img.jpg" alt="八里龍躍_1" data-aos="fade" data-aos-delay="200">
+    <div class="section5">
+      <img v-if="isPC" class="bg-img" src="./newspc/5.jpg" alt="八里龍躍_1">
+      <img v-if="isMobile" class="bg-img" src="./newsmo/5.jpg" alt="八里龍躍_1">
 
       <h3 class="title absolute">
-        小龍邀您 與其共舞
+       城市與河岸最舒適的距離
       </h3>
       <div class="desc absolute">
-        大台北盆地外唯一空氣清新能深呼吸的宅地
+        八里，擁有宜居環境，左右更是環雙北生活圈，透過64號快速道路連接了一高、二高、濱海公路串連台北港與桃園國際機場。附近有著名十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，真正有著深度的文化蘊藏及便利交通的就只有「八里龍躍」
       </div>
     </div>
   </div>
@@ -33,12 +33,18 @@
     stroke-dashoffset: 0;
   }
 }
-.section6 {
+.section5 {
   width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   position: relative;
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
+  // background-position: 0 0;
+  // background-attachment: fixed;
+  // overflow: hidden;
 }
 
 .bg-img {
@@ -57,35 +63,30 @@
 
 .title {
   width: auto;
-  top: size(130);
-  left: size(1150);
-  font-size: size(55);
+  top: size(70);
+  left: size(160);
+  font-size: size(55.1);
   font-weight: 700;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.44;
   letter-spacing: size(3.31);
   text-align: left;
-  color: #FFF;
-  background: #ff0000;
+  color: #ff3f3f;
   white-space: nowrap;
- //text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
-  
 }
 .desc {
-  width: auto;
-  top: size(220);
-  left: size(1150);
-  font-size: size(28);
+  width: size(650);
+  top: size(160);
+  left: size(160);
+  font-size: size(19);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0.15em;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
   text-align: justify;
-  color: #FFF;
-  background: #ff0000;
- // text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+  color: #000;
 }
 
 /* Swipe */
@@ -253,11 +254,11 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section5 {
     width: 100vw;
-    min-height: sizem(0);
+    min-height: sizem(604);
     max-height: sizem(812);
-    height: sizem(400);
+    height: calc(100vh - 63px);
     // background-image: url('./s2/bg.jpg');
     // background-size: 100% 100%;
     // background-position: 0 0;
@@ -275,27 +276,23 @@
     background: rgba(0, 0, 0, 0.7);
   }
 
-  .img {
-    width: sizem(355);
-    top: sizem(160);
-    left: sizem(10);
-  }
-
-
   .title {
-    top: sizem(40);
+    width: sizem(218);
+    top: sizem(57);
+    top: calc(50% + (57 - 604 * .5) * 100vw / 375);
     left: sizem(32);
-    font-size: sizem(28.5);
+    font-size: sizem(25);
     line-height: 1.44;
-    letter-spacing: sizem(1.8);
+    letter-spacing: sizem(1.5);
+    text-align: left;
     white-space: nowrap;
   }
 
   .desc {
     width: sizem(310);
-    top: sizem(90);
+    top: calc(50% + (121 - 604 * .5) * 100vw / 375);
     left: sizem(32);
-    font-size: sizem(18);
+    font-size: sizem(15);
   }
 
   .hr {
@@ -476,7 +473,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section5',
 
   mixins: [slider],
   props: ['viewIndex'],

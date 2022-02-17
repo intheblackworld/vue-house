@@ -82,7 +82,7 @@
 }
 
 .title {
-  width: size(481);
+  width: auto;
   top: size(60);
   left: size(150);
   font-size: size(55.1);
@@ -92,7 +92,7 @@
   line-height: 1.8;
   letter-spacing: size(3.31);
   text-align: left;
-  white-space: nowrap;
+  //white-space: nowrap;
   span{
   color: #b80000;
     font-family: 'Noto Sans TC';
@@ -300,15 +300,14 @@
   }
 
   .title {
-    width: sizem(218);
+    width: sizem(310);
     top: sizem(57);
     top: calc(50% + (57 - 604 * .5) * 100vw / 375);
     left: sizem(32);
-    font-size: sizem(25);
-    line-height: 1.44;
+    font-size: sizem(34);
     letter-spacing: sizem(1.5);
     text-align: left;
-    white-space: nowrap;
+    //white-space: nowrap;
   }
 
   .desc {

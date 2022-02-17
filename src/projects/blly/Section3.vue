@@ -1,35 +1,34 @@
 <template>
-  <div>
-    <div class="section3">
-      <img src="./s3/bg.jpg" alt="map" class="bg-img" v-if="!isMobile">
-      <div class="txt">
-      <h3 class="title" data-aos="fade-right" data-aos-delay="400">
-        城市與河岸最舒適的距離
+    <div class="section7">
+      <img v-if="isPC" class="bg-img" src="./newspc/7.jpg" alt="八里龍躍_1">
+      <img v-if="isMobile" class="bg-img" src="./newsmo/7.jpg" alt="八里龍躍_1">
+<div class="txt absolute">
+      <h3 class="title">
+        靈魂之窗的饗宴
       </h3>
-      <div class="desc" data-aos="fade-right" data-aos-delay="600">
-        八里，擁有宜居環境，左右更續接了雙北生活圈，交通便利，透過快速道路、關渡大橋淡江大橋連接了新市鎮生活圈64號道路連接一高、二高、濱海公路至桃園國際機場。在這有著深度的文化蘊藏，十三行博物館、左岸公園、左岸劇場，相佐水岸綠道，如此舒心閑適的居所，就只有「八里 龍躍」
-      </div>
-      <div class="img" v-if="isMobile" @click="showDialog"><img src="./m/3/bg.jpg" alt="map">點圖放大</div>
-      </div>
-      <div :class="`dialog ${isDialog ? 'show' : ''}`">
-        <img :src="isMobile ? require('./m/3/bg.jpg') : require('./s3/bg.jpg')" alt="bg" class="dialog-img" />
-        <img src="~@/assets/img/close.png" alt="close" class="close" @click="closeDialog" />
+      <h3 class="subtitle">
+        28.51.62.141坪 戶戶超級景觀
+      </h3>
+      <span class="desc">
+        買屋最擔心的就是室內閣局不符合使用需求，「八里龍躍」所提供的半客製化服務，包括選擇磁磚、室內隔間裝潢都可以依照你的需求跟設計師一對一溝通選擇您想要的樣式與風格，堪稱最溫馨的住宅服務。
+      </span>
+      <div class="b-txt">
+        購屋前一定要來八里龍躍看一看
       </div>
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .cls-1 {
   fill: none;
-  stroke: #666;
+  stroke: #fff;
   stroke-miterlimit: 10;
   stroke-width: 2.01px;
-  width: size(827);
-  height: size(157);
-  left: size(0);
-  top: calc(50% + 14vw);
+  width: size(199);
+  height: size(211);
+  left: size(652);
+  bottom: size(0);
   animation: letterDraw1 0.5s linear 1s forwards;
   stroke-dasharray: 1536;
   stroke-dashoffset: 1536;
@@ -39,12 +38,15 @@
     stroke-dashoffset: 0;
   }
 }
-.section3 {
+.section7 {
   width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
-  background-size: cover;
+  position: relative;
+  // min-height: size(900);
+  // background-image: url('./s2/bg.jpg');
+  // background-size: 100% 100%;
   // background-position: 0 0;
   // background-attachment: fixed;
   // overflow: hidden;
@@ -58,90 +60,211 @@
   top: 0;
   left: 0;
   object-fit: cover;
-  cursor: pointer;
 
   &:nth-child(1) {
     position: relative;
   }
 }
-
-.subtitle {
-  top: size(93);
-  right: auto;
-  left: size(138);
-  font-size: size(67.2);
-  font-weight: normal;
+.txt{
+  width: size(580);
+  height: 80%;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.85;
-  letter-spacing: -0.04em;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  font-family: 'TrajanPro';
-  position: absolute;
-}
+  top: 10%;
+  left: size(80);
+  line-height: 1.2;
+  text-align: justify;
+  }
 
 .title {
-  width: size(640);
-  top: calc(50% + 9vw);
-  left: size(150);
-  font-size: size(55.2);
+  font-size: size(60);
   font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.44;
-  letter-spacing: size(3.3);
-  text-align: left;
-  color: #231815;
-  white-space: nowrap;
-  position: absolute;
+  line-height: 1.2;
+  letter-spacing: size(3.31);
+  color: #FFF;
+  background: #ff0000;
+  text-align: center;
+  padding: 0 0 0.1em;
+ // white-space: nowrap;text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
 }
-
+.subtitle {
+  color: #FFF;
+  background: #ff0000;
+  text-align: center;
+  font-size: size(30);
+  letter-spacing: 0.1em;
+  margin: 0.5em 0 0.4em;
+  padding: 0 0 0.1em;
+}
 .desc {
-  width: size(640);
-  top: calc(50% + 15vw);
-  left: size(153);
-  font-size: size(19);
+  font-size: size(25);
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.7;
   letter-spacing: 0.06em;
-  text-align: justify;
-  color: #595757;
+  line-height: 1.7;
+  color: #FFF;
+    font-family: 'Noto Sans TC';
+  background: #ff0000;
+  //text-shadow: 0 0 0.2em #FFF, 0 0 0.7em #FFF;
+}
+.b-txt{
+  font-weight: 700;
+  font-size: size(36);
+  letter-spacing: 0.1em;
+  color: #430808;
+  background: #FFF;
+  text-align: center;
+  padding: 0 0 0.1em;
   position: absolute;
+  bottom: 0;
+}
+/* Swipe */
+.swipe {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
-.dialog {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+// begin
+.swipe-fade-leave-to {
   opacity: 0;
-  transition: opacity 0.5s;
-  display: none;
-  overflow: scroll;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
 
-  &.show {
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
+}
+
+.pagination {
+  width: auto;
+  bottom: size(42);
+  right: size(40);
+  justify-content: center;
+}
+
+.pagination-dot {
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
     display: block;
-    z-index: 210;
-    opacity: 1;
-  }
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #fff;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.01);
+    transition: all 0.5s;
 
-  .dialog-img {
-    width: 2304px;
-    height: auto;
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+      background: #004ea2;
+      border-radius: 20px;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      // transform: translateY(-50%);
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 0%;
+        // transform: translateY(-50%);
+        left: 0%;
+        transform: scale(1);
+      }
+    }
   }
+}
 
-  .close {
-    position: fixed;
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
     cursor: pointer;
-    right: 35px;
-    top: 25px;
-    width: 40px;
   }
 }
 
@@ -159,94 +282,223 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section3{
+  .section7 {
     width: 100vw;
-    min-height: sizem(0);
-    max-height: sizem(1000);
-    height: auto;
-    background: #fff;
-    // background-image: url('./mo/1/bg.png');
-    background-size: cover;
-    background-attachment: scroll;
-    position: relative;
+    min-height: sizem(604);
+    max-height: sizem(812);
+    height:  sizem(607);
+    // background-image: url('./s2/bg.jpg');
+    // background-size: 100% 100%;
+    // background-position: 0 0;
+    // background-attachment: fixed;
+    overflow: hidden;
   }
-  .txt{width:sizem(310);margin:sizem(25) auto sizem(40) auto;}
 
-  .subtitle {
+  .dark-block {
+    display: block;
     width: 100%;
-    top:0;
-    left:0;
-    font-size: sizem(22);
-    color: #808080;
-    position: relative;
+    height: 100%;
+    bottom: auto;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+.txt{
+  width: sizem(310);
+  height:auto;
+  font-stretch: normal;
+  font-style: normal;
+  top: 10%;
+  left: sizem(32);
+  line-height: 1.2;
+  text-align: justify;
   }
 
   .title {
-    width: 100%;
-    top:0;
-    left:0;
     font-size: sizem(25);
-  color: #c20000;
-    position: relative;
   }
-
-  .img {
-    width: sizem(340);
-    left: 0;
-    margin: sizem(35) sizem(-15) 0;
-    top: sizem(299);
-    text-align: center;
-    img{width: 100%;}
+.subtitle {
+    font-size: sizem(19);
   }
 
   .desc {
-    width: 100%;
-    top:0;
-    left:0;
     font-size: sizem(15);
-    color: #595757;
-    position: relative;
-    margin: 0.5em 0 0 0;
+}
+.b-txt{
+  margin: 0.5em 0 0;
+  position: relative;
+    font-size: sizem(19);
+  background: #CCC;
   }
 
   .hr {
-    width: 100%;
-    top:0;
-    left:0;
+    width: sizem(310);
     height: 1px;
-    margin: sizem(13) auto ;
-    background-color: #595757;
+    background-color: #fff;
+    top: sizem(106);
+    right: auto;
+    left: sizem(32);
   }
 
-  .dialog {
+  /* Swipe */
+  .swipe {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+    height: 100%;
+    top: sizem(0);
+    left: sizem(0);
+    object-fit: cover;
+  }
+
+  // begin
+  .swipe-fade-leave-to {
     opacity: 0;
-    transition: opacity 0.5s;
-    display: none;
-    overflow: scroll;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
 
-    &.show {
-      display: block;
-      z-index: 210;
-      opacity: 1;
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  // begin
+  // .swipe-left-leave-to {
+  //   margin-left: -100vw;
+  //   z-index: 0;
+  // }
+  // // end
+  // .swipe-left-enter {
+  //   opacity: 0.5;
+  //   margin-left: 0;
+  //   z-index: 1;
+  // }
+
+  // .swipe-left-enter-active {
+  //   transition: all 0.5s ease;
+  // }
+
+  // .swipe-left-leave-active {
+  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  // }
+
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .img1 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .dialog-img {
-      width: 1500px;
+    .img2 {
+      width: 100vw;
       height: auto;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 5;
     }
 
-    .close {
-      position: fixed;
+    // &:nth-child(1) {
+    //   z-index: 1;
+    //   // opacity: 1;
+    // }
+
+    // &.base {
+    //   z-index: 1;
+    //   opacity: 1;
+    // }
+    // &.active {
+    //   z-index: 2;
+    //   // opacity: 1;
+    // }
+  }
+
+  .pagination {
+    width: auto;
+    bottom: size(91);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .pagination-dot {
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    z-index: 4;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 0 1px #fff;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.01);
+      transition: all 0.5s;
+
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+        background: #004ea2;
+        border-radius: 20px;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        // transform: translateY(-50%);
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #004ea2;
+          border-radius: 20px;
+          opacity: 1;
+          position: absolute;
+          top: 0%;
+          // transform: translateY(-50%);
+          left: 0%;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    z-index: 3;
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
       cursor: pointer;
-      right: 35px;
-      top: 25px;
-      width: 40px;
     }
   }
 }
@@ -254,33 +506,37 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
-// import Map from '@/components/Map.vue'
+import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section3',
+  name: 'section7',
 
-  // components: {
-  //   Map,
-  // },
+  mixins: [slider],
   props: ['viewIndex'],
-
   data() {
     return {
       isPC,
       isMobile,
       isTablet,
       isDialog: false,
+      slideList: [
+        {
+          img: isMobile ? require('./m/4/1.jpg') : require('./s4/1.jpg'),
+        },
+        {
+          img: isMobile ? require('./m/4/2.jpg') : require('./s4/2.jpg'),
+        },
+        {
+          img: isMobile ? require('./m/4/3.jpg') : require('./s4/3.jpg'),
+        },
+        {
+          img: isMobile ? require('./m/4/4.jpg') : require('./s4/4.jpg'),
+        },
+      ],
     }
   },
 
-  methods: {
-    showDialog() {
-      this.isDialog = true
-    },
-    closeDialog() {
-      this.isDialog = false
-    },
-  },
+  methods: {},
 
   created() {},
 
