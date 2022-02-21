@@ -166,7 +166,7 @@ export default {
   justify-content: space-between;
 
   @include md {
-    @include img_l_m(131, 208, 33);
+    @include img_l_m(250, 208, 33);
   }
 
   .info-title {
