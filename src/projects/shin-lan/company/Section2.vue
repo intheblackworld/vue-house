@@ -110,7 +110,7 @@
   @include md {
     flex-wrap: wrap;
     position: relative;
-    padding-bottom: sizem(70);
+    padding-bottom: sizem(50);
     border-bottom: 1px solid #000;
   }
 }
@@ -266,7 +266,7 @@
 
   @include md {
     width: 100%;
-    height: sizem(260);
+    height: sizem(230);
   }
 }
 
@@ -323,6 +323,7 @@
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -384,12 +385,12 @@
 }
 
 .arrow-left {
-  @include img_l_m(30, 275, 0);
+  @include img_l_m(30, 245, 0);
   background-color: #000;
 }
 
 .arrow-right {
-  @include img_r_m(30, 275, 0);
+  @include img_r_m(30, 245, 0);
   background-color: #000;
 }
 </style>

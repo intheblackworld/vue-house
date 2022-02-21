@@ -207,7 +207,11 @@ export default {
           this.$router.push('/member')
         })
         .catch((e) => {
-          window.alert(e.error_message)
+          if (e.error_message.includes('信箱')) {
+            window.alert('帳號密碼有誤，請重新輸入')
+          } else {
+            window.alert(e.error_message)
+          }
         })
     },
     alertValidate() {

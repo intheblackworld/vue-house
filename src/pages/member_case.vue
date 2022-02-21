@@ -140,6 +140,7 @@
 }
 @media screen and (max-width: 767px) {
   .bg {
+    flex-wrap: wrap;
   }
 }
 </style>

@@ -284,6 +284,9 @@ export default {
     text-align: left;
     color: #000;
     margin-bottom: size(25);
+    @include md {
+      font-size: sizem(15);
+    }
   }
 
   .order {

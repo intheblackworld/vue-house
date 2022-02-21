@@ -13,7 +13,7 @@
       </div>
       <!-- <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" /> -->
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li :key="item.name" v-for="item in list" class="flex-ac" @click="$router.push(item.link);toggleSidebar()">
+        <li :key="item.name" v-for="item in list" class="flex-ac" @click="enterPage(item)">
           <span class="link">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
@@ -31,7 +31,7 @@
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
           </li>
-          <li class="flex-ac" @click="$router.push('/login')" v-if="!$store.getters['user/isLogin']">
+          <li class="flex-ac" @click="$router.push('/login');toggleSidebar()" v-if="!$store.getters['user/isLogin']">
             <span class="link">
               <span>
                 <div class="title">登入</div>
@@ -48,6 +48,9 @@
         </div>
       </ul>
     </div>
+    <el-dialog title :visible.sync="isShowHintDialog" :width="isMobile ? '90%' : '90%'" :modal-append-to-body="false">
+      <LoginHint />
+    </el-dialog>
   </div>
 </template>
 
@@ -55,10 +58,13 @@
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
 import info from '@/info'
+import LoginHint from '@/components/LoginHint.vue'
 
 export default {
   name: 'sideNavigation',
-  components: {},
+  components: {
+    LoginHint,
+  },
   props: ['min'],
   data() {
     return {
@@ -67,6 +73,7 @@ export default {
       isTablet,
       list: navList,
       info,
+      isShowHintDialog: false
     }
   },
 
@@ -79,6 +86,14 @@ export default {
   methods: {
     toggleSidebar() {
       this.isOpen = !this.isOpen
+    },
+    enterPage(item) {
+      if (!this.$store.getters['user/isLogin'] && item.link == '/member') {
+        this.isShowHintDialog = true
+      } else {
+        this.$router.push({ path: item.link })
+      }
+      this.toggleSidebar()
     },
   },
 }

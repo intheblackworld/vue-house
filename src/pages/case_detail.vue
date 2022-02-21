@@ -13,7 +13,7 @@
           <div>進度工程</div>
         </div>
         <div class="sub-item flex-ac flex-jb" v-for="process in process_list" :key="process.code" @click="$router.push(`/case/${$route.params.id}/process/${process.id}`)">
-          <div>- {{process.title}}</div>
+          <div>{{process.title}}</div>
         </div>
         <div class="back-btn flex-c" @click="$router.push(`/member`)">回到上頁</div>
         <!-- <div :class="`item flex-ac flex-jb ${case_item.id == $route.params.id ? 'active' : ''}`" v-for="case_item in case_list" :key="case_item.id + 'nav'" @click="$router.push(`/case/${case_item.id}`)">
@@ -102,11 +102,11 @@
 }
 
 .sub-item {
-  font-size: size(19);
+  font-size: size(15);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.58;
+  line-height: 1.88;
   letter-spacing: size(2.28);
   text-align: left;
   color: #b18863;
@@ -149,6 +149,7 @@
 }
 
 .item-desc {
+  width: size(620);
   font-size: size(24);
   font-weight: normal;
   font-stretch: normal;
@@ -158,7 +159,9 @@
   text-align: left;
   color: #000;
   margin-top: size(20);
-  float: left;
+  margin-bottom: size(20);
+  display: inline-block;
+
 
   @include md {
     width: 100%;
@@ -180,10 +183,11 @@
 
 .item-content {
   position: relative;
-  height: size(590);
+  min-height: size(590);
   border-bottom: solid 1px #c59c63;
+  text-align: left;
   @include md {
-    height: sizem(300);
+    min-height: sizem(300);
   }
 }
 

@@ -13,7 +13,7 @@
           <div>進度工程</div>
         </div>
         <div class="sub-item flex-ac flex-jb" v-for="process in process_list" :key="process.code" @click="$router.push(`/case/${$route.params.id}/process/${process.id}`)">
-          <div>- {{process.title}}</div>
+          <div>{{process.title}}</div>
         </div>
         <div class="back-btn flex-c" @click="$router.push(`/case/${$route.params.id}`)">回到上頁</div>
         <!-- <div :class="`item flex-ac flex-jb ${case_item.id == $route.params.id ? 'active' : ''}`" v-for="case_item in case_list" :key="case_item.id + 'nav'" @click="$router.push(`/case/${case_item.id}`)">
@@ -108,11 +108,11 @@
 }
 
 .sub-item {
-  font-size: size(19);
+  font-size: size(15);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.58;
+  line-height: 1.88;
   letter-spacing: size(2.28);
   text-align: left;
   color: #b18863;
@@ -404,7 +404,6 @@ export default {
         this.process_list = res.data
       }
     })
-    console.log(123)
     get_files({
       category_id: this.$route.params.id,
       limit: 99,

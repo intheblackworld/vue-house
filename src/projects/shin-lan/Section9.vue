@@ -130,6 +130,7 @@
     width: sizem(160);
     height: sizem(40);
     margin: sizem(15) auto;
+    font-size: sizem(15);
   }
 
   &:hover {

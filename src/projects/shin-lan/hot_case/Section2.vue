@@ -223,6 +223,7 @@
   border-bottom: solid 1px #4d4d4d;
 
   @include md {
+    margin-top: sizem(15);
     font-size: sizem(23);
   }
 }

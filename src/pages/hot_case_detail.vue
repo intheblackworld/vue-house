@@ -329,7 +329,7 @@ export default {
           clickable: true,
         },
       },
-      slideList: [...hot_case],
+      slideList: [],
       // blockIndex: 0,
       current_case: {},
     }
