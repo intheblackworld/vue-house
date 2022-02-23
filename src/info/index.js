@@ -4,7 +4,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.309046954436!2d121.52519106903382!3d25.057512371674253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95d6a059ed5%3A0xbb5a898e1e245fdf!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDmlrDnlJ_ljJfot6_kuozmrrU3NuW3tzEw6Jmf!5e0!3m2!1szh-TW!2stw!4v1644826953519!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/fnmvdCnLXQCgfKGJA',
-  phone: '0930-279-038',
+  phone: '02-2541-0606',
   fbLink: 'https://www.facebook.com/中山直美-115702496966413',
   fbMessage: 'https://m.me/115702496966413',
   caseName: '中山直美',
