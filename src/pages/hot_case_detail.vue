@@ -9,10 +9,8 @@
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination" v-if="isPC"></div>
           <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
-            <img src="../projects/shin-lan/shin-lan/all/arrow-left.png" alt="" class="arrow-left">
           </div>
           <div class="swiper-button-next" slot="button-next" v-if="isMobile">
-            <img src="../projects/shin-lan/shin-lan/all/arrow-right.png" alt="" class="arrow-next">
           </div>
         </swiper>
         <!-- <transition-group class="flex-ac flex-jb wrap" name="slide-fade" mode="out-in">
@@ -69,7 +67,21 @@
 .swiper-button-prev, .swiper-button-next {
   top: 100%;
   height: 25px;
+  width:30%;
   background-color: rgba(0, 0, 0, .5);
+  &::before{
+    content: "";
+    border-left: 1px solid #000;
+    border-width: 0 0 1px 1px;
+    width: 100%;display: block;
+  }
+}
+
+.swiper-button-prev{
+  left: 0
+}
+.swiper-button-next {
+  right: 0;
 }
 </style>
 <style lang="scss" scoped>
@@ -176,7 +188,8 @@
 
 .main-img {
   width: 100%;
-  // height: size(780);
+  height: size(550);
+  object-fit: cover;
   margin-bottom: size(30);
 }
 
@@ -211,18 +224,13 @@
   font-style: normal;
   line-height: 1.67;
   letter-spacing: size(1.44);
-  text-align: left;
+  text-align: justify;
   color: #000;
 
   @include md {
     font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2;
     letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
@@ -308,8 +316,8 @@ export default {
       slideIndex: 0,
       swiperOption: {
         direction: isMobile ? 'horizontal' : 'vertical',
-        slidesPerView: isMobile ? 1 : 3,
-        spaceBetween: isTablet ? 20 : 0,
+        slidesPerView: isMobile ? 1 : 'auto',
+        spaceBetween: isTablet ? 20 : 15,
         slidesPerColumn: isMobile ? 1 : 1,
         // allowSlidePrev: isMobile ? true : true,
         // allowSlideNext: isMobile ? true : true,

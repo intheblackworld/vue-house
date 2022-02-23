@@ -14,9 +14,9 @@
           </div>
           <div class="flex-ac flex-jb case-head">
             <div class="case-title" v-html="current_case.title"></div>
-            <div class="case-btns flex-ac flex-jb">
-              <div v-show="current_case.link" @click="$router.push(current_case.link)">個案介紹</div>
-              <div v-show="current_case.media_link" @click="$router.push(current_case.media_link)">個案影片</div>
+            <div class="case-btns">
+              <span v-show="current_case.link" @click="$router.push(current_case.link)">個案介紹</span>
+              <span v-show="current_case.media_link" @click="$router.push(current_case.media_link)">個案影片</span>
             </div>
           </div>
           <div class="case-desc" v-html="current_case.desc_home" v-if="isPC"></div>
@@ -265,14 +265,15 @@
 }
 
 .case-btns {
-  width: size(180);
+  width:auto;
 
   @include md {
     width: auto;
   }
 
-  > div {
-    width: 48%;
+  > span {
+    display: inline-block;
+    width:4.5em;
     font-size: size(18);
     font-weight: normal;
     font-stretch: normal;
@@ -284,9 +285,9 @@
     cursor: pointer;
     border-bottom: solid 1.1px #4d4d4d;
     transition: all 0.3s;
+    margin: 0 0 0 0.5em;
 
     @include md {
-      width: auto;
       font-size: sizem(15);
     }
 
@@ -425,7 +426,7 @@ export default {
   },
 
   mounted() {
-    this.current_case = hot_case[0]
+    this.current_case = hot_case[4]
     this.slideList = this.current_case.imgs
     // get_category().then((res) => {
     //   console.log(res, 'get_category')

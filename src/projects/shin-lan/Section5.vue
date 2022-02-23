@@ -32,11 +32,17 @@
 .section5 {
   width: 100%;
   height: size(494 + 480);
-  min-height: size(494 + 480);
-  max-height: auto;
   background-size: cover;
   background-attachment: fixed;
   background-color: #f7f8f8;
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing:0.05em;
+  text-align: justify;
+  color: #000;
 
   @include md {
     width: 100vw;
@@ -45,6 +51,8 @@
     max-height: initial;
     overflow: visible;
     padding-bottom: sizem(65);
+    font-size: sizem(15);
+    letter-spacing: normal;
   }
 }
 
@@ -81,30 +89,26 @@
 
 .container {
   width: size(1240);
-  margin: size(76) auto size(76);
+  margin: size(60) auto size(76);
   position: relative;
   @include md {
     width: sizem(310);
-    margin: sizem(100) auto sizem(0);
+    margin: sizem(85) auto sizem(0);
     padding-bottom: sizem(40);
   }
 }
 
 .title {
-  @include img_l_pc(67, 0, 0);
+  @include img_l_pc(67, 15, 0);
 
   @include md {
     @include img_l_m(310, 248, 32.5);
     font-size: sizem(28);
     font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.45;
     letter-spacing: sizem(1);
-    text-align: left;
-    color: #000;
     border-bottom: 1px solid #000;
-    padding-bottom: 1rem;
+    padding-bottom: .4em;
   }
 }
 
@@ -121,131 +125,80 @@
 }
 
 .item {
-  margin-bottom: 1.5rem;
   cursor: pointer;
+  padding: 0.7em 0.8em;
+  transition: background 0.3s;
   @include md {
+  padding: 1em 0 4em 0;
     flex-wrap: wrap;
     position: relative;
-    padding-bottom: sizem(70);
     border-bottom: 1px solid #000;
+  }
+  &:hover{
+    background: #0002;
   }
 }
 
 .item-date {
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.3em;
   @include md {
     @include img_l_m(77, 0, 0);
     width: sizem(106);
     height: sizem(20);
     top: auto;
-    bottom: sizem(25);
-
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+    bottom: sizem(20);
   }
 }
 .item-btn {
   width: size(106);
-  height: size(20);
   background-color: #000;
   font-size: size(15);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3);
+  line-height: 1.38;
+  letter-spacing: 0.2em;
   text-align: center;
   color: #fff;
-  margin-right: 1.5rem;
+  margin-right: 1.5em;
   @include md {
-    width: sizem(106);
-    height: sizem(20);
-    @include img_r_m(105, 0, 0);
+    @include img_r_m(106, 0, 0);
     top: auto;
-    bottom: sizem(25);
-
+    bottom: sizem(20);
     font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.38;
-    letter-spacing: sizem(2.6);
-    text-align: center;
-    color: #fff;
+  margin-right: 0;
   }
 }
 
 .item-title {
   font-size: size(28);
+    line-height: 1.39;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: size(1.4);
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.2rem;
+  margin-bottom: .2em;
   @include md {
     font-size: sizem(18);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.39;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
 .item-desc {
-  width: size(800);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
+ // width: size(800);
+  margin-bottom: 0.2em;
   @include md {
     width: 100%;
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   }
 }
 
 .btn-more {
-  @include img_l_pc(158, 251, 0);
+  @include img_l_pc(158, 300, 0);
   height: size(40);
   border: solid 1px #707070;
   font-size: size(15);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3);
+  letter-spacing:0.2em;
   text-align: center;
-  color: #000;
   cursor: pointer;
   transition: all 0.3s;
 
@@ -260,13 +213,7 @@
     top: auto;
     bottom: 0;
     font-size: sizem(15);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.73;
-    letter-spacing: sizem(3);
-    text-align: center;
-    color: #000;
   }
 }
 </style>
