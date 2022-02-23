@@ -152,12 +152,20 @@
     margin-right: 0;
     margin-bottom: sizem(60);
   }
+  &:hover{
+    .card-img {
+      border-radius:50%;
+    }
+  }
 }
 
 .card-img {
   position: relative;
   width: 100%;
   height: size(370);
+overflow: hidden;
+transition:all 0.5s;
+
 
   @include md {
     height: sizem(310);

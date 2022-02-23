@@ -64,6 +64,14 @@
   overflow: hidden;
   text-align: center;
   // background-color: rgba(17, 17, 3, 0.11);
+  font-size: size(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing:0.05em;
+  text-align: justify;
+  color: #000;
 
   // 手機版
   @include md {
@@ -71,6 +79,8 @@
     // height: size(604);
     // min-height: calc(604 * 100vw / 375);
     // max-height: calc(812 * 100vw / 375);
+    font-size: sizem(15);
+    letter-spacing: normal;
   }
 }
 
@@ -96,6 +106,21 @@
 }
 
 .item {
+  cursor: pointer;
+  padding: 0.7em 0.8em;
+  transition: background 0.3s;
+  @include md {
+  padding: 1em 0 4em 0;
+    flex-wrap: wrap;
+    position: relative;
+    border-bottom: 1px solid #000;
+  }
+  &:hover{
+    background: #0002;
+  }
+}
+/*
+.item {
   margin-bottom: 1.5rem;
   cursor: pointer;
   @include md {
@@ -105,113 +130,64 @@
     border-bottom: 1px solid #000;
   }
 }
-
+*/
 .item-img {
   width: 100%;
   margin-bottom: sizem(15);
 }
 
+
 .item-date {
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.3em;
+  white-space: nowrap;
   @include md {
     @include img_l_m(77, 0, 0);
     width: sizem(106);
     height: sizem(20);
     top: auto;
-    bottom: sizem(25);
-
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+    bottom: sizem(20);
   }
 }
 .item-btn {
   width: size(106);
-  height: size(20);
   background-color: #000;
   font-size: size(15);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3);
+  line-height: 1.38;
+  letter-spacing: 0.2em;
   text-align: center;
   color: #fff;
-  margin-right: 1.5rem;
+  margin-right: 1.5em;
+  white-space: nowrap;
   @include md {
-    width: sizem(106);
-    height: sizem(20);
-    @include img_r_m(105, 0, 0);
+    @include img_r_m(106, 0, 0);
     top: auto;
-    bottom: sizem(25);
-
+    bottom: sizem(20);
     font-size: sizem(13);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.38;
-    letter-spacing: sizem(2.6);
-    text-align: center;
-    color: #fff;
+  margin-right: 0;
   }
 }
 
 .item-title {
   font-size: size(28);
+    line-height: 1.39;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: size(1.4);
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.2rem;
-
+  margin-bottom: .2em;
   @include md {
     font-size: sizem(18);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.39;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
+
 .item-desc {
-  width: size(1100);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
+ // width: size(800);
+  margin-bottom: 0.2em;
   @include md {
     width: 100%;
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   }
 }
 

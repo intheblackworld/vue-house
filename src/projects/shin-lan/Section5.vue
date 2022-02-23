@@ -31,10 +31,10 @@
 @import '@/assets/style/function.scss';
 .section5 {
   width: 100%;
-  height: size(494 + 480);
+  height:auto;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+  //background-color: #f7f8f8;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
@@ -114,7 +114,7 @@
 
 .item-list {
   width: size(1030);
-  position: absolute;
+  position: relative;
   top: 0;
   left: size(200);
   @include md {
@@ -141,6 +141,7 @@
 
 .item-date {
   margin-bottom: 0.3em;
+  white-space: nowrap;
   @include md {
     @include img_l_m(77, 0, 0);
     width: sizem(106);
@@ -159,6 +160,7 @@
   text-align: center;
   color: #fff;
   margin-right: 1.5em;
+  white-space: nowrap;
   @include md {
     @include img_r_m(106, 0, 0);
     top: auto;
@@ -181,12 +183,13 @@
 .item-desc {
  // width: size(800);
   margin-bottom: 0.2em;
-  @include md {
-    width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
+  @include md {
+    width: 100%;
+  -webkit-line-clamp: 3;
   }
 }
 

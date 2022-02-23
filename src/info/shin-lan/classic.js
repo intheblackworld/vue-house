@@ -164,7 +164,7 @@ export const case_list_2 = [
   {
     title: '和裕投資辦公大樓',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/和裕投資辦公大樓/heyu1.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/1',
     desc: '民國104年興建，地下四層地上十四層，和裕投資CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
@@ -188,7 +188,7 @@ export const case_list_2 = [
   {
     title: '崇德發中山華園辦公大樓',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/崇德發中山華園辦公大樓/cdfe1.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/2',
     desc: '民國105年興建，地下三層地上七層，總樓地板面積：10902.69平方公尺，冠彰建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
@@ -233,7 +233,7 @@ export const case_list_2 = [
   {
     title: '復興北路辦公大樓',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/復興北路辦公大樓/fushin1.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/3',
     desc: '民國102年興建，地下四層地上十三層，總樓地板面積：4238.43平方公尺', // 內頁用
     imgs: [ // 內頁用
       {
@@ -256,12 +256,12 @@ export const case_list_2 = [
   },
   {
     title: '明城科技',
-    img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.png'),
-    link: '/classic_case/2/6',
+    img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.jpg'),
+    link: '/classic_case/2/4',
     desc: '民國99年興建，地下一層地上七層，總樓地板面積：1718.69平方公尺，成坊建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
-        img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.png'),
+        img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.jpg'),
       },
     ],
     type_text: '合聯營造Heran', // 內頁用
@@ -269,7 +269,7 @@ export const case_list_2 = [
   {
     title: '麗池PARTY',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/麗池PARTY/LiChiParty.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/5',
     desc: '民國95年興建，地下三層地上十層，總樓地板面積：5652.56 平方公尺，旭記建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
@@ -292,24 +292,24 @@ export const case_list_2 = [
   },
   {
     title: '寬庭',
-    img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.png'),
-    link: '/classic_case/2/6',
+    img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.jpg'),
+    link: '/classic_case/2/7',
     desc: '民國94年興建，地下三層地上十層，總地板面積：4408.42平方公尺，長耀建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
-        img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.png'),
+        img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.jpg'),
       },
     ],
     type_text: '合聯營造Heran', // 內頁用
   },
   {
     title: '明湖青庭',
-    img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.png'),
-    link: '/classic_case/2/6',
+    img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.jpg'),
+    link: '/classic_case/2/8',
     desc: '民國93年興建，地下二層地上八層，總地板面積：2207平方公尺，長耀建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
-        img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.png'),
+        img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.jpg'),
       },
     ],
     type_text: '合聯營造Heran', // 內頁用
@@ -317,7 +317,7 @@ export const case_list_2 = [
   {
     title: '大安逸品',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/大安逸品/daan1.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/9',
     desc: '民國98年興建，地下一層地上七層，成坊建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {

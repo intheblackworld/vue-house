@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <img src="../shin-lan/1-20補/csr/topbg.jpg" alt="" class="bg-img" v-if="isPC">
+    <img src="../shin-lan/csr/topbg.jpg" alt="" class="bg-img" v-if="isPC">
     <img src="../shin-lan/mo/csr/topbg.jpg" alt="" class="bg-img" v-else>
     <div class="box">
     <div class="shin-lan-title-v shin-lan-title-v-m title" data-aos="fade">

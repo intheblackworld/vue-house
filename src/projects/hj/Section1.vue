@@ -113,7 +113,7 @@
   </div>
 </template>
 <style lang="scss">
-.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+/*.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   width: 15px;
   height: 15px;
   margin: 0 10px;
@@ -124,6 +124,7 @@
   &.swiper-pagination-bullet-active {
     background: #fff;
   }
+  */
 }
 </style>
 <style lang="scss" scoped>

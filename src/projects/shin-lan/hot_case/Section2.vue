@@ -34,28 +34,56 @@
   </div>
 </template>
 <style lang="scss">
-.swiper-container-vertical
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-container-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
-  margin: 0 10px;
-  background: #333;
+.swiper-pagination{
+  //宜娟把點選範圍條大版
+  .swiper-pagination-bullet{
+  width: 2em;
+  height: 2em;
+  margin: 0 !important;
   opacity: 1;
   position: relative;
+  transition:color .3s ;
+  color: #333;
+  background: none;
   border-radius: 0;
-  z-index: 2;
+  &::before{
+    content: "";
+    width: 50%;
+    height:50%;
+    background: currentColor;
+    display: block;position: relative;
+    top: 25%;left: 25%;
 
-  &.swiper-pagination-bullet-active {
+  }
+  &::after{
+    content: "";
+    width: 50%;
+    height:50%;
     background: #b18863;
+    display: block;position: absolute;
+    top: 25%;left: 25%;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: transform 0.3s,border-radius 0.2s 0.2s;
+
+    }
+  &.swiper-pagination-bullet-active {
+  &::after{
+    border-radius: 0%;
+    transform:scale(1);
+    }
+  }
+  &:hover{
+  color: #666;}
   }
 }
+
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+.swiper-pagination {
+  font-size: size(15);
+}
 // begin
 .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
@@ -172,24 +200,13 @@
     width: 100%;
     margin-bottom: sizem(60);
   }
+  &:hover{
+    .card-img {
+      border-radius:50%;
+    }
+  }
+
 }
-
-.card-img {
-  position: relative;
-  width: 100%;
-  height: size(370);
-
-  @include md {
-    height: sizem(310);
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
   .add-btn {
     position: absolute;
     font-size: size(42);
@@ -209,7 +226,25 @@
       bottom: sizem(10);
     }
   }
+.card-img {
+  position: relative;
+  width: 100%;
+  height: size(370);
+overflow: hidden;
+transition:all 0.5s;
+  @include md {
+    height: sizem(310);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
+
 
 .card-content {
   font-size: size(28);
