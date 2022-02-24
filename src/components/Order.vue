@@ -2,52 +2,27 @@
   <div class="order-bg">
     <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
     <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
+    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img"> -->
     <div class="order-top">
       <!-- <div class="title-block">
         <h3 class="title">{{order.title}}</h3>
         <div class="subtitle">{{order.subTitle}}</div>
       </div> -->
-      <div
-        class="order-title"
-        v-html="order.title"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      ></div>
-      <div
-        class="order-subtitle"
-        v-html="order.subTitle"
-        data-aos="fade-down"
-        data-aos-delay="100"
-      ></div>
+      <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div>
+      <div class="order-subtitle" v-html="order.subTitle"></div>
       <div class="order">
         <div class="form">
           <div class="group">
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
-              <label for="form-name">姓名</label>
-              <el-input id="form-name"
-                v-model="form.name"
-                placeholder
-              ></el-input>
+            <div class="row" data-aos="fade-down" data-aos-delay="100">
+              <label>姓名</label>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
-              <label for="form-phone">手機</label>
-              <el-input id="form-phone"
-                v-model="form.phone"
-                placeholder
-              ></el-input>
+            <div class="row" data-aos="fade-down" data-aos-delay="200">
+              <label>手機</label>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
-          <!--
-            <div class="row" data-aos="fade-down"
-              data-aos-delay="300">
+            <!-- <div class="row" data-aos="fade-down"
+        data-aos-delay="300">
               <label>聯絡時間(起)</label>
               <el-time-select
                 v-model="form.time_start"
@@ -60,7 +35,7 @@
               ></el-time-select>
             </div>
             <div class="row" data-aos="fade-down"
-             data-aos-delay="400">
+        data-aos-delay="400">
               <label>聯絡時間(迄)</label>
               <el-time-select
                 v-model="form.time_end"
@@ -71,8 +46,7 @@
                   end: '18:00',
                 }"
               ></el-time-select>
-            </div> 
-          -->
+            </div> -->
             <!-- <div class="row">
               <label>想看房型</label>
               <el-select v-model="form.house" placeholder>
@@ -88,67 +62,27 @@
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
-            </div> 
-          -->
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
-              <label for="form-city">居住城市</label>
-              <el-select id="form-city"
-                v-model="form.city"
-                placeholder
-              >
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+            </div> -->
+            <div class="row" data-aos="fade-down" data-aos-delay="300">
+              <label>居住城市</label>
+              <el-select v-model="form.city" placeholder>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div
-              class="row"
-              data-aos="fade-down"
-              data-aos-delay="300"
-            >
-              <label for="form-area">居住地區</label>
-              <el-select id="form-area"
-                v-model="form.area"
-                placeholder
-              >
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+            <div class="row" data-aos="fade-down" data-aos-delay="400">
+              <label>居住地區</label>
+              <el-select v-model="form.area" placeholder>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div
-            class="group"
-            data-aos="fade-down"
-            data-aos-delay="300"
-          >
+          <div class="group" data-aos="fade-down" data-aos-delay="600">
             <div class="row">
-              <el-input
-                type="textarea"
-                :rows="2"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div
-          class="control"
-          data-aos="fade-down"
-          data-aos-delay="500"
-        >
+        <div class="control" data-aos="fade-down" data-aos-delay="500">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -157,41 +91,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="!isMobile"
-          data-aos="fade-down"
-          data-aos-delay="600"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <div
-          style="margin: 0 auto;z-index:2;"
-          v-if="isMobile"
-        >
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit flex-c"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-          data-aos="fade-down"
-          data-aos-delay="700"
-        >立即預約</el-button>
-        <Loading
-          :loading="isSubmit"
-          :isOpacity="true"
-        />
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
+        <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
     <ContactInfo />
@@ -227,7 +134,7 @@ export default {
       order: info.order,
       isMobile,
       form: {
-        name: '',
+     /*   name: '',
         phone: '',
         email: '',
         city: '',
@@ -235,6 +142,7 @@ export default {
         msg: '',
         time_start: '',
         time_end: '',
+        */
       },
       checked: false,
       isSubmit: false,
@@ -246,11 +154,12 @@ export default {
 
   computed: {
     areaList() {
-      return renderAreaList(this.form.city)
+  //    return renderAreaList(this.form.city)
     },
   },
 
   methods: {
+/*
     showPolicyDialog() {
       this.policyVisible = true
     },
@@ -266,6 +175,18 @@ export default {
         ),
       })
     },
+
+    // alertValidatePhone() {
+    //   const h = this.$createElement
+    //   this.$notify({
+    //     title: '手機格式錯誤',
+    //     message: h(
+    //       'i',
+    //       { style: 'color: #82191d' },
+    //       '格式範例：09xxxxxxxx',
+    //     ),
+    //   })
+    // },
 
     submit() {
       if (this.isSubmit) return
@@ -287,6 +208,12 @@ export default {
         this.isSubmit = false
         return
       }
+
+      // if (!/1{2}[0-9]{8}$/.test(this.form.phone)) {
+      //   this.alertValidatePhone()
+      //   this.isSubmit = false
+      //   return
+      // }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')
@@ -323,19 +250,21 @@ export default {
       fetch('contact-form.php', {
         method: 'POST',
         body: formData,
-      }).then(response => {
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
         }
       })
     },
+    */
   },
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
+@import '@/assets/style/function.scss';
 .bg-img {
   width: 100vw;
   position: absolute;
@@ -353,44 +282,52 @@ export default {
 }
 .order-bg {
   background-color: $order_bg_color;
-  // background-image: $order_bg_image;
-  background-repeat: no-repeat;
+  background-image: $order_bg_image;
+  background-repeat: Srepeat;
   position: relative;
-  padding-top: 130px;
+  // padding-top: 130px;
   background-size: 100vw auto;
-  // background-attachment: fixed;
-  background-position: 0% 0%;
+  background-attachment: fixed;
+  background-position: 80% 0%;
   font-family: $family3;
   input,
   textarea,
   button {
     font-family: $family3;
   }
+
+  .order-tt {position: relative;
+    width: size(1440);
+    height: size(400);
+    margin: 0 auto size(-300);
+    top: size(-300);
+  }
   .order-top {
+    width: 100vw;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
   }
   .order-title {
     font-family: $family2;
-    width: 100vw;
+    width: 100%;
     padding-top: 20px;
     padding-bottom: 8px;
-    font-weight: 700;
-    line-height: 1.7;
+    font-weight: 900;
+    line-height: 1.3;
     letter-spacing: 20px;
-    padding-left: 20px;
-    font-size: calc(100vw * 36 / 1920);
+    font-size: calc(100vw * 40 / 1920);
     text-align: center;
     color: $order_title_color;
   }
 
   .order-subtitle {
     width: 100vw;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     color: $order_subtitle_color;
-    margin-bottom: 0px;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 18px;
   }
 
   .order {
@@ -408,7 +345,6 @@ export default {
     align-items: flex-start;
     margin: 0 auto;
     justify-content: space-between;
-    align-content:space-between;
     > .group {
       flex: 1;
       align-items: flex-start;
@@ -417,28 +353,16 @@ export default {
 
   .group {
     height: 250px;
-    display: flex;
-    flex-direction:column;
     margin-bottom: 40px;
-    justify-content:space-between;
-    align-content:space-between;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
       .row {
-        overflow: hidden;
-        width: 95%;
-      justify-content: flex-start;
-    border: $order_input_border;
-    background: $order_input_bg;
-    padding: 0 0 0 0.5em;
-    margin:0 0 0 0;
-     //margin: ;
+        justify-content: flex-start;
       }
     }
 
     &:nth-child(2) {
-      align-items:center;margin:0 0 0 7px;
       .row {
         justify-content: flex-end;
         align-items: flex-start;
@@ -450,6 +374,7 @@ export default {
   .row {
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
 
     &.house {
       margin-top: 50px;
@@ -460,17 +385,11 @@ export default {
     }
 
     label {
-      //width:10em;
-      flex: 0 0 6.8em;
-      display:block;text-align: left;
+      width: 92px;
       font-size: 16px;
       opacity: 0.8;
       font-weight: bold;
       color: $order_input_label_color;
-
-      span {
-        color: #ff0000;
-      }
     }
   }
 
@@ -486,9 +405,6 @@ export default {
     font-size: 32px;
   }
 
-  .order-subtitle {
-    font-size: 16px;
-  }
 
   .order {
     width: 920px;
@@ -501,14 +417,28 @@ export default {
 @media only screen and (max-width: 767px) {
   .order-bg {
     // background-image: $order_bg_image_m;
+    background-attachment: initial;
     background-size: cover;
-    padding-top: 40px;
+    padding-top: 0px;
     margin: 0;
     position: relative;
     z-index: 2;
 
     > img {
       display: block;
+    }
+
+    .order-tt {
+      width: sizem(360);
+      height: sizem(50);top: 0;
+      margin: 0 auto;
+      
+    }
+    .order-top {
+      width: sizem(360);
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
     }
     .order-title {
       padding-top: 10px;
@@ -517,19 +447,14 @@ export default {
       letter-spacing: 4px;
     }
 
-    .order-subtitle {
-      // display: none;
-      font-size: 15px;
-    }
     .order {
-      width: 84%;
+      width: 95% !important;
       margin: 0 auto;
       padding: 0;
     }
 
     .form {
       flex-direction: column;
-    margin-bottom: -12px ;
     }
 
     .group {
@@ -537,19 +462,6 @@ export default {
       height: auto !important;
       margin-bottom: 0px !important;
       border: none !important;
-      
-      &:nth-child(1) {
-      .row {
-        width: 100%;
-     //margin: ;
-      }
-    }
-
-    &:nth-child(2) {margin: 0 0 0 0;
-      .row {
-        width: 100%;
-      }
-    }
     }
 
     .row {
@@ -564,12 +476,8 @@ export default {
     }
 
     .control {
-    .el-checkbox{
-      margin:10px auto;
-    }
-     /* margin-top: 10px;
+      margin-top: 10px;
       margin-bottom: 10px;
-      */
     }
 
     .hint {
