@@ -153,11 +153,12 @@ export default {
 
   computed: {
     areaList() {
-      return renderAreaList(this.form.city)
+  //    return renderAreaList(this.form.city)
     },
   },
 
   methods: {
+/*
     showPolicyDialog() {
       this.policyVisible = true
     },
@@ -255,6 +256,7 @@ export default {
         }
       })
     },
+    */
   },
 }
 </script>

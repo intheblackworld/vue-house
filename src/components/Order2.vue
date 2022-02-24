@@ -8,7 +8,7 @@
         <div class="group">
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
-            <el-select v-model="form.activity" placeholder="想報名的活動">
+            <el-select v-model="form.activity" placeholder="預約時間">
               <el-option v-for="(act, index) in activies" :key="act.value + index" :label="act.label" :value="act.value" :disabled="act.disabled" no-data-text="無數據"></el-option>
             </el-select>
           </div>
@@ -123,58 +123,54 @@ export default {
       googleSrc: info.googleSrc,
       activies: [
         {
-          value: '5/8(六)14:00-16:00 溫馨母親節童趣手作',
-          label: '5/8(六)14:00-16:00 溫馨母親節童趣手作',
+          value: '11/20(六)',
+          label: '11/20(六)',
         },
         {
-          value: '2/28(日)14:00-16:00 瑪莎見面會',
-          label: '2/28(日)14:00-16:00 瑪莎見面會',
-          disabled: true,
+          value: '11/21(日)',
+          label: '11/21(日)',
         },
         {
-          value: '3/6(六)14:00-16:00 春來了',
-          label: '3/6(六)14:00-16:00 春來了',
-          disabled: true,
+          value: '11/27(六)',
+          label: '11/27(六)',
         },
         {
-          value: '3/13(六)14:00-16:00 海底探險家',
-          label: '3/13(六)14:00-16:00 海底探險家',
-          disabled: true,
+          value: '11/28(日)',
+          label: '11/28(日)',
         },
         {
-          value: '3/20(六)14:00-15:30 親子讀報趣',
-          label: '3/20(六)14:00-15:30 親子讀報趣',
-          disabled: true,
+          value: '12/4(六)',
+          label: '12/4(六)',
         },
         {
-          value: '3/27(六)14:00-16:00 讀報素養闖關',
-          label: '3/27(六)14:00-16:00 讀報素養闖關',
-          disabled: true,
+          value: '12/5(日)',
+          label: '12/5(日)',
         },
         {
-          value: '4/3(六)14:00-16:00  當我們童在一起',
-          label: '4/3(六)14:00-16:00  當我們童在一起',
-          disabled: true,
+          value: '12/11(六)',
+          label: '12/11(六)',
         },
         {
-          value: '4/10(六)14:00-15:30  故事魔法寶盒',
-          label: '4/10(六)14:00-15:30  故事魔法寶盒',
-          disabled: true,
+          value: '12/12(日)',
+          label: '12/12(日)',
         },
         {
-          value: '4/17(六)14:00-16:00 可愛動物聯萌',
-          label: '4/17(六)14:00-16:00 可愛動物聯萌',
-          disabled: true,
+          value: '12/18(六)',
+          label: '12/18(六)',
         },
         {
-          value: '4/24(六)14:00-15:00 如何沖泡一杯好咖啡',
-          label: '4/24(六)14:00-15:00 如何沖泡一杯好咖啡',
-          disabled: true,
+          value: '12/19(日)',
+          label: '12/19(日)',
         },
-        /*   {
-          value: '更多精彩活動 敬請期待 即將公開',
-          label: '更多精彩活動 敬請期待 即將公開',
-        }, */
+        {
+          value: '12/25(六)',
+          label: '12/25(六)',
+        },
+        {
+          value: '12/26(日)',
+          label: '12/26(日)',
+          //disabled: true,
+        },
       ],
       form: {
         // activity: '2/15(六)14:00-16:00 瑪莎見面會', // 活動名稱
