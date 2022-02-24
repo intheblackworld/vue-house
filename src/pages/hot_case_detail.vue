@@ -2,7 +2,7 @@
   <div class="section2">
     <div class="container flex flex-jb wrap">
       <div class="side-bar">
-        <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged">
+        <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged" v-if="slideList.length>0">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
             <img :src="slide.img" :class="`item-img`" />
             <div class="card-content" v-html="slide.title"></div>
@@ -12,7 +12,7 @@
           <div class="swiper-button-next" slot="button-next" v-if="isMobile">
           </div>
         </swiper>
-          <div class="swiper-pagination" slot="pagination" v-if="isPC"></div>
+        <div class="swiper-pagination" slot="pagination" v-if="isPC"></div>
         <!-- <transition-group class="flex-ac flex-jb wrap" name="slide-fade" mode="out-in">
         <div class="card" v-for="(hot_item, index) in hot_list" :key="hot_item.title + index">
           <div class="card-img">
@@ -26,7 +26,7 @@
       </transition-group> -->
       </div>
       <div class="content">
-        <img :src="slideList[slideIndex].img" alt="" class="main-img" v-if="isPC">
+        <img :src="slideList[slideIndex] ? slideList[slideIndex].img : ''" alt="" class="main-img" v-if="isPC">
         <div class="shin-lan-title-h shin-lan-title-h-m title gold" data-aos="fade" v-if="isPC">
           熱銷<span data-aos="flip-right"></span>個案
         </div>
@@ -39,73 +39,78 @@
   </div>
 </template>
 <style lang="scss">
-.swiper-pagination{
+.swiper-pagination {
   //宜娟把點選範圍條大版
-  .swiper-pagination-bullet{
-  width: 2em;
-  height: 2em;
-  margin: 0 !important;
-  opacity: 1;
-  position: relative;
-  transition:color .3s ;
-  color: #333;
-  background: none;
-  border-radius: 0;
-  &::before{
-    content: "";
-    width: 50%;
-    height:50%;
-    background: currentColor;
-    display: block;position: relative;
-    top: 25%;left: 25%;
-
-  }
-  &::after{
-    content: "";
-    width: 50%;
-    height:50%;
-    background: #b18863;
-    display: block;position: absolute;
-    top: 25%;left: 25%;
-    border-radius: 50%;
-    transform:scale(0);
-    transition: transform 0.3s,border-radius 0.2s 0.2s;
-
+  .swiper-pagination-bullet {
+    width: 2em;
+    height: 2em;
+    margin: 0 !important;
+    opacity: 1;
+    position: relative;
+    transition: color 0.3s;
+    color: #333;
+    background: none;
+    border-radius: 0;
+    &::before {
+      content: '';
+      width: 50%;
+      height: 50%;
+      background: currentColor;
+      display: block;
+      position: relative;
+      top: 25%;
+      left: 25%;
     }
-  &.swiper-pagination-bullet-active {
-  &::after{
-    border-radius: 0%;
-    transform:scale(1);
+    &::after {
+      content: '';
+      width: 50%;
+      height: 50%;
+      background: #b18863;
+      display: block;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s, border-radius 0.2s 0.2s;
     }
-  }
-  &:hover{
-  color: #666;}
+    &.swiper-pagination-bullet-active {
+      &::after {
+        border-radius: 0%;
+        transform: scale(1);
+      }
+    }
+    &:hover {
+      color: #666;
+    }
   }
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   top: 100%;
   height: 25px;
-  width:30%;
- // background-color: rgba(0, 0, 0, .5);
-  &::before{
-    content: "";
+  width: 30%;
+  // background-color: rgba(0, 0, 0, .5);
+  &::before {
+    content: '';
     position: relative;
     left: 20%;
     border: 1px solid #666;
     border-width: 0 0 1px 1px;
-    width: 50%;display: block;
+    width: 50%;
+    display: block;
     height: 40%;
-    transform:skewX(-45deg);
-
+    transform: skewX(-45deg);
   }
 }
 
-.swiper-button-prev{
-  left: 0
+.swiper-button-prev {
+  left: 0;
 }
 .swiper-button-next {
-  right: 0;transform: scaleX(-1)
+  right: 0;
+  transform: scaleX(-1);
 }
 </style>
 <style lang="scss" scoped>
@@ -114,7 +119,7 @@
 
 .swiper-pagination {
   top: 0;
-  left: -.5em;
+  left: -0.5em;
   font-size: size(15);
   text-align: left;
 }
@@ -166,12 +171,11 @@
 
 .side-bar {
   width: size(333);
-  height:0;
+  height: 0;
 
   @include md {
     width: 100%;
-  height:auto;
-
+    height: auto;
   }
 }
 
@@ -188,7 +192,7 @@
   position: relative;
   margin: size(120) auto;
   padding-top: size(30);
-  align-items:stretch;
+  align-items: stretch;
 
   @include md {
     width: sizem(310);
@@ -209,7 +213,8 @@
   width: 100%;
   object-fit: cover;
   // height: size(333);
-  @include md {height: sizem(200);
+  @include md {
+    height: sizem(200);
   }
 }
 
@@ -221,7 +226,7 @@
   border-bottom: solid 1px #4d4d4d;
 
   @include md {
-    margin-top: .3em;
+    margin-top: 0.3em;
     font-size: sizem(20);
     border-bottom: none;
     text-align: center;
@@ -250,7 +255,7 @@
 }
 
 .back-btn {
-    width: 10.7em;
+  width: 10.7em;
   height: 2.7em;
   font-size: size(15);
   font-weight: 500;
@@ -273,7 +278,7 @@
   }
 
   @include md {
-  font-size: sizem(15);
+    font-size: sizem(15);
   }
 }
 
@@ -356,17 +361,19 @@ export default {
       current_case: {},
     }
   },
-  computed: {},
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper ? this.$refs.mySwiper.swiper : ''
+    },
+  },
 
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
-      console.log(swiper.activeIndex, swiper.slides.length, 'eeee')
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else {
-        this.slideIndex =
-          (swiper.activeIndex % this.current_case.imgs.length) + 1
+        this.slideIndex = swiper.activeIndex % this.current_case.imgs.length
       }
     },
   },
@@ -376,10 +383,22 @@ export default {
       let id = this.$route.params.id
       this.current_case = hot_case[id - 1]
       this.slideList = this.current_case.imgs
+      this.slideIndex = 0
+      setTimeout(() => {
+        if (this.swiper) {
+          this.swiper.slideTo(0, 1000, false)
+        }
+      }, 500)
     }
   },
 
-  watch: {},
+  // watch: {
+  //   slideList(list) {
+  //     if (list.length > 0 && this.$refs.mySwiper) {
+  //       this.$refs.mySwiper.swiper.slideTo(1, 500, false)
+  //     }
+  //   },
+  // },
 
   created() {},
 }

@@ -123,19 +123,19 @@ export const hot_case = [
         img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/2.jpg')
       },
       {
-        title: '交通脈絡', 
+        title: '交通脈絡',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/3.jpg')
       },
       {
-        title: '外觀透視圖', 
+        title: '外觀透視圖',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/4.jpg')
       },
       {
-        title: '8大旗艦', 
+        title: '8大旗艦',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/5.jpg')
       },
       {
-        title: '機能地圖', 
+        title: '機能地圖',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/6.jpg')
       },
     ], // 內頁用

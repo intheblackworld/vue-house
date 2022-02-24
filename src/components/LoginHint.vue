@@ -42,6 +42,10 @@ export default {
   text-align: center;
   color: #323333;
 
+  @include md {
+    font-size: sizem(20);
+  }
+
   a {
     color: #c59c63;
   }

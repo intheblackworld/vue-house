@@ -247,6 +247,7 @@
     height: sizem(41);
     margin: sizem(20) auto;
     float: none;
+    font-size: sizem(15);
   }
 }
 

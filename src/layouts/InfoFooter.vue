@@ -54,34 +54,49 @@
             客戶專區
           </div>
           <div class="info-list">
-            <div @click="$router.push('/member')">會員專區</div>
+            <div @click="enterPage('/member')">會員專區</div>
             <div @click="$router.push('/contacts')">聯絡我們</div>
           </div>
         </div>
       </div>
     </div>
+    <el-dialog title :visible.sync="isShowHintDialog" :width="isMobile ? '90%' : '90%'" :modal-append-to-body="false">
+      <LoginHint />
+    </el-dialog>
     <Footer />
   </div>
 </template>
 
 <script>
 // import info from '@/info'
-import { isPC } from '@/utils'
+import { isPC, isMobile } from '@/utils'
 import Footer from '@/layouts/Footer.vue'
 import info from '@/info'
+import LoginHint from '@/components/LoginHint.vue'
 export default {
   name: 'info_footer',
   components: {
     Footer,
+    LoginHint,
   },
   data() {
     return {
       isPC,
+      isMobile,
       info,
+      isShowHintDialog: false,
       // houseInfos: info.houseInfos,
     }
   },
-  methods: {},
+  methods: {
+    enterPage(link) {
+      if (!this.$store.getters['user/isLogin'] && link == '/member') {
+        this.isShowHintDialog = true
+      } else {
+        this.$router.push({ path: link })
+      }
+    },
+  },
 }
 </script>
 
