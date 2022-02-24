@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-   <!-- <Footer />  -->
+    <Footer />
   </div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 686px;
+  width: 706px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -67,13 +67,13 @@ export default {
   font-size: 15px;
   margin-bottom:2em;
   margin-right: 10em;
-  width: 260px;
+  width: 270px;
   //height: 30px;
   line-height: 1.4;
   //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
-  align-items: center;
+  align-items: center;justify-content:flex-start;
   white-space: nowrap;position: relative;
   &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
   &:nth-of-type(even) {
@@ -87,7 +87,10 @@ export default {
     margin-right:0.8em;
     white-space: nowrap;
     font-family: $family3;
-    width: 4.5em;
+    flex: 0 0 5em;
+    text-align: left;
+    width: 5em;
+    padding-left: 0.3em;
   }
 
   .desc {
@@ -95,7 +98,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
     font-family: $family3;
-    font-weight: bold;
+    font-weight: 500;
   }
 }
 
@@ -122,6 +125,10 @@ export default {
     height: auto;
     margin-left: 20px;
     white-space: normal;
+  font-size: calc(16 * 100vw / 375);
+  .desc {
+  font-size: calc(16 * 100vw / 375);
+  }
   }
 
   .info {
