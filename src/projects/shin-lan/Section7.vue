@@ -17,7 +17,7 @@
       持續為社會公益服務
     </div>
     <div class="container">
-      <div class="item-list">
+      <div class="item-list" @click="$router.push('/company')">
         <div class="item flex-c flex-jb" v-for="(item, index) in item_list" :key="item.name + index" @click="$router.push(item.link)">
           <img v-if="isMobile" :src="item.imgs[0]" alt="" class="item-img">
           <div>
@@ -25,7 +25,7 @@
             <div class="item-title" v-html="item.title"></div>
             <div class="item-subtitle" v-html="item.subtitle"></div>
             <div class="item-desc" v-html="item.desc"></div>
-            <div class="btn-more flex-c" @click="$router.push('/company')" v-if="isPC">
+            <div class="btn-more flex-c" v-if="isPC">
               了解更多
             </div>
           </div>
@@ -42,12 +42,10 @@
 @import '@/assets/style/function.scss';
 .section7 {
   width: 100%;
-  height: size(494 + 480);
-  min-height: size(494 + 480);
-  max-height: auto;
+  height: size(494 + 480 + 100);
   background-size: cover;
   background-attachment: fixed;
-  background-color: #f7f8f8;
+ // background-color: #f7f8f8;
 
   @include md {
     width: 100vw;

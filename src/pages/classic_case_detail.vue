@@ -1,75 +1,116 @@
 <template>
   <div class="section2">
-    <div class="side-bar">
-      <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged">
-        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index">
-          <img :src="slide.img" :class="`item-img`" />
-          <div class="card-content"></div>
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination" v-if="isPC"></div>
-        <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
-          <img src="../projects/shin-lan/shin-lan/all/arrow-left.png" alt="" class="arrow-left">
-        </div>
-        <div class="swiper-button-next" slot="button-next" v-if="isMobile">
-          <img src="../projects/shin-lan/shin-lan/all/arrow-right.png" alt="" class="arrow-next">
-        </div>
-      </swiper>
-    </div>
     <div class="container flex flex-jb flex-ab wrap">
-      <div class="content">
-        <div class="current-tab">{{type_text}}</div>
-        <div class="shin-lan-title-h shin-lan-title-h-m title" data-aos="fade" v-if="isPC">
-          經典<span data-aos="flip-right"></span>案例
+      <div class="left">
+        <div class="side-bar">
+          <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged">
+            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index">
+              <img :src="slide.img" :class="`item-img`" />
+              <div class="card-content"></div>
+            </swiper-slide>
+            <div class="swiper-pagination" slot="pagination" v-if="isPC"></div>
+            <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
+            </div>
+            <div class="swiper-button-next" slot="button-next" v-if="isMobile">
+            </div>
+          </swiper>
         </div>
-        <div class="case-title" v-html="current_case.title"></div>
-        <hr>
-        <div class="case-desc" v-html="current_case.desc"></div>
-        <div class="back-btn flex-c" @click="$router.push('/classic_case')">回到上一頁</div>
+        <div class="content">
+          <div class="current-tab">{{type_text}}</div>
+          <div class="shin-lan-title-h shin-lan-title-h-m title" data-aos="fade" v-if="isPC">
+            經典<span data-aos="flip-right"></span>案例
+          </div>
+          <div class="case-title" v-html="current_case.title"></div>
+          <hr>
+          <div class="case-desc" v-html="current_case.desc"></div>
+          <div class="back-btn flex-c" @click="$router.push('/classic_case')">回到上一頁</div>
+        </div>
       </div>
-      <img :src="slideList[slideIndex].img" alt="" class="main-img" v-if="isPC">
+      <div class="right" v-if="isPC">
+        <img :src="slideList[slideIndex].img" alt="" class="main-img">
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss">
-.swiper-container-vertical > .swiper-pagination-bullets {
-  display: flex;
-}
-
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-  top: auto;
-  bottom: 15px;
-  left: -10px;
-  width: auto;
-}
-.swiper-container-vertical
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-container-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
-  margin: 0 10px;
-  background: #333;
+.swiper-pagination{
+  //宜娟把點選範圍條大版
+  .swiper-pagination-bullet{
+  width: 2em;
+  height: 2em;
+  margin: 0 !important;
   opacity: 1;
   position: relative;
+  transition:color .3s ;
+  color: #333;
+  background: none;
   border-radius: 0;
-  z-index: 2;
+  &::before{
+    content: "";
+    width: 50%;
+    height:50%;
+    background: currentColor;
+    display: block;position: relative;
+    top: 25%;left: 25%;
 
-  &.swiper-pagination-bullet-active {
+  }
+  &::after{
+    content: "";
+    width: 50%;
+    height:50%;
     background: #b18863;
+    display: block;position: absolute;
+    top: 25%;left: 25%;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: transform 0.3s,border-radius 0.2s 0.2s;
+
+    }
+  &.swiper-pagination-bullet-active {
+  &::after{
+    border-radius: 0%;
+    transform:scale(1);
+    }
+  }
+  &:hover{
+  color: #666;}
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.swiper-button-prev, .swiper-button-next {
   top: 100%;
   height: 25px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width:30%;
+ // background-color: rgba(0, 0, 0, .5);
+  &::before{
+    content: "";
+    position: relative;
+    left: 20%;
+    border: 1px solid #666;
+    border-width: 0 0 1px 1px;
+    width: 50%;display: block;
+    height: 40%;
+    transform:skewX(-45deg);
+
+  }
+}
+
+.swiper-button-prev{
+  left: 0
+}
+.swiper-button-next {
+  right: 0;transform: scaleX(-1)
 }
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
+.swiper-pagination {
+  top: auto;
+  bottom: .5em;
+  font-size: size(15);
+  text-align: left;
+  left: -.5em;
+}
 // begin
 .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
@@ -100,6 +141,10 @@
   overflow: hidden;
   text-align: center;
   // background-color: rgba(17, 17, 3, 0.11);
+  font-size: size(18);
+  line-height: 1.67;
+  letter-spacing: 0.08em;
+  text-align: justify;
 
   // 手機版
   @include md {
@@ -107,51 +152,69 @@
     // height: size(604);
     // min-height: calc(604 * 100vw / 375);
     // max-height: calc(812 * 100vw / 375);
+    font-size: sizem(15);
+    line-height: 2;
+    letter-spacing: normal;
   }
 }
-
+.left{flex: 1;}
+.right{position: relative;overflow: hidden;margin: 0 0 0 1em;
+  width: size(820);}
 .side-bar {
-  @include div_l_pc(736, 447, 150, 0);
-  background-color: rgba(17, 17, 3, 0.11);
+//  @include div_l_pc(736, 447, 150, 0);
   // height: 100%;
+  margin:0 0 3em;
+  padding: 1em 0 0 0;
+  position: relative;
+  &::before{
+  content: "";
+  background-color: rgba(17, 17, 3, 0.11);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200%;
+  height: 100%;}
 
   @include md {
     width: 100%;
     height: sizem(385);
     position: relative;
-    margin-top: 60px;
     background-color: transparent;
+  margin:2em 0 0em;
+  padding: 0;
+  &::before{display: none;}
+
   }
 }
 
 .swiper-container {
+  margin: 0 auto 0 0;
   width: size(370);
-  margin-right: size(20);
-  margin-top: size(20);
   @include md {
     width: sizem(335);
-    margin: 0 auto;
+    margin: 0 sizem(-12.5);
   }
 }
 
 .container {
   width: size(1240);
   // max-height: size(1440);
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   margin: size(120) auto;
   padding-top: size(30);
+    align-items:stretch;
 
   @include md {
     width: sizem(310);
-    margin: sizem(30) auto;
+    margin: 60px auto sizem(30);
   }
 }
 
 .content {
-  width: size(370);
-  margin-top: size(570);
-  text-align: left;
+ // width: size(370);
+ // margin-top: size(570);
+ margin-right:size(20);
 
   @include md {
     width: 100%;
@@ -173,14 +236,10 @@
 
 .card-content {
   font-size: size(28);
-  height: size(50);
+  height: size(40);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.29;
   letter-spacing: size(1.4);
-  text-align: left;
-  color: #000;
   // border-bottom: solid 1px #4d4d4d;
 
   @include md {
@@ -192,73 +251,45 @@
 }
 
 .main-img {
-  width: size(820);
-  height: size(1016);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //height: size(1016);
   object-fit: cover;
+  height: 100%;
 }
 
 .case-title {
   font-size: size(28);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.29;
   letter-spacing: size(1.4);
-  text-align: left;
-  color: #000;
   margin-top: size(30);
 
   @include md {
     font-size: sizem(24);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.33;
     letter-spacing: normal;
-    text-align: left;
-    color: #000;
-    // border-bottom: 1px solid #000;
-  }
-}
-
-.case-desc {
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
-
-  @include md {
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
   }
 }
 
 .back-btn {
-  width: size(160);
-  height: size(41);
+    width: 10.7em;
+  height: 2.7em;
   font-size: size(15);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(3);
-  text-align: left;
+  letter-spacing: 0.2em;
+  text-align: center;
   color: #000;
   cursor: pointer;
   border: solid 1px #707070;
   transition: all 0.3s;
   position: relative;
-  margin: size(20) 0 0;
+  margin: 2.5em auto 0 auto;
   z-index: 3;
 
   &:hover {
@@ -267,9 +298,7 @@
   }
 
   @include md {
-    width: sizem(160);
-    height: sizem(41);
-    margin: sizem(20) auto;
+  font-size: sizem(15);
   }
 }
 

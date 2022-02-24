@@ -7,9 +7,9 @@ export default {
   phone: '02-25153700',
   fax: '02-25153611',
   email: 'service@shin-lan.com',
-  fbLink: 'https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E8%8E%8A-Pattsiran-Formosa-108764311348067',
+  fbLink: 'https://www.facebook.com/100057057535625/',
   lineLink: '',
-  fbMessage: 'https://m.me/108764311348067/',
+  fbMessage: 'https://m.me/100057057535625/',
   caseName: 'shin-lan',
   indigatorLength: 10,
 

@@ -19,12 +19,8 @@
               <img :src="slide.img" :class="`item-img`" />
               <div class="card-content"></div>
             </swiper-slide>
-            <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
-              <img src="../shin-lan/shin-lan/all/arrow-left.png" alt="" class="arrow-left">
-            </div>
-            <div class="swiper-button-next" slot="button-next" v-if="isMobile">
-              <img src="../shin-lan/shin-lan/all/arrow-right.png" alt="" class="arrow-next">
-            </div>
+            <div class="swiper-button-prev" slot="button-prev" v-if="isMobile"></div>
+            <div class="swiper-button-next" slot="button-next" v-if="isMobile"></div>
           </swiper>
           <div class="case-btns flex-ac flex-js">
             <div @click="$router.push('/classic_case?type=1')">欣聯建設Shin-Lan</div>

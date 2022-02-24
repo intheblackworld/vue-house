@@ -24,10 +24,10 @@
                 </span>
               </span>
             </li>
-            <a :href="info.fbLink" target="_blank" class="social-link">
+            <a :href="info.fbLink" target="_blank" class="social-link" v-if="info.fbLink">
               <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
             </a>
-            <a :href="info.lineLink" target="_blank" class="social-link">
+            <a :href="info.lineLink" target="_blank" class="social-link" v-if="info.lineLink">
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
             <li class="flex-ac" @click="$router.push('/login')" v-if="!$store.getters['user/isLogin']">

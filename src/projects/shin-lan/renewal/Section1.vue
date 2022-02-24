@@ -11,9 +11,9 @@
       <div :class="`tab ${$route.query.type == 2 ? '' : 'active'}`" @click="$router.push('/renewal?type=1')">
         萬華段都更
       </div>
-      <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
+    <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
         XXX段都更
-      </div>
+      </div>  -->
     </div>
   </div>
 </template>

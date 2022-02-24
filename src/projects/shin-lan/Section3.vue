@@ -14,9 +14,9 @@
           </div>
           <div class="flex-ac flex-jb case-head">
             <div class="case-title" v-html="current_case.title"></div>
-            <div class="case-btns flex-ac flex-jb">
-              <div v-show="current_case.link" @click="$router.push(current_case.link)">個案介紹</div>
-              <div v-show="current_case.media_link" @click="$router.push(current_case.media_link)">個案影片</div>
+            <div class="case-btns">
+              <span v-show="current_case.link" @click="$router.push(current_case.link)">個案介紹</span>
+              <span v-show="current_case.media_link" @click="$router.push(current_case.media_link)">個案影片</span>
             </div>
           </div>
           <div class="case-desc" v-html="current_case.desc_home" v-if="isPC"></div>
@@ -26,10 +26,8 @@
               <div class="card-content"></div>
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
-              <img src="../shin-lan/shin-lan/all/arrow-left.png" alt="" class="arrow-left">
             </div>
             <div class="swiper-button-next" slot="button-next" v-if="isMobile">
-              <img src="../shin-lan/shin-lan/all/arrow-right.png" alt="" class="arrow-next">
             </div>
           </swiper>
           <div class="case-more flex-c" @click="$router.push('/hot_case')">更多精彩個案</div>
@@ -40,42 +38,31 @@
   </div>
 </template>
 <style lang="scss">
-.swiper-container-vertical > .swiper-pagination-bullets {
-  display: flex;
-}
+.swiper-button-prev, .swiper-button-next {
+  top: 100%;
+  height: 25px;
+  width:30%;
+ // background-color: rgba(0, 0, 0, .5);
+  &::before{
+    content: "";
+    position: relative;
+    left: 20%;
+    border: 1px solid #666;
+    border-width: 0 0 1px 1px;
+    width: 50%;display: block;
+    height: 40%;
+    transform:skewX(-45deg);
 
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-  top: auto;
-  bottom: 15px;
-  left: -10px;
-  width: auto;
-}
-.swiper-container-vertical
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet,
-.swiper-container-horizontal
-  > .swiper-pagination-bullets
-  .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
-  margin: 0 10px;
-  background: #333;
-  opacity: 1;
-  position: relative;
-  border-radius: 0;
-  z-index: 2;
-
-  &.swiper-pagination-bullet-active {
-    background: #b18863;
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  top: 100%;
-  height: 25px;
-  background-color: rgba(0, 0, 0, 0.5);
+.swiper-button-prev{
+  left: 0
 }
+.swiper-button-next {
+  right: 0;transform: scaleX(-1)
+}
+
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -265,14 +252,15 @@
 }
 
 .case-btns {
-  width: size(180);
+  width:auto;
 
   @include md {
     width: auto;
   }
 
-  > div {
-    width: 48%;
+  > span {
+    display: inline-block;
+    width:4.5em;
     font-size: size(18);
     font-weight: normal;
     font-stretch: normal;
@@ -284,9 +272,9 @@
     cursor: pointer;
     border-bottom: solid 1.1px #4d4d4d;
     transition: all 0.3s;
+    margin: 0 0 0 0.5em;
 
     @include md {
-      width: auto;
       font-size: sizem(15);
     }
 
@@ -425,7 +413,7 @@ export default {
   },
 
   mounted() {
-    this.current_case = hot_case[0]
+    this.current_case = hot_case[4]
     this.slideList = this.current_case.imgs
     // get_category().then((res) => {
     //   console.log(res, 'get_category')

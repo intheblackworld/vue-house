@@ -5,9 +5,9 @@
         <div :class="`tab ${$route.query.type == 2 ? '' : 'active'}`" @click="$router.push('/renewal?type=1')">
           萬華段都更
         </div>
-        <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
+      <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
           XXX段都更
-        </div>
+        </div>  -->
       </div>
       <div class="head flex-ac flex-jb">
         <div class="current-tab">欣聯建設於台北市萬華區康定路大理街都市更新案</div>

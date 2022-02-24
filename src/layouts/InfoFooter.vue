@@ -9,10 +9,10 @@
             始終如一的堅持。
           </div>
           <div class="links flex-ac">
-            <a href="" target="_blank" class="social-link">
+            <a :href="info.fbLink" target="_blank" class="social-link" v-if="info.fbLink">
               <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
             </a>
-            <a href="" target="_blank" class="social-link">
+            <a :href="info.lineLink" target="_blank" class="social-link" v-if="info.lineLink">
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
           </div>

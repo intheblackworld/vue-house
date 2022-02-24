@@ -23,8 +23,8 @@
                 </div>
               </transition-group>
             </div>
-            <img src="../shin-lan/all/arrow-left.png" alt="" class="arrow-left" v-if="isMobile" @click="decIndex(itemIndex)">
-            <img src="../shin-lan/all/arrow-right.png" alt="" class="arrow-right" v-if="isMobile" @click="addIndex(itemIndex)">
+        <div class="arrow-left" @click="decIndex(itemIndex)" v-if="isMobile"></div>
+        <div class="arrow-right" @click="addIndex(itemIndex)" v-if="isMobile"></div>
           </div>
         </div>
       </transition-group>
@@ -75,6 +75,10 @@
   overflow: hidden;
   text-align: center;
   // background-color: rgba(17, 17, 3, 0.11);
+  font-size: size(18);
+  line-height: 1.67;
+  letter-spacing: 0.08em;
+  text-align: justify;
 
   // 手機版
   @include md {
@@ -82,6 +86,8 @@
     // height: size(604);
     // min-height: calc(604 * 100vw / 375);
     // max-height: calc(812 * 100vw / 375);
+    font-size: sizem(15);
+    letter-spacing: normal;
   }
 }
 
@@ -110,8 +116,9 @@
   @include md {
     flex-wrap: wrap;
     position: relative;
-    padding-bottom: sizem(50);
-    border-bottom: 1px solid #000;
+  margin-bottom: sizem(60);
+    padding-bottom: sizem(80);
+    border-bottom: 1px solid #666;
   }
 }
 
@@ -129,55 +136,23 @@
 }
 
 .item-date {
-  font-size: size(19);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 3.8px;
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.3rem;
-  @include md {
-    // @include img_l_m(77, 0, 0);
-    // width: sizem(106);
-    // height: sizem(20);
-    // top: auto;
-    // bottom: sizem(25);
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
-  }
+  margin-bottom: 0.3em;
 }
 
 .item-title {
   width: 100%;
   font-size: size(47);
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.06;
   letter-spacing: size(2.82);
-  text-align: left;
-  color: #000;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.2em;
   font-family: 'Noto Serif TC', serif;
 
   @include md {
     font-size: sizem(28);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.39;
     letter-spacing: normal;
-    text-align: left;
-    color: #000;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.2em;
   }
 }
 
@@ -185,48 +160,19 @@
   width: 100%;
   font-size: size(28);
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: size(1.4);
-  text-align: left;
-  color: #000;
-  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  letter-spacing:0.05em;
+  margin-bottom: 0.4em;
 
   @include md {
     font-size: sizem(18);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.39;
     letter-spacing: normal;
-    text-align: left;
-    color: #000;
-    margin-bottom: 0.4rem;
   }
 }
 
 .item-desc {
   width: 100%;
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: size(1.44);
-  text-align: left;
-  color: #000;
-  @include md {
-    width: 100%;
-    font-size: sizem(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
-  }
+  margin-bottom:2em;
 }
 
 .pages {
@@ -329,69 +275,83 @@
 
 .pagination {
   width: auto;
-  bottom: size(44);
+  bottom: size(0);
   right: auto;
-  left: 0;
+  left: -.5em;
   margin: 0 auto;
   justify-content: center;
+  font-size: size(15);
 }
 
 .pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
+  margin: 0 0;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
+  width: 2em;
+  height: 2em;
+    // border-radius: 20px;
+    // box-shadow: 0 0 0 1px #000;
     position: relative;
-    background-color: #000;
-    transition: all 0.5s;
+  color: #333;
+    transition: color 0.3s;
+  background: none;
+  border-radius: 0;
+  &::before{
+    content: "";
+    width: 50%;
+    height:50%;
+    background: currentColor;
+    display: block;position: relative;
+    top: 25%;left: 25%;
 
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #000;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+  }
+  &::after{
+    content: "";
+    width: 50%;
+    height:50%;
+    background: #b18863;
+    display: block;position: absolute;
+    top: 25%;left: 25%;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: transform 0.3s,border-radius 0.2s 0.2s;
+
     }
-    &.active {
-      box-shadow: none;
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #b18863;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
-      }
+  &.active {
+  &::after{
+    border-radius: 0%;
+    transform:scale(1);
     }
+  }
+  &:hover{
+  color: #666;}
+  }
+}
+.arrow-left, .arrow-right {
+  @include img_l_m(60,245, 0);
+  height: 25px;
+ // background-color: rgba(0, 0, 0, .5);
+  &::before{
+    content: "";
+    position: relative;
+    left: 20%;
+    border: 1px solid #666;
+    border-width: 0 0 1px 1px;
+    width: 50%;display: block;
+    height: 40%;
+    transform:skewX(-45deg);
+
   }
 }
 
-.arrow-left {
-  @include img_l_m(30, 245, 0);
-  background-color: #000;
+.arrow-left{
+  left: 0
 }
-
 .arrow-right {
-  @include img_r_m(30, 245, 0);
-  background-color: #000;
+  left: auto;right: 0;transform: scaleX(-1);
 }
 </style>
 <script>

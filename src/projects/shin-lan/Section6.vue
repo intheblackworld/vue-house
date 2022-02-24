@@ -14,8 +14,8 @@
           </div>
         </div>
       </transition-group>
-      <img src="./shin-lan/all/arrow-left.png" alt="" class="arrow-left" v-if="isMobile" @click="prevPage">
-      <img src="./shin-lan/all/arrow-right.png" alt="" class="arrow-right" v-if="isMobile" @click="nextPage">
+        <div class="arrow-left" @click="prevPage" v-if="isMobile"></div>
+        <div class="arrow-right" @click="nextPage" v-if="isMobile"></div>
       <div class="head flex-c">
         <div class="pages flex-ac" v-if="isPC">
           <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">
@@ -57,12 +57,12 @@
 }
 // end
 .slide-fade-enter {
-  margin-top: 10px !important;
+  margin-left: 10px !important;
   opacity: 0;
 }
 
 .slide-fade-enter-active {
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 
 .slide-fade-leave-active {
@@ -96,7 +96,7 @@
 
 .container {
   width: size(1240);
-  min-height: size(680);
+ // min-height: size(680);
   margin: 0 auto size(53);
   position: relative;
 
@@ -117,7 +117,35 @@
 .item {
   width: 50%;
   cursor: pointer;
+  position: relative;
+  padding: 0 0 2em ;
+  &::before{content:"";position: absolute;
+  top: 0;left: 0;
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
+    background: #0362 ;
+    transform:scale(0);
+    transition: transform 0.3s,border-radius 0.2s 0.2s;}
+  &::after{content:"";position: absolute;
+  top: calc(35% - 1.5em);left: calc(50% - 1.5em);
+    width: 3em;
+    height:3em;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23FFF' stroke-width='.8' stroke-linejoin='round'%3E%3Cpolygon class='st0' points='14.9,10 7.1,14.5 7.1,5.5'/%3E%3Ccircle class='st1' cx='10' cy='10' r='9'/%3E%3C/svg%3E");
+    background-size: 100% auto;
+    transform:scale(0);
+    transition: transform 0.5s 0.1s,border-radius 0.5s 0.3s;}
 
+  &:hover{
+    
+  &::before,
+  &::after{
+    border-radius: 0%;
+    transform:scale(1);
+    }
+  }
+
+  
   @include md {
     width: 100%;
   }
@@ -211,70 +239,61 @@
 }
 
 .pages {
-  font-size: size(25);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  margin: size(20) auto;
   line-height: 1.2;
   text-align: right;
-  color: #333;
+  font-size: size(15);
 
   // @include md {
   //   display: none;
   // }
 }
 
-.pages {
-  margin: size(40) auto;
-}
-
 .page-btn {
-  margin: 0 10px;
+  margin: 0 0;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 20px;
-    height: 20px;
+  width: 2em;
+  height: 2em;
     // border-radius: 20px;
     // box-shadow: 0 0 0 1px #000;
     position: relative;
-    background-color: #000;
-    transition: all 0.5s;
+  color: #333;
+    transition: color 0.3s;
+  background: none;
+  border-radius: 0;
+  &::before{
+    content: "";
+    width: 50%;
+    height:50%;
+    background: currentColor;
+    display: block;position: relative;
+    top: 25%;left: 25%;
 
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-      background: #000;
-      // border-radius: 20px;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      // transform: translateY(-50%);
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+  }
+  &::after{
+    content: "";
+    width: 50%;
+    height:50%;
+    background: #b18863;
+    display: block;position: absolute;
+    top: 25%;left: 25%;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: transform 0.3s,border-radius 0.2s 0.2s;
+
     }
-    &.active {
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #b18863;
-        // border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 0%;
-        // transform: translateY(-50%);
-        left: 0%;
-        transform: scale(1);
-      }
+  &.active {
+  &::after{
+    border-radius: 0%;
+    transform:scale(1);
     }
+  }
+  &:hover{
+  color: #666;}
   }
 }
 
@@ -287,16 +306,29 @@
   z-index: 8;
 }
 
-.arrow-left {
-  @include img_l_m(30, 195, 0);
-  background-color: #000;
+.arrow-left, .arrow-right {
+  @include img_l_m(60,200, 0);
+  height: 25px;
+ // background-color: rgba(0, 0, 0, .5);
+  &::before{
+    content: "";
+    position: relative;
+    left: 20%;
+    border: 1px solid #666;
+    border-width: 0 0 1px 1px;
+    width: 50%;display: block;
+    height: 40%;
+    transform:skewX(-45deg);
+
+  }
 }
 
+.arrow-left{
+  left: 0
+}
 .arrow-right {
-  @include img_r_m(30, 195, 0);
-  background-color: #000;
+  left: auto;right: 0;transform: scaleX(-1);
 }
-
 .mask {
   width: 100%;
   position: fixed;
@@ -370,7 +402,7 @@
   border: solid 1px #707070;
   transition: all 0.3s;
   position: absolute;
-  bottom: size(30);
+  bottom: size(70);
   left: 0;
   right: 0;
   margin: 0 auto;

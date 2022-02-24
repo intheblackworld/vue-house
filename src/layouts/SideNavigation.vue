@@ -24,10 +24,10 @@
         </li>
         <div class="social-footer flex-ac flex-jb">
           <li class="flex-ac">
-            <a :href="info.fbLink" target="_blank" class="social-link">
+            <a :href="info.fbLink" target="_blank" class="social-link" v-if="info.fbLink">
               <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
             </a>
-            <a :href="info.lineLink" target="_blank" class="social-link">
+            <a :href="info.lineLink" target="_blank" class="social-link" v-if="info.lineLink">
               <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
             </a>
           </li>
