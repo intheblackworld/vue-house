@@ -7,7 +7,7 @@
       </div>
       <div class="case-info">
         <div class="case-card">
-          <div class="flex-ac flex-jb" v-if="isPC">
+          <div class="flex-ac flex-jb" v-if="isPC" @click="$router.push(current_case.link)">
             <img :src="current_case.imgs[1].img" alt="" class="case-img">
             <img :src="current_case.imgs[2].img" alt="" class="case-img">
             <img :src="current_case.imgs[3].img" alt="" class="case-img">
@@ -286,6 +286,13 @@
 
 .case-img {
   width: 32%;
+  height: size(130);
+  object-fit: cover;
+  cursor: pointer;
+  transition:opacity .3s ;
+  &:hover{
+    opacity: .8;
+  }
 }
 
 .case-thumb {
