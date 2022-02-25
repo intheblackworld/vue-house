@@ -4,7 +4,7 @@
       <div class="side-bar">
         <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged" v-if="slideList.length>0">
           <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img">
-            <img :src="slide.img" :class="`item-img`" />
+           <div :class="`item-img`"> <img :src="slide.img" alt="" /></div>
             <div class="card-content" v-html="slide.title"></div>
           </swiper-slide>
           <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
@@ -190,8 +190,8 @@
   // max-height: size(1440);
   overflow: hidden;
   position: relative;
-  margin: size(120) auto;
-  padding-top: size(30);
+  margin: size(120) auto size(120) auto;
+  padding-top: size(50);
   align-items: stretch;
 
   @include md {
@@ -209,9 +209,24 @@
   }
 }
 
+.swiper-slide{
+  &:hover{
+    .item-img {
+  img{
+    transform: scale(1.2);
+  }
+}
+   }
+}
+
 .item-img {
-  width: 100%;
+    height: size(200);overflow: hidden;position: relative;
+  img{
+  width: 100%;height: 100%;
   object-fit: cover;
+  vertical-align: middle;
+  transition:transform 2s;
+  }
   // height: size(333);
   @include md {
     height: sizem(200);
@@ -219,11 +234,12 @@
 }
 
 .card-content {
-  font-size: size(28);
+  font-size: size(22);
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: size(1.4);
   border-bottom: solid 1px #4d4d4d;
+  padding: .3em 0 .5em 0;
 
   @include md {
     margin-top: 0.3em;
@@ -336,8 +352,9 @@ export default {
       swiperOption: {
         direction: isMobile ? 'horizontal' : 'vertical',
         slidesPerView: isMobile ? 1 : 'auto',
-        spaceBetween: isTablet ? 20 : 15,
+        spaceBetween: isTablet ? 20 : 30,
         slidesPerColumn: isMobile ? 1 : 1,
+        slideToClickedSlide: true,
         // allowSlidePrev: isMobile ? true : true,
         // allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,

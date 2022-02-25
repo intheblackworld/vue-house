@@ -17,8 +17,8 @@
         了解更多
       </div>
       <div class="item-list flex">
-        <div class="item" v-for="(item, index) in item_list" :key="item.desc + 'item'" @click="$router.push(item.link)">
-          <img :src="item.img" alt="" class="item-img">
+        <div class="item" v-for="(item, index) in item_list"  :index="index" :key="item.desc + 'item'" @click="$router.push(item.link)">
+           <div :class="`item-img`"> <img :src="item.img" alt="" /></div>
           <div class="item-desc" v-html="item.desc"></div>
         </div>
       </div>
@@ -233,11 +233,22 @@
     }
 
     &:hover {
-      opacity: 0.8;
+    .item-img {
+  img{
+    transform: scale(1.2);
+  }
+}
     }
 
     .item-img {
       width: 100%;
+    height: size(240);overflow: hidden;position: relative;
+  img{
+  width: 100%;height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  transition:transform 2s;
+    }
     }
 
     .item-desc {
