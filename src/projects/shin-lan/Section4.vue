@@ -24,7 +24,7 @@
           </swiper>
           <div class="case-btns flex-ac flex-js">
             <div @click="$router.push('/classic_case?type=1')">欣聯建設Shin-Lan</div>
-            <div @click="$router.push('/classic_case?type=2')">合聯營造Heran</div>
+            <div @click="$router.push('/classic_case?type=2')">合聯營造Holan</div>
           </div>
           <div class="case-more flex-c" @click="$router.push('/classic_case')">了解更多</div>
         </div>

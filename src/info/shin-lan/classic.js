@@ -159,7 +159,7 @@ export const case_list_1 = [
   },
 ]
 
-// 合聯營造Heran 經典案例
+// 合聯營造Holan 經典案例
 export const case_list_2 = [
   {
     title: '和裕投資辦公大樓',
@@ -183,7 +183,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/和裕投資辦公大樓/heyu5.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '崇德發中山華園辦公大樓',
@@ -207,7 +207,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/崇德發中山華園辦公大樓/cdfe5.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '林口力通',
@@ -228,7 +228,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/林口力通/litung4.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '復興北路辦公大樓',
@@ -252,7 +252,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/復興北路辦公大樓/fushin5.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '明城科技',
@@ -264,7 +264,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '麗池PARTY',
@@ -276,7 +276,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/麗池PARTY/LiChiParty.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '長耀GLORY',
@@ -288,7 +288,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/長耀GLORY/glory.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '寬庭',
@@ -300,7 +300,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '明湖青庭',
@@ -312,7 +312,7 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
   {
     title: '大安逸品',
@@ -330,6 +330,6 @@ export const case_list_2 = [
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/大安逸品/daan3.jpg'),
       },
     ],
-    type_text: '合聯營造Heran', // 內頁用
+    type_text: '合聯營造Holan', // 內頁用
   },
 ]

@@ -6,7 +6,7 @@
       </div>
       <div class="mid">
         <div class="subtitle">
-          欣聯建設Shin-Lan 合聯營造Heran
+          欣聯建設Shin-Lan 合聯營造Holan
         </div>
         <div class="desc">
           我們深信「一間厝，一世情」，所以一磚一瓦都是精心刻畫，嚴謹手鑄；從規劃到營造一條龍的完整構築，居住者的需求與思維，到豐富建築與空間的美學輪廓，才能打動你的心。

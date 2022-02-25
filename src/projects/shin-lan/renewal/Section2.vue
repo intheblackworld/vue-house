@@ -603,7 +603,7 @@ export default {
       return this.case_list.length
     },
     type_text() {
-      return this.$route.query.type == 2 ? '合聯營造Heran' : '欣聯建設Shin-Lan'
+      return this.$route.query.type == 2 ? '合聯營造Holan' : '欣聯建設Shin-Lan'
     },
     totalPage() {
       return (

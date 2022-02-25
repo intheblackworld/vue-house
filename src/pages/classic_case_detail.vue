@@ -404,7 +404,7 @@ export default {
   },
   computed: {
     type_text() {
-      return this.$route.params.type == 2 ? '合聯營造Heran' : '欣聯建設Shin-Lan'
+      return this.$route.params.type == 2 ? '合聯營造Holan' : '欣聯建設Shin-Lan'
     },
   },
 

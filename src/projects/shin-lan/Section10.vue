@@ -206,7 +206,7 @@ export default {
         img: require('@/assets/img/shin-lan/work/3東園綻/0.jpg'),
         title: '東園綻',
         link1_text: '欣聯建設Shin-Lan', // 連結1
-        link2_text: '合聯營造Heran', // 連結2
+        link2_text: '合聯營造Holan', // 連結2
         link1: '', // 連結1
         link2: '', // 連結2
         desc: `

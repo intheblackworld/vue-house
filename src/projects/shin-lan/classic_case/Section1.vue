@@ -12,7 +12,7 @@
         欣聯建設Shin-Lan
       </div>
       <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/classic_case?type=2')">
-        合聯營造Heran
+        合聯營造Holan
       </div>
     </div>
   </div>
