@@ -172,6 +172,9 @@ export default {
       console.log(res)
       if (res.error_code == 0) {
         this.case_list = res.data.categories
+      } else if (res.error_code == 401) {
+        window.alert('權限過期，請重新登入')
+        this.$router.push('/login')
       }
     })
   },
