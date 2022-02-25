@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5cfee30679ee5e52ffda",
-    "url": "/css/abou_ust.fe90c625.css"
+    "revision": "b33dd00379fcb6b9acda",
+    "url": "/css/abou_ust.3be48c73.css"
   },
   {
-    "revision": "5cfee30679ee5e52ffda",
-    "url": "/js/abou_ust.f00c66c1.js"
+    "revision": "b33dd00379fcb6b9acda",
+    "url": "/js/abou_ust.90a27a65.js"
   },
   {
     "revision": "429dc896f65d0862d2cc",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.f3f0c2d6.js"
   },
   {
-    "revision": "de52e985ac3e0310a801",
+    "revision": "78d4300c798fef7f9da8",
     "url": "/css/app.ff9cc776.css"
   },
   {
-    "revision": "de52e985ac3e0310a801",
-    "url": "/js/app.2a130653.js"
+    "revision": "78d4300c798fef7f9da8",
+    "url": "/js/app.33fe394c.js"
   },
   {
     "revision": "b8cd51119ae50d2f9afe",
@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/js/contacts.79c09e94.js"
   },
   {
-    "revision": "c416e91fa11f44e7c3b0",
-    "url": "/css/hot_case.6e0e2a8f.css"
+    "revision": "0e951c7a6b6ba19c1ce8",
+    "url": "/css/hot_case.26efd679.css"
   },
   {
-    "revision": "c416e91fa11f44e7c3b0",
-    "url": "/js/hot_case.909e219b.js"
+    "revision": "0e951c7a6b6ba19c1ce8",
+    "url": "/js/hot_case.31ae8a9f.js"
   },
   {
     "revision": "156167d94c9201178971",
@@ -888,7 +888,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "bfbb3dcf94534ad802fa4e91756bb2bc",
+    "revision": "93400ba0c77af55449a58fc1056551ae",
     "url": "/index.html"
   },
   {
