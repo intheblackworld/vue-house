@@ -64,13 +64,15 @@ axios.interceptors.response.use(
           break
         case 401:
           // 拿 access_token
-          // router.replace({
-          //   path: '/login',
-          //   // query: { redirect: router.currentRoute.fullPath },
-          // })
+          window.alert('權限過期，請重新登入')
+          store.commit('user/setInfo', { key: 'token', value: '' })
+          router.replace({
+            path: '/login',
+            // query: { redirect: router.currentRoute.fullPath },
+          })
           // if (error.response.config.url === '/token') {
           //   // 連 refresh_token 也過期，跳轉登入頁面
-          //   store.commit('user/setInfo', { key: 'token', value: '' })
+            // store.commit('user/setInfo', { key: 'token', value: '' })
           //   // app.$message({
           //   //   showClose: true,
           //   //   message: '請登入帳號',
