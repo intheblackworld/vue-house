@@ -3,7 +3,7 @@
     <div class="head">
       <div class="breads">
         <router-link to="/">首頁</router-link> >
-        <router-link to="/process">工程進度</router-link> >
+        <router-link to="/process">工程進度</router-link> > 
       </div>
       <div class="title" v-html="list[this.$route.params.id][0].o_title"></div>
       <div class="subtitle" v-html="list[this.$route.params.id][0].o_subtitle"></div>
@@ -952,7 +952,9 @@ export default {
         //...Array(18).keys()].map((i) => ({
         [ //立瑾way
           {
-            img: require('../process/list/7/1.jpg'),
+            o_title: '2021 立瑾WAY',
+            o_subtitle: '已完售，預計2023年初完工。',
+            img: require('../process/list/1/7.jpg'),
             title: '2021/12',
             subtitle: '基礎版鋼筋綁紮及混凝土灌漿',
             isFinished: true,
@@ -963,7 +965,7 @@ export default {
               require('../process/list/7/4.jpg'),
               require('../process/list/7/5.jpg'),
               require('../process/list/7/6.jpg'),
-            ]
+            ],
           },
           {
             img: require('../process/list/5/1.jpg'),
@@ -1024,8 +1026,6 @@ export default {
           },
           {
             img: require('../process/list/1/7.jpg'),
-            o_title: '2021 立瑾WAY',
-            o_subtitle: '已完售，預計2023年初完工。',
             title: '2021/4',
             subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
             isFinished: true,
@@ -1036,6 +1036,24 @@ export default {
           },
         ],
         [ //立瑾綻
+          {
+            o_title: '2021 立瑾綻',
+            o_subtitle: '公開銷售中。',
+            img: require('../process/list/8/1.jpg'),
+            title: '2022/02',
+            subtitle: ' 二樓版工務局勘驗+灌漿前後',
+            isFinished: true,
+            imgs: [
+              require('../process/list/8/1.jpg'),
+              require('../process/list/8/2.jpg'),
+              require('../process/list/8/3.jpg'),
+              require('../process/list/8/4.jpg'),
+              require('../process/list/8/5.jpg'),
+              require('../process/list/8/6.jpg'),
+              require('../process/list/8/7.jpg'),
+              require('../process/list/8/8.jpg'),
+            ]
+          },
           {
             img: require('../process/list/6/1.jpg'),
             title: '2021/12',
