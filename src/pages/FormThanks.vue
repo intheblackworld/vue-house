@@ -1,6 +1,6 @@
 <template>
   <div class="thanks">
-    <img src="https://bcp.crwdcntrl.net/5/c=13578/b=78113418" width="1" height="1"/>
+    <img src="https://bcp.crwdcntrl.net/5/c=13578/b=78113418" width="1" height="1" />
     <a href="/">
       <img src="~@/assets/img/thank-img.png" alt="" class="img">
       <img src="~@/assets/img/thank-img-hover.png" alt="" class="img-hover">
@@ -43,7 +43,8 @@
 @media screen and (max-width: 767px) {
   .thanks {
     a {
-      .img, .img-hover {
+      .img,
+      .img-hover {
         width: 90vw;
       }
     }
@@ -52,10 +53,15 @@
 </style>
 
 <script>
-
 export default {
   name: 'formThanks',
   components: {},
+
+  mounted() {
+    const s = document.createElement('script')
+    s.innerHTML = ` gtag('event', 'conversion', {'send_to': 'AW-10857352883/O9quCMG_saMDELOdmLko'});`
+    document.head.appendChild(s)
+  },
 
   methods: {},
 }
