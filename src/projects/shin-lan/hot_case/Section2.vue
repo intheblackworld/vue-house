@@ -3,13 +3,13 @@
     <div class="container">
       <swiper :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class @slideChangeTransitionEnd="slideChanged">
         <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="card">
-          <div class="card-img" @click="$router.push(slide.link)">
+          <div class="card-img" @click="handle_enter(slide.link)">
             <img :src="slide.img" :class="`item-img`" />
             <div class="add-btn">
               +
             </div>
           </div>
-          <div class="card-content" v-html="slide.title" @click="$router.push(slide.link)"></div>
+          <div class="card-content" v-html="slide.title" @click="handle_enter(slide.link)"></div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <!-- <div class="swiper-button-prev" slot="button-prev">
@@ -325,7 +325,7 @@ export default {
           delay: 4000,
           disableOnInteraction: true,
         },
-        loop: true,
+        loop: false,
         // effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -354,6 +354,10 @@ export default {
       } else {
         this.slideIndex = swiper.activeIndex - 1
       }
+    },
+    handle_enter(link) {
+      console.log(link, 'link')
+      this.$router.push(link)
     },
   },
 
