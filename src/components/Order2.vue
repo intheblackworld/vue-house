@@ -43,7 +43,7 @@
           <div class="row space" data-aos="fade-down" data-aos-delay="200">
             <el-input id="form-phone" v-model="form.phone" placeholder="電話 (必填)"></el-input>
             <el-select v-model="form.contact_time" placeholder="可聯繫時間">
-              <el-option v-for="city in ['早上', '下午', '晚上']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+              <el-option v-for="city in ['10-11', '11-12', '12-13', '13-14', '14-15', '15-16', '16-17']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
             </el-select>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
