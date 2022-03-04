@@ -979,7 +979,7 @@ export default {
           logo: require('../works/8/0.jpg'),
           imgs: [require('../works/8/1.jpg')],
           hint: '',
-          label: '預推個案',
+          label: '',
         },
         //太陽
         {
@@ -1004,7 +1004,7 @@ export default {
             require('../works/4/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '預推個案',
+          label: '',
         },
         //碧波白
         {
@@ -1035,7 +1035,7 @@ export default {
             require('../works/1/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '預推個案',
+          label: '',
         },
         //神采
         {
@@ -1061,7 +1061,7 @@ export default {
             require('../works/3/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '預推個案',
+          label: '',
         },
         //陽明迴鄉
         {
@@ -1081,7 +1081,7 @@ export default {
           logo: require('../works/7/0.jpg'),
           imgs: [require('../works/7/1.jpg')],
           hint: '',
-          label: '預推個案',
+          label: '',
         },
         //陽光
         {
@@ -1106,7 +1106,7 @@ export default {
             require('../works/2/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '預推個案',
+          label: '',
         },
       ],
     }
