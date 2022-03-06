@@ -46,8 +46,11 @@
               <el-option v-for="city in ['早上', '下午', '晚上']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
             </el-select>
           </div>
-          <div class="row" data-aos="fade-down" data-aos-delay="200">
-            <el-input id="form-phone" v-model="form.type" placeholder="想了解的建案 (必填)"></el-input>
+          <div class="row" data-aos="fade-down" data-aos-delay="200" v-if="type == 0">
+            <el-input id="form-house" v-model="form.house" placeholder="想了解的建案 (必填)"></el-input>
+          </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-input id="form-email" v-model="form.email" placeholder="您的E-mail" v-if="type == 1"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
             <el-input type="textarea" :rows="5" placeholder="請輸入您的留言，將有專人為您服務" v-model="form.msg"></el-input>
@@ -75,7 +78,7 @@
           <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
             <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
           </div>
-          <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
+          <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
         <div class="group group3" v-if="!isMobile">
           <div v-if="!isMobile">
@@ -155,7 +158,7 @@ export default {
         name: '',
         phone: '',
         email: '',
-        type: '', // 想了解的建案
+        house: '', // 想了解的建案
         city: '',
         area: '',
         msg: '',
@@ -183,25 +186,43 @@ export default {
 
     alertValidate() {
       const h = this.$createElement
-      this.$notify({
-        title: '請填寫必填欄位',
-        message: h(
-          'i',
-          { style: 'color: #82191d' },
-          '「姓名、手機、想了解的建案」是必填欄位',
-        ),
-      })
+      if (this.type == 0) {
+        this.$notify({
+          title: '請填寫必填欄位',
+          message: h(
+            'i',
+            { style: 'color: #82191d' },
+            '「姓名、手機、想了解的建案」是必填欄位',
+          ),
+        })
+      } else if (this.type == 1) {
+        this.$notify({
+          title: '請填寫必填欄位',
+          message: h(
+            'i',
+            { style: 'color: #82191d' },
+            '「姓名、手機」是必填欄位',
+          ),
+        })
+      }
     },
 
     submit() {
       if (this.isSubmit) return
-      if (!this.isVerify) return
+      // if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
-      if (
-        !this.form.name ||
+      let unvalid
+      if (this.type == 0) {
+        unvalid = !this.form.name ||
         !this.form.phone ||
-        !this.form.type
+        !this.form.house
+      } else  if (this.type == 1) {
+        unvalid = !this.form.name ||
+        !this.form.phone
+      }
+      if (
+        unvalid
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
@@ -225,7 +246,7 @@ export default {
       formData.append('msg', this.form.msg)
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
-      formData.append('type', this.form.type)
+      formData.append('house', this.form.house)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('contact_time', this.form.contact_time)
@@ -242,7 +263,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&type=${this.form.type}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&house=${this.form.house}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
