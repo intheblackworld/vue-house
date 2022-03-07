@@ -10,31 +10,60 @@
     </div>
     <!-- <h3 class="order-subtitle" v-html="order.subTitle"></h3>
     <div class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></div> -->
+    <div class="flex-ac flex-jb btn-list" v-if="isMobile">
+      <a class="btn-contact" :href="info.fbLink" target="_blank">
+        <div class="flex-ac flex-ja">
+          <img src="./btn_01_icon.png" alt="" class="btn-icon">
+          <span>FB諮詢</span>
+        </div>
+      </a>
+      <div class="btn-contact" @click="type = 0">
+        <div class="flex-ac flex-ja">
+          <img src="./btn_02_icon.png" alt="" class="btn-icon">
+          <span>賞屋諮詢</span>
+        </div>
+      </div>
+      <div class="btn-contact" @click="type = 1">
+        <div class="flex-ac flex-ja">
+          <img src="./btn_03_icon.png" alt="" class="btn-icon">
+          <span>建案合作提案</span>
+        </div>
+      </div>
+    </div>
     <div class="order">
       <div class="form">
-        <div class="group">
+        <div class="group group1">
+          {{`${type == 0 ? '賞屋諮詢' : '建案合作提案'}`}}
+        </div>
+        <div class="group group2">
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名 (必填)"></el-input>
           </div>
-          <div class="row" data-aos="fade-down" data-aos-delay="200">
+          <div class="row space" data-aos="fade-down" data-aos-delay="200">
             <el-input id="form-phone" v-model="form.phone" placeholder="電話 (必填)"></el-input>
+            <el-select v-model="form.contact_time" placeholder="可聯繫時間">
+              <el-option v-for="city in ['10-11', '11-12', '12-13', '13-14', '14-15', '15-16', '16-17']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+            </el-select>
           </div>
-          <div class="row" data-aos="fade-down" data-aos-delay="200">
-            <el-input id="form-phone" v-model="form.type" placeholder="想了解的建案 (必填)"></el-input>
+          <div class="row" data-aos="fade-down" data-aos-delay="200" v-if="type == 0">
+            <el-input id="form-house" v-model="form.house" placeholder="想了解的建案 (必填)"></el-input>
+          </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-input id="form-email" v-model="form.email" placeholder="您的E-mail" v-if="type == 1"></el-input>
           </div>
           <div class="row" data-aos="fade-down" data-aos-delay="200">
             <el-input type="textarea" :rows="5" placeholder="請輸入您的留言，將有專人為您服務" v-model="form.msg"></el-input>
           </div>
           <div class="control" data-aos="fade-down" data-aos-delay="500">
-            <div class="control-desc">
+            <!-- <div class="control-desc">
               <p>您所登錄的個人資料將作為以下用途</p>
               <p>
                 (一)本網站所載之相關事項通知<br />
                 (二)客戶管理與服務<br />
                 (三)本公司行銷業務之推廣
               </p>
-            </div>
+            </div> -->
             <el-checkbox v-model="checked">
               <div>
                 本人知悉並同意
@@ -49,17 +78,48 @@
           <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
             <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
           </div>
-          <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">確認送出</el-button>
+          <el-button class="form-submit flex-c" type="primary" :disabled="!checked" @click="submit" :loading="isSubmit">確認送出</el-button>
         </div>
-        <div class="group">
-          <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="535" frameborder="0" style="border: 0" allowfullscreen />
-          <!-- <div class="control" data-aos="fade-down" data-aos-delay="500">
-            <div class="control-desc">
-              <p>電話 {{info.phone}}<br />
-                信箱 {{info.email}}<br />
-                地址 {{info.address}}</p>
+        <div class="group group3" v-if="!isMobile">
+          <div v-if="!isMobile">
+            <a class="btn-contact" :href="info.fbLink" target="_blank">
+              <div class="flex-ac flex-ja">
+                <img src="./btn_01_icon.png" alt="" class="btn-icon">
+                <span>FB諮詢</span>
+              </div>
+            </a>
+            <div class="btn-contact" @click="type = 0">
+              <div class="flex-ac flex-ja">
+                <img src="./btn_02_icon.png" alt="" class="btn-icon">
+                <span>賞屋諮詢</span>
+              </div>
             </div>
-          </div> -->
+            <div class="btn-contact" @click="type = 1">
+              <div class="flex-ac flex-ja">
+                <img src="./btn_03_icon.png" alt="" class="btn-icon">
+                <span>建案合作提案</span>
+              </div>
+            </div>
+          </div>
+          <img src="./db_text.png" alt="" class="company-name">
+          <!-- <iframe class="google-map" title="googlemap" :src="googleSrc" width="100%" height="535" frameborder="0" style="border: 0" allowfullscreen /> -->
+          <div class="control" data-aos="fade-down" data-aos-delay="500">
+            <div class="control-desc">
+              新北市新店區安興路105號10樓之7<br />
+              P 02-2211-7711 / F 02-2212-3760
+            </div>
+          </div>
+          <div class="links flex-ac flex-js">
+            <a :href="info.fbLink" target="_blank">
+              <img src="../projects/db/contact/icon1.png" :alt="`${info.caseName}_icon1`" class="ig">
+            </a>
+            <!-- <a href="#">
+          <img src="../projects/db/contact/icon2.png" :alt="`${info.caseName}_icon2`" class="ig">
+        </a> -->
+            <a href="https://www.youtube.com/channel/UC2Jmxt8ws2aENeLAU1PEirg" target="_blank">
+              <img src="../projects/db/contact/icon3.png" :alt="`${info.caseName}_icon3`" class="ig">
+            </a>
+          </div>
         </div>
       </div>
       <!-- <img src="./" alt="" class="bottom-img"> -->
@@ -88,6 +148,7 @@ export default {
 
   data() {
     return {
+      type: 0, // 0 賞屋諮詢 1 建案合作提案
       cityList,
       info,
       order: info.order,
@@ -97,7 +158,7 @@ export default {
         name: '',
         phone: '',
         email: '',
-        type: '', // 想了解的建案
+        house: '', // 想了解的建案
         city: '',
         area: '',
         msg: '',
@@ -125,25 +186,43 @@ export default {
 
     alertValidate() {
       const h = this.$createElement
-      this.$notify({
-        title: '請填寫必填欄位',
-        message: h(
-          'i',
-          { style: 'color: #82191d' },
-          '「姓名、手機」是必填欄位',
-        ),
-      })
+      if (this.type == 0) {
+        this.$notify({
+          title: '請填寫必填欄位',
+          message: h(
+            'i',
+            { style: 'color: #82191d' },
+            '「姓名、手機、想了解的建案」是必填欄位',
+          ),
+        })
+      } else if (this.type == 1) {
+        this.$notify({
+          title: '請填寫必填欄位',
+          message: h(
+            'i',
+            { style: 'color: #82191d' },
+            '「姓名、手機」是必填欄位',
+          ),
+        })
+      }
     },
 
     submit() {
       if (this.isSubmit) return
-      if (!this.isVerify) return
+      // if (!this.isVerify) return
       if (!this.checked) return
       this.isSubmit = true
-      if (
-        !this.form.name ||
+      let unvalid
+      if (this.type == 0) {
+        unvalid = !this.form.name ||
+        !this.form.phone ||
+        !this.form.house
+      } else  if (this.type == 1) {
+        unvalid = !this.form.name ||
         !this.form.phone
-        // ||
+      }
+      if (
+        unvalid
         // !this.form.time_start ||
         // !this.form.time_end
         // ||
@@ -167,9 +246,10 @@ export default {
       formData.append('msg', this.form.msg)
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
-      formData.append('type', this.form.type)
+      formData.append('house', this.form.house)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
+      formData.append('contact_time', this.form.contact_time)
       formData.append('utm_source', utmSource)
       formData.append('utm_medium', utmMedium)
       formData.append('utm_content', utmContent)
@@ -183,7 +263,7 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&type=${this.form.type}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&house=${this.form.house}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: 'GET',
@@ -294,7 +374,7 @@ export default {
   }
 
   .order {
-    width: size(1440);
+    width: size(1242);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -320,7 +400,7 @@ export default {
     display: flex;
     align-items: flex-start;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: flex-start;
     > .group {
       // flex: 1;
       align-items: flex-start;
@@ -331,7 +411,7 @@ export default {
   }
 
   .group {
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
     // height: 250px;
     margin-bottom: 40px;
 
@@ -350,6 +430,73 @@ export default {
     //     height: 100%;
     //   }
     // }
+  }
+
+  .group1 {
+    width: size(46);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-size: size(36);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: size(7.16);
+    text-align: center;
+    color: #fff;
+  }
+
+  .group2 {
+    width: size(712);
+    margin-right: size(52);
+  }
+
+  .group3 {
+    width: size(410);
+    border-left: 1px solid #fff;
+    padding-left: size(52);
+  }
+
+  .btn-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: size(350);
+    height: size(70);
+    text-decoration: none;
+    // opacity: 0;
+    border-radius: 5px;
+    font-size: size(20);
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: justify;
+    background-position: center;
+    background-color: #fff;
+    border: 1px solid #008fbb;
+    // border-radius: 72px / 72px;
+    margin: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    color: #008fbb;
+    cursor: pointer;
+
+    > div {
+      width: 60%;
+    }
+
+    .btn-icon {
+      width: size(30);
+    }
+
+    &:hover {
+      background-color: #fff7a4;
+    }
+  }
+
+  .company-name {
+    width: size(336);
+    margin-bottom: size(20);
   }
 
   .row {
@@ -374,12 +521,34 @@ export default {
     }
   }
 
+  .links {
+    width: 100%;
+    a {
+      width: size(60);
+      margin-right: 15px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .row.space {
+    justify-content: space-between;
+    .el-input,
+    .el-select {
+      width: 48.6%;
+    }
+  }
+
   .control {
     margin-top: 0px;
     margin-bottom: 20px;
   }
 
   .control-desc {
+    width: 100%;
+    margin-left: size(10);
     font-size: size(20);
     font-weight: 500;
     font-stretch: normal;
@@ -500,6 +669,61 @@ export default {
     .control-desc {
       font-size: sizem(15);
     }
+  }
+
+  .order-bg .group1 {
+    width: 100%;
+    writing-mode: initial;
+    text-orientation: initial;
+    font-size: sizem(30);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 5.97px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: sizem(20)
+  }
+
+  .btn-list {
+    width: sizem(350);
+    margin: 0 auto;
+    .btn-contact {
+      width: sizem(92);
+      height: sizem(92);
+      font-size: sizem(16);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: sizem(2);
+      text-align: center;
+      color: #008fbb;
+      border-radius: 15px;
+
+      span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        letter-spacing: sizem(3);
+      }
+
+      > div {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-icon {
+        width: sizem(25);
+      }
+    }
+  }
+
+  .company-name {
+    width: size(336);
+    margin-bottom: size(20);
   }
 }
 </style>

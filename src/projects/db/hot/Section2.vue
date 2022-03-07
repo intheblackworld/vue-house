@@ -13,6 +13,7 @@
         <div class="add"></div>
         <div class="content flex flex-ac wrap" v-if="!item.isEmpty">
           <div class="item-title flex-c" v-html="isMobile ? item.title2 : item.title "></div>
+          <div class="item-label" v-html="item.label"></div>
           <div class="item-desc flex-ac" v-html="item.desc"></div>
         </div>
         <div class="content flex-c" v-if="item.isEmpty">
@@ -32,10 +33,11 @@
           <div class="info-title">建案特色：</div>
           <div class="product-info3" v-html="dialogData.info3"></div>
           <div class="product-contact" v-html="dialogData.contact"></div>
-          <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+          <a class="product-btn" :href="dialogData.link" target="_blank" v-if="dialogData.link">建案官網</a>
         </div>
         <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
         <img :src="dialogData.logo" alt="" class="logo">
+        <div class="logo-label" v-html="dialogData.label"></div>
         <div class="slide-imgs flex-as flex-jb">
           <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
           <div class="text" v-html="dialogData.hint"></div>
@@ -81,7 +83,7 @@
           <div class="info-title">建案特色：</div>
           <div class="product-info3" v-html="dialogData.info3"></div>
           <div class="product-contact" v-html="dialogData.contact"></div>
-          <a class="product-btn" :href="dialogData.link" target="_blank">建案官網</a>
+          <a class="product-btn" :href="dialogData.link" target="_blank" v-if="dialogData.link">建案官網</a>
           <img src="./s1/rb.png" :alt="`${info.caseName}`" class="rb">
           <div class="back" @click="isProjectDialog = false">
             ［回上一頁］
@@ -156,32 +158,46 @@
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
   position: relative;
-  cursor: pointer;position: relative;
+  cursor: pointer;
+  position: relative;
 
   img {
     width: 100%;
     height: size(487);
     object-fit: cover;
   }
-  > span{
-  &::before,
+  > span {
+    &::before,
+    &::after {
+      content: '';
+      width: 1em;
+      height: 0.1em;
+      font-size: size(44);
+      background: #004ea2;
+      position: absolute;
+      right: 0.5em;
+      top: 10em;
+    }
+    &::after {
+      transform-origin: 50% 50%;
+      transform: rotate(90deg);
+    }
+  }
   &::after {
     content: '';
-    width: 1em;
-    height: 0.1em;
-    font-size: size(44);
-    background: #004ea2;
     position: absolute;
-    right: 0.5em;
-    top: 10em;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    border: 1px solid #08b0;
   }
-  &::after {
-    transform-origin: 50% 50%;
-    transform: rotate(90deg);
+  &:hover:after {
+    height: 100%;
+    border: 1px solid #08b;
+    transform: scale(1.04);
   }
-}
-  &::after{content: "";position: absolute; width: 100%;height:100%;top: 0;left: 0;transition: all 0.3s;border: 1px solid #08b0;}
-  &:hover:after{ height:100%;border: 1px solid #08b;transform: scale(1.04);}
 
   .content {
     height: size(130);
@@ -197,6 +213,20 @@
     letter-spacing: size(0.72);
     text-align: left;
     color: #000000;
+  }
+
+  .item-label {
+    font-size: size(24);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.05;
+    letter-spacing: size(0.72);
+    text-align: left;
+    color: #000000;
+    position: absolute;
+    right: 10px;
+    top: size(495);
   }
 
   .item-desc {
@@ -352,6 +382,18 @@
 
 .logo {
   @include img_r_pc(203, 23, 20);
+}
+
+.logo-label {
+  @include img_r_pc(203, 230, 20);
+  font-size: size(24);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: size(0.72);
+  text-align: center;
+  color: #000000;
 }
 
 .slide-imgs {
@@ -567,6 +609,21 @@
       margin-bottom: sizem(10);
     }
 
+    .item-label {
+      font-size: sizem(20);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.6;
+      letter-spacing: 0.06em;
+      text-align: left;
+      justify-content: flex-start;
+      color: #333333;
+      position: absolute;
+      right: 10px;
+      top: sizem(305);
+    }
+
     .item-coming {
       font-size: sizem(24);
       font-weight: normal;
@@ -657,6 +714,10 @@
     @include img_r_m(65, 370, 32);
   }
 
+  .logo-label {
+    display: none;
+  }
+
   .back {
     @include img_r_m(107, 0, 134);
     top: auto;
@@ -711,7 +772,7 @@
       transform: scale(0.9);
       transform-origin: 0 100%;
       line-height: 1.6;
-     //content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
+      //content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
       position: absolute;
       bottom: 0.3em;
       left: 0.3em;
@@ -903,43 +964,28 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
-        //碧波白
+        //快樂王國
         {
-          title: '碧波白',
-          title2: '碧波白',
-          desc:
-            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
-          img: require('../works/1/0.jpg'),
+          title: '快樂<br />王國',
+          title2: '快樂王國',
+          desc: '預推個案',
+          img: require('../works/8/0.jpg'),
           isEmpty: false,
-          info1:
-            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
-          info2:
-            '投資興建：漢翔開發有限公司<br />坪數房型：23-49坪‧ 70‧78坪大戶雙併',
-          info3:
-            '碧潭水岸首席 <br />涵碧美學御所<br />澳洲PTW建築團隊巨鑄<br />2020 Muse Design Awards 建築設計、室內設計',
-          contact: '貴賓專線｜02-2913-1333<br />接待會館｜新店區北新路一段79號',
-          link: 'https://www.bmwlife.com.tw/',
-          logo: require('../works/1/0.jpg'),
-          imgs: [
-            require('../works/1/1.jpg'),
-            require('../works/1/2.jpg'),
-            require('../works/1/3.jpg'),
-            require('../works/1/4.jpg'),
-          ],
-          text: [
-            require('../works/1/1.jpg'),
-            require('../works/1/2.jpg'),
-            require('../works/1/3.jpg'),
-            require('../works/1/4.jpg'),
-          ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          info1: '預推個案',
+          info2: '',
+          info3: '敬請期待',
+          contact: '',
+          link: 'https://wl.debang.tw/',
+          logo: require('../works/8/0.jpg'),
+          imgs: [require('../works/8/1.jpg')],
+          hint: '',
+          label: '',
         },
         //太陽
         {
           title: '太陽<br />帝國',
           title2: '太陽帝國',
-          desc:
-            '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
+          desc: '新北市｜中和區<br />19-39坪 2-3房<br />不是王牌不出手 唯有贏家能擁有',
           img: require('../works/4/0.jpg'),
           isEmpty: false,
           info1:
@@ -958,33 +1004,44 @@ export default {
             require('../works/4/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
         },
-        //自慢藏
+        //碧波白
         {
-          title: '自慢藏',
-          title2: '自慢藏',
-          desc:
-            '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
-          img: require('../works/6/0.jpg'),
+          title: '碧波白',
+          title2: '碧波白',
+          desc: '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+          img: require('../works/1/0.jpg'),
           isEmpty: false,
           info1:
-            '台北市｜台大旁 汀州路四段<br />35·45·60坪<br />藏山藏水藏台大 見識越高越是深藏不露',
-          info2: '投資興建：沅利建設<br />坪數房型：35、45、60坪',
+            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+          info2:
+            '投資興建：漢翔開發有限公司<br />坪數房型：23-49坪‧ 70‧78坪大戶雙併',
           info3:
-            '台大師大雙文、公園水岸雙景觀<br />台大最後一塊珍稀水岸、沅家集團-沅利建設40年代表作<br />日本國土開發台北水岸第一次<br />SRC鋼骨耐震標章建築<br />中鋼、新日鐵台日頂級鋼材<br />台灣大學地震中心結構外審',
-          contact:
-            '貴賓專線｜02-2933-1888<br />接待會館｜台北市羅斯福路五段216號之2',
-          link: 'https://jiman.debang.tw/',
-          logo: require('../works/6/0.jpg'),
-          imgs: [require('../works/6/1.jpg')],
-          hint: '',
+            '碧潭水岸首席 <br />涵碧美學御所<br />澳洲PTW建築團隊巨鑄<br />2020 Muse Design Awards 建築設計、室內設計',
+          contact: '貴賓專線｜02-2913-1333<br />接待會館｜新店區北新路一段79號',
+          link: 'https://bbb.debang.tw/',
+          logo: require('../works/1/0.jpg'),
+          imgs: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
+          text: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
         },
         //神采
         {
           title: '神采<br />飛洋',
           title2: '神采飛洋',
-          desc:
-            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />別人的是房 自己的才是家',
+          desc: '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />別人的是房 自己的才是家',
           img: require('../works/3/0.jpg'),
           isEmpty: false,
           info1:
@@ -1004,6 +1061,27 @@ export default {
             require('../works/3/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+        //陽明迴鄉
+        {
+          title: '陽明<br />迴鄉',
+          title2: '陽明迴鄉',
+          desc: '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
+          img: require('../works/7/0.jpg'),
+          isEmpty: false,
+          info1:
+            '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
+          info2: '投資興建：寶程國際<br />坪數房型：2-3房',
+          info3:
+            '陽明山下出將入相富人特區<br />高綠覆低建蔽濃蔭街廓<br />近擁薇閣高中郁郁文風<br />近享捷運新北投站增值通勤<br />戶戶三面採光通風，防疫級規劃',
+          contact:
+            '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
+          link: 'https://ymvilla.debang.tw/',
+          logo: require('../works/7/0.jpg'),
+          imgs: [require('../works/7/1.jpg')],
+          hint: '',
+          label: '',
         },
         //陽光
         {
@@ -1028,6 +1106,7 @@ export default {
             require('../works/2/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
         },
       ],
     }

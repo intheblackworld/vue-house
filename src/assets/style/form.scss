@@ -95,11 +95,12 @@
 }
 
 .form-submit {
-  width: 222px !important;
-  height: 54px !important;
+  display: block !important;
+  width: 304px !important;
+  height: 74px !important;
   // opacity: 0 !important;
-  border-radius: 0 !important;
-  font-size: size(18) !important;
+  border-radius: 5px !important;
+  font-size: size(24) !important;
   font-weight: bold !important;
   letter-spacing: 3px;
   text-align: justify;
@@ -108,7 +109,8 @@
   background-image: $order_submit_bg;
   border: 1px solid #008fbb !important;
   // border-radius: 72px / 72px !important;
-  margin: 0 auto !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
   color: $order_submit_color;
