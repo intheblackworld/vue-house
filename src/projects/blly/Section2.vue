@@ -263,6 +263,7 @@
     // background-position: 0 0;
     // background-attachment: fixed;
     overflow: hidden;
+    background: #0075d5;
   }
 
   .dark-block {
@@ -276,9 +277,9 @@
   }
 
   .img {
-    width: sizem(355);
+    width:100%;
     top: sizem(160);
-    left: sizem(10);
+    left:0;
   }
 
 
