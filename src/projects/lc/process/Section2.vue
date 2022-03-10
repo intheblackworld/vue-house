@@ -955,6 +955,22 @@ export default {
           {
             o_title: '2021 立瑾WAY',
             o_subtitle: '已完售，預計2023年初完工。',
+            img: require('../process/list/9/image001.jpg'),
+            title: '2022/03',
+            subtitle: ' 三樓版灌漿前後施工照片',
+            isFinished: true,
+            imgs: [
+              require('../process/list/9/image001.jpg'),
+              require('../process/list/9/image003.jpg'),
+              require('../process/list/9/image005.jpg'),
+              require('../process/list/9/image007.jpg'),
+              require('../process/list/9/image009.jpg'),
+              require('../process/list/9/image011.jpg'),
+              require('../process/list/9/image013.jpg'),
+              require('../process/list/9/image015.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/1/7.jpg'),
             title: '2021/12',
             subtitle: '基礎版鋼筋綁紮及混凝土灌漿',
@@ -1040,22 +1056,6 @@ export default {
           {
             o_title: '2021 立瑾綻',
             o_subtitle: '公開銷售中。',
-            img: require('../process/list/9/image001.jpg'),
-            title: '2022/03',
-            subtitle: ' 三樓版灌漿前後施工照片',
-            isFinished: true,
-            imgs: [
-              require('../process/list/9/image001.jpg'),
-              require('../process/list/9/image003.jpg'),
-              require('../process/list/9/image005.jpg'),
-              require('../process/list/9/image007.jpg'),
-              require('../process/list/9/image009.jpg'),
-              require('../process/list/9/image011.jpg'),
-              require('../process/list/9/image013.jpg'),
-              require('../process/list/9/image015.jpg'),
-            ]
-          },
-          {
             img: require('../process/list/8/1.jpg'),
             title: '2022/02',
             subtitle: ' 二樓版工務局勘驗+灌漿前後',
