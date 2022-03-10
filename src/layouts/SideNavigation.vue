@@ -1,5 +1,5 @@
 <template>
-  <div class="sideNav">
+  <nav class="sideNav">
     <div class="nav relative">
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
@@ -26,7 +26,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

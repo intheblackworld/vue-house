@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <div class="section4">
+    <article class="section4">
       <div class="flip"  v-if="!isMobile"><img loading="lazy" src="./all/light.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light"></div>
       <img loading="lazy" src="./all/light.png" v-if="isMobile" 
           :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >熱浪不怕，隔熱又省電</div>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="200" >熱浪不怕，隔熱又省電</h3>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -29,8 +28,7 @@
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">姮興開發走在業界前端，以價格親民打造全球最夯的節能好宅，一系列綠建築配備，讓你在家享受永續節能的安全居家生活！
       </div>
-    </div>
-  </div>
+    </article>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';

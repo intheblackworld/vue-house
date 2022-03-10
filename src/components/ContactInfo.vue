@@ -1,32 +1,35 @@
 <template>
   <div>
-    <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
+    <article id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
+    <h3>{{info.caseName}}</h3>
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
-        <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
+        <h4 class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
           </span>
-        </div>
-        <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
+        </h4>
+        <h4 class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
-        </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        </h4>
+        <h4 class="btn flex-c" data-aos="fade-down" data-aos-delay="300">
+        <a :href="info.fbLink" target="_blank">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
+        </h4>
+        <h4 class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</h4>
         <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
         </div>
       </div>
-    </div>
+    </article>
     <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
@@ -104,6 +107,7 @@ export default {
   transform: translateY(0);
   margin: 2vw auto 0;
   padding: 30px 0 40px;
+  > h3{ opacity: 0;position: absolute;}
 }
 
 .logo {
@@ -125,8 +129,6 @@ export default {
   height: 60px;
   font-size: 16px;
   margin-bottom: 20px;
-  cursor: pointer;
-  text-decoration: none;
   //border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
@@ -135,6 +137,16 @@ export default {
   position: relative;
   overflow: hidden;
   font-weight: 600;
+  a{
+  width:100%;
+  height:100%;
+    display: flex;
+    cursor: pointer;
+    color:inherit;
+    text-decoration: none;
+align-items: center;
+justify-content: center;
+  }
   &.half {
     width: 49%;
   }

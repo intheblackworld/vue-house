@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <div class="section5">
+    <article class="section5">
       <img loading="lazy" src="./all/light.png"
           :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile" >姮興實績，有目共睹</div>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile" >姮興實績，有目共睹</h3>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -22,7 +21,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200"  v-if="isPC" >姮興實績，有目共睹</div>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="200"  v-if="isPC" >姮興實績，有目共睹</h3>
       <div class="subtitle" data-aos="fade-down" data-aos-delay="300" ><img loading="lazy" src="./s5/logo.png" alt="光禾墅"><br>百戶透天建設，真正深耕在地</div>
       <div class="line" data-aos="fade" data-aos-delay="200" ></div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
@@ -32,8 +31,7 @@
       <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
-    </div>
-  </div>
+    </article>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';

@@ -1,5 +1,6 @@
 <template>
-  <div :class="`navigation ${min ? 'min' : ''}`">
+  <nav :class="`navigation ${min ? 'min' : ''}`">
+			<h2>選單</h2>
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
@@ -25,7 +26,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -85,6 +86,8 @@ export default {
   align-items: center;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   //@function&::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
+> h2{
+    display: none;}
 }
 
 .nav-container {

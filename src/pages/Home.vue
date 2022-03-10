@@ -1,5 +1,6 @@
 <template>
   <div class="home no-padding-top">
+    <h1 v-html="info.caseName"></h1>
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation v-if="!isMobile" />
@@ -97,6 +98,7 @@
 import $ from 'jquery'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
+import info from "@/info"
 // import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
@@ -141,6 +143,7 @@ export default {
   data() {
     return {
       isMobile,
+      info,
       isSide: false,
       load: true,
       viewIndex: 0,

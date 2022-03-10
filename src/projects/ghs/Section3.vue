@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <div class="section3">
+    <article class="section3">
       <img loading="lazy" src="./all/light.png"
           :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >房貸不怕，利息台電出</div>
+      <h3 class="title" data-aos="fade-down" data-aos-delay="200" >房貸不怕，利息台電出</h3>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -29,8 +28,7 @@
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
         屋頂架設太陽能光電板，可隔熱、遮雨、省電，又可創能售電予台電收益，每月獲利數千元，讓您輕鬆補貼房貸輕鬆繳！ 
       </div>
-    </div>
-  </div>
+    </article>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';

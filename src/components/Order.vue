@@ -1,6 +1,6 @@
 <template>
   <div class="order-bg" ref="parallax2">
-    <div class="order-top">
+    <article class="order-top">
       <div class="title-block">
         <h3 class="order-title" v-html="order.title"></h3>
         <div class="order-subtitle" v-html="order.subTitle"></div>
@@ -131,7 +131,7 @@
             </div>
           </div>
         </div>
-        <div class="control">
+        <section class="control">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -139,7 +139,7 @@
               內容
             </h3>
           </el-checkbox>
-        </div>
+        </section>
         <div style="margin: 0 auto; z-index: 2" v-if="!isMobile">
           <vue-recaptcha
             :sitekey="info.recaptcha_site_key_v2"
@@ -164,7 +164,7 @@
         >
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
-    </div>
+    </article>
 
     <ContactInfo />
     <GoogleMap />

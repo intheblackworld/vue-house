@@ -1,5 +1,6 @@
 <template>
-  <div class="section1">
+  <article class="section1">
+    <h3 v-html="`${info.caseName}雲林最強自帶財透天好墅`"></h3>
     <div>
  	<!-- <img src="./s1/1.jpg" alt="" class="t0"> -->
       <img loading="lazy" src="./s1/bg.jpg" 
@@ -14,13 +15,13 @@
 <div class="txt">
 		<img loading="lazy" src="./all/light.png" 
           :alt="`${info.caseName}light`" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" class="light">
-		<img loading="lazy" src="./s1/logo.png" 
+    <img loading="lazy" src="./s1/logo.png" 
           :alt="`${info.caseName}logo`" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
 		<img loading="lazy" src="./s1/t.png" 
-          :alt="`${info.caseName}t`" data-aos="fade" data-aos-duration="1500" data-aos-delay="300" class="t">
+          :alt="`${info.caseName}買房我最省，獨棟．雙併．連棟`" data-aos="fade" data-aos-duration="1500" data-aos-delay="300" class="t">
     </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <style lang="scss" scoped>
