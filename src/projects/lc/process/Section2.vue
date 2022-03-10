@@ -35,7 +35,8 @@
         <div class="dialog-head">
           <router-link to="/">首頁</router-link> >
           <router-link to="/process">工程進度</router-link> > 
-          <span @click="isDialog = false">{{ list[this.$route.params.id][0].o_title }}> {{ list[this.$route.params.id][dialogIndex].title }}</span>
+          <span @click="isDialog = false">{{ list[this.$route.params.id][0].o_title }}</span>
+           > {{ list[this.$route.params.id][dialogIndex].title }} - {{ list[this.$route.params.id][dialogIndex].subtitle }}
         </div>
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -1039,6 +1040,22 @@ export default {
           {
             o_title: '2021 立瑾綻',
             o_subtitle: '公開銷售中。',
+            img: require('../process/list/9/image001.jpg'),
+            title: '2022/03',
+            subtitle: ' 三樓版灌漿前後施工照片',
+            isFinished: true,
+            imgs: [
+              require('../process/list/9/image001.jpg'),
+              require('../process/list/9/image003.jpg'),
+              require('../process/list/9/image005.jpg'),
+              require('../process/list/9/image007.jpg'),
+              require('../process/list/9/image009.jpg'),
+              require('../process/list/9/image011.jpg'),
+              require('../process/list/9/image013.jpg'),
+              require('../process/list/9/image015.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/8/1.jpg'),
             title: '2022/02',
             subtitle: ' 二樓版工務局勘驗+灌漿前後',
