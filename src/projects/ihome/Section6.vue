@@ -238,7 +238,6 @@
 
 @media screen and (max-width: 767px) {
   .section6 {
-    width: 100vw;
     height: auto;
     min-height: auto;
     max-height: initial;
@@ -280,7 +279,7 @@
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
+    width:100%;
     height: sizem(660);
     min-height: auto;
     top: sizem(0);

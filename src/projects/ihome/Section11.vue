@@ -44,7 +44,7 @@
 @import '@/assets/style/function.scss';
 
 .section11 {
-  width: size(1920);
+  width:100%;
   height: size(900);
   position: relative;
   background-color: #b01f24;

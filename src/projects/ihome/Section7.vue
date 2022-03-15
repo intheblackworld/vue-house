@@ -16,7 +16,7 @@
 @import '@/assets/style/function.scss';
 
 .section7 {  
-  width: size(1920);
+  width:100%;
  /*  height: size(1358);
   max-height: size(1358); */
   background: #FFF;
@@ -90,7 +90,6 @@ margin: size(233) auto ;
 
 @media screen and (max-width: 767px) {
   .section7 {
-    width: 100vw;
     height: auto;
   }
 .txt{

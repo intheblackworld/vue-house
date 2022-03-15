@@ -1,5 +1,5 @@
 <template>
-    <div class="section8">
+    <div class="section9">
   <!--    <img src="./s2/hr.png" alt="" class="hr absolute">  -->
   <img src="./s1/imgbg.png" alt="" class="imgbg">
    <!--   <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Moving</span>登樂時尚 快線如風</div> -->
@@ -34,7 +34,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section8 {  
+.section9 {  
   width:100%;
   height:auto;
   position: relative;
@@ -242,8 +242,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section8 {
-    width: 100vw;
+  .section9 {
     height: auto;
     min-height: auto;
     max-height: initial;
@@ -285,7 +284,7 @@
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
+    width:100%;
     height: sizem(260);
     min-height: auto;
     top: sizem(0);
@@ -442,7 +441,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section8',
+  name: 'section9',
 
   mixins: [slider],
   props: ['viewIndex'],

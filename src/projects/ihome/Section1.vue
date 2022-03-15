@@ -17,7 +17,7 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  width: size(1920);
+  width:100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
@@ -95,7 +95,6 @@ border-width: .1em 0 .1em .1em;left: 0;}
 
 @media screen and (max-width: 767px) {
   .section1 {
-    width: 100vw;
     min-height: sizem(604);
     max-height: sizem(750);
     height: calc(100vh - 63px);

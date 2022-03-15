@@ -36,7 +36,7 @@
 @import '@/assets/style/function.scss';
 
 .section3 {
-  width: size(1920);
+  width:100%;
   height: size(900);
   position: relative;
   overflow: hidden;
@@ -240,7 +240,6 @@
 
 @media screen and (max-width: 767px) {
   .section3 {
-    width: 100vw;
     height: auto;
   }
   .txt{
@@ -272,7 +271,7 @@ margin:1.5em auto 7em;
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: sizem(250);
     min-height: auto;
     top:0;
