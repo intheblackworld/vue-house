@@ -9,14 +9,14 @@
             <span>{{info.phone}}</span>
           </span>
         </div>
-        <!--  @click="showMessengerDialog" -->
-        <div class="btn flex-c" data-aos="fade-down" data-aos-delay="200">
+        <!--  -->
+        <div class="btn flex-c" data-aos="fade-down" data-aos-delay="200" @click="showMessengerDialog">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <!--  :href="info.fbLink"" -->
-        <a class="btn flex-c" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <!--  -->
+        <a class="btn flex-c" target="_blank" data-aos="fade-down" data-aos-delay="300" :href="info.fbLink">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
