@@ -4,39 +4,39 @@
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+            <img loading="lazy" :src="slide.img" alt="">
           </div>
         </transition-group>
         <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+          <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
         </div>
       </div>
     </div>
     <transition-group name="swipe-fade" mode="out-in">
-      <img v-if="slideIndex === 0" :src="slideList[slideIndex].person" alt="" class="person1" key="img1">
+      <img loading="lazy" v-if="slideIndex === 0" :src="slideList[slideIndex].person" alt="" class="person1" key="img1">
       <div v-if="slideIndex === 0" key="name1" :class="`name1`" v-html="slideList[slideIndex].name"></div>
       <div v-if="slideIndex === 0" key="title1" :class="`title1`" v-html="slideList[slideIndex].title"></div>
       <div v-if="slideIndex === 0" key="desc1" :class="`desc1`" v-html="slideList[slideIndex].desc"></div>
     </transition-group>
 
     <transition-group name="swipe-fade" mode="out-in">
-      <img v-if="slideIndex === 1" :src="slideList[slideIndex].person" alt="" class="person2" key="img2">
+      <img loading="lazy" v-if="slideIndex === 1" :src="slideList[slideIndex].person" alt="" class="person2" key="img2">
       <div v-if="slideIndex === 1" key="name2" :class="`name2`" v-html="slideList[slideIndex].name"></div>
       <div v-if="slideIndex === 1" key="title2" :class="`title2`" v-html="slideList[slideIndex].title"></div>
       <div v-if="slideIndex === 1" key="desc2" :class="`desc2`" v-html="slideList[slideIndex].desc"></div>
     </transition-group>
     <transition-group name="swipe-fade" mode="out-in">
-      <img v-if="slideIndex === 2" :src="slideList[slideIndex].person" alt="" class="person3" key="img3">
+      <img loading="lazy" v-if="slideIndex === 2" :src="slideList[slideIndex].person" alt="" class="person3" key="img3">
       <div v-if="slideIndex === 2" key="name3" :class="`name3`" v-html="slideList[slideIndex].name"></div>
       <div v-if="slideIndex === 2" key="title3" :class="`title3`" v-html="slideList[slideIndex].title"></div>
       <div v-if="slideIndex === 2" key="desc3" :class="`desc3`" v-html="slideList[slideIndex].desc"></div>
     </transition-group>
     <transition-group name="swipe-fade" mode="out-in">
-      <img v-if="slideIndex === 3" :src="slideList[slideIndex].person" alt="" class="person4" key="img4">
+      <img loading="lazy" v-if="slideIndex === 3" :src="slideList[slideIndex].person" alt="" class="person4" key="img4">
       <div v-if="slideIndex === 3" key="name4" :class="`name4`" v-html="slideList[slideIndex].name"></div>
       <div v-if="slideIndex === 3" key="title4" :class="`title4`" v-html="slideList[slideIndex].title"></div>
       <div v-if="slideIndex === 3" key="desc4" :class="`desc4`" v-html="slideList[slideIndex].desc"></div>

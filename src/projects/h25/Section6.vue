@@ -1,6 +1,6 @@
 <template>
   <div class="section6 flex-ac">
-    <img src="./s6/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
+    <img loading="lazy" src="./s6/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img">
   </div>
 </template>
 <style lang="scss" scoped>

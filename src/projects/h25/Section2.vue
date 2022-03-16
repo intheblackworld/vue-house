@@ -1,7 +1,7 @@
 <template>
   <div class="section2">
-    <img src="./s2/o1.png" :alt="`${info.caseName}_img`" class="o1">
-    <img src="./s2/o2.png" :alt="`${info.caseName}_img`" class="o2">
+    <img src="./s2/o1.png" :alt="`${info.caseName}_img`" class="o1" loading="lazy">
+    <img src="./s2/o2.png" :alt="`${info.caseName}_img`" class="o2" loading="lazy">
     <div class="content" data-aos="fade-down" data-aos-delay="0">
       <div class="desc" data-aos="fade-right" data-aos-delay="200">他傳統又時髦，</div>
       <div class="desc" data-aos="fade-right" data-aos-delay="300">繁華而文雅，濃郁而生動。</div>

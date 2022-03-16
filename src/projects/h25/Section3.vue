@@ -1,8 +1,8 @@
 <template>
   <div class="section3">
-    <img src="./s3/1.jpg" :alt="`${info.caseName}_img`" class="img">
+    <img loading="lazy" src="./s3/1.jpg" :alt="`${info.caseName}_img`" class="img">
     <div class="content">
-      <img src="./s3/t_bg.png" alt="" class="t_bg">
+      <img loading="lazy" src="./s3/t_bg.png" alt="" class="t_bg">
     </div>
     <div class="border"></div>
     <div class="title">
