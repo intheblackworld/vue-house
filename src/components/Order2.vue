@@ -38,6 +38,9 @@
         <div class="group group2">
           <!-- <div class="form-hint">* 每個欄位都是必填欄位</div> -->
           <div class="row" data-aos="fade-down" data-aos-delay="100">
+            <el-input id="form-type" v-model="form.type" :value="`${type == 0 ? '0' : '1'}`"></el-input>
+          </div>
+          <div class="row" data-aos="fade-down" data-aos-delay="100">
             <el-input id="form-name" v-model="form.name" placeholder="姓名 (必填)"></el-input>
           </div>
           <div class="row space" data-aos="fade-down" data-aos-delay="200">
