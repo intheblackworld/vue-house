@@ -1,7 +1,11 @@
 <?php
     $case_name = "得邦廣告";
-    $src =$_SERVER['SERVER_NAME']; 
-    $case_code = substr($src,0,strpos($src,'.'));
+    $src =$_SERVER['SERVER_NAME'];
+    if (isset($_POST['type']) == 1) {
+        $case_code = 'db-cooperation';
+    } else {
+        $case_code = substr($src,0,strpos($src,'.'));
+    }
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';

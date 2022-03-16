@@ -247,6 +247,7 @@ export default {
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append('house', this.form.house)
+      formData.append('type', this.type)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('contact_time', this.form.contact_time)
