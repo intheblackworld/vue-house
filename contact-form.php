@@ -1,10 +1,15 @@
 <?php
     $src =$_SERVER['SERVER_NAME'];
+<<<<<<< HEAD
 
 
     $typexxx = isset($_POST['type']) ? $_POST['type'] : 'xxx';
     $case_name= isset($_POST['type'])=='1' ? '得邦廣告-合作提案' : '得邦廣告-賞屋諮詢';
     $case_code = isset($_POST['type'])=='1' ? 'db-cooperation' : 'debang';
+=======
+    $case_name= $_POST['type'] ? '得邦廣告-合作提案' : '得邦廣告-賞屋諮詢';
+    $case_code = $_POST['type'] ? 'db-cooperation' : 'debang';
+>>>>>>> 9f805b0b51d27e4164f711ec0a38e5d958612b98
 
 
 
