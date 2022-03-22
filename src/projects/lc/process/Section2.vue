@@ -1056,6 +1056,20 @@ export default {
           {
             o_title: '2021 立瑾綻',
             o_subtitle: '公開銷售中。',
+            img: require('../process/list/10/image001.jpg'),
+            title: '2022/03',
+            subtitle: ' 3樓板灌漿前後施工照片',
+            isFinished: true,
+            imgs: [
+              require('../process/list/10/image001.jpg'),
+              require('../process/list/10/image003.jpg'),
+              require('../process/list/10/image005.jpg'),
+              require('../process/list/10/image007.jpg'),
+              require('../process/list/10/image009.jpg'),
+              require('../process/list/10/image011.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/8/1.jpg'),
             title: '2022/02',
             subtitle: ' 二樓版工務局勘驗+灌漿前後',
