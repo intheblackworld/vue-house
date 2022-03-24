@@ -3,16 +3,16 @@
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
       <div class="logobg1"></div>
       <div class="logobg2">
-      <img src="@/projects/wv/s1/logobg1.png" :alt="info.caseName" />
-      <img src="@/projects/wv/s1/logobg2.png" :alt="info.caseName" />
-      <img src="@/projects/wv/s1/logobg3.png" :alt="info.caseName" />
-      <img src="@/projects/wv/s1/logobg1.png" :alt="info.caseName" />
-      <img src="@/projects/wv/s1/logobg2.png" :alt="info.caseName" />
-      <img src="@/projects/wv/s1/logobg3.png" :alt="info.caseName" />
+      <img src="@/projects/wv/s1/logobg1.png" :alt="`${info.caseName}_面水岸`" />
+      <img src="@/projects/wv/s1/logobg2.png" :alt="`${info.caseName}_近捷運`" />
+      <img src="@/projects/wv/s1/logobg3.png" :alt="`${info.caseName}_鄰公園`" />
+      <img src="@/projects/wv/s1/logobg1.png" :alt="`${info.caseName}_蘆洲站5分鐘`" />
+      <img src="@/projects/wv/s1/logobg2.png" :alt="`${info.caseName}_888萬起`" />
+      <img src="@/projects/wv/s1/logobg3.png" :alt="`${info.caseName}_快樂王國`" />
       </div>
 
-      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="fade-down" data-aos-delay="0" />
+      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">

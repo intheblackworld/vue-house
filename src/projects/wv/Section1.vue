@@ -1,8 +1,23 @@
 <template>
   <article class="section1">
-<!-- <img class="a1" src="./s1/bm.jpg" alt="">    -->
-<img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
+<!--  <img class="a1" src="./s1/b.jpg" alt="">  
+ --><img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
 <img class="bg" src="./s1/bgm.jpg" loading="lazy" :alt="`${info.caseName}_bg`" v-if="isMobile"> 
+     <div class="logobg2">
+      <img src="./s1/logobg1.png" :alt="`${info.caseName}_面水岸`" />
+      <img src="./s1/logobg2.png" :alt="`${info.caseName}_近捷運`" />
+      <img src="./s1/logobg3.png" :alt="`${info.caseName}_鄰公園`" />
+      <img src="./s1/logobg1.png" :alt="`${info.caseName}_蘆洲站5分鐘`" />
+      <img src="./s1/logobg2.png" :alt="`${info.caseName}_888萬起`" />
+      <img src="./s1/logobg3.png" :alt="`${info.caseName}_8295-1777`" />
+      <img src="./s1/logobg1.png" :alt="`${info.caseName}_快樂王國`" />
+      <img src="./s1/logobg2.png" :alt="`${info.caseName}_面水岸`" />
+      <img src="./s1/logobg3.png" :alt="`${info.caseName}_近捷運`" />
+      <img src="./s1/logobg1.png" :alt="`${info.caseName}_鄰公園`" />
+      <img src="./s1/logobg2.png" :alt="`${info.caseName}_蘆洲站5分鐘`" />
+      <img src="./s1/logobg3.png" :alt="`${info.caseName}_快樂王國`" />
+      </div>
+
 <img class="moon" src="./s1/moon.png" loading="lazy" :alt="`${info.caseName}_moon`" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">   
 <img class="bg-img" src="./s1/bg.png" loading="lazy" :alt="`${info.caseName}_外觀`" v-if="isPC">   
 <img class="bg-img" src="./s1/bgm.png" loading="lazy" :alt="`${info.caseName}_外觀`" v-if="isMobile">   
@@ -61,7 +76,7 @@
 </svg>
 <div class="txt">
 <div class="t1" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">面水岸 近捷運 鄰公園</div>
-<div class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="900">蘆洲站5分鐘｜868萬起｜8295-1777</div>
+<div class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="900">蘆洲站5分鐘｜888萬起｜8295-1777</div>
 </div>
 </article>
 </template>
@@ -100,7 +115,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-object-fit: cover
+object-fit: cover;
 }
 .moon{
   @include img_c_pc(423, 460);
@@ -113,6 +128,27 @@ left:50%;
 transform: translate(-50%,-50%);
 width: 100%;
 height: auto;
+}
+.logobg2{position: absolute;top: 0;left:0;width:100%;opacity:0.6;
+font-size: 20vw;
+img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 1;
+&:nth-child(1){top: 0.19em;left:0.06em;animation-delay: .6s;width:1.93em;}
+&:nth-child(2){top: 0.06em;left:0.15em;animation-delay: .0s;width:1.75em;}
+&:nth-child(3){top: 0.3em;left:0em;animation-delay: 1.2s;width:1.94em;}
+&:nth-child(4){top: 0.29em;right:0em;animation-delay: .0s;width:1.93em;}
+&:nth-child(5){top: 0.16em;right:0.1em;animation-delay: .8s;width:1.75em;}
+&:nth-child(6){top: 0.1em;right:0.06em;animation-delay: 1.5s;width:1.94em;}
+&:nth-child(7){top: 0em;left:1.56em;animation-delay: 1s;width:1.93em;}
+&:nth-child(8){top: 0.3em;left:1.25em;animation-delay: 1.6s;width:1.75em;}
+&:nth-child(9){top: -0.15em;left:0.5em;animation-delay: .1s;width:1.94em;}
+&:nth-child(10){top: 0.19em;right:1em;animation-delay: 1.4s;width:1.93em;}
+&:nth-child(11){top: 0.26em;right:1.1em;animation-delay: .3s;width:1.75em;}
+&:nth-child(12){top: -0.1em;right:.56em;animation-delay: 2s;width:1.94em;}
+}
+}
+@keyframes op {
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }
 .logo{
   @include img_l_pc(404, 195, 449);
@@ -156,7 +192,24 @@ font-size: 1.8em;}
   height: calc(100% * 183 / 667) ;
   top: calc(50% + (392 - 667 * .5) * 100vw / 375);
 }
+.logobg2{
+font-size:53vw;
+img{
+&:nth-child(1){top: 0em;left:0.06em;}
+&:nth-child(2){top: 0.1em;left:0.3em;}
+&:nth-child(3){top: 0.35em;left:0.5em;}
+&:nth-child(4){top: 0.5em;right:0.0em;}
+&:nth-child(5){top: -0.1em;right:0.1em;}
+&:nth-child(6){top: 0.7em;right:1.06em;}
+&:nth-child(7){top: 0.8em;left:0.8em;}
+&:nth-child(8){top: 0.9em;left:0.15em;}
+&:nth-child(9){top: 1em;left:0.5em;}
+&:nth-child(10){top: 1.3em;right:0.6em;}
+&:nth-child(11){top: 1.15em;right:0.1em;}
+&:nth-child(12){top: 1.3em;right:-0.5em;}
 
+  }
+  }
 .logo{
   @include img_l_m(199, 81, 50);
   top: calc(25% + (81 - 667 * .25) * 100vw / 375);
