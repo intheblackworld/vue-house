@@ -7,7 +7,7 @@
 
     <a class="nav-item" v-scroll-to="{ element: `#contact`, offset: offset }">
       <font-awesome-icon icon="pen" />
-      <div class="label">立即預約</div>
+      <div class="label">預約賞屋</div>
     </a>
     <a class="nav-item" @click="showMessengerDialog">
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
@@ -99,12 +99,13 @@ export default {
   z-index: 100;
   transition: all .5s;
   font-size:1.1vw;
-    flex-direction:column;
+  flex-direction:column;
    // opacity: 0.5;
   .nav-item {
   background: $mobile_nav_background;
     color: $mobile_nav_color;
     font-size: 1em;
+    font-weight:700;
     line-height: 1.5;
     display: flex;
     cursor: pointer;
@@ -128,8 +129,7 @@ export default {
     &:nth-child(4) {
     display: none;
     }
-    &:hover{
-      background: #C79F62;
+    &:hover{transform: scale(1.2);
     }
   }
 
@@ -180,6 +180,8 @@ export default {
       order:4;
     display: flex;
       border-right: none;
+    }
+    &:hover{transform: scale(1);
     }
   }
 

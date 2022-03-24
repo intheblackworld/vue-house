@@ -39,16 +39,12 @@ body {
 }
 
 .home {
- //background-image: url('~@/projects/yclj/s1/bg.jpg');
   padding-top: $nav_pc_height;
-  background-color: #3b3d32;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: cover;
-  background-repeat: no-repeat;
+  background:$bg;
   overflow: hidden; //試底下多的那塊哪來的
   font-family: $family1;
-  &::before{content: ' ';
+ /*
+ &::before{content: ' ';
      position: fixed;
      z-index: -1;
      top: 0;
@@ -59,7 +55,7 @@ width: 100%;
      background: center 0 ;
      background-color: $bg;
      background-size: cover;}
-
+  */
   &.no-padding-top {
     padding-top: 0;
 
@@ -67,6 +63,7 @@ width: 100%;
       height: 100vh;
     }
   }
+
 }
 
 .fullscreen {
@@ -261,12 +258,6 @@ img[lazy="loaded"] {
 
   .home {
     padding-top: $nav_tablet_height;
-    //background-color: $order_bg_color !important;
-    // background-image: $order_bg_image;
-    background-repeat: no-repeat;
-    background-size: 100vw auto;
-    background-attachment: fixed;
-    background-position: 0% 50%;
 
     &.no-padding-top {
       padding-top: 0;
@@ -334,9 +325,6 @@ img[lazy="loaded"] {
 
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  .home {
-    background-color: #3b3d32 !important;
-  }
   .no-padding-top {
     padding-top: 0;
 
@@ -358,14 +346,7 @@ img[lazy="loaded"] {
 
   .home {
     padding-top: $nav_phone_height;
-    // background: linear-gradient(to bottom, #094b76, #ffffff 50%, #004471 70%);
-    //background-image: url('~@/projects/tsi/s1/bg_m.jpg');
-    // background-image: $order_bg_image_m;
-    // background-repeat: no-repeat;
-    background-size:100%;
-    background-attachment: fixed;
-    background:none;
-    // background-position: 0% 50%;
+    /*
    &::before{content: ' ';
       position: fixed;
       z-index: -1;
@@ -378,6 +359,7 @@ img[lazy="loaded"] {
       background-image: $bg_m;
       background-size: cover;
   }
+  */
 
     &.no-padding-top {
       padding-top: 0;

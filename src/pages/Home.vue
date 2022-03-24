@@ -59,36 +59,29 @@
 .section .fp-tableCell {
   height: auto !important;
 }
+/*
 #contact {
  // position: relative;
  // z-index: 3;
 }
+*/
 </style>
 
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import $ from 'jquery'
-import Navigation from '@/layouts/Navigation.vue'
+// import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+// import Indigator from '@/components/Indigator.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/yclj/Section1.vue'
-// import Section2 from '@/projects/yclj/Section2.vue'
-// import Section3 from '@/projects/yclj/Section3.vue'
-// import Section4 from '@/projects/yclj/Section4.vue'
-// import Section5 from '@/projects/yclj/Section5.vue'
-// import Section6 from '@/projects/yclj/Section6.vue'
-// import Section7 from '@/projects/yclj/Section7.vue'
-// import Section8 from '@/projects/yclj/Section8.vue'
-// import Section9 from '@/projects/yclj/Section9.vue'
-// import Section10 from '@/projects/yclj/Section10.vue'
+import Section1 from '@/projects/wv/Section1.vue'
 
 export default {
   name: 'home',

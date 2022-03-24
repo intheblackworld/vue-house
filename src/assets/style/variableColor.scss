@@ -1,6 +1,6 @@
 /* html, body */
-$bg:#FFF;
-$bg_m: url('~@/projects/yclj/s1/bgm.jpg');
+$bg:#312A3D;
+// $bg_m: url('~@/projects/wv/s1/bgm.jpg');
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
@@ -46,9 +46,9 @@ $order_input_border: solid 1px #0006;
 $order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
 $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
 $order_check_desc_color: #fff !important;
-$order_check_span_color: #e9d388 !important;
+$order_check_span_color: #CC9856 !important;
 $order_submit_bg: transparent !important;
-$order_submit_color: #e9d388 !important;
+$order_submit_color: #CC9856 !important;
 $order_sumbit_disable_bg: transparent !important;
 
 // contactInfo
@@ -76,16 +76,16 @@ $contact_google_hover_btn_icon: #FFF;
 $contact_google_hover_btn_bg:#916f3c;
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #000;
-$house_border_color: #e9d388;
-$house_label_color: #000;
-$house_desc_color: #4d4d4d;
+$house_title_color: #CC9856;
+$house_border_color: #CC9856;
+$house_label_color: #CC9856;
+$house_desc_color: #444;
 
 // mobileNav
-$mobile_nav_background: #e9d388;
-$mobile_nav_color: #005878;
+$mobile_nav_background: #CC9856;
+$mobile_nav_color: #fff;
 $mobile_nav_border: #fff;
-$mobile_nav_icon: #005878;
+$mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
 $mobile_dialog_icon: #C79F62;

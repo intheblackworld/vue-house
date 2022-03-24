@@ -18,7 +18,7 @@
       :class="`contact-indigator`"
       v-scroll-to="{ element: `#contact` }"
       @click="setIndigator(navList.length - 1 + 1)"
-    >確認送出</div>
+    >立即預約</div>
   </div>
 </template>
 

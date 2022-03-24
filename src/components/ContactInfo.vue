@@ -1,16 +1,18 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
+      <div class="logobg1"></div>
+      <div class="logobg2">
+      <img src="@/projects/wv/s1/logobg1.png" :alt="info.caseName" />
+      <img src="@/projects/wv/s1/logobg2.png" :alt="info.caseName" />
+      <img src="@/projects/wv/s1/logobg3.png" :alt="info.caseName" />
+      <img src="@/projects/wv/s1/logobg1.png" :alt="info.caseName" />
+      <img src="@/projects/wv/s1/logobg2.png" :alt="info.caseName" />
+      <img src="@/projects/wv/s1/logobg3.png" :alt="info.caseName" />
+      </div>
+
       <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <!-- <img
-        v-if="isMobile"
-        class="logo"
-        src="@/assets/img/contact-logo_m.png"
-        :alt="info.caseName"
-        data-aos="fade-down"
-        data-aos-delay="0"
-      /> -->
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -95,9 +97,9 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background: $contact_bg;
+ // background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');
-  background-size: cover;
+ // background-size: cover;
   // background: linear-gradient(
   //   to bottom,
   //   rgba(243, 149, 1, 1) 0%,
@@ -120,12 +122,44 @@ export default {
   margin:0 auto 2vw;
   padding:0 0 40px;
 }
+.logobg{position: absolute;top: 0;left:calc(50% - 98.6vw * .5);width: 98.6vw;}
+.logobg1{position: absolute;top: -1vw;left:calc(50% - 85vw * .5);width: 85vw;height: 25vw;
+background: radial-gradient(ellipse at center,
+ rgba(255,136,146,1) 0%,
+ rgba(255,136,146,.5) 10%,
+ rgba(252,103,108,0.3) 20%,
+ rgba(216,73,134,0.1) 39%,
+ rgba(128,0,197,0) 70%);
+ animation: logobg1 1.5s ease-in-out infinite alternate;transform: scale(.8);
+
+}
+@keyframes logobg1 {
+    20% {opacity: 1;transform: scale(.8);}
+    100% {opacity: .6;transform: scale(1.1);}
+}
+.logobg2{position: absolute;top: 0;left:calc(50% - 98.6vw * .5);width: 98.6vw;opacity:0.5;
+font-size: 20vw;
+img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 1;
+&:nth-child(1){top: 0.29em;left:0.06em;animation-delay: .6s;width:1.93em;}
+&:nth-child(2){top: 0.26em;left:0.15em;animation-delay: .0s;width:1.75em;}
+&:nth-child(3){top: 0.3em;left:0em;animation-delay: 1.2s;width:1.94em;}
+&:nth-child(4){top: 0.29em;right:0em;animation-delay: .0s;width:1.93em;}
+&:nth-child(5){top: 0.26em;right:0.1em;animation-delay: .8s;width:1.75em;}
+&:nth-child(6){top: 0.3em;right:0.06em;animation-delay: 1.5s;width:1.94em;}
+}
+}
+@keyframes op {
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
 
 .logo {
+  position: relative;
+  z-index: 2;
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 50px auto 50px;
+  margin:$contact_logo_pc_margin;
 }
 .info {
   width: 880px;
@@ -139,6 +173,7 @@ export default {
   width: 280px;
   height: 60px;
   font-size: 18px;
+  font-weight: 700;
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -146,7 +181,7 @@ export default {
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
- // border-radius:1.8em !important;
+  border-radius:1.8em;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -197,12 +232,12 @@ export default {
   width: 700px;
   height: 60px;
   font-size: 18px;
-  font-weight: 500 !important;
+  font-weight: 700;
   background: #fff;
   border: 1px solid #0004;
- // border-radius:1.8em !important;
+  border-radius:1.8em;
   color: $contact_btn_border;
-  font-weight: bold;
+  font-weight: 700;
   box-shadow: $contact_btn_border;
   z-index: 1;
   padding: 0 100px 0 0;
@@ -223,7 +258,7 @@ export default {
   background: $contact_google_btn_bg;
   background-position: center !important;
   border: $contact_btn_border;
- // border-radius:1.8em !important;
+  border-radius:1.8em;
   transition: all 0.5s;
   z-index: 1;
   overflow: hidden;
@@ -284,20 +319,27 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    background: $contact_bg;
+   // background: $contact_bg;
     display: flex;
     width: 100%;
     //  max-width: 95%;
     height: auto;
     padding: 10% 8%;
     transform: none;
-    position: static;
     margin: 0;
 
     .logo {
       width: $contact_logo_mobile_width;
       margin: 5% auto 10%;
     }
+.logobg{position: absolute;top: 0;
+left:calc(50% - 223vw * .5);width: 223vw;}
+.logobg1{position: absolute;top: 0;
+left:calc(50% - 123vw * .5);width: 123vw;height: 50vw;
+}
+.logobg2{left:calc(50% - 223vw * .5);width: 223vw;
+font-size:51vw;
+  }
   }
 
   .btn {
@@ -342,8 +384,8 @@ export default {
     width: 100%;
   }
   .google-btn {
-    // border-top-right-radius: 0px;
-    // border-top-left-radius: 0px;
+     border-top-right-radius: 0px;
+     border-top-left-radius: 0px;
     // border-bottom-right-radius: 30px;
     // border-bottom-left-radius: 30px;
   }

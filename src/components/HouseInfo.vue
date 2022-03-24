@@ -30,6 +30,14 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.house-info .desc a{
+  color:inherit;
+  &:hover{
+    text-decoration: none;
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
 .house-info {
@@ -52,7 +60,7 @@ export default {
 .title {
   font-size:2em;
   margin:1.5em 0;
-  font-weight: 900;
+  font-weight: 700;
   color: $house_title_color;
   font-family: $family1;
   letter-spacing:0.4em;
@@ -105,7 +113,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
     font-family: $family1;
-    font-weight: 500;
+    font-weight: 700;
   }
 }
 

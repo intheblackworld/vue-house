@@ -12,19 +12,22 @@ export default {
   caseId: 'wv',
 
   houseInfos: [
-    ['建設公司', ' '],
-    ['代銷公司', ' '],
-    ['基地面績', ' '],
-    ['棟戶規劃', ' '],
-    ['基地地址', ' '],
-    ['接待中心', ' '],
+    ['投資興建', '中德建設'],
+    ['建照號碼', '109股建字第0439號'],
+    ['營造工程', '紹華營造'],
+    ['公設設計', '天藝設計-王秀玉'],
+    ['建築規劃', 'Ａ8建築師事務所-陳朝雄'],
+    ['園藝設計', '大漢景觀設計-徐世萃'],
+    ['結構安全', '永安結構技師事務所-吳志強'],
+    ['房型規劃', '2-3房'],
+    ['相關連結', "<a href='https://wl.debang.tw/'>快樂王國</a>"],
   ],
   gtmCode: [''], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
-    title: '歡迎預約',
+    title: '預約賞屋',
     subTitle: '若想了解更多資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   }
 }
