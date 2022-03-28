@@ -280,7 +280,7 @@
 </svg>
 
     <div class="txt">
-    <div class="title1" data-aos="fade" data-aos-delay="100" >23～67坪<span></span>挑高4米2</div>
+    <div class="title1" data-aos="fade" data-aos-delay="100" >24～93坪<span></span>挑高4米2</div>
     <div class="title2" data-aos="fade" data-aos-delay="300" >年後完工</div>
     </div>
 </div>
