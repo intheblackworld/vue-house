@@ -11,27 +11,27 @@
       <img src="@/projects/wv/s1/logobg3.png" :alt="`${info.caseName}_快樂王國`" />
       </div>
 
-      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="fade-down" data-aos-delay="0" />
-      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="fade-down" data-aos-delay="0" />
+      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
+      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
       <div class="info">
-        <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
+        <div class="btn flex-c" @click="showCallDialog" data-aos="zoom-in" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
           </span>
         </div>
-        <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
+        <div class="btn flex-c" @click="showMessengerDialog" data-aos="zoom-in" data-aos-delay="200">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="zoom-in" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
-        <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
+        <div class="address flex-c" data-aos="fade" data-aos-delay="400">{{info.address}}</div>
+        <div class="google-btn flex-c" data-aos="fade" data-aos-delay="400" @click="showMapDialog">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>

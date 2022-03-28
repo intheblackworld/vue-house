@@ -1,32 +1,9 @@
 <template>
   <div class="order-bg">
     <div class="order-top">
-      <!-- <div class="title-block">
-        <h3 class="title">{{order.title}}</h3>
-        <div class="subtitle">{{order.subTitle}}</div>
-      </div> -->
-      <h3 class="order-title" v-html="order.title"></h3>
-      <!-- <div class="order-title-img">
-        <img src="~@/assets/img/order-title.png" alt="" srcset="">
-      </div> 
-      <img
-        v-if="!isMobile"
-        class="bg-img"
-        src="@/projects/cc/contact.png"
-        alt=""
-        srcset=""
-        uk-parallax="viewport:0.8;y:200,0;"
-      />
-      <img
-        v-else
-        class="bg-img"
-        src="@/projects/cc/contact-mo.png"
-        alt=""
-        srcset=""
-        uk-parallax="viewport:0.8;y:0;"
-      />-->
-      <div class="order-subtitle" v-html="order.subTitle"></div>
-      <div class="order">
+      <h3 class="order-title" v-html="order.title" data-aos="zoom-in"></h3>
+      <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in"></div>
+      <div class="order" data-aos="zoom-in">
         <div class="form">
           <div class="group">
             <div class="row">
@@ -37,32 +14,12 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <!-- <div class="row">
-              <label>電子郵件</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
-            <!-- <div class="row">
-              <label>喜好房型</label>
-              <el-select v-model="form.room" placeholder>
-                <el-option
-                  v-for="room in ['2房', '3房']"
-                  :key="room"
-                  :label="room"
-                  :value="room"
-                ></el-option>
+            <div class="row">
+              <label>需求房型</label>
+              <el-select v-model="form.room_type" placeholder>
+                <el-option v-for="city in ['兩房','三房','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>方便接聽<br />電話時間</label>
-              <el-select v-model="form.contacttime" placeholder>
-                <el-option
-                  v-for="contacttime in ['上午', '中午', '下午', '晚上']"
-                  :key="contacttime"
-                  :label="contacttime"
-                  :value="contacttime"
-                ></el-option>
-              </el-select>
-            </div> -->
+            </div>
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
@@ -87,38 +44,6 @@
                 ></el-option>
               </el-select>
             </div>
-            <!-- <div class="row">
-              <label>性別</label>
-              <el-select v-model="form.gender" placeholder>
-                <el-option
-                  v-for="gender in ['女', '男', '其他']"
-                  :key="gender"
-                  :label="gender"
-                  :value="gender"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div>
-            <div class="row">
-              <label>資訊來源</label>
-              <el-select v-model="form.infoSource" placeholder>
-                <el-option
-                  v-for="infoSource in [
-                    '戶外廣告看版',
-                    'FB',
-                    '聯播網',
-                    '邀請卡',
-                    '簡訊',
-                    '介紹',
-                    '其他',
-                  ]"
-                  :key="infoSource"
-                  :label="infoSource"
-                  :value="infoSource"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div> -->
           </div>
           <div class="group">
             <div class="row" style="height: 100%">
@@ -140,21 +65,14 @@
             </h3>
           </el-checkbox>
         </div>
-        <div style="margin: 0 auto; z-index: 2" v-if="!isMobile">
+        <div style="margin: 0 auto; z-index: 2">
           <vue-recaptcha
             :sitekey="info.recaptcha_site_key_v2"
             @verify="isVerify = true"
             :loadRecaptchaScript="true"
           ></vue-recaptcha>
         </div>
-        <div style="margin: 0 auto; z-index: 2" v-if="isMobile">
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
-        </div>
-        <el-button
+        <el-button 
           class="form-submit bt_registration"
           type="primary"
           :disabled="!checked || !isVerify"
@@ -201,15 +119,14 @@ export default {
       form: {
         name: "",
         phone: "",
-        email: "",
         contacttime: "",
         city: "",
         area: "",
         gender: "",
         infosource: "",
+        room_type: '',
         parking: "",
         houseStyle: "",
-        room: "",
         msg: "",
         time_start: "",
         time_end: "",
@@ -270,11 +187,12 @@ export default {
         // ||
         // !this.form.email ||
       ) {
-        this.alertValidate();
+        this.alertValidate('「姓名、手機」是必填欄位')
         this.isSubmit = false;
         return;
       }
       if (this.form.phone.length != 10) {
+        this.alertValidate('手機號碼請填10碼')
         this.alertPhoneValidate();
         this.isSubmit = false;
         return;
@@ -290,7 +208,7 @@ export default {
       formData.append("email", this.form.email);
       formData.append("contacttime", this.form.contacttime);
       formData.append("msg", this.form.msg);
-      formData.append("room", this.form.room);
+      formData.append("room_type", this.form.room_type);
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append("city", this.form.city);
@@ -445,7 +363,7 @@ export default {
     flex-wrap: wrap;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-right: $order_input_border;
       margin-right: 40px;
       padding-right: 40px;
       .row {
@@ -484,7 +402,7 @@ export default {
     }
 
     label {
-      width: 5vw;
+      width: 6vw;
       font-size: 16px;
       font-weight: 700;
       opacity: 0.8;
