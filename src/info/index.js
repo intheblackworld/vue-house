@@ -2,8 +2,8 @@ import { isMobile } from '../utils/index'
 export default {
   address: '新北市五股區新城八路336號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.278911764025!2d121.44449651500744!3d25.092418283945133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8aa13603dcf%3A0x3e9b110cd7e9168e!2zMjQ45paw5YyX5biC5LqU6IKh5Y2A5paw5Z-O5YWr6LevMzM26Jmf!5e0!3m2!1szh-TW!2stw!4v1647933834215!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/CmC2RHrxGy5fvBPg8/',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14453.115073191777!2d121.43793046790599!3d25.092423142099808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9ab28774693%3A0xa335697305de0d2e!2z5Ly05pyI54Gj!5e0!3m2!1szh-TW!2stw!4v1648433765330!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/VynEUpENDwRsKj1dA',
   phone: '02-8295-1777',
   fbLink: 'https://www.facebook.com/103573018971658/',
   fbMessage: 'https://m.me/103573018971658/',
