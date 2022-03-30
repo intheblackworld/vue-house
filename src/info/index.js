@@ -1,10 +1,10 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市五股區新城八路336號',
+  address: '新北市五股區成泰路三段356號 旁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14453.115073191777!2d121.43793046790599!3d25.092423142099808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9ab28774693%3A0xa335697305de0d2e!2z5Ly05pyI54Gj!5e0!3m2!1szh-TW!2stw!4v1648433765330!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/VynEUpENDwRsKj1dA',
-  phone: '02-8295-1777',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.0815966310006!2d121.44869871500751!3d25.099099083941866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af547075f191%3A0x1836ca8a9ebb51bf!2zMjQ45paw5YyX5biC5LqU6IKh5Y2A5oiQ5rOw6Lev5LiJ5q61MzU26Jmf!5e0!3m2!1szh-TW!2stw!4v1648618675952!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/fp7FJb51RRGC9hKp7',
+  phone: '02-8292-2333',
   fbLink: 'https://www.facebook.com/103573018971658/',
   fbMessage: 'https://m.me/103573018971658/',
   caseName: '伴月灣',
@@ -20,7 +20,7 @@ export default {
     ['園藝設計', '大漢設計工程有限公司-徐世萃'],
     ['結構安全', '永安結構技師事務所-吳志強'],
     ['房型規劃', '2-3房'],
-    ['相關連結', "<a href='https://wl.debang.tw/'>快樂王國</a>"],
+   // ['相關連結', "<a href='https://wl.debang.tw/'>快樂王國</a>"],
   ],
   gtmCode: ['5ZQ95PD'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
