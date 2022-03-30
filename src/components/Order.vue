@@ -3,29 +3,8 @@
     <div class="order-top">
       <div class="title-block">
         <h3 class="order-title" v-html="order.title"></h3>
-     <!--     <div class="order-subtitle" v-html="order.subTitle"></div>  -->
+        <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
       </div>
-      <!-- <div class="order-title-img">
-        <img src="~@/assets/img/order-title.png" alt="" srcset="">
-      </div>
-
-      <img
-        class="contact1 parallax-item"
-        data-depth="0.2"
-        src="@/projects/gp/contact.png"
-        alt=""
-        srcset=""
-      />
-      <img
-        class="contact2 parallax-item"
-        data-depth="0.4"
-        src="@/projects/gp/contact-2.png"
-        alt=""
-        srcset=""
-      />
-      <img class="wave" src="@/projects/gp/s1/wave.svg" alt="" srcset="" />
-      <div class="order-subtitle" v-html="order.subTitle"></div>
- -->
       <div class="order">
         <div class="form">
           <div class="group">
@@ -37,32 +16,6 @@
               <label>手機</label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <!-- <div class="row">
-              <label>電子郵件</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
-            <!-- <div class="row">
-              <label>喜好房型</label>
-              <el-select v-model="form.room" placeholder>
-                <el-option
-                  v-for="room in ['2房', '3房']"
-                  :key="room"
-                  :label="room"
-                  :value="room"
-                ></el-option>
-              </el-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>方便接聽<br />電話時間</label>
-              <el-select v-model="form.contacttime" placeholder>
-                <el-option
-                  v-for="contacttime in ['上午', '中午', '下午', '晚上']"
-                  :key="contacttime"
-                  :label="contacttime"
-                  :value="contacttime"
-                ></el-option>
-              </el-select>
-            </div> -->
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
@@ -87,38 +40,6 @@
                 ></el-option>
               </el-select>
             </div>
-            <!-- <div class="row">
-              <label>性別</label>
-              <el-select v-model="form.gender" placeholder>
-                <el-option
-                  v-for="gender in ['女', '男', '其他']"
-                  :key="gender"
-                  :label="gender"
-                  :value="gender"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div>
-            <div class="row">
-              <label>資訊來源</label>
-              <el-select v-model="form.infoSource" placeholder>
-                <el-option
-                  v-for="infoSource in [
-                    '戶外廣告看版',
-                    'FB',
-                    '聯播網',
-                    '邀請卡',
-                    '簡訊',
-                    '介紹',
-                    '其他',
-                  ]"
-                  :key="infoSource"
-                  :label="infoSource"
-                  :value="infoSource"
-                  no-data-text=""
-                ></el-option>
-              </el-select>
-            </div> -->
           </div>
           <div class="group">
             <div class="row" style="height: 100%">
@@ -435,13 +356,6 @@ export default {
     margin-bottom: size(20);
     display: inline-block;
     z-index: 3;
-    /*
-  &::before{content:"";position: absolute;z-index:-1;top: 0;left: 0;
-  height: 100%;width: 100%;
-  background: url("~@/projects/nina/all/r_bg.png");
-  background-size: 100% 100%;
-  }
-  */
   }
   .order-title-img {
     width: 30vw;
