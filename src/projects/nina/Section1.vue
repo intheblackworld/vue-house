@@ -1,6 +1,7 @@
 <template>
   <div class="section1">
     <!-- <img src="./s1/0m.jpg" :alt="`${info.caseName}_bg`" class="t0">  -->
+      <img src="./all/nina.jpg" :alt="`${info.caseName}`" class="nina">
       <img src="./s1/bg.png" :alt="`${info.caseName}_bg`" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/7.png" :alt="`${info.caseName}_bg`" class="c7">
@@ -40,6 +41,11 @@
 }
 /*
   */
+  .nina{
+      position: absolute;
+      top:0;
+      left: 0;
+      transform: translate(-100%,-100%);}
 .t0{
   position: absolute;
   width: 100%;height:auto;
