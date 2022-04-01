@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top" >
+  <div class="home no-padding-top" ><h1>伴月灣</h1>
     <div class="bg-img">
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />

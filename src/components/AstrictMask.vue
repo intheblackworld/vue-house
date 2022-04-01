@@ -1,14 +1,14 @@
 <template>
   <div class="mask">
-    <section data-aos="fade-up" data-aos-delay="300">
+    <div data-aos="fade-up" data-aos-delay="300">
       <icon class="icon" :data="vueIcon" />
-    </section>
-    <section data-aos="fade-up" data-aos-delay="300">
+    </div>
+    <div data-aos="fade-up" data-aos-delay="300">
       <p>
         請將裝置轉至橫式
         <br />體驗最佳瀏覽方式
       </p>
-    </section>
+    </div>
   </div>
 </template>
 

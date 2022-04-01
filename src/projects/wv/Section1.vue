@@ -9,7 +9,7 @@
       <img src="./s1/logobg3.png" :alt="`${info.caseName}_鄰公園`" />
       <img src="./s1/logobg1.png" :alt="`${info.caseName}_蘆洲站5分鐘`" />
       <img src="./s1/logobg2.png" :alt="`${info.caseName}_888萬起`" />
-      <img src="./s1/logobg3.png" :alt="`${info.caseName}_8295-1777`" />
+      <img src="./s1/logobg3.png" :alt="`${info.caseName}_8292-2333`" />
       <img src="./s1/logobg1.png" :alt="`${info.caseName}_快樂王國`" />
       <img src="./s1/logobg2.png" :alt="`${info.caseName}_面水岸`" />
       <img src="./s1/logobg3.png" :alt="`${info.caseName}_近捷運`" />
@@ -22,7 +22,7 @@
 <img class="bg-img" src="./s1/bg.png" loading="lazy" :alt="`${info.caseName}_外觀`" v-if="isPC">   
 <img class="bg-img" src="./s1/bgm.png" loading="lazy" :alt="`${info.caseName}_外觀`" v-if="isMobile">   
 <svg version="1.1" id="logo" data-aos="zoom-in" data-aos-duration="1000" class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 404 432">
-  <title>快樂王國-伴月灣</title>
+  <title>伴月灣-快樂王國</title>
   <path d="M34.5,36.7v101.5H19.8V63.4c-4.5,6.5-9.7,12.5-15.7,17.9L0,76.8C14.9,56.7,24.8,21.6,28.8,0.3l16.4,3.8
     C42.7,14.1,39.4,25.4,34.5,36.7z M132.7,85.4v7.3H92.8v45.5H77.4V92.7H39.1v-7.3h38.3V62.2H44.6v-7.3h32.7V2.2h15.4v52.7h33.9v7.3
     H92.8v23.2H132.7z M57.8,51.2c-2.9-10.7-7.5-24.6-12.2-36.7l5.4-2.9c8.2,9.5,17.2,23.9,21.3,33.5L57.8,51.2z M102,50.5L97.2,47
@@ -75,8 +75,8 @@
   <text x="156" y="112">快樂王國</text>
 </svg>
 <div class="txt">
-<div class="t1" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">面水岸 近捷運 鄰公園</div>
-<div class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="900">蘆洲站5分鐘｜888萬起｜8292-2333</div>
+<h3 class="t1" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">面水岸 近捷運 鄰公園</h3>
+<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="900">蘆洲站5分鐘｜888萬起｜8292-2333<span>(須另購車位)</span></h3>
 </div>
 </article>
 </template>
@@ -102,6 +102,7 @@
 background: linear-gradient(to bottom, #312A3D00 0%,#312A3DFF 98%);
   }
 }
+h1{opacity: 0;}
 .a1{
 position: absolute;
 top: 0;
@@ -170,6 +171,10 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
 .t1{color:#fff;
   letter-spacing: -0.035em;
 font-size: 1.8em;}
+
+.t2{
+  span{position: absolute;top: 2.1em;left:0;width: 100%;font-size: .6em;letter-spacing: 0.1em;padding: 0 0 0 1em;}
+}
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
-    <div class="order-top">
-      <h3 class="order-title" v-html="order.title" data-aos="zoom-in"></h3>
+    <article class="order-top">
+      <h2 class="order-title" v-html="order.title" data-aos="zoom-in"></h2>
       <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in"></div>
       <div class="order" data-aos="zoom-in">
         <div class="form">
@@ -82,7 +82,7 @@
         >
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
-    </div>
+    </article>
 
     <ContactInfo />
     <GoogleMap />
