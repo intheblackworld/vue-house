@@ -59,6 +59,7 @@
 .section .fp-tableCell {
   height: auto !important;
 }
+h1{position: absolute;top:-2em;}
 /*
 #contact {
  // position: relative;
