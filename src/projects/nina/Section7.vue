@@ -2,9 +2,9 @@
   <div>
     <div class="section7">
      <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/7.png" :alt="`${info.caseName}_bg`" class="c7">
-      <img src="./all/3.png" :alt="`${info.caseName}_bg`" class="c3">
-      <img src="./all/5.png" :alt="`${info.caseName}_bg`" class="c5">
+      <img src="./all/7.png" alt="嚴選名品建材" class="c7">
+      <img src="./all/3.png" alt="SHOWA昭和氣密窗" class="c3">
+      <img src="./all/5.png" alt="INAX" class="c5">
     </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">

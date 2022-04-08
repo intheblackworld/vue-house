@@ -2,7 +2,7 @@
   <div>
     <div class="section9">
           <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/2.png" :alt="`${info.caseName}_bg`" class="c2">
+      <img src="./all/2.png" :alt="`${info.caseName}滿足每個家庭成員`" class="c2">
     </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
