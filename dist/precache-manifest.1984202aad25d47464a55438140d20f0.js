@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/js/abou_ust~classic_case~hot_case~news.0f0102d4.js"
   },
   {
-    "revision": "e4244f7e8fa480e1480b",
-    "url": "/css/abou_ust~contacts.c5520747.css"
+    "revision": "42f328c726042654619f",
+    "url": "/css/abou_ust~contacts.46010001.css"
   },
   {
-    "revision": "e4244f7e8fa480e1480b",
-    "url": "/js/abou_ust~contacts.91943d7c.js"
+    "revision": "42f328c726042654619f",
+    "url": "/js/abou_ust~contacts.ebf71338.js"
   },
   {
     "revision": "2a8c64b6b334540cb94d",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.4dbb4ab5.js"
   },
   {
-    "revision": "4685d45f066cabc323c8",
+    "revision": "1dd97fbd65044f6872f4",
     "url": "/css/app.967af026.css"
   },
   {
-    "revision": "4685d45f066cabc323c8",
-    "url": "/js/app.ea08717b.js"
+    "revision": "1dd97fbd65044f6872f4",
+    "url": "/js/app.bac73b01.js"
   },
   {
     "revision": "8a42fecc2dc404755615",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.e3177c3b.js"
   },
   {
-    "revision": "9eeee8a311d3dbbab760",
-    "url": "/css/classic_case.22ba1af6.css"
+    "revision": "660fe1e3e673ae27c88b",
+    "url": "/css/classic_case.c0cc85b0.css"
   },
   {
-    "revision": "9eeee8a311d3dbbab760",
-    "url": "/js/classic_case.c4fca4c8.js"
+    "revision": "660fe1e3e673ae27c88b",
+    "url": "/js/classic_case.035358ab.js"
   },
   {
     "revision": "a881957d369633ae5f63",
@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/js/contacts.21ad5527.js"
   },
   {
-    "revision": "ce6e6825ddc7724a0961",
-    "url": "/css/hot_case.aa4fae47.css"
+    "revision": "ca8162d51d733380c441",
+    "url": "/css/hot_case.926515ea.css"
   },
   {
-    "revision": "ce6e6825ddc7724a0961",
-    "url": "/js/hot_case.e7581fbb.js"
+    "revision": "ca8162d51d733380c441",
+    "url": "/js/hot_case.a7a2aa4a.js"
   },
   {
     "revision": "3a0bdf545b12fdf857bc",
@@ -896,7 +896,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "5970a187f74a65ac65cc2f890dc8e506",
+    "revision": "5d771088d275f86acf126c2f93a5c5f3",
     "url": "/index.html"
   },
   {
