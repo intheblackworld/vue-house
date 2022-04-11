@@ -122,6 +122,12 @@ export default {
       this.policyVisible = true
     },
 
+    hintSuccess() {
+      this.$notify({
+        title: '信件已送出',
+      })
+    },
+
     alertValidate() {
       const h = this.$createElement
       this.$notify({
@@ -135,6 +141,7 @@ export default {
     },
 
     submit() {
+      console.log(123123)
       if (this.isSubmit) return
       // if (!this.isVerify) return
       if (!this.checked) return
@@ -194,7 +201,10 @@ export default {
       }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
-          window.location.href = 'formThanks'
+          this.hintSuccess()
+          setTimeout(() => {
+            window.location.href = 'formThanks'
+          }, 3000);
         }
       })
     },

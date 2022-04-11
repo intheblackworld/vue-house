@@ -37,8 +37,8 @@
 .swiper-pagination {
   //宜娟把點選範圍條大版
   .swiper-pagination-bullet {
-    width: 2rem;
-    height: 2rem;
+    width: 30px;
+    height: 30px;
     margin: 0 !important;
     opacity: 1;
     position: relative;
