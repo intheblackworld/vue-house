@@ -17,8 +17,8 @@
         了解更多
       </div>
       <div class="item-list flex">
-        <div class="item" v-for="(item, index) in item_list"  :index="index" :key="item.desc + 'item'" @click="$router.push(item.link)">
-           <div :class="`item-img`"> <img :src="item.img" alt="" /></div>
+        <div class="item" v-for="(item, index) in item_list" :index="index" :key="item.desc + 'item'" @click="$router.push(item.link)">
+          <div :class="`item-img`"> <img :src="item.img" alt="" /></div>
           <div class="item-desc" v-html="item.desc"></div>
         </div>
       </div>
@@ -218,7 +218,7 @@
   // bottom: 0;
 
   @include md {
-    @include img_c_m(375, 315);
+    @include img_c_m(375, 285);
     overflow-x: scroll;
   }
   .item {
@@ -229,26 +229,32 @@
     @include md {
       width: sizem(153);
       min-width: sizem(153);
-      margin-right:0.7rem;
+      margin-right: 0.7rem;
     }
 
     &:hover {
-    .item-img {
-  img{
-    transform: scale(1.2);
-  }
-}
+      .item-img {
+        img {
+          transform: scale(1.2);
+        }
+      }
     }
 
     .item-img {
       width: 100%;
-    height: size(240);overflow: hidden;position: relative;
-  img{
-  width: 100%;height: 100%;
-  object-fit: cover;
-  vertical-align: middle;
-  transition:transform 2s;
-    }
+      height: size(240);
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+        transition: transform 2s;
+      }
+      @include md {
+        height: sizem(180);
+      }
     }
 
     .item-desc {
@@ -261,7 +267,7 @@
       text-align: center;
       color: #000;
 
-      @include md  {
+      @include md {
         font-size: sizem(18);
       }
     }

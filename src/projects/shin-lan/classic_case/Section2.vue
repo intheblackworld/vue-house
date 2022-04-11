@@ -15,6 +15,11 @@
           <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">{{page}}</div>
         </div>
       </div>
+      <div class="cate-list flex-ac flex-jb">
+        <div :class="`cate-btn ${category_index == 0 ? 'active' : ''}`" @click="category_index = 0">全部</div>
+        <div :class="`cate-btn ${category_index == 1 ? 'active' : ''}`" @click="category_index = 1">住宅</div>
+        <div :class="`cate-btn ${category_index == 2 ? 'active' : ''}`" @click="category_index = 2">辦公室與場辦</div>
+      </div>
       <transition-group class="flex-ac flex-js wrap" name="slide-fade" mode="out-in">
         <div class="card" v-for="(case_item, index) in current_case_list" :key="case_item.title + index" @click="$router.push(case_item.link)">
           <div class="card-img">
@@ -134,7 +139,46 @@
   @include md {
     width: 100%;
     font-size: sizem(20);
-    margin-bottom: sizem(60);
+    margin-bottom: sizem(30);
+  }
+}
+
+.cate-list {
+  width: size(420);
+  margin-bottom: size(40);
+
+  @include md {
+    width: sizem(310);
+    margin: sizem(0) auto sizem(30);
+  }
+
+  .cate-btn {
+    font-size: size(28);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: size(1.4);
+    text-align: left;
+    color: #808080;
+    border-bottom: 1px solid #808080;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &.active,
+    &:hover {
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
+
+    @include md {
+      font-size: sizem(21);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: sizem(1.05);
+      text-align: left;
+    }
   }
 }
 
@@ -152,9 +196,9 @@
     margin-right: 0;
     margin-bottom: sizem(60);
   }
-  &:hover{
+  &:hover {
     .card-img {
-      border-radius:50%;
+      border-radius: 50%;
     }
   }
 }
@@ -163,9 +207,8 @@
   position: relative;
   width: 100%;
   height: size(370);
-overflow: hidden;
-transition:all 0.5s;
-
+  overflow: hidden;
+  transition: all 0.5s;
 
   @include md {
     height: sizem(310);
@@ -223,7 +266,7 @@ transition:all 0.5s;
   text-align: left;
   color: #333;
 
-  @include md  {
+  @include md {
     display: none;
   }
 
@@ -258,13 +301,24 @@ export default {
       pageIndex: 0,
       count: 6,
       // 欣聯建設Shin-Lan 經典案例
-      case_list_1: [
-        ...case_list_1
-      ],
+      case_list_1: [...case_list_1],
       // 合聯營造Holan 經典案例
-      case_list_2: [
-        ...case_list_2
+      case_list_2: [...case_list_2],
+      category: [
+        {
+          title: '全部',
+          value: '',
+        },
+        {
+          title: '住宅',
+          value: 1,
+        },
+        {
+          title: '辦公室與場辦',
+          value: 2,
+        },
       ],
+      category_index: 0,
       // blockIndex: 0,
     }
   },
@@ -285,7 +339,13 @@ export default {
       )
     },
     case_list() {
-      return this[`case_list_${this.type || 1}`]
+      return this[`case_list_${this.type || 1}`].filter((item) => {
+        if (this.category_index == 0) {
+          return true
+        } else {
+          return item.cate == this.category[this.category_index].value
+        }
+      })
     },
     current_case_list() {
       return this.case_list.slice(
@@ -309,6 +369,7 @@ export default {
     },
     changePage(index) {
       this.pageIndex = index
+      this.category_index = 0
     },
   },
 

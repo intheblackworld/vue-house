@@ -92,6 +92,10 @@
 .title {
   margin: size(60) auto size(20);
   text-align: center;
+
+  @include md {
+    margin: sizem(60) auto sizem(10);
+  }
 }
 
 .container {
@@ -137,7 +141,7 @@
     transition: transform 0.5s 0.1s,border-radius 0.5s 0.3s;}
 
   &:hover{
-    
+
   &::before,
   &::after{
     border-radius: 0%;
@@ -145,7 +149,7 @@
     }
   }
 
-  
+
   @include md {
     width: 100%;
   }

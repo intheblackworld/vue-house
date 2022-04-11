@@ -34,50 +34,52 @@
   </div>
 </template>
 <style lang="scss">
-.swiper-pagination{
+.swiper-pagination {
   //宜娟把點選範圍條大版
-  .swiper-pagination-bullet{
-  width: 2em;
-  height: 2em;
-  margin: 0 !important;
-  opacity: 1;
-  position: relative;
-  transition:color .3s ;
-  color: #333;
-  background: none;
-  border-radius: 0;
-  &::before{
-    content: "";
-    width: 50%;
-    height:50%;
-    background: currentColor;
-    display: block;position: relative;
-    top: 25%;left: 25%;
-
-  }
-  &::after{
-    content: "";
-    width: 50%;
-    height:50%;
-    background: #b18863;
-    display: block;position: absolute;
-    top: 25%;left: 25%;
-    border-radius: 50%;
-    transform:scale(0);
-    transition: transform 0.3s,border-radius 0.2s 0.2s;
-
+  .swiper-pagination-bullet {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 !important;
+    opacity: 1;
+    position: relative;
+    transition: color 0.3s;
+    color: #333;
+    background: none;
+    border-radius: 0;
+    &::before {
+      content: '';
+      width: 50%;
+      height: 50%;
+      background: currentColor;
+      display: block;
+      position: relative;
+      top: 25%;
+      left: 25%;
     }
-  &.swiper-pagination-bullet-active {
-  &::after{
-    border-radius: 0%;
-    transform:scale(1);
+    &::after {
+      content: '';
+      width: 50%;
+      height: 50%;
+      background: #b18863;
+      display: block;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s, border-radius 0.2s 0.2s;
     }
-  }
-  &:hover{
-  color: #666;}
+    &.swiper-pagination-bullet-active {
+      &::after {
+        border-radius: 0%;
+        transform: scale(1);
+      }
+    }
+    &:hover {
+      color: #666;
+    }
   }
 }
-
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
@@ -200,38 +202,37 @@
     width: 100%;
     margin-bottom: sizem(60);
   }
-  &:hover{
+  &:hover {
     .card-img {
-      border-radius:50%;
+      border-radius: 50%;
     }
   }
-
 }
-  .add-btn {
-    position: absolute;
-    font-size: size(42);
-    font-weight: 300;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.8);
-    width: size(45);
-    height: size(45);
-    right: size(10);
-    bottom: size(10);
+.add-btn {
+  position: absolute;
+  font-size: size(42);
+  font-weight: 300;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: size(45);
+  height: size(45);
+  right: size(10);
+  bottom: size(10);
 
-    @include md {
-      font-size: sizem(42);
-      width: sizem(45);
-      height: sizem(45);
-      right: sizem(10);
-      bottom: sizem(10);
-    }
+  @include md {
+    font-size: sizem(42);
+    width: sizem(45);
+    height: sizem(45);
+    right: sizem(10);
+    bottom: sizem(10);
   }
+}
 .card-img {
   position: relative;
   width: 100%;
   height: size(370);
-overflow: hidden;
-transition:all 0.5s;
+  overflow: hidden;
+  transition: all 0.5s;
   @include md {
     height: sizem(310);
   }
@@ -244,7 +245,6 @@ transition:all 0.5s;
     left: 0;
   }
 }
-
 
 .card-content {
   font-size: size(28);
@@ -336,9 +336,7 @@ export default {
           clickable: true,
         },
       },
-      slideList: [
-        ...hot_case
-      ],
+      slideList: [...hot_case],
       // blockIndex: 0,
     }
   },

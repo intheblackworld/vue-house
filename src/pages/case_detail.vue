@@ -37,6 +37,7 @@
     <div class="flex-jr" style="width: 100%;" v-if="process_list">
       <div class="content">
         <div class="item-title gold">進度工程</div>
+        <img v-for="cover in current_item.project_progress_covers" :src="cover" alt="" class="progress-cover" :key="cover">
         <div class="content-item" v-for="process in process_list" :key="process.id + process.code + process.title">
           <div class="item-title">{{process.title}}</div>
           <div class="item-content">
@@ -146,6 +147,11 @@
     color: #000;
     margin-top: sizem(15);
   }
+}
+
+.progress-cover {
+  width: 100%;
+  margin: 30px auto;
 }
 
 .item-desc {
@@ -310,7 +316,10 @@ export default {
         if (item.title) {
           const case_item = hot_case.find((c) => c.title == item.title)
           if (case_item) {
-            return case_item
+            return {
+              ...case_item,
+              project_progress_covers: item.project_progress_covers,
+            }
           } else {
             return {
               img: '',

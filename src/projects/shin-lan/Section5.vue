@@ -214,7 +214,7 @@
     @include img_c_m(160, 0);
     height: sizem(40);
     top: auto;
-    bottom: 0;
+    bottom: sizem(-20);
     font-size: sizem(15);
     line-height: 1.73;
   }
