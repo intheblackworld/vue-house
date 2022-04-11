@@ -1,7 +1,7 @@
 <?php
     $src =$_SERVER['SERVER_NAME']; 
-    $case_name = "悅峰釀";
-    $case_code = 'nina';
+    $case_name = "文學苑";
+    $case_code = 'wsy';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';
     $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
