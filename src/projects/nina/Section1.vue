@@ -2,7 +2,8 @@
   <div class="section1">
     <!-- <img src="./s1/0m.jpg" alt="`${info.caseName}_bg" class="t0">  -->
       <img src="./all/nina.jpg" :alt="`${info.caseName}_logo`" class="nina">
-      <img src="./s1/bg.png" alt="bg" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
+      <img src="./s1/bg.png" alt="悅峰釀_bg" class="bg" v-if="isMobile">
+      <img src="./s1/bg1.png" alt="bgx" class="bg" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/7.png" alt="7" class="c7">
       <img src="./all/6.png" alt="6" class="c6" v-if="!isMobile">
