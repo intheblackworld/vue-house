@@ -23,7 +23,7 @@
           <div class="case-title" v-html="current_case.title"></div>
           <hr>
           <div class="case-desc" v-html="current_case.desc"></div>
-          <div class="back-btn flex-c" @click="$router.push('/classic_case')">回到上一頁</div>
+          <div class="back-btn flex-c" @click="$router.go(-1)">回到上一頁</div>
         </div>
       </div>
       <div class="right" v-if="isPC">
@@ -257,7 +257,7 @@
   width: 100%;
   //height: size(1016);
   object-fit: cover;
-  height: 100%;
+  height: auto;
 }
 
 .case-title {

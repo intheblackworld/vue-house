@@ -10,7 +10,7 @@
             <div class="label">
               帳　號
             </div>
-            <el-input id="form-email" v-model="form.email" placeholder="請輸入帳號"></el-input>
+            <el-input id="form-email" v-model="form.email" placeholder="請輸入Email"></el-input>
           </div>
           <div class="row flex-ac flex-jb" data-aos="fade-down" data-aos-delay="200">
             <div class="label">
