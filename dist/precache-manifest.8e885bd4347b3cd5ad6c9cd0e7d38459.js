@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.4dbb4ab5.js"
   },
   {
-    "revision": "a2168d5edeb9e920e7cc",
+    "revision": "4685d45f066cabc323c8",
     "url": "/css/app.967af026.css"
   },
   {
-    "revision": "a2168d5edeb9e920e7cc",
-    "url": "/js/app.8bb10b35.js"
+    "revision": "4685d45f066cabc323c8",
+    "url": "/js/app.ea08717b.js"
   },
   {
     "revision": "8a42fecc2dc404755615",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.e3177c3b.js"
   },
   {
-    "revision": "a0af6597e55899e05a91",
-    "url": "/css/classic_case.1e6b9e2c.css"
+    "revision": "9eeee8a311d3dbbab760",
+    "url": "/css/classic_case.22ba1af6.css"
   },
   {
-    "revision": "a0af6597e55899e05a91",
-    "url": "/js/classic_case.f6785058.js"
+    "revision": "9eeee8a311d3dbbab760",
+    "url": "/js/classic_case.c4fca4c8.js"
   },
   {
     "revision": "a881957d369633ae5f63",
@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/js/contacts.21ad5527.js"
   },
   {
-    "revision": "25b2ccb1f2e16c0ce2fc",
-    "url": "/css/hot_case.2e51b790.css"
+    "revision": "ce6e6825ddc7724a0961",
+    "url": "/css/hot_case.aa4fae47.css"
   },
   {
-    "revision": "25b2ccb1f2e16c0ce2fc",
-    "url": "/js/hot_case.0a1518ee.js"
+    "revision": "ce6e6825ddc7724a0961",
+    "url": "/js/hot_case.e7581fbb.js"
   },
   {
     "revision": "3a0bdf545b12fdf857bc",
@@ -500,12 +500,12 @@ self.__precacheManifest = [
     "url": "/img/0.66c28428.jpg"
   },
   {
-    "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
-    "url": "/img/404-bg.a72458d2.png"
-  },
-  {
     "revision": "83b895381b36762de13a44776987de43",
     "url": "/img/404-bg-m.83b89538.png"
+  },
+  {
+    "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
+    "url": "/img/404-bg.a72458d2.png"
   },
   {
     "revision": "d4a139f3e816f6d7fb517311aeb61cd2",
@@ -896,7 +896,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "92b69926a90862e43d1168f190755739",
+    "revision": "5970a187f74a65ac65cc2f890dc8e506",
     "url": "/index.html"
   },
   {

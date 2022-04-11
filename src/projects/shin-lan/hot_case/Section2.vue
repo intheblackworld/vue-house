@@ -198,13 +198,18 @@
   margin-bottom: size(78);
   cursor: pointer;
 
+  .card-img img {
+    transition: all .3s;
+  }
+
   @include md {
     width: 100%;
     margin-bottom: sizem(60);
   }
   &:hover {
     .card-img {
-      border-radius: 50%;
+      overflow: hidden;
+      img {transform: scale(1.1);}
     }
   }
 }

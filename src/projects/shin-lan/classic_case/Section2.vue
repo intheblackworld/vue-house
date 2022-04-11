@@ -191,6 +191,10 @@
     margin-right: 0;
   }
 
+  .card-img img {
+    transition: all .3s;
+  }
+
   @include md {
     width: 100%;
     margin-right: 0;
@@ -198,7 +202,9 @@
   }
   &:hover {
     .card-img {
-      border-radius: 50%;
+      /* border-radius: 50%; */
+      overflow: hidden;
+      img {transform: scale(1.1);}
     }
   }
 }
