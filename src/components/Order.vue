@@ -11,16 +11,22 @@
         <h3 class="order-title" v-html="order.title"></h3>
         <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
       </div>
-      <div class="order">
+      <div class="order" data-aos="zoom-in">
         <div class="form">
           <div class="group">
             <div class="row">
-              <label>姓名</label>
+              <label>姓名<span>*</span></label>
               <el-input v-model="form.name" placeholder></el-input>
             </div>
             <div class="row">
-              <label>手機</label>
+              <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
+            </div>
+            <div class="row">
+              <label>需求房型</label>
+              <el-select v-model="form.room_type" placeholder>
+                <el-option v-for="city in ['兩房','三房','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+              </el-select>
             </div>
             <div class="row">
               <label>居住城市</label>
@@ -131,15 +137,14 @@ export default {
       form: {
         name: "",
         phone: "",
-        email: "",
         contacttime: "",
         city: "",
         area: "",
         gender: "",
         infosource: "",
+        room_type: '',
         parking: "",
         houseStyle: "",
-        room: "",
         msg: "",
         time_start: "",
         time_end: "",
@@ -209,12 +214,12 @@ export default {
         // ||
         // !this.form.email ||
       ) {
-        this.alertValidate();
+        this.alertValidate('「姓名、手機」是必填欄位')
         this.isSubmit = false;
         return;
       }
       if (this.form.phone.length != 10) {
-        this.alertPhoneValidate();
+        this.alertValidate('手機號碼請填10碼')
         this.isSubmit = false;
         return;
       }
@@ -229,7 +234,7 @@ export default {
       formData.append("email", this.form.email);
       formData.append("contacttime", this.form.contacttime);
       formData.append("msg", this.form.msg);
-      formData.append("room", this.form.room);
+      formData.append("room_type", this.form.room_type);
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append("city", this.form.city);
@@ -489,6 +494,9 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       padding-left: 15px;
       white-space: nowrap;
       line-height: 1.2;
+      span {
+        color: #ff0000;
+      }
     }
   }
 
