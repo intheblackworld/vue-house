@@ -1,5 +1,6 @@
 <template>
   <div class="home no-padding-top">
+    <img class="og" src="@/projects/wsy/all/og.jpg" :alt="`${info.caseName}_ogimg`">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -91,11 +92,13 @@
   height: auto !important;
 }
 #contact{z-index: 3;}
+.og{position: absolute;width:1px;}
 </style>
 
 <script>
 // @ is an alias to /src
 import $ from 'jquery'
+import info from '@/info'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
@@ -140,6 +143,7 @@ export default {
   },
   data() {
     return {
+      info,
       isMobile,
       isSide: false,
       load: true,

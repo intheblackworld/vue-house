@@ -1,7 +1,6 @@
 <template>
   <div class="section1"><!--  
     <img src="./s1/0m.jpg" alt="`${info.caseName}_bg" class="t0"> -->
-      <img src="./s1/0.jpg" :alt="`${info.caseName}_logo`" class="wsy">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/3.png" alt="3" class="c4">
       <div class="c3"><img src="./all/3.png" alt="3"></div>
@@ -31,13 +30,6 @@
 &::before{content: "";
 background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:block;width: 100%;height: 100%;}
 }
-/*
-  */
-  .wsy{
-      position: absolute;
-      top:0;
-      left: 0;
-      transform: translate(-100%,-100%);}
 .t0{
   position: absolute;
   width: 100%;height:auto;
