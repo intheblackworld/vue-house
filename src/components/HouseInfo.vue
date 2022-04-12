@@ -87,7 +87,7 @@ export default {
     margin-right:0.8em;
     white-space: nowrap;
    // font-family: $family3;
-    width: 4.5em;
+    width: 4em;
   }
 
   .desc {
@@ -121,6 +121,9 @@ export default {
     width: 100%;
     height: auto;
     white-space: normal;
+  .desc {
+    font-size: 14px;
+  }
   }
 
   .info {

@@ -1,7 +1,14 @@
 <template>
     <div class="section8">
+      <div class="o" data-aos="zoom-in"></div>
+
+    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+      
+      <div class="c1"><img src="./all/1.png" alt="1"></div>
+      <div class="c2"><img src="./all/3.png" alt="3"></div>
+    </div>
       <div class="box">
-      <div class="title" data-aos="fade" data-aos-delay="0">在地深耕品牌  實力保證</div>
+      <div class="title" data-aos="fade" data-aos-delay="0">嚴選安心建材  安居好住</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="200">
         殷實建築，在地耕耘，鼎翊建設多年紮根淡水，十年磨一劍，「文學苑」先建後售，以最懂淡水天時地利的家，最值得您的信賴。
       </div>
@@ -22,7 +29,7 @@
         </div>
       </div>
         <div class="txt">
-      <div class="subtitle" data-aos="fade" data-aos-delay="200" >和成衛浴</div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><img loading="lazy" src="./s8/1.png" alt="和成衛浴">和成衛浴</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">90年衛浴領導品牌，首創Adb奈米防汙抗菌技術，並改良馬桶水路與沖水機制，以人性、科技、時尚、創新的設計，符合完美生活體驗。</div>
      <!-- <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
@@ -51,8 +58,7 @@
         </div>
       </div>
         <div class="txt">
-      <div class="subtitle" data-aos="fade" data-aos-delay="200" >櫻花淨水器</div>
-      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><img loading="lazy" src="./s8/2.png" alt="櫻花淨水器">櫻花淨水器</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">
         業界唯一永久免費淨水器健檢，產品皆通過國際SGS檢測，達國家飲用水標準；高精密度碳纖，濾淨效能更佳。</div>
      <!-- <ul class="desc">
@@ -82,8 +88,7 @@
         </div>
       </div>
         <div class="txt">
-      <div class="subtitle" data-aos="fade" data-aos-delay="200" >三星電子鎖</div>
-      <hr class="hr" data-aos="fade" data-aos-delay="300" >
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><img loading="lazy" src="./s8/3.png" alt="三星電子鎖">三星電子鎖</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">智慧感應解鎖開門，快速精確，並具火災安全警報機制，捍衛家居安全；符合歐盟RoHS標準，不含對人體有害物質。</div>
      <!-- <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
@@ -110,21 +115,55 @@
   font-style: normal;
   text-align: center;
   line-height: 1.2;
-  color: #fff;
   font-weight: 400;
   padding: 0;
   font-size: size(17);
-  padding: 0 0 6em;
+  color: #666;
 
   .box{
   width: size(1500);
-  margin:0em auto 0em;
+  margin:0em auto 14em;
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
     align-items:stretch;
   position: relative;
   }
+}
+.o{
+  position: absolute;
+  top:size(-85);
+  left:calc(50% - 10.5vw);
+  width: calc(2 * 10.5vw);
+  height:calc(2 * 10.5vw);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
+.c{
+      position: absolute;left:0;right:0;
+      top:0;
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(320);top:size(-70);right: size(-19);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -1s;
+      img{width: 100%;
+      transform:rotate(-49deg)scaleX(-1);}}
+    .c2{
+      width:size(700);top:size(-80);left: size(-230);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+      img{width: 100%;
+      transform:rotate(0deg);}}
+  }
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
 }
 .list{
   flex:0 0 size(470);
@@ -134,58 +173,60 @@
 .title{
   position: relative;
   font-size: size(40);
-  margin:1em auto 0.5em;
+  margin:1em auto 0em;
   letter-spacing:0.04em;
   color: #bb9259;
   font-weight: 700;
-  text-align: center;
   width: 100%;
 }
 .desc {
-  margin:1em auto;
+  margin:1em auto 3em auto;
   line-height: 2;
   letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
+  width: 100%;
 }
 
 .txt{
   position: relative;
   z-index: 3;
-  }
 
 
 .subtitle {
   position: relative;
-  font-size: size(30);
-  margin:1.5em auto 0.6em;
+  font-size: size(23);
+  margin:1.5em auto 0em;
+  width: 100%;
+  display: flex;
+  justify-content:space-between;align-items:flex-end;
   letter-spacing:0.04em;
-  color: #80c5b6;
-  font-weight: 500;
+  color: #bb9259;
+  font-weight:700;
       transform: scale(1.2);
+      img{height:4em;}
 }
 
 .hr{background: none;border: 0;opacity: .5;
       transform: scale(1.2);
 border-bottom:1px solid currentColor;}
 .desc {
-  margin:1em auto;
   line-height: 2;
   letter-spacing:0.05em;
   list-style: circle;
       transform: scale(1.2);
   overflow: hidden;
+  text-align: justify;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
+  }
 
 /* Swipe */
 .swipe {
 //  position: absolute;
   width:100%;
-  height: size(477);
+  height: size(420);
   top: size(185);
   right: size(199);
   object-fit: cover;
@@ -327,20 +368,49 @@ border-bottom:1px solid currentColor;}
     width: 100vw;
     height: auto;
 
-    font-size: sizem(14);
+    font-size: sizem(15);
     text-align: justify;
   padding: 0 0 3em;
   .box{
   width:100%;
-  flex-direction:column;
+  flex-direction:column;    margin: 0em auto 6em;
   }
 
+  }
+  
+.o{
+  position: absolute;
+  top:sizem(-85);
+  left:calc(50% - 33vw);
+  width: calc(2 * 33vw);
+  height:calc(2 * 33vw);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
+  
+  .c{
+    height: 100%;
+    .c1{
+      width:sizem(120);top:sizem(-170);right: sizem(-19);
+      }
+    .c2{
+      width:sizem(300);bottom:sizem(-100);left: sizem(-50);
+      top: auto;
+  }
   }
 .list{
   flex:0 0 100%;
   width: 100%;
   position: relative;
 }
+.title{
+    font-size: sizem(30);
+  letter-spacing:0.01em;
+  text-align: center;
+}
+  .desc {
+  letter-spacing:0em;
+    width: sizem(320);
+  }
   .txt{
   position: relative;
     width: sizem(320);
@@ -348,38 +418,34 @@ margin:0em auto 0em;
 padding: 0 0 3em;
   left:0;
   top:0;
-  }
-.title{
-    font-size: sizem(30);
-  letter-spacing:0.01em;
-}
   .subtitle {
-    font-size: sizem(17.6);
+    font-size: sizem(16);
   letter-spacing:0em;
-  margin:1.5em auto 0em;
+  margin:0.5em auto 0em;
   }
   .desc {
-  margin:0em auto;
   letter-spacing:0em;
+  }
   }
 
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100vw;
-    height: sizem(246);
+    width:  sizem(320);
+    height: sizem(240);
     min-height: auto;
+    margin: auto;
     top:0;
     left:0;
   order:initial;
   }
 
-  .swipe-item {
-    .slide-name{
-      right: 1em;
-    font-size: sizem(13);
-    }
+
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
   }
+}
 
   .swipe-btns {
 
@@ -411,20 +477,20 @@ export default {
       slideList1: [
         {
           img: require('./s8/1.jpg'),
-          name: '中壢交流道',
+          name: '',
         },
       ],
 
       slideList2: [
         {
           img: require('./s8/2.jpg'),
-          name: '松勇公園',
+          name: '',
         },
       ],
       slideList3: [
         {
           img: require('./s8/3.jpg'),
-          name: '松勇公園',
+          name: '',
         },
       ],
     }

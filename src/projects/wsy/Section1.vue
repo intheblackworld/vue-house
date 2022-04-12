@@ -1,6 +1,6 @@
 <template>
-  <div class="section1"><!-- 
-    <img src="./s1/0.jpg" alt="`${info.caseName}_bg" class="t0">  -->
+  <div class="section1"><!--  
+    <img src="./s1/0m.jpg" alt="`${info.caseName}_bg" class="t0"> -->
       <img src="./s1/0.jpg" :alt="`${info.caseName}_logo`" class="wsy">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/3.png" alt="3" class="c4">
@@ -27,7 +27,7 @@
   overflow: hidden;
   position: relative;
   z-index: 2; 
-  margin: 0 0 5vw;
+ // margin: 0 0 5vw;
 &::before{content: "";
 background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:block;width: 100%;height: 100%;}
 }
@@ -50,7 +50,8 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
    > img,
    > div{
       position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
+      animation:an 5s ease-in-out infinite alternate;
+    }
     .c1{
       width:size(797);top:size(495);left: size(-90);
       transform:rotate(3deg);
@@ -122,27 +123,6 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
         }
 
   }
-  .t3{
-    font-size:2.3em;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
-    .button{
-    font-size:0.68em;
-      cursor: pointer;
-      display: inline-block;
-      border:2px solid #52b559;
-      width: 5.2em;
-      vertical-align: middle;
-      margin: 0 0.5em 0.2em 0;
-      padding: 0 0 0.1em 0;
-      transition: all 0.3s;
-      &:hover{
-        background:#52b559cc;
-        color: #FFF;
-      }
-    }
-  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -154,43 +134,33 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
     min-height: sizem(604);
     max-height: sizem(750);
     height: calc(100vh - 63px);
-  margin: 0 0 25vw;
+  margin: 0 0 0;
+&::before{
+  background-size:sizem(700);
+}
   }
 
-.bg{
-  position: absolute;
-  width:100%;
-  top:calc(50% - 43vw);
-  left: 0;
-  }
 .c{
    top:calc(50% + (0 - 302) * 100vw / 375);
-    .c1{width:sizem(230);top:sizem(570);left: sizem(-60);}
-    .c2{width:sizem(280);top:sizem(573);left: sizem(210);}
-    .c3{width:sizem(208);top:sizem(180);right:sizem(-140);}
-    .c4{width:sizem(200);top:sizem(369);right:sizem(275);}
-    .c5{width:sizem(170);top:sizem(85);left: sizem(270);}
-    .c7{width:sizem(70);top:sizem(574);right:sizem(83);}
+    .c1{width:sizem(245);top:sizem(422);left: sizem(70);}
+    .c2{width:sizem(230);top:sizem(310);left: sizem(-5);}
+    .c3{width:sizem(161);top:sizem(309);left:sizem(130);}
+    .c4{width:sizem(182);top:sizem(420);left:sizem(186);}
 }
 
 .logo{
-   width:sizem(190);
-   top:calc(50% + (222 - 302) * 100vw / 375);
-   left:sizem(85);
+   width:sizem(276);  margin-left:sizem(25);
   }
 .txt{
    left:sizem(0);
-   top:calc(50% + (470 - 302) * 100vw / 375);
+   top:calc(50% + (76 - 302) * 100vw / 375);
    width: 100%;
   font-size: sizem(20);
-  .t1{
-     width:sizem(283);
-    }
+  .t1{ 
+        margin:0.5em 0 0; }
   .t2{
     letter-spacing: 0.04em;
         margin:0;
-        b{margin: auto 0.4em .1em 0.4em;
-    }
     }
 }
 

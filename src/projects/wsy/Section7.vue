@@ -1,11 +1,8 @@
 <template>
   <div>
     <div class="section7">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/4.png" alt="自漫美學 珍稀之作" class="c4">
-      <img src="./s2/2.png" alt="自漫美學 珍稀之作" class="c2">
-      <img src="./all/1.png" alt="自漫美學 珍稀之作" class="c1">
-    </div>
+      <div class="o" data-aos="zoom-in"></div>
+
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -40,27 +37,20 @@
   height:auto;
   position: relative;
 }
+.o{
+  position: absolute;
+  top:size(770);
+  left:size(110);
+  width:size(210);
+  height:size(210);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 
-.c{
-      position: absolute;left:0;right:0;
-      top:0;
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c1{width:size(451);top:size(500);right: size(-10);transform: translateX(-8%);animation-delay: -1s;}
-    .c2{width:size(246);top:size(950);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
-    .c4{width:size(533);top:size(950);left:size(-300);transform: translateX(-15%);animation-delay: -1s;}
-  }
 
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
-}
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 10em;
+  margin:0 auto 13.5em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -199,8 +189,6 @@
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
@@ -236,11 +224,13 @@
     max-height: initial;
   }
 
-.c{
-    .c1{width:sizem(230);top:sizem(600);right: sizem(60);}
-    .c2{width:sizem(120);top:sizem(500);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
-    .c4{width:sizem(300);top:sizem(530);left:sizem(-80);}
-  }
+.o{
+  top:sizem(260);
+  right:sizem(10);
+  width:sizem(90);
+  height:sizem(90);
+
+}
   .txt{
     position: relative;
     width: sizem(310);
@@ -251,7 +241,7 @@
   }
 .title{
     font-size: sizem(30);
-  letter-spacing:0.01em;
+  letter-spacing:0.003em;
 }
   .desc {
   margin:0em auto;
@@ -261,10 +251,17 @@
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(220);
+    height: sizem(255);
     top:0;
     left:0;
   }
+
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
+}
+
   .swipe-btns {
   font-size: sizem(15);
   }

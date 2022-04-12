@@ -216,10 +216,13 @@ export default {
     width: 30px;
     height: 3px;
     background-color:currentColor;
+ box-shadow:0 0 10px #600,0 0 4px #600c ;
+z-index: 3;
     &::after,
     &::before {
     position: absolute;
     left: 0;
+ box-shadow:0 0 7px #6009,0 0 4px #6009 ;
     content: "";
     display: block;
     width: 30px;
@@ -394,7 +397,7 @@ export default {
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: #d3e7bbbb;
+      background-color: #600c;
     }
     .link {
       width: 10em;

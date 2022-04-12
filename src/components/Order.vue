@@ -1,7 +1,13 @@
 <template>
   <div class="order-bg" ref="parallax2">
+    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+      
+      <div class="c1"><img src="@/projects/wsy/all/3.png" alt="1"></div>
+      <div class="c2"><img src="@/projects/wsy/all/2.png" alt="3"></div>
+    </div>
     <div class="order-top">
       <div class="title-block">
+      <div class="o" data-aos="zoom-in"></div>
         <h3 class="order-title" v-html="order.title"></h3>
         <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
       </div>
@@ -286,23 +292,42 @@ export default {
   right: -#{size(50)};
   width: size(148);
 }
-.wave {
+.o{
   position: absolute;
-  left: 0;
-  top: size(760);
-  height: size(121);
-  z-index: 0;
-  animation: wave 13s infinite alternate-reverse ease-in-out, fadeIn 1.5s;
-  opacity: 0.5;
-}
+  top:size(5);
+  left:calc(50% - 10.5vw);
+  width: calc(2 * 10.5vw);
+  height:calc(2 * 10.5vw);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 
-@keyframes wave {
-  0% {
-    transform: translate3d(0, 0, 0);
+.c{
+      position: absolute;left:0;right:0;
+      top:size(680);
+        z-index: -1;
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(700);top:size(-150);right: size(-50);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -1s;
+      img{width: 100%;
+      transform:rotate(6deg);}}
+    .c2{
+      width:size(300);top:size(100);left: size(120);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+      img{width: 100%;
+      transform:rotate(-30deg);}}
   }
-  100% {
-    transform: translate3d(-75%, 0, 0);
-  }
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
 }
 .bg-img {
   width: 110%;
@@ -345,7 +370,7 @@ export default {
   width: size(1500);
     padding-top:0;
     padding-bottom:0;
-    font-weight:500;
+    font-weight:700;
   line-height:2.222;
   font-size: size(49);
     letter-spacing: size(10);
@@ -508,17 +533,23 @@ export default {
     top: 0;
   }
 
-  .wave {
-    position: absolute;
-    left: 0;
-    top: unset;
-    bottom: -#{size-m(20)};
-    height: size-m(75);
-    z-index: 0;
-    animation: wave 13s infinite alternate-reverse ease-in-out, fadeIn 1.5s;
-    opacity: 0.5;
+.o{
+  position: absolute;
+  top:sizem(5);
+  left:calc(50% - 30vw);
+  width: calc(2 * 30vw);
+  height:calc(2 * 30vw);
   }
 
+.c{
+      top:sizem(0);
+    .c1{
+      width:sizem(200);top:sizem(80);right: sizem(250);
+      }
+    .c2{
+      width:sizem(100);top:sizem(10);left: sizem(280);
+      }
+  }
   .order-bg {
     //background-color: $order_bg_color;
     background-image: $order_bg_image_m;
@@ -589,6 +620,7 @@ export default {
       label {
         width: 40% !important;
         text-align: left;
+      font-size: 15px;
       }
     }
 

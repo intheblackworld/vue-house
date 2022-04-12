@@ -1,11 +1,12 @@
 <template>
   <div>
     <div class="section4">
+      <div class="o" data-aos="zoom-in"></div>
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/4.png" alt="自漫美學 珍稀之作" class="c4">
-      <img src="./s2/2.png" alt="自漫美學 珍稀之作" class="c2">
-      <img src="./all/1.png" alt="自漫美學 珍稀之作" class="c1">
+      
+      <div class="c1"><img src="./all/1.png" alt="1"></div>
     </div>
+
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -14,13 +15,13 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <!--    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+          </div>  -->
         </div>
       </div>
       <div class="txt">
@@ -39,19 +40,33 @@
   width:100%;
   height:auto;
   position: relative;
+  margin: 5.3vw 0 0 0;
 }
 
+.o{
+  position: absolute;
+  top:size(790);
+  left:size(100);
+  width:size(210);
+  height:size(210);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 .c{
       position: absolute;left:0;right:0;
-      top:0;
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c1{width:size(451);top:size(500);right: size(-10);transform: translateX(-8%);animation-delay: -1s;}
-    .c2{width:size(246);top:size(950);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
-    .c4{width:size(533);top:size(950);left:size(-300);transform: translateX(-15%);animation-delay: -1s;}
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(355);top:size(-4);right: size(-21);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -3s;
+      img{width: 100%;
+      transform:rotate(-48deg)scaleX(-1);}}
   }
-
 @keyframes an{
     to{
       transform: translateX(0);
@@ -60,7 +75,7 @@
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 10em;
+  margin:0 auto 6em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -236,15 +251,20 @@
     max-height: initial;
   }
 
+.o{
+  top:sizem(260);
+  left:sizem(10);
+  width:sizem(90);
+  height:sizem(90);
+
+}
 .c{
-    .c1{width:sizem(230);top:sizem(600);right: sizem(60);}
-    .c2{width:sizem(120);top:sizem(500);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
-    .c4{width:sizem(300);top:sizem(530);left:sizem(-80);}
+    .c1{width:sizem(130);top:sizem(340);left: sizem(280);}
   }
   .txt{
     position: relative;
     width: sizem(310);
-    margin:1.5em auto 13em;
+    margin:1.5em auto 8em;
     left:0;
     top:0;
     font-size: sizem(15);
@@ -261,10 +281,15 @@
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(220);
+    height: sizem(255);
     top:0;
     left:0;
   }
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
+}
   .swipe-btns {
   font-size: sizem(15);
   }

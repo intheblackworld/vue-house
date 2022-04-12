@@ -2,10 +2,6 @@
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
 
-     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="@/projects/wsy/all/6.png" :alt="`${info.caseName}_bg`" class="c6">
-      <img src="@/projects/wsy/all/4.png" :alt="`${info.caseName}_bg`" class="c4">
-    </div>
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
@@ -93,7 +89,7 @@ export default {
 .contact-info {
   background: $contact_bg;
   // background-image: url('../assets/img/contact_bg.jpg');/
-  background-size: cover;
+  // background-size: cover;
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
@@ -101,36 +97,23 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
- // width: 1200px;
+  width: 1200px;
   // height: 380px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 5vw auto;
+  margin: 3vw auto 3vw;
   //padding: 30px 0 40px;
+  padding: 3vw 0;
 }
-.c{
-      position: absolute;left:0;right:0;
-      top:calc(50% + (0 - 540) * 100vw / 1920);
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c4{width:size(600);top:size(0);right:size(-180);transform: translateX(-15%);animation-delay: -1s;}
-    .c6{width:size(250);top:size(0);right: size(250);transform: translateX(-15%);}
-  }
 
-
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
-}
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 3vw;
+  margin: 0 auto 2vw;
+  padding: 0 4vw 0 0;
 }
 .info {
   width: 880px;
@@ -254,7 +237,8 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-    background: $contact_bg_m;
+  //  background: $contact_bg_m;
+  background-size:sizem(700);
     display: flex;
     width: 100%;
     //  max-width: 95%;

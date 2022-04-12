@@ -1,10 +1,12 @@
 <template>
   <div>
     <div class="section6">
+      <div class="o" data-aos="zoom-in"></div>
+
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/4.png" alt="自漫美學 珍稀之作" class="c4">
-      <img src="./s2/2.png" alt="自漫美學 珍稀之作" class="c2">
-      <img src="./all/1.png" alt="自漫美學 珍稀之作" class="c1">
+      
+      <div class="c1"><img src="./all/3.png" alt="3"></div>
+      <div class="c2"><img src="./all/2.png" alt="2"></div>
     </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -26,7 +28,7 @@
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200" >在地深耕品牌  實力保證</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        匯集各界矚目與期力，都將更上一層樓。
+        殷實建築，在地耕耘，鼎翊建設多年紮根淡水，十年磨一劍，「文學苑」先建後售，以最懂淡水天時地利的家，最值得您的信賴。
       </div>
       </div>
     </div>
@@ -40,18 +42,36 @@
   height:auto;
   position: relative;
 }
-
+.o{
+  position: absolute;
+  top:size(770);
+  left:size(110);
+  width:size(210);
+  height:size(210);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 .c{
       position: absolute;left:0;right:0;
-      top:0;
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c1{width:size(451);top:size(500);right: size(-10);transform: translateX(-8%);animation-delay: -1s;}
-    .c2{width:size(246);top:size(950);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
-    .c4{width:size(533);top:size(950);left:size(-300);transform: translateX(-15%);animation-delay: -1s;}
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(670);top:size(985);right: size(-70);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -1s;
+      img{width: 100%;
+      transform:rotate(-70deg);}}
+    .c2{
+      width:size(242);top:size(1180);left: size(70);
+      transform:rotate(3deg);
+      transform-origin: 50% 100%;
+      img{width: 100%;
+      transform:rotate(0deg)scaleX(-1);}}
   }
-
 @keyframes an{
     to{
       transform: translateX(0);
@@ -60,7 +80,7 @@
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 10em;
+  margin:0 auto 16em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -235,11 +255,16 @@
     min-height: auto;
     max-height: initial;
   }
+.o{
+  top:sizem(260);
+  left:sizem(10);
+  width:sizem(90);
+  height:sizem(90);
 
+}
 .c{
-    .c1{width:sizem(230);top:sizem(600);right: sizem(60);}
-    .c2{width:sizem(120);top:sizem(500);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
-    .c4{width:sizem(300);top:sizem(530);left:sizem(-80);}
+    .c1{width:sizem(270);top:sizem(330);left: sizem(130);}
+    .c2{width:sizem(170);top:sizem(390);left: sizem(0);}
   }
   .txt{
     position: relative;
@@ -251,7 +276,7 @@
   }
 .title{
     font-size: sizem(30);
-  letter-spacing:0.01em;
+  letter-spacing:0.005em;
 }
   .desc {
   margin:0em auto;
@@ -261,10 +286,15 @@
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(220);
+    height: sizem(255);
     top:0;
     left:0;
   }
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
+}
   .swipe-btns {
   font-size: sizem(15);
   }

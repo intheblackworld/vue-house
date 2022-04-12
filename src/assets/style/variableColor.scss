@@ -40,7 +40,7 @@ $mask_icon_color: #bb9259;
 $order_bg_color: transparent;
 $order_bg_image: transparent;
 $order_bg_image_m: transparent;
-$order_title_color: #52b559;
+$order_title_color: #bb9259;
 $order_subtitle_color: #bb9259;
 $order_input_label_color: #333;
 $order_input_color: #1a1a1a !important;
@@ -56,7 +56,7 @@ $order_submit_color: #fff !important;
 $order_sumbit_disable_bg: #bb9259 !important;
 
 // contactInfo
-$contact_bg:transparent;
+$contact_bg:url('~@/projects/wsy/s1/bg.jpg') repeat center;
 $contact_bg_m:transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
@@ -66,20 +66,20 @@ $contact_btn_icon: #fff;
 $contact_btn_bg: #bb9259;
 $contact_btn_hover_color: #fff;
 $contact_btn_hover_icon: #fff;
-$contact_btn_hover_bg: #52b559;
+$contact_btn_hover_bg: #bb9259;
 
 $contact_google_btn_color: #fff;
 $contact_google_btn_icon: #fff;
 $contact_google_btn_bg: #bb9259;
 $contact_google_hover_btn_color: #fff;
 $contact_google_hover_btn_icon: #fff;
-$contact_google_hover_btn_bg: #52b559;
+$contact_google_hover_btn_bg: #bb9259;
 
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #52b559;
-$house_border_color: #52b559;
-$house_label_color: #52b559;
+$house_title_color: #bb9259;
+$house_border_color: #a42025;
+$house_label_color: #000;
 $house_desc_color: #666;
 
 // mobileNav

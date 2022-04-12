@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="section3">
+      <div class="o" data-aos="zoom-in"></div>
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/4.png" alt="快捷交通" class="c4">
-      <img src="./s2/2.png" alt="高鐵、機捷與航廈，南來北往於彈指之間" class="c2">
+      <div class="c1"><img src="./all/3.png" alt="3"></div>
     </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -45,14 +45,29 @@
   position: relative;
 }
 
+.o{
+  position: absolute;
+  top:size(270);
+  left:size(190);
+  width:size(210);
+  height:size(210);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 .c{
       position: absolute;left:0;right:0;
-      top:0;
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c2{width:size(246);top:size(650);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
-    .c4{width:size(550);top:size(800);right:size(-80);transform: translateX(-15%);animation-delay: -1s;}
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(660);top:size(780);left: size(40);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -1s;
+      img{width: 100%;
+      transform:rotate(-70deg);}}
   }
 
 @keyframes an{
@@ -63,9 +78,9 @@
 
 .txt{
   position: absolute;
-  width: size(610);
-  left: size(210);
-  top: size(250);
+  width: size(490);
+  left: size(300);
+  top: size(325);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -245,9 +260,15 @@
     width: 100vw;
     height: auto;
   }
+.o{
+  top:sizem(260);
+  left:sizem(10);
+  width:sizem(90);
+  height:sizem(90);
+
+}
 .c{
-    .c2{width:sizem(120);top:sizem(540);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
-    .c4{width:sizem(250);top:sizem(580);left:sizem(-80);}
+    .c1{width:sizem(270);top:sizem(330);left: sizem(130);}
   }
   .txt{
   position: relative;
@@ -272,6 +293,11 @@ margin:1.5em auto 10em;
     top:0;
     left:0;
   }
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
+}
   .swipe-btns {
   font-size: sizem(15);
   }
