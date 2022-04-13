@@ -144,29 +144,29 @@ export default new Router({
           component: () =>
             import(/* webpackChunkName: "contacts" */ './pages/contacts.vue')
         },
+        {
+          path: 'formThanks',
+          name: 'formThanks',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: FormThanks,
+        },
+        {
+          path: 'phoneThanks',
+          name: 'phoneThanks',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () =>
+            import(/* webpackChunkName: "about" */ './pages/PhoneThanks.vue')
+        },
+        {
+          name: '404',
+          path: '404',
+          component: () => import('@/pages/404.vue')
+        },
       ]
-    },
-    {
-      path: '/formThanks',
-      name: 'formThanks',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: FormThanks,
-    },
-    {
-      path: '/phoneThanks',
-      name: 'phoneThanks',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ './pages/PhoneThanks.vue')
-    },
-    {
-      name: '404',
-      path: '/404',
-      component: () => import('@/pages/404.vue')
     },
     // {
     //   path: '*', // 此处需特别注意至于最底部
