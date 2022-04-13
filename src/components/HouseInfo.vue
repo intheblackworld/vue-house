@@ -45,6 +45,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+    padding-bottom: 50px;
 }
 
 .title {
@@ -87,7 +88,7 @@ export default {
     margin-right:0.8em;
     white-space: nowrap;
    // font-family: $family3;
-    width: 4em;
+   // width: 4em;
   }
 
   .desc {

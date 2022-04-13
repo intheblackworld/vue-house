@@ -1,21 +1,20 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市淡水區中山北路三段90號',
+  address: '新北市新店區華城路56號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14441.41951953333!2d121.43573446824783!3d25.191252038122155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442baa83ff102a3%3A0x24daeba041b51f27!2zMjUx5paw5YyX5biC5reh5rC05Y2A5Lit5bGx5YyX6Lev5LiJ5q61OTDomZ8!5e0!3m2!1szh-TW!2stw!4v1649669513959!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/Ex9gYvWbgBuNqBZK8',
-  phone: '02-2626-8800',
-  fbLink: 'https://www.facebook.com/nina.yufong',
-  fbMessage: 'https://m.me/nina.yufong',
-  caseName: '文學苑',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28938.712630918664!2d121.50706240639082!3d24.954575662257742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468023299953a1d%3A0x35f0212049e43b2f!2zMjMx5paw5YyX5biC5paw5bqX5Y2A6I-v5Z-O6LevNTbomZ8!5e0!3m2!1szh-TW!2stw!4v1649833176835!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/T59YxkQAce7i3kam7',
+  phone: '02-2211-1200',
+  fbLink: 'https://www.facebook.com/gramercytw/',
+  fbMessage: 'https://m.me/gramercytw',
+  caseName: '碧澄1',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '鼎翊建設',],
-    ['建築規劃', '劉文岱建築師',],
-    ['建照號碼', '104淡建字第00616號',],
-    ['行銷企劃', '澄果廣告',],
-    ['經紀人', '胡光志（99）嘉市字第00074號',],
+    ['投資興建', '潤禧建設股份有限公司',],
+    ['建築設計', '立志建築師事務所',],
+    ['碧澄一期案址', '新北市新店區青山路311號',],
+    ['坪數規劃', '82、91坪',],
   ],
 
   gtmCode: ['TKDXHGN'], // 可放置多個

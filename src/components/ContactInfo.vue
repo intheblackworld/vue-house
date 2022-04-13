@@ -113,7 +113,7 @@ export default {
   height: auto;
   // height:;
   margin: 0 auto 2vw;
-  padding: 0 4vw 0 0;
+  padding: 0 0 0 3.5vw;
 }
 .info {
   width: 880px;

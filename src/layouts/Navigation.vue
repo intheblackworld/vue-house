@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open': ''}`" >
-     <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
+         <img class="logo" src="@/projects/gramercy1/s1/logo_w.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  
        <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>  -->
@@ -121,7 +121,7 @@ export default {
   left: size(0);
   display: block;
   top: 50%;
-  transform: translate(3%, -50%);
+  transform: translate(3%, -39%);
   transition: all 0.3s;
   z-index: 3;
 }
@@ -209,20 +209,20 @@ export default {
     flex: 1 0 50%;
     margin-bottom: 1rem;
     text-align: center;
-    color: $nav_link_color;
+    color:#004562;
 }
 .menu-icon {
     position: relative;
     width: 30px;
     height: 3px;
     background-color:currentColor;
- box-shadow:0 0 10px #600,0 0 4px #600c ;
+ box-shadow:0 0 10px #FFF,0 0 4px #FFFc ;
 z-index: 3;
     &::after,
     &::before {
     position: absolute;
     left: 0;
- box-shadow:0 0 7px #6009,0 0 4px #6009 ;
+ box-shadow:0 0 7px #FFF9,0 0 4px #FFF9 ;
     content: "";
     display: block;
     width: 30px;
@@ -236,9 +236,12 @@ z-index: 3;
     top: 10px;
 }
 &.open{
+    color:#FFF;
     background-color: transparent;
+ box-shadow:0 0 0 #FFF0,0 0 0 #FFF0 ;
     &::after,
-    &::before {top: 0;transition: top .2s linear,transform .2s ease-in .2s;}
+    &::before {top: 0;transition: top .2s linear,transform .2s ease-in .2s;
+ box-shadow:0 0 0 #FFF0,0 0 0 #FFF0 ;}
     &::after{transform: rotate(-45deg);}
     &::before{transform: rotate(45deg);}
 
@@ -397,7 +400,7 @@ z-index: 3;
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: #600c;
+      background-color: #046a;
     }
     .link {
       width: 10em;
