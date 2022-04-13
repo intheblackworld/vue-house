@@ -10,7 +10,7 @@
     </div>
     <div class="txt">
       <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="400">行政中心站3分鐘<span></span>20-40坪</div>
+      <div class="t1"  data-aos="zoom-in" data-aos-delay="400">行政中心站3分鐘<span></span>35、40坪</div>
       <div class="t2" data-aos="zoom-in" data-aos-delay="400">全新落成  正式公開</div>
     </div>
   </div>

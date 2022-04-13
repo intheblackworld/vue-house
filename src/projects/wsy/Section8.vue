@@ -477,7 +477,7 @@ export default {
       slideList1: [
         {
           img: require('./s8/1.jpg'),
-          name: '',
+          name: '示意圖',
         },
       ],
 
