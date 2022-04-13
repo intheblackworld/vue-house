@@ -13,6 +13,7 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
+          <!--
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
@@ -21,6 +22,7 @@
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
           </div>
+          -->
         </div>
       </div>
       <div class="txt">
@@ -30,9 +32,11 @@
         將基樁貫入岩盤，讓建築堅固穩定並增加建物抗滑動能力，使處於逆向坡的房屋更加穩固，並預防未來極端氣候，碧澄安全係數高於法定規範值2倍。
       </div>
       </div>
+          <!--
       <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
+          -->
     </div>
   </div>
 </template>
@@ -296,7 +300,7 @@ export default {
       slideList: [
         {
           img: require('./s5/1.png'),
-          name: '現場實景圖',
+          name: '此３Ｄ透視圖，實際結構則依照每期地質而有不同設計',
         },
       ],
     }

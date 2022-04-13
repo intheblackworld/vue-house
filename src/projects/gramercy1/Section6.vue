@@ -311,19 +311,19 @@ export default {
       slideList: [
         {
           img: require('./s6/1.jpg'),
-          name: '新市國小',
+          name: '情境示意圖',
         },
         {
           img: require('./s6/2.jpg'),
-          name: '新市國小',
+          name: '實品屋實景圖(以現場展示為準)',
         },
         {
           img: require('./s6/3.jpg'),
-          name: '新市國小',
+          name: '情境示意圖',
         },
         {
           img: require('./s6/4.jpg'),
-          name: '新市國小',
+          name: '實品屋實景圖(以現場展示為準)',
         },
       ],
     }

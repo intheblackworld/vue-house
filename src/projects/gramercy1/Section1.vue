@@ -8,6 +8,11 @@
       <img src="./all/2.png" alt="2" class="c2">
       <img src="./all/1.png" alt="1" class="c1">
     </div>  -->
+    <div class="bg">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="txt">
       <img src="./s1/logo.png" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
       <img src="./s1/t.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="t1">
@@ -23,13 +28,30 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1070);
+  min-height: size(900);
   max-height: size(1080);
   //overflow: hidden;
   position: relative;
   z-index: 2;
   background: url("./s1/bg.jpg") center;
   background-size: cover;
+}
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  span{display: inline-block;
+    &:nth-child(1){background:url("./s1/bg1.png") 100% 100%;background-size: cover;
+  width:79.8%;
+  height: 87.4%;}
+    &:nth-child(2){background:url("./s1/bg2.jpg") 0% 100%;background-size: cover;
+  width:20.2%;
+  height: 87.4%;}
+    &:nth-child(3){background:url("./s1/bg3.jpg") 50% 0%;background-size: cover;
+  width: 100%;
+  height:12.6%;}
+  }
 }
 .t0{
   position: absolute;

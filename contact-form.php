@@ -1,6 +1,6 @@
 <?php
     $src =$_SERVER['SERVER_NAME']; 
-    $case_name = "文學苑";
+    $case_name = "碧澄一期";
     $case_code = 'gramercy1';
 
     $name         = isset($_POST['name']) ? $_POST['name'] : '';

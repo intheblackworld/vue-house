@@ -497,26 +497,26 @@ export default {
       slideList1: [
         {
           img: require('./s8/1.jpg'),
-          name: '',
+          name: '情境示意圖',
         },
       ],
 
       slideList2: [
         {
           img: require('./s8/2.jpg'),
-          name: '',
+          name: '情境示意圖',
         },
       ],
       slideList3: [
         {
           img: require('./s8/3.jpg'),
-          name: '',
+          name: '情境示意圖',
         },
       ],
       slideList4: [
         {
           img: require('./s8/4.jpg'),
-          name: '',
+          name: '情境示意圖',
         },
       ],
     }

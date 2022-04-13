@@ -301,15 +301,19 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: '外觀實景',
+          name: '實品屋實景圖',
         },
         {
           img: require('./s7/2.jpg'),
-          name: '外觀實景',
+          name: '實品屋實景圖',
         },
         {
           img: require('./s7/3.jpg'),
-          name: '外觀實景',
+          name: '實品屋實景圖',
+        },
+        {
+          img: require('./s7/4.jpg'),
+          name: '現場實景圖',
         },
       ],
     }
