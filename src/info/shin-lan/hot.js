@@ -68,44 +68,44 @@ export const hot_case = [
     media_link: '', // 首頁用
     desc_home: `` // 首頁用
   },
-  {
-    title: '幸福好境',
-    img: require('@/projects/shin-lan/shin-lan/work/幸福好境/0.jpg'),
-    imgs: [
-      {
-        title: '封面',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/0.jpg')
-      },
-      {
-        title: '幸福好境',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/1.jpg')
-      },
-      {
-        title: '幸福捷運站250米',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/2.jpg')
-      },
-      {
-        title: '3分鐘64快速道路',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/3.jpg')
-      },
-      {
-        title: '50米萬坪頭前運動公園',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/4.jpg')
-      },
-      {
-        title: '輕鬆散步 幸福福壽美食街',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/5.jpg')
-      },
-      {
-        title: '擁有更好的生活品質',
-        img: require('@/projects/shin-lan/shin-lan/work/幸福好境/6.jpg')
-      },
-    ], // 內頁用
-    desc: '', // 內頁用
-    link: '/hot_case/3',
-    media_link: '', // 首頁用
-    desc_home: `` // 首頁用
-  },
+  //{
+    //title: '幸福好境',
+    //img: require('@/projects/shin-lan/shin-lan/work/幸福好境/0.jpg'),
+    //imgs: [
+    //  {
+    //    title: '封面',
+     //   img: require('@/projects/shin-lan/shin-lan/work/幸福好境/0.jpg')
+    //  },
+    //  {
+    //    title: '幸福好境',
+     //   img: require('@/projects/shin-lan/shin-lan/work/幸福好境/1.jpg')
+    //  },
+     // {
+    //    title: '幸福捷運站250米',
+    //    img: require('@/projects/shin-lan/shin-lan/work/幸福好境/2.jpg')
+    //  },
+    //  {
+    //    title: '3分鐘64快速道路',
+    //    img: require('@/projects/shin-lan/shin-lan/work/幸福好境/3.jpg')
+    //  },
+    //  {
+    //    title: '50米萬坪頭前運動公園',
+    //    img: require('@/projects/shin-lan/shin-lan/work/幸福好境/4.jpg')
+    //  },
+    //  {
+    //    title: '輕鬆散步 幸福福壽美食街',
+    //    img: require('@/projects/shin-lan/shin-lan/work/幸福好境/5.jpg')
+    //  },
+    //  {
+    //    title: '擁有更好的生活品質',
+   //     img: require('@/projects/shin-lan/shin-lan/work/幸福好境/6.jpg')
+   //   },
+   // ], // 內頁用
+   // desc: '', // 內頁用
+   // link: '/hot_case/3',
+   // media_link: '', // 首頁用
+  //  desc_home: `` // 首頁用
+  //},
   {
     title: '欣聯鉅星',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/0.jpg'),
