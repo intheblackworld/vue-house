@@ -4,7 +4,15 @@
       <!-- <div class="nav-item" v-scroll-to="{ element: `#contact-info` }">來電洽詢</div>
       <div class="nav-item" v-scroll-to="{ element: `#contact` }">立即預約</div>
       <div class="nav-item" v-scroll-to="{ element: `#google-map` }">地圖導航</div> -->
-      <img class="logo" src="@/assets/img/nav-logo.png" @click="$router.push('/');isOpen && toggleSidebar()" alt />
+      <img
+        class="logo"
+        src="@/assets/img/nav-logo.png"
+        @click="
+          $router.push('/');
+          isOpen && toggleSidebar();
+        "
+        alt
+      />
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" /> -->
       <div class="menu" @click="toggleSidebar">
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
@@ -12,26 +20,57 @@
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
       <!-- <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" /> -->
-      <ul :class="`navlist ${isOpen ? 'open': ''}`">
-        <li :key="item.name" v-for="item in list" class="flex-ac" @click="enterPage(item)">
-          <span class="link">
+      <ul :class="`navlist ${isOpen ? 'open' : ''}`">
+        <li :key="item.name" v-for="item in list" class="flex-ac">
+          <!-- @click="enterPage(item)" -->
+
+          <router-link
+            v-if="item.link !== '/member'"
+            class="link"
+            :to="item.link"
+            @click.native="toggleSidebar()"
+          >
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
-              <div class="title">{{item.name}}</div>
-              <span class="subTitle">{{item.subTitle}}</span>
+              <div class="title">{{ item.name }}</div>
+              <span class="subTitle">{{ item.subTitle }}</span>
+            </span>
+          </router-link>
+          <span v-else class="link" @click="enterPage()">
+            <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+            <span>
+              <div class="title">{{ item.name }}</div>
+              <span class="subTitle">{{ item.subTitle }}</span>
             </span>
           </span>
         </li>
         <div class="social-footer flex-ac flex-jb">
           <li class="flex-ac">
-            <a :href="info.fbLink" target="_blank" class="social-link" v-if="info.fbLink">
-              <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="">
+            <a
+              :href="info.fbLink"
+              target="_blank"
+              class="social-link"
+              v-if="info.fbLink"
+            >
+              <img src="../projects/shin-lan/shin-lan/all/fb.png" alt="" />
             </a>
-            <a :href="info.lineLink" target="_blank" class="social-link" v-if="info.lineLink">
-              <img src="../projects/shin-lan/shin-lan/all/line.png" alt="">
+            <a
+              :href="info.lineLink"
+              target="_blank"
+              class="social-link"
+              v-if="info.lineLink"
+            >
+              <img src="../projects/shin-lan/shin-lan/all/line.png" alt="" />
             </a>
           </li>
-          <li class="flex-ac" @click="$router.push('/login');toggleSidebar()" v-if="!$store.getters['user/isLogin']">
+          <li
+            class="flex-ac"
+            @click="
+              $router.push('/login');
+              toggleSidebar();
+            "
+            v-if="!$store.getters['user/isLogin']"
+          >
             <span class="link">
               <span>
                 <div class="title">登入</div>
@@ -48,7 +87,12 @@
         </div>
       </ul>
     </div>
-    <el-dialog title :visible.sync="isShowHintDialog" :width="isMobile ? '90%' : '90%'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowHintDialog"
+      :width="isMobile ? '90%' : '90%'"
+      :modal-append-to-body="false"
+    >
       <LoginHint />
     </el-dialog>
   </div>
@@ -73,7 +117,7 @@ export default {
       isTablet,
       list: navList,
       info,
-      isShowHintDialog: false
+      isShowHintDialog: false,
     }
   },
 
@@ -87,11 +131,9 @@ export default {
     toggleSidebar() {
       this.isOpen = !this.isOpen
     },
-    enterPage(item) {
-      if (!this.$store.getters['user/isLogin'] && item.link == '/member') {
+    enterPage() {
+      if (!this.$store.getters['user/isLogin']) {
         this.isShowHintDialog = true
-      } else {
-        this.$router.push({ path: item.link })
       }
       this.toggleSidebar()
     },
@@ -100,9 +142,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/style/variableColor.scss';
-@import '../assets/style/variableDefault.scss';
-@import '../assets/style/function.scss';
+@import "../assets/style/variableColor.scss";
+@import "../assets/style/variableDefault.scss";
+@import "../assets/style/function.scss";
 
 .navigation {
   height: $nav_phone_height;
@@ -172,7 +214,7 @@ export default {
   position: absolute;
   left: 0;
   top: -10px;
-  content: '';
+  content: "";
   display: block;
   width: 30px;
   height: 1px;
@@ -184,7 +226,7 @@ export default {
   position: absolute;
   left: 0;
   top: 10px;
-  content: '';
+  content: "";
   display: block;
   width: 30px;
   height: 1px;
@@ -262,7 +304,7 @@ export default {
       background-size: cover;
     }
     &:before {
-      content: '';
+      content: "";
       width: 40%;
       height: 100%;
       display: block;
@@ -856,7 +898,7 @@ blockquote:after,
 blockquote:before,
 q:after,
 q:before {
-  content: '';
+  content: "";
   content: none;
 }
 hr {
@@ -890,9 +932,9 @@ select {
   vertical-align: middle;
 }
 button,
-html input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -908,19 +950,19 @@ button,
 select {
   text-transform: none;
 }
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
   padding: 0;
 }
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-input[type='search'] {
+input[type="search"] {
   -webkit-appearance: textfield;
 }
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 textarea {
@@ -965,7 +1007,7 @@ html.ie .checkbox-agreement,
 .menu_social_list,
 .menu_line,
 .checkbox-agreement,
-input[type='checkbox']:checked + .checkbox-agreement {
+input[type="checkbox"]:checked + .checkbox-agreement {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -984,7 +1026,7 @@ input[type='checkbox']:checked + .checkbox-agreement {
 .btn-s-next:before,
 .btn-gold span:nth-child(1):before,
 .btn-gold:before {
-  content: '';
+  content: "";
   display: block;
   position: relative;
 }
@@ -994,7 +1036,7 @@ input[type='checkbox']:checked + .checkbox-agreement {
 .menu_social_title,
 .scroll-text,
 .btn-slide-ctrl {
-  font-family: Didot, 'Didot LT STD', 'Times New Roman', serif;
+  font-family: Didot, "Didot LT STD", "Times New Roman", serif;
   font-style: italic;
   color: #fff;
 }
@@ -1145,11 +1187,11 @@ input[type='checkbox']:checked + .checkbox-agreement {
   order: 1;
   margin-left: 20px;
 }
-input[type='checkbox']:checked + .checkbox-agreement {
+input[type="checkbox"]:checked + .checkbox-agreement {
   overflow: hidden;
   background: #b8a57e;
 }
-input[type='checkbox']:checked + .checkbox .checkbox_inner {
+input[type="checkbox"]:checked + .checkbox .checkbox_inner {
   background: #fff;
   padding: 3px;
 }
@@ -1202,7 +1244,7 @@ input[type='checkbox']:checked + .checkbox .checkbox_inner {
   padding: 0;
 }
 .embed:before {
-  content: '';
+  content: "";
   z-index: 1;
   padding-top: 62.5%;
 }
@@ -1345,7 +1387,7 @@ select::-ms-expand {
 html,
 body {
   height: 100%;
-  font-family: 'Noto Serif JP', '微軟正黑體', serif;
+  font-family: "Noto Serif JP", "微軟正黑體", serif;
   font-style: normal;
 }
 html.stop-scroll,
@@ -1362,7 +1404,7 @@ body {
   display: none;
 }
 .clearfix:after {
-  content: ' ';
+  content: " ";
   display: table;
   clear: both;
 }
@@ -1728,7 +1770,7 @@ body {
   letter-spacing: initial;
   font-size: 18px;
   font-style: italic;
-  font-family: 'GFS Didot', serif;
+  font-family: "GFS Didot", serif;
 }
 .menu_line {
   position: relative;
@@ -1843,7 +1885,7 @@ body {
   width: 120px;
   height: 100%;
   display: none;
-  background-image: url('~@/assets/img/contact_mb-bg.png');
+  background-image: url("~@/assets/img/contact_mb-bg.png");
 }
 @media (min-width: 992px) {
   .sidenav {
@@ -3574,7 +3616,7 @@ main {
   left: 0;
 }
 .slideshow_item:before {
-  content: '';
+  content: "";
   z-index: 1;
   padding-top: 71.2025316456%;
 }
@@ -3804,7 +3846,7 @@ main {
     font-size: 16px;
   }
 }
-.form label[for='agreement'] {
+.form label[for="agreement"] {
   cursor: pointer;
 }
 .form .contact_agreement {
@@ -3840,7 +3882,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 1005;
-  font-family: 'Noto Serif JP', '微軟正黑體', serif;
+  font-family: "Noto Serif JP", "微軟正黑體", serif;
 }
 .modal_inner {
   position: relative;
@@ -4004,7 +4046,7 @@ main {
   justify-content: flex-start;
 }
 .modal-agreement .agreement_list_item:before {
-  content: '・';
+  content: "・";
   width: 1rem;
   display: block;
   margin-right: 5px;
