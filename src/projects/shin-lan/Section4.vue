@@ -94,9 +94,9 @@
   // background-color: #fff;
 
   @include md {
-    width: 100vw;
-    height: sizem(879);
-    min-height: auto;
+    width: 100%;
+    height:auto;
+    min-height: 0;
     max-height: initial;
     overflow: visible;
   }
@@ -132,18 +132,25 @@
     width: sizem(355);
     left: sizem(15);
     top: sizem(160);
+    position: static;
+    height: auto;
   }
 }
 
 .case-card {
   width: size(1330 - 723);
   height: size(630);
-  padding: 6rem 0.2rem 2rem 4.8rem;
+  padding: 2rem 0.2rem 2rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: center;
   background-color: #fff;
   @include md {
     width: 100%;
     height: auto;
     padding: sizem(20);
+    display: block;
   }
 }
 
@@ -174,11 +181,12 @@
 
 .case-desc {
   font-size: size(18);
-  height: size(200);
+  // height: size(200);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.67;
+  padding-right:size(20);
   letter-spacing: size(1.44);
   text-align: left;
   color: #000;
@@ -190,6 +198,7 @@
     line-height: 2;
     letter-spacing: normal;
     text-align: left;
+    padding-right:0;
     color: #000;
     height: auto;
   }
@@ -228,6 +237,7 @@
 .case-btns {
   width: 100%;
   margin-bottom: size(20);
+  margin-top:size(20);
   @include md {
     width: auto;
     margin-top: sizem(20);
@@ -302,6 +312,7 @@
   z-index: 2;
   @include md {
     @include img_l_m(240, 3, 0);
+    position: static;
   }
 }
 </style>

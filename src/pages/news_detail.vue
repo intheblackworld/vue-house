@@ -262,7 +262,9 @@
   margin-bottom: size(25);
 
   @include md {
+  font-size: size-m(14);  
   }
+ 
 }
 
 .back-btn {

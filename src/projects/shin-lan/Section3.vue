@@ -1,72 +1,128 @@
 <template>
   <div class="section3">
-    <img src="./shin-lan/index/3/img.png" alt="" class="dec-img">
+    <img src="./shin-lan/index/3/img.png" alt="" class="dec-img" />
     <div class="container">
-      <div class="shin-lan-title-v shin-lan-title-h-m title gold" data-aos="fade">
+      <div
+        class="shin-lan-title-v shin-lan-title-h-m title gold"
+        data-aos="fade"
+      >
         熱銷<span data-aos="flip-right"></span>個案
       </div>
-      <div class="case-info">
-        <div class="case-card">
-          <div class="flex-ac flex-jb" v-if="isPC" @click="$router.push(current_case.link)">
-            <img :src="current_case.imgs[1].img" alt="" class="case-img">
-            <img :src="current_case.imgs[2].img" alt="" class="case-img">
-            <img :src="current_case.imgs[3].img" alt="" class="case-img">
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        class
+        @slideChangeTransitionEnd="slideChanged"
+      >
+        <swiper-slide
+          v-for="(slide, index) in all_case"
+          :index="index"
+          :key="index"
+        >
+          <div class="case-info">
+            <div class="case-card">
+              <div
+                class="flex-ac flex-jb case-top-img"
+                @click="$router.push(slide.link)"
+              >
+                <img :src="slide.imgs[1].img" alt="" class="case-img" />
+                <img :src="slide.imgs[2].img" alt="" class="case-img" />
+                <img :src="slide.imgs[3].img" alt="" class="case-img" />
+              </div>
+              <div class="flex-ac flex-jb case-head">
+                <div class="case-title" v-html="slide.title"></div>
+                <div class="case-btns">
+                  <span v-show="slide.link" @click="$router.push(slide.link)"
+                    >個案介紹</span
+                  >
+                  <span
+                    v-show="slide.media_link"
+                    @click="$router.push(slide.media_link)"
+                    >個案影片</span
+                  >
+                </div>
+              </div>
+              <div class="case-desc" v-html="slide.desc_home"></div>
+
+              <div
+                v-if="!isMobile"
+                class="case-more flex-c"
+                @click="$router.push('/hot_case')"
+              >
+                更多精彩個案
+              </div>
+            </div>
+            <img :src="slide.imgs[0].img" alt="" class="case-thumb" />
           </div>
-          <div class="flex-ac flex-jb case-head">
-            <div class="case-title" v-html="current_case.title"></div>
-            <div class="case-btns">
-              <span v-show="current_case.link" @click="$router.push(current_case.link)">個案介紹</span>
-              <span v-show="current_case.media_link" @click="$router.push(current_case.media_link)">個案影片</span>
-            </div>
-          </div>
-          <div class="case-desc" v-html="current_case.desc_home" v-if="isPC"></div>
-          <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged" v-if="isMobile">
-            <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index">
-              <img :src="slide.img" :class="`item-img`" />
-              <div class="card-content"></div>
-            </swiper-slide>
-            <div class="swiper-button-prev" slot="button-prev" v-if="isMobile">
-            </div>
-            <div class="swiper-button-next" slot="button-next" v-if="isMobile">
-            </div>
-          </swiper>
-          <div class="case-more flex-c" @click="$router.push('/hot_case')">更多精彩個案</div>
-        </div>
-        <img :src="current_case.imgs[0].img" alt="" class="case-thumb" v-if="isPC">
+        </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+      <div
+        v-if="isMobile"
+        class="case-more flex-c"
+        @click="$router.push('/hot_case')"
+      >
+        更多精彩個案
       </div>
     </div>
   </div>
 </template>
 <style lang="scss">
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   top: 100%;
   height: 25px;
-  width:30%;
- // background-color: rgba(0, 0, 0, .5);
-  &::before{
+  width: 30%;
+  // background-color: rgba(0, 0, 0, .5);
+  &::before {
     content: "";
-    position: relative;
-    left: 20%;
+    position: absolute;
+    // left: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    // right: 10%;
     border: 1px solid #666;
     border-width: 0 0 1px 1px;
-    width: 50%;display: block;
+    width: 50%;
+    display: block;
     height: 40%;
-    transform:skewX(-45deg);
-
+    transform: skewX(-45deg);
   }
 }
 
-.swiper-button-prev{
-  left: 0
+.swiper-button-prev {
+  left: 0;
+
+  // &::before{
+  //   left: 10%;
+  //   right: auto;
+  // }
 }
 .swiper-button-next {
-  right: 0;transform: scaleX(-1)
+  right: 0;
+  transform: scaleX(-1);
 }
-
 </style>
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
+@import "@/assets/style/function.scss";
 // begin
+
+.container {
+  max-width: 100%;
+}
+.case-top-img {
+  @include md {
+    display: none;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-image: none;
+  margin-top:20px;
+
+}
 .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
   // margin-top: 50px !important;
@@ -87,12 +143,16 @@
 }
 
 .swiper-container {
-  width: size(370);
-  margin-right: size(20);
-  margin-top: size(20);
+  width: size(1330);
+  // margin-right: size(20);
+
+  margin-left: auto;
+  margin-right: 0;
+  // margin-top: size(20);
   @include md {
     width: 100%;
     margin: 0 auto;
+    overflow: visible;
   }
 }
 
@@ -121,11 +181,12 @@
   max-height: auto;
   background-size: cover;
   background-attachment: fixed;
+  padding-top: size(160);
   // background-color: #fff;
 
   @include md {
-    width: 100vw;
-    height: 176vw;
+    width: 100%;
+    height: auto;
     min-height: auto;
     max-height: initial;
     overflow: visible;
@@ -157,17 +218,18 @@
 }
 
 .case-info {
-  width: size(1330);
-  height: size(630);
-  position: absolute;
-  right: 0;
-  top: size(144);
+  // width: size(1330);
+  // height: size(630);
+  // position: absolute;
+  // right: 0;
+  // top: size(144);
+  position: relative;
 
-  @include md {
-    width: sizem(355);
-    left: sizem(15);
-    top: sizem(160);
-  }
+  // @include md {
+  //   width: sizem(355);
+  //   // left: sizem(15);
+  //   // top: sizem(160);
+  // }
 }
 
 .case-card {
@@ -219,6 +281,11 @@
   text-align: left;
   color: #000;
   margin-bottom: size(15);
+
+  @include md {
+    padding: sizem(15) sizem(25);
+    display: none;
+  }
 }
 
 .case-more {
@@ -241,7 +308,7 @@
   @include md {
     width: sizem(160);
     height: sizem(40);
-    margin: sizem(15) auto;
+    margin: sizem(60) auto;
     font-size: sizem(15);
   }
 
@@ -252,7 +319,7 @@
 }
 
 .case-btns {
-  width:auto;
+  width: auto;
 
   @include md {
     width: auto;
@@ -260,7 +327,7 @@
 
   > span {
     display: inline-block;
-    width:4.5em;
+    width: 4.5em;
     font-size: size(18);
     font-weight: normal;
     font-stretch: normal;
@@ -289,9 +356,9 @@
   height: size(130);
   object-fit: cover;
   cursor: pointer;
-  transition:opacity .3s ;
-  &:hover{
-    opacity: .8;
+  transition: opacity 0.3s;
+  &:hover {
+    opacity: 0.8;
   }
 }
 
@@ -299,6 +366,12 @@
   @include img_r_pc(723, 0, 0);
   height: 100%;
   object-fit: cover;
+
+  @include md {
+    position: static;
+    height: auto;
+    width: 100%;
+  }
 }
 
 .title {
@@ -314,6 +387,10 @@
     letter-spacing: sizem(1.68);
     text-align: left;
     color: #b18863;
+    position: static;
+    padding-top:sizem(112);
+    padding-left:sizem(22);
+    padding-bottom:sizem(22);
   }
 }
 
@@ -373,22 +450,24 @@ export default {
       isMobile,
       isTablet,
       // blockIndex: 0,
+
+      all_case: hot_case,
       current_case: {
-        ...hot_case[0],
+        ...hot_case[4],
       },
 
       swiperOption: {
         // direction: isMobile ? 'horizontal' : 'vertical',
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 0,
-        slidesPerColumn: isMobile ? 1 : 1,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        slidesPerColumn: 1,
         // allowSlidePrev: isMobile ? true : true,
         // allowSlideNext: isMobile ? true : true,
         // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
+         autoplay: {
+           delay: 4000,
+           disableOnInteraction: true,
+         },
         loop: true,
         // effect: 'fade',
         navigation: {
@@ -402,7 +481,7 @@ export default {
       },
       slideList: [],
       // blockIndex: 0,
-      current_case: {},
+      // current_case: {},
     }
   },
 
@@ -414,13 +493,13 @@ export default {
         this.slideIndex = 0
       } else {
         this.slideIndex =
-          ((swiper.activeIndex - 1) % this.current_case.imgs.length)
+          (swiper.activeIndex - 1) % this.current_case.imgs.length
       }
     },
   },
 
   mounted() {
-    this.current_case = hot_case[4]
+    this.current_case = hot_case[3]
     this.slideList = this.current_case.imgs
     // get_category().then((res) => {
     //   console.log(res, 'get_category')
