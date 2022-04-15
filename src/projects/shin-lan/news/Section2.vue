@@ -3,7 +3,7 @@
     <div class="container">
       <transition-group class="item-list" name="slide-fade" mode="out-in" tag="div">
         <div class="item flex flex-as flex-js" v-for="(item, index) in current_news_list" :key="item.title + index" @click="$router.push(item.link)">
-          <img :src="item.imgs[0]" alt="" class="item-img" v-if="index == 0 && isMobile">
+          <img :src="item.imgs[0]" alt="" class="item-img" v-if="isMobile">
           <div>
             <div class="item-date" v-html="item.date"></div>
             <div class="item-btn">閱讀更多</div>
