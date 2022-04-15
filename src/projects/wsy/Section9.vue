@@ -1,149 +1,235 @@
 <template>
-  <div class="section9"><!-- 
-    <img src="./s1/0.jpg" alt="`${info.caseName}_bg" class="t0">  -->
-      <img src="./s1/0.jpg" :alt="`${info.caseName}_logo`" class="wsy">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/3.png" alt="3" class="c4">
-      <div class="c3"><img src="./all/3.png" alt="3"></div>
-      <img src="./all/2.png" alt="2" class="c2">
-      <img src="./all/1.png" alt="1" class="c1">
+    <div class="section9">
+      <div class="o" data-aos="zoom-in"></div>
+
+    <div class="c" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1900">
+      
+      <div class="c2"><img src="./all/3.png" alt="3"></div>
+      <div class="c1"><img src="./all/1.png" alt="1"></div>
     </div>
     <div class="txt">
-      <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="400">行政中心站3分鐘<span></span>35、40坪</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">全新落成  正式公開</div>
+      <div class="title" data-aos="zoom-in" data-aos-delay="0">質感提升  延長保固</div>
+      <div class="desc" data-aos="zoom-in" data-aos-delay="200">
+        防水保固5年、固定設備2年
+      </div>
     </div>
-  </div>
+    </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section9 {
-  width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
-  overflow: hidden;
+  width:100%;
+  height:auto;
   position: relative;
-  z-index: 2; 
-  margin: 0 0 5vw;
-&::before{content: "";
-background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:block;width: 100%;height: 100%;}
+
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 400;
+  padding: 0;
+  font-size: size(30);
+  color: #666;
+
+  padding:0em 0 7em;
 }
-/*
-  */
-  .wsy{
-      position: absolute;
-      top:0;
-      left: 0;
-      transform: translate(-100%,-100%);}
-.t0{
+.o{
   position: absolute;
-  width: 100%;height:auto;
-  top: 0;left: 0;object-fit: cover;
-  opacity: 0.5;
-  }
+  top:size(-120);
+  left:calc(50% - 25vw);
+  width: calc(2 * 9vw);
+  height:calc(2 * 9vw);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 .c{
-      position: absolute;left:0;right:0;top:0;
-    // top:calc(50% + (0 - 540) * 100vw / 1920);
-   > img,
-   > div{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
+      position: absolute;left:0;right:0;
+      top:0;
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
     .c1{
-      width:size(797);top:size(495);left: size(-90);
+      width:size(600);top:size(-160);right: size(-0);
       transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      animation-delay: -1.5s;
-      }
-    .c2{
-      width:size(649);top:size(35);left: size(-20);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      animation-delay: -2s;}
-    .c3{
-      width:size(520);top:size(240);left:size(270);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
+      transform-origin: 50% 50%;
+    animation-delay: -1s;
       img{width: 100%;
-      transform:rotate(-33deg);}
-      }
-    .c4{
-      width:size(596);top:size(620);left:size(180);
+      transform:rotate(-20deg)scaleX(-1);}}
+    .c2{
+      width:size(600);top:size(-130);left: size(1200);
       transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      animation-delay: -1s;
-      }
-
+      transform-origin: 50% 50%;
+      img{width: 100%;
+      transform:rotate(-16deg)scaleX(-1);}}
   }
-
-
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
-.logo{
-      width:size(708);
-  }
 .txt{
-  position: absolute;
-      top:calc(50% + (318 - 540) * 100vw / 1920);
-  left:size(900);
-  font-size: size(44);
-  line-height: 1.6;
-  color: #fff;
-  text-align: left;
-  width:size(850);
-    letter-spacing:0.03em;
-  .t1{
-    width: 100%;
+  position: relative;
+  z-index: 3;
+  margin: 0em auto 0em;
   text-align: center;
-  color: #d3a96e;
+}
+.title{
+  position: relative;
+  font-size: size(50);
+  margin:0 auto 0em;
+  letter-spacing:0.04em;
+  color: #bb9259;
   font-weight: 700;
-  font-size: 1.14em;
-        margin:0.65em 0 0.25em;
-  span{border-left: 1px solid #FFF; height: 1em;margin: 0 .4em .25em .4em;
-          vertical-align: middle;
-          display: inline-block;}
-    }
-  .t2{
-  text-align: center;
-  font-weight: 600;
-        &::after,
-        &::before{
-          content: "";
-          display: inline-block;
-          width: 1.5em;
-          background:#d3a96e;
-          height: 1px;
-          vertical-align: middle;margin: 0 .7em .2em .7em;
-        }
+  width: 100%;
+}
+.desc {
+  margin:0.5em auto 3em auto;
+  line-height: 2;
+  letter-spacing:0.05em;
+  list-style: circle;
+  overflow: hidden;
 
+  width: 100%;
+}
+
+/* Swipe */
+.swipe {
+//  position: absolute;
+  width:100%;
+  height: size(420);
+  top: size(185);
+  right: size(199);
+  object-fit: cover;
+  z-index: 3;
+  order:3;
+}
+
+// begin
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .t3{
-    font-size:2.3em;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
-    .button{
-    font-size:0.68em;
-      cursor: pointer;
-      display: inline-block;
-      border:2px solid #52b559;
-      width: 5.2em;
-      vertical-align: middle;
-      margin: 0 0.5em 0.2em 0;
-      padding: 0 0 0.1em 0;
+
+  .slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+   text-shadow:0 0.1em 0.3em #000;
+  }
+}
+
+.pagination {
+  width: auto;
+  bottom:16em;
+  right:0;
+  justify-content: center;
+  font-size:size(13);
+}
+
+.pagination-dot {
+  padding:0.3em;
+  margin: 0 0.3em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 1em;
+    height: 1em;
+   // border-radius: 50%;
+   // border: 4px solid  #ccc;
+   background: #ccc;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+   background: #80c5b6;
+   // border-radius: 50%;
+   // border: 2.1px solid  #e38023;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      left: 20%;
       transition: all 0.3s;
-      &:hover{
-        background:#52b559cc;
-        color: #FFF;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        top: 0%;
+        left: 0%;
+        transform: scale(1);
       }
     }
   }
 }
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  z-index: 3;
+
+  .prev-btn,
+  .next-btn {
+    width: size(20);
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -151,64 +237,126 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
 
 @media screen and (max-width: 767px) {
   .section9 {
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
-  margin: 0 0 0;
-&::before{
-  background-size:sizem(700);
-}
+    width: 100vw;
+    height: auto;
+
+    font-size: sizem(18);
+    text-align: justify;
+  padding: 0 0 3em;
+  .box{
+  width:100%;
+  flex-direction:column;    margin: 0em auto 6em;
   }
 
-.c{
-   top:calc(50% + (0 - 302) * 100vw / 375);
-    .c1{width:sizem(245);top:sizem(422);left: sizem(70);}
-    .c2{width:sizem(230);top:sizem(310);left: sizem(-5);}
-    .c3{width:sizem(161);top:sizem(309);left:sizem(130);}
-    .c4{width:sizem(182);top:sizem(420);left:sizem(186);}
+  }
+  
+.o{
+  position: absolute;
+  top:sizem(-50);
+  left:calc(50% - 48vw);
+  width: calc(2 * 15vw);
+  height:calc(2 * 16vw);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
+  
+  .c{
+    height: 100%;
+    .c1{
+      width:sizem(250);bottom:sizem(-110);right: sizem(-100); top: auto;
+      }
+    .c2{
+      width:sizem(300);bottom:sizem(-200);right: sizem(-50);left: auto;
+      top: auto;
+  }
+  }
+.list{
+  flex:0 0 100%;
+  width: 100%;
+  position: relative;
+}
+.title{
+    font-size: sizem(30);
+  letter-spacing:0.01em;
+}
+  .txt{
+  position: relative;
+    width:100%;
+margin:0em auto 0em;
+padding: 0 0 3em;
+  left:0;
+  top:0;
+  }
+
+  /* Swipe */
+  .swipe {
+    position: relative;
+    width:  sizem(320);
+    height: sizem(240);
+    min-height: auto;
+    margin: auto;
+    top:0;
+    left:0;
+  order:initial;
+  }
+
+
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
 }
 
-.logo{
-   width:sizem(276);  margin-left:sizem(25);
-  }
-.txt{
-   left:sizem(0);
-   top:calc(50% + (76 - 302) * 100vw / 375);
-   width: 100%;
-  font-size: sizem(20);
-  .t1{ 
-        margin:0.5em 0 0; }
-  .t2{
-    letter-spacing: 0.04em;
-        margin:0;
+  .swipe-btns {
+
+    .prev-btn,
+    .next-btn {
+      width: sizem(15);
+      cursor: pointer;
     }
-}
-
+  }
 }
 </style>
 <script>
 // @ is an alias to /src
-import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section9',
 
+  mixins: [slider],
+  props: ['viewIndex'],
+
   data() {
     return {
-      info,
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
+      slideList1: [
+        {
+          img: require('./s8/1.jpg'),
+          name: '示意圖',
+        },
+      ],
     }
   },
 
   methods: {},
 
-  mounted() {},
-
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {
+    viewIndex() {
+      if (this.viewIndex === 3) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
+  },
 }
 </script>

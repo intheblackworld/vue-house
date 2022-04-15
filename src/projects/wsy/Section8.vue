@@ -393,7 +393,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       width:sizem(120);top:sizem(-170);right: sizem(-19);
       }
     .c2{
-      width:sizem(300);bottom:sizem(-100);left: sizem(-50);
+      width:sizem(300);bottom:sizem(430);left: sizem(100);
       top: auto;
   }
   }
