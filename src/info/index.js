@@ -1,6 +1,6 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市五股區成泰路三段356號 旁',
+  address: '新北市五股區成泰路三段與號成洲三路交叉口',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.08227849187!2d121.4486358!3d25.099076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7725924cb26159c7!2z5Ly05pyI54Gj5o6l5b6F5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1649991326565!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/rsKwrucejj3CxXVL9',
