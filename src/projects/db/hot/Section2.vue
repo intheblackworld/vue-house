@@ -1088,26 +1088,6 @@ export default {
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
-        //陽明迴鄉
-        {
-          title: '陽明<br />迴鄉',
-          title2: '陽明迴鄉',
-          desc: '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
-          img: require('../works/7/0.jpg'),
-          isEmpty: false,
-          info1:
-            '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
-          info2: '投資興建：寶程國際<br />坪數房型：2-3房',
-          info3:
-            '陽明山下出將入相富人特區<br />高綠覆低建蔽濃蔭街廓<br />近擁薇閣高中郁郁文風<br />近享捷運新北投站增值通勤<br />戶戶三面採光通風，防疫級規劃',
-          contact:
-            '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
-          link: 'https://ymvilla.debang.tw/',
-          logo: require('../works/7/0.jpg'),
-          imgs: [require('../works/7/1.jpg')],
-          hint: '',
-          label: '',
-        },
       ],
     }
   },
