@@ -8,11 +8,14 @@
       <img src="./all/2.png" alt="2" class="c2">
       <img src="./all/1.png" alt="1" class="c1">
     </div>  -->
-    <div class="bg">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    
+ <div class="c">
+      <img src="./s1/c2.png" alt="2" class="c2">
+      <img src="./s1/c2.png" alt="2" class="c3">
+      <img src="./s1/c1.png" alt="1" class="c1">
+    </div> 
+    <img src="./s1/bg.png" v-if="!isMobile" alt="1" class="bg">
+    <img src="./s1/bgm.png" v-if="isMobile" alt="1" class="bg">
     <div class="txt">
       <img src="./s1/logo.png" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
       <img src="./s1/t.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="t1">
@@ -33,25 +36,17 @@
   //overflow: hidden;
   position: relative;
   z-index: 2;
-  background: url("./s1/bg.jpg") center;
-  background-size: cover;
+// background: url("./s1/bg.jpg") center;
+ // background-size: cover;
+  background: linear-gradient(45deg, rgba(223,234,247,1) 0%,rgba(179,204,232,1) 44%,rgba(114,149,204,1) 89%);
 }
 .bg{
   position: absolute;
+  top:0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  text-align: left;
-  span{display: inline-block;
-    &:nth-child(1){background:url("./s1/bg1.png") 100% 100%;background-size: cover;
-  width:79.8%;
-  height: 87.4%;}
-    &:nth-child(2){background:url("./s1/bg2.jpg") 0% 100%;background-size: cover;
-  width:20.2%;
-  height: 87.4%;}
-    &:nth-child(3){background:url("./s1/bg3.jpg") 50% 0%;background-size: cover;
-  width: 100%;
-  height:12.6%;}
-  }
+  height:100%;
+  object-fit: cover;
 }
 .t0{
   position: absolute;
@@ -59,9 +54,29 @@
   top: 0;left: 0;object-fit: cover;
   opacity: 0.5;
   }
+.c{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  img{position: absolute;
+  left: 0%;
+  }
+  .c1{width: size(720);
+  transform: translateX(25vw);
+  animation: an 40s -10s linear infinite;opacity: 0.9;
+  top: -10vw;}
+  .c2{width: size(903);
+  transform: translateX(-9vw);opacity: 0.8;
+  animation: an 25s linear infinite;
+  top: 6vw;}
+  .c3{width: size(800);
+  transform: translateX(1vw);opacity: 0.8;
+  animation: an 25s -13s linear infinite;
+  top: 6vw;}
+  }
 @keyframes an{
     to{
-      transform: translateX(0);
+      transform: translateX(calc(-50vw - 100%));
     }
 }
 .txt{
@@ -97,9 +112,24 @@
     max-height: sizem(750);
     height: calc(100vh - 63px);
   margin: 0 0 0;
-  background-image: url("./s1/bgm.jpg");
+
+   background:linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(179,204,232,1) 60%,rgba(114,149,204,1) 100%);
+ // background-image: url("./s1/bgm.jpg");background-size: cover;
+
   }
 
+.c{
+  .c1{width: sizem(300);
+  transform: translateX(50vw);
+  top: 0vw;}
+  .c2{width: sizem(400);
+  transform: translateX(50vw);
+  top: 30vw;}
+  .c3{width: sizem(350);
+  transform: translateX(45vw);
+  top:39vw;}
+
+  }
 .txt{
    left:sizem(0);
    top:calc(40% + (56 - 650 * .4) * 100vw / 375);

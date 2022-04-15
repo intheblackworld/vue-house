@@ -17,12 +17,14 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
+            <!--
             <div class="row">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
                 <el-option v-for="city in ['兩房','三房','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
+            -->
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
