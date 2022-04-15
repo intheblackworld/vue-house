@@ -18,7 +18,7 @@
       <div class="cate-list flex-ac flex-jb">
         <div :class="`cate-btn ${category_index == 0 ? 'active' : ''}`" @click="category_index = 0">全部</div>
         <div :class="`cate-btn ${category_index == 1 ? 'active' : ''}`" @click="category_index = 1">住宅</div>
-        <div :class="`cate-btn ${category_index == 2 ? 'active' : ''}`" @click="category_index = 2">辦公室與場辦</div>
+        <div :class="`cate-btn ${category_index == 2 ? 'active' : ''}`" @click="category_index = 2">辦公室與廠辦</div>
       </div>
       <transition-group class="flex-ac flex-js wrap" name="slide-fade" mode="out-in">
         <div class="card" v-for="(case_item, index) in current_case_list" :key="case_item.title + index" @click="$router.push(case_item.link)">
@@ -320,7 +320,7 @@ export default {
           value: 1,
         },
         {
-          title: '辦公室與場辦',
+          title: '辦公室與廠辦',
           value: 2,
         },
       ],

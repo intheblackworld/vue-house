@@ -166,7 +166,7 @@
   position: relative;
   margin: size(60) auto;
   padding-top: 0;
-
+  flex-wrap: wrap;
   @include md {
     width: sizem(310);
     margin: sizem(30) auto;
@@ -224,6 +224,7 @@
   line-height: 1.29;
   letter-spacing: size(2.82);
   margin-top: size(30);
+  width: 100%;
 
   @include md {
     font-size: sizem(24);
