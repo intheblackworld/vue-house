@@ -265,7 +265,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       width:sizem(250);bottom:sizem(-110);right: sizem(-100); top: auto;
       }
     .c2{
-      width:sizem(300);bottom:sizem(-200);right: sizem(-50);left: auto;
+      width:sizem(300);bottom:sizem(-200);right: sizem(-5 0);left: auto;
       top: auto;
   }
   }
