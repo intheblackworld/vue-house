@@ -9,16 +9,13 @@ export const case_list_1 = [
     desc: '樓層規劃：地上11層，地下3層<br>棟數規劃：1棟，壹層二戶，21戶住家<br>基地面積：153坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎戶戶設有前後陽台，雙面採光，雙併設計戶數單純<br>◎捷運環狀線幸福站距100米，1高2快機場捷運四通八達<br>◎近頭前萬坪運動公園，生活機能健全', // 內頁用
     imgs: [ // 內頁用
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/1.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/4.jpg')
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/2.jpg')
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/3.jpg')
-      },
-      {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/4.jpg')
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/5.jpg')
@@ -28,6 +25,9 @@ export const case_list_1 = [
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/7.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/1.jpg')
       },
     ],
     type_text: '欣聯建設Shin-Lan', // 內頁用
@@ -252,7 +252,7 @@ export const case_list_2 = [
   {
     title: '林口力通',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/林口力通/litung1.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/3',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國105年興建，地下二層地上三層，總樓地板面積：2685.385平方公尺，力通國際開發CO.LTD.', // 內頁用
     imgs: [ // 內頁用
@@ -274,7 +274,7 @@ export const case_list_2 = [
   {
     title: '復興北路辦公大樓',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/復興北路辦公大樓/fushin1.jpg'),
-    link: '/classic_case/2/3',
+    link: '/classic_case/2/4',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國102年興建，地下四層地上十三層，總樓地板面積：4238.43平方公尺', // 內頁用
     imgs: [ // 內頁用
@@ -299,7 +299,7 @@ export const case_list_2 = [
   {
     title: '明城科技',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.jpg'),
-    link: '/classic_case/2/4',
+    link: '/classic_case/2/5',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國99年興建，地下一層地上七層，總樓地板面積：1718.69平方公尺，成坊建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
@@ -312,7 +312,7 @@ export const case_list_2 = [
   {
     title: '麗池PARTY',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/麗池PARTY/LiChiParty.jpg'),
-    link: '/classic_case/2/5',
+    link: '/classic_case/2/6',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國95年興建，地下三層地上十層，總樓地板面積：5652.56 平方公尺，旭記建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
@@ -325,7 +325,7 @@ export const case_list_2 = [
   {
     title: '長耀GLORY',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/長耀GLORY/glory.jpg'),
-    link: '/classic_case/2/6',
+    link: '/classic_case/2/7',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國95年興建，地下二層地上十二層，總樓地板面積：7414.05 平方公尺，長耀建設', // 內頁用
     imgs: [ // 內頁用
@@ -338,7 +338,7 @@ export const case_list_2 = [
   {
     title: '寬庭',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.jpg'),
-    link: '/classic_case/2/7',
+    link: '/classic_case/2/8',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國94年興建，地下三層地上十層，總地板面積：4408.42平方公尺，長耀建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
@@ -351,7 +351,7 @@ export const case_list_2 = [
   {
     title: '明湖青庭',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.jpg'),
-    link: '/classic_case/2/8',
+    link: '/classic_case/2/9',
     desc: '民國93年興建，地下二層地上八層，總地板面積：2207平方公尺，長耀建設CO.LTD.', // 內頁用
     imgs: [ // 內頁用
       {
@@ -363,7 +363,7 @@ export const case_list_2 = [
   {
     title: '大安逸品',
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/大安逸品/daan1.jpg'),
-    link: '/classic_case/2/9',
+    link: '/classic_case/2/10',
     desc: '民國98年興建，地下一層地上七層，成坊建設CO.LTD.', // 內頁用
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     imgs: [ // 內頁用
