@@ -7,7 +7,7 @@ export default {
   phone: '02-2211-1200',
   fbLink: 'https://www.facebook.com/gramercytw/',
   fbMessage: 'https://m.me/gramercytw',
-  caseName: '碧澄1',
+  caseName: '碧澄2',
   indigatorLength: 10,
 
   houseInfos: [
