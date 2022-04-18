@@ -256,7 +256,7 @@ export default {
       const sec = time.getSeconds();
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`;
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&room_type=${this.form.room_type}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
           method: "GET",
@@ -530,14 +530,14 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact1 {
-    left: -#{size-m(80)};
-    width: size-m(410);
-    top: size-m(50);
+    left: -#{sizem(80)};
+    width: sizem(410);
+    top: sizem(50);
   }
 
   .contact2 {
-    right: -#{size-m(15)};
-    width: size-m(64);
+    right: -#{sizem(15)};
+    width: sizem(64);
     top: 0;
   }
 

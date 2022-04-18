@@ -18,17 +18,17 @@
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';
 .map {
-  // padding-top: size-m(150);
+  // padding-top: sizem(150);
   background-color: rgba(172, 221, 254, 1)
 }
 .desc {
-  width: size-m(310);
+  width: sizem(310);
   left: 0;
   right: 0;
   margin: 0 auto;
-  margin-left: size-m(450);
-  margin-top: size-m(80);
-  font-size: size-m(15);
+  margin-left: sizem(450);
+  margin-top: sizem(80);
+  font-size: sizem(15);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;

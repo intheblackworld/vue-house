@@ -279,7 +279,7 @@ $example_code .= "\n}";
         }
 
         legend {
-            font-weight: bold;
+            font-weight: 500;
             font-size: 1.1em;
         }
 

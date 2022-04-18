@@ -5,7 +5,7 @@
 #$case_code = "jw";特殊案使用
 $src =$_SERVER['SERVER_NAME']; 
 $case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
-$case_code = "dh";
+$case_code = "wsy";
 
 # PDO DB 連線 Start
     $pdo=new pdo('mysql:host=localhost;dbname=htw12_web','htw12','3hdaiU813Q');
@@ -18,33 +18,27 @@ $sql_name = "SELECT casename FROM susers WHERE email = '" . $case_code . "'";
 $dataList = $pdo->query($sql_name)->fetchAll();
 $case_name = $dataList[0]['casename'];
 
-    $name         = isset($_POST['name']) ? $_POST['name'] : '';
-    $phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
-    $user_email   = isset($_POST['email']) ? $_POST['email'] : '';
-    $city         = isset($_POST['city']) ? $_POST['city'] : '';
-    $area         = isset($_POST['area']) ? $_POST['area'] : '';
-    $gender       = isset($_POST['gender']) ? $_POST['gender'] : '';
-    $infosource   = isset($_POST['infosource']) ? $_POST['infosource'] : '';
-    $parking      = isset($_POST['parking']) ? $_POST['parking'] : '';
-    $houseStyle   = isset($_POST['houseStyle']) ? $_POST['houseStyle'] : '';
-    $room         = isset($_POST['room']) ? $_POST['room'] : '';
-    $contacttime  = isset($_POST['contacttime']) ? $_POST['contacttime'] : '';
-    $msg          = isset($_POST['msg']) ? $_POST['msg'] : '';
-    $utm_source   = isset($_POST['utm_source']) ? $_POST['utm_source'] : '';
-    $utm_medium   = isset($_POST['utm_medium']) ? $_POST['utm_medium'] : '';
-    $utm_content  = isset($_POST['utm_content']) ? $_POST['utm_content'] : '';
-    $utm_campaign = isset($_POST['utm_campaign']) ? $_POST['utm_campaign'] : '';
-    $datetime     = date ("Y-m-d H:i:s" , mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
+$name         = isset($_POST['name']) ? $_POST['name'] : '';
+$phone        = isset($_POST['phone']) ? $_POST['phone'] : '';
+$user_email   = isset($_POST['email']) ? $_POST['email'] : '';
+$city         = isset($_POST['city']) ? $_POST['city'] : '';
+$area         = isset($_POST['area']) ? $_POST['area'] : '';
+$msg          = isset($_POST['msg']) ? $_POST['msg'] : '';
+$utm_source   = isset($_POST['utm_source']) ? $_POST['utm_source'] : '';
+$utm_medium   = isset($_POST['utm_medium']) ? $_POST['utm_medium'] : '';
+$utm_content  = isset($_POST['utm_content']) ? $_POST['utm_content'] : '';
+$utm_campaign = isset($_POST['utm_campaign']) ? $_POST['utm_campaign'] : '';
+$datetime     = date ("Y-m-d H:i:s" , mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
     
-    # 鳳翔 fs 客製資料：房型
-    $house        = isset($_POST['house']) ? $_POST['house'] : '';
+# 鳳翔 fs 客製資料：房型
+$room_type        = isset($_POST['room_type']) ? $_POST['room_type'] : '';
     
-    # 好站 hj 客製資料：可聯絡時間
-    $time_start        = isset($_POST['time_start']) ? $_POST['time_start'] : '';
-    $time_end        = isset($_POST['time_end']) ? $_POST['time_end'] : '';
+# 好站 hj 客製資料：可聯絡時間
+$time_start        = isset($_POST['time_start']) ? $_POST['time_start'] : '';
+$time_end        = isset($_POST['time_end']) ? $_POST['time_end'] : '';
 
-    # 不同版本前端相容 Start
-    if ($name == '') {
+# 不同版本前端相容 Start
+if ($name == '') {
         $name = isset($_POST['widget-contact-form-name']) ? $_POST['widget-contact-form-name'] : '';
     }
     if ($phone == '') {
@@ -255,7 +249,7 @@ $case_name = $dataList[0]['casename'];
     $mail->FromName = $case_name." - 官網網站"; //設定寄件者姓名
 
     $mail->Subject = $case_name." - 官網網站"; //設定郵件標題
-    $mail->Body = "網站：https://" . $src . "/<BR>姓名：".$name."<BR>手機：".$phone."<BR>居住城市：".$city."<BR>居住地區：".$area."<BR>需求房型：".$room."<BR>留言：".$msg."<BR>備註："."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
+    $mail->Body = "網站：https://" . $src . "/<BR>姓名：" . $name . "<BR>電話：" . $phone . "<BR>城市：" . $city . $area . "<BR>需求房型：".$room_type."<BR>留言：".$msg."<BR>備註："."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
     $mail->IsHTML(true); //設定郵件內容為HTML
 
     $tomail_arr = explode(",",$tomail);
@@ -277,7 +271,8 @@ $case_name = $dataList[0]['casename'];
             $url .= "&email=".$user_email;
             $url .= "&city=".$city;
             $url .= "&area=".$area;
-            $url .= "&message="."需求房型：".$room.";留言：".$msg;
+            $url .= "&room_type=" . $room_type;
+            $url .= "&message=".$msg;
             $url .= "&utm_source=".$utm_source;
             $url .= "&utm_medium=".$utm_medium;
             $url .= "&utm_content=".$utm_content;
@@ -300,13 +295,11 @@ $case_name = $dataList[0]['casename'];
         }
         # 添加到 Googlde 資料DB End
 
-        foreach($tomail_arr as $email)
-        {
+        foreach($tomail_arr as $email) {
            $mail->AddAddress("$email");
         }
 
-        foreach($tomail_admin_arr as $email_admin)
-        {
+        foreach($tomail_admin_arr as $email_admin) {
            $mail->AddBCC("$email_admin");
         }
 
