@@ -202,9 +202,9 @@ export default {
         this.isSubmit = false
         if (response.status === 200) {
           this.hintSuccess()
-          setTimeout(() => {
-            window.location.href = 'formThanks'
-          }, 3000);
+          // setTimeout(() => {
+          //   window.location.href = 'formThanks'
+          // }, 3000);
         }
       })
     },
