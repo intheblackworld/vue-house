@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.c1e5f58d.js"
   },
   {
-    "revision": "a20c021ba507153cda45",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.ad65fe5e.js"
+    "revision": "3fe3b98945d85d13a333",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.6e1a26ee.js"
   },
   {
     "revision": "b815664e9c95c18a947c",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.d8ac2398.js"
   },
   {
-    "revision": "864bc4a46a5dbfee1c5b",
+    "revision": "eb5a51e927071d2c64cd",
     "url": "/css/app.fde7d8ae.css"
   },
   {
-    "revision": "864bc4a46a5dbfee1c5b",
-    "url": "/js/app.76df0420.js"
+    "revision": "eb5a51e927071d2c64cd",
+    "url": "/js/app.2348eb39.js"
   },
   {
     "revision": "72920e78c497b0c3870f",
@@ -148,6 +148,10 @@ self.__precacheManifest = [
     "url": "/img/32.527c09e6.png"
   },
   {
+    "revision": "1827117bead4b6c3dd7c8be27138d0c5",
+    "url": "/img/3.1827117b.jpg"
+  },
+  {
     "revision": "51cb4f53f2035b44f5e4eeac0e11c93d",
     "url": "/img/topbg.51cb4f53.jpg"
   },
@@ -172,12 +176,12 @@ self.__precacheManifest = [
     "url": "/img/img7.70afd010.jpg"
   },
   {
-    "revision": "732389ded34cb9c52dd88271f1345af9",
-    "url": "/fonts/element-icons.732389de.ttf"
-  },
-  {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
     "url": "/fonts/element-icons.535877f5.woff"
+  },
+  {
+    "revision": "732389ded34cb9c52dd88271f1345af9",
+    "url": "/fonts/element-icons.732389de.ttf"
   },
   {
     "revision": "2ddb16ddee8a6d0dec46cb92d78650f4",
@@ -296,6 +300,10 @@ self.__precacheManifest = [
     "url": "/img/2.783c8bc7.jpg"
   },
   {
+    "revision": "a16ddf16b028c79917d2c11666978e31",
+    "url": "/img/2.a16ddf16.jpg"
+  },
+  {
     "revision": "02b9539d08453e66eb9fe97dbcd029b2",
     "url": "/img/img.02b9539d.jpg"
   },
@@ -328,6 +336,10 @@ self.__precacheManifest = [
     "url": "/img/img2.4c95e170.jpg"
   },
   {
+    "revision": "c8b8a31327144f5c415b4c251807aa85",
+    "url": "/img/1.c8b8a313.jpg"
+  },
+  {
     "revision": "c26c6a9b9f7837a99dc6e9f1c8c0281b",
     "url": "/img/topbg2.c26c6a9b.jpg"
   },
@@ -350,6 +362,10 @@ self.__precacheManifest = [
   {
     "revision": "bd82768cf07150c23f76b61d82836a62",
     "url": "/img/topbg2.bd82768c.jpg"
+  },
+  {
+    "revision": "3a7751b5be7819e272619d3d8e2c376d",
+    "url": "/img/7.3a7751b5.jpg"
   },
   {
     "revision": "4a7d152f62e2fb75aab866a00939620d",
@@ -648,8 +664,16 @@ self.__precacheManifest = [
     "url": "/img/contact_mb-bg.3a361f6f.png"
   },
   {
+    "revision": "34d28ab3b5b06d043c33f5a00541d167",
+    "url": "/img/4.34d28ab3.jpg"
+  },
+  {
     "revision": "e5a340ce05b15ee762df265824498ffa",
     "url": "/img/cdfe1.e5a340ce.jpg"
+  },
+  {
+    "revision": "19f3b56652eb52e19925e00bf1a9f0ae",
+    "url": "/img/5.19f3b566.jpg"
   },
   {
     "revision": "c205ff2a39531365c7489ca533222de2",
@@ -706,6 +730,10 @@ self.__precacheManifest = [
   {
     "revision": "ad6df4f15ecf59bef61cf1c21f6616e9",
     "url": "/img/thank-img.ad6df4f1.png"
+  },
+  {
+    "revision": "267cc272297cedce559c72ac7b155780",
+    "url": "/img/6.267cc272.jpg"
   },
   {
     "revision": "8a901b64f7b87b4dc980d67443492500",
@@ -880,7 +908,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "8826c8542fde90bbf7cbe163d039c31e",
+    "revision": "83f457922841000b4b9cd930bcc461c8",
     "url": "/index.html"
   },
   {
