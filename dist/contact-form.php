@@ -222,7 +222,7 @@ if ($bCheck == true) { //if start
 <body>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
-        document.location.replace('formThanks');
+        // document.location.replace('formThanks');
     </script>
 </body>
 </html>
