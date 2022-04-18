@@ -139,7 +139,7 @@ export default {
         area: "",
         gender: "",
         infosource: "",
-        room_type: '',
+      //  room_type: '',
         parking: "",
         houseStyle: "",
         msg: "",
@@ -231,7 +231,7 @@ export default {
       formData.append("email", this.form.email);
       formData.append("contacttime", this.form.contacttime);
       formData.append("msg", this.form.msg);
-      formData.append("room_type", this.form.room_type);
+  //    formData.append("room_type", this.form.room_type);
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append("city", this.form.city);
