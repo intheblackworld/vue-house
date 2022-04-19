@@ -176,7 +176,7 @@ export const case_list_1 = [
   {
     title: '愛時代',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/愛時代/istyle.jpg'),
-    link: '/classic_case/1/7',
+    link: '/classic_case/1/8',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上9層，地下3層<br>棟數規劃：1棟，40戶住家<br>基地面積：184坪<br>建築設計：周文斌建築師事務所<br>建案特色：<br>◎位置交通樞紐，步行5分抵文德捷運站<br>◎鄰近內湖科學園區<br>◎格局方正採光通風舒適', // 內頁用
     imgs: [ // 內頁用
