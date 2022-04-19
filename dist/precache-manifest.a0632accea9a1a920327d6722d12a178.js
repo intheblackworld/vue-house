@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.c1e5f58d.js"
   },
   {
-    "revision": "808e954ccccdec10eaf6",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.4830d7e1.js"
+    "revision": "d17b582fd2c9b519a745",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.3bb80ea1.js"
   },
   {
     "revision": "b815664e9c95c18a947c",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.d8ac2398.js"
   },
   {
-    "revision": "e72f7c476d87ce461550",
+    "revision": "7eb5fd7c0cd2e6914146",
     "url": "/css/app.fde7d8ae.css"
   },
   {
-    "revision": "e72f7c476d87ce461550",
-    "url": "/js/app.1deec8a0.js"
+    "revision": "7eb5fd7c0cd2e6914146",
+    "url": "/js/app.b24d8a57.js"
   },
   {
     "revision": "72920e78c497b0c3870f",
@@ -176,12 +176,12 @@ self.__precacheManifest = [
     "url": "/img/img7.70afd010.jpg"
   },
   {
-    "revision": "732389ded34cb9c52dd88271f1345af9",
-    "url": "/fonts/element-icons.732389de.ttf"
-  },
-  {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
     "url": "/fonts/element-icons.535877f5.woff"
+  },
+  {
+    "revision": "732389ded34cb9c52dd88271f1345af9",
+    "url": "/fonts/element-icons.732389de.ttf"
   },
   {
     "revision": "2ddb16ddee8a6d0dec46cb92d78650f4",
@@ -908,7 +908,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "6a82354496b9676eb6ecc48568f4bdd2",
+    "revision": "33cce777f2a06dfa095bf31769252dfa",
     "url": "/index.html"
   },
   {
