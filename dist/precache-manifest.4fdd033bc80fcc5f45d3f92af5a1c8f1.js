@@ -912,8 +912,16 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
     "revision": "b81798ad1201c16a82e43a126c8eb988",
     "url": "/favicon.png"
+  },
+  {
+    "revision": "b3417d0933b62494f8cce3a08fd910cd",
+    "url": "/sitemap.xml"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
