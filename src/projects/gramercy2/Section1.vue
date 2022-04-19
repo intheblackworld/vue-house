@@ -39,7 +39,7 @@
   z-index: 2;
 // background: url("./s1/bg.jpg") center;
  // background-size: cover;
-  background: linear-gradient(45deg, rgba(223,234,247,1) 0%,rgba(179,204,232,1) 44%,rgba(114,149,204,1) 89%);
+background: linear-gradient(to bottom, rgba(79,139,242,1) 0%,rgba(118,202,247,1) 22%,rgba(163,233,247,1) 34%,rgba(198,243,255,1) 42%,rgba(224,251,255,1) 52%,rgba(255,255,255,1) 100%);
 }
 .bg{
   position: absolute;
