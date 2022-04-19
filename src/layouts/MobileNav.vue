@@ -9,9 +9,9 @@
       <font-awesome-icon icon="pen" />
       <div class="label">預約賞屋</div>
     </a>
-    <a class="nav-item" @click="showMessengerDialog">
-      <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
-      <div class="label">FB諮詢</div>
+    <a class="nav-item" @click="trackFb" :href="info.fbLink" target="_blank">
+      <font-awesome-icon :icon="['fab', 'facebook-f']" />
+      <div class="label">粉絲專頁</div>
     </a>
     <a class="nav-item" @click="showMapDialog">
       <font-awesome-icon icon="map-marker-alt" />
@@ -103,16 +103,20 @@ export default {
   box-shadow: 0 -2px 8px 0 #0006;
   display: none;
   transition: all .5s;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 0.1em 0.5em #069;
+    letter-spacing: 0.06em;
 
   .nav-item {
     flex: 1;
     color: $mobile_nav_color;
-    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
+    text-decoration:none;
 
     &:nth-child(4) {
       border-right: none;
@@ -120,9 +124,10 @@ export default {
   }
 
   svg {
-    width: 20px !important;
-    height: 25px;
+    width: 1.3em;
+    height:1.6em;
     color: $mobile_nav_icon;
+    margin: 0 0 0.4em;
   }
 
   .label {
