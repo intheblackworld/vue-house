@@ -51,7 +51,7 @@
   position: relative;
   margin:0;
   padding-top: 7.2em;
-  //background: #eff4f2;
+  background: #eff4f2;
   z-index: 2;
   padding-bottom: 0.6vw;
 }
@@ -263,7 +263,7 @@ left: 0;
     height: auto;
     min-height: auto;
     max-height: initial;
-    padding-top: 2.9em;
+    padding-top: 0em;
   }
 
 
