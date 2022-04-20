@@ -20,9 +20,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >新店華城首創，平面式別墅</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >富居新店！平面式別墅</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        全區共14戶，秉持與自然環境共存精神，塑造獨特山形建築外觀，生活品質與安全更上一層！
+        秉持與自然環境共存精神，塑造獨特山形建築外觀，以大面積玻璃窗向「自然借景」，沐浴光影的變化，完美融入山林自然景觀，都市及山嵐景觀盡收眼底。
       </div>
       </div>
     </div>
@@ -35,14 +35,14 @@
   width:100%;
   height:auto;
   position: relative;
-  margin: 5.3vw 0 0 0;
+  margin: 1.2vw 0 0 0;
 }
 .w{
   position: absolute;
 width:size(560);
 height:size(59 * 6);
 overflow: hidden;
-top:size(980);
+top:size(900);
 right: 0;
   &::after{content: "";display: block;
   width: calc(100% + (100vw * 88 / 1920));
@@ -75,13 +75,13 @@ right: 0;
 .title{
   position: relative;
   font-size: size(44);
-  margin:.6em auto 0;
+  margin:1.3em auto 0;
   letter-spacing:0em;
   color:$title;
   font-weight: 800;
 }
 .desc {
-  margin:1em auto;
+  margin:.6em auto;
   line-height: 2;
   letter-spacing:0.05em;
   list-style: circle;
@@ -303,11 +303,11 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '現場實景圖',
+          name: '現場外觀實景圖',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '現場實景圖',
+          name: '現場外觀實景圖',
         },
       ],
     }

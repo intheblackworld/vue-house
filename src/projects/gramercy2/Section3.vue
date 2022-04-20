@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">高綠覆率80%，超高氧芬多精</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">天然森態！高綠覆率80%</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        漫步社區內步道，走出家門就是綠花園，與四季對話，愜意悠然的生活氛圍，從此，愛上回家的感覺。
+        走出家門就是綠花園，「碧澄2」擁有大面積綠環境，最天然的芬多精，將城市文明的奢適一舉收藏於山嵐景觀之中，愜意悠然的生活氛圍，從此，愛上回家的感覺。
       </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
@@ -43,7 +43,7 @@
 
 .img{
   position: absolute;
-  bottom: size(115);
+  bottom: size(275);
 left:size(210);width:11em;
     border-bottom: 2px solid #002840;
     img{vertical-align:bottom;width:size(99);}
@@ -52,7 +52,7 @@ left:size(210);width:11em;
   position: absolute;
   width: size(590);
   left: size(210);
-  top: size(365);
+  top: size(270);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -72,7 +72,7 @@ left:size(210);width:11em;
 }
 
 .desc {
-  margin:.7em auto 1.3em auto;
+  margin:.3em auto 1.3em auto;
   line-height: 2;
   letter-spacing:0.05em;
   list-style: circle;
@@ -146,7 +146,7 @@ left:size(210);width:11em;
 
 .pagination {
   width: auto;
-  bottom: size(108);
+  bottom: size(205);
   right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);
@@ -292,7 +292,7 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          name: '現場實景圖',
+          name: '現場外觀實景圖',
         },
         {
           img: require('./s3/2.jpg'),

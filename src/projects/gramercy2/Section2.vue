@@ -1,14 +1,15 @@
 <template>
     <div class="section2">
       <div class="w"></div>
-      <div class="tree">
+      
+      <div class="txt" v-if="!isMobile">
+        <div class="tree">
         <img src="./all/tree1.png" alt="tree" class="tree1">
         <img src="./all/tree2.png" alt="tree" class="tree2">
         </div>
-      <div class="txt" v-if="!isMobile">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >離塵不離城，家變得更近了</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >享受舒居！離塵不離城</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        座落新店都市計畫碧潭風景區，約5分鐘車程安坑輕軌，10分鐘步行康橋國際學校，15分鐘信義區剛剛好的車程距離，保留市區的繁華想像，與郊區的寧靜從容。 
+        座落新店都市計畫碧潭風景區，約5分鐘車程新店捷運總站，10分鐘步行康橋國際學校，15分鐘車程信義區，距離市區的繁華不遠，享受郊區的寧靜從容。 
       </div>
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -30,9 +31,13 @@
       </div>
       
       <div class="txt" v-if="isMobile">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >離塵不離城，家變得更近了</div>
+        <div class="tree">
+        <img src="./all/tree1.png" alt="tree" class="tree1">
+        <img src="./all/tree2.png" alt="tree" class="tree2">
+        </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >享受舒居！離塵不離城</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        座落新店都市計畫碧潭風景區，約5分鐘車程安坑輕軌，10分鐘步行康橋國際學校，15分鐘信義區剛剛好的車程距離，保留市區的繁華想像，與郊區的寧靜從容。 
+        座落新店都市計畫碧潭風景區，約5分鐘車程新店捷運總站，10分鐘步行康橋國際學校，15分鐘車程信義區，距離市區的繁華不遠，享受郊區的寧靜從容。 
       </div>
       </div>
     </div>
@@ -45,7 +50,10 @@
   height:auto;
   position: relative;
   margin:0;
-  padding: 0 0 0.8vw;
+  padding-top: 7.2em;
+  //background: #eff4f2;
+  z-index: 2;
+  padding-bottom: 0.6vw;
 }
 $ww:size(88);
 .w{
@@ -68,7 +76,7 @@ left: 0;
 .tree{
   position: absolute;
   top:size(-40);
-  right:size(210);
+  right:size(10);
   font-size: size(20);
   img{margin: 0 0 0 1em;}
   .tree1{width:2.95em;}
@@ -82,7 +90,7 @@ left: 0;
 .txt{
   position: relative;
   width: size(1500);
-  margin:6.7em auto 0em;
+  margin:0em auto 0em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -255,6 +263,7 @@ left: 0;
     height: auto;
     min-height: auto;
     max-height: initial;
+    padding-top: 2.9em;
   }
 
 
@@ -273,8 +282,7 @@ height:calc( #{$ww} * 0.67 * 5);
 }
 .tree{
   position: absolute;
-  bottom:sizem(10);
-  top: auto;
+  top:calc(40% + (350 - 650 * .4) * 100vw / 375);
   font-size: sizem(20);
 }
 
@@ -294,7 +302,7 @@ height:calc( #{$ww} * 0.67 * 5);
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(160);
+    height: sizem(255);
     top:0;
     left:0;
   }
@@ -331,19 +339,19 @@ export default {
       slideList: [
         {
           img: require('./s2/1.jpg'),
-          name: '現場實景圖',
+          name: '現場外觀實景圖',
         },
         {
           img: require('./s2/2.jpg'),
-          name: '現場實景圖',
+          name: '情境示意圖',
         },
         {
           img: require('./s2/3.jpg'),
-          name: '現場實景圖',
+          name: '情境示意圖',
         },
         {
           img: require('./s2/4.jpg'),
-          name: '現場實景圖',
+          name: '情境示意圖',
         },
       ],
     }

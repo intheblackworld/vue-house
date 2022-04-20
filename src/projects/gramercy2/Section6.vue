@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">國際級高規格<br>易控智慧居家系統 </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">完美互動！易控智能生活</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        情境示意圖全屋式智慧環控全方位安全防護，備配智慧家居、E-TAG辨識系統、一卡通智慧門禁服務、智能物業管理APP，完美整合居家設備與家電，打造沉浸式個人情境氛圍！
+        全屋式智慧環控全方位安全防護，備配E-TAG辨識系統、一卡通智慧門禁服務、智能物業管理APP、樓宇安全及智慧化管理、便利智慧家居，打造專屬舒適安全的智慧生活！
       </div>
       </div>
      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
@@ -46,7 +46,7 @@
 width:size(800);
 height:size(59 * 6);
 overflow: hidden;
-top:size(60);
+top:size(15);
 left: 0;
   &::after{content: "";display: block;
   width: calc(100% + (100vw * 88 / 1920));
@@ -68,7 +68,7 @@ left: 0;
   position: absolute;
   width: size(580);
   right:size(210);
-  top: size(280);
+  top: size(245);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -160,7 +160,7 @@ left: 0;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(220);
+  bottom: size(255);
   left:calc(50% + 8.2vw);
   justify-content: center;
   font-size: size(20);
@@ -319,7 +319,7 @@ export default {
         },
         {
           img: require('./s6/4.jpg'),
-          name: '實品屋實景圖(以現場展示為準)',
+          name: '情境示意圖',
         },
       ],
     }

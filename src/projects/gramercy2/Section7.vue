@@ -20,9 +20,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >270度三面環景，戶戶挑高採光</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >270度落地大窗，三面環繞採光</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-       大片落地窗一覽都市繁華與山嵐景觀，單層單戶規劃，獨立梯廳單純雋永生活，室內3.55米及6米挑高，搭配全開放式無隔間設計，寬敞舒適格局，在不同空間仍可感受與家人的互動。
+       一層一戶單純雋永生活，每一層樓擁有獨立梯廳，戶戶擁有大露台，三面採光可納入陽光，挑高3米6及6米，搭配全開式無隔間設計，空間利用隨心所欲。
       </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
 width:size(350);
 height:size(59 * 6);
 overflow: hidden;
-top:size(-280);
+top:size(-330);
 right: 0;
   &::after{content: "";display: block;
   width: calc(100% + (100vw * 88 / 1920));
@@ -74,7 +74,7 @@ right: 0;
 .title{
   position: relative;
   font-size: size(44);
-  margin:.6em auto 0;
+  margin:.9em auto 0;
   color:$title;
   font-weight: 800;
 }
@@ -301,23 +301,23 @@ export default {
       slideList: [
         {
           img: require('./s7/1.jpg'),
-          name: '實品屋實景圖',
+          name: '現場外觀實景圖',
         },
         {
           img: require('./s7/2.jpg'),
-          name: '實品屋實景圖',
+          name: '空間示意圖',
         },
         {
           img: require('./s7/3.jpg'),
-          name: '實品屋實景圖',
+          name: '室內空間示意圖',
         },
         {
           img: require('./s7/4.jpg'),
-          name: '現場實景圖',
+          name: '室內空間示意圖',
         },
         {
           img: require('./s7/5.jpg'),
-          name: '現場實景圖',
+          name: '室內空間示意圖',
         },
       ],
     }

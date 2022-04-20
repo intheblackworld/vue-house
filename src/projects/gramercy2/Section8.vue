@@ -1,9 +1,10 @@
 <template>
     <div class="section8">
-      <div class="box">
       <div class="w"></div>
+      <div class="box">
+      
       <div class="img" v-if="isMobile"><img src="./all/img.png" alt="img"></div>
-      <div class="title" data-aos="fade" data-aos-delay="0">奢華精品標配，時尚質感廚衛 <span v-if="!isMobile"><img src="./all/img.png" alt="img"></span></div>
+      <div class="title" data-aos="fade" data-aos-delay="0">奢華精工藝標配，現代感廚房<span v-if="!isMobile"><img src="./all/img.png" alt="img"></span></div>
       <div class="list">
               <div class="swipe swipe1" data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
@@ -48,12 +49,12 @@
         </div>
       </div>
       <div class="txt">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span>美國/衛浴設備 KOHLER<br><b>超流線感，多種自動清洗模式</b></span><img loading="lazy" src="./s8/2.png" alt="美國/衛浴設備 KOHLER"></div>
+        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span>瑞士/智能馬桶 AXENT<br><b>各種需求一次滿足</b></span><img loading="lazy" src="./s8/2.png" alt="美國/衛浴設備 KOHLER"></div>
         <ul class="desc">
-          <li data-aos="fade-up" data-aos-delay="300">美國最大衛浴廠牌KOHLER</li>
-          <li data-aos="fade-up" data-aos-delay="400">一體超感無邊框設計</li>
-          <li data-aos="fade-up" data-aos-delay="500">多種沖洗模式包含貼心女性沖洗</li>
-          <li data-aos="fade-up" data-aos-delay="500">不鏽鋼噴嘴使用前後自動沖洗</li>
+          <li data-aos="fade-up" data-aos-delay="300">亮白易潔質感釉面</li>
+          <li data-aos="fade-up" data-aos-delay="400">獨家VACUUM V FLUSH沖刷技術，一次解決細菌異味</li>
+          <li data-aos="fade-up" data-aos-delay="500">婦洗、氣泡水沖洗…等多種清洗</li>
+          <li data-aos="fade-up" data-aos-delay="500">夜間模式、遙控功能、座圈加熱</li>
         </ul>
       </div>
        <!--     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -104,12 +105,11 @@
         </div>
       </div>
       <div class="txt">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span>德國/淋浴設備 Hansgrohe<br><b>智能恆溫控制，真正淋浴享受</b></span><img loading="lazy" src="./s8/4.png" alt="德國/淋浴設備 Hansgrohe"></div>
+        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span>德國/淋浴設備 GROHE<br><b>花灑大角度，絲順淋浴體驗</b></span><img loading="lazy" src="./s8/4.png" alt="德國/淋浴設備 Hansgrohe"></div>
         <ul class="desc">
-          <li data-aos="fade-up" data-aos-delay="300">智慧恆溫技術</li>
-          <li data-aos="fade-up" data-aos-delay="400">40度安全控溫鎖，防止燙傷意外</li>
-          <li data-aos="fade-up" data-aos-delay="500">空氣注入，豐沛溫和的出水</li>
-          <li data-aos="fade-up" data-aos-delay="500">節水技術，節能環保</li>
+          <li data-aos="fade-up" data-aos-delay="300">鍍鉻星閃外表，有效對抗污漬銹點</li>
+          <li data-aos="fade-up" data-aos-delay="400">獨特絲順技術，精準控水</li>
+          <li data-aos="fade-up" data-aos-delay="500">花灑直徑可自由旋轉調整</li>
         </ul>
       </div>
         <!--      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
@@ -182,7 +182,7 @@ right: 0;
   display: flex;
   justify-content:space-between;align-items:flex-end;
   font-size: size(44);
-  margin:.6em auto 1.1em;
+  margin:1.5em auto 1.1em;
   letter-spacing:0em;
   color:$title;
   font-weight: 800;

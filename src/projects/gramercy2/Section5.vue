@@ -51,7 +51,7 @@
 
 .tree{
   position: absolute;
-  top:size(180);
+  top:size(147);
   left:size(200);
   font-size: size(20);
   img{margin: 0 1em 0 0;}
@@ -62,7 +62,7 @@
   position: absolute;
   width: size(590);
   left: size(210);
-  top: size(275);
+  top: size(285);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -82,7 +82,7 @@
 }
 
 .desc {
-  margin:.7em auto 1.3em auto;
+  margin:1.2em auto 1.3em auto;
   line-height: 2;
   letter-spacing:0.05em;
   list-style: circle;

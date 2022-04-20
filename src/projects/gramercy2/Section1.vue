@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
-     <!--      <img src="./s1/pc.jpg" alt="`${info.caseName}_bg" class="t0">
+  <!--        <img src="./s1/mo.jpg" alt="`${info.caseName}_bg" class="t0">
 
- <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+  <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/3.png" alt="3" class="c4">
       <div class="c3"><img src="./all/3.png" alt="3"></div>
       <img src="./all/2.png" alt="2" class="c2">
@@ -15,8 +15,9 @@
       <img src="./s1/c1.png" alt="1" class="c1">
     </div> 
     <img src="./s1/bg.png" v-if="!isMobile" alt="1" class="bg">
-    <img src="./s1/bgm.png" v-if="isMobile" alt="1" class="bg">
+    <img src="./s1/bgm_tree.png" v-if="isMobile" alt="1" class="bg">
     <div class="txt">
+    <img src="./s1/bg-house.png" v-if="isMobile" alt="1" class="bg-house">
       <div class="o"></div>
       <div class="img"><img src="./all/img.png" alt="img"></div>
       <img src="./s1/logo_m.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
@@ -39,7 +40,7 @@
   z-index: 2;
 // background: url("./s1/bg.jpg") center;
  // background-size: cover;
-background: linear-gradient(to bottom, rgba(79,139,242,1) 0%,rgba(118,202,247,1) 22%,rgba(163,233,247,1) 34%,rgba(198,243,255,1) 42%,rgba(224,251,255,1) 52%,rgba(255,255,255,1) 100%);
+background: linear-gradient(to bottom, rgb(79, 139, 242) 0%,rgba(118,202,247,1) 22%,rgba(163,233,247,1) 65%,rgba(255,255,255,1) 100%);
 }
 .bg{
   position: absolute;
@@ -138,7 +139,7 @@ background: linear-gradient(to bottom, rgba(79,139,242,1) 0%,rgba(118,202,247,1)
     height: calc(100vh - 63px);
   margin: 0 0 0;
 
-   background:linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(179,204,232,1) 60%,rgba(114,149,204,1) 100%);
+   background: linear-gradient(to bottom, #1c70c7 50%,#5b99d7 70%,rgba(255,255,255,1) 100%);
  // background-image: url("./s1/bgm.jpg");background-size: cover;
 
   }
@@ -160,12 +161,47 @@ background: linear-gradient(to bottom, rgba(79,139,242,1) 0%,rgba(118,202,247,1)
    top:calc(40% + (56 - 650 * .4) * 100vw / 375);
    width: 100%;
   font-size: sizem(16.1);
+
+  .bg-house{
+   width:sizem(400); 
+   position: absolute;
+   top:calc(40% + (400 - 650 * .4) * 100vw / 375);
+   left:sizem(-0);
+   z-index: 10;
+  }
+
+  .img{
+    width:sizem(200);
+    margin: 0px auto;
+    z-index: 3;
+    position: relative;
+  }
+
+  .img img{
+    width:sizem(70);
+    margin-top: 1em;
+  }
 .logo{
    width:sizem(203);float:none;
-   margin:1.2em 0 0 2em;
+   margin:1.4em 0 0 .7em;
   }
   .t1{ 
-      width:sizem(219);}
+      width:sizem(219);
+      margin: 0px auto;
+      text-align: center;
+      }
+  .o{
+    top:calc(40% + (0 - 650 * .4) * 100vw / 375);
+    left:sizem(-60);
+    width:sizem(500);
+    height:sizem(500);
+    &::after{
+    top:calc(40% + (50 - 650 * .4) * 100vw / 375);
+    left:sizem(-0);  
+
+    }
+
+  }  
 }
 
 

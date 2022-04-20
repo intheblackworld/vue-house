@@ -11,13 +11,13 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '潤禧建設股份有限公司',],
+    ['投資興建', '襄澐建設有限公司',],
     ['建築設計', '立志建築師事務所',],
-    ['碧澄一期案址', '新北市新店區青山路311號',],
-    ['坪數規劃', '82、91坪',],
+    ['碧澄二期案址', '新北市新店區華城路58號',],
+    ['坪數規劃', '45-64坪',],
   ],
 
-  gtmCode: ['WNGS5LD'], // 可放置多個
+  gtmCode: ['W72HX9F'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
