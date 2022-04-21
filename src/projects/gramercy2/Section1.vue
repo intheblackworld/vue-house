@@ -19,10 +19,10 @@
     <div class="txt">
     <img src="./s1/bg-house.png" v-if="isMobile" alt="1" class="bg-house">
       <div class="o"></div>
-      <div class="img"><img src="./all/img.png" alt="img"></div>
-      <img src="./s1/logo_m.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
+      <div class="img" data-aos="zoom-in" data-aos-delay="0"><img src="./all/img.png" alt="img"></div>
+      <img src="./s1/logo_m.png" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo">
       <div class="t1" data-aos="zoom-in" data-aos-delay="400">擁有城市中的寧靜</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅｜45-64坪</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅｜51-64坪1樓</div>
     </div>
   </div>
 </template>
@@ -124,7 +124,7 @@ background: linear-gradient(to bottom, rgb(79, 139, 242) 0%,rgba(118,202,247,1) 
     }
   .t2{
       width:100%;
-  font-size: 1.05em;
+  font-size: 0.92em;
     }
 }
 /* 螢幕尺寸標準 */
