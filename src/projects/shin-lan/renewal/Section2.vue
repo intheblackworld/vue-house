@@ -300,39 +300,12 @@
 
 .title {
   font-size: size(34);
-  font-weight: 1200;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.18;
-  letter-spacing: size(2.04);
-  text-align: left;
-  color: #000;
-  font-family: 'Noto Serif TC', serif;
   &.gold {
     color: #b18863;
   }
 
   @include md {
-    font-size: sizem(22);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.36;
-    letter-spacing: sizem(1.32);
-    text-align: left;
-    color: #000;
-  }
-
-  &.shin-lan-title-h {
-    @include md {
       font-size: sizem(28);
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.36;
-      letter-spacing: sizem(1.32);
-      text-align: left;
-    }
   }
 }
 

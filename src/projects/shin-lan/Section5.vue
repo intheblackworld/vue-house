@@ -103,10 +103,6 @@
 
   @include md {
     @include img_l_m(310, 248, 32.5);
-    font-size: sizem(28);
-    font-weight: 600;
-    line-height: 1.45;
-    letter-spacing: sizem(1);
     border-bottom: 1px solid #000;
     padding-bottom: .4em;
   }

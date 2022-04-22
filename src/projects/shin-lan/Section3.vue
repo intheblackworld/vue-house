@@ -379,13 +379,6 @@
 
   @include md {
     @include img_l_m(167, 112, 22);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: left;
     color: #b18863;
     position: static;
     padding-top:sizem(112);

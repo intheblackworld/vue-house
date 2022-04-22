@@ -103,14 +103,7 @@
   @include img_l_pc(67, 130, 352);
 
   @include md {
-    @include img_l_m(127, 90, 33);
-    font-size: sizem(28);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: sizem(1);
-    text-align: center;
+    @include img_l_m(250, 90, 33);
   }
 }
 

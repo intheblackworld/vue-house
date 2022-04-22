@@ -229,7 +229,7 @@
   font-family: "Noto Serif TC", serif;
   color: #000; // 顏色
   font-size: size(47); // size(47)
-  font-weight: 1100;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.06;
@@ -254,12 +254,17 @@
   font-family: "Noto Serif TC", serif;
   color: #000; // 顏色
   font-size: size(47); // size(47)
-  font-weight: 1200;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.06;
   letter-spacing: 0.06em;
   text-align: left;
+
+  @include md {
+    font-size: sizem(28);
+
+  }
   span {
     display: inline-block;
     width: size(1);
@@ -280,7 +285,7 @@
     font-family: "Noto Serif TC", serif;
     color: #000; // 顏色
     font-size: sizem(28);
-    font-weight: 1100;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.06;
@@ -305,7 +310,7 @@
     font-family: "Noto Serif TC", serif;
     color: #000; // 顏色
     font-size: sizem(28); // size(47)
-    font-weight: 1100;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.06;

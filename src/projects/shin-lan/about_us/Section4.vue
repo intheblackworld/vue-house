@@ -70,20 +70,13 @@
 }
 
 .title {
-  @include img_c_pc(240, 518);
+  @include img_c_pc(600, 518);
   position: relative;
   margin-bottom: size(50);
+    text-align: center;
 
   @include md {
-    @include img_c_m(126, 240);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: left;
-    color: #000;
+    @include img_c_m(300, 240);
   }
 }
 </style>

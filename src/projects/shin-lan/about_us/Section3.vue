@@ -98,17 +98,11 @@
 }
 
 .title1 {
-  @include img_l_pc(240, 148, 330);
+  @include img_r_pc(600, 148, 680);
+    text-align: right;
 
   @include md {
-    @include img_r_m(126, 60, 15);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: left;
+    @include img_r_m(250, 60, 15);
     color: #b18863;
   }
 }
@@ -175,18 +169,10 @@
 }
 
 .title2 {
-  @include img_l_pc(240, 356, 0);
+  @include img_l_pc(600, 356, 0);
 
   @include md {
-    @include img_l_m(126, 110, 13);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: left;
-    color: #000;
+    @include img_l_m(250, 110, 13);
   }
 }
 
@@ -255,19 +241,13 @@
   }
 }
 .title3 {
-  @include img_c_pc(240, 0);
+  @include img_c_pc(600, 0);
   position: relative;
   margin-bottom: size(50);
+    text-align: center;
 
   @include md {
-    @include img_c_m(126, 230);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: justify;
+    @include img_c_m(300, 230);
     color: #b18863;
   }
 }
@@ -291,7 +271,8 @@
 
   .title2 {
     @include md {
-      @include img_r_m(126, 111, 81);
+      @include img_r_m(250, 111, 81);
+      text-align: right;
     }
   }
 

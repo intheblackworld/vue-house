@@ -187,14 +187,7 @@
   // @include img_l_pc(220, 514, 342);
 
   @include md {
-    @include img_l_m(127, -50, 15);
-    font-size: sizem(28);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: sizem(1);
-    text-align: left;
+    @include img_l_m(300, -50, 15);
     color: #3e3a39;
   }
 }

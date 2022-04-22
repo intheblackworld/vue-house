@@ -113,15 +113,7 @@
   @include img_l_pc(67, 0, 0);
 
   @include md {
-    @include img_l_m(186, 0, 33);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: left;
-    color: #000;
+    @include img_l_m(250, 0, 33);
   }
 }
 

@@ -60,18 +60,10 @@
 }
 
 .title2 {
-  @include img_l_pc(240, 466, 0);
+  @include img_l_pc(600, 466, 0);
 
   @include md {
-    @include img_l_m(126, 170, 33);
-    font-size: sizem(28);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.07;
-    letter-spacing: sizem(1.68);
-    text-align: left;
-    color: #000;
+    @include img_l_m(260, 170, 33);
   }
 }
 

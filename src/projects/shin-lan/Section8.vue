@@ -50,17 +50,10 @@
 }
 
 .title {
-  @include img_l_pc(267, 300, 335);
+  @include img_l_pc(600, 300, 335);
 
   @include md {
-    @include img_l_m(167, 62, 32);
-    font-size: sizem(28);
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: sizem(1);
-    text-align: left;
+    @include img_l_m(300, 62, 32);
   }
 }
 
