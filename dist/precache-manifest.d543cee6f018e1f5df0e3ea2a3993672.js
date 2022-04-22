@@ -176,12 +176,12 @@ self.__precacheManifest = [
     "url": "/img/img7.70afd010.jpg"
   },
   {
-    "revision": "732389ded34cb9c52dd88271f1345af9",
-    "url": "/fonts/element-icons.732389de.ttf"
-  },
-  {
     "revision": "535877f50039c0cb49a6196a5b7517cd",
     "url": "/fonts/element-icons.535877f5.woff"
+  },
+  {
+    "revision": "732389ded34cb9c52dd88271f1345af9",
+    "url": "/fonts/element-icons.732389de.ttf"
   },
   {
     "revision": "2ddb16ddee8a6d0dec46cb92d78650f4",
@@ -908,7 +908,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "498252b8c4dd0cef5f06611736ecff7a",
+    "revision": "0e609324f4af2488db5827f30f3cba07",
     "url": "/index.html"
   },
   {
