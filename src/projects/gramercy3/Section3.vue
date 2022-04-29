@@ -24,7 +24,7 @@
       <div class="title" data-aos="fade-down" data-aos-delay="200">千坪生態花園，<br>
 四季美景盡收眼底</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        碧澄3」坐落千坪綠色公園，環繞65%綠覆率，特色規劃山林輕步道，繽紛花田秘境、專人種植生態農園果園等，讓蝶舞蜂飛鳥鳴縈縈相伴，藉由綠意層疊的風景，讓身心澄靜，給自己怡然自得的好時光。
+       「碧澄3」坐落千坪綠色公園，環繞65%綠覆率，特色規劃山林輕步道，繽紛花田秘境、專人種植生態農園果園等，讓蝶舞蜂飛鳥鳴縈縈相伴，藉由綠意層疊的風景，讓身心澄靜，給自己怡然自得的好時光。
       </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
