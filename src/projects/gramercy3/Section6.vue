@@ -68,7 +68,7 @@ left: 0;
   position: absolute;
   width: size(580);
   right:size(210);
-  top: size(245);
+  top: size(230);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -102,8 +102,8 @@ left: 0;
   position: absolute;
   width: size(840);
   height: size(534);
-  top: size(190);
-  left: size(210);
+  top: size(160);
+  left: size(200);
   object-fit: cover;
   z-index: 3;
 }
@@ -160,7 +160,7 @@ left: 0;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(255);
+  bottom: size(205);
   left:calc(50% + 8.2vw);
   justify-content: center;
   font-size: size(20);
@@ -275,7 +275,7 @@ margin:1.5em auto 5em;
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(218);
+    height: sizem(240);
     top:0;
     left:0;
   }

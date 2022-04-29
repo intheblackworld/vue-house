@@ -1,6 +1,6 @@
 export default [
   /* */
-  { name: '地點交通', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:0, mobileOffset: 0 , type: '' },
+  { name: '交通商圈', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:0, mobileOffset: 0 , type: '' },
   { name: '居住環境', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:0, mobileOffset: 0, type: '' },
   { name: '建築外觀', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:0, mobileOffset: 0, type: '' },
   { name: '安全規劃', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:0, mobileOffset: 0 , type: '' },

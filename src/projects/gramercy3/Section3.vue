@@ -38,13 +38,13 @@
 
 .section3 {
   width:100%;
-  height: size(900);
+  height: size(850);
   position: relative;
 }
 
 .img{
   position: absolute;
-  bottom: size(275);
+  bottom: size(130);
 left:size(210);width:11em;
     border-bottom: 2px solid #002840;
     img{vertical-align:bottom;width:size(99);}
@@ -53,7 +53,7 @@ left:size(210);width:11em;
   position: absolute;
   width: size(590);
   left: size(210);
-  top: size(270);
+  top: size(215);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -87,8 +87,8 @@ left:size(210);width:11em;
   position: absolute;
   width: size(840);
   height: size(560);
-  top: size(225);
-  right: size(210);
+  top: size(160);
+  right: size(200);
   object-fit: cover;
   z-index: 3;
 }
@@ -147,7 +147,7 @@ left:size(210);width:11em;
 
 .pagination {
   width: auto;
-  bottom: size(205);
+  bottom: size(130);
   right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);

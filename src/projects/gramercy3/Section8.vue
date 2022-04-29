@@ -5,7 +5,7 @@
       
       <div class="img" v-if="isMobile"><img src="./all/img.png" alt="img"></div>
       <div class="title" data-aos="fade" data-aos-delay="0">嚴選精品標配，優雅時尚美學<span v-if="!isMobile"><img src="./all/img.png" alt="img"></span></div>
-      <div class="desc">名流設計師精心規劃配置，豪華級配備樣樣齊全，成就低調奢華的優雅日常。</div>
+      <div class="desc1">名流設計師精心規劃配置，豪華級配備樣樣齊全，成就低調奢華的優雅日常。</div>
       <div class="list">
               <div class="swipe swipe1" data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
@@ -22,7 +22,7 @@
         </div>
       </div>
         <div class="txt">
-      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>德國/淨水系統 grunbeck</b></span><img loading="lazy" src="./s8/1.png" alt="德國/頂級廚具 LEICHT"></div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>德國/淨水系統 <i>grunbeck</i></b></span><img loading="lazy" src="./s8/1.png" alt="德國/頂級廚具 LEICHT"></div>
       <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">德國格溫拜克社區淨水系統，還原每一滴純淨用水</li>
       </ul>
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="txt">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>美國/精品廚櫃 KOHLER</b></span><img loading="lazy" src="./s8/2.png" alt="美國/衛浴設備 KOHLER"></div>
+        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>美國/精品廚櫃 <i>KOHLER</i></b></span><img loading="lazy" src="./s8/2.png" alt="美國/衛浴設備 KOHLER"></div>
         <ul class="desc">
           <li data-aos="fade-up" data-aos-delay="300">百年品牌精品廚具，耐用耐刮堅固實用</li>
         </ul>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="txt">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>美國/精品衛浴 KOHLER</b></span><img loading="lazy" src="./s8/2.png" alt="德國/科技廚房 BOSCH"></div>
+        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>美國/精品衛浴 <i>KOHLER</i></b></span><img loading="lazy" src="./s8/2.png" alt="德國/科技廚房 BOSCH"></div>
         <ul class="desc">
           <li data-aos="fade-up" data-aos-delay="300">百年品牌精品衛浴，智慧恆溫三段式淋浴龍頭</li>
           <li data-aos="fade-up" data-aos-delay="400">環保抗汙免治馬桶，360度全方位沖洗</li>
@@ -98,7 +98,7 @@
         </div>
       </div>
       <div class="txt">
-        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>義大利/洗脫烘機 INDESIT</b></span><img loading="lazy" src="./s8/4.png" alt="德國/淋浴設備 Hansgrohe"></div>
+        <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>義大利/洗脫烘機 <i>INDESIT</i></b></span><img loading="lazy" src="./s8/4.png" alt="德國/淋浴設備 Hansgrohe"></div>
         <ul class="desc">
           <li data-aos="fade-up" data-aos-delay="300">歐盟A級認證，義大利原裝三機一體洗脫烘機</li>
           <li data-aos="fade-up" data-aos-delay="400">微電腦偵測衣物，自動調節省水省電</li>
@@ -174,7 +174,7 @@ right: 0;
   display: flex;
   justify-content:space-between;align-items:flex-end;
   font-size: size(44);
-  margin:1.5em auto 1.1em;
+  margin:1.5em auto 0.5em;
   letter-spacing:0em;
   color:$title;
   font-weight: 800;
@@ -188,15 +188,12 @@ right: 0;
   }
   img{height:1.25em;float: right;margin: 0 1em 0 0;}
 }
-.desc {
-  margin:1em auto 3em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
-  list-style: circle;
-  overflow: hidden;
+.desc1{
   width: 100%;
+  font-size: size(19);
+  text-align: justify;
+  margin:0em auto 3em auto;
 }
-
 .txt{
   position: relative;
   z-index: 3;
@@ -224,10 +221,13 @@ right: 0;
       margin: 0.4em 0 0 0;
   font-weight: 800;
   color:$title;}
+  i{font-style:normal;}
 }
 
 .desc {
+  width: 100%;
   line-height: 1.5;
+  margin:1em auto 3em auto;
   letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
@@ -431,7 +431,10 @@ padding: 0 0 3em;
     font-size: sizem(14.3);
   display: block;
   position: relative;
-      img{height:2em;position: absolute;top: -.4em;right: 0;}
+      img{height:2.8em;position: absolute;
+      top: .2em;
+      right: 0;}
+  i{display: none;}
   }
   .desc {
   list-style: circle;

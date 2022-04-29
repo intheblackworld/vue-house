@@ -46,7 +46,7 @@
 
 .section5 {
   width:100%;
-  height: size(800);
+  height: size(730);
   position: relative;
 }
 
@@ -63,7 +63,7 @@
   position: absolute;
   width: size(590);
   left: size(210);
-  top: size(285);
+  top: size(225);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -97,8 +97,8 @@
   position: absolute;
   width: size(840);
   height: size(560);
-  top: size(155);
-  right: size(210);
+  top: size(100);
+  right: size(200);
   object-fit: cover;
   z-index: 3;
 }

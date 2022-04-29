@@ -53,7 +53,6 @@
   position: relative;
   margin:0;
   padding-top: 7.2em;
-  background: #eff4f2;
   z-index: 2;
   padding-bottom: 0.6vw;
 }
@@ -284,7 +283,7 @@ height:calc( #{$ww} * 0.67 * 5);
 }
 .tree{
   position: absolute;
-  top:calc(40% + (350 - 650 * .4) * 100vw / 375);
+  top:calc(40% + (410 - 650 * .4) * 100vw / 375);
   font-size: sizem(20);
 }
 
@@ -304,7 +303,7 @@ height:calc( #{$ww} * 0.67 * 5);
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    height: sizem(205);
     top:0;
     left:0;
   }
