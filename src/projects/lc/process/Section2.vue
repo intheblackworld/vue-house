@@ -955,9 +955,22 @@ export default {
           {
             o_title: '2021 立瑾WAY',
             o_subtitle: '已完售，預計2023年初完工。',
+            img: require('../process/list/12/image001.jpg'),
+            title: '2022/04',
+            subtitle: '五樓板施工照片',
+            isFinished: true,
+            imgs: [
+              require('../process/list/12/image001.jpg'),
+              require('../process/list/12/image003.jpg'),
+              require('../process/list/12/image005.jpg'),
+              require('../process/list/12/image007.jpg'),
+              require('../process/list/12/image009.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/9/image001.jpg'),
             title: '2022/03',
-            subtitle: ' 三樓版灌漿前後施工照片',
+            subtitle: ' 三樓板灌漿前後施工照片',
             isFinished: true,
             imgs: [
               require('../process/list/9/image001.jpg'),
@@ -973,7 +986,7 @@ export default {
           {
             img: require('../process/list/1/7.jpg'),
             title: '2021/12',
-            subtitle: '基礎版鋼筋綁紮及混凝土灌漿',
+            subtitle: '基礎板鋼筋綁紮及混凝土灌漿',
             isFinished: true,
             imgs: [
               require('../process/list/7/1.jpg'),
@@ -987,7 +1000,7 @@ export default {
           {
             img: require('../process/list/5/1.jpg'),
             title: '2021/7',
-            subtitle: 'B3、FL，版灌漿及粉光工程，施做進行中。',
+            subtitle: 'B3、FL，板灌漿及粉光工程，施做進行中。',
             isFinished: true,
             imgs: [
               require('../process/list/5/1.jpg'),
@@ -997,7 +1010,7 @@ export default {
           {
             img: require('../process/list/4/1.jpg'),
             title: '2021/6',
-            subtitle: '堅若磐石的施工品質<br>FS版灌漿施做進行中。',
+            subtitle: '堅若磐石的施工品質<br>FS板灌漿施做進行中。',
             isFinished: true,
             imgs: [
               require('../process/list/4/1.jpg'),
@@ -1056,6 +1069,19 @@ export default {
           {
             o_title: '2021 立瑾綻',
             o_subtitle: '公開銷售中。',
+            img: require('../process/list/11/image001.jpg'),
+            title: '2022/04',
+            subtitle: ' 4FL灌漿完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/11/image001.jpg'),
+              require('../process/list/11/image003.jpg'),
+              require('../process/list/11/image005.jpg'),
+              require('../process/list/11/image007.jpg'),
+              require('../process/list/11/image009.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/10/image001.jpg'),
             title: '2022/03',
             subtitle: ' 3樓板灌漿前後施工照片',
@@ -1072,7 +1098,7 @@ export default {
           {
             img: require('../process/list/8/1.jpg'),
             title: '2022/02',
-            subtitle: ' 二樓版工務局勘驗+灌漿前後',
+            subtitle: ' 二樓板工務局勘驗+灌漿前後',
             isFinished: true,
             imgs: [
               require('../process/list/8/1.jpg'),
@@ -1088,7 +1114,7 @@ export default {
           {
             img: require('../process/list/6/1.jpg'),
             title: '2021/12',
-            subtitle: '基礎版鋼筋綁紮及混凝土灌漿',
+            subtitle: '基礎板鋼筋綁紮及混凝土灌漿',
             isFinished: true,
             imgs: [
               require('../process/list/6/1.jpg'),
