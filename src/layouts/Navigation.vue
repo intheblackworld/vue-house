@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open': ''}`" >
-         <img class="logo" src="@/projects/gramercy2/s1/logo_w.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  
+         <img class="logo" src="@/projects/gramercy3/s1/logo_w.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  
        <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
           </div>  -->

@@ -7,14 +7,14 @@ export default {
   phone: '02-2211-1200',
   fbLink: 'https://www.facebook.com/gramercytw/',
   fbMessage: 'https://m.me/gramercytw',
-  caseName: '碧澄2',
+  caseName: '碧澄3',
   indigatorLength: 10,
 
   houseInfos: [
     ['投資興建', '襄澐建設有限公司',],
     ['建築設計', '立志建築師事務所',],
-    ['碧澄二期案址', '新北市新店區華城路58號',],
-    ['坪數規劃', '45-64坪',],
+    ['營建工程', '台灣松下營造建築施工團隊',],
+    ['坪數規劃', '22-24坪',],
   ],
 
   gtmCode: ['W72HX9F'], // 可放置多個
