@@ -7,9 +7,9 @@ export default {
   phone: '02-8292-2333',
   fbLink: 'https://www.facebook.com/103573018971658/',
   fbMessage: 'https://m.me/103573018971658/',
-  caseName: '伴月灣',
+  caseName: '龍瑩建設 小宅大作',
   indigatorLength: 10,
-  caseId: 'wv',
+  caseId: 'lyn',
 
   houseInfos: [
     ['投資興建', '中德建設股份有限公司'],

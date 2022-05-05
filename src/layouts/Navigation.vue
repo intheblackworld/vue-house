@@ -265,7 +265,7 @@ export default {
       //  font-size: 24px !important;
       }
     }
-    h1.title{font-family: "Noto Serif TC";}
+    h1.title{font-family: "Noto Sans TC";}
 
     .subTitle {
       color: $nav_link_subtitle_color;

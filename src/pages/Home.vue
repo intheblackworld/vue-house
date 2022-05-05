@@ -82,7 +82,7 @@ import Loading from '@/components/Loading.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/wv/Section1.vue'
+import Section1 from '@/projects/lyn/Section1.vue'
 
 export default {
   name: 'home',

@@ -1230,7 +1230,7 @@ select::-ms-expand {
 html,
 body {
   height: 100%;
-  font-family: 'Noto Serif JP', '微軟正黑體', serif;
+  //font-family: 'Noto Serif JP', '微軟正黑體', serif;
   font-style: normal;
 }
 html.stop-scroll,
@@ -3725,7 +3725,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 1005;
-  font-family: 'Noto Serif JP', '微軟正黑體', serif;
+  //font-family: 'Noto Serif JP', '微軟正黑體', serif;
 }
 .modal_inner {
   position: relative;
