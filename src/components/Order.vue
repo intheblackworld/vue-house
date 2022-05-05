@@ -1,82 +1,39 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
-    <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
     <div class="order-top">
-      <!-- <div class="title-block">
-        <h3 class="title">{{order.title}}</h3>
-        <div class="subtitle">{{order.subTitle}}</div>
-      </div> -->
       <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
       <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
-      <div class="order">
+      <div class="order" data-aos="fade-down" data-aos-delay="0">
         <div class="form">
-          <div class="group form_input" data-aos="fade-down" data-aos-delay="0">
-            <div class="row" data-aos="fade-down" data-aos-delay="100">
-              <label for="order-name">姓名<span>*</span></label>
-              <el-input v-model="form.name" name="order-name" id="order-name" placeholder></el-input>
+          <div class="group form_input">
+            <div class="row">
+              <label>姓名<span>*</span></label>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label for="order-phone">手機<span>*</span></label>
-              <el-input v-model="form.phone" name="order-phone" id="order-phone" placeholder></el-input>
+            <div class="row">
+              <label>手機<span>*</span></label>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <!-- <div class="row" data-aos="fade-down"
-        data-aos-delay="300">
-              <label>聯絡時間(起)</label>
-              <el-time-select
-                v-model="form.time_start"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div>
-            <div class="row" data-aos="fade-down"
-        data-aos-delay="400">
-              <label>聯絡時間(迄)</label>
-              <el-time-select
-                v-model="form.time_end"
-                :editable="false"
-                :picker-options="{
-                  start: '10:00',
-                  step: '01:00',
-                  end: '18:00',
-                }"
-              ></el-time-select>
-            </div> -->
-            <!-- <div class="row" data-aos="fade-down" data-aos-delay="200">
-              <label for="order-house">需求坪數<span>*</span></label>
-              <el-select v-model="form.house" name="order-house" id="order-house" placeholder>
-                <el-option v-for="city in ['22坪', '30坪', '42坪', '53坪']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
-              </el-select>
-            </div> -->
-            <!-- <div class="row">
-              <label>E-mail</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
-            <div class="row" data-aos="fade-down" data-aos-delay="300">
-              <label for="order-city">居住城市</label>
-              <el-select v-model="form.city" name="order-city" id="order-city" placeholder>
+            <div class="row">
+              <label>居住城市</label>
+              <el-select v-model="form.city" placeholder>
                 <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
-            <div class="row" data-aos="fade-down" data-aos-delay="400">
-              <label for="order-area">居住地區</label>
-              <el-select v-model="form.area" name="order-area" id="order-area" placeholder>
+            <div class="row">
+              <label>居住地區</label>
+              <el-select v-model="form.area" placeholder>
                 <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
-          <div class="group" data-aos="fade-down" data-aos-delay="600">
+          <div class="group">
             <div class="row">
               <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
-        <div class="control" data-aos="fade-down" data-aos-delay="500">
+        <div class="control">
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
@@ -85,7 +42,7 @@
             </h3>
           </el-checkbox>
         </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile" data-aos="fade-down" data-aos-delay="600">
+        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
@@ -238,6 +195,19 @@ export default {
         }
       })
     },
+      
+      gtag_report_conversion_order(url){
+          var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
+          gtag('event', 'conversion', {
+              'send_to': 'AW-373671502/VxsoCO2h6JwCEM6Ml7IB',
+              'event_callback': callback
+          });
+          return false;     
+      }
   },
 }
 </script>
@@ -318,6 +288,7 @@ export default {
   .order-subtitle {
     width: 100vw;
     font-size: 20px;
+    line-height: 1.4;
     text-align: center;
     color: $order_subtitle_color;
     margin-bottom: 20px;
@@ -458,6 +429,9 @@ export default {
       // display: none;
       font-weight: bold;
       font-size: 14px;
+      width: 86%;
+      margin-left: auto;
+      margin-right: auto;
     }
     .order {
       width: 84%;

@@ -9,7 +9,7 @@
       <font-awesome-icon icon="pen" />
       <div class="label">預約賞屋</div>
     </a>
-    <a class="nav-item" @click="trackFb" :href="info.fbLink" target="_blank">
+    <a class="nav-item" :href="info.fbLink" target="_blank">
       <font-awesome-icon :icon="['fab', 'facebook-f']" />
       <div class="label">粉絲專頁</div>
     </a>
@@ -20,14 +20,14 @@
     <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
-    <el-dialog
+    <!-- <el-dialog
       title
       :visible.sync="isShowMessengerDialog"
       width="90%"
       :modal-append-to-body="false"
     >
       <MessengerDialog :messenger="info.fbMessage" />
-    </el-dialog>
+    </el-dialog>  -->
     <el-dialog title :visible.sync="isShowMapDialog" width="90%" :modal-append-to-body="false">
       <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
@@ -37,7 +37,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import CallDialog from '@/components/Dialog/Call'
-import MessengerDialog from '@/components/Dialog/Messenger'
+// import MessengerDialog from '@/components/Dialog/Messenger'
 import MapDialog from '@/components/Dialog/Map'
 import info from '@/info'
 
@@ -45,7 +45,7 @@ export default {
   name: 'mobileNav',
   components: {
     CallDialog,
-    MessengerDialog,
+   // MessengerDialog,
     MapDialog,
   },
   data() {
@@ -56,7 +56,7 @@ export default {
       isTablet,
       isBottom: false,
       isShowCallDialog: false,
-      isShowMessengerDialog: false,
+  //    isShowMessengerDialog: false,
       isShowMapDialog: false,
     }
   },
@@ -77,9 +77,9 @@ export default {
     showCallDialog() {
       this.isShowCallDialog = true
     },
-    showMessengerDialog() {
-      this.isShowMessengerDialog = true
-    },
+ //   showMessengerDialog() {
+ //     this.isShowMessengerDialog = true
+ //   },
 
     showMapDialog() {
       this.isShowMapDialog = true

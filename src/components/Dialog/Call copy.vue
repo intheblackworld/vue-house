@@ -38,23 +38,28 @@ export default {
         },
         ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
       )
-      this.gtag_report_conversion_call('https://oh.h35.tw')
+      window.gtag_report_conversion_call('https://oh.h35.tw')
       setTimeout(() => {
         window.location.href = 'phoneThanks'
       }, 1000)
     },
-    gtag_report_conversion_call(url){
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-373671502/Nv24CPueyZwCEM6Ml7IB',
-            'event_callback': callback
-        });
-        return false;      
-    }
   },
+}
+</script>
+<!-- Event snippet for 撥打電話 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
+ -->
+<script>
+function gtag_report_conversion_call(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-373671502/Nv24CPueyZwCEM6Ml7IB',
+      'event_callback': callback
+  });
+  return false;
 }
 </script>
