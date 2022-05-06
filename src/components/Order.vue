@@ -288,6 +288,7 @@ export default {
     position: relative;
     padding: 5vw 0 0 0;
    // padding-bottom: 700px;
+   z-index: 3;
   }
   .order-title {
     font-family: $family1;

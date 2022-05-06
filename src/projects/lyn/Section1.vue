@@ -1,6 +1,6 @@
 <template>
   <article class="section1">
-<!-- --> <img class="a1" src="./s1/pc.jpg" alt=""> 
+<!-- <img class="a1" src="./s1/pc.jpg" alt="">  -->
 <div class="txt">
 <h2 class="logo" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
     <img src="./s1/o1.png" alt="logo背景"><img src="./s1/o2.png" alt="logo背景">
@@ -36,15 +36,6 @@
   max-height: size(1080);
   position: relative;
   //z-index: 3;
-  &::after{
-    content: "";
-    position: absolute;
-    bottom:calc((100% - 56vw) * .5);
-    left: 0;
-    width: 100%;
-    height:11vw;
-background: linear-gradient(to bottom, #312A3D00 0%,#312A3DFF 98%);
-  }
 }
 /*
 @keyframes op {
@@ -104,10 +95,6 @@ margin: auto;
     min-height: sizem(604);
     max-height: sizem(750);
     height:100vh;
-  &::after{
-    bottom:0;
-    height:15vw;
-  }
   }
 .logo{
   font-size:sizem(67);

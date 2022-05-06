@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <div class="logobg1"></div>
+   <!--   <div class="logobg1"></div>
       <div class="logobg2">
       <img src="@/projects/lyn/s1/logobg1.png" :alt="`${info.caseName}_面水岸`" />
       <img src="@/projects/lyn/s1/logobg2.png" :alt="`${info.caseName}_近捷運`" />
@@ -10,9 +10,9 @@
       <img src="@/projects/lyn/s1/logobg2.png" :alt="`${info.caseName}_888萬起`" />
       <img src="@/projects/lyn/s1/logobg3.png" :alt="`${info.caseName}_快樂王國`" />
       </div>
-
+-->
       <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
-      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
+      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="zoom-in" data-aos-delay="100">
           <span class="flex-c">

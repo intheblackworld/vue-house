@@ -1,6 +1,8 @@
 <template>
   <div class="home no-padding-top" ><h1>伴月灣</h1>
+
     <div class="bg-img">
+    </div>
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />
       <Navigation v-if="!isMobile" /> -->
@@ -21,31 +23,9 @@
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
-      <vue-lazy-component class="section relative" id="section4" >
-        <Section4 :viewIndex="viewIndex" />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section5">
-        <Section5 :viewIndex="viewIndex" />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section6">
-        <Section6 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section10">
-        <Section10 :viewIndex="viewIndex" />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section7">
-          <Section7 /> 
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section8">
-         <Section8 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section9">
-        <Section9 :viewIndex="viewIndex" />
-      </vue-lazy-component> -->
-      <!-- <vue-lazy-component class="section" id="contact"> -->
+       -->
       <ContactSection />
       <!-- </vue-lazy-component> -->
-    </div>
     <MobileNav />
   </div>
 </template>
