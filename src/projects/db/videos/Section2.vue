@@ -377,6 +377,14 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:1,
+          title: '【伴月灣】 『公園水岸雙首排 最強水岸休憩宅』',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/YqpsA2Sa2vE',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:1,
           title: '【太陽帝國】 『仰望雙和的新高度』',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
