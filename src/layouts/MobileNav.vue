@@ -7,7 +7,7 @@
 
     <a class="nav-item" v-scroll-to="{ element: `#contact`, offset: offset }">
       <font-awesome-icon icon="pen" />
-      <div class="label">預約賞屋</div>
+      <div class="label">立即預約</div>
     </a>
     <a class="nav-item" @click="showMessengerDialog">
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
@@ -94,11 +94,11 @@ export default {
 .mobile-nav {
   display: flex;
   position: fixed;
-  top: 8em;
+  bottom: 2em;
   right: 0;
   z-index: 100;
   transition: all .5s;
-  font-size:1.1vw;
+  font-size:1.8vw;
   flex-direction:column;
    // opacity: 0.5;
   .nav-item {
@@ -115,12 +115,16 @@ export default {
     height: 4em;
     padding: 0em .8em;
     border-radius: 50%;
-    margin: .5em;
+    margin: .3em;
     transition: all 0.3s;
     &:nth-child(1) {
+  background-image:url("~@/projects/lyn/s1/o1.png");background-size: contain;
+    line-height: 1.2;
       order:2;
     }
     &:nth-child(2) {
+  background-image:url("~@/projects/lyn/s1/o1.png");background-size: contain;
+    line-height: 1.2;
       order:1;
     }
     &:nth-child(3) {
@@ -167,9 +171,11 @@ export default {
     border-radius: 0%;
     margin:0;
     &:nth-child(1) {
+      background-image:none;
       order:1;
     }
     &:nth-child(2) {
+      background-image:none;
       order:2;
     }
     &:nth-child(3) {

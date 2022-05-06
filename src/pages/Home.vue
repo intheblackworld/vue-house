@@ -14,9 +14,10 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
-      <!-- <vue-lazy-component class="section" id="section2" style="">
+      <vue-lazy-component class="section" id="section2" style="">
          <Section2 />
       </vue-lazy-component>
+      <!-- 
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -83,6 +84,7 @@ import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/lyn/Section1.vue'
+import Section2 from '@/projects/lyn/Section2.vue'
 
 export default {
   name: 'home',
@@ -96,7 +98,7 @@ export default {
     MobileNav,
     UIkit,
     Section1,
-    // Section2,
+    Section2,
     // Section3,
     // Section4,
     // Section5,

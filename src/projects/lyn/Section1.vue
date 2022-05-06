@@ -1,15 +1,15 @@
 <template>
   <article class="section1">
-<img class="a1" src="./s1/pc.jpg" alt="">
+<!-- <img class="a1" src="./s1/mo.jpg" alt="">  -->
 <div class="txt">
-<h2 class="logo">
-  <span class="logobg">
+<h2 class="logo" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
     <img src="./s1/o1.png" alt="logo背景"><img src="./s1/o2.png" alt="logo背景">
-  </span>
-  <span class="logotxt">
+  <span class="logotxt" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
     龍瑩建設<br>小宅大作
   </span>
 </h2>
+<h3 class="t1" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">我想搶先賞屋</h3>
+<p class="t2" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">預約成功享有「成家福袋」抽獎資格</p>
 </div>
 <!-- <img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
 <img class="bg" src="./s1/bgm.jpg" loading="lazy" :alt="`${info.caseName}_bg`" v-if="isMobile">
@@ -46,76 +46,52 @@
 background: linear-gradient(to bottom, #312A3D00 0%,#312A3DFF 98%);
   }
 }
-h1{opacity: 0;}
-.a1{
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-opacity: .5;
-}
-.bg{
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-.moon{
-  @include img_c_pc(423, 460);
-  top: calc(50% + (460 - 540) * 100vw / 1920);
-}
-.bg-img{
-position: absolute;
-top: 50%;
-left:50%;
-transform: translate(-50%,-50%);
-width: 100%;
-height: auto;
-}
-.logobg2{position: absolute;top: 0;left:0;width:100%;opacity:0.6;
-font-size: 20vw;
-img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 1;
-&:nth-child(1){top: 0.19em;left:0.06em;animation-delay: .6s;width:1.93em;}
-&:nth-child(2){top: 0.06em;left:0.15em;animation-delay: .0s;width:1.75em;}
-&:nth-child(3){top: 0.3em;left:0em;animation-delay: 1.2s;width:1.94em;}
-&:nth-child(4){top: 0.29em;right:0em;animation-delay: .0s;width:1.93em;}
-&:nth-child(5){top: 0.16em;right:0.1em;animation-delay: .8s;width:1.75em;}
-&:nth-child(6){top: 0.1em;right:0.06em;animation-delay: 1.5s;width:1.94em;}
-&:nth-child(7){top: 0em;left:1.56em;animation-delay: 1s;width:1.93em;}
-&:nth-child(8){top: 0.3em;left:1.25em;animation-delay: 1.6s;width:1.75em;}
-&:nth-child(9){top: -0.15em;left:0.5em;animation-delay: .1s;width:1.94em;}
-&:nth-child(10){top: 0.19em;right:1em;animation-delay: 1.4s;width:1.93em;}
-&:nth-child(11){top: 0.26em;right:1.1em;animation-delay: .3s;width:1.75em;}
-&:nth-child(12){top: -0.1em;right:.56em;animation-delay: 2s;width:1.94em;}
-}
-}
+/*
 @keyframes op {
     50% {opacity: 1;}
     100% {opacity: 0;}
 }
+*/
 .logo{
-  @include img_l_pc(404, 195, 449);
-  top: calc(50% + (195 - 540) * 100vw / 1920);
   font-weight: 900;
-  font-size:36px;
+  font-size:size(145);
   color: #fff;
+  img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: .5;
+    width:size(511);
+    &:nth-child(1){
+      left: 0;
+    }
+  }
+  .logotxt{position: relative;z-index: 1;display: block;
+  padding: .69em 0 1.3em;
+  line-height: 1.03;
+  letter-spacing: -0.05em
+  }
 }
 .txt{
-  @include img_l_pc(900, 250, 776);
-  top: calc(50% + (250 - 540) * 100vw / 1920);
-  font-size:size(37);
-  line-height: 1.3;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color:#CC9856;}
-.t1{color:#fff;
-  letter-spacing: -0.035em;
-font-size: 1.8em;}
+  @include img_c_pc(900, 150);
+ // top: calc(50% + (250 - 540) * 100vw / 1920);
+  font-size:size(33);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color:#FFF;}
+.t1{
+
+font-size: 1.8em;
+background: #e51373;
+border-radius: .9em;
+font-weight: 800;
+width:61%;
+margin: auto;
+}
 
 .t2{
-  span{position: absolute;top: 2.1em;left:0;width: 100%;font-size: .6em;letter-spacing: 0.1em;padding: 0 0 0 1em;}
+  font-weight:500;
+ padding: .5em 0 0;
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -125,41 +101,21 @@ font-size: 1.8em;}
 @media screen and (max-width: 767px) {
   .section1 {
     width: 100%;
-    min-height: sizem(667);
-    max-height: sizem(780);
+    min-height: sizem(604);
+    max-height: sizem(750);
     height:100vh;
   &::after{
     bottom:0;
     height:15vw;
   }
   }
-.moon{
-  @include img_c_m(183, 392);
-  width: auto;
-  height: calc(100% * 183 / 667) ;
-  top: calc(50% + (392 - 667 * .5) * 100vw / 375);
-}
-.logobg2{
-font-size:53vw;
-img{
-&:nth-child(1){top: 0em;left:0.06em;}
-&:nth-child(2){top: 0.1em;left:0.3em;}
-&:nth-child(3){top: 0.35em;left:0.5em;}
-&:nth-child(4){top: 0.5em;right:0.0em;}
-&:nth-child(5){top: -0.1em;right:0.1em;}
-&:nth-child(6){top: 0.7em;right:1.06em;}
-&:nth-child(7){top: 0.8em;left:0.8em;}
-&:nth-child(8){top: 0.9em;left:0.15em;}
-&:nth-child(9){top: 1em;left:0.5em;}
-&:nth-child(10){top: 1.3em;right:0.6em;}
-&:nth-child(11){top: 1.15em;right:0.1em;}
-&:nth-child(12){top: 1.3em;right:-0.5em;}
-
-  }
-  }
 .logo{
-  @include img_l_m(199, 81, 50);
-  top: calc(25% + (81 - 667 * .25) * 100vw / 375);
+  font-size:sizem(67);
+  img{
+    width:sizem(199);}
+  .logotxt{
+    padding: .4em 0 1.4em;
+  }
 }
 .bg-img{
 width:auto;
@@ -167,10 +123,15 @@ height:100%;;
 }
 
 .txt{
-  width: 100%;
+  width: 94%;
   left: 0;
-  font-size:sizem(17);
-  top: calc(25% + (310 -  667 * .25) * 100vw / 375);
+  font-size:sizem(18);
+  top: calc(25% + (155 -  604 * .25) * 100vw / 375);
+  top: sizem(155);
+}
+.t1{
+font-size: 2.1em;
+width:100%;
 }
 
 }
