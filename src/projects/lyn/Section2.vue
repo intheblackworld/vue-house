@@ -16,11 +16,14 @@
   height: size(900);
   background-size: 100%;
   background-position: bottom;
-  background-color: #eb5c20;
-  background-image: url("~@/projects/lyn/s2/map.jpg");
-  z-index: 1;
+  //background-color: #eb5c20;
+  //background-image: url("~@/projects/lyn/s2/map.jpg");
+  // z-index: 1;
   .txt{
+  @include img_c_pc(1000, 150);
     color: #fff;
+    font-size:size(50);
+    line-height: 1.6;
   }
   .title {
   }

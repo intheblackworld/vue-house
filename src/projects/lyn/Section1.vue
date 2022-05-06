@@ -1,6 +1,6 @@
 <template>
   <article class="section1">
-<!-- <img class="a1" src="./s1/mo.jpg" alt="">  -->
+<!-- --> <img class="a1" src="./s1/pc.jpg" alt=""> 
 <div class="txt">
 <h2 class="logo" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
     <img src="./s1/o1.png" alt="logo背景"><img src="./s1/o2.png" alt="logo背景">
@@ -32,10 +32,10 @@
  // background-image: url('~@/projects/lyn/s1/bg.jpg');
   width: 100%;
   height: 100vh;
-  min-height: size(900);
-  max-height: size(1075);
+  min-height: size(1080);
+  max-height: size(1080);
   position: relative;
-  z-index: 3;
+  //z-index: 3;
   &::after{
     content: "";
     position: absolute;
