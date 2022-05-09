@@ -318,10 +318,6 @@ export default {
           img: require('./s4/1.jpg'),
           name: '3D外觀參考示意',
         },
-        {
-          img: require('./s4/2.jpg'),
-          name: '3D外觀參考示意',
-        },
       ],
     }
   },
