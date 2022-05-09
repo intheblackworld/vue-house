@@ -1,12 +1,12 @@
 <template>
   <article class="section1">
-    <div class="bg-img">
+   <div class="bg-img">
      <div>
       <img src="./s1/bg2.jpg" alt="">
       <img src="./s1/bg2.jpg" alt="">
      </div>
     </div>
-<!-- <img class="a1" src="./s1/mo.jpg" alt="">  -->
+<!--  <img class="a1" src="./s1/mo.jpg" alt="">  -->
 <div class="txt">
 <h2 class="logo">
     <img src="./s1/o1.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">

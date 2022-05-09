@@ -40,22 +40,19 @@ body {
 
 .home {
   padding-top: $nav_pc_height;
-  background:$bg;
   overflow: hidden; //試底下多的那塊哪來的
   font-family: $family1;
- /*
  &::before{content: ' ';
      position: fixed;
      z-index: -1;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-width: 100%;
+     top: -3vw;
+     right: -5%;;
+     bottom: -3vw;
+     left: -5%;filter: blur(2vw);width: 110%;
      background: center 0 ;
-     background-color: $bg;
+     background: $bg;
      background-size: cover;}
-  */
+ 
   &.no-padding-top {
     padding-top: 0;
 
