@@ -2,7 +2,7 @@
   <div class="order-bg">
     <article class="order-top">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in"></h2>
-      <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in"></div>
+      <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in" v-if="order.subTitle"></div>
       <div class="order" data-aos="zoom-in">
         <div class="form">
           <div class="group">
@@ -17,7 +17,7 @@
             <div class="row">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in ['兩房','三房','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in ['一房','兩房','三房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">
@@ -85,7 +85,7 @@
     </article>
 
     <ContactInfo />
-    <GoogleMap />
+    <GoogleMap v-if="info.address" />
     <PolicyDialog :policyVisible="policyVisible"  @hidePolicyDialog="hidePolicyDialog" />
   </div>
 </template>
@@ -279,8 +279,8 @@ export default {
   textarea,
   button {
     font-family: $family1 !important;
-    background: $order_submit_bg;
-    border:2px solid #fff !important;
+  //  background: $order_submit_bg;
+  //  border:2px solid #fff !important;
   }
   .order-top {
     background-size: cover;
@@ -403,7 +403,7 @@ export default {
     }
 
     label {
-      width: 6vw;
+      width: 6em;
       font-size: 16px;
       font-weight: 700;
       opacity: 0.8;
@@ -517,7 +517,7 @@ export default {
         margin-top: 20px;
       }
       label {
-        width: 40% !important;
+       // width: 40% !important;
         text-align: left;
       }
     }

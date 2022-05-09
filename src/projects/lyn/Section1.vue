@@ -1,15 +1,22 @@
 <template>
   <article class="section1">
-<!-- <img class="a1" src="./s1/pc.jpg" alt="">  -->
+    <div class="bg-img">
+     <div>
+      <img src="./s1/bg2.jpg" alt="">
+      <img src="./s1/bg2.jpg" alt="">
+     </div>
+    </div>
+<!-- <img class="a1" src="./s1/mo.jpg" alt="">  -->
 <div class="txt">
-<h2 class="logo" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-    <img src="./s1/o1.png" alt="logo背景"><img src="./s1/o2.png" alt="logo背景">
-  <span class="logotxt" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+<h2 class="logo">
+    <img src="./s1/o1.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
+    <img src="./s1/o2.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
+  <span class="logotxt" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
     龍瑩建設<br>小宅大作
   </span>
 </h2>
-<h3 class="t1" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">我想搶先賞屋</h3>
-<p class="t2" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">預約成功享有「成家福袋」抽獎資格</p>
+<h3 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000" v-scroll-to="{ element: `#contact`, offset: 0 }">我想搶先賞屋</h3>
+<p class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">預約成功享有「成家福袋」抽獎資格</p>
 </div>
 <!-- <img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
 <img class="bg" src="./s1/bgm.jpg" loading="lazy" :alt="`${info.caseName}_bg`" v-if="isMobile">
@@ -32,10 +39,29 @@
  // background-image: url('~@/projects/lyn/s1/bg.jpg');
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   //z-index: 3;
+}
+.bg-img{
+  position: fixed;
+  width: 100%;
+  height:auto;
+  left: 0;
+  z-index: 0;
+  animation: 5s anx infinite linear;
+  div{
+    position: relative;
+    top: -3vw;
+  left: -5%;filter: blur(2vw);
+    width: 110%;}
+  img{width: 100%;vertical-align:bottom;
+  
+  }
+}
+@keyframes anx{
+  to {transform:translateY(-50%);}
 }
 /*
 @keyframes op {
@@ -51,7 +77,6 @@
     position: absolute;
     right: 0;
     top: 0;
-    opacity: .5;
     width:size(511);
     &:nth-child(1){
       left: 0;
@@ -64,11 +89,13 @@
   }
 }
 .txt{
+  filter:drop-shadow(0 0 3vw #8d4e8d66);
   @include img_c_pc(900, 150);
- // top: calc(50% + (250 - 540) * 100vw / 1920);
+  top: calc(50% + (150 - 540) * 100vw / 1920);
   font-size:size(33);
   line-height: 1.6;
   letter-spacing: 0.01em;
+  z-index: 3;
   color:#FFF;}
 .t1{
 
@@ -78,6 +105,9 @@ border-radius: .9em;
 font-weight: 800;
 width:61%;
 margin: auto;
+    transition: all 0.3s !important;
+&:hover{
+background: #0b85cc;}
 }
 
 .t2{
@@ -95,6 +125,12 @@ margin: auto;
     min-height: sizem(604);
     max-height: sizem(750);
     height:100vh;
+}
+.bg-img{
+  
+  img{height:sizem(830);
+  
+  }
   }
 .logo{
   font-size:sizem(67);
@@ -104,17 +140,13 @@ margin: auto;
     padding: .4em 0 1.4em;
   }
 }
-.bg-img{
-width:auto;
-height:100%;;
-}
 
 .txt{
   width: 94%;
   left: 0;
   font-size:sizem(18);
-  top: calc(25% + (155 -  604 * .25) * 100vw / 375);
-  top: sizem(155);
+  top: calc(60% + (120 -  604 * .6) * 100vw / 375);
+  filter:drop-shadow(0 0 5vw #8d4e8d66);
 }
 .t1{
 font-size: 2.1em;

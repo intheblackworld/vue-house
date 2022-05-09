@@ -30,8 +30,8 @@
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c" data-aos="fade" data-aos-delay="400">{{info.address}}</div>
-        <div class="google-btn flex-c" data-aos="fade" data-aos-delay="400" @click="showMapDialog">
+        <div class="address flex-c" data-aos="fade" data-aos-delay="400" v-if="info.address">{{info.address}}</div>
+        <div class="google-btn flex-c" data-aos="fade" data-aos-delay="400" @click="showMapDialog" v-if="info.address">
           <span class="flex-c">
             <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
           </span>
@@ -44,7 +44,7 @@
     <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
-    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false" >
       <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
   </div>

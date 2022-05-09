@@ -1,26 +1,21 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市五股區成泰路三段與號成洲三路交叉口',
+  // address: '接待中心：新北市中和區中山路二段188號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3613.08227849187!2d121.4486358!3d25.099076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7725924cb26159c7!2z5Ly05pyI54Gj5o6l5b6F5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1649991326565!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/rsKwrucejj3CxXVL9',
-  phone: '02-8292-2333',
-  fbLink: 'https://www.facebook.com/103573018971658/',
-  fbMessage: 'https://m.me/103573018971658/',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7231.84066810762!2d121.49593763297504!3d25.002822845693267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d718dc2237%3A0x93e2b67e5c619f45!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A5Lit5bGx6Lev5LqM5q61MTg46Jmf!5e0!3m2!1szh-TW!2stw!4v1652065777033!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/SprXYXV3wbXBCqQ89',
+  phone: '02-2240-9666',
+  fbLink: 'https://www.facebook.com/105009848868082/',
+  fbMessage: 'https://m.me/105009848868082/',
   caseName: '龍瑩建設 小宅大作',
   indigatorLength: 10,
   caseId: 'lyn',
 
   houseInfos: [
-    ['投資興建', '中德建設股份有限公司'],
-    ['建照號碼', '109股建字第0439號'],
-    ['營造工程', '紹華營造'],
-    ['公設設計', '博笙設計-王秀玉'],
-    ['建築規劃', '陳朝雄建築師事務所-陳朝雄'],
-    ['園藝設計', '大漢設計工程有限公司-徐世萃'],
-    ['結構安全', '永安結構技師事務所-吳志強'],
-    ['房型規劃', '2-3房'],
-    ['企劃行銷', '得邦廣告股份有限公司'],
+    ['投資興建', '龍瑩建設事業股份有限公司'],
+    ['規劃坪數', '16-50坪'],
+    ['基地面績', '約239.71坪'],
+    ['房型規劃', '1~3房'],
    // ['相關連結', "<a href='https://wl.debang.tw/'>快樂王國</a>"],
   ],
   gtmCode: ['M6WWMTH'], // 可放置多個
@@ -29,6 +24,6 @@ export default {
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
     title: '預約賞屋',
-    subTitle: '若想了解更多資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
+   // subTitle: '若想了解更多資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！'
   }
 }

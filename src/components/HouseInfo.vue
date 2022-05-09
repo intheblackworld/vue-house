@@ -1,9 +1,9 @@
 <template>
   <article class="house-info" id="house-info">
     <div class="content">
-      <h3 class="title" data-aos="fade-down" data-aos-delay="0">建案資訊</h3>
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="0">建案資訊</h3>
       <section class="info">
-        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="fade-right" :data-aos-delay="100 + index * 100" data-aos-offset="-300">
+        <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="zoom-in" :data-aos-delay="100 + index * 100" data-aos-offset="-300">
           <h3 class="label">{{infos[0]}}</h3>
           <p class="desc" v-html="infos[1]"></p>
         </div>
@@ -59,7 +59,7 @@ export default {
 
 .title {
   font-size:2em;
-  margin:1.5em 0;
+  margin:1.5em 0 1em 0;
   font-weight: 700;
   color: $house_title_color;
   font-family: $family1;
@@ -69,26 +69,28 @@ export default {
 .info {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom:3em;
 }
 
 .item {
   font-size:1em;
-  margin-bottom:2em;
+  margin-bottom:1em;
   margin-right: 10em;
   width: 270px;
   //height: 30px;
   line-height: 1.4;
  // border-left: 4px solid $house_border_color;
-  padding-left:.5em;
+  padding-left:.8em;
   display: flex;
   align-items: center;justify-content:flex-start;
   white-space: nowrap;position: relative;
  
   &::before{content: "";
    // content:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' %3E%3Cpath fill='%2389D0F3' d='M0,15c8.3,0,15-6.7,15-15H0V15z'/%3E%3Cpath fill='%23D0EEFC' d='M30,15c-8.3,0-15,6.7-15,15h15V15z'/%3E%3Cpath fill='%2300A3DE' d='M30,15V0H15C15,8.3,21.7,15,30,15z'/%3E%3Cpath fill='%239BD59D' d='M0.2,15c-0.1,0-0.1,0-0.2,0v15h15c0-0.1,0-0.1,0-0.2C15,21.6,8.4,15,0.2,15z'/%3E%3C/svg%3E%0A");
-    width:  .2em;height: 1.2em;
+    width:  .5em;height: .5em;
+    border-radius: 50%;
   background:$house_border_color;
-  margin: .2em 0.8em 0 0;position: absolute;top:0;left: 0;}
+  margin: .45em 0.8em 0 0;position: absolute;top:0;left: 0;}
    /* */
   &:nth-of-type(even) {
     margin-right: 0;
@@ -121,10 +123,10 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .content {
-    min-height: 25em;
+    min-height:15em;
     width: 100%;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: calc(100vw * 16 / 375);
     padding-bottom: 50px;
   }
 
