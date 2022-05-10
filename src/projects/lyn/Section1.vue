@@ -9,8 +9,8 @@
 <!--  <img class="a1" src="./s1/mo.jpg" alt="">  -->
 <div class="txt">
 <h2 class="logo">
-    <img src="./s1/o1.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
     <img src="./s1/o2.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
+    <img src="./s1/o1.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
   <span class="logotxt" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
     龍瑩建設<br>小宅大作
   </span>
@@ -78,7 +78,7 @@
     right: 0;
     top: 0;
     width:size(511);
-    &:nth-child(1){
+    &:nth-child(2){
       left: 0;
     }
   }
