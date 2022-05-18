@@ -9,7 +9,7 @@ export default {
   fbMessage: 'https://m.me/105009848868082/',
   caseName: '龍瑩建設 小宅大作',
   indigatorLength: 10,
-  caseId: 'lyn',
+  caseId: 'hbl',
 
   houseInfos: [
     ['投資興建', '龍瑩建設事業股份有限公司'],

@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top" ><h1>伴月灣</h1>
+  <div class="home no-padding-top" ><h1>紅布朗花園</h1>
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />
       <Navigation v-if="!isMobile" /> -->
@@ -13,10 +13,10 @@
       <vue-lazy-component class="section relative" id="section1" @init="init">
         <Section1 />
       </vue-lazy-component>
+      <!-- 
       <vue-lazy-component class="section" id="section2" style="">
          <Section2 />
       </vue-lazy-component>
-      <!-- 
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -60,8 +60,8 @@ import Loading from '@/components/Loading.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/lyn/Section1.vue'
-import Section2 from '@/projects/lyn/Section2.vue'
+import Section1 from '@/projects/hbl/Section1.vue'
+// import Section2 from '@/projects/hbl/Section2.vue'
 
 export default {
   name: 'home',
@@ -75,7 +75,7 @@ export default {
     MobileNav,
     UIkit,
     Section1,
-    Section2,
+    // Section2,
     // Section3,
     // Section4,
     // Section5,
