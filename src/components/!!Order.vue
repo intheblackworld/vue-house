@@ -1,9 +1,5 @@
 <template>
   <div class="order-bg">
-    <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
-    <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-    <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
-
     <div class="order-top">
       <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
       <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
@@ -18,32 +14,16 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <!-- <div class="row">
-              <label>E-mail</label>
-              <el-input v-model="form.email" placeholder></el-input>
-            </div> -->
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value" no-data-text="無數據"></el-option>
               </el-select>
             </div>
             <div class="row">
               <label>居住地區</label>
               <el-select v-model="form.area" placeholder>
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value" no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
@@ -57,37 +37,21 @@
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
-              <span @click="showPolicyDialog" class="deco1">「個資告知事項聲明」</span>
+              <span @click="showPolicyDialog">「個資告知事項聲明」</span>
               內容
             </h3>
           </el-checkbox>
         </div>
         <div style="margin: 0 auto;z-index:2;" v-if="!isMobile">
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true" :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-          >立即預約</el-button
-        >
+        <el-button class="form-submit flex-c" type="primary" :disabled="!checked || !isVerify" @click="submit" :loading="isSubmit">立即預約</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
-
     <ContactInfo />
     <GoogleMap />
     <PolicyDialog :policyVisible="policyVisible" />
@@ -95,8 +59,8 @@
 </template>
 
 <script>
-import GoogleMap from '@/components/GoogleMap.vue'
 import ContactInfo from '@/components/ContactInfo.vue'
+import GoogleMap from '@/components/GoogleMap.vue'
 import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
@@ -107,11 +71,11 @@ import VueRecaptcha from 'vue-recaptcha'
 export default {
   name: 'order',
   components: {
-    GoogleMap,
     ContactInfo,
+    GoogleMap,
     PolicyDialog,
     Loading,
-    VueRecaptcha
+    VueRecaptcha,
   },
 
   data() {
@@ -126,23 +90,22 @@ export default {
         email: '',
         city: '',
         area: '',
-        room_type: '',
         msg: '',
         time_start: '',
-        time_end: ''
+        time_end: '',
       },
       checked: false,
       isSubmit: false,
       isVerify: false, // google 機器人驗證
       policyVisible: false,
-      showValidateDialog: false
+      showValidateDialog: false,
     }
   },
 
   computed: {
     areaList() {
       return renderAreaList(this.form.city)
-    }
+    },
   },
 
   methods: {
@@ -154,16 +117,8 @@ export default {
       const h = this.$createElement
       this.$notify({
         title: '請填寫必填欄位',
-        message: h('i', { style: 'color: #82191d' }, '「姓名、手機」是必填欄位')
+        message: h('i', { style: 'color: #82191d' }, '「姓名、手機」'),
       })
-    },
-
-    alertPhoneValidate() {
-      const h = this.$createElement;
-      this.$notify({
-        title: "格式錯誤",
-        message: h("i", { style: "color: #82191d" }, "「手機」需為 10 碼數字"),
-      });
     },
 
     submit() {
@@ -180,16 +135,11 @@ export default {
         // ||
         // !this.form.email ||
         // !this.form.city ||
-        // !this.form.area
+        // !this.form.house
       ) {
         this.alertValidate()
         this.isSubmit = false
         return
-      }
-      if (this.form.phone.length != 10) {
-        this.alertPhoneValidate();
-        this.isSubmit = false;
-        return;
       }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
@@ -201,11 +151,11 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append('room_type', this.form.room_type)
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
+      formData.append('house', this.form.house)
       formData.append('utm_source', utmSource)
       formData.append('utm_medium', utmMedium)
       formData.append('utm_content', utmContent)
@@ -219,23 +169,46 @@ export default {
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
       fetch(
-        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&room_type=${this.form.room_type}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
-          method: 'GET'
-        }
+          method: 'GET',
+        },
       )
+
+      window._lt(
+        'send',
+        'cv',
+        {
+          type: 'Conversion',
+        },
+        ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
+      )
+      window.gtag_report_conversion_order('https://oh.h35.tw/')
       fetch('contact-form.php', {
         method: 'POST',
-        body: formData
-      }).then(response => {
+        body: formData,
+      }).then((response) => {
         this.isSubmit = false
         if (response.status === 200) {
           window.location.href = 'formThanks'
         }
       })
-    }
-  }
+    },
+      
+      gtag_report_conversion_order(url){
+          var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
+          gtag('event', 'conversion', {
+              'send_to': 'AW-373671502/VxsoCO2h6JwCEM6Ml7IB',
+              'event_callback': callback
+          });
+          return false;     
+      }
+  },
 }
 </script>
 
