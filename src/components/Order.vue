@@ -5,8 +5,18 @@
     <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
 
     <div class="order-top">
-      <h3 class="order-title" v-html="order.title" data-aos="fade-down" data-aos-delay="0"></h3>
-      <div class="order-subtitle" data-aos="fade-down" data-aos-delay="100" v-html="order.subTitle"></div>
+      <h3
+        class="order-title"
+        v-html="order.title"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      ></h3>
+      <div
+        class="order-subtitle"
+        data-aos="fade-down"
+        data-aos-delay="100"
+        v-html="order.subTitle"
+      ></div>
       <div class="order" data-aos="fade-down" data-aos-delay="0">
         <div class="form">
           <div class="group form_input">
@@ -49,7 +59,12 @@
           </div>
           <div class="group">
             <div class="row">
-              <el-input type="textarea" :rows="2" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
+              <el-input
+                type="textarea"
+                :rows="2"
+                placeholder="請輸入您的留言 (選填)"
+                v-model="form.msg"
+              ></el-input>
             </div>
           </div>
         </div>
@@ -57,19 +72,21 @@
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
-              <span @click="showPolicyDialog" class="deco1">「個資告知事項聲明」</span>
+              <span @click="showPolicyDialog" class="deco1"
+                >「個資告知事項聲明」</span
+              >
               內容
             </h3>
           </el-checkbox>
         </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="!isMobile">
+        <div style="margin: 0 auto; z-index: 2" v-if="!isMobile">
           <vue-recaptcha
             :sitekey="info.recaptcha_site_key_v2"
             @verify="isVerify = true"
             :loadRecaptchaScript="true"
           ></vue-recaptcha>
         </div>
-        <div style="margin: 0 auto;z-index:2;" v-if="isMobile">
+        <div style="margin: 0 auto; z-index: 2" v-if="isMobile">
           <vue-recaptcha
             :sitekey="info.recaptcha_site_key_v2"
             @verify="isVerify = true"
@@ -95,23 +112,23 @@
 </template>
 
 <script>
-import GoogleMap from '@/components/GoogleMap.vue'
-import ContactInfo from '@/components/ContactInfo.vue'
-import PolicyDialog from '@/components/PolicyDialog.vue'
-import info from '@/info'
-import { cityList, renderAreaList } from '@/info/address'
-import { isMobile } from '@/utils'
-import Loading from '@/components/Loading.vue'
-import VueRecaptcha from 'vue-recaptcha'
+import GoogleMap from "@/components/GoogleMap.vue";
+import ContactInfo from "@/components/ContactInfo.vue";
+import PolicyDialog from "@/components/PolicyDialog.vue";
+import info from "@/info";
+import { cityList, renderAreaList } from "@/info/address";
+import { isMobile } from "@/utils";
+import Loading from "@/components/Loading.vue";
+import VueRecaptcha from "vue-recaptcha";
 
 export default {
-  name: 'order',
+  name: "order",
   components: {
     GoogleMap,
     ContactInfo,
     PolicyDialog,
     Loading,
-    VueRecaptcha
+    VueRecaptcha,
   },
 
   data() {
@@ -121,41 +138,45 @@ export default {
       order: info.order,
       isMobile,
       form: {
-        name: '',
-        phone: '',
-        email: '',
-        city: '',
-        area: '',
-        room_type: '',
-        msg: '',
-        time_start: '',
-        time_end: ''
+        name: "",
+        phone: "",
+        email: "",
+        city: "",
+        area: "",
+        room_type: "",
+        msg: "",
+        time_start: "",
+        time_end: "",
       },
       checked: false,
       isSubmit: false,
       isVerify: false, // google 機器人驗證
       policyVisible: false,
-      showValidateDialog: false
-    }
+      showValidateDialog: false,
+    };
   },
 
   computed: {
     areaList() {
-      return renderAreaList(this.form.city)
-    }
+      return renderAreaList(this.form.city);
+    },
   },
 
   methods: {
     showPolicyDialog() {
-      this.policyVisible = true
+      this.policyVisible = true;
     },
 
     alertValidate() {
-      const h = this.$createElement
+      const h = this.$createElement;
       this.$notify({
-        title: '請填寫必填欄位',
-        message: h('i', { style: 'color: #82191d' }, '「姓名、手機」是必填欄位')
-      })
+        title: "請填寫必填欄位",
+        message: h(
+          "i",
+          { style: "color: #82191d" },
+          "「姓名、手機」是必填欄位"
+        ),
+      });
     },
 
     alertPhoneValidate() {
@@ -167,10 +188,10 @@ export default {
     },
 
     submit() {
-      if (this.isSubmit) return
-      if (!this.isVerify) return
-      if (!this.checked) return
-      this.isSubmit = true
+      if (this.isSubmit) return;
+      if (!this.isVerify) return;
+      if (!this.checked) return;
+      this.isSubmit = true;
       if (
         !this.form.name ||
         !this.form.phone
@@ -182,66 +203,76 @@ export default {
         // !this.form.city ||
         // !this.form.area
       ) {
-        this.alertValidate()
-        this.isSubmit = false
-        return
+        this.alertValidate();
+        this.isSubmit = false;
+        return;
       }
       if (this.form.phone.length != 10) {
         this.alertPhoneValidate();
         this.isSubmit = false;
         return;
       }
-      const urlParams = new URLSearchParams(window.location.search)
-      const utmSource = urlParams.get('utm_source')
-      const utmMedium = urlParams.get('utm_medium')
-      const utmContent = urlParams.get('utm_content')
-      const utmCampaign = urlParams.get('utm_campaign')
-      const formData = new FormData()
-      formData.append('name', this.form.name)
-      formData.append('phone', this.form.phone)
-      formData.append('email', this.form.email)
-      formData.append('msg', this.form.msg)
-      formData.append('room_type', this.form.room_type)
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get("utm_source");
+      const utmMedium = urlParams.get("utm_medium");
+      const utmContent = urlParams.get("utm_content");
+      const utmCampaign = urlParams.get("utm_campaign");
+      const formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("msg", this.form.msg);
+      formData.append("room_type", this.form.room_type);
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
-      formData.append('city', this.form.city)
-      formData.append('area', this.form.area)
-      formData.append('utm_source', utmSource)
-      formData.append('utm_medium', utmMedium)
-      formData.append('utm_content', utmContent)
-      formData.append('utm_campaign', utmCampaign)
-      const time = new Date()
-      const year = time.getFullYear()
-      const month = time.getMonth() + 1
-      const day = time.getDate()
-      const hour = time.getHours()
-      const min = time.getMinutes()
-      const sec = time.getSeconds()
-      const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
+      formData.append("city", this.form.city);
+      formData.append("area", this.form.area);
+      formData.append("utm_source", utmSource);
+      formData.append("utm_medium", utmMedium);
+      formData.append("utm_content", utmContent);
+      formData.append("utm_campaign", utmCampaign);
+      const time = new Date();
+      const year = time.getFullYear();
+      const month = time.getMonth() + 1;
+      const day = time.getDate();
+      const hour = time.getHours();
+      const min = time.getMinutes();
+      const sec = time.getSeconds();
+      const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`;
+
+      gtag("event", "conversion", {
+        send_to: "AW-373671502/VxsoCO2h6JwCEM6Ml7IB",
+        event_callback: function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        },
+      });
+
       fetch(
         `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&room_type=${this.form.room_type}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
         {
-          method: 'GET'
+          method: "GET",
         }
-      )
-      fetch('contact-form.php', {
-        method: 'POST',
-        body: formData
-      }).then(response => {
-        this.isSubmit = false
+      );
+      fetch("contact-form.php", {
+        method: "POST",
+        body: formData,
+      }).then((response) => {
+        this.isSubmit = false;
         if (response.status === 200) {
-          window.location.href = 'formThanks'
+          window.location.href = "formThanks";
         }
-      })
-    }
-  }
-}
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/variableColor.scss';
-@import '@/assets/style/function.scss';
+@import "@/assets/style/variableColor.scss";
+@import "@/assets/style/function.scss";
 .bg-img {
   width: 100vw;
   position: absolute;

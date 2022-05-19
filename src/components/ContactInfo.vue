@@ -1,7 +1,18 @@
 <template>
   <div>
-    <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+    <div
+      class="contact-info"
+      id="contact-info"
+      data-aos="fade"
+      data-aos-delay="0"
+    >
+      <img
+        class="logo"
+        src="@/assets/img/contact-logo.png"
+        :alt="info.caseName"
+        data-aos="fade-down"
+        data-aos-delay="0"
+      />
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -11,50 +22,95 @@
         data-aos-delay="0"
       /> -->
       <div class="info">
-        <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
+        <div
+          class="btn flex-c"
+          @click="showCallDialog"
+          data-aos="fade-down"
+          data-aos-delay="100"
+        >
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
-            <span>{{info.phone}}</span>
+            <span>{{ info.phone }}</span>
           </span>
         </div>
-        <div class="btn flex-c" @click="showMessengerDialog" data-aos="fade-down" data-aos-delay="200">
+        <div
+          class="btn flex-c"
+          @click="showMessengerDialog"
+          data-aos="fade-down"
+          data-aos-delay="200"
+        >
           <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
+            <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span
+              >FB 諮詢</span
+            >
           </span>
         </div>
-        <a class="btn flex-c" @click="trackFb" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a
+          class="btn flex-c"
+          @click="trackFb"
+          :href="info.fbLink"
+          target="_blank"
+          data-aos="fade-down"
+          data-aos-delay="300"
+        >
           <span class="flex-c">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
+            <font-awesome-icon :icon="['fab', 'facebook-f']" /><span
+              >前往粉絲專頁</span
+            >
           </span>
         </a>
-        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">{{info.address}}</div>
-        <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
+        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">
+          {{ info.address }}
+        </div>
+        <div
+          class="google-btn flex-c"
+          data-aos="fade-down"
+          data-aos-delay="400"
+          @click="showMapDialog"
+        >
           <span class="flex-c">
-            <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
+            <font-awesome-icon icon="map-marker-alt" /><span
+              >導航 Google 地圖</span
+            >
           </span>
         </div>
       </div>
     </div>
-    <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowCallDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
       <CallDialog :phone="info.phone" />
     </el-dialog>
-    <el-dialog title :visible.sync="isShowMessengerDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowMessengerDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
-    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
+    <el-dialog
+      title
+      :visible.sync="isShowMapDialog"
+      :width="isMobile ? '90%' : '500px'"
+      :modal-append-to-body="false"
+    >
       <MapDialog :link="info.googleLink" :address="info.address" />
     </el-dialog>
   </div>
 </template>
 
 <script>
-import info from '@/info'
-import { isMobile, isTablet } from '@/utils'
-import CallDialog from '@/components/Dialog/Call'
-import MessengerDialog from '@/components/Dialog/Messenger'
-import MapDialog from '@/components/Dialog/Map'
+import info from "@/info";
+import { isMobile, isTablet } from "@/utils";
+import CallDialog from "@/components/Dialog/Call";
+import MessengerDialog from "@/components/Dialog/Messenger";
+import MapDialog from "@/components/Dialog/Map";
 export default {
-  name: 'contactInfo',
+  name: "contactInfo",
   components: {
     CallDialog,
     MessengerDialog,
@@ -69,42 +125,60 @@ export default {
       isShowCallDialog: false,
       isShowMessengerDialog: false,
       isShowMapDialog: false,
-    }
+    };
   },
   methods: {
     showCallDialog() {
       // if (!this.isMobile) return
-      this.isShowCallDialog = true
+      this.isShowCallDialog = true;
     },
     showMessengerDialog() {
       // if (!this.isMobile) return
-      this.isShowMessengerDialog = true
+      this.isShowMessengerDialog = true;
     },
 
     showMapDialog() {
       // if (!this.isMobile) return
-      this.isShowMapDialog = true
+      gtag("event", "conversion", {
+        send_to: "AW-373671502/ZasJCPeL8pwCEM6Ml7IB",
+        event_callback: function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        },
+      });
+
+      this.isShowMapDialog = true;
     },
 
     trackFb() {
-      window._lt(
-        'send',
-        'cv',
-        {
-          type: 'fbmessage',
+      gtag("event", "conversion", {
+        send_to: "AW-373671502/klEoCK7U8ZwCEM6Ml7IB",
+        event_callback: function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
         },
-        ['2dbeb344-9b9c-48e5-962d-ebcfd192bae4'],
-      )
+      });
+      window._lt(
+        "send",
+        "cv",
+        {
+          type: "fbmessage",
+        },
+        ["2dbeb344-9b9c-48e5-962d-ebcfd192bae4"]
+      );
 
-      window.gtag_report_conversion_fb('https://oh.h35.tw')
+
+      window.gtag_report_conversion_fb("https://oh.h35.tw");
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/variableColor.scss';
-@import '@/assets/style/variableDefault.scss';
+@import "@/assets/style/variableColor.scss";
+@import "@/assets/style/variableDefault.scss";
 
 .contact-info {
   background: $contact_bg;
@@ -184,7 +258,7 @@ export default {
     }
   }
   &::before {
-    content: '';
+    content: "";
     width: 40%;
     height: 100%;
     display: block;
