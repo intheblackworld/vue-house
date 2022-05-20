@@ -10,10 +10,10 @@
       <img src="@/projects/hbl/s1/logobg2.png" :alt="`${info.caseName}_888萬起`" />
       <img src="@/projects/hbl/s1/logobg3.png" :alt="`${info.caseName}_快樂王國`" />
       </div>
--->
+
       <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
       <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
-      <div class="info">
+-->      <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="zoom-in" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />

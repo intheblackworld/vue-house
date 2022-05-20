@@ -1,41 +1,25 @@
 <template>
-  <article class="section1"><img class="a1" src="./s1/pc.jpg" alt=""> 
+  <article class="section1">
+    <!-- <img class="a1" src="./s1/mo2.jpg" alt="">  -->
 
-
+<img src="./s1/bg.png" v-if="!isMobile" class="bg-img" alt="">
+<img src="./s1/bgm.png" v-else class="bg-img" alt="">
+<div class="bird">
+      <img src="./s1/bird.png" class="bird1" alt="">
+   <!--  <img src="./s1/bird.png" v-if="!isMobile" class="bird2" alt=""> -->
+</div>
+<div class="img">
+      <img src="./s1/1.png" data-aos="fade-right" class="img1" alt="">
+      <img src="./s1/2.png" data-aos="fade-right" class="img2" alt="">
+      <img src="./s1/3.png" data-aos="fade-left" class="img3" alt="">
+      <img src="./s1/4.png" data-aos="fade-left" class="img4" alt="">
+</div>
 <div class="txt">
-<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">人生MVP 生活紅不讓</h2>
+<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>人生MVP</b> <br v-if="isMobile">生活紅不讓</span></h2>
 <h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">金城裕民雙商圈｜2-3房</h3>
 </div>
 
-<!--   <div class="bg-img">
-     <div>
-      <img src="./s1/bg2.jpg" alt="">
-      <img src="./s1/bg2.jpg" alt="">
-     </div>
-    </div>
- 
-<div class="txt">
-<h2 class="logo">
-    <img src="./s1/o2.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
-    <img src="./s1/o1.png" alt="logo背景" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
-  <span class="logotxt" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-    龍瑩建設<br>小宅大作
-  </span>
-</h2>
-<h3 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000" v-scroll-to="{ element: `#contact`, offset: 0 }">我想搶先賞屋</h3>
-<p class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">預約成功享有「成家福袋」抽獎資格</p>
-</div>  -->
-<!-- <img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
-<img class="bg" src="./s1/bgm.jpg" loading="lazy" :alt="`${info.caseName}_bg`" v-if="isMobile">
 
-<img class="moon" src="./s1/moon.png" loading="lazy" :alt="`${info.caseName}_moon`" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">   
-<img class="bg-img" src="./s1/bg.png" loading="lazy" :alt="`${info.caseName}_外觀`" v-if="isPC">   
-<img class="bg-img" src="./s1/bgm.png" loading="lazy" :alt="`${info.caseName}_外觀`" v-if="isMobile">   
-
-<div class="txt">
-<h3 class="t1" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">面水岸 近捷運 鄰公園</h3>
-<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="900">蘆洲站5分鐘｜888萬起｜8292-2333<span>(須另購車位)</span></h3>
-</div>   -->
 </article>
 </template>
 
@@ -50,74 +34,96 @@
   max-height: size(1080);
   position: relative;
   //z-index: 3;
-}
-.bg-img{
-  position: fixed;
-  width: 100%;
-  height:auto;
+  &::before{content: "";
+  display: block;
+  position: absolute;
+  bottom:calc(50% + (90 - 540 - 640) * 100vw / 1920 );
   left: 0;
-  z-index: 0;
-  animation: 5s anx infinite linear;
-/*
-  div{
-    position: relative;
-    top: -3vw;
-  left: -5%;filter: blur(2vw);
-    width: 110%;}
-  img{width: 100%;vertical-align:bottom;
-  
+  width: 100%;
+  height: size(640);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
   }
-*/
+}
+.a1{position: absolute;top: 0;left: 0;width: 100%;opacity: .5;}
+.bg-img{
+  position: absolute;
+  width:size(2000);
+  height:auto;
+  left:size(-40);
+  bottom:calc(50% + (90 - 540) * 100vw / 1920);
+  z-index: 0;transform:skewX(2deg);
+  transform-origin: 50% 100%;
+  animation: anx 2s ease-in-out infinite alternate;
 }
 @keyframes anx{
-  to {transform:translateY(-50%);}
-}
-/*
-@keyframes op {
-    50% {opacity: 1;}
-    100% {opacity: 0;}
+  to {transform:skewX(-2deg);}
 }
 
-.logo{
-  font-weight: 900;
-  font-size:size(145);
-  color: #fff;
-  img{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width:size(511);
-    &:nth-child(2){
-      left: 0;
+.img{position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  img{position: absolute}
+  .img1{
+    left: 6.1vw;
+    width: 16vw;
+    top: 12.6vw;}
+  .img2{left: 17.8vw;
+    width: 12.3vw;
+    top: 4vw;}
+  .img3{right: 14.5vw;
+    width: 20.1vw;
+    top: 6.6vw;}
+  .img4{    right: 4.7vw;
+    width: 9.4vw;
+    top: -0.2vw;}
+}
+.bird{position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  img{position: absolute}
+  .bird1{
+    left: -20vw;
+    width:20vw;
+    top: 7.5vw;
+    animation:bird 10s linear infinite;
     }
-  }
-  .logotxt{position: relative;z-index: 1;display: block;
-  padding: .69em 0 1.3em;
-  line-height: 1.03;
-  letter-spacing: -0.05em
-  }
-}*/
+  .bird2{left: 42vw;
+    width: 19.4vw;
+    top: 8.1vw;;}
+}
+
+@keyframes bird{
+  50% {transform:translate(60vw,-50%);}
+  to {transform:translate(120vw,0);}
+}
 .txt{
-  @include img_c_pc(1800, 150);
-  // top: calc(50% + (150 - 540) * 100vw / 1920);
+  @include img_c_pc(1800, 271);
+  top: calc(50% + (271 - 540) * 100vw / 1920);
   font-size:size(67);
-  line-height: 1.6;
+  line-height: 1.59;
   letter-spacing: 0.01em;
   z-index: 3;
   color:#FFF;}
 .t1{
-font-size: 1.6em;
+font-size: 1.5em;
 //border-radius: .9em;
-  letter-spacing: -0.05em;
+  letter-spacing: 0em;
 font-weight: 800;
 margin: auto;
-border-left: 1px solid #f0d46b;
-border-right: 1px solid #f0d46b;
+span{
+  display: inline-block;
+border-top: 2px solid #f0d46b;
+border-bottom: 2px solid #f0d46b;
+b{
+ margin: 0 0.5em 0 0;
 }
+}}
 
 .t2{
   font-weight:500;
- padding: .5em 0 0;color: #f0d46b;
+ padding: 0.14em 0 0;color: #f0d46b;
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -129,33 +135,67 @@ border-right: 1px solid #f0d46b;
     width: 100%;
     min-height: sizem(604);
     max-height: sizem(750);
-    height:100vh;
+    height:calc(100vh  - 63px);
+  &::before{
+    
+  height: sizem(750);
+  bottom:calc(50% + (0 - 302 - 750) * 100vw / 375);}
 }
-.bg-img{
+.bg-img{width: 120%;left: -10%;
+  bottom:calc(50% + (0 - 302) * 100vw / 375);}
   
-  img{height:sizem(830);
+.img{width: 200%;
+animation: img 8s ease-in-out infinite alternate;
+  .img1{
+    left: 3.1vw;
+    width: 47vw;
+    top: 46.6vw;}
+  .img2{left: 32.5vw;
+    width: 37.3vw;
+    top: 21vw;}
+  .img3{
+    right: 28.5vw;
+    width: 61.1vw;
+    top: 28.6vw;}
+  .img4{ 
+    right: -1.3vw;
+    width: 28.4vw;
+    top: 8.8vw;;}
+}
+
+@keyframes img{
   
-  }
-  }
-.logo{
-  font-size:sizem(67);
-  img{
-    width:sizem(199);}
-  .logotxt{
-    padding: .4em 0 1.4em;
-  }
+ 0% {transform:translate(0%);}
+ 40% {transform:translate(0%);}
+ 60% {transform:translate(-50%);}
+  100% {transform:translate(-50%);}
+}
+.bird{ .bird1 {
+    left: -70vw;
+    width: 70vw;
+    top: 24.5vw;
+    animation:bird 8s linear infinite;
+    }}
+  
+@keyframes bird{
+  50% {transform:translate(85vw,-50%);}
+  to {transform:translate(170vw,0);}
 }
 
 .txt{
-  width: 94%;
+  width: 100%;
   left: 0;
   font-size:sizem(18);
-  top: calc(60% + (120 -  604 * .6) * 100vw / 375);
-  filter:drop-shadow(0 0 5vw #8d4e8d66);
+  top: calc(60% + (85 -  604 * .6) * 100vw / 375);
+  filter:drop-shadow(0 0 5vw #8d4e8d66); font-size:sizem(27);
 }
 .t1{
-font-size: 2.1em;
-width:100%;
+font-size: 2.1em;line-height: 1.2;
+span{padding: 0.3em 0;
+b{
+ font-size: 1.13em;
+ margin: 0;
+}}
 }
 
 }

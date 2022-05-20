@@ -94,11 +94,11 @@ export default {
 .mobile-nav {
   display: flex;
   position: fixed;
-  bottom: 2em;
+  bottom: calc(50% - 2em);
   right: 0;
   z-index: 100;
   transition: all .5s;
-  font-size:1.8vw;
+  font-size:1.5vw;
   flex-direction:column;
    // opacity: 0.5;
   .nav-item {

@@ -294,7 +294,7 @@ export default {
     font-family: $family1;
     width: auto;
     padding-top: 0.4em;
-    padding-bottom: 0;
+    padding-bottom: 1.5em;
     margin: 0 auto 0.2em;
     display: inline-block;
     font-weight:700;
@@ -484,7 +484,7 @@ export default {
       background-size: contain;
       background-repeat: repeat;
       // top: 10vw;
-      padding-bottom: 10%;
+    padding: 25vw 0 10% 0;
     }
     .order {
       width: 85% !important;

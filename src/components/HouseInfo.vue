@@ -1,6 +1,6 @@
 <template>
   <article class="house-info" id="house-info">
-    <div class="content">
+  <!--  <div class="content">
       <h3 class="title" data-aos="zoom-in" data-aos-delay="0">建案資訊</h3>
       <section class="info">
         <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="zoom-in" :data-aos-delay="100 + index * 100" data-aos-offset="-300">
@@ -8,7 +8,7 @@
           <p class="desc" v-html="infos[1]"></p>
         </div>
       </section>
-    </div>
+    </div>  -->
     <Footer />
   </article>
 </template>
