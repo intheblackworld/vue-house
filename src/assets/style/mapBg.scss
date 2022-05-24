@@ -2,19 +2,19 @@
 @keyframes swing {
 
  to {
-    transform: translateX(-15%);
+    transform: translateX(-30%);
   }
 }
 
 .map {
   position: relative;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  // overflow-x: scroll;
+  // overflow-y: hidden;
   width: 100vw;
  // z-index: 1;
   .map-bg {
-    width: auto;
-    height: size(1330);
+    width: 100%;
+  //  height: size(1330);
     position: relative;
   }
   .logo{
@@ -26,7 +26,7 @@
 
   img {
     display: block;
-    width: 100vw;
+    width:  100%;
     height: auto;
     position: absolute;
     top: 0;
@@ -89,19 +89,19 @@
 
     .hand {
       position: absolute;
-      z-index: 3;
-      width: sizem(87) !important;
+      z-index: 5;
+      width: sizem(60) !important;
       height: auto !important;
-      left: sizem(425);
+      left: 124%;
       right: 0;
       margin: 0 auto;
-      top: sizem(298) !important;
+      top: sizem(350) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
-      opacity: 0;
+      opacity: 1;
       transition: opacity .5s;
-      &.active {
-        opacity: 1;
+      &.hide {
+        opacity: 0;
       }
     }
   }

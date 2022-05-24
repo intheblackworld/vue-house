@@ -1,6 +1,6 @@
 <template>
   <article class="section1">
-  <img class="a1" src="./s1/pc.jpg" alt="">
+  <!-- <img class="a1" src="./s1/mo.jpg" alt=""> -->
   <div class="o">
     <div class="o1" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000"> 
       <img src="./s1/o1.png" alt="圈圈">
@@ -46,12 +46,11 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.a1 {width: 100%;position: absolute;left: 0;top:size(32);opacity: 0.3;}
 .section1 {
  // background-image: url('~@/projects/lyn/s1/bg.jpg');
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   //z-index: 3;
@@ -85,10 +84,12 @@
   position: absolute;
   top:-4%;left:57%;
   animation: 5s ro infinite linear;
-  transform-origin:-47% 368%;
+  transform-origin:-48% 370%;
+  
+  height:14.6%;
   img{
       filter: blur(0);
-  height: size(127);
+  height:100%;
   animation : 5s ro infinite linear reverse;
   }
   }
@@ -102,7 +103,6 @@
   to {transform:rotate(360deg);}
 }
 .txt{
-  filter:drop-shadow(0 0 3vw #8d4e8d66);
   @include img_c_pc(1200, 140);
  top: calc(50% + (150 - 540) * 100vw / 1920);
   font-size:size(58);
@@ -128,37 +128,36 @@ font-weight: 200;
 }
 
 @media screen and (max-width: 767px) {
+.a1 {width: 100%;position: absolute;left: 0;top:sizem(-63);opacity: 0.50;}
   .section1 {
     width: 100%;
     min-height: sizem(604);
     max-height: sizem(750);
-    height:100vh;
+    height:calc(100vh - 63px);
 }
-.bg-img{
+.o{
   
-  img{height:sizem(830);
+.o1,.o2{
   
-  }
-  }
-.logo{
-  font-size:sizem(67);
-  img{
-    width:sizem(199);}
-  .logotxt{
-    padding: .4em 0 1.4em;
-  }
+  height: sizem(293);
+  top:sizem(-293*.5);
+}
+.o1{left:sizem(-230);}
+.o2{right:sizem(-230);}
 }
 
 .txt{
-  width: 94%;
+  width: 100%;
   left: 0;
-  font-size:sizem(18);
-  top: calc(60% + (120 -  604 * .6) * 100vw / 375);
-  filter:drop-shadow(0 0 5vw #8d4e8d66);
+  font-size:sizem(31);
+  top: calc(60% + (165 -  604 * .6) * 100vw / 375);
+  line-height: 1.3;
+}
+.logo{
+font-size: 2.4em;
 }
 .t1{
-font-size: 2.1em;
-width:100%;
+ margin: .4em auto;
 }
 
 }

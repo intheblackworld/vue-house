@@ -69,23 +69,19 @@
   background-size:auto size-m(700);
   &::after,
   &::before{
-    height:150vw;
+    height:78vw;
   }
-  &::before{
-    top:calc(-150vw * .3);
-    }
-  &::after{
-    bottom:calc(-150vw * .7);
-  }
+ // .map{opacity: .5;}
  // background: none;
   .bg{height:size-m(700);width: auto;
   left:size-m(-280);
   }
   .txt{
-  @include img_c_m(370, 0);
-    font-size:sizem(21);
+  @include img_c_m(370, 50);
+    font-size:sizem(15);
   .title {
-    font-size:1.9em;line-height: 1.05;margin: 0 .3em  0.5em 0;}
+    font-size:3.75em;line-height: 1.05;margin: 0 .4em  0.3em 0;}
+
     }
   }
 }
@@ -113,7 +109,7 @@ export default {
       info,
       tagList: [],
       bgSrc: require('./s2/map.jpg'),
-      hand: require('./s2/map.png'),
+      hand: require('./s2/h.png'),
     };
   },
   methods: {

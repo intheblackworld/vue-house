@@ -1,5 +1,6 @@
 <template>
-  <div class="home no-padding-top" ><h1>伴月灣</h1>
+  <div class="home no-padding-top" >
+    <h1 v-html="info.caseName"></h1>
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />
       <Navigation v-if="!isMobile" /> -->
@@ -15,6 +16,9 @@
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section2" style="">
          <Section2 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section3" style="">
+         <Section3 />
       </vue-lazy-component>
       <!-- 
       <vue-lazy-component class="section" id="section3">
@@ -62,6 +66,7 @@ import UIkit from 'uikit';
 
 import Section1 from '@/projects/lyn/Section1.vue'
 import Section2 from '@/projects/lyn/Section2.vue'
+import Section3 from '@/projects/lyn/Section3.vue'
 
 export default {
   name: 'home',
@@ -76,6 +81,7 @@ export default {
     UIkit,
     Section1,
     Section2,
+    Section3,
     // Section3,
     // Section4,
     // Section5,
@@ -92,6 +98,7 @@ export default {
       isSide: false,
       load: false,
       viewIndex: 0,
+      info,
       // action: {
       //   moveTo: () => {},
       // },

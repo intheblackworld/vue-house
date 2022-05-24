@@ -157,6 +157,7 @@ export default {
   width: 100%;
   height: 63px;
   top: auto;
+  right: 0;
   bottom: 0;
   box-shadow: 0 -2px 8px 0 #0006;
     flex-direction:row;
