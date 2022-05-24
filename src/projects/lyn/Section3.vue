@@ -46,12 +46,12 @@
 
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.a1 {width: 100%;position: absolute;left: 0;top:size(32);opacity: 0.3;}
+.a1 {width: 100%;position: absolute;left: 0;top: 0;opacity: 0.1;}
 .section1 {
  // background-image: url('~@/projects/lyn/s1/bg.jpg');
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   //z-index: 3;

@@ -2,8 +2,8 @@
   <div class="section2" id="scene">
     <img src="./s2/map.png" class="bg" alt="">
     <div class="txt">
-      <h3 class="title"><b>3</b>分鐘進北市<br v-if="isMobile"> <b>5</b>分鐘中和站</h3>
-      <p class="desc">捷運黃金雙軸線 幸福成家第一站</p>
+      <h3 class="title"><b>123</b>幸福人</h3>
+      <p class="desc">1橋北市、2線捷運、3道任意門直抵幸福</p>
     </div>
   </div>
 </template>
@@ -16,24 +16,18 @@
   width: 100%;
   height:auto;
   background-size: 100% auto;
-  background-image: url("./s2/map.jpg");
-  &::after,
+ // background-image: url("./s2/map.jpg");
   &::before{
     content: "";
     position: absolute;
     left: 0;
     width: 100%;z-index:1;
-    height:43vw;
+    height:28vw;
+    top:0;
+   // background: linear-gradient(to bottom, rgba(6,2,3,1) 0%,rgb(0, 51, 109) 40%,rgba(136,171,203,1) 90%,rgba(162,193,221,0) 100%);
   }
-  &::before{
-    top:calc(-43vw * .3);
-background: linear-gradient(to bottom, rgba(62,101,156,0) 0%,rgb(81, 119, 172) 30%,rgba(62,101,156,0) 100%);
-  }
-  &::after{
-    bottom:calc(-43vw * .7);
-background: linear-gradient(to bottom, rgba(211,95,159,0) 0%,rgba(211,95,159,1) 30%,rgba(211,95,159,0) 100%);
-  }
-  .bg{width: 100%;
+  .bg{width: 100%;// opacity: 0;
+  vertical-align: bottom;
     position: relative;z-index:2;}
   /*
   background-size: 100%;
@@ -43,19 +37,22 @@ background: linear-gradient(to bottom, rgba(211,95,159,0) 0%,rgba(211,95,159,1) 
   z-index: 1;
   */
   .txt{
-  @include img_c_pc(1000, 60);
+  @include img_c_pc(1000, 0);
     color: #fff;
-    line-height: 1.4;z-index:3;
-    font-size:size(50);
+    line-height: 1.45;z-index:3;
+    font-weight: 300;
+    font-size:size(39);
     text-shadow:0 0 .4em rgb(41, 114, 163,0.5),0 0 .1em rgb(41, 114, 163,1);
+    text-align: center;
   }
   .title {
-    font-size:1.5em;
-    font-weight: 800;margin: 0 .3em  0 0;
-    b{font-size:1.5em;display: inline-block;margin: 0 0 0 .3em;position: relative;top: 0.07em;
-    font-weight: 900;
+    font-size:3.75em;
+    font-weight: 800;margin: 0 .45em  0 0;
+    b{font-size:1.24em;display: inline-block;margin: 0 0 0 .3em;position: relative;top: 0.07em;
+    font-weight: 900;letter-spacing: -0.04em;
     }
   }
+  .desc{border: 1px solid currentColor;display: inline-block;padding: 0.23em .55em;}
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
