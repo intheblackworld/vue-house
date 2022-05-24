@@ -53,20 +53,20 @@
     >
       <Section8 />
     </vue-lazy-component>
-<!--      <vue-lazy-component
+ <vue-lazy-component
       class="section"
       id="section9"
     >
     <Section9 />
     </vue-lazy-component>
-  <vue-lazy-component
+  <!-- <vue-lazy-component
       class="section relative"
       id="section10"
       style="z-index: 3;"
     >
       <Section10 />
-    </vue-lazy-component>-->
-    <!-- <vue-lazy-component
+    </vue-lazy-component>
+    <vue-lazy-component
       class="section"
       id="section11"
     >

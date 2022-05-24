@@ -302,7 +302,7 @@ export default {
         },
         {
           img: require('./s4/2.jpg'),
-          name: '居善醫院 ',
+          name: '敏勝醫院',
         },
         {
           img: require('./s4/3.jpg'),
