@@ -1,6 +1,8 @@
 <template>
   <div class="section2" id="scene">
-    <img src="./s2/map.png" class="bg" alt="">
+    <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand"></Map>
+    <div class="mask" @click="showMask = false" v-show="showMask"></div>
+    
     <div class="txt">
       <h3 class="title"><b>123</b>幸福人</h3>
       <p class="desc">1橋北市、2線捷運、3道任意門直抵幸福</p>
@@ -21,10 +23,10 @@
     content: "";
     position: absolute;
     left: 0;
-    width: 100%;z-index:1;
+    width: 100%;z-index:2;
     height:28vw;
     top:0;
-   // background: linear-gradient(to bottom, rgba(6,2,3,1) 0%,rgb(0, 51, 109) 40%,rgba(136,171,203,1) 90%,rgba(162,193,221,0) 100%);
+    background: linear-gradient(to bottom, rgba(6,2,3,1) 0%,rgb(0, 51, 109) 40%,rgba(136,171,203,1) 90%,rgba(162,193,221,0) 100%);
   }
   .bg{width: 100%;// opacity: 0;
   vertical-align: bottom;
@@ -98,19 +100,26 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from "@/utils";
+import Map from '@/components/Map.vue'
+import info from '@/info'
 export default {
   name: "section2",
   components: {
+    Map,
   },
   data() {
     return {
       isMobile,
+      info,
+      tagList: [],
+      bgSrc: require('./s2/map.jpg'),
+      hand: require('./s2/map.png'),
     };
   },
   methods: {
-    scrollTo(el) {
+ /*   scrollTo(el) {
       this.scrollInstance.scrollTo(el);
-    },
+    },*/
   },
   mounted() {},
   created() {},

@@ -8,13 +8,18 @@
 
 .map {
   position: relative;
-  z-index: 1;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100vw;
+ // z-index: 1;
   .map-bg {
-    width: 100vw;
-    height: auto;
+    width: auto;
+    height: size(1330);
     position: relative;
   }
-
+  .logo{
+    z-index: 3;
+  }
   .hand {
     display: none;
   }
