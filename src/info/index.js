@@ -1,13 +1,13 @@
 import { isMobile } from '../utils/index'
 export default {
-   address: '接待中心：新北市土城區明德路清水路口',
+   address: '接待中心：新北市土城區明德路一段&清水路',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3616.615649466904!2d121.45245464822416!3d24.979188186271035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8164a529020f814a!2zMjTCsDU4JzQ1LjIiTiAxMjHCsDI3JzEyLjciRQ!5e0!3m2!1szh-TW!2stw!4v1652947959246!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/7KvwcHniCUSG4nht8',
   phone: '02-2264-6789',
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
-  caseName: '龍瑩建設 小宅大作',
+  caseName: '紅布朗花園',
   indigatorLength: 10,
   caseId: 'hbl',
 

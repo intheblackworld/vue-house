@@ -32,16 +32,16 @@ body {
 
 #app {
   font-family: $family1;
+  font-size: size(20);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $txt_color;
 }
 
 .home {
   padding-top: $nav_pc_height;
   overflow: hidden; //試底下多的那塊哪來的
-  font-family: $family1;
  &::before{content: ' ';
      position: fixed;
      z-index: -1;
@@ -339,6 +339,10 @@ img[lazy="loaded"] {
       height: calc(100vh - #{$nav_phone_height} - 63px);
       margin: 0 auto;
     }
+  }
+
+  #app {
+    font-size: sizem(15);
   }
 
   .home {

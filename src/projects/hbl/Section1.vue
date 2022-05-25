@@ -16,7 +16,7 @@
 </div>
 <div class="txt">
 <h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>人生MVP</b> <br v-if="isMobile">生活紅不讓</span></h2>
-<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">金城裕民雙商圈｜2-3房</h3>
+<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">全能綠生活 核心雙商圈｜2-3房</h3>
 </div>
 
 
@@ -101,16 +101,17 @@
 .txt{
   @include img_c_pc(1800, 271);
   top: calc(50% + (271 - 540) * 100vw / 1920);
-  font-size:size(67);
+  font-size:size(73);
   line-height: 1.59;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   z-index: 3;
   color:#FFF;}
 .t1{
-font-size: 1.5em;
+font-size: 1.38em;
 //border-radius: .9em;
   letter-spacing: 0em;
 font-weight: 800;
+  line-height: 1.78;
 margin: auto;
 span{
   display: inline-block;
@@ -185,12 +186,12 @@ animation: img 8s ease-in-out infinite alternate;
 .txt{
   width: 100%;
   left: 0;
-  font-size:sizem(18);
+  font-size:sizem(20.8);
   top: calc(60% + (85 -  604 * .6) * 100vw / 375);
-  filter:drop-shadow(0 0 5vw #8d4e8d66); font-size:sizem(27);
+  filter:drop-shadow(0 0 5vw #8d4e8d66); 
 }
 .t1{
-font-size: 2.1em;line-height: 1.2;
+font-size: 2.75em;line-height: 1.2;
 span{padding: 0.3em 0;
 b{
  font-size: 1.13em;
