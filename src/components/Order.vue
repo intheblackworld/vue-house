@@ -14,10 +14,10 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <div class="row">
+            <div class="row" v-if="order.room_type">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in ['一房','兩房','三房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">
