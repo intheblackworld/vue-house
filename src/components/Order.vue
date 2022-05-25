@@ -17,7 +17,7 @@
             <div class="row">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in ['一房','兩房','三房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in ['一房','兩房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">

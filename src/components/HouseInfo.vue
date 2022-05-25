@@ -31,12 +31,17 @@ export default {
 </script>
 
 <style lang="scss">
-.house-info .desc a{
+.house-info .desc{
+  a{
   color:inherit;
   &:hover{
     text-decoration: none;
   }
 }
+    img {
+     height: 1.8em;
+    }
+} 
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/variableColor.scss';
