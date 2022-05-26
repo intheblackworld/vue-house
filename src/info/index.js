@@ -10,6 +10,7 @@ export default {
   caseName: '龍瑩建設 小宅大作',
   indigatorLength: 10,
   caseId: 'lyn',
+  login: 'https://www.h65.tw/admin/test/login',
 
   houseInfos: [
     ['投資興建', '龍瑩建設事業股份有限公司'],
