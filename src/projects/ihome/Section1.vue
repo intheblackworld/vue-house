@@ -1,11 +1,11 @@
 <template>
   <div class="section1">
     <div>
-	<!--	<img src="./s1/pc.jpg" alt="" class="t0">  -->
-		<img src="./s1/imgbg.png" alt="" data-aos="fade" data-aos-duration="2000" data-aos-delay="0" class="imgbg">
-		<img src="./s1/img.png" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="700" class="img">
+	<!--	<img loading="lazy" src="./s1/pc.jpg" alt="" class="t0">  -->
+		<img loading="lazy" src="./s1/imgbg.png" alt="" data-aos="fade" data-aos-duration="2000" data-aos-delay="0" class="imgbg">
+		<img loading="lazy" src="./s1/img.png" alt="" data-aos="fade" data-aos-duration="800" data-aos-delay="700" class="img">
 <div class="txt">
-		<img src="./s1/logo.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
+		<img loading="lazy" src="./s1/logo.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
 		<div class="title" data-aos="fade" data-aos-duration="1500" data-aos-delay="400"><b>雙</b>北悠居 <b>雙</b>捷遊心<br><b>愛</b>在土城 <b>2</b>房家入</div>
 		<div class="stitle" data-aos="fade" data-aos-duration="1500" data-aos-delay="600">真情不二價給您!</div>
 		<div class="desc" data-aos="fade" data-aos-duration="1500" data-aos-delay="800">土城區青雲路252號  02-2263-5666</div></div>

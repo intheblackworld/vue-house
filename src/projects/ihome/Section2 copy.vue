@@ -1,7 +1,7 @@
 <template>
   <div class="section2">
     <div>
-   <!--   <img src="./s2/hr.png" alt="" class="hr absolute">  -->
+   <!--   <img loading="lazy" src="./s2/hr.png" alt="" class="hr absolute">  -->
       <div class="title">
         繁華核心　轉身瞬靜
       </div>
@@ -10,7 +10,7 @@
       </div>
       <div class="video absolute">
         <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
-        <img src="" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+        <img loading="lazy" src="" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
       </div>
     </div>
   </div>

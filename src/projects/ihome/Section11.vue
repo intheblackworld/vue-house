@@ -3,7 +3,7 @@
     <div class="section11">
       <div class="img-list absolute flex-ac flex-jb" v-if="!isMobile">
         <div v-for="(slide, i) in slideList" :key="slide.img" :class="`img-item relative`">
-          <img :src="slide.img" alt="" data-aos="fade" :data-aos-delay="200 + i * 100">
+          <img loading="lazy" :src="slide.img" alt="" data-aos="fade" :data-aos-delay="200 + i * 100">
           <div class="img-text absolute" v-html="slide.text" data-aos="fade" :data-aos-delay="300 + i * 100"></div>
         </div>
       </div>
@@ -24,7 +24,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="img-text absolute" v-html="slide.text"></div>
             </div>
           </transition-group>
@@ -32,8 +32,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>

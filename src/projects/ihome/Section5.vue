@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="section5">
-  <!--    <img src="./s2/hr.png" alt="" class="hr absolute">  -->
+  <!--    <img loading="lazy" src="./s2/hr.png" alt="" class="hr absolute">  -->
       <div class="title" data-aos="fade-down" data-aos-delay="200" ><span>i Nature</span>透氣有氧 双面風光</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -15,8 +15,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div> 
           </div> -->
       <!--    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>  -->
         </div>
       </div>
