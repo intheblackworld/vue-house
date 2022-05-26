@@ -1,18 +1,18 @@
 <template>
   <article class="section1">
     <!-- <img class="a1" src="./s1/mo2.jpg" alt="">  -->
-
-<img src="./s1/bg.png" v-if="!isMobile" class="bg-img" alt="">
-<img src="./s1/bgm.png" v-else class="bg-img" alt="">
+<div  data-aos="fade">
+<img src="./s1/bg.png" v-if="!isMobile" class="bg-img" alt="" loading="lazy">
+<img src="./s1/bgm.png" v-else class="bg-img" alt="" loading="lazy"></div>
 <div class="bird">
-      <img src="./s1/bird.png" class="bird1" alt="">
+      <img src="./s1/bird.png" class="bird1" alt="" loading="lazy">
    <!--  <img src="./s1/bird.png" v-if="!isMobile" class="bird2" alt=""> -->
 </div>
 <div class="img">
-      <img src="./s1/1.png" data-aos="fade-right" class="img1" alt="">
-      <img src="./s1/2.png" data-aos="fade-right" class="img2" alt="">
-      <img src="./s1/3.png" data-aos="fade-left" class="img3" alt="">
-      <img src="./s1/4.png" data-aos="fade-left" class="img4" alt="">
+      <img src="./s1/1.png" data-aos="fade-right" data-aos-duration="1600"  class="img1" alt="" loading="lazy">
+      <img src="./s1/2.png" data-aos="fade-right" data-aos-duration="1000" class="img2" alt="" loading="lazy">
+      <img src="./s1/3.png" data-aos="fade-left" data-aos-duration="1000" class="img3" alt="" loading="lazy">
+      <img src="./s1/4.png" data-aos="fade-left" data-aos-duration="1600" class="img4" alt="" loading="lazy">
 </div>
 <div class="txt">
 <h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>人生MVP</b> <br v-if="isMobile">生活紅不讓</span></h2>
