@@ -1,7 +1,7 @@
 <template>
   <div class="order-bg">
     <article class="order-top">
-      <h2 class="order-title" v-html="order.title" data-aos="zoom-in"></h2>
+      <h2 class="order-title" v-if="order.title" v-html="order.title" data-aos="zoom-in"></h2>
       <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in" v-if="order.subTitle"></div>
       <div class="order" data-aos="zoom-in">
         <div class="form">
@@ -14,10 +14,10 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <div class="row">
+            <div class="row" v-if="order.room_type">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in ['一房','兩房']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">
@@ -286,7 +286,7 @@ export default {
     background-size: cover;
     background-position: bottom right;
     position: relative;
-    padding: 2vw 0 0 0;
+    padding: 5vw 0 0 0;
    // padding-bottom: 700px;
    z-index: 3;
   }
@@ -294,7 +294,7 @@ export default {
     font-family: $family1;
     width: auto;
     padding-top: 0.4em;
-    padding-bottom: 0;
+    padding-bottom: 1.5em;
     margin: 0 auto 0.2em;
     display: inline-block;
     font-weight:700;
@@ -484,7 +484,7 @@ export default {
       background-size: contain;
       background-repeat: repeat;
       // top: 10vw;
-      padding-bottom: 10%;
+    padding: 25vw 0 10% 0;
     }
     .order {
       width: 85% !important;
