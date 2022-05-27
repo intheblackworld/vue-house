@@ -431,6 +431,29 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '環境保護  減毒增效：工地大清消',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/10/image001.jpg'),
+            require('../news/s2/10/image003.jpg'),
+            require('../news/s2/10/image005.jpg'),
+            require('../news/s2/10/image007.jpg'),
+            require('../news/s2/10/image009.jpg'),
+            require('../news/s2/10/image011.jpg'),
+          ],
+
+          desc: '',
+          links: [
+        /*    {
+              title: '立瑾WAY官網',
+              id: '1',
+              url: 'https://way.h35.tw/',
+            },*/
+          ],
+        },
+        {
           title: '立瑾建築虎年開工大吉，一整年虎虎生威！',
           subtitle: '',
           date: '',

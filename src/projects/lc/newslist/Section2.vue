@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/10/image001.jpg'),
+          title: '環境保護  減毒增效  :工地大清消',
+        },
+        {
           img: require('../news/s2/9/S__14008337.jpg'),
           title: '立瑾建築虎年開工大吉，一整年虎虎生威！',
         },
