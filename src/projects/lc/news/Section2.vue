@@ -431,6 +431,30 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '豎千年柱，架萬代樑 立瑾綻上樑大吉',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/11/image001.jpg'),
+            require('../news/s2/11/image003.jpg'),
+            require('../news/s2/11/image005.jpg'),
+            require('../news/s2/11/image007.jpg'),
+            require('../news/s2/11/image009.jpg'),
+            require('../news/s2/11/image011.jpg'),
+          ],
+
+          desc: '',
+          links: [
+            {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+        /*    */
+          ],
+        },
+        {
           title: '環境保護  減毒增效：工地大清消',
           subtitle: '',
           date: '',

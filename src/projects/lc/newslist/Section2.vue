@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/11/image001.jpg'),
+          title: '豎千年柱，架萬代樑 立瑾綻上樑大吉',
+        },
+        {
           img: require('../news/s2/10/image001.jpg'),
           title: '環境保護  減毒增效  :工地大清消',
         },
