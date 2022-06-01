@@ -1,7 +1,7 @@
 <template>
   <div class="section5">
     <div class="bg">
-      <img src="./s5/circle.png" alt class="circle" />
+      <img src="./s5/circle.png" alt class="circle" loading="lazy" />
       <div class="container">
         <div class="text" data-aos="fade-right" data-aos-delay="0">
           <div class="title">用心深根 放心安穩</div>
@@ -28,7 +28,7 @@
             <br />國泰信義亞緻、國泰金城、冠德美麗台北…名宅安全推手
           </li>
         </div>
-        <img src="./s5/img1.png" alt class="img1" data-aos="fade-left" data-aos-delay="500" />
+        <img src="./s5/img1.png" alt class="img1" data-aos="fade-left" data-aos-delay="500" loading="lazy" />
       </div>
     </div>
   </div>

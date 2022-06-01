@@ -1,19 +1,19 @@
 <template>
   <div class="section2">
     <div class="bg fullscreen">
-      <img
+      <img loading="lazy"
         src="./s2/map.jpg"
         alt
         class="map"
         data-aos="fade-down"
         data-aos-delay="0"
       />
-      <img
+      <img loading="lazy"
         src="./s2/map1.png"
         alt
         class="icon"
       />
-      <img
+      <img loading="lazy"
         src="./s2/map2.png"
         alt
         class="icon2"

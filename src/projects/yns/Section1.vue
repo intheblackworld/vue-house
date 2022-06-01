@@ -2,28 +2,28 @@
   <div class="section1">
     <div class="bg fullscreen">
       <div v-if="!isMobile">
-        <img src="./s1/0.png" alt class="img" />
+        <img src="./s1/0.png" alt class="img" loading="lazy" />
         <div class="img bear">
-        <img src="./s1/1.png" alt="bear" class="img bear0" />
+        <img src="./s1/1.png" alt="bear" class="img bear0" loading="lazy" />
         <!--img src="./s1/11.png" alt="bear" class="img bear1" />
         <img src="./s1/12.png" alt="bear" class="img bear2" / --></div>
-        <img src="./s1/2.png" alt class="img bottom" />
-        <img src="./s1/2-1.png" alt class="img bottom grace" />
-        <img src="./s1/3.png" class="img" data-aos="fade-down" data-aos-delay="600" alt="北大樂馥" />
+        <img src="./s1/2.png" alt class="img bottom" loading="lazy" />
+        <img src="./s1/2-1.png" alt class="img bottom grace" loading="lazy" />
+        <img src="./s1/3.png" class="img" data-aos="fade-down" data-aos-delay="600" alt="北大樂馥" loading="lazy" />
         <div class="text" data-aos="fade-down" data-aos-delay="900">
           弘華機構-和彩建設
           <br />在地深耕用心建築，值得您細心鑑賞
         </div>
       </div>
       <div v-else>
-        <img src="./s1/0.png" alt class="img" data-aos="fade-down" data-aos-delay="0" />
+        <img src="./s1/0.png" alt class="img" data-aos="fade-down" data-aos-delay="0" loading="lazy" />
         <div class="img bear">
-        <img src="./s1/m1.png" alt="bear" class="img bear0" />
+        <img src="./s1/m1.png" alt="bear" class="img bear0" loading="lazy" />
         <!-- img src="./s1/m11.png" alt="bear" class="img bear1" />
         <img src="./s1/m12.png" alt="bear" class="img bear2" / --></div>
-        <img src="./s1/m2.png" alt class="img bottom" />
-        <img src="./s1/m2-1.png" alt class="img bottom grace" />
-        <img src="./s1/m3.png" class="img" data-aos="fade-down" data-aos-delay="600" alt="北大樂馥" />
+        <img src="./s1/m2.png" alt class="img bottom" loading="lazy" />
+        <img src="./s1/m2-1.png" alt class="img bottom grace" loading="lazy" />
+        <img src="./s1/m3.png" class="img" data-aos="fade-down" data-aos-delay="600" alt="北大樂馥" loading="lazy" />
         <div class="text" data-aos="fade-down" data-aos-delay="900">
           弘華機構-和彩建設
           <br />在地深耕用心建築，值得您細心鑑賞

@@ -11,8 +11,8 @@
           <br />
         </div>
       </div>
-      <img src="./s3/img2.jpg" alt class="img2" v-if="!isMobile" />
-      <img src="./s3/img2m.jpg" alt class="img2" v-if="isMobile" />
+      <img src="./s3/img2.jpg" alt class="img2" v-if="!isMobile" loading="lazy" />
+      <img src="./s3/img2m.jpg" alt class="img2" v-if="isMobile" loading="lazy" />
     </div>
   </div>
 </template>

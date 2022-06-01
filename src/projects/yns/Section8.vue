@@ -4,7 +4,7 @@
       <div class="container">
         <div class="slide relative" data-aos="fade-right" data-aos-delay="0">
           <div class="name" v-html="slideList[slideIndex].name"></div>
-          <img
+          <img loading="lazy"
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s10-slide-${index}`"
@@ -12,8 +12,8 @@
             alt
           />
           <div class="btn-group flex-jb flex-ac flex-mobile-jb">
-            <img @click="decIndex" src="./left_btn.png" alt />
-            <img @click="addIndex" src="./right_btn.png" alt />
+            <img @click="decIndex" src="./left_btn.png" alt loading="lazy" />
+            <img @click="addIndex" src="./right_btn.png" alt loading="lazy" />
           </div>
         </div>
         <div class="content" data-aos="fade-left" data-aos-delay="500">
@@ -22,7 +22,7 @@
           <div class="desc" v-html="slideList[slideIndex].desc"></div>
         </div>
       </div>
-      <img src="./s8/circle.png" alt class="circle" />
+      <img src="./s8/circle.png" alt class="circle" loading="lazy" />
     </div>
   </div>
 </template>

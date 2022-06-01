@@ -1,8 +1,8 @@
 <template>
   <div class="section4">
     <div class="bg relative">
-      <img src="./s7/circle.png" alt class="circle" />
-      <img src="./s7/circle2.png" alt class="circle" />
+      <img src="./s7/circle.png" alt class="circle" loading="lazy" />
+      <img src="./s7/circle2.png" alt class="circle" loading="lazy" />
       <div class="container">
         <div class="content" data-aos="fade-right" data-aos-delay="0">
           <div class="title">時尚美學 在家展演</div>
@@ -11,7 +11,7 @@
         </div>
         <div class="slide relative" data-aos="fade-left" data-aos-delay="500">
           <div class="name">{{slideList[slideIndex].name}}</div>
-          <img
+          <img loading="lazy"
             v-for="(slide, index) in slideList"
             :class="`slide-img ${slideIndex === index ? 'active' : ''}`"
             :key="`s10-slide-${index}`"
@@ -19,8 +19,8 @@
             alt
           />
           <div class="btn-group flex-jb flex-ac flex-mobile-jb">
-            <img @click="decIndex" src="./left_btn.png" alt />
-            <img @click="addIndex" src="./right_btn.png" alt />
+            <img @click="decIndex" src="./left_btn.png" alt loading="lazy" />
+            <img @click="addIndex" src="./right_btn.png" alt loading="lazy" />
           </div>
         </div>
       </div>
@@ -75,13 +75,13 @@
     max-width: 100%;
     &:nth-child(2){
       animation: bear 1.25s ease-in-out infinite alternate-reverse;
-      transform:rotate(-5deg)translateX(-100%);
+      transform:rotate(-5deg) translateX(-100%);
       transform-origin: -51% 55%;
     }
   }
 @keyframes bear {
   to {
-  transform:rotate(5deg)translateX(-100%);
+  transform:rotate(5deg) translateX(-100%);
   }
 }
 
