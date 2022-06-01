@@ -2,10 +2,10 @@
   <div class="section1"><!--  
     <img src="./s1/0m.jpg" alt="`${info.caseName}_bg" class="t0"> -->
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/3.png" alt="3" class="c4">
-      <div class="c3"><img src="./all/3.png" alt="3"></div>
-      <img src="./all/2.png" alt="2" class="c2">
-      <img src="./all/1.png" alt="1" class="c1">
+      <img src="./all/3.png" alt="3" class="c4" loading="lazy">
+      <div class="c3"><img src="./all/3.png" alt="3" loading="lazy"></div>
+      <img src="./all/2.png" alt="2" class="c2" loading="lazy">
+      <img src="./all/1.png" alt="1" class="c1" loading="lazy">
     </div>
     <div class="txt">
       <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
