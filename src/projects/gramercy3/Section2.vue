@@ -4,8 +4,8 @@
       
       <div class="txt" v-if="!isMobile">
         <div class="tree">
-        <img src="./all/tree1.png" alt="tree" class="tree1">
-        <img src="./all/tree2.png" alt="tree" class="tree2">
+        <img src="./all/tree1.png" alt="tree" class="tree1" loading="lazy">
+        <img src="./all/tree2.png" alt="tree" class="tree2" loading="lazy">
         </div>
       <div class="title" data-aos="fade-down" data-aos-delay="200" >大台北恣意暢行 近享北市繁華</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">捷運新店站5分鐘，10分鐘直上國道3號，台北車站22分鐘，交通路網四方串聯，捷運生活圈機能健全，自在穿梭雙北生活場域。<br>
@@ -17,7 +17,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt="" loading="lazy">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -25,8 +25,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" loading="lazy">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" loading="lazy">
           </div>
         </div>
       </div>

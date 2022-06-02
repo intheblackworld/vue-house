@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section10">
-     <img src="./s2/hr.png" alt="" class="hr absolute">
+     <img src="./s2/hr.png" alt="" class="hr absolute" loading="lazy">
       <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200">嚴選建材</div>
       <div class="mask absolute" data-aos="fade-down-left" data-aos-delay="200"></div>
       <div class="border absolute" data-aos="fade-up-right" data-aos-delay="200"></div>
@@ -9,13 +9,13 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt="" loading="lazy">
               <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
             </div>
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" loading="lazy">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" loading="lazy">
           </div>
         </div>
       </div>

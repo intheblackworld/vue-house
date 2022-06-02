@@ -10,18 +10,18 @@
     </div>  -->
     
  <div class="c">
-      <img src="./s1/c2.png" alt="2" class="c3">
-      <img src="./s1/c1.png" alt="2" class="c2">
-      <img src="./s1/c1.png" alt="1" class="c1">
+      <img src="./s1/c2.png" alt="2" class="c3" loading="lazy">
+      <img src="./s1/c1.png" alt="2" class="c2" loading="lazy">
+      <img src="./s1/c1.png" alt="1" class="c1" loading="lazy">
     </div> 
-    <div class="bg"><img src="./s1/h.jpg" alt="1" class="bg-h" v-if="!isMobile"></div>
-    <img src="./s1/bgm.png" v-if="isMobile" alt="1" class="bg">
+    <div class="bg"><img src="./s1/h.jpg" alt="1" class="bg-h" v-if="!isMobile" loading="lazy"></div>
+    <img src="./s1/bgm.png" v-if="isMobile" alt="1" class="bg" loading="lazy">
     <div class="txt"> <!-- data-aos="zoom-in" -->
       <div class="o"></div>
-      <div class="img" v-if="isMobile" data-aos="zoom-in" data-aos-delay="400"><img src="./all/img.png" alt="img"></div>
-      <img src="./s1/logo.png" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo">
-      <img src="./s1/logo_m.png" v-if="isMobile" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo">
-      <div class="img" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="400"><img src="./all/img.png" alt="img"></div>
+      <div class="img" v-if="isMobile" data-aos="zoom-in" data-aos-delay="400"><img src="./all/img.png" alt="img" loading="lazy"></div>
+      <img src="./s1/logo.png" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo" loading="lazy">
+      <img src="./s1/logo_m.png" v-if="isMobile" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo" loading="lazy">
+      <div class="img" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="400" loading="lazy"><img src="./all/img.png" alt="img" loading="lazy"></div>
       <div class="t1" data-aos="zoom-in" data-aos-delay="400">華城路上唯一精品小豪宅</div>
       <div class="t2" data-aos="zoom-in" data-aos-delay="400">輕總價｜限量19戶｜新店緻美22-24坪</div>
     </div>

@@ -2,14 +2,14 @@
   <div>
     <div class="section5">
       <div class="tree">
-        <img src="./all/tree1.png" alt="tree" class="tree1">
-        <img src="./all/tree2.png" alt="tree" class="tree2">
+        <img src="./all/tree1.png" alt="tree" class="tree1" loading="lazy">
+        <img src="./all/tree2.png" alt="tree" class="tree2" loading="lazy">
         </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt="" loading="lazy">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>

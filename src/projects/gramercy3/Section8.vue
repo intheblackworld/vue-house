@@ -3,7 +3,7 @@
       <div class="w"></div>
       <div class="box">
       
-      <div class="img" v-if="isMobile"><img src="./all/img.png" alt="img"></div>
+      <div class="img" v-if="isMobile"><img src="./all/img.png" alt="img" loading="lazy"></div>
       <div class="title" data-aos="fade" data-aos-delay="0">嚴選精品標配，優雅時尚美學<span v-if="!isMobile"><img src="./all/img.png" alt="img"></span></div>
       <div class="desc1">名流設計師精心規劃配置，豪華級配備樣樣齊全，成就低調奢華的優雅日常。</div>
       <div class="list">
