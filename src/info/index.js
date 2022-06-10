@@ -1,8 +1,7 @@
 import { isMobile } from '../utils/index'
 export default {
   // address: '接待中心：新北市中和區中山路二段188號',
-  googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7231.84066810762!2d121.49593763297504!3d25.002822845693267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d718dc2237%3A0x93e2b67e5c619f45!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A5Lit5bGx6Lev5LqM5q61MTg46Jmf!5e0!3m2!1szh-TW!2stw!4v1652065777033!5m2!1szh-TW!2stw',
+  googleSrc:    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7231.84066810762!2d121.49593763297504!3d25.002822845693267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9d718dc2237%3A0x93e2b67e5c619f45!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A5Lit5bGx6Lev5LqM5q61MTg46Jmf!5e0!3m2!1szh-TW!2stw!4v1652065777033!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/SprXYXV3wbXBCqQ89',
   phone: '02-2240-9666',
   fbLink: 'https://www.facebook.com/105009848868082/',
