@@ -1,6 +1,6 @@
 <template>
   <article class="section1">
-  <!-- <img class="a1" src="./s1/mo.jpg" alt=""> -->
+  <!-- <img class="a1" src="./s1/mo.png" alt=""> -->
   <div class="o">
     <div class="o1" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000"> 
       <img src="./s1/o1.png" alt="圈圈">
@@ -25,11 +25,12 @@
 <div class="txt">
 <h2 class="logo">
   <span class="logotxt" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-    雙和人<br>照過來
+    你還在<span></span>看我嗎
   </span>
 </h2>
-<h3 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">不是史上第一次<span v-if="isPC">,</span><br v-else>但是難得的一次</h3>
+<h3 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">當他人還在觀望,你早已搶得先機</h3>
 </div>
+<div class="txt2">最挺雙和　即將登場　賞屋豪禮　搶先登記</div>
 <!-- <img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
 <img class="bg" src="./s1/bgm.jpg" loading="lazy" :alt="`${info.caseName}_bg`" v-if="isMobile">
 
@@ -55,6 +56,7 @@
   position: relative;
   //z-index: 3;
 }
+// .a1{width: 100%;height: 100%; object-fit: contain; opacity: 0.5;}
 .o{
   
   position: absolute;
@@ -63,9 +65,10 @@
   z-index: 2;
 .o1,.o2{
   position: absolute;
-  height: size(870);
-  top:size(-870*.5);
+  height: size(750);
+  top:size(-750 * .57);
   img{
+  z-index:-1;
     height: 100%;
     &:nth-child(1){
       filter: blur(1.7vw);
@@ -73,11 +76,13 @@
     &:nth-child(3){
   position: absolute;
   top: 0;left: 0;
+  z-index: 1;
     }
     &:nth-child(4){
   position: absolute;
   top: 0;left: 0;
   animation: 5s ro infinite linear;
+  z-index: 3;
     }
   }
   .l{
@@ -94,8 +99,16 @@
   }
   }
 }
-.o1{left:size(-470);}
-.o2{right:size(-470);}
+.o1{right:calc(50% - 6vw);
+   img:nth-child(3){
+  z-index: 3;}
+   img:nth-child(4),
+   .l,
+   .l img{
+  animation: 5s -3.5s ro infinite linear;
+  }
+    }
+.o2{left:calc(50% - 6vw);}
 
 }
 
@@ -103,9 +116,9 @@
   to {transform:rotate(360deg);}
 }
 .txt{
-  @include img_c_pc(1200, 140);
- top: calc(50% + (150 - 540) * 100vw / 1920);
-  font-size:size(58);
+  @include img_c_pc(1800, 140);
+ top: calc(50% + (325 - 540) * 100vw / 1920);
+  font-size:size(70);
   line-height: 1.6;
   letter-spacing: 0em;
   text-align: center;
@@ -113,22 +126,33 @@
   color:#FFF;}
 .logo{
   font-weight: 900;
-font-size: 4.85em;
+font-size: 2.2em;
   color: #fff;
-  line-height: 1.1;
+  line-height: 1.7;
+  letter-spacing: -.05em;
+  .logotxt span{margin: 0 1em;}
 }
 .t1{
 font-weight: 200;
- margin: .75em auto;
+ margin: 0em auto;
+ text-shadow: 0 0 0.7em #069,0 0 0.3em #000,0 0 0.2em #000,0 0 0.1em #000;
 }
-
+.txt2{background: linear-gradient(90deg, #E33A8E 0%, #BB2B89 22.92%, #94358B 47.92%, #7A6195 75.52%, #3FB4AA 100%);
+color: #FFF;
+position: absolute;
+width: 100%;
+left: 0;bottom: 0;
+  font-size:size(53);
+  line-height: 2.1;
+  font-weight: 900;
+}
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
-.a1 {width: 100%;position: absolute;left: 0;top:sizem(-63);opacity: 0.50;}
+.a1 {width: 100%;position: absolute;left: 0;opacity: 0.50; object-fit: cover;height: 160vw;}
   .section1 {
     width: 100%;
     min-height: sizem(604);
@@ -139,27 +163,30 @@ font-weight: 200;
   
 .o1,.o2{
   
-  height: sizem(293);
-  top:sizem(-293*.5);
+  height: sizem(210);
+  top:sizem(-210 * .57);
 }
-.o1{left:sizem(-230);}
-.o2{right:sizem(-230);}
+.o1{right:calc(50% - 8vw);}
+.o2{left:calc(50% - 8vw);}
 }
 
 .txt{
   width: 100%;
   left: 0;
-  font-size:sizem(31);
-  top: calc(60% + (165 -  604 * .6) * 100vw / 375);
+  font-size:sizem(19);
+  top: calc(50% + (225 -  604 * .5) * 100vw / 375);
   line-height: 1.3;
 }
 .logo{
-font-size: 2.4em;
+font-size: 2.2em;
 }
 .t1{
  margin: .4em auto;
 }
-
+.txt2{
+  font-size:sizem(18.5);
+  line-height: 2.7;bottom:5vw;
+}
 }
 </style>
 <script>

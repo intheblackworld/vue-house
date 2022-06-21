@@ -168,12 +168,13 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid $mobile_nav_border;
+    border-left: 1px solid $mobile_nav_border;
     border-radius: 0%;
     margin:0;
     &:nth-child(1) {
       background-image:none;
       order:1;
+      border-left: none;
     }
     &:nth-child(2) {
       background-image:none;
@@ -186,7 +187,6 @@ export default {
     &:nth-child(4) {
       order:4;
     display: flex;
-      border-right: none;
     }
     &:hover{transform: scale(1);
     }

@@ -19,6 +19,10 @@
     龍瑩建設 小宅大作
 </h4>
 <h3 class="t2" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">我想搶先賞屋!</h3>
+
+      <img class="img" src="./s3/img.png" alt="圈圈" v-if="isPC">
+      <img class="img" src="./s3/img_m.png" alt="圈圈" v-if="!isPC">
+
 </div>
 <!-- <img class="bg" src="./s1/bg.jpg" loading="lazy" :alt="`${info.caseName}_bg`"  v-if="isPC"> 
 <img class="bg" src="./s1/bgm.jpg" loading="lazy" :alt="`${info.caseName}_bg`" v-if="isMobile">
@@ -80,7 +84,8 @@
   }
   }
 }
-.o1{left:size(-470);}
+.o1{left:size(-470);
+z-index: 3;}
 .o2{right:size(-470);}
 
 }
@@ -106,7 +111,10 @@
   font-weight: 900;
  margin: 0em auto;
 }
-
+.img{
+  margin: 3vw auto 0;
+  width: size(850);
+}
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -117,9 +125,13 @@
 .txt{
   font-size:sizem(24);
   
-  margin:0.7em auto 1em auto;
+  margin:0.7em auto 0em auto;
 }
 
+.img{
+  margin: 6vw auto 0;
+  width: sizem(370);
+}
 }
 </style>
 <script>
