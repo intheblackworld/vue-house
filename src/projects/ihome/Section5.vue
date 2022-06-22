@@ -273,7 +273,7 @@
   .swipe {
     position: relative;
     width:100%;
-    height: sizem(260);
+    height: sizem(210);
     min-height: auto;
     top: sizem(0);
     left: sizem(0);
@@ -442,8 +442,8 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1.jpg'),
-          name: '情境示意圖',
+          img: require('./s5/2.png'),
+          name: '家配平面圖',
         },
       ],
     }
