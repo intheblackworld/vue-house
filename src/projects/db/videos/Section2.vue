@@ -377,6 +377,14 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:1,
+          title: '【太陽帝國】 『PTW亞洲之最 美國建築設計雙料金獎肯定』',
+          desc: '',
+          img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/DmuwVtk30Sg',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:1,
           title: '【伴月灣】 『公園水岸雙首排 最強水岸休憩宅』',
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
@@ -389,14 +397,6 @@ export default {
           desc: '',
           img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/irs0m1qWkl8',
-        },
-        {
-          // icon: require('./s1/icon1.png'),
-          type:1,
-          title: '【自慢藏】 『見識越高，越是深藏不露』',
-          desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
-          video: 'https://www.youtube.com/embed/sGt9eLJhhpU',
         },
         {
           // icon: require('./s1/icon1.png'),
