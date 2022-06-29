@@ -65,7 +65,7 @@
             </h3>
           </el-checkbox>
         </div>
-        <div style="margin: 0 auto; z-index: 2">
+    <!--   --> <div style="margin: 0 auto; z-index: 2">
           <vue-recaptcha
             :sitekey="info.recaptcha_site_key_v2"
             @verify="isVerify = true"
