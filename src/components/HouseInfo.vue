@@ -131,7 +131,7 @@ export default {
     min-height:15em;
     width: 100%;
     margin-bottom: 0;
-    font-size: calc(100vw * 16 / 375);
+    font-size: calc(100vw * 15 / 375);
     padding-bottom: 50px;
   }
 
@@ -146,6 +146,9 @@ export default {
     height: auto;
     white-space: normal;
     margin: 0.5em 20px;
+  .label {
+    margin-right: 0.4em;
+  }
   }
 
   .info {

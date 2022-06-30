@@ -118,12 +118,12 @@ export default {
     margin: .3em;
     transition: all 0.3s;
     &:nth-child(1) {
-  background-image:url("~@/projects/lyn/s1/o02.png");background-size: contain;
+ // background-image:url("~@/projects/rjs/s1/o02.png");background-size: contain;
     line-height: 1.2;
       order:2;
     }
     &:nth-child(2) {
-  background-image:url("~@/projects/lyn/s1/o01.png");background-size: contain;
+//  background-image:url("~@/projects/rjs/s1/o01.png");background-size: contain;
     line-height: 1.2;
       order:1;
     }
@@ -172,11 +172,11 @@ export default {
     border-radius: 0%;
     margin:0;
     &:nth-child(1) {
-      background-image:none;
+     // background-image:none;
       order:1;
     }
     &:nth-child(2) {
-      background-image:none;
+    //  background-image:none;
       order:2;
     }
     &:nth-child(3) {
