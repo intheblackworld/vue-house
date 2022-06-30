@@ -22,8 +22,8 @@
   <li data-aos="flip-left" data-aos-delay="600">名師<br />設計團隊</li>
   <li data-aos="flip-left" data-aos-delay="700">校園<br />首席書香</li>
 </ul>
-<div class="bottom" data-aos="zoom-in">集まれ！期待すべき種たち！<img src="./s1/slogo.png" alt="匯丞廣告" /></div>
 </div>
+<div class="bottom" data-aos="zoom-in">集まれ！期待すべき種たち！<img src="./s1/slogo.png" alt="匯丞廣告" /></div>
 </article>
 </template>
 
@@ -108,12 +108,14 @@
     flex-wrap: wrap;
   margin: 1.4em auto auto auto; width: 77%;}
   li{width: 5em;height: 5em;padding: 1.15em 0 0 0;border: 2px solid currentColor;border-radius: 50%;font-weight: 700;margin: 0 0 0.8em;}
-  .bottom{
-    font-size: 1.1em;letter-spacing: 0.2em;
-     margin: 3.8em auto auto auto;
+
+}
+.bottom{
+  position: absolute;
+  bottom: size(90);right:size(135);
+  font-size:size(44);color: #00B451;letter-spacing: 0.2em;
      img{height: 1.13em; vertical-align: middle;margin: 0 0 0 1.9em;}
   }
-}
 
 
 /* 螢幕尺寸標準 */

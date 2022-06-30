@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
+      <img class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
    <!--   <div class="logobg1"></div>
       <div class="logobg2">
       <img src="@/projects/rjs/s1/logobg1.png" :alt="`${info.caseName}_面水岸`" />

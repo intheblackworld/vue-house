@@ -11,26 +11,29 @@
       <img src="./s1/rabbit.png" alt="rabbit">
     </div>
     <div class="txt" data-aos="zoom-in-right">上學只要<span><b>1</b>分鐘</span></div>
+    <div class="txt2" v-if="isMobile">日進月步にっしんげっぽ</div>
   </div>
-  <img src="./s1/leaf6.png" class="leaf6" alt="leaf">
+  <img src="./s1/leaf6.png" v-if="!isMobile" class="leaf6" alt="leaf">
   
   <div class="txtall">
-    <img src="./s1/leaf1.png" data-aos="fade" data-aos-delay="300" class="leaf1" alt="leaf">
-    <img src="./s1/leaf2.png" data-aos="fade" data-aos-delay="100" class="leaf2" alt="leaf">
-    <img src="./s1/leaf3.png" data-aos="fade" class="leaf3" alt="leaf">
-    <img src="./s1/leaf4.png" data-aos="fade" data-aos-delay="200" class="leaf4" alt="leaf">
-    <img src="./s1/leaf5.png" data-aos="fade" data-aos-delay="400" class="leaf5" alt="leaf">
-    <img src="./s1/book1.png" data-aos="fade-down" class="book1" alt="book">
-    <img src="./s1/book2.png" data-aos="fade-down" data-aos-delay="300" class="book2" alt="book">
+    <img src="./s1/leaf1.png" v-if="!isMobile" data-aos="fade" data-aos-delay="300" class="leaf1" alt="leaf">
+    <img src="./s1/leaf2.png" v-if="!isMobile" data-aos="fade" data-aos-delay="100" class="leaf2" alt="leaf">
+    <img src="./s1/leaf3.png" v-if="!isMobile" data-aos="fade" class="leaf3" alt="leaf">
+    <img src="./s1/leaf4.png" v-if="!isMobile" data-aos="fade" data-aos-delay="200" class="leaf4" alt="leaf">
+    <img src="./s1/leaf5.png" v-if="!isMobile" data-aos="fade" data-aos-delay="400" class="leaf5" alt="leaf">
+    <img src="./s1/book1.png" v-if="!isMobile" data-aos="fade-down" class="book1" alt="book">
+    <img src="./s1/book2.png" v-if="!isMobile" data-aos="fade-down" data-aos-delay="300" class="book2" alt="book">
 
-    <img src="./s1/logo.png" class="logo" alt="logo" v-if="!isMobile">
-    <img src="./s1/logom.png" class="logo" alt="logo" v-else>
-    <div class="txt">
-      <h3><span class="t1">成州國小正對面<b>｜</b>均值3房</span>
-      <span class="t2">｜書香水岸第一排 8295 3311｜</span></h3>
-    </div>
-    
-
+    <img src="./s1/logo.png" class="logo" alt="logo" v-if="!isMobile" data-aos="zoom-in">
+    <img src="./s1/logom.png" class="logo" alt="logo" v-else data-aos="zoom-in">
+    <h3 class="txt" v-if="!isMobile">
+      <span class="t1" data-aos="zoom-in" data-aos-delay="200">成州國小正對面<b>｜</b>均值3房</span>
+      <span class="t2" data-aos="zoom-in" data-aos-delay="400">｜書香水岸第一排 8295 3311｜</span>
+    </h3>
+    <h3 class="txt" v-else>
+      <span class="t1" data-aos="zoom-in" data-aos-delay="200">成州國小正對面</span>
+      <span class="t2" data-aos="zoom-in" data-aos-delay="400"><i>書香水岸第一排</i>均值3房<b>｜</b>8295 3311</span>
+    </h3>
   </div>
 </article>
 </template>
@@ -70,23 +73,26 @@
   }
   .txt{
     position: absolute;
-    width:size(197);
-    height:size(197);
+    width:6.57em;
+    height:6.57em;
     color: #fff;
     border-radius: 50%;
     background:#00B451;
-    left: size(605);
-    top:size(-155);
+    left:20.17em;
+    top:-5.16em;
     font-size:size(30);
     padding: 1.6em 0 0 0;
     line-height: 1.3;
     transform-origin: 0 100%;
     &::before{
-      content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%2300B451' d='M32.2,0.3l20.8,27L6.2,52c-2.3,1.2-4.7-1.4-3.4-3.6L32.2,0.3z'/%3E%3C/svg%3E%");
-      width:size(57);height: size(57);
+      content:"";
+      width:1.9em;height:1.9em;;
+      display: block;
+      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 53 53'%3E%3Cpath fill='%2300B451' d='M32.2,0.3l20.8,27L6.2,52c-2.3,1.2-4.7-1.4-3.4-3.6L32.2,0.3z'/%3E%3C/svg%3E") center no-repeat;
+      background-size: contain;
       position: absolute;
       bottom:0;
-      left:size(-15);
+      left:-0.5em;
     }
     span{
       display: block;font-size: 1.5em;
@@ -170,11 +176,8 @@
   color:#000;
   margin: 1.4em 0 0 0;
   }
-h3{
-  font-weight: 700;
-  b{color: #00B451;}
-}
-.t1{font-size: 1.14em;display:block;}
+.t1{font-size: 1.14em;display:block;font-weight: 700;
+  b{color: #00B451;}}
 .t2{display:inline-block;font-weight: 600;}
 }
 /* 螢幕尺寸標準 */
@@ -183,37 +186,61 @@ h3{
 }
 
 @media screen and (max-width: 767px) {
-.a1 {width: 100%;position: absolute;left: 0;top:sizem(-63);opacity: 0.50;}
+// .a1 {width: 100%;position: absolute;left: 0;top:sizem(-63);opacity: 0.50;}
   .section1 {
-    width: 100%;
-    min-height: sizem(604);
+    min-height: sizem(667);
     max-height: sizem(750);
-    height:calc(100vh - 63px);
-  background-image: url('./s1/mo.jpg');
-}
-.o{
-  
-.o1,.o2{
-  
-  height: sizem(293);
-  top:sizem(-293*.5);
-}
-.o1{left:sizem(-230);}
-.o2{right:sizem(-230);}
+    overflow:hidden;
+ // background: url('./s1/mo.jpg') center;
+ // background-size: contain;
 }
 
-.txt{
+.img{
+    width:100%;
+    top:auto;
+    bottom: 0;
+  .imgv{
+    width:100%;
+    top:auto;
+    bottom: 0;
+  // opacity: 0;
+  }
+  .rabbit{
+    top:sizem(-399);
+    left: sizem(69);
+    width: sizem(249);
+  }
+  .txt{
+    left:sizem(270);
+    top:sizem(-250);
+    font-size:sizem(13);
+  }
+  .txt2{
+    position: absolute;
+    left:0;width: 100%;
+    bottom:sizem(10);
+    font-size:sizem(32);
+    color: #fff;
+    text-shadow: 0.05em 0.05em 0.2em #000;
+  }
+}
+.txtall{
+  top:calc(50% + (40 - 333.5) * 100vw / 375);
   width: 100%;
-  left: 0;
-  font-size:sizem(31);
-  top: calc(60% + (165 -  604 * .6) * 100vw / 375);
-  line-height: 1.3;
-}
 .logo{
-font-size: 2.4em;
+  width: sizem(230);
 }
-.t1{
- margin: .4em auto;
+.txt{
+  font-size:sizem(26.2);font-weight: 600;
+  margin:.7em 0 0 0;
+  line-height: 1.3;
+  }
+.t1{font-size: 1.3em;display:block;color: #00B451;margin:0 0 0.5em  0;
+  }
+.t2{
+i{display: block;font-style:normal;font-size: 1.31em;}
+b{color: #00B451;}}
+
 }
 
 }
