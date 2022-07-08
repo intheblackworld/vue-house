@@ -4,8 +4,8 @@
       <div class="title" data-aos="zoom-in">立即預約享限量好禮</div>
       <div class="subtitle" data-aos="zoom-in" data-aos-delay="100"><span class="t1">送</span>
       <span class="li" data-aos="zoom-in" data-aos-delay="200"><img src="./s2/img1.png" alt="品牌運動毛巾"><br>品牌運動毛巾</span>
-   <!--   &
-      <span class="li" data-aos="zoom-in" data-aos-delay="200"><img src="./s2/img2.png" alt="樂天主場門票"><br>樂天主場門票</span>  --></div>
+      &
+      <span class="li" data-aos="zoom-in" data-aos-delay="200"><img src="./s2/img2.png" alt="樂天主場門票"><br>樂天主場門票</span></div>
       <div class="desc" data-aos="zoom-in" data-aos-delay="300">實際活動辦法以現場公佈為準</div>
     </div>
   </div>
@@ -47,7 +47,7 @@
   font-weight: bold;
   color: #ffcb6a;
   font-size:2em;
-  margin: 1em auto 0.5em;
+  margin: 1em auto 1em;
 }
 
 .subtitle {
@@ -58,10 +58,8 @@
   .t1{display: block;
   margin: 0em auto -1em;
   width: 2em;line-height: 2;
-  position: relative;
-  z-index: 2;
   
-  background:#c00;border-radius: 50%;}
+  background:#ffcb6a;color: #000;border-radius: 50%;}
   .li{display: inline-block;
   vertical-align: middle;
   img{width:size(490);}
@@ -70,8 +68,7 @@
 
 .desc {
   font-family:  'Noto Sans TC', sans-serif;
-  font-size:0.8em;opacity: .8;
-
+  font-size:0.8em;color: #FFFC;
 }
 
 
@@ -258,11 +255,11 @@
   .content {
   font-size: sizem(15);
   }
-.subtitle { margin: 0 auto 2em;
-  .t1{ //margin: 0em auto 1em;
+.subtitle { margin: 0 auto 3em;
+  .t1{ margin: 0em auto 1em;
  }
-  .li{display: block;//margin: 1em auto 1em;
-  img{width:size-m(360);margin: 0em auto -.5em;}
+  .li{display: block;margin: 1em auto 1em;
+  img{width:size-m(360);margin: 0em auto -1em;}
   }
 }
 

@@ -16,7 +16,7 @@
 </div>
 <div class="txt">
 <h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>人生MVP</b> <br v-if="isMobile">生活紅不讓</span></h2>
-<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">全能綠生活 核心雙商圈｜2-3房</h3>
+<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">全能綠生活 核心雙商圈</h3>
 </div>
 
 
@@ -124,6 +124,9 @@ b{
 
 .t2{
   font-weight:500;
+  letter-spacing: 0.1em;
+  text-indent: 0.1em;
+font-size: 1.22em;
  padding: 0.14em 0 0;color: #f0d46b;
 }
 /* 螢幕尺寸標準 */
