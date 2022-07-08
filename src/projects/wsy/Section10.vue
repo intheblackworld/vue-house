@@ -1,7 +1,6 @@
 <template>
   <div class="section10"><!-- 
     <img src="./s1/0.jpg" alt="`${info.caseName}_bg" class="t0">  -->
-      <img src="./s1/0.jpg" :alt="`${info.caseName}_logo`" class="wsy">
     <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       <img src="./all/3.png" alt="3" class="c4">
       <div class="c3"><img src="./all/3.png" alt="3"></div>
