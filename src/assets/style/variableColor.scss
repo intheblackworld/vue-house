@@ -1,5 +1,5 @@
 /* html, body */
-$bg:#f1f8f0;
+$bg:#E0D9BF url('~@/projects/mzsy/s1/bg.png');
 $bg-size:auto;
 
 /* font-family */
@@ -12,16 +12,16 @@ $family3: 'Noto Sans TC',sans-serif; */
 
 
 /* navigation */
-$nav_bg:#046a;
+$nav_bg:#B28247;
 $nav_link_color: #FFF;
 $nav_line_color: #0094ca;
-$nav_btn_color: #FFF;
-$nav_btn_bg: #0094ca;
+$nav_btn_color: #000;
+$nav_btn_bg: #FFF;
 $nav_link_subtitle_color: #000;
-$nav_link_hover_color: #34e1ff;
+$nav_link_hover_color: #FF0;
 $nav_link_hover_bg: #f60;
-$nav_btn_hover_color: #FFF;
-$nav_btn_hover_bg: #00bbff;
+$nav_btn_hover_color: #000;;
+$nav_btn_hover_bg: #FF0;
 
 /* loading */
 $loading_bg_color: #ccc;

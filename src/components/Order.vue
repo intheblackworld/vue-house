@@ -304,7 +304,7 @@ left: 0;
   &::after{content: "";display: block;
   width: calc(100% + (100vw * 88 / 1920));
   height:100%;
-  background: url("~@/projects/gramercy3/all/w.png") 0 0;
+  background: url("~@/projects/mzsy/all/w.png") 0 0;
   background-size: size(88) auto;
   position: relative;
       transform: translateX(size(-88));

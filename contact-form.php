@@ -4,7 +4,7 @@
 #$case_code_test 是用來判斷是否為1的測試頁
 #$case_code = "jw";特殊案使用
 $src =$_SERVER['SERVER_NAME']; 
-$case_code = 'gramercy3';
+$case_code = 'mzsy';
 
 # PDO DB 連線 Start
     $pdo=new pdo('mysql:host=localhost;dbname=htw12_web','htw12','3hdaiU813Q');

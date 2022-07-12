@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <img class="og" src="@/projects/gramercy3/all/og.jpg" :alt="`${info.caseName}_ogimg`">
+    <img class="og" src="@/projects/mzsy/all/og.jpg" :alt="`${info.caseName}_ogimg`">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -108,16 +108,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/gramercy3/Section1.vue'
-import Section2 from '@/projects/gramercy3/Section2.vue'
-import Section3 from '@/projects/gramercy3/Section3.vue'
-import Section4 from '@/projects/gramercy3/Section4.vue'
-import Section5 from '@/projects/gramercy3/Section5.vue'
-import Section6 from '@/projects/gramercy3/Section6.vue'
-import Section7 from '@/projects/gramercy3/Section7.vue'
-import Section8 from '@/projects/gramercy3/Section8.vue'
-/* import Section9 from '@/projects/gramercy3/Section9.vue'
-import Section10 from '@/projects/gramercy3/Section10.vue' */
+import Section1 from '@/projects/mzsy/Section1.vue'
+import Section2 from '@/projects/mzsy/Section2.vue'
+import Section3 from '@/projects/mzsy/Section3.vue'
+import Section4 from '@/projects/mzsy/Section4.vue'
+import Section5 from '@/projects/mzsy/Section5.vue'
+import Section6 from '@/projects/mzsy/Section6.vue'
+import Section7 from '@/projects/mzsy/Section7.vue'
+import Section8 from '@/projects/mzsy/Section8.vue'
+/* import Section9 from '@/projects/mzsy/Section9.vue'
+import Section10 from '@/projects/mzsy/Section10.vue' */
 
 export default {
   name: 'home',
