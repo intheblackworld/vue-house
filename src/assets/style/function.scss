@@ -10,3 +10,7 @@
   $c-size: 100vw * $size / 375;
   @return #{$c-size};
 }
+
+$title:#000;
+$pagination:#FFF;
+$pagination-active:#C00;

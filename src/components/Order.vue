@@ -1,10 +1,10 @@
 <template>
   <div class="order-bg" ref="parallax2">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+   <!-- <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       
-      <div class="c1"><img src="@/projects/wsy/all/3.png" alt="1"></div>
-      <div class="c2"><img src="@/projects/wsy/all/2.png" alt="3"></div>
-    </div>
+      <div class="c1"><img src="@/projects/mzsy/all/3.png" alt="1"></div>
+      <div class="c2"><img src="@/projects/mzsy/all/2.png" alt="3"></div>
+    </div> -->
     <div class="order-top">
       <div class="title-block">
       <div class="o" data-aos="zoom-in"></div>
@@ -98,13 +98,13 @@
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
-
+<!--
     <ContactInfo />
     <GoogleMap />
     <PolicyDialog
       :policyVisible="policyVisible"
       @hidePolicyDialog="hidePolicyDialog"
-    />
+    /> -->
   </div>
 </template>
 

@@ -32,7 +32,7 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
 }
 /*
   */
-  .wsy{
+  .mzsy{
       position: absolute;
       top:0;
       left: 0;

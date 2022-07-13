@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <img class="og" src="@/projects/wsy/all/og.jpg" :alt="`${info.caseName}_ogimg`">
+    <img class="og" src="@/projects/mzsy/all/og.jpg" :alt="`${info.caseName}_ogimg`">
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -54,18 +54,6 @@
     >
       <Section8 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-    <Section9 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section10"
-    >
-    <Section10 />
-    </vue-lazy-component>
 <!--      
   <vue-lazy-component
       class="section relative"
@@ -114,17 +102,17 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/wsy/Section1.vue'
-import Section2 from '@/projects/wsy/Section2.vue'
-import Section3 from '@/projects/wsy/Section3.vue'
-import Section4 from '@/projects/wsy/Section4.vue'
-import Section5 from '@/projects/wsy/Section5.vue'
-import Section6 from '@/projects/wsy/Section6.vue'
-import Section7 from '@/projects/wsy/Section7.vue'
-import Section8 from '@/projects/wsy/Section8.vue'
-import Section9 from '@/projects/wsy/Section9.vue'
-import Section10 from '@/projects/wsy/Section10.vue'
-/* import Section10 from '@/projects/wsy/Section10.vue' */
+import Section1 from '@/projects/mzsy/Section1.vue'
+import Section2 from '@/projects/mzsy/Section2.vue'
+import Section3 from '@/projects/mzsy/Section3.vue'
+import Section4 from '@/projects/mzsy/Section4.vue'
+import Section5 from '@/projects/mzsy/Section5.vue'
+import Section6 from '@/projects/mzsy/Section6.vue'
+import Section7 from '@/projects/mzsy/Section7.vue'
+import Section8 from '@/projects/mzsy/Section8.vue'
+// import Section9 from '@/projects/mzsy/Section9.vue'
+// import Section10 from '@/projects/mzsy/Section10.vue'
+/* import Section10 from '@/projects/mzsy/Section10.vue' */
 
 export default {
   name: 'home',
@@ -144,8 +132,8 @@ export default {
     Section6,
     Section7,
     Section8,
-    Section9,
-    Section10,
+    // Section9,
+    // Section10,
     // Section11,
   },
   data() {
