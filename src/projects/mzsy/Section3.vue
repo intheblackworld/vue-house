@@ -25,14 +25,16 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">結廬在城心，而無車馬喧</div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 /離開南山陶淵明選擇落腳泰山</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-        購屋聰明學 /離開南山陶淵明選擇落腳泰山<br />
 泰山最成熟的機能核心<br />
 明志路繁中取靜，商圈、學校、公園、市場全方位滿足<br />
-出靜巷得繁華，無店面更純靜
+出靜巷得繁華，無店面更純靜<br />
+享受市中心不可多得純住美學
+
       </div>
       </div>
-     <div class="pagination absolute flex-ac" v-if="isPC" data-aos="fade-up">
+     <div class="pagination" v-if="isPC">
         <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -43,12 +45,12 @@
 
 .section3 {
   width:100%;
-  height: size(850);
+  height: auto;
   position: relative;
-  margin: 0 0 0 0;
+  padding:size(150) 0 0 0;
 }
 .img{
-  top: -16.5%;z-index: 5;
+  top: -20%;z-index: 3;
   right: 3%;
   width: 21.35%;
   img{width: 100%;}
@@ -58,8 +60,6 @@
     transform:rotate(10deg);
     transform-origin: 85% 85%;
     animation: an 2s ease-in-out infinite alternate;
-
-    
   }
 }
 @keyframes an{
@@ -80,14 +80,23 @@
   font-weight: 600;
   line-height: 1.3;
   z-index: 3;
+  text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
   }
 
 .title{
   position: relative;
-  font-size: size(44);
-  margin:.6em auto 0;
+  font-size:2.3em;
+  margin:1em auto 0;
   letter-spacing:0em;
   font-weight: 900;
+}
+.subtitle{
+  position: relative;
+  font-size:1.3em;
+  margin:.6em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
 }
 .desc {
   margin:1em auto;
@@ -102,11 +111,10 @@
 /* Swipe */
 
 .swipe {
-  position: absolute;
+  position: relative;
   width: size(840);
   height: size(560);
-  top: size(160);
-  left: size(200);
+  margin: 0 auto 0 size(200);
   object-fit: cover;
   z-index: 3;
 }
@@ -162,11 +170,12 @@
 
 // pagination
 .pagination {
+  position: relative;
+  transform: translate(130%,-100%);
   width: auto;
-  bottom: size(155);
-  left:calc(50% + 8.2vw);
   justify-content: center;
   font-size: size(20);
+  display: inline-block;
 
 }
 .pagination-dot {
@@ -174,6 +183,7 @@
   margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
+    display:inline-block;
 
   span {
     display: block;

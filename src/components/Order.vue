@@ -7,7 +7,6 @@
     </div> -->
     <div class="order-top">
       <div class="title-block">
-      <div class="o" data-aos="zoom-in"></div>
         <h3 class="order-title" v-html="order.title"></h3>
         <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
       </div>

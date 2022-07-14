@@ -5,17 +5,17 @@ export default {
       slideIndex1: 0,
       slideIndex2: 0,
       toggleTimer: true,
-      stopAutoPlay: false,
+      stopAutoPlay: true,
     }
   },
 
   mounted() {
     setInterval(() => {
       if (this.toggleTimer) {
-        if (this.slideList && !this.stopAutoPlay) {
+        if (this.slideList) {
           this.addIndex()
         }
-        if (this.slideList1) {
+        if (this.slideList1 && !this.stopAutoPlay) {
           this.addMultiIndex(1)
         }
 

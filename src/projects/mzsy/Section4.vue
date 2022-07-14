@@ -26,17 +26,17 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">
-好讀書不求甚遠<br/>
-好學區不該太遠</div>
+        好讀書不求甚遠<br />好學區不該太遠
+      </div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 /孟母為兒三遷的累，父母最知道</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-        購屋聰明學 /孟母為兒三遷的累，父母最知道<br />
 從古時孕育英才的書院，到今日文化資產的歷史建築<br />
 明志書院風蘊人文百年傳承<br />
 15所學校16年大中小完整學區<br />
-家在文教區，孩子天天在書香氣息中薰陶成長
+家在文教區，孩子天天在書香氣息中薰陶，教育自然養成
       </div>
       </div>
-      <div class="pagination absolute flex-ac" v-if="isPC" data-aos="fade-up">
+      <div class="pagination" v-if="isPC">
         <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -47,12 +47,13 @@
 
 .section4 {
   width:100%;
-  height: size(760);
+  height: auto;
   position: relative;
+  padding:size(150) 0 0 0;
 }
 .img{
-  bottom: -16.5%;z-index: 5;
-  left: 2%;
+  bottom: -16.5%;z-index: 3;
+  left: 0%;
   width: 20.75%;
   img{width: 100%;}
   .absolute{
@@ -62,8 +63,6 @@
     transform:rotate(5deg);
     transform-origin: 28% 98%;
     animation: an 2s ease-in-out infinite alternate;
-
-    
   }
 }
 @keyframes an{
@@ -74,9 +73,9 @@
 
 .txt{
   position: absolute;
-  width: size(460);
-  left: size(350);
-  top: size(110);
+  width: size(530);
+  left: size(300);
+  top: size(200);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -84,14 +83,23 @@
   font-weight: 600;
   line-height: 1.3;
   z-index: 3;
+  text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
   }
 
 .title{
   position: relative;
-  font-size: size(44);
+  font-size:2.3em;
   margin:1em auto 0;
   letter-spacing:0em;
   font-weight: 900;
+}
+.subtitle{
+  position: relative;
+  font-size:1.3em;
+  margin:.6em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
 }
 
 .desc {
@@ -106,11 +114,10 @@
 
 /* Swipe */
 .swipe {
-  position: absolute;
+  position: relative;
   width: size(840);
   height: size(560);
-  top: size(100);
-  right: size(200);
+  margin: 0 size(200) 0 auto;
   object-fit: cover;
   z-index: 3;
 }
@@ -168,11 +175,12 @@
 }
 
 .pagination {
+  position: relative;
+  transform: translate(-130%,-100%);
   width: auto;
-  bottom: size(70);
-  right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);
+  display: inline-block;
 }
 
 .pagination-dot {
@@ -180,6 +188,7 @@
   margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
+    display:inline-block;
 
   span {
     display: block;

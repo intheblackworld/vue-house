@@ -25,17 +25,16 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">人生得意須近山<br />
-有靠山才有好健康</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">購屋聰明學 /愛山成迷的李白：近山，才有靠山<br />
-城森綠境，汲取不老青春露<br />
+      <div class="title" data-aos="fade-up" data-aos-delay="200">人生得意須近山<br />有靠山才有好健康</div>
+<div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 /愛山成迷的李白：近山，才有靠山</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">城森綠境，汲取不老青春露<br />
 17公頃義學坑自然生態公園森情相伴<br />
 或週休或閒暇入境森野<br />
 綠意環山、飽滿的芬多精與負離子，諧律吐納快活慢老
       </div>
       </div>
-     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+     <div class="pagination" v-if="isPC">
+        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>
@@ -45,14 +44,14 @@
 
 .section5 {
   width:100%;
-  height: size(900);
+  height: auto;
   position: relative;
-  margin: 0 0 2.5vw 0;
+  padding:size(150) 0 0 0;
 }
 
 .img{
   top: -6%;
-    z-index: 5;
+    z-index: 3;
     right: 4.6%;
     width: 20.35%;
   img{width: 100%;}
@@ -88,14 +87,23 @@
   font-weight: 600;
   line-height: 1.3;
   z-index: 3;
+  text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
   }
 
 .title{
   position: relative;
-  font-size: size(44);
+  font-size:2.3em;
   margin:.6em auto 0;
   letter-spacing:0em;
   font-weight: 900;
+}
+.subtitle{
+  position: relative;
+  font-size:1.3em;
+  margin:.6em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
 }
 .desc {
   margin:1em auto;
@@ -110,11 +118,10 @@
 /* Swipe */
 
 .swipe {
-  position: absolute;
+  position: relative;
   width: size(840);
   height: size(560);
-  top: size(160);
-  left: size(200);
+  margin: 0 auto 0 size(200);
   object-fit: cover;
   z-index: 3;
 }
@@ -170,18 +177,19 @@
 
 // pagination
 .pagination {
+  position: relative;
+  transform: translate(130%,-100%);
   width: auto;
-  bottom: size(205);
-  left:calc(50% + 8.2vw);
   justify-content: center;
   font-size: size(20);
-
+  display: inline-block;
 }
 .pagination-dot {
   padding: 0.25em;
   margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
+  display:inline-block;
 
   span {
     display: block;

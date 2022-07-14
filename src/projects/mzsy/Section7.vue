@@ -139,7 +139,7 @@
   font-style: normal;
   text-align: justify;
   font-size: size(19);
-  font-weight: 400;
+  font-weight: 600;
   z-index: 3;
   margin: 0 0 8em 0;
 
@@ -431,6 +431,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      stopAutoPlay: true,
       slideList1: [
         {
           img: require('./s7/1-1.jpg'),
