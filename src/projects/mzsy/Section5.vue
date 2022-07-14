@@ -1,6 +1,11 @@
 <template>
   <div>
     <div class="section5">
+      <div class="img absolute">
+        <img class="relative" loading="lazy" src="./s5/img3-1.png" alt="李白" />
+        <img class="absolute img3-2" loading="lazy" src="./s5/img3-2.png" alt="李白" />
+        <img class="absolute img3-3" loading="lazy" src="./s5/img3-3.png" alt="李白" />
+      </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -44,28 +49,32 @@
   position: relative;
   margin: 0 0 2.5vw 0;
 }
-.w{
-  position: absolute;
-width:size(800);
-height:size(59 * 6);
-overflow: hidden;
-top:size(15);
-left: 0;
-  &::after{content: "";display: block;
-  width: calc(100% + (100vw * 88 / 1920));
-  height:100%;
-  background: url("./all/w.png") 0 0;
-  background-size: size(88) auto;
-  position: relative;
-      transform: translateX(size(-88));
-      animation: an 2s linear infinite;
+
+.img{
+  top: -6%;
+    z-index: 5;
+    right: 4.6%;
+    width: 20.35%;
+  img{width: 100%;}
+  .img3-2{
+    top: 24.2%;
+    left: 47.5%;
+    width: 20.4%;
+    transform:translate(3% ,-5%);
+    animation: an 2s ease-in-out infinite alternate;
+  }
+  .img3-3{    top: 40.9%;
+    left: 19.2%;
+    width: 64.4%;
   }
 }
 @keyframes an{
     to{
-      transform: translateX(0);
+    transform:translate(0);
     }
 }
+
+
 
 .txt{
   position: absolute;
@@ -103,7 +112,7 @@ left: 0;
 .swipe {
   position: absolute;
   width: size(840);
-  height: size(534);
+  height: size(560);
   top: size(160);
   left: size(200);
   object-fit: cover;

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="section5">
+    <div class="section6">
+      <div class="img absolute">
+        <img class="relative" loading="lazy" src="./s6/img4-1.png" alt="曾子" />
+        <img class="absolute" data-aos="zoom-in" loading="lazy" src="./s6/img4-2.png" alt="曾子" />
+      </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -39,20 +43,23 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {
+.section6 {
   width:100%;
   height: size(730);
   position: relative;
 }
-
-.tree{
-  position: absolute;
-  top:size(147);
-  left:size(200);
-  font-size: size(20);
-  img{margin: 0 1em 0 0;}
-  .tree1{width:2.95em;}
-  .tree2{width:2.3em;}
+.img{
+top: -19.3%;
+    z-index: 5;
+    left: 28.6%;
+    width: 20.2%;
+  img{width: 100%;}
+  .absolute{
+    top:0;
+    left:0;
+    width: 100%;    
+    transform-origin: 80% 10%;
+  }
 }
 .txt{
   position: absolute;
@@ -232,7 +239,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
+  .section6 {
     width: 100vw;
     height: auto;
     overflow: hidden;
@@ -280,7 +287,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section5',
+  name: 'section6',
 
   mixins: [slider],
   props: ['viewIndex'],

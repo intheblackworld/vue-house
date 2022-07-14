@@ -43,9 +43,9 @@
 
 .section3 {
   width:100%;
-  height: size(900);
+  height: size(850);
   position: relative;
-  margin: 0 0 2.5vw 0;
+  margin: 0 0 0 0;
 }
 .img{
   top: -16.5%;z-index: 5;
@@ -55,13 +55,16 @@
   .absolute{
   top:20.7%;
   left:20.1%;width: 13%;
-  
+    transform:rotate(10deg);
+    transform-origin: 85% 85%;
+    animation: an 2s ease-in-out infinite alternate;
+
     
   }
 }
 @keyframes an{
     to{
-      transform: translateX(0);
+    transform:rotate(-10deg);
     }
 }
 
@@ -101,7 +104,7 @@
 .swipe {
   position: absolute;
   width: size(840);
-  height: size(534);
+  height: size(560);
   top: size(160);
   left: size(200);
   object-fit: cover;
@@ -160,7 +163,7 @@
 // pagination
 .pagination {
   width: auto;
-  bottom: size(205);
+  bottom: size(155);
   left:calc(50% + 8.2vw);
   justify-content: center;
   font-size: size(20);

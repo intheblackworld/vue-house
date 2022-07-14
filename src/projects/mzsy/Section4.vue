@@ -1,6 +1,10 @@
 <template>
   <div>
     <div class="section4">
+      <div class="img absolute">
+        <img class="relative" loading="lazy" src="./s4/img2-1.png" alt="孟子" />
+        <img class="absolute" loading="lazy" src="./s4/img2-2.png" alt="孟子" />
+      </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -43,24 +47,36 @@
 
 .section4 {
   width:100%;
-  height: size(730);
+  height: size(760);
   position: relative;
 }
+.img{
+  bottom: -16.5%;z-index: 5;
+  left: 2%;
+  width: 20.75%;
+  img{width: 100%;}
+  .absolute{
+    top: 11.7%;
+    left: 31.4%;
+    width: 43.3%;
+    transform:rotate(5deg);
+    transform-origin: 28% 98%;
+    animation: an 2s ease-in-out infinite alternate;
 
-.tree{
-  position: absolute;
-  top:size(147);
-  left:size(200);
-  font-size: size(20);
-  img{margin: 0 1em 0 0;}
-  .tree1{width:2.95em;}
-  .tree2{width:2.3em;}
+    
+  }
 }
+@keyframes an{
+    to{
+    transform:rotate(-5deg);
+    }
+}
+
 .txt{
   position: absolute;
-  width: size(590);
-  left: size(210);
-  top: size(225);
+  width: size(460);
+  left: size(350);
+  top: size(110);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -153,7 +169,7 @@
 
 .pagination {
   width: auto;
-  bottom: size(108);
+  bottom: size(70);
   right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);
