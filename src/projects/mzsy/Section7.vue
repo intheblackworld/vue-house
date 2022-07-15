@@ -21,7 +21,7 @@
         </div>
       </div>
         <div class="txt">
-      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span><b>德國/淨水系統 <i>grunbeck</i></b></span><img loading="lazy" src="./s7/1.png" alt="德國/頂級廚具 LEICHT"></div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" ><span>凝鍊奢華 書寫人文</span><img loading="lazy" src="./s7/1.png" alt="德國/頂級廚具 LEICHT"></div>
       <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">德國格溫拜克社區淨水系統，還原每一滴純淨用水</li>
       </ul>

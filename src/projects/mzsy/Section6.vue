@@ -24,14 +24,12 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">豈止馳騁三千里<br/>
-一高二快三捷運</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">［三捷］</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-       購屋聰明學 /便捷交通夫子周遊列國更輕鬆<br/>
-明志路快速串連64、65、國道1號<br/>
-機捷泰山站、新蘆輔大站之心<br/>
-一線雙北自由跨界，一線桃機環遊世界<br/>
-五泰輕軌coming soon，義學站輕鬆進站
+       機場捷運泰山站約4分鐘，一線飛抵桃園機場、一線直達北車雙子星。<br/>
+中和新蘆線輔大站約5分鐘，快速轉乘淡水信義線，暢遊101、淡水。<br/>
+五泰輕軌義學站步行約10分鐘，行經蘆洲五股泰山，串聯環狀捷運南北線，預計113年動工。<br/>
+
       </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-up" v-if="isPC">
@@ -49,9 +47,9 @@
   position: relative;
 }
 .img{
-top: -19.3%;
+top: -54%;
     z-index: 5;
-    left: 28.6%;
+    left: 12%;
     width: 20.2%;
   img{width: 100%;}
   .absolute{
@@ -86,7 +84,7 @@ top: -19.3%;
 .desc {
   margin:1.2em auto 1.3em auto;
   line-height: 2;
-  letter-spacing:0.05em;
+  letter-spacing:0.0em;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);

@@ -25,13 +25,8 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">人生得意須近山<br />有靠山才有好健康</div>
-<div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 /愛山成迷的李白：近山，才有靠山</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">城森綠境，汲取不老青春露<br />
-17公頃義學坑自然生態公園森情相伴<br />
-或週休或閒暇入境森野<br />
-綠意環山、飽滿的芬多精與負離子，諧律吐納快活慢老
-      </div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">健康吐納，有景有境 住進17公頃自然生態保護區</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">大台北再也找不到第二個地方，同時兼備自然生態、人文環境與繁華商圈的極致。自古泰山即是北臺首學人文書香之地，而離你我更近的，是自然。17公頃義學坑生態保護區，高度綠覆率不僅圍塑出獨一無二的自然美境，並吸附落塵降低PM2.5的危害，是健康最好的靠山。</div>
       </div>
      <div class="pagination" v-if="isPC">
         <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -50,7 +45,7 @@
 }
 
 .img{
-  top: -6%;
+  top: -35%;
     z-index: 3;
     right: 4.6%;
     width: 20.35%;

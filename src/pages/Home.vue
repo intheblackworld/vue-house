@@ -32,15 +32,33 @@
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
+      id="section5-1"
+    >
+      <Section5_1 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
       id="section5"
     >
       <Section5 />
     </vue-lazy-component>
     <vue-lazy-component
       class="section"
+      id="section6-1"
+    >
+      <Section6_1 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
       id="section6"
     >
       <Section6 />
+    </vue-lazy-component>
+     <vue-lazy-component
+      class="section"
+      id="section7-1"
+    >
+      <Section7_1 />
     </vue-lazy-component>
      <vue-lazy-component
       class="section"
@@ -53,6 +71,12 @@
       id="section8"
     >
       <Section8 />
+    </vue-lazy-component>
+     <vue-lazy-component
+      class="section"
+      id="section9"
+    >
+      <Section9 />
     </vue-lazy-component>
 <!--      
   <vue-lazy-component
@@ -106,10 +130,14 @@ import Section1 from '@/projects/mzsy/Section1.vue'
 import Section2 from '@/projects/mzsy/Section2.vue'
 import Section3 from '@/projects/mzsy/Section3.vue'
 import Section4 from '@/projects/mzsy/Section4.vue'
+import Section5_1 from '@/projects/mzsy/Section5-1.vue'
 import Section5 from '@/projects/mzsy/Section5.vue'
+import Section6_1 from '@/projects/mzsy/Section6-1.vue'
 import Section6 from '@/projects/mzsy/Section6.vue'
+import Section7_1 from '@/projects/mzsy/Section7-1.vue'
 import Section7 from '@/projects/mzsy/Section7.vue'
 import Section8 from '@/projects/mzsy/Section8.vue'
+import Section9 from '@/projects/mzsy/Section9.vue'
 // import Section9 from '@/projects/mzsy/Section9.vue'
 // import Section10 from '@/projects/mzsy/Section10.vue'
 /* import Section10 from '@/projects/mzsy/Section10.vue' */
@@ -128,10 +156,14 @@ export default {
     Section2,
     Section3,
     Section4,
+    Section5_1,
     Section5,
+    Section6_1,
     Section6,
+    Section7_1,
     Section7,
     Section8,
+    Section9,
     // Section9,
     // Section10,
     // Section11,
