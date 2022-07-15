@@ -178,7 +178,7 @@ export default {
       isDialog: false,
       dialogImg: null,
       showMask: false,
-      slideList: [
+  /*    slideList: [
         {
           img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
           name: "",
@@ -203,7 +203,7 @@ export default {
           subtitle: 'Construction',
           desc:  isMobile?'超過20年的建築專業，用心成就每一處住所，<br>看好土城的潛力，用金城舞系列證明，<br>深耕土城的決心，更要滿足當代青年的成家夢。': '擁有逾20年以上專業建築經歷，是北台灣首屈一指的建設公司。<br>茂德看好板南線生活機能、萬大線軌道計畫、城市建設遠景以及土城暫緩發展區的潛力，<br>從金城舞1期圓滿完銷到目前新案，致力深耕土城，滿足首購、換屋需求，也期望帶來更好的居住品質。',
         }
-      ]
+      ]  */
     };
   },
 
