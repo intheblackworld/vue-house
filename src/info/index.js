@@ -1,15 +1,15 @@
 import { isMobile } from '../utils/index'
 export default {
-   address: '接待中心：新北市土城區明德路一段&清水路',
+   address: '接待中心：桃園市桃園區大興西路三段268號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7233.216230269212!2d121.44955870556367!3d24.979444400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xebe5d55c176b7a21!2zMjTCsDU4JzQ2LjAiTiAxMjHCsDI3JzEyLjIiRQ!5e0!3m2!1szh-TW!2stw!4v1653555645240!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/BLMcLg1QMsJrBg1b9',
-  phone: '02-2264-6789',
-  fbLink: 'https://www.facebook.com/110053711729222',
-  fbMessage: 'https://m.me/110053711729222',
-  caseName: '紅布朗花園',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14463.64840075963!2d121.28082665240044!3d25.003102599999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f0b1adfaa27%3A0xa4e6c2c170bdd605!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5aSn6IiI6KW_6Lev5LiJ5q61MjY46Jmf!5e0!3m2!1szh-TW!2stw!4v1657864543527!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/JwcHvzozXNN1SHcH7',
+  phone: '03-3566677',
+  fbLink: 'https://www.facebook.com/joyesthegardenofart',
+  fbMessage: 'https://m.me/joyesthegardenofart',
+  caseName: '中悦耑悦',
   indigatorLength: 10,
-  caseId: 'hbl',
+  caseId: 'jyh',
 
   houseInfos: [
    // ['投資興建', '龍瑩建設事業股份有限公司'],

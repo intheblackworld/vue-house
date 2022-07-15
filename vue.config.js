@@ -35,6 +35,7 @@ module.exports = {
     config.module
       .rule('@yzfe/vue-svgicon-loader')
       .test(/\.svg$/)
+      .loader('svg-url')
       .include.add(resolve('src/assets/svg')).add(resolve('src/projects')) // 处理svg目录
       .end()
       .use('@yzfe/vue-svgicon-loader')

@@ -118,14 +118,16 @@ export default {
     margin: .3em;
     transition: all 0.3s;
     &:nth-child(1) {
- // background-image:url("~@/projects/hbl/s1/o1.png");background-size: contain;
+ // background-image:url("~@/projects/jyh/s1/o1.png");background-size: contain;
     line-height: 1.2;
       order:2;
+    display: none;
     }
     &:nth-child(2) {
- // background-image:url("~@/projects/hbl/s1/o1.png");background-size: contain;
+ // background-image:url("~@/projects/jyh/s1/o1.png");background-size: contain;
     line-height: 1.2;
       order:1;
+    display: none;
     }
     &:nth-child(3) {
     display: none;
@@ -173,10 +175,12 @@ export default {
     &:nth-child(1) {
       background-image:none;
       order:1;
+    display: flex;
     }
     &:nth-child(2) {
       background-image:none;
       order:2;
+    display: flex;
     }
     &:nth-child(3) {
       order:3;

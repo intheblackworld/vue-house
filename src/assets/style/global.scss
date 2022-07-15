@@ -45,13 +45,16 @@ body {
  &::before{content: ' ';
      position: fixed;
      z-index: -1;
-     top: -3vw;
-     right: -5%;;
-     bottom: -3vw;
-     left: -5%;filter: blur(2vw);width: 110%;
+     top:0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+    // filter: blur(2vw);
+    width: 100%;
      background: center 0 ;
      background: $bg;
-     background-size: cover;}
+   //  background-size: cover;
+  }
  
   &.no-padding-top {
     padding-top: 0;

@@ -81,6 +81,11 @@
           >立即預約</el-button
         >
         <Loading :loading="isSubmit" :isOpacity="true" />
+        <img
+          class="icon4"
+          src="../assets/img/icon4.png"
+          :alt="info.caseName"
+        />
       </div>
     </article>
 
@@ -422,6 +427,9 @@ export default {
     margin-top: 40px;
     margin-bottom: 20px;
   }
+.icon4{width: size(419);
+margin:size(79) auto size(-270);
+}
 }
 
 /* 平板尺寸 */
@@ -544,6 +552,9 @@ export default {
         transform: skew(2deg);
       }
     }
+.icon4{width: sizem(285);
+margin:sizem(19) auto sizem(-190);
+}
   }
 }
 </style>

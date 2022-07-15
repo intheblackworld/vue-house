@@ -16,10 +16,10 @@
       <vue-lazy-component class="section" id="section2" style="">
          <Section2 />
       </vue-lazy-component>
+      <!-- 
       <vue-lazy-component class="section" id="section3" style="">
          <Section3 />
       </vue-lazy-component>
-      <!-- 
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -63,9 +63,9 @@ import Loading from '@/components/Loading.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/hbl/Section1.vue'
-import Section2 from '@/projects/hbl/Section2.vue'
-import Section3 from '@/projects/hbl/Section3.vue'
+import Section1 from '@/projects/jyh/Section1.vue'
+import Section2 from '@/projects/jyh/Section2.vue'
+// import Section3 from '@/projects/jyh/Section3.vue'
 
 export default {
   name: 'home',
@@ -80,7 +80,7 @@ export default {
     UIkit,
     Section1,
     Section2,
-    Section3,
+   // Section3,
     // Section4,
     // Section5,
     // Section6,

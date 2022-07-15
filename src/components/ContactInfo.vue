@@ -1,19 +1,12 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-   <!--   <div class="logobg1"></div>
-      <div class="logobg2">
-      <img src="@/projects/hbl/s1/logobg1.png" :alt="`${info.caseName}_面水岸`" />
-      <img src="@/projects/hbl/s1/logobg2.png" :alt="`${info.caseName}_近捷運`" />
-      <img src="@/projects/hbl/s1/logobg3.png" :alt="`${info.caseName}_鄰公園`" />
-      <img src="@/projects/hbl/s1/logobg1.png" :alt="`${info.caseName}_蘆洲站5分鐘`" />
-      <img src="@/projects/hbl/s1/logobg2.png" :alt="`${info.caseName}_888萬起`" />
-      <img src="@/projects/hbl/s1/logobg3.png" :alt="`${info.caseName}_快樂王國`" />
-      </div>
-
-      <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
-      <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
--->      <div class="info">
+        <img
+          class="logo"
+          src="../assets/img/contact-logo.png"
+          :alt="info.caseName"
+        />
+     <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="zoom-in" data-aos-delay="100">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
@@ -97,15 +90,7 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
- // background: $contact_bg;
-  // background-image: url('../assets/img/contact_bg.jpg');
- // background-size: cover;
-  // background: linear-gradient(
-  //   to bottom,
-  //   rgba(243, 149, 1, 1) 0%,
-  //   rgba(218, 71, 19, 1) 100%
-  // );
-  //box-shadow: $contact_shadow;
+  background: $contact_bg;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -121,36 +106,6 @@ export default {
   transform: translateY(0);
   margin:0 auto 2vw;
   padding:0 0 40px;
-}
-.logobg{position: absolute;top: 0;left:calc(50% - 98.6vw * .5);width: 98.6vw;}
-.logobg1{position: absolute;top: -1vw;left:calc(50% - 85vw * .5);width: 85vw;height: 25vw;
-background: radial-gradient(ellipse at center,
- rgba(255,136,146,1) 0%,
- rgba(255,136,146,.5) 10%,
- rgba(252,103,108,0.3) 20%,
- rgba(216,73,134,0.1) 39%,
- rgba(128,0,197,0) 70%);
- animation: logobg1 1.5s ease-in-out infinite alternate;transform: scale(.8);
-
-}
-@keyframes logobg1 {
-    20% {opacity: 1;transform: scale(.8);}
-    100% {opacity: .6;transform: scale(1.1);}
-}
-.logobg2{position: absolute;top: 0;left:calc(50% - 98.6vw * .5);width: 98.6vw;opacity:0.5;
-font-size: 20vw;
-img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 1;
-&:nth-child(1){top: 0.29em;left:0.06em;animation-delay: .6s;width:1.93em;}
-&:nth-child(2){top: 0.26em;left:0.15em;animation-delay: .0s;width:1.75em;}
-&:nth-child(3){top: 0.3em;left:0em;animation-delay: 1.2s;width:1.94em;}
-&:nth-child(4){top: 0.29em;right:0em;animation-delay: .0s;width:1.93em;}
-&:nth-child(5){top: 0.26em;right:0.1em;animation-delay: .8s;width:1.75em;}
-&:nth-child(6){top: 0.3em;right:0.06em;animation-delay: 1.5s;width:1.94em;}
-}
-}
-@keyframes op {
-    50% {opacity: 1;}
-    100% {opacity: 0;}
 }
 
 .logo {
@@ -173,15 +128,15 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
   width: 280px;
   height: 60px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  // border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
-  border-radius:1.8em;
+ //  box-shadow: $contact_btn_border;
+  border:$contact_btn_border;
+  // border-radius:1.8em;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -232,13 +187,12 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
   width: 700px;
   height: 60px;
   font-size: 18px;
-  font-weight: 700;
-  background: #fff;
-  border: 1px solid #0004;
-  border-radius:1.8em;
-  color: $contact_btn_border;
-  font-weight: 700;
-  box-shadow: $contact_btn_border;
+  background: #fff0;
+  border:$contact_btn_border;
+  // border-radius:1.8em;
+  color:#fff;
+  font-weight: 500;
+  // box-shadow: $contact_btn_border;
   z-index: 1;
   padding: 0 100px 0 0;
   margin-right: -100px;
@@ -251,14 +205,14 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
   font-size: 18px;
   cursor: pointer;
   text-decoration: none;
-  //font-weight: 900;
+  font-weight: 700;
   // border-top-right-radius: 60px;
   // border-bottom-right-radius: 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
-  border: $contact_btn_border;
-  border-radius:1.8em;
+  border:$contact_btn_border;
+  // border-radius:1.8em;
   transition: all 0.5s;
   z-index: 1;
   overflow: hidden;
