@@ -99,6 +99,7 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 60%;
+  min-width: 960px;
  // height: 600px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
@@ -281,6 +282,7 @@ export default {
     padding: 10% 8%;
     transform: none;
     margin: 0;
+  min-width:100%;
 
     .logo {
       width: $contact_logo_mobile_width;
