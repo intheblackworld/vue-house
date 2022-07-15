@@ -80,13 +80,13 @@
           :loading="isSubmit"
           >立即預約</el-button
         >
-        <Loading :loading="isSubmit" :isOpacity="true" />
         <img
           class="icon4"
           src="../assets/img/icon4.png"
           :alt="info.caseName"
         />
       </div>
+        <Loading :loading="isSubmit" :isOpacity="true" />
     </article>
 
     <ContactInfo />
@@ -352,7 +352,7 @@ export default {
   .form {
     width: 100%;
     display: flex;
-    align-items: flex-start;
+   // align-items: flex-start;
     margin: 0 auto;
     justify-content: space-between;
     > .group {
@@ -362,7 +362,7 @@ export default {
   }
 
   .group {
-    height: 300px;
+  //  height: 300px;
     margin-bottom: 40px;
     align-content: space-between;
     display: flex;
@@ -395,7 +395,7 @@ export default {
     align-items: center;
     align-content: space-between;
     justify-content: space-between;
-    //margin-bottom: 15px;
+    margin-bottom: 15px;
     background: $order_input_bg;
     border: $order_input_border;
 
