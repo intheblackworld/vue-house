@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-     <!-- <img class="og" src="@/projects/mzsy/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+     <!-- <img class="og" src="@/projects/grandparents-photo/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -126,21 +126,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/mzsy/Section1.vue'
-import Section2 from '@/projects/mzsy/Section2.vue'
-import Section3 from '@/projects/mzsy/Section3.vue'
-import Section4 from '@/projects/mzsy/Section4.vue'
-import Section5 from '@/projects/mzsy/Section5.vue'
-import Section6 from '@/projects/mzsy/Section6.vue'
-import Section7 from '@/projects/mzsy/Section7.vue'
-import Section8 from '@/projects/mzsy/Section8.vue'
-import Section9 from '@/projects/mzsy/Section9.vue'
-import Section10 from '@/projects/mzsy/Section10.vue'
-import Section11 from '@/projects/mzsy/Section11.vue'
-import Section12 from '@/projects/mzsy/Section12.vue'
-// import Section9 from '@/projects/mzsy/Section9.vue'
-// import Section10 from '@/projects/mzsy/Section10.vue'
-/* import Section10 from '@/projects/mzsy/Section10.vue' */
+import Section1 from '@/projects/grandparents-photo/Section1.vue'
+import Section2 from '@/projects/grandparents-photo/Section2.vue'
+import Section3 from '@/projects/grandparents-photo/Section3.vue'
+import Section4 from '@/projects/grandparents-photo/Section4.vue'
+import Section5 from '@/projects/grandparents-photo/Section5.vue'
+import Section6 from '@/projects/grandparents-photo/Section6.vue'
+import Section7 from '@/projects/grandparents-photo/Section7.vue'
+import Section8 from '@/projects/grandparents-photo/Section8.vue'
+import Section9 from '@/projects/grandparents-photo/Section9.vue'
+import Section10 from '@/projects/grandparents-photo/Section10.vue'
+import Section11 from '@/projects/grandparents-photo/Section11.vue'
+import Section12 from '@/projects/grandparents-photo/Section12.vue'
+// import Section9 from '@/projects/grandparents-photo/Section9.vue'
 
 export default {
   name: 'home',

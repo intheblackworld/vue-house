@@ -2,8 +2,8 @@
   <div class="order-bg" ref="parallax2">
    <!-- <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       
-      <div class="c1"><img src="@/projects/mzsy/all/3.png" alt="1"></div>
-      <div class="c2"><img src="@/projects/mzsy/all/2.png" alt="3"></div>
+      <div class="c1"><img src="@/projects/grandparents-photo/all/3.png" alt="1"></div>
+      <div class="c2"><img src="@/projects/grandparents-photo/all/2.png" alt="3"></div>
     </div> -->
     <div class="order-top">
       <div class="title-block">
