@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="section8">
-      <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <div class="img absolute">
+        <img class="relative" loading="lazy" src="./s6/img4-1.png" alt="曾子" />
+        <img class="absolute" data-aos="zoom-in" loading="lazy" src="./s6/img4-2.png" alt="曾子" />
       </div>
     <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -13,121 +13,92 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
-            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
           </div>
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decIndex"></div>
-          <div class="next-btn" @click="addIndex"></div>
-        </div>
       </div>
     </div>
+      <div class="txt">
+      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      </div>
+      <div class="pagination absolute flex-ac" data-aos="fade-up" v-if="isPC">
+        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section8 {  
+.section8 {
   width:100%;
-  height:auto;
+  height: size(730);
   position: relative;
-  margin:0 auto 10.5em;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
-.w{
-  position: absolute;
-width:size(350);
-height:size(59 * 6);
-overflow: hidden;
-top:size(-330);
-right: 0;
-  &::after{content: "";display: block;
-  width: calc(100% + (100vw * 88 / 1920));
-  height:100%;
-  background: url("./all/w.png") 0 0;
-  background-size: size(88) auto;
-  position: relative;
-      transform: translateX(size(-88));
-      animation: an 2s linear infinite;
+.img{
+top: -54%;
+    z-index: 3;
+    left: 12%;
+    width: 20.2%;
+  img{width: 100%;}
+  .absolute{
+    top:0;
+    left:0;
+    width: 100%;    
+    transform-origin: 80% 10%;
   }
 }
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
-}
 .txt{
-  position: relative;
-  width: size(1500);
-  margin: 0 auto 3em auto;
+  position: absolute;
+  width: size(590);
+  left: size(210);
+  top: size(225);
   font-stretch: normal;
   font-style: normal;
-  text-align: center;
+  text-align: justify;
   font-size: size(19);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
   z-index: 3;
   }
 
 .title{
   position: relative;
   font-size: size(44);
-  margin:.9em auto 0;
+  margin:1em auto 0;
+  letter-spacing:0em;
   font-weight: 900;
 }
+
 .desc {
-  margin:0.5em auto;
-  line-height: 2;
-  letter-spacing:-0.02em;
+  margin:1.2em auto 1.3em auto;
+  line-height: 1.8;
+  letter-spacing:0.0em;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
+
 /* Swipe */
 .swipe {
-  position: relative;
-  margin: auto;
-  width: size(1500);
-  height: size(850);
-  // left: size(210);
+  position: absolute;
+  width: size(840);
+  height: size(560);
+  top: size(100);
+  right: size(200);
   object-fit: cover;
   z-index: 3;
 }
-.slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-}
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-}
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-// 過場動畫
-// begin 
+// begin
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -146,15 +117,47 @@ right: 0;
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-// pagination
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+   text-shadow:0 0.1em 0.3em #000;
+  }
+}
+
 .pagination {
   width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
+  bottom: size(108);
+  right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);
-
 }
+
 .pagination-dot {
   padding: 0.25em;
   margin: 0 0.2em;
@@ -197,20 +200,25 @@ right: 0;
     }
   }
 }
+
+
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 0.75em;
   z-index: 3;
   font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    width: 1em;
+    padding: 0 0.75em;
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    img{
+    width: 1em;
+    }
   }
 }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -226,57 +234,44 @@ right: 0;
 
 @media screen and (max-width: 767px) {
   .section8 {
-    width: 100%;
     height: auto;
-    min-height: auto;
-    max-height: initial;
   }
-
-$ww:sizem(33);
-.w{
-width:sizem(130);
-top:sizem(370);
-left: 0;
-right: auto;
-height:calc( #{$ww} * 0.67 * 5);
-  &::after{
-  width: calc(100% + #{$ww});
-  background-size: $ww auto;
-  transform: translateX(-#{$ww});
-  }
-}
+  
+.img{
+top:-110vw;
+    left: 0%;
+    width: 40.2%;}
   .txt{
-    position: relative;
-    width: sizem(320);
-    margin:1.5em auto 6em;
-    left:0;
-    top:0;
-    font-size: sizem(15);
+  position: relative;
+  width: sizem(310);
+margin:1.5em auto 0em;
+  left:0;
+  top:0;
+  font-size: sizem(14);
   }
 .title{
-    font-size: sizem(23);
-  letter-spacing:-0.01em;
+  font-size:1.5em;
+}
+.subtitle{
+  font-size:1.1em;
 }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(240);
+    height: sizem(255);
     top:0;
     left:0;
   }
-
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
   }
 }
-
   .swipe-btns {
   font-size: sizem(15);
   }
 }
-
 </style>
 <script>
 // @ is an alias to /src
@@ -301,45 +296,32 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: require("./s8/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
-          name: '輝煌迎賓廳',
-          title: '輝煌迎賓廳',
-          desc: '挑高迎賓交誼大廳，移植國際奢旅飯店美學，綠意、光瀑流洩，搭配石材舖面與金屬裝飾寫意低調奢華，講述空間的人文氣韻。',
+          img: require("./s6/5.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: '機場捷運泰山站',
+          title: '【三捷】',
+          desc: '機場捷運泰山站約4分鐘，一線飛抵桃園機場、一線直達北車雙子星。中和新蘆線輔大站約5分鐘，快速轉乘淡水信義線，暢遊101、淡水。五泰輕軌義學站步行約10分鐘，行經蘆洲五股泰山，串聯環狀捷運南北線，預計113年動工。',
         },
         {
-          img: require("./s8/2.jpg"),
-          name: '璽悅交誼廳',
-          title: '璽悅交誼廳',
-          desc: '充滿英倫紳士會所優雅氣質，融合LOUNGE BAR、GYMS休閒調性，創造可以放鬆談話交誼空間，讓賓主盡享無拘束互動氛圍。',
+          img: require("./s6/1.jpg"),
+          name: '國道一號',
+          title: '【一高】',
+          desc: '中山高國道一號約8分鐘，快速串接全台各大城市重點區域樂活全台。',
         },
         {
-          img: require("./s8/3.jpg"),
-          name: '歡饗宴會廳',
-          title: '歡饗宴會廳',
-          desc: '媽媽廚藝室，不只是分享食藝的味覺工作坊，寬闊的大吧台與長餐桌也賦予更強的使用機能，亦可作為社區活動聯誼聚會場所。',
+          img: require("./s6/2.jpg"),
+          name: '台65快速道路',
+          title: '【一快】',
+          desc: '台65快速道路約4分鐘，高效連結雙北核心，輕鬆暢享跨界生活版圖。',
         },
         {
-          img: require("./s8/4.jpg"),
-          name: '晶英閱覽室',
-          title: '晶英閱覽室',
-          desc: '透過清玻璃隔板設計，不論是大人小孩一起親子共讀、孩子放學回家寫作業自習、大人讀書會，創享不受干擾的閱讀樂趣。',
-        },
-        {
-          img: require("./s8/5.jpg"),
-          name: '美力健身房',
-          title: '美力健身房',
-          desc: '不用去健身房人擠人，國際設計獎大師規劃、朗闊通透的健身房韻律室，男人的六塊肌與女人的馬甲線，在家就能輕鬆實現。',
-        },
-        {
-          img: require("./s8/6.jpg"),
-          name: '童樂遊戲室',
-          title: '童樂遊戲室',
-          desc: '點綴繽紛色彩的樹屋、溜滑梯，解放孩子活潑好動的心靈與身體，一同玩樂成長；童趣帳篷滿足不論晴雨都能享受野營樂趣。',
+          img: require("./s6/6.jpg"),
+          name: '公車站(明志里站)',
+          title: '【公車】',
+          desc: '公車站牌步行約4分鐘，多線公車全家上班通勤、上學、採買都方便。',
         },
       ]
     }
   },
-
   methods: {
     showDialog() {
       this.isDialog = true;
@@ -357,7 +339,5 @@ export default {
   mounted() {},
 
   computed: {},
-
-  watch: {}
 }
 </script>

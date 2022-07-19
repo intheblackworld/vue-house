@@ -1,152 +1,198 @@
 <template>
-  <div>
     <div class="section10">
-     <img src="./s2/hr.png" alt="" class="hr absolute" loading="lazy">
-      <div class="title-d absolute-jc" data-aos="fade-down" data-aos-delay="200">嚴選建材</div>
-      <div class="mask absolute" data-aos="fade-down-left" data-aos-delay="200"></div>
-      <div class="border absolute" data-aos="fade-up-right" data-aos-delay="200"></div>
-      <div class="swipe absolute" data-aos="fade" data-aos-delay="400" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+      <div class="box">
+   <!--   <div class="title" data-aos="fade" data-aos-delay="0">匠心聚作淬煉經典<br/>
+大台北首購俱歡顏</div>
+      <div class="desc1">聰明購屋學 /杜甫終於也能如願高枕無憂，每一個認真生活的人，都值得被更好地對待，美國MUSE、義大利A’Design設計獎，全台第一大推案建築團隊，以舒適凌駕豪華的書苑人文指標宅，讓大台北首購家庭住好住幸福</div>  -->
+      <div class="list">
+      <div class="swipe swipe1" data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decMultiIndex(1)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addMultiIndex(1)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+          </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="" loading="lazy">
-              <!-- <div class="slide-name absolute" v-html="slide.name"></div> -->
+            <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img loading="lazy" :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" loading="lazy">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" loading="lazy">
-          </div>
         </div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div class="txt">
+          <h3 class="title" data-aos="zoom-in" data-aos-delay="0" ><img loading="lazy" src="./s7/1.png" alt="全台第一大推案建築師 陳朝雄" /><span class="b">凝鍊奢華 書寫人文</span></h3>
+          <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" >全台第一大推案建築師 陳朝雄</div>
+          <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+            以地標之姿收服城市高度，以精湛工藝豐藏城市品味<br v-if="!isMobile" /><span v-else>，</span>
+            匠心獨運地將理性與感性深度融合書院人文底蘊<br v-if="!isMobile" /><span v-else>，</span>
+            有古典的精緻，有現代的時尚<br v-if="!isMobile" /><span v-else>，</span>
+            高貴典雅沈穩大器，成就書苑建築之巔<br />
+            <br />
+            代表作品｜波爾多、江翠PARK、金城舞、橋蓮雄鋒
+          </div>
+        </div>
+        <div class="pagination absolute flex-ac" data-aos="zoom-in" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(1, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
+          </div>
       </div>
-      <div class="en absolute" v-html="slideList[slideIndex].en" data-aos="fade-down" data-aos-delay="600"></div>
-      <div class="name absolute" v-html="slideList[slideIndex].name" data-aos="fade-up" data-aos-delay="800"></div>
-
+      <div class="list">
+      <div class="swipe swipe2" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decMultiIndex(2)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addMultiIndex(2)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+          </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img loading="lazy" :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>          
+        </div>
+      </div>
+        <div class="txt">
+          <h3 class="title" data-aos="zoom-in" data-aos-delay="100" ><img loading="lazy" src="./s7/2.png" alt="信義區豪宅御用景觀設計師 大漢景觀徐世萃" /><span class="b">山水化境 自然成詩</span></h3>
+          <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" >信義區豪宅御用景觀設計師 大漢景觀徐世萃</div>
+          <div class="desc" data-aos="zoom-in" data-aos-delay="400" >
+            「碧波白」景觀設計師專為頂級豪宅打造會呼吸的城市綠帶<br v-if="!isMobile" /><span v-else>，</span>
+            完美融合建築與環境，讓空間與土地產生最自然的連結<br v-if="!isMobile" /><span v-else>，</span>
+            讓生活日常隨風光水綠自在呼吸<br />
+            <br />
+            代表作品｜維多利亞酒店、碧波白、城上城、希望城市
+          </div>
+        </div>
+          <div class="pagination absolute flex-ac" data-aos="zoom-in" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+          </div>
+      </div>
+      <div class="list">
+      <div class="swipe swipe3" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decMultiIndex(3)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addMultiIndex(3)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+          </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList3" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img loading="lazy" :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+        </div>
+      </div>
+        <div class="txt">
+          <h3 class="title" data-aos="zoom-in" data-aos-delay="100" ><img loading="lazy" src="./s7/3.png" alt="榮獲美國MUSE、義大利A’Design設計獎設計師 徐慈姿" /><span class="b">雍雅豐釀 國際邸蘊</span></h3>
+          <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" >榮獲美國MUSE、義大利A’Design設計獎設計師 徐慈姿</div>
+          <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+            以生活的立體感知為基底，透過光影轉換借景入境<br v-if="!isMobile" /><span v-else>，</span>
+            讓公設空間不僅是頂級社交休閒場域<br v-if="!isMobile" /><span v-else>，</span>
+            更成為家的空間延展，散發無限美學張力<br />
+            <br />
+            代表作品｜頤海大院 · 台中帝寶 · 神采飛洋 · 希望城市
+          </div>
+        </div>
+          <div class="pagination absolute flex-ac" data-aos="zoom-in" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+          </div>
+      </div>
     </div>
-  </div>
+    </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
 .section10 {
-  width: size(1920);
-  height: size(900);
-  min-height: size(900);
-  max-height: size(1080);
+  width:100%;
+  height:auto;
+  position: relative;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-weight: 600;
+  padding:5em 0 0 0;
+  font-size: size(19);
+
+  .box{
+  width: size(1500);
+  margin:0em auto 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+    align-items:stretch;
+  position: relative;
+  }
+}
+
+.list{
+  flex:0 0 size(470);
+  width: size(470);
   position: relative;
 }
-
-.bg-img {
-  width: 100vw;
-  height: 100vh;
-  min-height: size(900);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-
-  &:nth-child(1) {
-    position: relative;
-  }
-}
-
-.hr {
-  width: 100vw;
-  top: size(-1);
-  left: 0;
-  transform: scaleY(-1);
-  opacity: 1;
-}
-.title-d {
-  width: size(160);
-  top: size(90);
-  font-size: size(40);
-  font-weight: 500;
+.txt{
+  position: relative;
+  z-index: 3;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #fff;
+  font-size: size(18);
+  font-weight: 600;
+  line-height: 1.6;
+  z-index: 3;
+  margin: 2.8em 0 8em 0;
 
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: size(-60);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s6/title.png');
-    background-size: cover;
-    transform: rotate(180deg);
-    top: size(8);
+.title {
+  position: relative;
+  font-size:2em;
+  margin:0 auto 0.4em;
+  font-weight: 900;
+  text-align: justify;
+  img{float: right;
+    height: 1.9em;
+  margin:-0.15em auto 0em;
+    vertical-align: middle;}
+}
+.subtitle {
+  position: relative;
+  font-size:1em;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
+}
+
+.desc {
+  width: 100%;
+  line-height: 1.5;
+  margin:1em auto 3em auto;
+  list-style: circle;
+  overflow: hidden;
+  text-align: justify;
+  li{list-style:inherit;float: left;margin: 0.2em 0 0.2em 1.4em;
+  width:calc(100% - 1.4em);
   }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: size(-60);
-    top: size(8);
-    width: size(36);
-    height: size(36);
-    background-image: url('./s6/title.png');
-    background-size: cover;
+}
   }
-}
-
-.en {
-  top: size(437);
-  left: size(1213);
-  font-size: size(24);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(1.2);
-  text-align: left;
-  color: #eee93a;
-}
-
-.name {
-  top: size(471);
-  left: size(1213);
-  font-size: size(40);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  text-align: left;
-  color: #ffffff;
-}
-
-.border {
-  width: size(840);
-  height: size(560);
-  top: size(254);
-  left: size(230);
-  border: 2px solid #fff;
-}
-
-.mask {
-  width: size(692);
-  height: size(560);
-  top: size(214);
-  right: size(210);
-  background-color: rgba(0, 63, 68, 0.5);
-}
 
 /* Swipe */
 .swipe {
-  width: size(840);
-  height: size(560);
-  top: size(236);
-  left: size(210);
+//  position: absolute;
+  width:100%;
+  height: size(470);
+  top: size(185);
+  right: size(199);
   object-fit: cover;
+  z-index: 3;
+  order:3;
 }
 
 // begin
@@ -168,30 +214,10 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
 .swipe-wrap {
   width: 100%;
   height: 100%;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .swipe-item {
@@ -201,58 +227,47 @@
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .slide-name {
-    right: 20px;
-    bottom: 15px;
+    right:1.5em;
+    bottom:1em;
     color: #fff;
-    font-size: 15px;
+    font-size: size(15);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
     letter-spacing: 0.89px;
     text-align: left;
-    color: #ffffff;
+    color: #fff;
+   text-shadow:0 0.1em 0.3em #000;
   }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
-
 .pagination {
   width: auto;
-  bottom: size(150);
-  left: size(1115);
+  top: size(480);
+  right:0;
+  left: 0;
   justify-content: center;
+  font-size: size(20);
 }
 
 .pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
+  padding: 0.25em;
+  margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 15px;
-    height: 15px;
-    border-radius: 0px;
-    box-shadow: 0 0 0 1px #ccc;
+    width:1em;
+    height:1em;
+    border-radius: 50%;
+    border: 0.2em solid  $pagination;
     position: relative;
-    background-color: #ccc;
     transition: all 0.5s;
 
     &::before {
@@ -260,12 +275,11 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #eee93a;
-      // border-radius: 20px;
+    border-radius: 50%;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
-      // transform: translateY(-50%);
       left: 20%;
       transition: all 0.3s;
       transform-origin: center;
@@ -274,32 +288,27 @@
     &.active {
       box-shadow: none;
       &::before {
-        content: '';
         width: 100%;
         height: 100%;
-        display: block;
-        background: #eee93a;
-        // border-radius: 20px;
-        opacity: 1;
-        position: absolute;
         top: 0%;
-        // transform: translateY(-50%);
         left: 0%;
-        transform: scale(1.1);
+        transform: scale(1.6);
       }
     }
   }
 }
 
 .swipe-btns {
-  width: 100%;
+  width: 114%;
+  left: -7%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0;
   z-index: 3;
+  font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    width: size(20);
+    width: 1em;
     cursor: pointer;
   }
 }
@@ -320,238 +329,74 @@
 @media screen and (max-width: 767px) {
   .section10 {
     width: 100vw;
-    height: sizem(550);
-    min-height: auto;
-    max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
+    height: auto;
+    font-size: sizem(14);
+    text-align: justify;
+  padding: 0 ;
+  .box{
+    width: sizem(320);
+  flex-direction:column;margin: 0em auto 4em;
   }
-  .hr {
-    width: auto;
-    height: sizem(10);
-    top: sizem(-1);
-    left: 0;
-    opacity: 1;
   }
-
-  .title-d {
-    width: sizem(120);
-    top: sizem(51);
-    font-size: sizem(30);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    text-align: center;
-    color: #fff;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: sizem(4);
-      background-image: url('./s6/title.png');
-      background-size: cover;
-      transform: rotate(180deg);
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: sizem(-45);
-      width: sizem(28);
-      height: sizem(28);
-      top: size(8);
-      background-image: url('./s6/title.png');
-      background-size: cover;
-    }
-  }
-
-  .en {
-    top: sizem(403);
-    left: sizem(0);
+.img{
+  width:100%;
+  text-align: center;
+  img{width:5.5em;}
+}
+  
+.list{
+  flex:0 0 100%;
+  width: 100%;
+  position: relative;
+}
+.txt{
     width:100%;
-    font-size: sizem(15);
-    line-height: 1.92;
-    letter-spacing: sizem(0.75);
-    text-align: center;
+margin:0.5em auto 0em;
+padding: 0 0 3em;
+  font-size: sizem(14);
+.title{
+  font-size:1.5em;
+}
+  .subtitle {
+  font-size:1.05em;
+  display: block;
+  position: relative;
+      img{height:2.8em;position: absolute;
+      top: .2em;
+      right: 0;}
+  i{display: none;}
+  }
+  .desc {
+  list-style: circle;
+  li{margin: 0.2em 0 0.2em 2em;
+  width:calc(100% - 2em); }
+  }
   }
 
-  .name {
-    top: sizem(425);
-    width:100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    font-size: sizem(25);
-    line-height: 1.92;
-    text-align: center;
-  }
-
-  .border {
-    display: none;
-  }
-
-  .mask {
-    width: sizem(360);
-    height: sizem(110);
-    top: sizem(386);
-    right: sizem(8);
-    background-color: rgba(0, 63, 68, 0.5);
-  }
   /* Swipe */
   .swipe {
-    width: sizem(360);
-    height: sizem(240);
+    position: relative;
+    width:100%;
+    height: sizem(300);
     min-height: auto;
-    top: sizem(140);
-    left: sizem(8);
-    object-fit: cover;
+    margin: auto;
+    top:0;
+    left:0;
+  order:initial;
   }
 
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
+
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
   }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
+}
 
   .swipe-btns {
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    z-index: 3;
 
     .prev-btn,
     .next-btn {
-      width: sizem(15);
-      cursor: pointer;
+  font-size: sizem(15);
     }
   }
 }
@@ -573,56 +418,52 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+      stopAutoPlay: true,
+      slideList1: [
         {
-          img: require('./s10/1INNOCI-SQUARE單孔檯面盆.jpg'),
-          en: 'KOHLER UNDEERSCORE',
-          name: '多功能浴室淨暖機',
+          img: require('./s7/1-1.jpg'),
+          name: '陳朝雄',
         },
         {
-          img: require('./s10/2INNOCI-SQUARE單孔檯面盆.jpg'),
-          en: 'INNOCI SQUARE',
-          name: '單孔檯面盆',
+          img: require('./s7/1-2.jpg'),
+          name: '力璞玉',
         },
         {
-          img: require('./s10/3.jpg'),
-          en: 'KOHLER INNATE',
-          name: '全自動智慧馬桶',
+          img: require('./s7/1-3.jpg'),
+          name: '帝景',
         },
         {
-          img: require('./s10/4.jpg'),
-          en: 'INNOCI SQUARE',
-          name: '臉盆龍頭',
+          img: require('./s7/1-4.jpg'),
+          name: '橋蓮雄鋒',
+        },
+      ],
+
+      slideList2: [
+        {
+          img: require('./s7/2-1.jpg'),
+          name: '徐世萃',
         },
         {
-          img: require('./s10/5.jpg'),
-          en: ' ',
-          name: '多功能浴室淨暖機',
+          img: require('./s7/2-2.jpg'),
+          name: '碧波白',
         },
         {
-          img: require('./s10/6.jpg'),
-          en: 'INNOCI  LUXURY',
-          name: '平台式兩用花灑淋浴柱',
+          img: require('./s7/2-3.jpg'),
+          name: '碧波白',
+        },
+      ],
+      slideList3: [
+        {
+          img: require('./s7/3-1.jpg'),
+          name: '徐慈姿',
         },
         {
-          img: require('./s10/7.jpg'),
-          en: ' ',
-          name: '冷熱生飲設備',
+          img: require('./s7/3-2.jpg'),
+          name: '台中帝寶',
         },
         {
-          img: require('./s10/8.jpg'),
-          en: '櫻花SAKURA',
-          name: '櫻花單口IH感應爐',
-        },
-        {
-          img: require('./s10/10.jpg'),
-          en: ' ',
-          name: '德國進口超耐磨木地板',
-        },
-        {
-          img: require('./s10/11.jpg'),
-          en: ' ',
-          name: '大金空調室外機',
+          img: require('./s7/3-3.jpg'),
+          name: '頤海大院',
         },
       ],
     }
@@ -638,7 +479,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 10) {
+      if (this.viewIndex === 3) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

@@ -1,6 +1,6 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
-    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
+    <img src="~@/assets/img/loading_js.gif" alt class="loading-icon" />
   </div>
 </template>
 
@@ -17,9 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-      display: none;
+  //    display: none;
 
   .loading-icon {
     width: 150px;

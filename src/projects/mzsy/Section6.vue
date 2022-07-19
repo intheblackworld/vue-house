@@ -2,8 +2,9 @@
   <div>
     <div class="section6">
       <div class="img absolute">
-        <img class="relative" loading="lazy" src="./s6/img4-1.png" alt="曾子" />
-        <img class="absolute" data-aos="zoom-in" loading="lazy" src="./s6/img4-2.png" alt="曾子" />
+        <img class="relative" loading="lazy" src="./s5/img3-1.png" alt="李白" />
+        <img class="absolute img3-2" loading="lazy" src="./s5/img3-2.png" alt="李白" />
+        <img class="absolute img3-3" loading="lazy" src="./s5/img3-3.png" alt="李白" />
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -15,24 +16,19 @@
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
           </div>
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">［三捷］</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
-       機場捷運泰山站約4分鐘，一線飛抵桃園機場、一線直達北車雙子星。<br/>
-中和新蘆線輔大站約5分鐘，快速轉乘淡水信義線，暢遊101、淡水。<br/>
-五泰輕軌義學站步行約10分鐘，行經蘆洲五股泰山，串聯環狀捷運南北線，預計113年動工。<br/>
-
+      <div class="title" data-aos="fade-up" data-aos-delay="200">健康吐納，有景有境<br />住進17公頃自然生態保護區</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">大台北再也找不到第二個地方，同時兼備自然生態、人文環境與繁華商圈的極致。自古泰山即是北臺首學人文書香之地，而離你我更近的，是自然。17公頃義學坑生態保護區，高度綠覆率不僅圍塑出獨一無二的自然美境，並吸附落塵降低PM2.5的危害，是健康最好的靠山。</div>
       </div>
-      </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" v-if="isPC">
+     <div class="pagination" v-if="isPC">
         <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
@@ -43,48 +39,71 @@
 
 .section6 {
   width:100%;
-  height: size(730);
+  height: auto;
   position: relative;
+  padding:size(150) 0 0 0;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
+
 .img{
-top: -54%;
-    z-index: 5;
-    left: 12%;
-    width: 20.2%;
+  top: -35%;
+    z-index: 3;
+    right: 4.6%;
+    width: 20.35%;
   img{width: 100%;}
-  .absolute{
-    top:0;
-    left:0;
-    width: 100%;    
-    transform-origin: 80% 10%;
+  .img3-2{
+    top: 24.2%;
+    left: 47.5%;
+    width: 20.4%;
+    transform:translate(3% ,-5%);
+    animation: an 2s ease-in-out infinite alternate;
+  }
+  .img3-3{    top: 40.9%;
+    left: 19.2%;
+    width: 64.4%;
   }
 }
+@keyframes an{
+    to{
+    transform:translate(0);
+    }
+}
+
+
+
 .txt{
   position: absolute;
-  width: size(590);
-  left: size(210);
-  top: size(225);
+  width: size(580);
+  right:size(210);
+  top: size(230);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
   font-size: size(19);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
   z-index: 3;
+  text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
   }
 
 .title{
   position: relative;
-  font-size: size(44);
-  margin:1em auto 0;
+  font-size:2.3em;
+  margin:.6em auto 0;
   letter-spacing:0em;
   font-weight: 900;
 }
-
+.subtitle{
+  position: relative;
+  font-size:1.3em;
+  margin:.6em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
+}
 .desc {
-  margin:1.2em auto 1.3em auto;
-  line-height: 2;
-  letter-spacing:0.0em;
+  margin:1em auto;
+  line-height: 1.8;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
@@ -92,17 +111,47 @@ top: -54%;
 }
 
 /* Swipe */
+
 .swipe {
-  position: absolute;
+  position: relative;
   width: size(840);
   height: size(560);
-  top: size(100);
-  right: size(200);
+  margin: 0 auto 0 size(200);
   object-fit: cover;
   z-index: 3;
 }
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
 
-// begin
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -121,52 +170,21 @@ top: -54%;
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #fff;
-   text-shadow:0 0.1em 0.3em #000;
-  }
-}
-
+// pagination
 .pagination {
+  position: relative;
+  transform: translate(130%,-100%);
   width: auto;
-  bottom: size(108);
-  right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);
+  display: inline-block;
 }
-
 .pagination-dot {
   padding: 0.25em;
   margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
+  display:inline-block;
 
   span {
     display: block;
@@ -223,6 +241,7 @@ top: -54%;
     }
   }
 }
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -237,36 +256,31 @@ top: -54%;
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
-    width: 100vw;
-    height: auto;
-    overflow: hidden;
-  }
-.tree{
-  position: absolute;
-  bottom:sizem(10);
-  top: auto;
-  left:sizem(200);
-  font-size: sizem(20);
+.img{
+  top: -22%;
+    right: 0%;
+    width: 40%;
 }
+
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 6em;
+margin:1.5em auto 5em;
   left:0;
   top:0;
-  font-size: sizem(15);
+  font-size: sizem(14);
   }
 .title{
-    font-size: sizem(23);
+  font-size:1.5em;
 }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    height: sizem(240);
     top:0;
     left:0;
+    margin: 0;
   }
 .swipe-item {
   .slide-name {
@@ -299,24 +313,24 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
-          name: '國道一號',
+          img: require('./s5/1.jpg'),
+          name: '尖凍山步道',
         },
         {
-          img: require('./s6/2.jpg'),
-          name: '65號快速道路',
+          img: require('./s5/2.jpg'),
+          name: '尖凍山步道',
         },
         {
-          img: require('./s6/3.jpg'),
-          name: '台一線高架',
+          img: require('./s5/3.jpg'),
+          name: '義學坑自然公園',
         },
         {
-          img: require('./s6/4.jpg'),
-          name: 'YouBike 2.0',
+          img: require('./s5/4.jpg'),
+          name: '應化大排生態園區',
         },
         {
-          img: require('./s6/5.jpg'),
-          name: '機捷泰山貴和站',
+          img: require('./s5/5.jpg'),
+          name: '辭修公園',
         },
       ],
     }

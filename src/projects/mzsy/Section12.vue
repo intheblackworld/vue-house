@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div class="section8">
+    <div class="section12">
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="0">樣品屋標題</h3>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">樣品屋副標題</div>
+      <div class="desc" data-aos="zoom-in" data-aos-delay="300">樣品屋內文樣品屋內文樣品屋內文樣品屋內文樣品屋內文樣品屋內文</div>
       </div>
     <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -19,44 +20,31 @@
           </div>
         </div>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decIndex"></div>
-          <div class="next-btn" @click="addIndex"></div>
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
         </div>
       </div>
     </div>
+      <div class="txt2">
+      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section8 {  
+.section12 {  
   width:100%;
   height:auto;
   position: relative;
-  margin:0 auto 10.5em;
-}
-.w{
-  position: absolute;
-width:size(350);
-height:size(59 * 6);
-overflow: hidden;
-top:size(-330);
-right: 0;
-  &::after{content: "";display: block;
-  width: calc(100% + (100vw * 88 / 1920));
-  height:100%;
-  background: url("./all/w.png") 0 0;
-  background-size: size(88) auto;
-  position: relative;
-      transform: translateX(size(-88));
-      animation: an 2s linear infinite;
-  }
-}
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
+  margin:0 auto 7em;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
 .txt{
   position: relative;
@@ -67,25 +55,57 @@ right: 0;
   text-align: center;
   font-size: size(19);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
   z-index: 3;
-  }
 
 .title{
-  position: relative;
-  font-size: size(44);
+  font-size:2.3em;
   margin:.9em auto 0;
   font-weight: 900;
 }
+.subtitle{
+  font-size:1.3em;
+  margin:.6em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
+}
+
 .desc {
   margin:0.5em auto;
   line-height: 2;
-  letter-spacing:-0.02em;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
+  }
+.txt2{
+  position: relative;
+  width: size(1500);
+  margin: 0 auto 3em auto;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(17);
+  font-weight: 600;
+  line-height: 1.3;
+  z-index: 3;
+  transform: translateY(-100%);
+background: linear-gradient(to right, #0009 0%,#0006 50%,#0000 80%);
+  color: #FFF;
+  padding: 0.5em 2em;
+
+
+.title{
+  font-size:1.8em;
+  margin:0.3em auto 0;
+  font-weight: 900;
+}
+
+.desc {
+  margin:0.5em auto;
+  line-height: 2;
+  list-style: circle;
+}
+  }
 /* Swipe */
 .swipe {
   position: relative;
@@ -225,38 +245,40 @@ right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  .section8 {
+  .section12 {
     width: 100%;
     height: auto;
     min-height: auto;
     max-height: initial;
   }
-
-$ww:sizem(33);
-.w{
-width:sizem(130);
-top:sizem(370);
-left: 0;
-right: auto;
-height:calc( #{$ww} * 0.67 * 5);
-  &::after{
-  width: calc(100% + #{$ww});
-  background-size: $ww auto;
-  transform: translateX(-#{$ww});
-  }
-}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 6em;
+    margin:1.5em auto 3em;
     left:0;
     top:0;
-    font-size: sizem(15);
-  }
+    font-size: sizem(14);
 .title{
-    font-size: sizem(23);
-  letter-spacing:-0.01em;
+  font-size:1.5em;
 }
+.subtitle{
+  font-size:1.1em;
+}
+  }
+
+  
+.txt2{
+  width:100%;
+  margin: 0 auto 3em auto;
+  font-size: sizem(14);
+  transform: translateY(0%);
+  background:#0009;
+
+
+.title{
+  font-size:1.3em;
+}
+  }
   /* Swipe */
   .swipe {
     position: relative;
@@ -285,7 +307,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section8',
+  name: 'section12',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -301,40 +323,16 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: require("./s8/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
-          name: '輝煌迎賓廳',
-          title: '輝煌迎賓廳',
-          desc: '挑高迎賓交誼大廳，移植國際奢旅飯店美學，綠意、光瀑流洩，搭配石材舖面與金屬裝飾寫意低調奢華，講述空間的人文氣韻。',
+          img: require("./s9/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: '兩房模擬示意圖',
+          title: '兩房標題',
+          desc: '兩房內文兩房內文兩房內文兩房內文兩房內文',
         },
         {
-          img: require("./s8/2.jpg"),
-          name: '璽悅交誼廳',
-          title: '璽悅交誼廳',
-          desc: '充滿英倫紳士會所優雅氣質，融合LOUNGE BAR、GYMS休閒調性，創造可以放鬆談話交誼空間，讓賓主盡享無拘束互動氛圍。',
-        },
-        {
-          img: require("./s8/3.jpg"),
-          name: '歡饗宴會廳',
-          title: '歡饗宴會廳',
-          desc: '媽媽廚藝室，不只是分享食藝的味覺工作坊，寬闊的大吧台與長餐桌也賦予更強的使用機能，亦可作為社區活動聯誼聚會場所。',
-        },
-        {
-          img: require("./s8/4.jpg"),
-          name: '晶英閱覽室',
-          title: '晶英閱覽室',
-          desc: '透過清玻璃隔板設計，不論是大人小孩一起親子共讀、孩子放學回家寫作業自習、大人讀書會，創享不受干擾的閱讀樂趣。',
-        },
-        {
-          img: require("./s8/5.jpg"),
-          name: '美力健身房',
-          title: '美力健身房',
-          desc: '不用去健身房人擠人，國際設計獎大師規劃、朗闊通透的健身房韻律室，男人的六塊肌與女人的馬甲線，在家就能輕鬆實現。',
-        },
-        {
-          img: require("./s8/6.jpg"),
-          name: '童樂遊戲室',
-          title: '童樂遊戲室',
-          desc: '點綴繽紛色彩的樹屋、溜滑梯，解放孩子活潑好動的心靈與身體，一同玩樂成長；童趣帳篷滿足不論晴雨都能享受野營樂趣。',
+          img: require("./s9/1.jpg"),
+          name: '三房模擬示意圖',
+          title: '三房標題',
+          desc: '三房內文三房內文三房內文三房內文三房內文',
         },
       ]
     }

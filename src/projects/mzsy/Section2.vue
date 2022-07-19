@@ -18,11 +18,11 @@
         <li data-aos="zoom-in" data-aos-delay="700">台北首學明志書院豐蘊人文自然純靜</li>
         <li data-aos="zoom-in" data-aos-delay="800">你可以在這裡，看見知識的力量，智取成家大智慧</li>
       </ul>
-      <div class="title" data-aos="zoom-in" data-aos-delay="900" >泰山有個家，才有自己的天下</div>
+      <div class="title2" data-aos="zoom-in" data-aos-delay="900" >泰山有個家，才有自己的天下</div>
 <!-- <div class="title2" data-aos="zoom-in" data-aos-delay="1000" >
 明志書苑</div>  -->
 <div class="title3" data-aos="zoom-in" data-aos-delay="1100" >明志書院旁 泰山智慧家<br />
-捷運A5站 2-3房 2600-8889
+捷運A5站 2-3房 2688-6888
       </div>
     </div>
   </div>
@@ -54,21 +54,21 @@
 
 .title{
   position: relative;
-  font-size: size(44);
+  font-size: 2.3em;
   margin:0 auto 1em;
   letter-spacing:0em;
   font-weight: 900;
 }
 .title2{
   position: relative;
-  font-size: size(44);
+  font-size:2.3em;
   margin:0 auto 1em;
   letter-spacing:0em;
   font-weight: 900;
 }
 .title3{
   position: relative;
-  font-size: size(42);
+  font-size: 2.2em;
   margin:0em auto 0em;
   letter-spacing:0em;
   font-weight: 900;
@@ -84,7 +84,6 @@
 .desc {
   margin:3em auto 3em auto;
   line-height: 1.85;
-  letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
   li{margin: 0.0em 0 0.0em 0;
@@ -105,45 +104,32 @@
 
 @media screen and (max-width: 767px) {
   .section2 {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    max-height: initial;
-    padding-top: 0em;
+  padding-top: 11em;
+  margin-top:-13vh;
   }
-
-
-$ww:sizem(33);
-.w{
-width:sizem(150);
-top:sizem(170);
-left: auto;
-right: 0;
-height:calc( #{$ww} * 0.67 * 5);
-  &::after{
-  width: calc(100% + #{$ww});
-  background-size: $ww auto;
-  transform: translateX(-#{$ww});
-  }
-}
-.tree{
-  position: absolute;
-  top:calc(40% + (410 - 650 * .4) * 100vw / 375);
-  font-size: sizem(20);
-}
-
   .txt{
     position: relative;
-    width: sizem(310);
-    margin:1.5em auto 6em;
-    left:0;
-    top:0;
-    font-size: sizem(15);
+    width: 100%;
+    font-size: sizem(14);
   }
 .title{
-    font-size: sizem(23);
-  letter-spacing:0.01em;
+  font-size: 1.9em;
 }
+.greatminds{
+  width: sizem(290); }
+.desc {
+  margin:1.9em auto 2.2em auto;
+}
+.title2{
+  font-size: 1.5em;
+}
+.title3{
+  font-size: 1.5em;
+  margin:0em auto 2em;
+}
+
+
+
   /* Swipe */
   .swipe {
     position: relative;

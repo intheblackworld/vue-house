@@ -24,11 +24,11 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">結廬在城心，而無車馬喧</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 /離開南山陶淵明選擇落腳泰山</div>
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200">結廬在城心，而無車馬喧</h3>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 / 離開南山陶淵明選擇落腳泰山</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
 泰山最成熟的機能核心<br />
-明志路繁中取靜，商圈、學校、公園、市場全方位滿足<br />
+明志路繁中取靜，商圈、學校、<br v-if="isMobile" />公園、市場全方位滿足<br />
 出靜巷得繁華，無店面更純靜<br />
 享受市中心不可多得純住美學
 
@@ -48,6 +48,7 @@
   height: auto;
   position: relative;
   padding:size(150) 0 0 0;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
 .img{
   top: -20%;z-index: 3;
@@ -78,7 +79,8 @@
   text-align: justify;
   font-size: size(19);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
+  letter-spacing:0em;
   z-index: 3;
   text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
   }
@@ -87,23 +89,20 @@
   position: relative;
   font-size:2.3em;
   margin:1em auto 0;
-  letter-spacing:0em;
   font-weight: 900;
 }
 .subtitle{
   position: relative;
   font-size:1.3em;
   margin:.6em auto 0;
-  letter-spacing:0.03em;
   font-weight: 900;
   color: #B28247;
 }
 .desc {
-  margin:1em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  margin:0.8em auto;
   list-style: circle;
   overflow: hidden;
+  line-height: 1.8;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
@@ -255,34 +254,28 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section3 {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-$ww:sizem(33);
-.w{
-width:sizem(100);
-top:sizem(240);
-left: auto;
-right: 0;
-height:calc( #{$ww} * 0.67 * 5);
-  &::after{
-  width: calc(100% + #{$ww});
-  background-size: $ww auto;
-  transform: translateX(-#{$ww});
-  }
+
+  
+.img{
+  top: auto;
+  bottom: -3%;
+  width: 45%;
+  right: -3%;
+
 }
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 5em;
+margin:1.5em auto 4em;
   left:0;
   top:0;
-  font-size: sizem(15);
+  font-size: sizem(14);
   }
 .title{
-    font-size: sizem(23);
+  font-size:1.5em;
+}
+.subtitle{
+  font-size:1.07em;
 }
   /* Swipe */
   .swipe {
@@ -291,6 +284,7 @@ margin:1.5em auto 5em;
     height: sizem(240);
     top:0;
     left:0;
+margin: auto;
   }
 .swipe-item {
   .slide-name {

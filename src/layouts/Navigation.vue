@@ -146,23 +146,44 @@ export default {
     height:80%;
     text-align: center;
     cursor: pointer;
-    padding: 0 .5em;
-    margin: 0 0.5em;
+    padding: 0 0em;
+    margin: 0 1em;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    &::before{
+    display: block;
+    content: '';
+    background: #fff;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom:.5em;
+    left:0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+    
+    }
 
     &:hover {
       color: $nav_link_hover_color;
+    &::before{
+    transform: scaleX(1);
+    }
     }
 
     &.btn{
     color: $nav_btn_color;
     background:$nav_btn_bg;
     padding: 0 1.5em;
+    margin: 0 .5em;
     border-radius:1.5em ;
+    &::before{
+    display: none;
+    }
 
     &:hover {
       color: $nav_btn_hover_color;
@@ -216,13 +237,13 @@ export default {
     width: 30px;
     height: 3px;
     background-color:currentColor;
- box-shadow:0 0 10px #600,0 0 4px #600c ;
+ box-shadow:0 0 10px #AA8151,0 0 4px #AA8151CC ;
 z-index: 3;
     &::after,
     &::before {
     position: absolute;
     left: 0;
- box-shadow:0 0 7px #6009,0 0 4px #6009 ;
+ box-shadow:0 0 7px #AA815199,0 0 4px #AA815199 ;
     content: "";
     display: block;
     width: 30px;
@@ -357,7 +378,7 @@ z-index: 3;
     }
 
     .link {
-      height: 2.5em;
+      height: 2em;
       width: 100%;
       margin-top: 0;
       align-items: center;
@@ -397,7 +418,7 @@ z-index: 3;
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: #600c;
+      background-color: #B28247CC;
     }
     .link {
       width: 10em;

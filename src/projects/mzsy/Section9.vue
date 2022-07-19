@@ -1,67 +1,55 @@
 <template>
-  <div>
-    <div class="section8">
+    <div class="section9">
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <div class="title" data-aos="zoom-in" data-aos-delay="0">匠心聚作淬煉經典<br />大台北首購俱歡顏</div>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">聰明購屋學 /杜甫終於也能如願高枕無憂</div>
+      <div class="desc" data-aos="zoom-in" data-aos-delay="300">
+每一個認真生活的人，都值得被更好地對待<br />
+美國MUSE、義大利A’Design設計獎<br />
+全台第一大推案建築團隊<br />
+以舒適凌駕豪華的書苑人文指標宅<br />
+讓大台北首購家庭住好住幸福
       </div>
-    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-        <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt>
-            <div class="slide-name absolute" v-html="slide.name"></div>
-          </div>
-        </transition-group>
-        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
-            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+      </div>
+      <!--  -->
+      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="" loading="lazy">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
           </div>
         </div>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decIndex"></div>
-          <div class="next-btn" @click="addIndex"></div>
-        </div>
+ <!-- <div class="pagination" v-if="isPC">
+        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div> -->    
       </div>
     </div>
-    </div>
-  </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section8 {  
+.section9 {  
   width:100%;
   height:auto;
   position: relative;
-  margin:0 auto 10.5em;
-}
-.w{
-  position: absolute;
-width:size(350);
-height:size(59 * 6);
-overflow: hidden;
-top:size(-330);
-right: 0;
-  &::after{content: "";display: block;
-  width: calc(100% + (100vw * 88 / 1920));
-  height:100%;
-  background: url("./all/w.png") 0 0;
-  background-size: size(88) auto;
-  position: relative;
-      transform: translateX(size(-88));
-      animation: an 2s linear infinite;
-  }
-}
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
+  margin:0 auto 5em;
+  padding:5em 0 0 0 ;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
 .txt{
   position: relative;
   width: size(1500);
-  margin: 0 auto 3em auto;
+  margin: 0em auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: center;
@@ -76,6 +64,14 @@ right: 0;
   font-size: size(44);
   margin:.9em auto 0;
   font-weight: 900;
+}
+.subtitle{
+  position: relative;
+  font-size:1.3em;
+  margin:.6em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #B28247;
 }
 .desc {
   margin:0.5em auto;
@@ -225,37 +221,24 @@ right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  .section8 {
-    width: 100%;
+  .section9 {
     height: auto;
     min-height: auto;
     max-height: initial;
   }
-
-$ww:sizem(33);
-.w{
-width:sizem(130);
-top:sizem(370);
-left: 0;
-right: auto;
-height:calc( #{$ww} * 0.67 * 5);
-  &::after{
-  width: calc(100% + #{$ww});
-  background-size: $ww auto;
-  transform: translateX(-#{$ww});
-  }
-}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 6em;
+    margin:1.5em auto 4em;
     left:0;
     top:0;
-    font-size: sizem(15);
+    font-size: sizem(14);
   }
 .title{
-    font-size: sizem(23);
-  letter-spacing:-0.01em;
+  font-size:1.5em;
+}
+.subtitle{
+  font-size:1.1em;
 }
   /* Swipe */
   .swipe {
@@ -285,7 +268,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section8',
+  name: 'section3',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -297,60 +280,16 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      dialogImg: null,
-      showMask: false,
       slideList: [
         {
-          img: require("./s8/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
-          name: '輝煌迎賓廳',
-          title: '輝煌迎賓廳',
-          desc: '挑高迎賓交誼大廳，移植國際奢旅飯店美學，綠意、光瀑流洩，搭配石材舖面與金屬裝飾寫意低調奢華，講述空間的人文氣韻。',
+          img: require('./s7/test.png'),
+          name: '外觀3D示意圖',
         },
-        {
-          img: require("./s8/2.jpg"),
-          name: '璽悅交誼廳',
-          title: '璽悅交誼廳',
-          desc: '充滿英倫紳士會所優雅氣質，融合LOUNGE BAR、GYMS休閒調性，創造可以放鬆談話交誼空間，讓賓主盡享無拘束互動氛圍。',
-        },
-        {
-          img: require("./s8/3.jpg"),
-          name: '歡饗宴會廳',
-          title: '歡饗宴會廳',
-          desc: '媽媽廚藝室，不只是分享食藝的味覺工作坊，寬闊的大吧台與長餐桌也賦予更強的使用機能，亦可作為社區活動聯誼聚會場所。',
-        },
-        {
-          img: require("./s8/4.jpg"),
-          name: '晶英閱覽室',
-          title: '晶英閱覽室',
-          desc: '透過清玻璃隔板設計，不論是大人小孩一起親子共讀、孩子放學回家寫作業自習、大人讀書會，創享不受干擾的閱讀樂趣。',
-        },
-        {
-          img: require("./s8/5.jpg"),
-          name: '美力健身房',
-          title: '美力健身房',
-          desc: '不用去健身房人擠人，國際設計獎大師規劃、朗闊通透的健身房韻律室，男人的六塊肌與女人的馬甲線，在家就能輕鬆實現。',
-        },
-        {
-          img: require("./s8/6.jpg"),
-          name: '童樂遊戲室',
-          title: '童樂遊戲室',
-          desc: '點綴繽紛色彩的樹屋、溜滑梯，解放孩子活潑好動的心靈與身體，一同玩樂成長；童趣帳篷滿足不論晴雨都能享受野營樂趣。',
-        },
-      ]
+      ],
     }
   },
 
-  methods: {
-    showDialog() {
-      this.isDialog = true;
-      this.showMask = true;
-      this.dialogImg = this.slideList[this.slideIndex].full;
-    },
-
-    handleScroll() {
-      this.showMask = false;
-    }
-  },
+  methods: {},
 
   created() {},
 
@@ -358,6 +297,13 @@ export default {
 
   computed: {},
 
-  watch: {}
+  watch: {
+    viewIndex() {
+      if (this.viewIndex === 3) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
+  },
 }
 </script>

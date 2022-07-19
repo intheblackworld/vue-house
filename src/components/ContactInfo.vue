@@ -103,7 +103,7 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 3vw auto 3vw;
+  margin: 3vw auto 0vw;
   //padding: 30px 0 40px;
   padding: 3vw 0;
 }
@@ -112,8 +112,8 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 2vw;
-  padding: 0 4vw 0 0;
+  margin: 0 auto 3vw;
+  // padding: 0 4vw 0 0;
 }
 .info {
   width: 880px;
@@ -130,7 +130,7 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  //border-radius: 60px / 60px;
+  border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
@@ -186,16 +186,28 @@ export default {
   background: #fff;
   color: #040000;
   font-weight: bold;
-  //box-shadow: $contact_btn_border;
+  border-radius: 60px / 60px;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    width:4em;
+  background: #FFF;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: translateX(50%);
+  }
 }
 .google-btn {
   width: 280px;
   height: 60px;
   font-size: 16px;
+  position: relative;
+  z-index: 2;
   cursor: pointer;
   text-decoration: none;
-  // border-top-right-radius: 60px;
-  //border-bottom-right-radius: 60px;
+  border-radius: 60px / 60px;
   color: $contact_google_btn_color;
   background: $contact_google_btn_bg;
   background-position: center !important;
@@ -310,10 +322,21 @@ export default {
     // width: 280px;
     padding: 0 1em;
     text-align: justify;
+  &::after{
+    content: "";
+    position: absolute;
+    width:100%;
+  background: #FFF;
+    height:100%;
+    right: 0;
+    top:50%;
+    z-index: -1;
+    transform: translateY(0%);
+  }
   }
 
   .google-btn {
-    margin-top: 15px;
+    margin-top: 0;
   }
 }
 

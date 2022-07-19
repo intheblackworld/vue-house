@@ -32,26 +32,3 @@ $ogType = 'website';
 <meta itemprop="name" content="<?php echo $docTitle; ?>">
 <meta itemprop="description" content="<?php echo $docDesc ?>">
 <?php echo $p0 ?>
-
-<meta itemprop="image" content="https://<?php echo $src; ?>/og.jpg">
-    <meta property="og:image" content="https://<?php echo $src; ?>/og.jpg">
-    <!-- 由 Google 結構化資料標記協助工具產生的 JSON-LD 標記。 -->
-    <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "Event",
-      "name" : "<?php echo $docTitle; ?>",
-      "startDate" : "2022-01-19",
-      "location" : {
-        "@type" : "Place",
-        "name" : "接待中心",
-        "address" : {
-          "@type" : "PostalAddress",
-          "streetAddress" : "桃園市大園區環區西路與科二街交叉口"
-        }
-      },
-      "image" : "https://nina.yu-fong.tw/img/nina.jpg"
-      "description" : "諮詢",
-      "url" : "https://nina.yu-fong.tw"
-    }
-    </script>

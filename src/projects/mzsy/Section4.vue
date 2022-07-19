@@ -25,15 +25,16 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200">
         好讀書不求甚遠<br />好學區不該太遠
-      </div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 /孟母為兒三遷的累，父母最知道</div>
+      </h3>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="!isMobile">購屋聰明學 / 孟母為兒三遷的累，父母最知道</div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-else>購屋聰明學 / 孟母為兒三遷的累<br />父母最知道</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-從古時孕育英才的書院，到今日文化資產的歷史建築<br />
+從古時孕育英才的書院<br v-if="isMobile" /><span v-else>，</span>到今日文化資產的歷史建築<br />
 明志書院風蘊人文百年傳承<br />
 15所學校16年大中小完整學區<br />
-家在文教區，孩子天天在書香氣息中薰陶，教育自然養成
+家在文教區，孩子天天在書香氣息<br v-if="isMobile" />中薰陶，教育自然養成
       </div>
       </div>
       <div class="pagination" v-if="isPC">
@@ -50,6 +51,7 @@
   height: auto;
   position: relative;
   padding:size(150) 0 0 0;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
 .img{
   bottom: -16.5%;z-index: 3;
@@ -81,7 +83,7 @@
   text-align: justify;
   font-size: size(19);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
   z-index: 3;
   text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
   }
@@ -104,8 +106,7 @@
 
 .desc {
   margin:1.2em auto 1.3em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  line-height: 1.8;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
@@ -259,28 +260,29 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
-    width: 100vw;
-    height: auto;
-    overflow: hidden;
-  }
-.tree{
-  position: absolute;
-  bottom:sizem(10);
+  
+.img{
   top: auto;
-  left:sizem(200);
-  font-size: sizem(20);
+  bottom: 13%;
+  width: 45%;
+  left: auto;
+  right: -7%;
+  transform: scaleX(-1);
+
 }
   .txt{
   position: relative;
   width: sizem(310);
-margin:1.5em auto 6em;
+margin:1.5em auto 6em 2.3em;
   left:0;
   top:0;
-  font-size: sizem(15);
+  font-size: sizem(14);
   }
 .title{
-    font-size: sizem(23);
+  font-size:1.5em;
+}
+.subtitle{
+  font-size:1.07em;
 }
   /* Swipe */
   .swipe {
