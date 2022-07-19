@@ -3,7 +3,7 @@
      <!-- <img class="og" src="@/projects/grandparents-photo/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
-    <Navigation />
+    <!-- <Navigation /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
@@ -36,48 +36,6 @@
     >
       <Section5 />
     </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section6"
-    >
-      <Section6 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section7"
-    >
-      <Section7 />
-    </vue-lazy-component>
-    <vue-lazy-component
-      class="section"
-      id="section8"
-    >
-      <Section8 />
-    </vue-lazy-component>
-     <vue-lazy-component
-      class="section"
-      id="section9"
-    >
-      <Section9 />
-    </vue-lazy-component>
-     <vue-lazy-component
-      class="section"
-      id="section10"
-    >
-      <Section10 />
-    </vue-lazy-component>
-     <vue-lazy-component
-      class="section"
-      id="section11"
-    >
-      <Section11 />
-    </vue-lazy-component>
-     <vue-lazy-component
-      class="section"
-      id="section12"
-    >
-      <Section12 />
-    </vue-lazy-component>
 <!--      
   <vue-lazy-component
       class="section relative"
@@ -91,11 +49,13 @@
       id="section11"
     >
       <Section11 />
-    </vue-lazy-component> -->
+    </vue-lazy-component>
     <div class="section" id="contact">
       <ContactSection />
-    </div>
-    <MobileNav />
+    </div>     
+    <MobileNav /> -->
+    <Footer />
+
   </div>
 </template>
 
@@ -120,10 +80,11 @@ import info from '@/info'
 import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
-import ContactSection from '@/layouts/ContactSection.vue'
-import MobileNav from '@/layouts/MobileNav.vue'
+// import ContactSection from '@/layouts/ContactSection.vue'
+// import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
-import Indigator from '@/components/Indigator.vue'
+import Footer from '@/layouts/Footer.vue'
+// import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/grandparents-photo/Section1.vue'
@@ -131,13 +92,13 @@ import Section2 from '@/projects/grandparents-photo/Section2.vue'
 import Section3 from '@/projects/grandparents-photo/Section3.vue'
 import Section4 from '@/projects/grandparents-photo/Section4.vue'
 import Section5 from '@/projects/grandparents-photo/Section5.vue'
-import Section6 from '@/projects/grandparents-photo/Section6.vue'
+/* import Section6 from '@/projects/grandparents-photo/Section6.vue'
 import Section7 from '@/projects/grandparents-photo/Section7.vue'
 import Section8 from '@/projects/grandparents-photo/Section8.vue'
 import Section9 from '@/projects/grandparents-photo/Section9.vue'
 import Section10 from '@/projects/grandparents-photo/Section10.vue'
 import Section11 from '@/projects/grandparents-photo/Section11.vue'
-import Section12 from '@/projects/grandparents-photo/Section12.vue'
+import Section12 from '@/projects/grandparents-photo/Section12.vue' */
 // import Section9 from '@/projects/grandparents-photo/Section9.vue'
 
 export default {
@@ -146,22 +107,16 @@ export default {
     Loading,
     // Indigator,
     Navigation,
+    Footer,
     // SideNavigation,
     // LeafFlow,
-    ContactSection,
-    MobileNav,
+    // ContactSection,
+    // MobileNav,
     Section1,
     Section2,
     Section3,
     Section4,
     Section5,
-    Section6,
-    Section7,
-    Section8,
-    Section9,
-    Section10,
-    Section11,
-    Section12,
     // Section9,
     // Section10,
     // Section11,

@@ -1,10 +1,7 @@
 <template>
-  <div>
-    <div class="section6">
-      <div class="img absolute">
-        <img class="relative" loading="lazy" src="./s5/img3-1.png" alt="李白" />
-        <img class="absolute img3-2" loading="lazy" src="./s5/img3-2.png" alt="李白" />
-        <img class="absolute img3-3" loading="lazy" src="./s5/img3-3.png" alt="李白" />
+  <div class="section5">
+      <div class="txt">
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="200">108年祖父母節</h3>
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -14,109 +11,60 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
+        </div>
+        <div class="pagination" v-if="isPC">
+          <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+          </div>
+          <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
           </div>
         </div>
       </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">健康吐納，有景有境<br />住進17公頃自然生態保護區</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">大台北再也找不到第二個地方，同時兼備自然生態、人文環境與繁華商圈的極致。自古泰山即是北臺首學人文書香之地，而離你我更近的，是自然。17公頃義學坑生態保護區，高度綠覆率不僅圍塑出獨一無二的自然美境，並吸附落塵降低PM2.5的危害，是健康最好的靠山。</div>
-      </div>
-     <div class="pagination" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
+.section5 {  
   width:100%;
-  height: auto;
+  height:auto;
   position: relative;
-  padding:size(150) 0 0 0;
+  margin:0 auto 0;
+  padding: 4vw 0 6vw 0;
+  z-index: 2;
+  // background: linear-gradient(to bottom, rgba(80,167,29,1) 0%,rgba(166,185,15,1) 50%,rgba(251,203,0,0) 100%);
   &::after{content: "";clear: both;display: block;height: 1px;}
 }
-
-.img{
-  top: -35%;
-    z-index: 3;
-    right: 4.6%;
-    width: 20.35%;
-  img{width: 100%;}
-  .img3-2{
-    top: 24.2%;
-    left: 47.5%;
-    width: 20.4%;
-    transform:translate(3% ,-5%);
-    animation: an 2s ease-in-out infinite alternate;
-  }
-  .img3-3{    top: 40.9%;
-    left: 19.2%;
-    width: 64.4%;
-  }
-}
-@keyframes an{
-    to{
-    transform:translate(0);
-    }
-}
-
-
-
 .txt{
-  position: absolute;
-  width: size(580);
-  right:size(210);
-  top: size(230);
+  position: relative;
+  width: size(1500);
+  margin: 0 auto 1em auto;
   font-stretch: normal;
   font-style: normal;
-  text-align: justify;
+  text-align: center;
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
   z-index: 3;
-  text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
-  }
 
 .title{
-  position: relative;
   font-size:2.3em;
-  margin:.6em auto 0;
-  letter-spacing:0em;
+  margin:0 auto 0;
   font-weight: 900;
+  color: #222;
 }
-.subtitle{
-  position: relative;
-  font-size:1.3em;
-  margin:.6em auto 0;
-  letter-spacing:0.03em;
-  font-weight: 900;
-  color: #B28247;
 }
-.desc {
-  margin:1em auto;
-  line-height: 1.8;
-  list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
-}
-
 /* Swipe */
-
 .swipe {
   position: relative;
-  width: size(840);
-  height: size(560);
-  margin: 0 auto 0 size(200);
+  margin: auto;
+  width: size(1500);
+  height: size(600);
+  // left: size(210);
   object-fit: cover;
   z-index: 3;
 }
@@ -146,7 +94,7 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -172,19 +120,19 @@
 
 // pagination
 .pagination {
-  position: relative;
-  transform: translate(130%,-100%);
   width: auto;
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
   font-size: size(20);
-  display: inline-block;
+
 }
 .pagination-dot {
   padding: 0.25em;
   margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
-  display:inline-block;
+    display:inline-block;
 
   span {
     display: block;
@@ -222,23 +170,17 @@
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
+  padding: 0 0.75em;
   z-index: 3;
   font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    padding: 0 0.75em;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    img{
     width: 1em;
-    }
+    cursor: pointer;
   }
 }
 
@@ -256,23 +198,40 @@
 }
 
 @media screen and (max-width: 767px) {
-.img{
-  top: -22%;
-    right: 0%;
-    width: 40%;
-}
-
-  .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 5em;
-  left:0;
-  top:0;
-  font-size: sizem(14);
+  .section5 {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: initial;
   }
+  .txt{
+    position: relative;
+    width: sizem(320);
+    margin:1.5em auto 3em;
+    left:0;
+    top:0;
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
+  }
+
+  
+.txt2{
+  width:100%;
+  margin: 0 auto 3em auto;
+  font-size: sizem(14);
+  transform: translateY(0%);
+  background:#0009;
+
+
 .title{
-  font-size:1.5em;
+  font-size:1.3em;
 }
+  }
   /* Swipe */
   .swipe {
     position: relative;
@@ -280,17 +239,19 @@ margin:1.5em auto 5em;
     height: sizem(240);
     top:0;
     left:0;
-    margin: 0;
   }
+
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
   }
 }
+
   .swipe-btns {
   font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
@@ -299,7 +260,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section5',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -314,23 +275,11 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
-          name: '尖凍山步道',
+          name: '',
         },
         {
           img: require('./s5/2.jpg'),
-          name: '尖凍山步道',
-        },
-        {
-          img: require('./s5/3.jpg'),
-          name: '義學坑自然公園',
-        },
-        {
-          img: require('./s5/4.jpg'),
-          name: '應化大排生態園區',
-        },
-        {
-          img: require('./s5/5.jpg'),
-          name: '辭修公園',
+          name: '',
         },
       ],
     }

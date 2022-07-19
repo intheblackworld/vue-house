@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div class="section3">
-      <div class="img absolute">
-        <img class="absolute" loading="lazy" src="./s3/img1-2.png" alt="陶淵明" />
-        <img class="relative" loading="lazy" src="./s3/img1-1.png" alt="陶淵明" />
+  <div class="section3">
+      <div class="txt">
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="200">109年祖父母節</h3>
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -13,107 +11,61 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+          </div>
+          <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
           </div>
         </div>
+        </div>
+        <div class="pagination" v-if="isPC">
+          <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
       </div>
-      <div class="txt">
-      <h3 class="title" data-aos="fade-up" data-aos-delay="200">結廬在城心，而無車馬喧</h3>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 / 離開南山陶淵明選擇落腳泰山</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
-泰山最成熟的機能核心<br />
-明志路繁中取靜，商圈、學校、<br v-if="isMobile" />公園、市場全方位滿足<br />
-出靜巷得繁華，無店面更純靜<br />
-享受市中心不可多得純住美學
-
-      </div>
-      </div>
-     <div class="pagination" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section3 {
+.section3 {  
   width:100%;
-  height: auto;
+  height:auto;
   position: relative;
-  padding:size(150) 0 0 0;
+  margin:0 auto 0;
+  padding: 4vw 0 6vw 0;
+  z-index: 2;
+  background: #bacf0099 ;
+  // background: linear-gradient(to bottom, rgba(80,167,29,1) 0%,rgba(166,185,15,1) 50%,rgba(251,203,0,0) 100%);
   &::after{content: "";clear: both;display: block;height: 1px;}
 }
-.img{
-  top: -20%;z-index: 3;
-  right: 3%;
-  width: 21.35%;
-  img{width: 100%;}
-  .absolute{
-  top:20.7%;
-  left:20.1%;width: 13%;
-    transform:rotate(10deg);
-    transform-origin: 85% 85%;
-    animation: an 2s ease-in-out infinite alternate;
-  }
-}
-@keyframes an{
-    to{
-    transform:rotate(-10deg);
-    }
-}
-
 .txt{
-  position: absolute;
-  width: size(580);
-  right:size(210);
-  top: size(230);
+  position: relative;
+  width: size(1500);
+  margin: 0 auto 1em auto;
   font-stretch: normal;
   font-style: normal;
-  text-align: justify;
+  text-align: center;
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing:0em;
   z-index: 3;
-  text-shadow: 0 0 0.3em #e0d9be,0 0 0.2em #e0d9be,0 0 0.1em #e0d9be;
-  }
 
 .title{
-  position: relative;
   font-size:2.3em;
-  margin:1em auto 0;
+  margin:0 auto 0;
   font-weight: 900;
+  color: #222;
 }
-.subtitle{
-  position: relative;
-  font-size:1.3em;
-  margin:.6em auto 0;
-  font-weight: 900;
-  color: #B28247;
 }
-.desc {
-  margin:0.8em auto;
-  list-style: circle;
-  overflow: hidden;
-  line-height: 1.8;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
-}
-
 /* Swipe */
-
 .swipe {
   position: relative;
-  width: size(840);
-  height: size(560);
-  margin: 0 auto 0 size(200);
+  margin: auto;
+  width: size(1500);
+  height: size(600);
+  // left: size(210);
   object-fit: cover;
   z-index: 3;
 }
@@ -143,7 +95,7 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -169,12 +121,11 @@
 
 // pagination
 .pagination {
-  position: relative;
-  transform: translate(130%,-100%);
   width: auto;
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
   font-size: size(20);
-  display: inline-block;
 
 }
 .pagination-dot {
@@ -220,63 +171,33 @@
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
+  padding: 0 0.75em;
   z-index: 3;
   font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    padding: 0 0.75em;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    img{
     width: 1em;
-    }
+    cursor: pointer;
   }
-}
-
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
-
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
-
-  
-.img{
-  top: auto;
-  bottom: -3%;
-  width: 45%;
-  right: -3%;
-
-}
   .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 4em;
-  left:0;
-  top:0;
-  font-size: sizem(14);
+    position: relative;
+    width: sizem(320);
+    margin:1.5em auto 3em;
+    left:0;
+    top:0;
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
   }
-.title{
-  font-size:1.5em;
-}
-.subtitle{
-  font-size:1.07em;
-}
+
   /* Swipe */
   .swipe {
     position: relative;
@@ -284,17 +205,19 @@ margin:1.5em auto 4em;
     height: sizem(240);
     top:0;
     left:0;
-margin: auto;
   }
+
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
   }
 }
+
   .swipe-btns {
   font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
@@ -303,7 +226,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section3',
+  name: 'section2',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -317,24 +240,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1.jpg'),
-          name: '全興公園',
+          img: require('./s2/1.jpg'),
+          name: '',
         },
         {
-          img: require('./s3/2.jpg'),
-          name: 'Costco新莊店',
+          img: require('./s2/2.jpg'),
+          name: '',
         },
         {
-          img: require('./s3/3.jpg'),
-          name: '明志路商圈',
+          img: require('./s2/3.jpg'),
+          name: '',
         },
         {
-          img: require('./s3/4.jpg'),
-          name: '泰山公有市場',
-        },
-        {
-          img: require('./s3/5.jpg'),
-          name: '福泰市場',
+          img: require('./s2/4.jpg'),
+          name: '',
         },
       ],
     }
