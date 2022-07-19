@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-     <a href="https://www.lixin.com.tw/" target="_blank"><img src="../assets/img/footerLogo.gif" alt="立炘數位" /></a>
+    <img src="../assets/img/footerLogo.gif" alt="" />
      <!-- <a href="https://www.h65.tw/admin/test/login.php" target="_blank">網頁製作</a>  -->
   </div>
 </template>
