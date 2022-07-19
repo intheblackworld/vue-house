@@ -21,10 +21,10 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <div class="row">
+            <div class="row" v-if="order.room_type">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in ['兩房','三房','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">
@@ -564,7 +564,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     padding-top: 0;
     margin: 0;
     position: relative;
-    z-index: 2;
+    //z-index: 2;
 
     > img {
       display: block;

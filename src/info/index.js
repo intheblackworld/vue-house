@@ -1,12 +1,12 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市淡水區中山北路三段90號',
+  address: '新北市泰山區明志路二段276號旁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14441.41951953333!2d121.43573446824783!3d25.191252038122155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442baa83ff102a3%3A0x24daeba041b51f27!2zMjUx5paw5YyX5biC5reh5rC05Y2A5Lit5bGx5YyX6Lev5LiJ5q61OTDomZ8!5e0!3m2!1szh-TW!2stw!4v1649669513959!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/Ex9gYvWbgBuNqBZK8',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.6226460177654!2d121.42665670000001!3d25.046877100000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7c638c92715%3A0x2e46333dcafc90ea!2zMjQz5paw5YyX5biC5rOw5bGx5Y2A5piO5b-X6Lev5LqM5q61Mjc26Jmf!5e0!3m2!1szh-TW!2stw!4v1658198429536!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/s6ZXdLyqdoCJv4PdA8',
   phone: '02-2688-6888',
-  fbLink: 'https://www.facebook.com/105125832094346/',
-  fbMessage: 'https://m.me/105125832094346',
+  fbLink: 'https://www.facebook.com/',
+  fbMessage: 'https://m.me/',
   caseName: '明志書苑',
   indigatorLength: 10,
 
@@ -22,6 +22,6 @@ export default {
   order: {
     title: '預約賞屋',
     subTitle: '',
-    room_type: ['兩房','三房']
+    room_type: ['兩房','三房'],//房型
   }
 }

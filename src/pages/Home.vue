@@ -109,7 +109,7 @@
 .section .fp-tableCell {
   height: auto !important;
 }
-#contact{z-index: 3;}
+// #contact{z-index: 4;}
 .og{position: absolute;width:1px;}
 </style>
 
