@@ -189,7 +189,7 @@
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 3em;
+    margin:1.5em auto 1em;
     left:0;
     top:0;
     font-size: sizem(14);
@@ -240,19 +240,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s2/1.jpg'),
+          img: require('./s3/1.jpg'),
           name: '',
         },
         {
-          img: require('./s2/2.jpg'),
+          img: require('./s3/2.jpg'),
           name: '',
         },
         {
-          img: require('./s2/3.jpg'),
+          img: require('./s3/3.jpg'),
           name: '',
         },
         {
-          img: require('./s2/4.jpg'),
+          img: require('./s3/4.jpg'),
           name: '',
         },
       ],

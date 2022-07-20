@@ -2,9 +2,11 @@
   <div class="home no-padding-top">
      <!-- <img class="og" src="@/projects/grandparents-photo/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
-    <!-- <SideNavigation /> -->
-    <!-- <Navigation /> -->
-    <!-- <Indigator :viewIndex="viewIndex" /> -->
+    <Navhtm />
+    <!-- 
+    <SideNavigation />
+    <Navigation />
+    <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
       :options="options"
@@ -36,7 +38,19 @@
     >
       <Section5 />
     </vue-lazy-component>
-<!--      
+<!--        <vue-lazy-component
+      class="section"
+      id="section6"
+    >
+      <Section6 />
+    </vue-lazy-component>
+    <vue-lazy-component
+      class="section"
+      id="section7"
+    >
+      <Section7 />
+    </vue-lazy-component>
+  
   <vue-lazy-component
       class="section relative"
       id="section10"
@@ -77,9 +91,10 @@
 // @ is an alias to /src
 import $ from 'jquery'
 import info from '@/info'
-import Navigation from '@/layouts/Navigation.vue'
+import Navhtm from '@/layouts/Navhtm.vue'
 import { isMobile } from '@/utils'
-// import SideNavigation from '@/layouts/SideNavigation.vue'
+/* import Navigation from '@/layouts/Navigation.vue'
+import SideNavigation from '@/layouts/SideNavigation.vue'  */
 // import ContactSection from '@/layouts/ContactSection.vue'
 // import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
@@ -94,6 +109,7 @@ import Section4 from '@/projects/grandparents-photo/Section4.vue'
 import Section5 from '@/projects/grandparents-photo/Section5.vue'
 /* import Section6 from '@/projects/grandparents-photo/Section6.vue'
 import Section7 from '@/projects/grandparents-photo/Section7.vue'
+import Section7 from '@/projects/grandparents-photo/Section7.vue'
 import Section8 from '@/projects/grandparents-photo/Section8.vue'
 import Section9 from '@/projects/grandparents-photo/Section9.vue'
 import Section10 from '@/projects/grandparents-photo/Section10.vue'
@@ -106,8 +122,9 @@ export default {
   components: {
     Loading,
     // Indigator,
-    Navigation,
     Footer,
+    Navhtm,
+    // Navigation,
     // SideNavigation,
     // LeafFlow,
     // ContactSection,
@@ -117,9 +134,11 @@ export default {
     Section3,
     Section4,
     Section5,
-    // Section9,
-    // Section10,
-    // Section11,
+    /* Section6,
+    Section7,
+    Section8,
+    Section9,
+    Section10, */
   },
   data() {
     return {

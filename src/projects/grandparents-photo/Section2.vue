@@ -217,7 +217,7 @@ background: linear-gradient(to right, #0009 0%,#0006 50%,#0000 80%);
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 3em;
+    margin:1.5em auto 1em;
     left:0;
     top:0;
     font-size: sizem(14);

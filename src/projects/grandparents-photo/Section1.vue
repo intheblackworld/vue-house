@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-<img src="./s1/top.png" alt="" class="t0" /><!--  -->
+<!-- <img src="./s1/top.png" alt="" class="t0" /> -->
 
 <div class="oy" data-aos="zoom-in" data-aos-delay="0"></div>
 <div class="txt">

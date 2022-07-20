@@ -1,42 +1,37 @@
 <template>
-  <div class="section5">
+  <div class="section6">
       <div class="txt">
-      <h3 class="title" data-aos="zoom-in" data-aos-delay="200">108年祖父母節</h3>
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="200">祖父母節影片_108成果</h3>
       </div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="" loading="lazy">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-        </div>
-        <div class="pagination" v-if="isPC">
-          <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-        </div>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-          </div>
-          <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-          </div>
+    <div class="video_box" v-if="!isMobile" @click="isDialog = true">
+      <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
+    </div>
+
+    <div class="isDialog" v-if="isMobile" @click="isDialog = true">
+    </div>
+
+    <div class="video video-dialog" v-if="isDialog && isMobile">
+      <div class="mask" @click="isDialog = false"></div>
+      <div class="video-bg">
+        <div class="video_box">
+          <iframe title="youtube" src="https://www.youtube.com/embed/bQoe4e-08TQ?autoplay=1&mute=1&enablejsapi=1" frameborder="0" allow="autoplay;" autoplay="1" allowfullscreen></iframe>
         </div>
       </div>
+      <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
+    </div>
+
   </div>
 </template>
+
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {  
+.section6 {
   width:100%;
-  height:auto;
+  overflow: hidden;
   position: relative;
-  margin:0 auto 0;
+  background-size: auto;
   padding: 4vw 0 6vw 0;
-  z-index: 2;
-  // background: linear-gradient(to bottom, rgba(80,167,29,1) 0%,rgba(166,185,15,1) 50%,rgba(251,203,0,0) 100%);
   &::after{content: "";clear: both;display: block;height: 1px;}
 }
 .txt{
@@ -58,212 +53,110 @@
   color: #222;
 }
 }
-/* Swipe */
-.swipe {
-  position: relative;
+
+.video_box {
+  width: size(1300);
+  height: 38.2vw;
   margin: auto;
-  width: size(1500);
-  height: size(600);
-  // left: size(210);
-  object-fit: cover;
+ // top: 67vw;
+ // left: calc(50% - 50vw * 1300 / 1920);
   z-index: 3;
-}
-.slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-}
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-}
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
-
-// 過場動畫
-// begin 
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-// pagination
-.pagination {
-  width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
-  justify-content: center;
-  font-size: size(20);
-
-}
-.pagination-dot {
-  padding: 0.25em;
-  margin: 0 0.2em;
-  cursor: pointer;
-  z-index: 4;
-    display:inline-block;
-
-  span {
-    display: block;
-    width:1em;
-    height:1em;
-    border-radius: 50%;
-    border: 0.2em solid  $pagination;
-    position: relative;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
-      display: block;
-    border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
-    }
-    &.active {
-      box-shadow: none;
-      &::before {
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        transform: scale(1.6);
-      }
-    }
-  }
-}
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0.75em;
-  z-index: 3;
-  font-size: size(20);
-
-  .prev-btn,
-  .next-btn {
-    width: 1em;
-    cursor: pointer;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
-
-/* 螢幕尺寸標準 */
-/* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    max-height: initial;
-  }
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 3em;
+    margin:1.5em auto 1em;
     left:0;
     top:0;
     font-size: sizem(14);
     .title{
       font-size:1.5em;
     }
-    .subtitle{
-      font-size:1.1em;
+  }
+  .isDialog {
+    width: 100%;
+    height:sizem(199);
+    top:sizem(604);
+    left: 0;
+    background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 60 60' xml:space='preserve'%3E%3Ccircle fill='%23C00' cx='30' cy='30' r='30'/%3E%3Cpolygon fill='%23FFF' points='21.6,15.3 44.4,30 21.6,44.7 '/%3E%3C/svg%3E") no-repeat center,url('./s6/v.jpg');
+    background-size:10vw auto, cover;
+  }
+  .mask {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000  no-repeat center url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin: auto;display: block; shape-rendering: auto;' width='200px' height='200px' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'%3E%3Cg transform='rotate(0 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.9166666666666666s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(30 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.8333333333333334s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(60 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.75s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(90 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.6666666666666666s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(120 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.5833333333333334s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(150 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.5s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(180 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.4166666666666667s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(210 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.3333333333333333s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(240 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.25s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(270 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.16666666666666666s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(300 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='-0.08333333333333333s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3Cg transform='rotate(330 50 50)'%3E%3Crect x='49' y='30' rx='0' ry='0' width='2' height='12' fill='%23ffffff'%3E%3Canimate attributeName='opacity' values='1;0' keyTimes='0;1' dur='1s' begin='0s' repeatCount='indefinite'%3E%3C/animate%3E%3C/rect%3E%3C/g%3E%3C/svg%3E");
+    background-size: size-m(150);
+    opacity: 0.5;
+  }
+  .video_box {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 5;
+  }
+  .video-bg {
+    width: 100%;
+    position: absolute;
+    height: size-m(212);
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 5;
+  }
+ .play-btn {
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: size-m(0);
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    transition: opacity 0.5s;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      // top: 50%;
+      // transform: translateY(-50%);
+      position: absolute;
+      background-color: #fff;
+    }
+
+    .close {
+      position: absolute;
+      cursor: pointer;
+      right: 15px;
+      top: calc(50% - 47vw);
+      width: size-m(30);
     }
   }
-
-  
-.txt2{
-  width:100%;
-  margin: 0 auto 3em auto;
-  font-size: sizem(14);
-  transform: translateY(0%);
-  background:#0009;
-
-
-.title{
-  font-size:1.3em;
 }
-  }
-  /* Swipe */
-  .swipe {
-    position: relative;
-    width: 100%;
-    height: sizem(240);
-    top:0;
-    left:0;
-  }
-
-.swipe-item {
-  .slide-name {
-    font-size: sizem(12);
-  }
-}
-
-  .swipe-btns {
-  font-size: sizem(15);
-  }
-}
-
 </style>
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
-import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section5',
-
-  mixins: [slider],
-  props: ['viewIndex'],
+  name: 'section6',
 
   data() {
     return {
@@ -271,35 +164,69 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      player: '',
+      id: 'bQoe4e-08TQ',
       isDialog: false,
-      slideList: [
-        {
-          img: require('./s5/1.jpg'),
-          name: '',
-        },
-        {
-          img: require('./s5/2.jpg'),
-          name: '',
-        },
-      ],
     }
   },
 
-  methods: {},
+  components: {
+    Map,
+  },
+methods: {
+    onPlayerReady(event) {
+   //   console.log('load')
+      event.target.playVideo()
+    },
+    loadVideo() {
+      this.player = new window.YT.Player(`youtube-player-${this.id}`, {
+        videoId: this.id,
+        width: '100%',
+        height: '100%',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          controls: 1,
+          showinfo: 0,
+          autohide: 0,
+          modestbranding: 1,
+          mute: 1,
+          suggestedQuality: 'default',
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: this.onPlayerReady,
+          onStateChange: this.onPlayerStateChange,
+        },
+      })
+    },
 
-  created() {},
-
-  mounted() {},
-
-  computed: {},
-
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 3) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
+    onPlayerStateChange(e) {
+      if (e.data === window.YT.PlayerState.ENDED) {
+        this.player.loadVideoById(this.id)
       }
     },
   },
+
+  created() {
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+  },
+
+  mounted() {
+    setTimeout(() => {
+      if (!this.isMobile) {
+        if (!window.YT) {
+          window.onYouTubeIframeAPIReady = this.loadVideo
+        } else {
+          this.loadVideo()
+        }
+      }
+    }, 2500)
+  },
+
+  computed: {},
 }
 </script>
