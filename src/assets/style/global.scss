@@ -42,16 +42,18 @@ body {
 .home {
   padding-top: $nav_pc_height;
   overflow: hidden; //試底下多的那塊哪來的
+  
  &::before{content: ' ';
      position: fixed;
      z-index: -1;
-     top: -3vw;
-     right: -5%;;
-     bottom: -3vw;
-     left: -5%;filter: blur(2vw);width: 110%;
-     background: center 0 ;
+     top: 0vw;
+     right: 0%;;
+     bottom: 0vw;
+     left: 0%;
+     //filter: blur(2vw);
+     width: 100%;
      background: $bg;
-     background-size: cover;}
+     background-size:100% auto;}
  
   &.no-padding-top {
     padding-top: 0;

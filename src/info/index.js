@@ -1,15 +1,15 @@
 import { isMobile } from '../utils/index'
 export default {
-   address: '接待中心：新北市土城區明德路一段&清水路',
+   address: '接待中心：台南市東區崇明路607號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7233.216230269212!2d121.44955870556367!3d24.979444400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xebe5d55c176b7a21!2zMjTCsDU4JzQ2LjAiTiAxMjHCsDI3JzEyLjIiRQ!5e0!3m2!1szh-TW!2stw!4v1653555645240!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/BLMcLg1QMsJrBg1b9',
-  phone: '02-2264-6789',
-  fbLink: 'https://www.facebook.com/110053711729222',
-  fbMessage: 'https://m.me/110053711729222',
-  caseName: '紅布朗花園',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14694.122416767388!2d120.21873105271438!3d22.967508000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e755c921c364d%3A0x400ca84b2724f3d2!2z5L2z6YuQ6aaW6YKRIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1658306736426!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/UP7Jty2p1owxZLKu6',
+  phone: '06-289-5555',
+  fbLink: 'https://www.facebook.com/100083001978691/',
+  fbMessage: 'https://m.me/100083001978691/',
+  caseName: '佳鋐首邑',
   indigatorLength: 10,
-  caseId: 'hbl',
+  caseId: 'sy_nhc',
 
   houseInfos: [
    // ['投資興建', '龍瑩建設事業股份有限公司'],

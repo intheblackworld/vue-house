@@ -118,12 +118,12 @@ export default {
     margin: .3em;
     transition: all 0.3s;
     &:nth-child(1) {
- // background-image:url("~@/projects/hbl/s1/o1.png");background-size: contain;
+ // background-image:url("~@/projects/sy_nhc/s1/o1.png");background-size: contain;
     line-height: 1.2;
       order:2;
     }
     &:nth-child(2) {
- // background-image:url("~@/projects/hbl/s1/o1.png");background-size: contain;
+ // background-image:url("~@/projects/sy_nhc/s1/o1.png");background-size: contain;
     line-height: 1.2;
       order:1;
     }
