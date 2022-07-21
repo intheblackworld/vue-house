@@ -4,11 +4,9 @@
       <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
       <div class="menu" @click="toggleSidebar">
         <div :class="`menu-icon ${isOpen ? 'menu-icon-active' : ''}`"></div>
-        <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
-        <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
-      <ul :class="`navlist ${isOpen ? 'open': ''}`">
+      <ul :class="`navlist ${isOpen ? 'open' : ''}`">
         <li
           :key="item.name"
           v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
