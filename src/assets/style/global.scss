@@ -349,6 +349,12 @@ img[lazy="loaded"] {
 
   .home {
     padding-top: $nav_phone_height;
+  
+    &::before{
+      bottom: 63px;
+        background-image: $bg_m;
+      }
+    
     /*
    &::before{content: ' ';
       position: fixed;

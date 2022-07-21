@@ -1,12 +1,18 @@
 <template>
   <article class="section1">
-  <img class="a1" src="./s1/mo.jpg" alt="" /><!--   -->
+  <!--  <img class="a1" src="./s1/mo.jpg" alt="" /> -->
 
-<div class="img">
+<div class="img" v-if="!isMobile">
   <img src="./s1/leaf1.png" data-aos="fade" data-aos-duration="1000" class="leaf1" alt="" loading="lazy" />
   <img src="./s1/leaf2.png" data-aos="fade" data-aos-duration="1000" class="leaf2" alt="" loading="lazy" />
   <img src="./s1/leaf3.png" data-aos="fade" data-aos-duration="1000" class="leaf3" alt="" loading="lazy" />
   <img src="./s1/leaf4.png" data-aos="fade" data-aos-duration="1000" class="leaf4" alt="" loading="lazy" />
+</div>
+<div class="img" v-else>
+  <img src="./s1/leaf1m.png" data-aos="fade" data-aos-duration="1000" class="leaf1" alt="" loading="lazy" />
+  <img src="./s1/leaf2m.png" data-aos="fade" data-aos-duration="1000" class="leaf2" alt="" loading="lazy" />
+  <img src="./s1/leaf3m.png" data-aos="fade" data-aos-duration="1000" class="leaf3" alt="" loading="lazy" />
+  <img src="./s1/leaf4m.png" data-aos="fade" data-aos-duration="1000" class="leaf4" alt="" loading="lazy" />
 </div>
 <div class="txt">
 <h2 class="t1" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">佳鋐建設</h2>
@@ -25,6 +31,7 @@
 
 .section1 {
   background-image: url('./s1/bg.jpg');
+  background-size: cover;
   width: 100%;
   height: 100vh;
   min-height: size(900);
@@ -129,24 +136,24 @@
   
 .img{
   .leaf1{
-    width:32.5%;
-    left: 10.5%;
-    top: -30.8vw;
+    width: 57.5%;
+    left: -12.5%;
+    top: -88.8vw;
   }
   .leaf2{
-    width:24%;
-    left: 55.5%;
-    top: -29.5vw;
+    width: 58%;
+    left: 47.5%;
+    top: -89.5vw;
   }
   .leaf3{
-    width:50.68%;
-    left: 52%;
-    top: -3.5vw;
+    width: 77.68%;
+    left: 32%;
+    top: 24.5vw;
   }
   .leaf4{
-    width:47%;
-    left: 1.1%;
-    top: 10vw;
+    width: 62%;
+    left: -3.9%;
+    top: 40vw;
   }
 }
 .txt{

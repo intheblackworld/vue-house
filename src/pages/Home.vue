@@ -1,5 +1,5 @@
 <template>
-  <div class="home no-padding-top" ><h1>紅布朗花園</h1>
+  <div class="home no-padding-top" >
       <Loading :loading="load" />
       <!-- <SideNavigation v-if="isMobile" />
       <Navigation v-if="!isMobile" /> -->

@@ -292,18 +292,20 @@ export default {
   }
   .order-title {
     font-family: $family1;
-    width: auto;
+    width: 920px;
+    max-width: 85%;
     padding-top: 0.4em;
-    padding-bottom: 1.5em;
-    margin: 0 auto 0.2em;
+    padding-bottom: 0em;
+    margin: 0 auto 1.2em;
     display: inline-block;
     font-weight:700;
     line-height: 1.7;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.06em;
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
     position: relative;
+    border-bottom:1px solid currentColor;
   }
   .order-title-img {
     width: 30vw;

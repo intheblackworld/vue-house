@@ -114,6 +114,7 @@ export default {
   z-index: 3;
   //width: 1200px;
   width: 60%;
+  min-width: 920px;
  // height: 600px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
@@ -231,7 +232,7 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
 .address {
   width: 700px;
   height: 60px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   background: #fff;
   border: 1px solid #0004;
@@ -327,6 +328,7 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
     padding: 10% 8%;
     transform: none;
     margin: 0;
+  min-width: 95%;
 
     .logo {
       width: $contact_logo_mobile_width;
@@ -391,7 +393,7 @@ font-size:51vw;
   }
   .address {
     // width: 280px;
-    padding: 0.8em 1em 3.5em 1em;
+    padding: 0.8em .5em 3.5em .5em;
     text-align: justify;
     line-height: 1.5;
     height: auto;
