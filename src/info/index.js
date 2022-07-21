@@ -25,6 +25,6 @@ export default {
   order: {
     title: '預約賞屋',
    // subTitle: '若想了解更多資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！
-   room_type: ['兩房','三房'],//房型
+   room_type: ['兩房','三房','四房'],//房型
   }
 }
