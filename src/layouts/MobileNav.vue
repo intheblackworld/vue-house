@@ -13,7 +13,7 @@
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
       <div class="label">FB諮詢</div>
     </a>
-    <a class="nav-item" @click="showMapDialog">
+    <a class="nav-item" @click="showMapDialog" v-if="info.address">
       <font-awesome-icon icon="map-marker-alt" />
       <div class="label">地圖導航</div>
     </a>
@@ -167,9 +167,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid $mobile_nav_border;
+    border-left: 1px solid $mobile_nav_border;
     border-radius: 0%;
     margin:0;
+    &:first-child{border-left:0;}
     &:nth-child(1) {
       background-image:none;
       order:1;
@@ -185,7 +186,7 @@ export default {
     &:nth-child(4) {
       order:4;
     display: flex;
-      border-right: none;
+     // border-right: none;
     }
     &:hover{transform: scale(1);
     }

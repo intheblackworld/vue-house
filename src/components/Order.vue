@@ -395,6 +395,8 @@ export default {
     //margin-bottom: 15px;
     background: $order_input_bg;
     border: $order_input_border;
+    border-radius:30px;
+    overflow: hidden;
 
     &.house {
       margin-top: 50px;
