@@ -7,8 +7,8 @@
 <div class="txt">
 		<img loading="lazy" src="./s1/logo.png" alt="" data-aos="fade" data-aos-duration="1500" data-aos-delay="200" class="logo">
 		<div class="title" data-aos="fade" data-aos-duration="1500" data-aos-delay="400"><b>雙</b>北悠居 <b>雙</b>捷遊心<br><b>愛</b>在土城 <b>2</b>房家入</div>
-		<div class="stitle" data-aos="fade" data-aos-duration="1500" data-aos-delay="600">真情不二價給您!</div>
-		<div class="desc" data-aos="fade" data-aos-duration="1500" data-aos-delay="800">土城區青雲路252號  02-2263-5666</div></div>
+	<!--	<div class="stitle" data-aos="fade" data-aos-duration="1500" data-aos-delay="600">真情不二價給您!</div> -->
+		<div class="desc" data-aos="fade" data-aos-duration="1500" data-aos-delay="600">土城區青雲路252號  02-2263-5666</div></div>
     </div>
   </div>
 </template>
@@ -77,6 +77,7 @@ border-width: .1em 0 .1em .1em;left: 0;}
   }
   .desc{
   font-size:1.31em;
+ margin: 1.1em 0 .8em;
   transform: translateY(10%)scale(1.5);
 	  color: #666;}
 }
