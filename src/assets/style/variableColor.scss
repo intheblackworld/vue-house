@@ -1,21 +1,24 @@
 /* html, body */
 $bg:#64BBBA;
-$txt_color:#fff;
-$bg_m:url('~@/projects/sy_nhc/s1/bg2m.jpg');
+$bg-size:auto;
 
 /* font-family */
 /* 1主要字體  2次要字體  3表單字體 */
-$family1: "Noto Serif TC", serif;
-$family2: "Noto Serif TC", serif;
-$family3: "Noto Serif TC", serif;
+$family1:  'Noto Sans TC', sans-serif;
+/* $family2: 'Noto Sans TC' serif;
+$family3: 'Noto Sans TC',sans-serif; */
 
 /* navigation */
-$nav_bg: #f7db5e;
-$nav_btn_color: #000;
-$nav_link_color: #000;
+$nav_bg:#BB6C7A;// #f8dee100;background: linear-gradient(to bottom, rgba(97,14,0,1) 0%,rgba(97,14,0,0) 100%);
+$nav_link_color: #FFF;
+$nav_line_color: #fff;
+$nav_btn_color: #FFF;
+$nav_btn_bg: #F3AFBC;
 $nav_link_subtitle_color: #000;
-$nav_link_hover_color: #c82514;
-$nav_link_hover_bg: #eee;
+$nav_link_hover_color: #FFF;
+$nav_link_hover_bg: #F3AFBC;
+$nav_btn_hover_color: #FFF;
+$nav_btn_hover_bg: #ec91a2;
 
 /* loading */
 $loading_bg_color: #ccc;
@@ -30,77 +33,80 @@ $mask_bg_image: linear-gradient(
   rgba(156, 30, 35, 0)
 );
 $mask_color: #333;
-$mask_icon_color: #c82514;
+$mask_icon_color: #BB6C7A;
 
 /* contactSection */
 // order
 $order_bg_color: transparent;
-$order_bg_image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0c0d37 18%, #1d2083 60%, rgba(29, 32, 131, 0) 73%);
-$order_bg_image_m: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0c0d37 18%, #1d2083 60%, rgba(29, 32, 131, 0) 73%);
-$order_title_color: #fff;
-$order_subtitle_color: #fff;
-$order_input_label_color: #000;
-$order_input_color: #000 !important;
+$order_bg_image: transparent;
+$order_bg_image_m: transparent;
+$order_title_color: #BB6C7A;
+$order_subtitle_color: #BB6C7A;
+$order_input_label_color: #333;
+$order_input_color: #1a1a1a !important;
 $order_input_placeholder: #666 !important;
 $order_input_bg: #fff !important;
-$order_input_border: solid 1px #fff6;
-$order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
-$order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
-$order_check_desc_color: #FFF !important;
-$order_check_span_color: #f7db5e !important;
-$order_submit_bg: #f7db5e !important;
-$order_submit_color: #000 !important;
-$order_sumbit_disable_bg:#f7db5e !important;
+$order_input_border: solid 0px #988068; 
+$order_input_focus_border: solid 1px #fff !important;
+$order_input_selected_color: solid 1px #fff !important;
+$order_check_desc_color: #000 !important;
+$order_check_span_color: #BB6C7A !important;
+$order_submit_bg: #BB6C7A99 !important;
+$order_submit_color: #fff !important;
+$order_sumbit_disable_bg: #BB6C7A !important;
 
 // contactInfo
-$contact_bg: none;
-$contact_bg_m:none;
+$contact_bg:url('~@/projects/zsgd/s1/bg.jpg') repeat center;
+$contact_bg_m:transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
-$contact_btn_border: #000;
-$contact_btn_color: #000;
-$contact_btn_icon: #000;
-$contact_btn_bg:#f7db5e ;
-$contact_btn_hover_color:#000;
-$contact_btn_hover_icon: #000;
-$contact_btn_hover_bg:#fdca24;
+$contact_btn_border: inset 0 0 0px 1 px #fff;
+$contact_btn_color: #fff;
+$contact_btn_icon: #fff;
+$contact_btn_bg: #BB6C7A;
+$contact_btn_hover_color: #fff;
+$contact_btn_hover_icon: #fff;
+$contact_btn_hover_bg: #BB6C7A;
 
-$contact_google_btn_color: #000;
-$contact_google_btn_icon: #000;
-$contact_google_btn_bg: #f7db5e;
-$contact_google_hover_btn_color: #000;
-$contact_google_hover_btn_icon: #000;
-$contact_google_hover_btn_bg: #fdca24;
+$contact_google_btn_color: #fff;
+$contact_google_btn_icon: #fff;
+$contact_google_btn_bg: #BB6C7A;
+$contact_google_hover_btn_color: #fff;
+$contact_google_hover_btn_icon: #fff;
+$contact_google_hover_btn_bg: #BB6C7A;
 
 // houseInfo
 $house_bg: #fff;
-$house_title_color: #eab357;
-$house_border_color: #eab357;
-$house_label_color: #eab357;
-$house_desc_color: #444;
+$house_title_color: #BB6C7A;
+$house_border_color: #a42025;
+$house_label_color: #000;
+$house_desc_color: #666;
 
 // mobileNav
-$mobile_nav_background: #f7db5e;
-$mobile_nav_color: #000;
-$mobile_nav_border: #000;
-$mobile_nav_icon: #000;
+$mobile_nav_background: #BB6C7A;
+$mobile_nav_color: #fff;
+$mobile_nav_border:#ffd88f;
+$mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #f7db5e;
+$mobile_dialog_icon: #52b559;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #f7db5e;
-$mobile_dialog_submit_color: #000;
+$mobile_dialog_submit_bg: #52b559;
+$mobile_dialog_submit_color: #fff;
+
+
 
 /* dialog */
 /* PhoneThanks.vue */
-$phone_thanks_bg: url("~@/assets/img/thank_bg.png");
+$phone_thanks_bg: url('~@/assets/img/thank_bg.png');
 $phone_thanks_title_color: #fff;
 $phone_thanks_desc_color: #fff;
 $phone_thanks_link_color: #fff;
 
+
 /* VideoSection1 */
-$video_section_bg: url("~@/projects/sfdy/video/bg.jpg");
-$video_section_bg_m: url("~@/projects/sfdy/video/bg_m.jpg");
+/* $video_section_bg: url('~@/projects/sfdy/video/bg.jpg');
+$video_section_bg_m: url('~@/projects/sfdy/video/bg_m.jpg'); */
 $video_section_title_color: #ffee99;
 $video_section_item_border: #fff;
 $video_section_item_color: #fff;

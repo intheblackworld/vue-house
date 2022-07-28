@@ -94,7 +94,7 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
     width: 100%;
   text-align: center;
   color: #d3a96e;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.14em;
         margin:0.65em 0 0.25em;
   span{border-left: 1px solid #FFF; height: 1em;margin: 0 .4em .25em .4em;

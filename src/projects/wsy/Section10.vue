@@ -30,13 +30,6 @@
 &::before{content: "";
 background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:block;width: 100%;height: 100%;}
 }
-/*
-  */
-  .wsy{
-      position: absolute;
-      top:0;
-      left: 0;
-      transform: translate(-100%,-100%);}
 .t0{
   position: absolute;
   width: 100%;height:auto;
