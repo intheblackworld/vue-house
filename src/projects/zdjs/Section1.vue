@@ -54,7 +54,7 @@
 
 .btn1 {
   @include img_l_pc(453, 754, 293);
-  top: calc(50% + 100vw * (754 - 504) / 1920);
+  top: calc(50% + 100vw * (850 - 504) / 1920);
   transform: scale(0.9);
   img {
     width: 100%;
@@ -63,7 +63,7 @@
 
 .btn2 {
   @include img_r_pc(453, 754, 293);
-  top: calc(50% + 100vw * (754 - 504) / 1920);
+  top: calc(50% + 100vw * (850 - 504) / 1920);
   transform: scale(0.9);
   transition: all 0.3s;
   transform-origin: 50% 100%;
