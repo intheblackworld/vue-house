@@ -1,11 +1,7 @@
 <template>
   <div>
     <div class="section4">
-      <div class="o" data-aos="zoom-in"></div>
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      
-      <div class="c1"><img src="./all/1.png" alt="1"></div>
-    </div>
+
 
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -15,19 +11,19 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-      <!--    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>  -->
+          </div>
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >淡江大橋  行動力升級</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        匯集各界矚目與期待，淡江大橋主橋段預計將在2024年9月完工通車，未來淡水八里往返，可望節省約25分鐘車程，串聯機場更便捷；整個城區的交通行動力，都將更上一層樓。
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >大新竹正核心   快適生活圈</div>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">竹東，地理位置位於大新竹正核心，興合力建築團隊-唐誠建設精選竹東至善重劃區，打造「至善高第」。</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">「至善高第」公道五號、68快速道路打通竹東動脈，國道3號串接通網南北各地，工作在新竹、竹北，悠閒樂活在北埔、內灣、橫山、寶山。工作、居家、休閒一線牽，大新竹最宜居生活城！
       </div>
       </div>
     </div>
@@ -75,34 +71,36 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 6em;
+  margin: 0 auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(17);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: size(19);
+  font-weight: 600;
+  line-height: 1.4;
   z-index: 3;
-  color: #666;
-  }
+  color: #2C5252;
 
 .title{
-  position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
-  letter-spacing:0.04em;
-  color: #bb9259;
-  font-weight: 700;
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
 }
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #A9292C;
+}
+
 .desc {
-  margin:1em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  margin:0.1em auto;
+  line-height: 1.6;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
+  }
 /* Swipe */
 .swipe {
   position: relative;
@@ -183,7 +181,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #ccc;
+    border: 0.2em solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -193,7 +191,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  #d4a680;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -214,8 +212,6 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
@@ -318,7 +314,19 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '淡江大橋示意',
+          name: '空拍實景圖',
+        },
+        {
+          img: require('./s4/2.jpg'),
+          name: '空拍實景圖',
+        },
+        {
+          img: require('./s4/3.jpg'),
+          name: '空拍實景圖',
+        },
+        {
+          img: require('./s4/4.jpg'),
+          name: '空拍實景圖',
         },
       ],
     }

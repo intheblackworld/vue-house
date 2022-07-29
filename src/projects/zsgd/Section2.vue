@@ -1,135 +1,103 @@
 <template>
-  <div>
-    <div class="section2">
-      <div class="o" data-aos="zoom-in"></div>
-
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      
-      <div class="c1"><img src="./all/3.png" alt="3"></div>
-      <div class="c2"><img src="./all/2.png" alt="2"></div>
-    </div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
+  <div class="section2">
+    <div class="img"> <img src="./s2/img.png" alt="img" /></div>
+   
+    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt>
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
           </div>
         </div>
-      </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">市心生活圈  滿分宜居</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        散步淡水最好地段中山北路，隨心收納全機能，家樂福、全聯、燦坤、星巴克、POYA...採買便利；金融銀行、行政中心、運動中心、文化水岸、萬坪公園...完備驚豔，絕佳好位。
-      </div>
-      </div>
-     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div v-else class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+        </div>
       </div>
     </div>
+      <div class="txt">
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="200" v-html="slideList[slideIndex].title"></h3>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" v-html="slideList[slideIndex].subtitle"></div>
+      <div class="desc" data-aos="zoom-in" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section2 {
+.section2 {  
   width:100%;
-  height: size(890);
+  height:auto;
   position: relative;
-  font-size: size(17);
+  margin:0 auto 0;
+  padding: 9vw 0 5vw;
+  background: #FFF3;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
-.t0{
-  position: absolute;
-  width: 100%;height:auto;
-  top:  size(-1080);left: 0;object-fit: cover;
-  opacity: 0.5;
-  }
-.o{
-  position: absolute;
-  top:size(330);
-  right:size(340);
-  width:size(210);
-  height:size(210);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-.c{
-      position: absolute;left:0;right:0;
-      top:calc(50% + (0 - 540) * 100vw / 1920);
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
+.img{width: size(819);position: absolute;left: 0;bottom: size(-340);
+z-index: 2;
+img{width: 100%;transform: skewY(5deg) ;
+transform-origin: 0 50%;
+      animation: an 3s linear alternate infinite;
       }
-    .c1{
-      width:size(660);top:size(615);right: size(-270);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: -1s;
-      img{width: 100%;
-      transform:rotate(-68deg);}}
-    .c2{
-      width:size(242);top:size(849);left: size(22);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      img{width: 100%;
-      transform:rotate(0deg);}}
-  }
+}
+
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
-
 .txt{
-  position: absolute;
-  width: size(610);
-  right:size(200);
-  top: size(380);
+  position: relative;
+  width: size(1500);
+  height: size(220);
+  margin: 0 auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(17);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: size(19);
+  font-weight: 600;
+  line-height: 1.4;
   z-index: 3;
-  color: #666;
-  }
+  color: #2C5252;
 
 .title{
-  position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
-  letter-spacing:0.04em;
-  color: #bb9259;
-  font-weight: 700;
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
 }
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #A9292C;
+}
+
 .desc {
-  margin:1em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  margin:0.1em auto;
+  line-height: 1.6;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
-
+  }
 /* Swipe */
-
 .swipe {
-  position: absolute;
-  width: size(840);
-  height: size(560);
-  top: size(243);
-  left: size(210);
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(850);
+  // left: size(210);
   object-fit: cover;
   z-index: 3;
 }
@@ -186,8 +154,8 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 // pagination
 .pagination {
   width: auto;
-  bottom: size(100);
-  left:calc(50% + 6.95vw);
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
   font-size: size(20);
 
@@ -203,7 +171,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #ccc;
+    border: 0.2em solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -213,7 +181,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  #d4a680;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -234,23 +202,17 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
+  padding: 0 0.75em;
   z-index: 3;
   font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    padding: 0 0.75em;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    img{
     width: 1em;
-    }
+    cursor: pointer;
   }
 }
 
@@ -271,50 +233,47 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   .section2 {
     width: 100%;
     height: auto;
+    min-height: auto;
+    max-height: initial;
+  padding:0;
   }
-.o{
-  top:sizem(260);
-  right:sizem(10);
-  width:sizem(90);
-  height:sizem(90);
-
-}
-.c{
-    .c1{width:sizem(230);top:sizem(320);left: sizem(110);}
-    .c2{width:sizem(170);top:sizem(390);left: sizem(200);}
-}
   .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 10em;
-  left:0;
-  top:0;
-  font-size: sizem(15);
+    position: relative;
+    width: sizem(320);
+    height: auto;
+    margin:1.5em auto 3em;
+    left:0;
+    top:0;
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
   }
-.title{
-    font-size: sizem(30);
-}
-  .desc {
-   //line-height: 1.73;
-  margin:0em auto;
-  }
+
+  
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    height: sizem(240);
     top:0;
     left:0;
-}
+  }
+
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
   }
 }
+
   .swipe-btns {
   font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
@@ -335,28 +294,38 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      dialogImg: null,
+      showMask: false,
       slideList: [
         {
-          img: require('./s2/1.jpg'),
-          name: '萬坪公園',
+          img: require("./s2/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: '',
+          title: '全球科技城-西雅圖Seatle V.S 台灣矽谷城-新竹Hsinchu',
+          subtitle: '西雅圖Seatle',
+          desc: '集文化，歷史、科技、產業於一身的城市中，加上微軟、Google、亞馬遜總部，星巴克、波音跟Costco青睞，西雅圖，獨樹一格的高所得宜居城，成為美國西北地區最大都會區，也是全美人口稱長最快的城市。',
         },
         {
-          img: require('./s2/2.jpg'),
-          name: '運動中心',
+          img: require("./s2/2.jpg"),
+          name: '',
+          title: '全球科技城-西雅圖Seatle V.S 台灣矽谷城-新竹Hsinchu',
+          subtitle: '新竹Hsinchu',
+          desc: '充滿英倫紳士會所優雅氣質，融合LOUNGE 台積電、聯發科、智邦科技、緯創ＡＩ智慧園區，玻璃文創、水岸海岸休閒景觀及老中青幼全齡照顧，台灣新矽谷城在「新竹」。<br>109年起連續兩年淨遷入率及人口成長率全國第一，招商引資達65.1億，全國排名第二，更有引領國際的半導體、光電、電腦資訊軟體園區，媲美西雅圖，成為最適合移居的文化科技智慧樂活城。',
         },
-        {
-          img: require('./s2/3.jpg'),
-          name: '家樂福',
-        },
-        {
-          img: require('./s2/4.jpg'),
-          name: '中山北路機能情境',
-        },
-      ],
+      ]
     }
   },
 
-  methods: {},
+  methods: {
+    showDialog() {
+      this.isDialog = true;
+      this.showMask = true;
+      this.dialogImg = this.slideList[this.slideIndex].full;
+    },
+
+    handleScroll() {
+      this.showMask = false;
+    }
+  },
 
   created() {},
 
@@ -364,13 +333,6 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 3) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
+  watch: {}
 }
 </script>

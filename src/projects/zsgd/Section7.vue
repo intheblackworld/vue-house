@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section7">
-      <div class="o" data-aos="zoom-in"></div>
+
 
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -11,7 +11,7 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
@@ -21,10 +21,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >單純規劃  打造舒適尺度</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        超大棟距，藏風納氣，打好健康空間好基底；有別於超大型社區，「文學苑」以一層雙、三併的純粹好質，以及單純坪數的鄰里素質，減低複雜人士出入隱憂，敬獻最佳名宅風範。
-      </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >雙陽台・雙衛浴・雙開窗  超機能2~3房 </div>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">「至善高第」針對首購、換屋、同鄰不同居，量身訂作超機能2~3房。</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">單層3戶及單層5戶，雙陽台、雙衛浴、雙開窗（*套房僅一套衛浴開窗）、大面積開窗，引光納景通風採光佳，住起來身心最舒適。規劃升等2房、幸福3房，單身、小家庭、同鄰不同居，滿足不同族群的需求。</div>
       </div>
     </div>
   </div>
@@ -36,48 +35,71 @@
   width:100%;
   height:auto;
   position: relative;
+  margin: 5.3vw 0 0 0;
 }
+
 .o{
   position: absolute;
-  top:size(770);
-  left:size(110);
+  top:size(790);
+  left:size(100);
   width:size(210);
   height:size(210);
   border-radius: 50%;
 background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-
-
+.c{
+      position: absolute;left:0;right:0;
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(355);top:size(-4);right: size(-21);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -3s;
+      img{width: 100%;
+      transform:rotate(-48deg)scaleX(-1);}}
+  }
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 13.5em;
+  margin: 0 auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(17);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: size(19);
+  font-weight: 600;
+  line-height: 1.4;
   z-index: 3;
-  color: #666;
-  }
+  color: #2C5252;
 
 .title{
-  position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
-  letter-spacing:0.04em;
-  color: #bb9259;
-  font-weight: 700;
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
 }
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #A9292C;
+}
+
 .desc {
-  margin:1em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  margin:0.1em auto;
+  line-height: 1.6;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
+  }
 /* Swipe */
 .swipe {
   position: relative;
@@ -158,7 +180,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #ccc;
+    border: 0.2em solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -168,7 +190,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  #d4a680;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -226,22 +248,25 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 
 .o{
   top:sizem(260);
-  right:sizem(10);
+  left:sizem(10);
   width:sizem(90);
   height:sizem(90);
 
 }
+.c{
+    .c1{width:sizem(130);top:sizem(340);left: sizem(280);}
+  }
   .txt{
     position: relative;
     width: sizem(310);
-    margin:1.5em auto 13em;
+    margin:1.5em auto 8em;
     left:0;
     top:0;
     font-size: sizem(15);
   }
 .title{
     font-size: sizem(30);
-  letter-spacing:0.003em;
+  letter-spacing:0.01em;
 }
   .desc {
   margin:0em auto;
@@ -255,13 +280,11 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     top:0;
     left:0;
   }
-
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
   }
 }
-
   .swipe-btns {
   font-size: sizem(15);
   }
@@ -289,12 +312,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/1.jpg'),
-          name: '實品屋實景',
+          img: require('./s4/1.jpg'),
+          name: '空拍實景圖',
         },
         {
-          img: require('./s7/2.jpg'),
-          name: '實品屋實景',
+          img: require('./s4/2.jpg'),
+          name: '空拍實景圖',
+        },
+        {
+          img: require('./s4/3.jpg'),
+          name: '空拍實景圖',
+        },
+        {
+          img: require('./s4/4.jpg'),
+          name: '空拍實景圖',
         },
       ],
     }

@@ -1,12 +1,6 @@
 <template>
   <div>
     <div class="section5">
-      <div class="o" data-aos="zoom-in"></div>
-
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      
-      <div class="c1"><img src="./all/3.png" alt="3"></div>
-    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -26,10 +20,8 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">優質書香  菁英養成學</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        大芽幼稚園、新市國小、淡海國小、亞太國際學校，從現在到未來的學識養成，在「文學苑」就能輕鬆準備就緒；為孩子成長選好起點，優質養成，輕鬆得意。
-      </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">12,743坪至善重劃區<br />居高臨下地王視野 </div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">跳脫傳統舊市區舊建築，至善重劃區以整齊街道、方正街廓，為竹東人提供了新型態的生活方式。「至善高第」地居重劃區最高處，後倚山巒有靠，坐享好景觀、好視野，是至善重劃區居高臨下的地王，緊鄰公園水岸綠景步道，步行約150公尺竹東游泳池跟台大竹東分院，享有一整套優質好生活。</div>
       </div>
      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -45,31 +37,8 @@
   height: size(900);
   position: relative;
   margin: 0 0 6vw 0;
+background:#FFF6;
 }
-.o{
-  position: absolute;
-  top:size(270);
-  right:size(280);
-  width:size(210);
-  height:size(210);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-.c{
-      position: absolute;left:0;right:0;
-      top:calc(50% + (0 - 540) * 100vw / 1920);
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
-      }
-    .c1{
-      width:size(725);top:size(680);left: size(30);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: 0s;
-      img{width: 100%;
-      transform:rotate(-4deg);}}
-  }
 @keyframes an{
     to{
       transform: translateX(0);
@@ -84,24 +53,22 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(17);
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: size(19);
+  font-weight: 600;
+  line-height: 1.4;
   z-index: 3;
-  color: #666;
+  color: #2C5252;
   }
 
 .title{
-  position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
-  letter-spacing:0.04em;
-  color: #bb9259;
-  font-weight: 700;
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
 }
 .desc {
   margin:1em auto;
-  line-height: 2;
+  line-height: 1.6;
   letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
@@ -190,7 +157,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #ccc;
+    border: 0.2em solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -200,7 +167,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  #d4a680;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -221,23 +188,17 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
+  padding: 0 0.75em;
   z-index: 3;
   font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    padding: 0 0.75em;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    img{
     width: 1em;
-    }
+    cursor: pointer;
   }
 }
 
@@ -324,10 +285,6 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
-          name: '新市國小',
-        },
-        {
-          img: require('./s5/2.jpg'),
           name: '新市國小',
         },
       ],

@@ -1,13 +1,6 @@
 <template>
   <div>
     <div class="section6">
-      <div class="o" data-aos="zoom-in"></div>
-
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      
-      <div class="c1"><img src="./all/3.png" alt="3"></div>
-      <div class="c2"><img src="./all/2.png" alt="2"></div>
-    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -16,20 +9,24 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
           </div>
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >在地深耕品牌  實力保證</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        殷實建築，在地耕耘，鼎翊建設多年紮根淡水，十年磨一劍，「文學苑」先建後售，以最懂淡水天時地利的家，最值得您的信賴。
+      <div class="title" data-aos="fade-down" data-aos-delay="200">40米面寬迎賓大廳<br />後防疫全齡化會館</div>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">「至善高第」取法北歐與日本的青銀共享社區，規劃全齡化休閒會館。</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">面寬四十米迎賓大廳、信箱區、閱覽室、吧台區、咖啡廳、健身房、瑜珈室、會議間、兒童遊戲室、室內外儲藏室、管委會辦公室、自行車停車區等，提供住戶多樣休閒機能。更以貼心防疫考量，除當層排氣外，規劃對角開窗通風流動、人臉辨識、免接觸叫電梯、公設及電梯內空氣清淨機，打造安心休閒空間。
       </div>
+      </div>
+      <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>
@@ -37,15 +34,16 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {  
+.section6 {
   width:100%;
-  height:auto;
+  height: size(900);
   position: relative;
 }
+
 .o{
   position: absolute;
-  top:size(770);
-  left:size(110);
+  top:size(270);
+  left:size(190);
   width:size(210);
   height:size(210);
   border-radius: 50%;
@@ -59,28 +57,25 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
         img{width: 100%;}
       }
     .c1{
-      width:size(670);top:size(985);right: size(-70);
+      width:size(660);top:size(780);left: size(40);
       transform:rotate(3deg);
       transform-origin: 50% 50%;
     animation-delay: -1s;
       img{width: 100%;
       transform:rotate(-70deg);}}
-    .c2{
-      width:size(242);top:size(1180);left: size(70);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      img{width: 100%;
-      transform:rotate(0deg)scaleX(-1);}}
   }
+
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
+
 .txt{
-  position: relative;
-  width: size(1500);
-  margin:0 auto 16em;
+  position: absolute;
+  width: size(490);
+  left: size(300);
+  top: size(325);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -88,68 +83,40 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   font-weight: 400;
   line-height: 1.2;
   z-index: 3;
-  color: #666;
+  color: #2C5252;
   }
-
 .title{
-  position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
-  letter-spacing:0.04em;
-  color: #bb9259;
-  font-weight: 700;
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
 }
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #A9292C;
+}
+
 .desc {
-  margin:1em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  margin:0.1em auto;
+  line-height: 1.6;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
+
 /* Swipe */
 .swipe {
-  position: relative;
-  margin: auto;
-  width: size(1500);
-  height: size(840);
-  // left: size(210);
+  position: absolute;
+  width: size(840);
+  height: size(560);
+  top: size(185);
+  right: size(210);
   object-fit: cover;
   z-index: 3;
 }
-.slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-}
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-}
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-// 過場動畫
-// begin 
+// begin
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -168,15 +135,47 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-// pagination
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #fff;
+   text-shadow:0 0.1em 0.3em #000;
+  }
+}
+
 .pagination {
   width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
+  bottom: size(148);
+  right:calc(50% + 6.95vw);
   justify-content: center;
   font-size: size(20);
-
 }
+
 .pagination-dot {
   padding: 0.25em;
   margin: 0 0.2em;
@@ -188,7 +187,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #ccc;
+    border: 0.2em solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -198,7 +197,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  #d4a680;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -219,8 +218,6 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
@@ -234,7 +231,6 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     cursor: pointer;
   }
 }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -250,10 +246,8 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 
 @media screen and (max-width: 767px) {
   .section6 {
-    width: 100%;
+    width: 100vw;
     height: auto;
-    min-height: auto;
-    max-height: initial;
   }
 .o{
   top:sizem(260);
@@ -264,23 +258,21 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 }
 .c{
     .c1{width:sizem(270);top:sizem(330);left: sizem(130);}
-    .c2{width:sizem(170);top:sizem(390);left: sizem(0);}
   }
   .txt{
-    position: relative;
-    width: sizem(310);
-    margin:1.5em auto 13em;
-    left:0;
-    top:0;
-    font-size: sizem(15);
+  position: relative;
+  width: sizem(310);
+margin:1.5em auto 10em;
+  left:0;
+  top:0;
+  font-size: sizem(15);
   }
 .title{
-    font-size: sizem(30);
-  letter-spacing:0.005em;
+    font-size: sizem(29);
 }
   .desc {
+   //line-height: 1.73;
   margin:0em auto;
-  font-size: sizem(15);
   }
   /* Swipe */
   .swipe {
@@ -299,7 +291,6 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   font-size: sizem(15);
   }
 }
-
 </style>
 <script>
 // @ is an alias to /src
@@ -323,27 +314,7 @@ export default {
       slideList: [
         {
           img: require('./s6/1.jpg'),
-          name: '瀚林苑外觀實景',
-        },
-        {
-          img: require('./s6/2.jpg'),
-          name: '理學苑外觀實景',
-        },
-        {
-          img: require('./s6/3.jpg'),
-          name: '瀚林苑大廳實景',
-        },
-        {
-          img: require('./s6/4.jpg'),
-          name: '理學苑中庭實景',
-        },
-        {
-          img: require('./s6/5.jpg'),
-          name: '閱覽室',
-        },
-        {
-          img: require('./s6/6.jpg'),
-          name: '兒童遊戲室',
+          name: '新光影城',
         },
       ],
     }
@@ -359,7 +330,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 7) {
+      if (this.viewIndex === 3) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

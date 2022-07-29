@@ -14,7 +14,7 @@
 
     <div class="txt">
       <div class="t1"  data-aos="zoom-in" data-aos-delay="600">居高美地 風尚生活宅</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800">玩美2-3房｜<span>台大竹東分院旁</span></div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="800"><span>玩美2-3房</span>台大竹東分院旁</div>
       <img src="./s1/035957999.png" data-aos="zoom-in" data-aos-delay="1000" alt="035957999" class="phone">
     </div>
   </div>
@@ -40,6 +40,7 @@
 .img{
       position: absolute;right:0;top:calc(50% + 3.5vw);
       width:size(730);
+      z-index: 2;
     // top:calc(50% + (0 - 540) * 100vw / 1920);
     .img1{
       width:100%;
@@ -75,7 +76,7 @@
 }
 .logo{
   position: relative;
-  margin: auto;
+  margin:0 auto 0;
   top: calc(50% - 19vw);
   width:size(994);
   .logo1{width: 70.8%;margin: auto auto 1%;}
@@ -83,12 +84,14 @@
   .logof{width: 10.1%;position: absolute;
     bottom: 2%;
     right: 14.3%;
+    transform-origin: 100% 0;
+    transform: scale(.5) translate(100%, -300%);
     }
   }
 .txt{
-  position: absolute;
-      top:calc(50% + (618 - 540) * 100vw / 1920);
-  left:size(382);
+  position: relative;
+  top:calc(50% + (253 - 540) * 100vw / 1920);
+  left:size(-260);
   font-size: size(47);
   line-height: 1.6;
   color: #fff;
@@ -101,8 +104,18 @@
   color: #717071;
   font-size: 1.38em;
     }
-  .t2{
-  span{font-weight: 900;}
+  .t2{font-weight: 900;
+  span{font-weight: 700;display: inline-block;
+  &::after{
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background: #FFF;
+    vertical-align: middle;
+    margin:-0.2em 0.45em 0;
+  }
+  }
   }
   .phone{
         margin:0.5em auto 0;
@@ -120,33 +133,52 @@
     max-height: sizem(750);
     height: calc(100vh - 63px);
   margin: 0 0 0;
-&::before{
-  background-size:sizem(700);
-}
   }
+.img{top:calc(50% + 10vw);
+  width:sizem(208);
+  right:sizem(-48);
+    .img2{
+    top: -13%;
+    left: 30%;
+    width: 25.2%;
 
-.c{
-   top:calc(50% + (0 - 302) * 100vw / 375);
-    .c1{width:sizem(245);top:sizem(422);left: sizem(70);}
-    .c2{width:sizem(230);top:sizem(310);left: sizem(-5);}
-    .c3{width:sizem(161);top:sizem(309);left:sizem(130);}
-    .c4{width:sizem(182);top:sizem(420);left:sizem(186);}
+    }
+    .img3{
+    top: -18%;
+    left: 16%;
+    width: 51.9%;
+
+    }
 }
+
 
 .logo{
-   width:sizem(276);  margin-left:sizem(25);
+  width:sizem(287);
+  top: calc(50% - 35vw);
   }
 .txt{
-   left:sizem(0);
-   top:calc(50% + (76 - 302) * 100vw / 375);
-   width: 100%;
-  font-size: sizem(20);
-  .t1{ 
-        margin:0.5em 0 0; }
+  font-size: sizem(24);
+  top:calc(50% + (220 - 302) * 100vw / 375);
+  left:sizem(-62);
+  .t1{
+  font-size: 0.73em;
+
+  }
   .t2{
-    letter-spacing: 0.04em;
-        margin:0;
+
+  span{display: block;
+    width: sizem(165);
+    margin: auto;
+  border: 1px solid currentColor;
+  &::after{
+    display: none;
+  }
+  }
+
     }
+  .phone{
+        margin:0em auto 0;
+    width: sizem(165);}
 }
 
 
