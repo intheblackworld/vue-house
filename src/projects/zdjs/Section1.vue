@@ -9,7 +9,7 @@
     <a href="https://drive.google.com/file/d/1323vWyJN6iwqFYvTjfPYXoiwHS_92cJS/view?usp=sharing" class="btn1">
       <img src="./s1/btn_1.png" :alt="`${info.caseName}_btn1`" data-aos="fade-up" data-aos-delay="400">
     </a>
-    <a href="https://drive.google.com/drive/folders/1Gyc3BiP1cwhlCj325VsxJgyPPB9tD26i?usp=sharing" class="btn2" target="_blank">
+    <a href="https://drive.google.com/drive/folders/1SO43omscXI2M_1wX_fJEGqk70uXkpp-E?usp=sharing" class="btn2" target="_blank">
       <img src="./s1/btn_2.png" :alt="`${info.caseName}_btn2`" data-aos="fade-up" data-aos-delay="600">
     </a>
   </div>
