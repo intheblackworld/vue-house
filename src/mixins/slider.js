@@ -4,6 +4,8 @@ export default {
       slideIndex: 0,
       toggleTimer: true,
       stopAutoPlay: false,
+      slidesPerView:2,
+      spaceBetween: 30,
     }
   },
 

@@ -1,11 +1,12 @@
 <template>
   <div class="section2">
     <div class="content">
-      <div class="title" v-html="slideList[slideIndex].title">
+      <div class="title">
+        城市遠見ALL in ONE︱沙鹿正核心，新站優生活
       </div>
-      <div class="subtitle" v-html="slideList[slideIndex].subtitle">
-      </div>
-      <div class="desc" v-html="slideList[slideIndex].desc"></div>
+      <div class="desc">陸海空到位，「門戶科技城」+「海港娛樂城」加乘效益<br />
+沙鹿新站特區首發，勝麗建設再創美學天際<br />
+台中最值得期待的一次城市跳躍！</div>
     </div>
     <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -321,10 +322,10 @@ export default {
         {
           img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
           name: "",
-          area: "",
-          title: '城心藏富 家心藏綠',
-          subtitle:'Green & Wealth',
-          desc: isMobile? '在求快的時代，<br>我們更懂慢的珍貴。在土城重劃核心，<br>成熟生活機能裡簇擁一片綠的存在，<br>落實慢活美學，生活更有滋味。':'在求快的時代， 我們更懂慢的珍貴。<br>在土城重劃核心，成熟生活機能裡簇擁一片綠的存在，<br>落實慢活美學，生活更有滋味。 ',
+        },
+        {
+          img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: "",
         },
   /*      {
           img: isMobile?require("./s2/2m.jpg"):require("./s2/2.jpg"),
