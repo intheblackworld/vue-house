@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="section7">
-
+<div class="img" data-aos="zoom-in"> <img src="./s7/img.png" alt="img" /></div>
+   
 
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -21,9 +22,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >雙陽台・雙衛浴・雙開窗  超機能2~3房 </div>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">「至善高第」針對首購、換屋、同鄰不同居，量身訂作超機能2~3房。</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">單層3戶及單層5戶，雙陽台、雙衛浴、雙開窗（*套房僅一套衛浴開窗）、大面積開窗，引光納景通風採光佳，住起來身心最舒適。規劃升等2房、幸福3房，單身、小家庭、同鄰不同居，滿足不同族群的需求。</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >雙陽台・雙衛浴・雙開窗  超機能2~3房 </div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">「至善高第」針對首購、換屋、同鄰不同居，量身訂作超機能2~3房。</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">單層3戶及單層5戶，雙陽台、雙衛浴、雙開窗（*套房僅一套衛浴開窗）、大面積開窗，引光納景通風採光佳，住起來身心最舒適。規劃升等2房、幸福3房，單身、小家庭、同鄰不同居，滿足不同族群的需求。</div>
       </div>
     </div>
   </div>
@@ -35,39 +36,24 @@
   width:100%;
   height:auto;
   position: relative;
-  margin: 5.3vw 0 0 0;
+  padding: 9vw 0 5vw;
+  background: #F3AFBC;
 }
 
-.o{
-  position: absolute;
-  top:size(790);
-  left:size(100);
-  width:size(210);
-  height:size(210);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-.c{
-      position: absolute;left:0;right:0;
-      top:calc(50% + (0 - 540) * 100vw / 1920);
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
+.img{width: size(800);position: absolute;left: 0;bottom: size(-130);
+z-index: 2;
+img{width: 100%;
+// transform: skewY(5deg) ;
+// transform-origin: 0 50%;
+  //    animation: an 3s linear alternate infinite;
       }
-    .c1{
-      width:size(355);top:size(-4);right: size(-21);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: -3s;
-      img{width: 100%;
-      transform:rotate(-48deg)scaleX(-1);}}
-  }
+}
+
 @keyframes an{
     to{
       transform: translateX(0);
     }
-}
-.txt{
+}.txt{
   position: relative;
   width: size(1500);
   margin: 0 auto 3em auto;
@@ -77,7 +63,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
-  z-index: 3;
+  z-index: 2;
   color: #2C5252;
 
 .title{
@@ -91,7 +77,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   margin:.5em auto 0;
   letter-spacing:0.03em;
   font-weight: 900;
-  color: #A9292C;
+  color: #000;
 }
 
 .desc {
@@ -245,32 +231,20 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     min-height: auto;
     max-height: initial;
   }
-
-.o{
-  top:sizem(260);
-  left:sizem(10);
-  width:sizem(90);
-  height:sizem(90);
-
-}
-.c{
-    .c1{width:sizem(130);top:sizem(340);left: sizem(280);}
-  }
+  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
   .txt{
     position: relative;
-    width: sizem(310);
-    margin:1.5em auto 8em;
+    width: sizem(320);
+    margin:1.5em auto 5em;
     left:0;
     top:0;
-    font-size: sizem(15);
-  }
-.title{
-    font-size: sizem(30);
-  letter-spacing:0.01em;
-}
-  .desc {
-  margin:0em auto;
-  font-size: sizem(15);
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
   }
   /* Swipe */
   .swipe {
@@ -312,20 +286,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1.jpg'),
-          name: '空拍實景圖',
+          img: require('./s7/1.jpg'),
+          name: '情境示意圖',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: '空拍實景圖',
+          img: isMobile?require("./s7/2m.jpg"):require("./s7/2.jpg"),
+          name: '',
         },
         {
-          img: require('./s4/3.jpg'),
-          name: '空拍實景圖',
-        },
-        {
-          img: require('./s4/4.jpg'),
-          name: '空拍實景圖',
+          img: isMobile?require("./s7/3m.jpg"):require("./s7/3.jpg"),
+          name: '',
         },
       ],
     }

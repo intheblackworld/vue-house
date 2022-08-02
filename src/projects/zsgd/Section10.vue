@@ -1,143 +1,228 @@
 <template>
-  <div class="section10"><!-- 
-    <img src="./s1/0.jpg" alt="`${info.caseName}_bg" class="t0">  -->
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/3.png" alt="3" class="c4">
-      <div class="c3"><img src="./all/3.png" alt="3"></div>
-      <img src="./all/2.png" alt="2" class="c2">
-      <img src="./all/1.png" alt="1" class="c1">
+  <div class="section10">
+    <div class="img" data-aos="zoom-in-left"> <img src="./s10/img.png" alt="img" /></div>
+   
+    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt>
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+          </div>
+        </div>
+        <div v-else class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+        </div>
+      </div>
     </div>
-    <div class="txt">
-      <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="400">行政中心站3分鐘<span></span>35、40坪</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">全新落成  正式公開</div>
-    </div>
+      <div class="txt">
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></h3>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].subtitle"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section10 {
-  width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
-  overflow: hidden;
+.section10 {  
+  width:100%;
+  height:auto;
   position: relative;
-  z-index: 2; 
-  margin: 0 0 5vw;
-&::before{content: "";
-background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:block;width: 100%;height: 100%;}
+  margin:0 auto 0;
+  padding: 9vw 0 5vw;
+  background: #FFF3;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
-/*
-  */
-.t0{
-  position: absolute;
-  width: 100%;height:auto;
-  top: 0;left: 0;object-fit: cover;
-  opacity: 0.5;
-  }
-.c{
-      position: absolute;left:0;right:0;top:0;
-    // top:calc(50% + (0 - 540) * 100vw / 1920);
-   > img,
-   > div{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c1{
-      width:size(797);top:size(495);left: size(-90);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      animation-delay: -1.5s;
+.img{width: size(241);position: absolute;right: 0;bottom:8vw;
+z-index: 2;
+img{width: 100%;transform:rotate(5deg)translateY(10%);
+      animation: an 3s linear alternate infinite;
       }
-    .c2{
-      width:size(649);top:size(35);left: size(-20);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      animation-delay: -2s;}
-    .c3{
-      width:size(520);top:size(240);left:size(270);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      img{width: 100%;
-      transform:rotate(-33deg);}
-      }
-    .c4{
-      width:size(596);top:size(620);left:size(180);
-      transform:rotate(3deg);
-      transform-origin: 50% 100%;
-      animation-delay: -1s;
-      }
-
-  }
-
+}
 
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
-.logo{
-      width:size(708);
-  }
 .txt{
-  position: absolute;
-      top:calc(50% + (318 - 540) * 100vw / 1920);
-  left:size(900);
-  font-size: size(44);
-  line-height: 1.6;
-  color: #fff;
-  text-align: left;
-  width:size(850);
-    letter-spacing:0.03em;
-  .t1{
-    width: 100%;
-  text-align: center;
-  color: #d3a96e;
-  font-weight: 700;
-  font-size: 1.14em;
-        margin:0.65em 0 0.25em;
-  span{border-left: 1px solid #FFF; height: 1em;margin: 0 .4em .25em .4em;
-          vertical-align: middle;
-          display: inline-block;}
-    }
-  .t2{
-  text-align: center;
+  position: relative;
+  width: size(1500);
+  height: size(220);
+  margin: 0 auto 1em auto;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(19);
   font-weight: 600;
-        &::after,
-        &::before{
-          content: "";
-          display: inline-block;
-          width: 1.5em;
-          background:#d3a96e;
-          height: 1px;
-          vertical-align: middle;margin: 0 .7em .2em .7em;
-        }
-
-  }
-  .t3{
-    font-size:2.3em;
-  font-weight: 400;
   line-height: 1.4;
-  letter-spacing: 0.02em;
-    .button{
-    font-size:0.68em;
-      cursor: pointer;
-      display: inline-block;
-      border:2px solid #52b559;
-      width: 5.2em;
-      vertical-align: middle;
-      margin: 0 0.5em 0.2em 0;
-      padding: 0 0 0.1em 0;
+  z-index: 2;
+  color: #2C5252;
+
+.title{
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
+}
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #A9292C;
+}
+
+.desc {
+  margin:0.1em auto;
+  line-height: 1.6;
+  list-style: circle;
+}
+  }
+/* Swipe */
+.swipe {
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(850);
+  // left: size(210);
+  object-fit: cover;
+  z-index: 3;
+}
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// pagination
+.pagination {
+  width: auto;
+  bottom: -2.2em;
+  right: -0.5em;
+  justify-content: center;
+  font-size: size(20);
+
+}
+.pagination-dot {
+  padding: 0.25em;
+  margin: 0 0.2em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width:1em;
+    height:1em;
+    border-radius: 50%;
+    border: 0.2em solid  $pagination;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+    border-radius: 50%;
+    border:  0.105em solid  $pagination-active;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      left: 20%;
       transition: all 0.3s;
-      &:hover{
-        background:#52b559cc;
-        color: #FFF;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        transform: scale(1.6);
       }
     }
   }
 }
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75em;
+  z-index: 3;
+  font-size: size(20);
+
+  .prev-btn,
+  .next-btn {
+    width: 1em;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -145,48 +230,61 @@ background: url("./s1/bg.jpg") fixed;position: absolute;top: 0;left: 0%;display:
 
 @media screen and (max-width: 767px) {
   .section10 {
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
-  margin: 0 0 0;
-&::before{
-  background-size:sizem(700);
-}
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: initial;
+  //padding:0;
   }
-
-.c{
-   top:calc(50% + (0 - 302) * 100vw / 375);
-    .c1{width:sizem(245);top:sizem(422);left: sizem(70);}
-    .c2{width:sizem(230);top:sizem(310);left: sizem(-5);}
-    .c3{width:sizem(161);top:sizem(309);left:sizem(130);}
-    .c4{width:sizem(182);top:sizem(420);left:sizem(186);}
-}
-
-.logo{
-   width:sizem(276);  margin-left:sizem(25);
-  }
-.txt{
-   left:sizem(0);
-   top:calc(50% + (76 - 302) * 100vw / 375);
-   width: 100%;
-  font-size: sizem(20);
-  .t1{ 
-        margin:0.5em 0 0; }
-  .t2{
-    letter-spacing: 0.04em;
-        margin:0;
+.img{width: sizem(90);right: sizem(35);bottom:5vw;}
+  .txt{
+    position: relative;
+    width: sizem(320);
+  height:auto;
+    margin:1.5em auto 5em;
+    left:0;
+    top:0;
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
     }
+    .subtitle{
+      font-size:1.1em;
+    }
+  }
+  
+  /* Swipe */
+  .swipe {
+    position: relative;
+    width: 100%;
+    height: sizem(240);
+    top:0;
+    left:0;
+  }
+
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
 }
 
+  .swipe-btns {
+  font-size: sizem(15);
+  }
 }
+
 </style>
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section10',
+
+  mixins: [slider],
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -194,15 +292,46 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
+      dialogImg: null,
+      showMask: false,
+      slideList: [
+        {
+          img: require("./s10/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: '樣品屋圖說1',
+          title: '1樣品屋大標',
+          subtitle: '1樣品屋小標',
+          desc: '1樣品屋內文1樣品屋內文1樣品屋內文1樣品屋內文1樣品屋內文',
+        },
+        {
+          img: require("./s10/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: '樣品屋圖說2',
+          title: '2樣品屋大標',
+          subtitle: '2樣品屋小標',
+          desc: '2樣品屋內文2樣品屋內文2樣品屋內文2樣品屋內文2樣品屋內文2樣品屋內文2樣品屋內文',
+        },
+      ]
     }
   },
 
-  methods: {},
+  methods: {
+    showDialog() {
+      this.isDialog = true;
+      this.showMask = true;
+      this.dialogImg = this.slideList[this.slideIndex].full;
+    },
 
-  mounted() {},
+    handleScroll() {
+      this.showMask = false;
+    }
+  },
 
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {}
 }
 </script>

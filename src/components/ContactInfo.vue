@@ -15,16 +15,18 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c btfanpage" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">接待中心：<br v-if="isMobile">{{info.address}}</div>
-        <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
-          <span class="flex-c">
-            <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
-          </span>
+        <div class="addressall">
+          <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">接待中心：<br v-if="isMobile">{{info.address}}</div>
+          <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
+            <span class="flex-c">
+              <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -106,6 +108,7 @@ export default {
   margin: 3vw auto 3vw;
   //padding: 30px 0 40px;
   padding: 3vw 0;
+  line-height: 1.4;
 }
 
 .logo {
@@ -113,7 +116,7 @@ export default {
   height: auto;
   // height:;
   margin: 0 auto 2vw;
-  padding: 0 4vw 0 0;
+  padding: 0 0 0 0;
 }
 .info {
   width: 880px;
@@ -180,12 +183,16 @@ export default {
     left: 140%;
   }
 }
+.addressall{
+  width: 100%;
+}
 .address {
-  width: 600px;
+  width:calc(100% - 280px);
   height: 60px;
   background: #fff;
   color: #040000;
   font-weight: bold;
+  float: left;
   //box-shadow: $contact_btn_border;
 }
 .google-btn {

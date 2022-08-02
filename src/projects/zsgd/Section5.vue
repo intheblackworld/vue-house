@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="section5">
+      <div class="img" data-aos="zoom-in-right"> <img src="./s5/img.png" alt="img" /></div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -9,22 +10,22 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+     <!--     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
-          </div>
+          </div> -->
         </div>
+     <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div>  -->
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">12,743坪至善重劃區<br />居高臨下地王視野 </div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">跳脫傳統舊市區舊建築，至善重劃區以整齊街道、方正街廓，為竹東人提供了新型態的生活方式。「至善高第」地居重劃區最高處，後倚山巒有靠，坐享好景觀、好視野，是至善重劃區居高臨下的地王，緊鄰公園水岸綠景步道，步行約150公尺竹東游泳池跟台大竹東分院，享有一整套優質好生活。</div>
-      </div>
-     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">12,743坪至善重劃區<br />居高臨下地王視野 </div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">跳脫傳統舊市區舊建築，至善重劃區以整齊街道、方正街廓，為竹東人提供了新型態的生活方式。「至善高第」地居重劃區最高處，後倚山巒有靠，坐享好景觀、好視野，是至善重劃區居高臨下的地王，緊鄰公園水岸綠景步道，步行約150公尺竹東游泳池跟台大竹東分院，享有一整套優質好生活。</div>
       </div>
     </div>
   </div>
@@ -34,30 +35,41 @@
 
 .section5 {
   width:100%;
-  height: size(900);
+  height:auto;
   position: relative;
-  margin: 0 0 6vw 0;
-background:#FFF6;
+  margin:0 auto 0;
+  padding: 5vw 0 5vw;
+background:#FFF;
+&::after{content: "";clear: both;display: block;}
 }
+.img{width: size(941);position: absolute;left: 0;top:calc(50% - 24vw);
+transform-origin:0% 50% ;
+z-index: 2;
+img{width: 100%;transform: skewX(3deg) ;
+transform-origin: 0 100%;
+      animation: an 3s linear alternate infinite;
+      }
+}
+
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
-
 .txt{
-  position: absolute;
-  width: size(500);
-  right:size(280);
-  top: size(320);
+float: right;
+  position: relative;
+  padding-top: 4vw;
+  width: size(580);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
-  z-index: 3;
+  z-index: 2;
   color: #2C5252;
+  margin-right: size(210);
   }
 
 .title{
@@ -78,13 +90,14 @@ background:#FFF6;
 
 /* Swipe */
 
-.swipe {
-  position: absolute;
+.swipe {position: relative;
+float: left;
+ // position: absolute;
   width: size(840);
-  height: size(560);
-  top: size(185);
-  left: size(210);
-  object-fit: cover;
+  height: size(473);
+// top: size(185);
+ // left: size(210);
+  margin-left: size(210);
   z-index: 3;
 }
 .slide-name {
@@ -140,8 +153,8 @@ background:#FFF6;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(148);
-  left:calc(50% + 6.95vw);
+  bottom: size(0);
+  left:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
   font-size: size(20);
 
@@ -220,38 +233,31 @@ background:#FFF6;
     width: 100%;
     height: auto;
   }
-  .o{
-  top:sizem(260);
-  right:sizem(10);
-  width:sizem(90);
-  height:sizem(90);
-
-}
-.c{
-    .c1{width:sizem(230);top:sizem(350);left: sizem(100);}
-}
+.img{width: sizem(360);left: 0;top:auto;bottom:-22vw;}
   .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 10em;
-  left:0;
-  top:0;
-  font-size: sizem(15);
-  }
-.title{
-    font-size: sizem(30);
-}
-  .desc {
-   //line-height: 1.73;
-  margin:0em auto;
+    position: relative;
+    width: sizem(320);
+    float: none;
+    margin:1.5em auto 22em;
+    left:0;
+    top:0;
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
+    float: none;
     height: sizem(255);
     top:0;
     left:0;
+  margin-left:0;
   }
 .swipe-item {
   .slide-name {
@@ -285,7 +291,7 @@ export default {
       slideList: [
         {
           img: require('./s5/1.jpg'),
-          name: '新市國小',
+          name: '現場基地空拍實景圖',
         },
       ],
     }

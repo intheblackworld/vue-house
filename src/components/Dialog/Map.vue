@@ -3,7 +3,7 @@
     <font-awesome-icon icon="map-marker-alt" />
     <div class="dialog-desc">接待中心</div>
     <div class="info" v-html="address"></div>
-    <a class="cta" :href="link" target="_blank">開啟導航</a>
+    <a class="cta btsearch" :href="link" target="_blank">開啟導航</a>
   </div>
 </template>
 

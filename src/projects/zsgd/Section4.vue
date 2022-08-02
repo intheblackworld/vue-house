@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >大新竹正核心   快適生活圈</div>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">竹東，地理位置位於大新竹正核心，興合力建築團隊-唐誠建設精選竹東至善重劃區，打造「至善高第」。</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">「至善高第」公道五號、68快速道路打通竹東動脈，國道3號串接通網南北各地，工作在新竹、竹北，悠閒樂活在北埔、內灣、橫山、寶山。工作、居家、休閒一線牽，大新竹最宜居生活城！
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >大新竹正核心   快適生活圈</div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">竹東，地理位置位於大新竹正核心，興合力建築團隊-唐誠建設精選竹東至善重劃區，打造「至善高第」。</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">「至善高第」公道五號、68快速道路打通竹東動脈，國道3號串接通網南北各地，工作在新竹、竹北，悠閒樂活在北埔、內灣、橫山、寶山。工作、居家、休閒一線牽，大新竹最宜居生活城！
       </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
-  z-index: 3;
+  z-index: 2;
   color: #2C5252;
 
 .title{
@@ -92,7 +92,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   margin:.5em auto 0;
   letter-spacing:0.03em;
   font-weight: 900;
-  color: #A9292C;
+  color: #000;
 }
 
 .desc {
@@ -106,7 +106,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(840);
+  height: size(844);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -247,37 +247,25 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     max-height: initial;
   }
 
-.o{
-  top:sizem(260);
-  left:sizem(10);
-  width:sizem(90);
-  height:sizem(90);
-
-}
-.c{
-    .c1{width:sizem(130);top:sizem(340);left: sizem(280);}
-  }
   .txt{
     position: relative;
-    width: sizem(310);
-    margin:1.5em auto 8em;
+    width: sizem(320);
+    margin:1.5em auto 3em;
     left:0;
     top:0;
-    font-size: sizem(15);
-  }
-.title{
-    font-size: sizem(30);
-  letter-spacing:0.01em;
-}
-  .desc {
-  margin:0em auto;
-  font-size: sizem(15);
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    height: sizem(240);
     top:0;
     left:0;
   }
@@ -313,20 +301,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1.jpg'),
+          img: isMobile?require("./s4/1m.jpg"):require("./s4/1.jpg"),
           name: '空拍實景圖',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '空拍實景圖',
+          name: '68快速道路',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '空拍實景圖',
+          name: '頭前溪生態公園',
         },
         {
           img: require('./s4/4.jpg'),
-          name: '空拍實景圖',
+          name: '蕭如松藝術園區',
         },
       ],
     }

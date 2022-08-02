@@ -1,15 +1,9 @@
 <template>
   <div class="order-bg" ref="parallax2">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      
-      <div class="c1"><img src="@/projects/zsgd/all/3.png" alt="1"></div>
-      <div class="c2"><img src="@/projects/zsgd/all/2.png" alt="3"></div>
-    </div>
     <div class="order-top">
       <div class="title-block">
-      <div class="o" data-aos="zoom-in"></div>
-        <h3 class="order-title" v-html="order.title"></h3>
-        <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
+        <h3 data-aos="zoom-in" class="order-title" v-html="order.title"></h3>
+        <div data-aos="zoom-in" class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
       </div>
       <div class="order" data-aos="zoom-in">
         <div class="form">
@@ -88,7 +82,7 @@
           ></vue-recaptcha>
         </div>
         <el-button
-          class="form-submit bt_registration"
+          class="form-submit bt_registration btregistration"
           type="primary"
           :disabled="!checked || !isVerify"
           @click="submit"

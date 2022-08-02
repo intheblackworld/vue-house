@@ -1,6 +1,6 @@
 <template>
   <div class="section3">
-    <div class="img"> <img src="./s3/img.png" alt="img" /></div>
+    <div class="img" data-aos="zoom-in-left"> <img src="./s3/img.png" alt="img" /></div>
     <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -25,7 +25,7 @@
       </div>
     </div>
       <div class="txt">
-      <h3 class="title" data-aos="zoom-in" data-aos-delay="200" >跟著大新竹大建設   至善高第6大爭藏優勢</h3>
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200" >跟著大新竹大建設<br />   至善高第6大爭藏優勢</h3>
       </div>
   </div>
 </template>
@@ -44,7 +44,7 @@
 
 .img{width: size(648);position: absolute;right: 0;bottom: size(-500);
 z-index: 2;
-img{width: 100%;transform: skewX(3deg) ;
+img{width: 100%;transform: skewX(-3deg) ;
 transform-origin: 0 60%;
       animation: an 3s linear alternate infinite;
       }
@@ -58,14 +58,14 @@ transform-origin: 0 60%;
 .txt{
   position: relative;
   width: size(1500);
-  margin: 0 auto 3em auto;
+  margin: 0 auto 0em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
-  z-index: 3;
+  z-index: 2;
   color: #2C5252;
 
 .title{
@@ -79,7 +79,7 @@ transform-origin: 0 60%;
   margin:.5em auto 0;
   letter-spacing:0.03em;
   font-weight: 900;
-  color: #A9292C;
+  color: #000;
 }
 
 .desc {
@@ -93,7 +93,7 @@ transform-origin: 0 60%;
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(850);
+  height: size(844);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -232,8 +232,9 @@ transform-origin: 0 60%;
     height: auto;
     min-height: auto;
     max-height: initial;
-  padding: 0;
+  padding:6vw 0 0 0;
   }
+  .img{width: sizem(310);bottom: sizem(-210);right:sizem(-30)}
   .txt{
     position: relative;
     width: sizem(320);
@@ -306,15 +307,15 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: require("./s3/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          img: isMobile?require("./s3/1m.jpg"):require("./s3/1.jpg"),
           name: '',
         },
         {
-          img: require("./s3/2.jpg"),
+          img: isMobile?require("./s3/2m.jpg"):require("./s3/2.jpg"),
           name: '',
         },
         {
-          img: require("./s3/3.jpg"),
+          img: isMobile?require("./s3/2m.jpg"):require("./s3/3.jpg"),
           name: '',
         },
       ]

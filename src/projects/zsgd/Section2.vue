@@ -1,6 +1,6 @@
 <template>
   <div class="section2">
-    <div class="img"> <img src="./s2/img.png" alt="img" /></div>
+    <div class="img" data-aos="zoom-in-right"><img src="./s2/img.png" alt="img" /></div>
    
     <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -26,9 +26,9 @@
       </div>
     </div>
       <div class="txt">
-      <h3 class="title" data-aos="zoom-in" data-aos-delay="200" v-html="slideList[slideIndex].title"></h3>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" v-html="slideList[slideIndex].subtitle"></div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></h3>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].subtitle"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
       </div>
   </div>
 </template>
@@ -41,7 +41,7 @@
   position: relative;
   margin:0 auto 0;
   padding: 9vw 0 5vw;
-  background: #FFF3;
+  background: #FFF;
   &::after{content: "";clear: both;display: block;height: 1px;}
 }
 .img{width: size(819);position: absolute;left: 0;bottom: size(-340);
@@ -68,7 +68,7 @@ transform-origin: 0 50%;
   font-size: size(19);
   font-weight: 600;
   line-height: 1.4;
-  z-index: 3;
+  z-index: 2;
   color: #2C5252;
 
 .title{
@@ -96,7 +96,7 @@ transform-origin: 0 50%;
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(850);
+  height: size(844);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -164,7 +164,6 @@ transform-origin: 0 50%;
   padding: 0.25em;
   margin: 0 0.2em;
   cursor: pointer;
-  z-index: 4;
 
   span {
     display: block;
@@ -237,11 +236,13 @@ transform-origin: 0 50%;
     max-height: initial;
   padding:0;
   }
+.img{width:  90%;bottom: sizem(-45);
+z-index: 2;}
   .txt{
     position: relative;
     width: sizem(320);
-    height: auto;
-    margin:1.5em auto 3em;
+  height: sizem(410);
+    margin:1.5em auto 2em;
     left:0;
     top:0;
     font-size: sizem(14);
@@ -298,18 +299,18 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: require("./s2/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
           name: '',
           title: '全球科技城-西雅圖Seatle V.S 台灣矽谷城-新竹Hsinchu',
           subtitle: '西雅圖Seatle',
           desc: '集文化，歷史、科技、產業於一身的城市中，加上微軟、Google、亞馬遜總部，星巴克、波音跟Costco青睞，西雅圖，獨樹一格的高所得宜居城，成為美國西北地區最大都會區，也是全美人口稱長最快的城市。',
         },
         {
-          img: require("./s2/2.jpg"),
+          img: isMobile?require("./s2/2m.jpg"):require("./s2/2.jpg"),
           name: '',
           title: '全球科技城-西雅圖Seatle V.S 台灣矽谷城-新竹Hsinchu',
           subtitle: '新竹Hsinchu',
-          desc: '充滿英倫紳士會所優雅氣質，融合LOUNGE 台積電、聯發科、智邦科技、緯創ＡＩ智慧園區，玻璃文創、水岸海岸休閒景觀及老中青幼全齡照顧，台灣新矽谷城在「新竹」。<br>109年起連續兩年淨遷入率及人口成長率全國第一，招商引資達65.1億，全國排名第二，更有引領國際的半導體、光電、電腦資訊軟體園區，媲美西雅圖，成為最適合移居的文化科技智慧樂活城。',
+          desc: '台積電、聯發科、智邦科技、緯創ＡＩ智慧園區，玻璃文創、水岸海岸休閒景觀及老中青幼全齡照顧，台灣新矽谷城在「新竹」。<br>109年起連續兩年淨遷入率及人口成長率全國第一，招商引資達65.1億，全國排名第二，更有引領國際的半導體、光電、電腦資訊軟體園區，媲美西雅圖，成為最適合移居的文化科技智慧樂活城。',
         },
       ]
     }

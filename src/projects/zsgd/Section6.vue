@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="section6">
+      <div class="img" data-aos="zoom-in-left"> <img src="./s6/img.png" alt="img" /></div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -9,24 +10,24 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+       <!--   <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
-          </div>
+          </div> -->
         </div>
+     <!-- <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div>  -->
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">40米面寬迎賓大廳<br />後防疫全齡化會館</div>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">「至善高第」取法北歐與日本的青銀共享社區，規劃全齡化休閒會館。</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">面寬四十米迎賓大廳、信箱區、閱覽室、吧台區、咖啡廳、健身房、瑜珈室、會議間、兒童遊戲室、室內外儲藏室、管委會辦公室、自行車停車區等，提供住戶多樣休閒機能。更以貼心防疫考量，除當層排氣外，規劃對角開窗通風流動、人臉辨識、免接觸叫電梯、公設及電梯內空氣清淨機，打造安心休閒空間。
+      <div class="title" data-aos="fade-up" data-aos-delay="200">40米面寬迎賓大廳<br />後防疫全齡化會館</div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">「至善高第」取法北歐與日本的青銀共享社區，規劃全齡化休閒會館。</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">面寬四十米迎賓大廳、信箱區、閱覽室、吧台區、咖啡廳、健身房、瑜珈室、會議間、兒童遊戲室、室內外儲藏室、管委會辦公室、自行車停車區等，提供住戶多樣休閒機能。更以貼心防疫考量，除當層排氣外，規劃對角開窗通風流動、人臉辨識、免接觸叫電梯、公設及電梯內空氣清淨機，打造安心休閒空間。
       </div>
-      </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>
@@ -36,54 +37,42 @@
 
 .section6 {
   width:100%;
-  height: size(900);
+  height:auto;
   position: relative;
+  margin:0 auto 0;
+  padding: 5vw 0 5vw;
+&::after{content: "";clear: both;display: block;}
 }
-
-.o{
-  position: absolute;
-  top:size(270);
-  left:size(190);
-  width:size(210);
-  height:size(210);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-.c{
-      position: absolute;left:0;right:0;
-      top:calc(50% + (0 - 540) * 100vw / 1920);
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
+.img{width: size(615);position: absolute;right:  size(-140);bottom: size(-360);
+z-index: 2;
+img{width: 100%;
+/* transform: skewX(-2deg) ;
+transform-origin: 100% 100%;
+      animation: an 3s linear alternate infinite;  */
       }
-    .c1{
-      width:size(660);top:size(780);left: size(40);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: -1s;
-      img{width: 100%;
-      transform:rotate(-70deg);}}
-  }
+}
 
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
-
 .txt{
-  position: absolute;
-  width: size(490);
-  left: size(300);
-  top: size(325);
+float: left;
+  position: relative;
+  padding-top: 4vw;
+  width: size(580);
+ /*  left: size(300);
+  top: size(325);  */
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(17);
+  font-size: size(19);
   font-weight: 400;
   line-height: 1.2;
   z-index: 3;
   color: #2C5252;
+  margin-left: size(210);
   }
 .title{
   font-size:2.2em;
@@ -96,7 +85,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   margin:.5em auto 0;
   letter-spacing:0.03em;
   font-weight: 900;
-  color: #A9292C;
+  color: #000;
 }
 
 .desc {
@@ -107,12 +96,14 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 
 /* Swipe */
 .swipe {
-  position: absolute;
+  position: relative;
+float: right;
   width: size(840);
-  height: size(560);
-  top: size(185);
+  height: size(472);
+ /* top: size(185);
   right: size(210);
-  object-fit: cover;
+  object-fit: cover; */
+  margin-right: size(210);
   z-index: 3;
 }
 
@@ -170,8 +161,8 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 
 .pagination {
   width: auto;
-  bottom: size(148);
-  right:calc(50% + 6.95vw);
+  bottom: size(0);
+  right:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
   font-size: size(20);
 }
@@ -249,33 +240,25 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     width: 100vw;
     height: auto;
   }
-.o{
-  top:sizem(260);
-  left:sizem(10);
-  width:sizem(90);
-  height:sizem(90);
-
-}
-.c{
-    .c1{width:sizem(270);top:sizem(330);left: sizem(130);}
-  }
+  .img{width: sizem(330);right: sizem(-30);bottom: sizem(-130);}
   .txt{
-  position: relative;
-  width: sizem(310);
-margin:1.5em auto 10em;
-  left:0;
-  top:0;
-  font-size: sizem(15);
-  }
-.title{
-    font-size: sizem(29);
-}
-  .desc {
-   //line-height: 1.73;
-  margin:0em auto;
+    position: relative;
+    width: sizem(320);
+    float: none;
+    margin:1.5em auto 10em;
+    left:0;
+    top:0;
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
   }
   /* Swipe */
   .swipe {
+    float: none;
     position: relative;
     width: 100%;
     height: sizem(255);
@@ -314,7 +297,7 @@ export default {
       slideList: [
         {
           img: require('./s6/1.jpg'),
-          name: '新光影城',
+          name: '情境示意圖',
         },
       ],
     }

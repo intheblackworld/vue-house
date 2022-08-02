@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
-    <img src="./s1/pc.jpg" class="t0"><!--   -->
-    <div class="img">
+    <!-- <img src="./s1/mo.jpg" class="t0">  -->
+    <div class="img" data-aos="zoom-in-left">
       <img src="./s1/1.png" alt="img" class="img1">
       <img src="./s1/2.png" alt="img" class="img2">
       <img src="./s1/butterfly.gif" alt="img" class="img3">
@@ -34,7 +34,8 @@
 .t0{
   position: absolute;
   width: 100%;height:auto;
-  top: 0;left: 0;object-fit: cover;
+  // top:50vw;
+  left: 0;object-fit: cover;
   opacity: 0.5;
   }
 .img{
