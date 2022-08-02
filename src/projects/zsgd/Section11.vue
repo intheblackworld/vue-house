@@ -4,13 +4,13 @@
     <div class="img2" data-aos="zoom-in-left"><img src="./s11/img2.png" alt="img" /></div>
     <div class="button">
       <div data-aos="zoom-in" data-aos-delay="0" class="button1" @click="showDialog('https://yun.kujiale.com/design/3FO3XNH3NY4I/airoaming?kpm=Nnw.dd2b4f0b433b0133.9e409fc.1654666813829')">
-      <h3>A1樣品屋<br>VR720實靜觀看</h3>
+      <h3>A1樣品屋<br>VR720虛擬實境</h3>
       </div>
       <div data-aos="zoom-in" data-aos-delay="200" class="button2" @click="showDialog('https://yun.kujiale.com/design/3FO3XNH951GN/airoaming?kpm=Nnw.5b903ffa5ff043ee.9e409fc.1654666791103')">
-      <h3>A2樣品屋<br>VR720實靜觀看</h3>
+      <h3>A2樣品屋<br>VR720虛擬實境</h3>
       </div>
       <div data-aos="zoom-in" data-aos-delay="400" class="button3" @click="showDialog('https://yun.kujiale.com/design/3FO3XNF31TV6/airoaming?kpm=Nnw.100067f3bab10eec.9e409fc.1654666834491')">
-      <h3>A6樣品屋<br>VR720實靜觀看</h3>
+      <h3>A6樣品屋<br>VR720虛擬實境</h3>
       </div>
     </div>
       <div :class="`dialog`" v-if="isShowDialog">
