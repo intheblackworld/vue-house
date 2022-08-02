@@ -2,8 +2,8 @@
   <div class="order-bg" ref="parallax2">
     <div class="order-top">
       <div class="title-block">
-        <h3 data-aos="zoom-in" class="order-title" v-html="order.title"></h3>
-        <div data-aos="zoom-in" class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
+      <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>
+      <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in" v-if="order.subTitle"></div>
       </div>
       <div class="order" data-aos="zoom-in">
         <div class="form">
@@ -16,10 +16,10 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <div class="row">
+            <div class="row" v-if="order.room_type">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in ['兩房','三房','透天']" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">
