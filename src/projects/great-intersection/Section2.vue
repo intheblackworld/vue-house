@@ -1,42 +1,65 @@
 <template>
   <div class="section2">
+    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" /><img src="./s1/f1.png" alt="img" /></div>
     <div class="content">
-      <div class="title">
-        城市遠見ALL in ONE︱沙鹿正核心，新站優生活
+      <div class="title" data-aos="zoom-in" data-aos-delay="200">
+        城市遠見ALL in ONE<br v-if="isMobile" /><span v-else>︱</span>沙鹿正核心，新站優生活
       </div>
-      <div class="desc">陸海空到位，「門戶科技城」+「海港娛樂城」加乘效益<br />
+      <div class="desc" data-aos="zoom-in" data-aos-delay="400">陸海空到位<br v-if="isMobile" /><span v-else>，</span>「門戶科技城」+「海港娛樂城」加乘效益<br />
 沙鹿新站特區首發，勝麗建設再創美學天際<br />
 台中最值得期待的一次城市跳躍！</div>
     </div>
-    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-        <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt>
-            <div class="slide-name absolute" v-html="slide.name"></div>
-          </div>
-        </transition-group>
-        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
-          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
-            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
-          </div>
-        </div>
+    <div class="swiper">
+    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
+        <img :src="slide.img" alt>
+        <div class="slide-name absolute" v-html="slide.name"></div>
+      </swiper-slide>
+    </swiper>
         <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" @click="decIndex"></div>
-          <div class="next-btn" @click="addIndex"></div>
+          <div class="prev-btn" slot="button-prev" v-if="isMobile"></div>
+          <div class="next-btn" slot="button-next" v-if="isMobile"></div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/style/function.scss";
-
+$b_margin:size(50);
 .section2 {
   width: 100%;
   height: auto;
   position: relative;
+  &::after{
+    pointer-events: none;
+    content: "";
+    display: block;
+    position: absolute;
+    top:$b_margin;
+    left:$b_margin;
+    right:$b_margin;
+    bottom:$b_margin;
+    z-index: 1;
+
+     border: 2px solid transparent;
+     border-image: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
+	  border-image-slice: 1;
+  }
  // background: url("./s2/pc.png");
+}
+.img1{width: size(245);position: absolute;right: size(10);top: size(20);
+z-index: 2;
+img{
+  &:first-child{width:136%;
+position: absolute;
+    top: 36%;
+    right: 43%;
+}
+      &:last-child{width: 100%;transform:scaleX(-1);
+position: relative;
+     // animation: an 3s linear alternate infinite
+      }
+      }
 }
 
 .content {
@@ -44,27 +67,30 @@
   //height: 100%;
   //in-height: size(1080);
  // background: #bccf00;
-  padding: 4.5em 0 0 0;
+  padding: 4.8em 0 0 0;
   display: block;
   color: #FFF;
   text-align: center;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.6;
-  font-size: size(20);
+  line-height: 1.7;
+  font-size: size(38);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  letter-spacing:0.06em;
-  height:20em;
+  letter-spacing:0.0em;
+ // height:20em;
+  margin: 0 auto 3em;
 
 
 }
 
 .title {
   font-weight: bold;
-  color: #E2C46C;
-  font-size:2em;
+  color: #DDAC98;
+  font-size:1.36em;
+  margin: 0 auto 1.15em;
+
 }
 
 .subtitle {
@@ -80,43 +106,24 @@
 
 
 /* Swipe */
-.swipe {
+.swiper {
   width: 100%;
-  height: size(600);
-  z-index: 1;
+  height: size(586);
+  //z-index: 1;
+    position: relative;
 }
-
-// begin
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.swipe-wrap {
+.swiper-container {
   width: 100%;
   height: 100%;
 }
-
-.swipe-item {
+.item {
   width: 100%;
   height: 100%;
   z-index: 0;
 
   img {
     width: 100%;
+  height: 100%;
       object-fit: cover;
   }
 
@@ -124,65 +131,17 @@
     font-family: "Noto Sans TC";
     left: 0;
     width: 100%;
-    bottom: 1em;
+    bottom:0;
     color: #fff;
-    font-size: size(18);
+    font-size: size(16);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
     letter-spacing: 0.03em;
-    text-align: center;
+    text-align: right;
     text-shadow: 0 0.3em 1em #0003 ,0 0 .2em #000;
-  }
-}
-
-.pagination {
-  width: auto;
-  bottom:-2em;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  justify-content: center;
-  font-size: size(15);
-}
-
-.pagination-dot {
-  padding:0.4em;
-  margin: 0 0.4em;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width: 0.8em;
-    height:0.8em;
-    border-radius: 0.8em;
-    position: relative;
-    background-color: #fff9;
-    transition: all 0.5s;
-
-    &::before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      display: block;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 1;
-      position: absolute;
-      top: 0;
-      // transform: translateY(-50%);
-      left: 0;
-      transition: all 0.3s;
-      transform-origin: 50% 50%;
-      transform: scale(0);
-    }
-    &.active {
-      &::before {
-        transform: scale(1);
-      }
-    }
+    padding: 0.7em;
   }
 }
 
@@ -195,8 +154,10 @@
   position: absolute;
   top: 0;
   left: 0;
+    pointer-events: none;z-index: 3;
   .prev-btn,
   .next-btn {
+    pointer-events:painted;
     position: relative;
     height: 100%;
     width: 2em;
@@ -204,7 +165,7 @@
     cursor: pointer;
     &::before {
       content: "";
-      position: absolute;
+    //  position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
@@ -256,28 +217,33 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section2 {
-  }
-
+.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-50);
+z-index:4;
+}
   .content {
-  font-size: sizem(15);
+  font-size: sizem(14);
   }
+.title {
+  font-size:1.65em;
+  line-height: 1.5;
+  margin: 0 auto 0.7em;
+
+}
 
   .mouse {
     display: none;
   }
 
   /* Swipe */
-  .swipe {
+.swiper {
     height: sizem(250);
   }
-  
 
 
-  .swipe-item {
+.item {
     .slide-name {
       font-size: sizem(12);
-    bottom: .5em;
+    padding: 1em 1.3em;
     }
   }
 
@@ -301,13 +267,19 @@
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from "@/utils";
-import slider from "@/mixins/slider.js";
 import info from "@/info";
+//import slider from "@/mixins/slider.js";
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: "section2",
+  name: 'section2',
 
-  mixins: [slider],
+  components: {
+    swiper,
+    swiperSlide,
+  },
 
   data() {
     return {
@@ -315,57 +287,57 @@ export default {
       isPC,
       isMobile,
       isTablet,
-      isDialog: false,
-      dialogImg: null,
-      showMask: false,
+      isAnimateBg: true,
+      swiperOption: {
+        slidesPerView: isMobile ? 1 : 2,
+        spaceBetween: 0,
+        allowSlidePrev:true,
+        allowSlideNext:true,
+        loop: isMobile ? true : false,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction:isMobile ? false : true,
+        },
+         /*
+        slideToClickedSlide: isMobile ? true : false,
+        slidesPerColumn: isMobile ? 1 : 1,
+       centeredSlides: isMobile ? true : false,
+
+        effect: 'fade',
+        */
+        navigation: {
+          prevEl: '.prev-btn',
+          nextEl: '.next-btn',
+        },
+      },
       slideList: [
         {
-          img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
-          name: "",
+          img: require("./s2/1.jpg"),
+          name: "情境示意參考圖",
         },
         {
-          img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
-          name: "",
+          img: require("./s2/2.jpg"),
+          name: "情境示意參考圖",
         },
-  /*      {
-          img: isMobile?require("./s2/2m.jpg"):require("./s2/2.jpg"),
-          name: "",
-          area: "",
-          title: '城心藏富 家心藏綠',
-          subtitle:'Green & Wealth',
-          desc: isMobile? '在求快的時代，<br>我們更懂慢的珍貴。在土城重劃核心，<br>成熟生活機能裡簇擁一片綠的存在，<br>落實慢活美學，生活更有滋味。':'在求快的時代， 我們更懂慢的珍貴。<br>在土城重劃核心，成熟生活機能裡簇擁一片綠的存在，<br>落實慢活美學，生活更有滋味。 ',
-        },
-        {
-          img: isMobile?require("./s2/3m.jpg"):require("./s2/3.jpg"),
-          name: "茂德機構",
-          area: "",
-          title: '全台十大建商 茂德機構',
-          subtitle: 'Construction',
-          desc:  isMobile?'超過20年的建築專業，用心成就每一處住所，<br>看好土城的潛力，用金城舞系列證明，<br>深耕土城的決心，更要滿足當代青年的成家夢。': '擁有逾20年以上專業建築經歷，是北台灣首屈一指的建設公司。<br>茂德看好板南線生活機能、萬大線軌道計畫、城市建設遠景以及土城暫緩發展區的潛力，<br>從金城舞1期圓滿完銷到目前新案，致力深耕土城，滿足首購、換屋需求，也期望帶來更好的居住品質。',
-        }
-        */
-      ]
-    };
+      ],
+    }
   },
 
   methods: {
-    showDialog() {
-      this.isDialog = true;
-      this.showMask = true;
-      this.dialogImg = this.slideList[this.slideIndex].full;
-    },
+  },
 
-    handleScroll() {
-      this.showMask = false;
+  mounted() {
+    if (this.isMobile) {
+      this.toggleTimer = false
     }
   },
 
   created() {},
 
-  mounted() {},
-
-  computed: {},
-
-  watch: {}
-};
+  computed: {
+    // isCurrent() {
+    //   return this.slideIndex
+    // },
+  },
+}
 </script>

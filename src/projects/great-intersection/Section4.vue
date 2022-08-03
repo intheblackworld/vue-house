@@ -1,13 +1,18 @@
 <template>
-  <div class="section3">
-    <div class="img1" data-aos="zoom-in-right"><img src="./s1/music2.png" alt="img" /><img src="./s1/f1.png" alt="img" /></div>
+  <div class="section4">
+    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" /><img src="./s1/f1.png" alt="img" /></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        台鐵、捷運，沙鹿新站輕盈交匯
+        富域金流，中部科技走廊<br v-if="isMobile" />三大園區一脈共榮
       </div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="400">復刻台中捷運綠線驚人漲幅，藍線增值列車即將啟航<br />
-近距沙鹿車站200米，捷運藍線約800米<br />
-暢遊大台中，軌道經濟大時代正式來臨！</div>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="400">
+        台積電欽定奈米廠落定中科園區二期
+      </div>
+      <ul class="desc">
+        <li data-aos="zoom-in" data-aos-delay="600"><span>台中科學園區</span>2021年產值破兆，與竹科並列全台產值破兆科學園區，佈局中科錢景就趁現在！</li>
+        <li data-aos="zoom-in" data-aos-delay="800"><span>台中工業區</span>光電、精密電子享譽國際，年產值約3,300億元，提供約4萬個工作機會。</li>
+        <li data-aos="zoom-in" data-aos-delay="1000"><span>科技精密園區</span>提供約2萬個工作機會，為全球重要的精密機械產業聚落。</li>
+      </ul>
     </div>
     <div class="swiper">
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
@@ -26,7 +31,7 @@
 <style lang="scss" scoped>
 @import "@/assets/style/function.scss";
 $b_margin:size(50);
-.section3 {
+.section4 {
   width: 100%;
   height: auto;
   position: relative;
@@ -47,15 +52,15 @@ $b_margin:size(50);
   }
  // background: url("./s2/pc.png");
 }
-.img1{width: size(245);position: absolute;left: size(25);top: size(30);
+.img1{width: size(245);position: absolute;right: size(10);top: size(20);
 z-index: 2;
 img{
   &:first-child{width:136%;
 position: absolute;
-    top: 42%;
-    left: 50%;
+    top: 36%;
+    right: 43%;
 }
-      &:last-child{width: 100%;
+      &:last-child{width: 100%;transform:scaleX(-1);
 position: relative;
     //  animation: an 3s linear alternate infinite
       }
@@ -67,7 +72,7 @@ position: relative;
   //height: 100%;
   //in-height: size(1080);
  // background: #bccf00;
-  padding: 4.8em 0 0 0;
+  padding:3.6em 0 0 0;
   display: block;
   color: #FFF;
   text-align: center;
@@ -89,25 +94,50 @@ position: relative;
   font-weight: bold;
   color: #DDAC98;
   font-size:1.36em;
-  margin: 0 auto 1.15em;
+  margin: 0 auto 0.4em;
 
 }
 
 .subtitle {
-  font-size:1.5em;
+  font-size:1.27em;
   font-weight: bold;
-  margin: 0 auto .3em;
+  margin: 0 auto 1em;
+  background:#DDAC98;
+  color: #603772;
+  width:18.5em;
+  line-height: 1.25;
+  border-radius: 1.5em;
+  padding: 0 0 0.1em;
+
 }
 
-.desc {
+.desc {display: inline-block;
+  font-size:0.9em;
+  text-align: justify;
   font-family:  'Noto Sans TC', sans-serif;
-
+  margin:0em auto;
+  line-height: 1.5;
+  letter-spacing:0.05em;
+  overflow: hidden;
+  li{list-style:inherit;margin: 0.3em 0 0.3em 1em;position: relative;
+  &::before{
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='%23F5E76D'%3E%3Cpath class='st0' d='M9,7L9,7L9,7L9,7L9,7c-0.4,0-1.5-1.1-2.5-2.7c-1-1.5,0-4,2.5-4l0,0h0c2.6,0,3.6,2.5,2.5,4C10.5,5.9,9.4,6.9,9,7z M4.3,6.5c-1.5-1-4,0-4,2.5c0,2.6,2.5,3.6,4,2.5C5.9,10.5,6.9,9.4,7,9C6.9,8.6,5.9,7.5,4.3,6.5z M6.5,13.7c-1,1.5,0,4,2.5,4l0,0h0c2.6,0,3.6-2.5,2.5-4c-1-1.5-2.1-2.6-2.5-2.7l0,0l0,0l0,0l0,0C8.6,11.1,7.5,12.1,6.5,13.7z M17.7,9c0-2.6-2.5-3.6-4-2.5c-1.5,1-2.6,2.1-2.7,2.5c0,0.4,1.1,1.5,2.7,2.5C15.2,12.6,17.7,11.6,17.7,9z'/%3E%3C/svg%3E");
+    width: .6em;display:block;position: absolute;top: 0em;left: -1em;
+  }
+  span{
+ font-weight: 800;display: inline-block;position: relative;margin: 0 0.5em 0 0 ;
+  &::after{
+    content: "";display: inline-block;margin: 0 0 -.1em  0.5em;
+    height: .9em;width: 2px;background: currentColor;}
+  }
+  }
 }
+
 /* Swipe */
 .swiper {
   width: 100%;
   height: size(586);
-  // z-index: 1;
+ // z-index: 1;
     position: relative;
 }
 .swiper-container {
@@ -243,13 +273,11 @@ position: relative;
     transform: scaleX(-1);
   }
 }
-
 @keyframes btn {
   to {
     transform: rotate(45deg) translate(10%, -10%);
   }
 }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -264,22 +292,32 @@ position: relative;
 }
 
 @media screen and (max-width: 767px) {
-.img1{width: sizem(130);position: absolute;left: sizem(-40);top: sizem(-10);
+.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-10);
 z-index:4;
-img{
-  &:first-child{
-    top: 37%;transform: rotate(-3deg);
-}}
 }
   .content {
   font-size: sizem(14);
+  color: #FFFC;
   }
 .title {
   font-size:1.65em;
   line-height: 1.5;
-  margin: 1.5em auto 0.7em;
+  margin: 2.5em auto 0.7em;
 
 }
+.desc {
+  margin:0em auto;
+  font-size:1em;
+  width: sizem(320);
+  li{ 
+  span{display:flex; color: #FFF;
+  align-items: center;
+    &::after{height: 1px;width: calc(100% - 8em);flex: 1;margin: 0 0 0 0.5em;}
+  }
+  }
+}
+
+
   /* Swipe */
 .swiper {
     height: sizem(250);
@@ -290,6 +328,7 @@ img{
     padding: 1em 1.3em;
     }
   }
+
 
   .swipe-btns {
     .prev-btn,
@@ -317,7 +356,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section3',
+  name: 'section4',
 
   components: {
     swiper,
@@ -332,7 +371,7 @@ export default {
       isTablet,
       isAnimateBg: true,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 2,
+        slidesPerView: isMobile ? 1 : 3,
         spaceBetween: 0,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
@@ -360,11 +399,15 @@ export default {
       },
       slideList: [
         {
-          img: require("./s3/1.jpg"),
+          img: require("./s4/1.jpg"),
           name: "情境示意參考圖",
         },
         {
-          img: require("./s3/2.jpg"),
+          img: require("./s4/2.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s4/3.jpg"),
           name: "情境示意參考圖",
         },
       ],

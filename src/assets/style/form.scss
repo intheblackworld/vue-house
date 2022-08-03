@@ -79,32 +79,45 @@
   }
 }
 
+$border-px:2px;
+$border-radius:1.8em;
+
 .form-submit {
-  width: 320px !important;
-  height: 72px !important;
+  width: 320px;
+  height: 72px;
   // opacity: 0 !important;
-  border-radius: 0 !important;
   font-size: 20px !important;
   font-weight: bold !important;
-  letter-spacing: 10px;
+  letter-spacing:0.5em;
   text-align: center;
-  background-position: center !important;
   background: $order_submit_bg;
-  border:0px solid #eb5500 !important;
-  border-radius:1.8em !important;
-  margin: 0 auto !important;
-  margin-top: 20px !important;
-  transition: all 0.3s !important;
+  border:$border-px solid transparent  !important;
+  background:$order_submit_bg !important;
+  background-clip: padding-box !important;
+  border-radius:$border-radius  !important;
+  margin:  20px auto 0 auto !important;
+  transition: all 0.3s;
   color: $order_submit_color;
   // z-index: 10;
-  border: none !important;
+ // border: none !important;
   font-family: $family3;
   position: relative;
   //overflow: hidden;
+  &::after{
+    position: absolute;
+    top: -$border-px; bottom: -$border-px;
+    left: -$border-px; right: -$border-px;
+    background: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%)  !important;
+    content: '';
+    z-index: -1;
+    border-radius:$border-radius;
+}
 
   &.is-disabled {
-    background-color: $order_sumbit_disable_bg;
-    opacity: 0.6;
+    &::after{
+      opacity: 0.5;
+  }
+  
   }
 
   svg {

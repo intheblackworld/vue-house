@@ -1,5 +1,11 @@
 <template>
   <div class="order-bg">
+    <div class="img1" data-aos="zoom-in-right">
+      <img src="@/projects/great-intersection/s5/1.png" alt="img" />
+    </div>
+    <div class="img2" data-aos="zoom-in-left">
+      <img src="@/projects/great-intersection/s5/2.png" alt="img" />
+    </div>
     <article class="order-top">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in"></h2>
       <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in" v-if="order.subTitle"></div>
@@ -267,6 +273,18 @@ export default {
   right: -2%;
   pointer-events: none;
 }
+.img1{width: size(406);position: absolute;left: size(-180);top: size(-20);
+z-index: 2;
+img{
+  width: 100%;vertical-align: bottom;
+}
+}
+.img2{width: size(556);position: absolute;right: size(0);bottom: size(0);
+z-index: 2;
+img{
+  width: 100%;vertical-align: bottom;
+}
+}
 .order-bg {
   //background-color: $order_bg_color;
   //background-image: $order_bg_image;
@@ -299,11 +317,20 @@ export default {
     display: inline-block;
     font-weight:700;
     line-height: 1.7;
+    text-indent: 0.5em;
     letter-spacing: 0.5em;
     font-size: calc(100vw * 50 / 1920);
     text-align: center;
     color: $order_title_color;
     position: relative;
+    &::after,
+    &::before{
+      content: "";
+      display: inline-block;
+      width: 6em;
+      height: 2px;margin-right: 0.5em;vertical-align: middle;
+      background:linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
+    }
   }
   .order-title-img {
     width: 30vw;
@@ -447,9 +474,13 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  .bird {
-    width: 100vw;
-  }
+
+.img1{width: sizem(206);left: sizem(-80);top: sizem(-20);
+z-index: 2;
+}
+.img2{width: sizem(200);right: sizem(0);bottom: sizem(0);
+z-index: 2;
+}
   .order-bg {
     //background-color: $order_bg_color;
    // background-image: $order_bg_image_m;
@@ -466,6 +497,10 @@ export default {
       padding-top: 10px;
       padding-bottom: 5px;
       font-size: calc(100vw * 30 / 375);
+    &::after,
+    &::before{
+      width: 2em;
+    }
     }
     .order-title-img {
       width: 80vw;

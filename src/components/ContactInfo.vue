@@ -119,8 +119,8 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin:0 auto 2vw;
-  padding:0 0 40px;
+  margin:0 auto 0;
+  padding:0 0 4vw;
 }
 .logobg{position: absolute;top: 0;left:calc(50% - 98.6vw * .5);width: 98.6vw;}
 .logobg1{position: absolute;top: -1vw;left:calc(50% - 85vw * .5);width: 85vw;height: 25vw;
@@ -169,6 +169,12 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
   justify-content: space-between;
 }
 
+
+
+
+
+$border-px:2px;
+$border-radius:1.8em;
 .btn {
   width: 280px;
   height: 60px;
@@ -181,10 +187,19 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
   color: $contact_btn_color;
   background: $contact_btn_bg;
   box-shadow: $contact_btn_border;
-  border-radius:1.8em;
+  border-radius:$border-radius;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
+  &:after{
+    position: absolute;
+    top: -$border-px; bottom: -$border-px;
+    left: -$border-px; right: -$border-px;
+    background: linear-gradient(110deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%)  !important;
+    content: '';
+    z-index: -1;
+    border-radius:$border-radius;
+}
   //font-weight: 900;
   &.half {
     width: 49%;
@@ -324,7 +339,7 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding: 10% 8%;
+    padding: 10% 8% 40vw 8%;
     transform: none;
     margin: 0;
 

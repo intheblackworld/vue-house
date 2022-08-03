@@ -1,6 +1,6 @@
 <template>
   <article class="section1">
-    <img class="a1" src="./s1/pc.jpg" alt="" /><!--   -->
+   <!--  <img class="a1" src="./s1/pc.jpg" alt="" />  -->
 
 <div class="img">
       <img src="./s1/o2.png" data-aos="fade-left" data-aos-duration="1000" class="o3" alt="" loading="lazy">
@@ -22,7 +22,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
   position: relative;
   background: #42254E;
@@ -52,23 +52,30 @@
   .o1{
     top: 2.2vw;
     left: -7vw;
-  width:size(246);}
+  width:size(246);
+  animation: anx 3s ease-in-out infinite alternate;}
   .o2{
     top: -1.4vw;
     right: 11.9vw;
-  width:size(186);}
+  width:size(186);
+  animation: anx 4s ease-in-out infinite alternate;}
   .o3{
     top: -7.2vw;
     right: -5.6vw;
-  width:size(392);}
+  width:size(392);
+  animation: anx 3.5s ease-in-out infinite alternate;}
   .f1{
     bottom: -2.5vw;
     left: -3vw;
   width:size(391);}
   .img1{
-    bottom: -1.7vw;
-    right: -1vw;
-  width:size(626);}
+    bottom: -1.4vw;
+    right: -1.5vw;
+  width:size(654);}
+}
+
+@keyframes anx{
+  to {transform:translateY(20%);}
 }
 
 /*
@@ -166,68 +173,43 @@ font-size: 1.22em;
     min-height: sizem(604);
     max-height: sizem(750);
     height:calc(100vh  - 63px);
-  &::before{
-    
-  height: sizem(750);
-  bottom:calc(50% + (0 - 302 - 750) * 100vw / 375);}
-}
-.bg-img{width: 120%;left: -10%;
-  bottom:calc(50% + (0 - 302) * 100vw / 375);}
-  
-.img{width: 200%;
-animation: img 8s ease-in-out infinite alternate;
+    }
+.img{
+  .o1{
+    top: 19.2vw;
+    left: -12vw;
+  width:sizem(90);}
+  .o2{
+    top: 3.6vw;
+    right: 20.9vw;
+  width:sizem(68);}
+  .o3{
+    top: -7.2vw;
+    right: -12.6vw;
+  width:sizem(143);}
+  .f1{
+    bottom: -12.5vw;
+    left: -8vw;
+    z-index: 3;
+  width:sizem(138);}
   .img1{
-    left: 3.1vw;
-    width: 47vw;
-    top: 46.6vw;}
-  .img2{left: 32.5vw;
-    width: 37.3vw;
-    top: 21vw;}
-  .img3{
-    right: 28.5vw;
-    width: 61.1vw;
-    top: 28.6vw;}
-  .img4{ 
-    right: -1.3vw;
-    width: 28.4vw;
-    top: 8.8vw;;}
+    bottom: -5.8vw;
+    right: -4vw;
+    z-index: 3;
+  width:sizem(291);}
 }
 
-@keyframes img{
-  
- 0% {transform:translate(0%);}
- 40% {transform:translate(0%);}
- 60% {transform:translate(-50%);}
-  100% {transform:translate(-50%);}
-}
-.bird{ .bird1 {
-    left: -70vw;
-    width: 70vw;
-    top: 24.5vw;
-    animation:bird 8s linear infinite;
-    }}
-  
-@keyframes bird{
-  50% {transform:translate(85vw,-50%);}
-  to {transform:translate(170vw,0);}
-}
 
 .txt{
   width: 100%;
   left: 0;
-  font-size:sizem(20.8);
-  top: calc(60% + (85 -  604 * .6) * 100vw / 375);
-  filter:drop-shadow(0 0 5vw #8d4e8d66); 
+  font-size:sizem(33);
+  top: calc(60% + (128 -  604 * .6) * 100vw / 375);
+.t2{
+  width:6.4em;
+  margin: auto;
 }
-.t1{
-font-size: 2.75em;line-height: 1.2;
-span{padding: 0.3em 0;
-b{
- font-size: 1.13em;
- margin: 0;
-}}
 }
-
 }
 </style>
 <script>
