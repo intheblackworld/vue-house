@@ -18,7 +18,7 @@ export default {
    // ['房型規劃', '1~3房'],
    // ['相關連結', "<a href='https://wl.debang.tw/'>快樂王國</a>"],
   ],
-  gtmCode: ['WW3DVNS'], // 可放置多個
+  gtmCode: ['KRG29TV'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
