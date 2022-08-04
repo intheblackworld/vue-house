@@ -79,7 +79,7 @@
           ></vue-recaptcha>
         </div>
         <el-button 
-          class="form-submit bt_registration"
+          class="form-submit bt_registration btregistration"
           type="primary"
           :disabled="!checked || !isVerify"
           @click="submit"

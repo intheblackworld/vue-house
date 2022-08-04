@@ -6,7 +6,13 @@
       <img src="./s1/o2.png" data-aos="fade-left" data-aos-duration="1000" class="o3" alt="" loading="lazy">
       <img src="./s1/o1.png" data-aos="fade-right" data-aos-duration="1600"  class="o1" alt="" loading="lazy">
       <img src="./s1/o1.png" data-aos="fade-right" data-aos-duration="1000" class="o2" alt="" loading="lazy">
-      <img src="./s1/f1.png" data-aos="fade-left" data-aos-duration="1600" class="f1" alt="" loading="lazy">
+      
+      <div class="f1"  data-aos="fade-right">
+        <img src="./s1/f11.png" alt="" loading="lazy" />
+        <img src="./s1/f12.png" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" alt="" loading="lazy" />
+        <img src="./s1/f13.png" data-aos="zoom-in" data-aos-duration="1600" data-aos-delay="1000" alt="" loading="lazy" />
+        <img src="./s1/f14.png" data-aos="zoom-in" data-aos-duration="1600" data-aos-delay="600" alt="" loading="lazy" />
+      </div>
       <img src="./s1/img.png" data-aos="fade-left" data-aos-duration="1600" class="img1" alt="" loading="lazy">
 </div>
 <div class="txt">
@@ -65,9 +71,26 @@
   width:size(392);
   animation: anx 3.5s ease-in-out infinite alternate;}
   .f1{
+    position: absolute;
     bottom: -2.5vw;
     left: -3vw;
-  width:size(391);}
+  width:size(391);
+  img{
+    &:first-child{position: relative;width: 100%;
+  animation: an2 4s ease-in-out infinite alternate;
+  transform-origin: 0 50%;}
+    &:nth-child(2){width: 27%;
+    top: 46%;
+  animation: an3 4s ease-in-out infinite alternate;
+    left: 56%;}
+    &:nth-child(3){width: 54.2%;top: 31%; left: 0%;
+  animation: an3 4s ease-in-out infinite alternate;}
+    &:nth-child(4){width: 46.5%;
+    top: 7%;
+  animation: an3 4s ease-in-out infinite alternate;
+    left: 55%;}
+  }
+  }
   .img1{
     bottom: -1.4vw;
     right: -1.5vw;
@@ -77,6 +100,14 @@
 @keyframes anx{
   to {transform:translateY(20%);}
 }
+
+@keyframes an2{
+  to {transform:skewY(-3deg);}
+}
+@keyframes an3{
+  to {transform:translateY(-10%);}
+}
+
 
 /*
 .bg-img{

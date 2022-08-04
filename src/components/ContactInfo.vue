@@ -14,7 +14,7 @@
       <img v-if="!isMobile" class="logo" src="@/assets/img/contact-logo.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
       <img v-if="isMobile" class="logo" src="@/assets/img/contact-logo_m.png" :alt="`${info.caseName}contact-logo`" data-aos="zoom-in" />
 -->      <div class="info">
-        <div class="btn flex-c" @click="showCallDialog" data-aos="zoom-in" data-aos-delay="100">
+        <div class="btn flex-c" @click="showCallDialog" data-aos="zoom-in" data-aos-delay="100" v-if="info.phone">
           <span class="flex-c">
             <font-awesome-icon icon="phone" />
             <span>{{info.phone}}</span>
@@ -25,7 +25,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c" :href="info.fbLink" target="_blank" data-aos="zoom-in" data-aos-delay="300">
+        <a class="btn flex-c btfanpage" :href="info.fbLink" target="_blank" data-aos="zoom-in" data-aos-delay="300">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
@@ -176,6 +176,8 @@ img{position: absolute;animation: op 2s ease-in-out infinite alternate;opacity: 
 $border-px:2px;
 $border-radius:1.8em;
 .btn {
+ // flex: 1;
+  flex-basis: 49%;
   width: 280px;
   height: 60px;
   font-size: 18px;
@@ -191,15 +193,6 @@ $border-radius:1.8em;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  &:after{
-    position: absolute;
-    top: -$border-px; bottom: -$border-px;
-    left: -$border-px; right: -$border-px;
-    background: linear-gradient(110deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%)  !important;
-    content: '';
-    z-index: -1;
-    border-radius:$border-radius;
-}
   //font-weight: 900;
   &.half {
     width: 49%;
@@ -357,7 +350,9 @@ font-size:51vw;
   }
   }
 
-  .btn {
+.btn {
+ // flex: 1;
+  flex-basis: 100%;
     &.half {
       width: 280px;
     }

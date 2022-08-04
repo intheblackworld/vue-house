@@ -1,6 +1,6 @@
 <template>
   <div :class="{ 'mobile-nav': true }">
-    <a class="nav-item" @click="showCallDialog">
+    <a class="nav-item" @click="showCallDialog" v-if="info.phone">
       <font-awesome-icon icon="phone" />
       <div class="label">撥打電話</div>
     </a>
@@ -13,7 +13,7 @@
       <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
       <div class="label">FB諮詢</div>
     </a>
-    <a class="nav-item" @click="showMapDialog">
+    <a class="nav-item" @click="showMapDialog" v-if="info.address">
       <font-awesome-icon icon="map-marker-alt" />
       <div class="label">地圖導航</div>
     </a>
@@ -121,11 +121,13 @@ export default {
  // background-image:url("~@/projects/great-intersection/s1/o1.png");background-size: contain;
     line-height: 1.2;
       order:2;
+    display: none;
     }
     &:nth-child(2) {
  // background-image:url("~@/projects/great-intersection/s1/o1.png");background-size: contain;
     line-height: 1.2;
       order:1;
+    display: none;
     }
     &:nth-child(3) {
     display: none;
@@ -173,10 +175,12 @@ export default {
     &:nth-child(1) {
       background-image:none;
       order:1;
+    display: flex;
     }
     &:nth-child(2) {
       background-image:none;
       order:2;
+    display: flex;
     }
     &:nth-child(3) {
       order:3;

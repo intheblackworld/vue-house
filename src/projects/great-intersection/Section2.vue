@@ -1,6 +1,12 @@
 <template>
   <div class="section2">
-    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" /><img src="./s1/f1.png" alt="img" /></div>
+    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
+      <div class="f1">
+        <img src="./s1/f11.png" alt="" loading="lazy" />
+        <img src="./s1/f12.png" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" alt="" loading="lazy" />
+        <img src="./s1/f13.png" data-aos="zoom-in" data-aos-duration="1600" data-aos-delay="1000" alt="" loading="lazy" />
+        <img src="./s1/f14.png" data-aos="zoom-in" data-aos-duration="1600" data-aos-delay="600" alt="" loading="lazy" />
+      </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
         城市遠見ALL in ONE<br v-if="isMobile" /><span v-else>︱</span>沙鹿正核心，新站優生活
@@ -54,12 +60,34 @@ img{
 position: absolute;
     top: 36%;
     right: 43%;
+      }
 }
-      &:last-child{width: 100%;transform:scaleX(-1);
+  .f1{width: 100%;transform:scaleX(-1);
 position: relative;
-     // animation: an 3s linear alternate infinite
-      }
-      }
+  img{
+position: absolute;
+    &:first-child{position: relative;width: 100%;
+  animation: an2 4s ease-in-out infinite alternate;top: 0;left: 0;
+  transform-origin: 0 50%;}
+    &:nth-child(2){width: 27%;
+    top: 46%;
+  animation: an3 4s ease-in-out infinite alternate;
+    left: 56%;}
+    &:nth-child(3){width: 54.2%;top: 31%; left: 0%;
+  animation: an3 4s ease-in-out infinite alternate;}
+    &:nth-child(4){width: 46.5%;
+    top: 7%;
+  animation: an3 4s ease-in-out infinite alternate;
+    left: 55%;}
+  }
+  }
+@keyframes an2{
+  to {transform:skewY(-3deg);}
+}
+@keyframes an3{
+  to {transform:translateY(-10%);}
+}
+
 }
 
 .content {

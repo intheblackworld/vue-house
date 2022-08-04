@@ -60,17 +60,17 @@ $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 $contact_btn_border: #000;
 $contact_btn_color: #FFF;
 $contact_btn_icon: #FFF;
-$contact_btn_bg:#603772 ;
+$contact_btn_bg:linear-gradient(110deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
 $contact_btn_hover_color:#FFF;
 $contact_btn_hover_icon: #FFF;
-$contact_btn_hover_bg:#603772;
+$contact_btn_hover_bg:linear-gradient(110deg, #b96e54 0%,#da927b 4%,#b96e54 15%,#723d33 34%,#b96e54 61%,#da927b 71%,#b96e54 81%,#723d33 100%);
 
 $contact_google_btn_color: #FFF;
 $contact_google_btn_icon: #FFF;
-$contact_google_btn_bg: #603772;
+$contact_google_btn_bg: linear-gradient(110deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
 $contact_google_hover_btn_color: #FFF;
 $contact_google_hover_btn_icon: #FFF;
-$contact_google_hover_btn_bg: #f7931e;
+$contact_google_hover_btn_bg: linear-gradient(110deg, #b96e54 0%,#da927b 4%,#b96e54 15%,#723d33 34%,#b96e54 61%,#da927b 71%,#b96e54 81%,#723d33 100%);
 
 // houseInfo
 $house_bg: #fff;
