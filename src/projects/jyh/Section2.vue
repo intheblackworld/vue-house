@@ -11,7 +11,7 @@
       <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">以尖端禮遇尖端</div>
       <div class="desc" data-aos="zoom-in" data-aos-delay="400">中悦建設‧中路特區<br />
 回應新時代的等待！ <br />
-COMING SOOM.</div>
+COMING SOON.</div>
     </div>
     <div class="t3" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">ONLY FOR TOP</div>
   </div>
