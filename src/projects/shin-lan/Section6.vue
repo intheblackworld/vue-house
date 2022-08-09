@@ -219,7 +219,7 @@
 }
 
 .video-desc {
-  width: 60%;
+  width: 90%;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
