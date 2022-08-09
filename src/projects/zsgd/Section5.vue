@@ -1,7 +1,13 @@
 <template>
   <div>
     <div class="section5">
-      <div class="img" data-aos="zoom-in-right"> <img src="./s5/img.png" alt="img" /></div>
+      <div class="img" data-aos="zoom-in-right">
+        <img src="./s5/img1.png" alt="img" />
+        <img src="./s5/img2.png" alt="img" />
+        <img src="./s5/img3.png" alt="img" />
+        <img src="./s5/img4.png" alt="img" />
+        <img src="./s5/img5.png" alt="img" />
+      </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -45,17 +51,42 @@ background:#FFF;
 .img{width: size(941);position: absolute;left: 0;top:calc(50% - 24vw);
 transform-origin:0% 50% ;
 z-index: 2;
-img{width: 100%;transform: skewX(3deg) ;
-transform-origin: 0 100%;
-      animation: an 3s linear alternate infinite;
-      }
+img{
+    position: absolute;
+    top: 0;left: 0;
+  &:nth-child(1){
+    position: relative;
+    width: 100%;
+    }
+  &:nth-child(2){
+    width: 100%;
+ //   animation: an 3s linear alternate infinite;
+    transform:translateY(-3%);
+    animation: an 3s linear alternate infinite;
+    }
+  &:nth-child(3){
+    width: 100%;
+    transform:rotate(10deg);
+    animation: an 2.5s linear alternate infinite;
+    }
+  &:nth-child(4){
+    width: 100%;
+    transform:rotate(30deg);
+    transform-origin: 26% 63.5%;
+    animation: an 2s ease-in-out alternate infinite;
+    }
+  &:nth-child(5){
+    width: 100%;
+ //   animation: an 3s linear alternate infinite;
+    }
 }
-
 @keyframes an{
     to{
       transform: translateX(0);
     }
 }
+}
+
 .txt{
 float: right;
   position: relative;
