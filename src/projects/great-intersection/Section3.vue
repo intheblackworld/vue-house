@@ -3,9 +3,9 @@
     <div class="img1" data-aos="zoom-in-right"><img src="./s1/music2.png" alt="img" />
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
-        <img src="./s1/f12.png" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" alt="" loading="lazy" />
-        <img src="./s1/f13.png" data-aos="zoom-in" data-aos-duration="1600" data-aos-delay="1000" alt="" loading="lazy" />
-        <img src="./s1/f14.png" data-aos="zoom-in" data-aos-duration="1600" data-aos-delay="600" alt="" loading="lazy" />
+        <img src="./s1/f12.png" alt="" loading="lazy" />
+        <img src="./s1/f13.png" alt="" loading="lazy" />
+        <img src="./s1/f14.png" alt="" loading="lazy" />
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
