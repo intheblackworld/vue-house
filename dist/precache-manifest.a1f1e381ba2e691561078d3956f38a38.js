@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.6011611c.js"
   },
   {
-    "revision": "6913e4f8e5da14d92acd",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.44f57baa.js"
+    "revision": "d21ea9f50e188eabdf85",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.c5a0c18d.js"
   },
   {
     "revision": "b815664e9c95c18a947c",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.fccbd97c.js"
   },
   {
-    "revision": "dab087514523e65bb2c5",
-    "url": "/css/app.1630f31b.css"
+    "revision": "a9c822b43700e11af117",
+    "url": "/css/app.90050311.css"
   },
   {
-    "revision": "dab087514523e65bb2c5",
-    "url": "/js/app.e9a88049.js"
+    "revision": "a9c822b43700e11af117",
+    "url": "/js/app.0da1a770.js"
   },
   {
     "revision": "f25f3fa98b16e85bf928",
@@ -174,6 +174,10 @@ self.__precacheManifest = [
   {
     "revision": "70afd010e957adf525ca47b9dde18441",
     "url": "/img/img7.70afd010.jpg"
+  },
+  {
+    "revision": "41d8899fa749840827ad3d60485a00b4",
+    "url": "/img/1.41d8899f.jpg"
   },
   {
     "revision": "732389ded34cb9c52dd88271f1345af9",
@@ -516,12 +520,12 @@ self.__precacheManifest = [
     "url": "/img/0.66c28428.jpg"
   },
   {
-    "revision": "83b895381b36762de13a44776987de43",
-    "url": "/img/404-bg-m.83b89538.png"
-  },
-  {
     "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
     "url": "/img/404-bg.a72458d2.png"
+  },
+  {
+    "revision": "83b895381b36762de13a44776987de43",
+    "url": "/img/404-bg-m.83b89538.png"
   },
   {
     "revision": "d4a139f3e816f6d7fb517311aeb61cd2",
@@ -920,23 +924,23 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "fa70f9a55bada26f9008825b324a48da",
+    "revision": "034e1fad2cb0cebf3f6f15474e157179",
     "url": "/index.html"
-  },
-  {
-    "revision": "dc9077cc2c651a99cbc8102117341c8e",
-    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "b81798ad1201c16a82e43a126c8eb988",
     "url": "/favicon.png"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
-    "url": "/robots.txt"
-  },
-  {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
     "url": "/sitemap.xml"
+  },
+  {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "url": "/robots.txt"
   }
 ];
