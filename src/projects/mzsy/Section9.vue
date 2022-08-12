@@ -1,9 +1,9 @@
 <template>
     <div class="section9">
       <div class="txt">
-      <div class="title" data-aos="zoom-in" data-aos-delay="0">匠心聚作淬煉經典<br />大台北首購俱歡顏</div>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">聰明購屋學 /杜甫終於也能如願高枕無憂</div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="300">
+      <div class="title">匠心聚作淬煉經典<br />大台北首購俱歡顏</div>
+      <div class="subtitle">聰明購屋學 /杜甫終於也能如願高枕無憂</div>
+      <div class="desc">
 每一個認真生活的人，都值得被更好地對待<br />
 美國MUSE、義大利A’Design設計獎<br />
 全台第一大推案建築團隊<br />
@@ -12,27 +12,29 @@
       </div>
       </div>
       <!--  -->
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="" loading="lazy">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt>
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div v-if="isPC" class="pagination absolute flex-ac">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+          </div>
+        </div>
+        <div class="swipe-btns absolute flex-ac flex-jb">
             <div class="prev-btn" @click="decIndex">
             <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
             <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
-          </div>
         </div>
- <!-- <div class="pagination" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> -->    
       </div>
+    </div>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -282,7 +284,15 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/test.png'),
+          img: require('./s9/1.jpg'),
+          name: '外觀3D示意圖',
+        },
+        {
+          img: require('./s9/2.jpg'),
+          name: '外觀3D示意圖',
+        },
+        {
+          img: require('./s9/3.jpg'),
           name: '外觀3D示意圖',
         },
       ],

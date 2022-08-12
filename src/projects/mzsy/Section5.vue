@@ -1,21 +1,20 @@
 <template>
     <div class="section5">      
       <div class="txt">
-      <div class="title" data-aos="zoom-in" v-if="!isMobile">人生得意須近山，有靠山才有好健康</div>
-      <div class="title" data-aos="zoom-in" v-else>人生得意須近山<br />有靠山才有好健康</div>
-<div class="subtitle" data-aos="zoom-in" data-aos-delay="200" v-if="!isMobile">購屋聰明學 / 愛山成迷的李白：近山，才有靠山</div>
-<div class="subtitle" data-aos="zoom-in" data-aos-delay="200" v-else>購屋聰明學 / <br />愛山成迷的李白：近山，才有靠山</div>
+      <div class="title" v-if="!isMobile">人生得意須近山，有靠山才有好健康</div>
+      <div class="title" v-else>人生得意須近山<br />有靠山才有好健康</div>
+<div class="subtitle" v-if="!isMobile">購屋聰明學 / 愛山成迷的李白：近山，才有靠山</div>
+<div class="subtitle" v-else>購屋聰明學 / <br />愛山成迷的李白：近山，才有靠山</div>
 
 
 
       <ul class="desc">
-        <li data-aos="zoom-in" data-aos-delay="200">城森綠境，汲取不老青春露
-</li>
-        <li data-aos="zoom-in" data-aos-delay="300">17公頃義學坑自然生態公園森情相伴</li>
-        <li data-aos="zoom-in" data-aos-delay="400">或週休或閒暇入境森野</li>
-        <li data-aos="zoom-in" data-aos-delay="500" v-if="!isMobile">綠意環山、飽滿的芬多精與負離子，諧律吐納快活慢老</li>
-        <li data-aos="zoom-in" data-aos-delay="500" v-else>綠意環山、飽滿的芬多精與負離子</li>
-        <li data-aos="zoom-in" data-aos-delay="600" v-if="isMobile">諧律吐納快活慢老</li>
+        <li>城森綠境，汲取不老青春露</li>
+        <li>17公頃義學坑自然生態公園森情相伴</li>
+        <li>或週休或閒暇入境森野</li>
+        <li v-if="!isMobile">綠意環山、飽滿的芬多精與負離子，諧律吐納快活慢老</li>
+        <li v-else>綠意環山、飽滿的芬多精與負離子</li>
+        <li v-if="isMobile">諧律吐納快活慢老</li>
       </ul>
     </div>
   </div>

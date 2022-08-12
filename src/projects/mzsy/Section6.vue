@@ -6,7 +6,7 @@
         <img class="absolute img3-2" loading="lazy" src="./s5/img3-2.png" alt="李白" />
         <img class="absolute img3-3" loading="lazy" src="./s5/img3-3.png" alt="李白" />
       </div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -25,11 +25,11 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">健康吐納，有景有境<br />住進17公頃自然生態保護區</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">大台北再也找不到第二個地方，同時兼備自然生態、人文環境與繁華商圈的極致。自古泰山即是北臺首學人文書香之地，而離你我更近的，是自然。17公頃義學坑生態保護區，高度綠覆率不僅圍塑出獨一無二的自然美境，並吸附落塵降低PM2.5的危害，是健康最好的靠山。</div>
+      <div class="title" >健康吐納，有景有境<br />住進17公頃自然生態保護區</div>
+      <div class="desc" >大台北再也找不到第二個地方，同時兼備自然生態、人文環境與繁華商圈的極致。自古泰山即是北臺首學人文書香之地，而離你我更近的，是自然。17公頃義學坑生態保護區，高度綠覆率不僅圍塑出獨一無二的自然美境，並吸附落塵降低PM2.5的危害，是健康最好的靠山。</div>
       </div>
      <div class="pagination" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>

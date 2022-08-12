@@ -2,11 +2,11 @@
   <div>
     <div class="section12">
       <div class="txt">
-      <h3 class="title" data-aos="zoom-in" data-aos-delay="0">樣品屋標題</h3>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">樣品屋副標題</div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="300">樣品屋內文樣品屋內文樣品屋內文樣品屋內文樣品屋內文樣品屋內文</div>
+      <h3 class="title">樣品屋標題</h3>
+      <div class="subtitle">樣品屋副標題</div>
+      <div class="desc">樣品屋內文樣品屋內文樣品屋內文樣品屋內文樣品屋內文樣品屋內文</div>
       </div>
-    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -14,7 +14,7 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
+        <div v-if="isPC" class="pagination absolute flex-ac">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
             <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
           </div>
@@ -30,8 +30,8 @@
       </div>
     </div>
       <div class="txt2">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <div class="title" v-html="slideList[slideIndex].title"></div>
+      <div class="desc" v-html="slideList[slideIndex].desc"></div>
       </div>
     </div>
   </div>
@@ -323,13 +323,13 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: require("./s9/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          img: require("./s12/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
           name: '兩房模擬示意圖',
           title: '兩房標題',
           desc: '兩房內文兩房內文兩房內文兩房內文兩房內文',
         },
         {
-          img: require("./s9/1.jpg"),
+          img: require("./s12/1.jpg"),
           name: '三房模擬示意圖',
           title: '三房標題',
           desc: '三房內文三房內文三房內文三房內文三房內文',

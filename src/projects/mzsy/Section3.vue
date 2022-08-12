@@ -5,7 +5,7 @@
         <img class="absolute" loading="lazy" src="./s3/img1-2.png" alt="陶淵明" />
         <img class="relative" loading="lazy" src="./s3/img1-1.png" alt="陶淵明" />
       </div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -24,9 +24,9 @@
         </div>
       </div>
       <div class="txt">
-      <h3 class="title" data-aos="fade-up" data-aos-delay="200">結廬在城心，而無車馬喧</h3>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">購屋聰明學 / 離開南山陶淵明選擇落腳泰山</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="title">結廬在城心，而無車馬喧</h3>
+      <div class="subtitle">購屋聰明學 / 離開南山陶淵明選擇落腳泰山</div>
+      <div class="desc">
 泰山最成熟的機能核心<br />
 明志路繁中取靜，商圈、學校、<br v-if="isMobile" />公園、市場全方位滿足<br />
 出靜巷得繁華，無店面更純靜<br />
@@ -35,7 +35,7 @@
       </div>
       </div>
      <div class="pagination" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>

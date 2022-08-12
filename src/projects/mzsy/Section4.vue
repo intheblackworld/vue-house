@@ -5,7 +5,7 @@
         <img class="relative" loading="lazy" src="./s4/img2-1.png" alt="孟子" />
         <img class="absolute" loading="lazy" src="./s4/img2-2.png" alt="孟子" />
       </div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -25,12 +25,12 @@
         </div>
       </div>
       <div class="txt">
-      <h3 class="title" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="title">
         好讀書不求甚遠<br />好學區不該太遠
       </h3>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="!isMobile">購屋聰明學 / 孟母為兒三遷的累，父母最知道</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-else>購屋聰明學 / 孟母為兒三遷的累<br />父母最知道</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">
+      <div class="subtitle" v-if="!isMobile">購屋聰明學 / 孟母為兒三遷的累，父母最知道</div>
+      <div class="subtitle" v-else>購屋聰明學 / 孟母為兒三遷的累<br />父母最知道</div>
+      <div class="desc">
 從古時孕育英才的書院<br v-if="isMobile" /><span v-else>，</span>到今日文化資產的歷史建築<br />
 明志書院風蘊人文百年傳承<br />
 15所學校16年大中小完整學區<br />
@@ -38,7 +38,7 @@
       </div>
       </div>
       <div class="pagination" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>

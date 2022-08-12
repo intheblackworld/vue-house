@@ -1,11 +1,12 @@
 <template>
     <div class="section10">
       <div class="box">
-   <!--   <div class="title" data-aos="fade" data-aos-delay="0">匠心聚作淬煉經典<br/>
-大台北首購俱歡顏</div>
-      <div class="desc1">聰明購屋學 /杜甫終於也能如願高枕無憂，每一個認真生活的人，都值得被更好地對待，美國MUSE、義大利A’Design設計獎，全台第一大推案建築團隊，以舒適凌駕豪華的書苑人文指標宅，讓大台北首購家庭住好住幸福</div>  -->
+   <!--   
+    <div class="title" data-aos="fade" data-aos-delay="0">匠心聚作淬煉經典<br/>
+大台北首購俱歡顏</div><div class="desc1">聰明購屋學 /杜甫終於也能如願高枕無憂，每一個認真生活的人，都值得被更好地對待，美國MUSE、義大利A’Design設計獎，全台第一大推案建築團隊，以舒適凌駕豪華的書苑人文指標宅，讓大台北首購家庭住好住幸福</div> 
+       -->
       <div class="list">
-      <div class="swipe swipe1" data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe swipe1" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decMultiIndex(1)">
             <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
@@ -24,9 +25,9 @@
         </div>
       </div>
         <div class="txt">
-          <h3 class="title" data-aos="zoom-in" data-aos-delay="0" ><img loading="lazy" src="./s7/1.png" alt="全台第一大推案建築師 陳朝雄" /><span class="b">凝鍊奢華 書寫人文</span></h3>
-          <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" >全台第一大推案建築師 陳朝雄</div>
-          <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+          <h3 class="title"><img loading="lazy" src="./s10/1.png" alt="全台第一大推案建築師 陳朝雄" /><span class="b">凝鍊奢華 書寫人文</span></h3>
+          <div class="subtitle">全台第一大推案建築師 陳朝雄</div>
+          <div class="desc">
             以地標之姿收服城市高度，以精湛工藝豐藏城市品味<br v-if="!isMobile" /><span v-else>，</span>
             匠心獨運地將理性與感性深度融合書院人文底蘊<br v-if="!isMobile" /><span v-else>，</span>
             有古典的精緻，有現代的時尚<br v-if="!isMobile" /><span v-else>，</span>
@@ -35,12 +36,12 @@
             代表作品｜波爾多、江翠PARK、金城舞、橋蓮雄鋒
           </div>
         </div>
-        <div class="pagination absolute flex-ac" data-aos="zoom-in" data-aos-delay="200" v-if="isPC">
+        <div class="pagination absolute flex-ac" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goToMultiIndex(1, index)"><span :class="`${slideIndex1 === index ? 'active' : ''}`"></span></div>
           </div>
       </div>
       <div class="list">
-      <div class="swipe swipe2" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe swipe2" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decMultiIndex(2)">
             <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
@@ -59,9 +60,9 @@
         </div>
       </div>
         <div class="txt">
-          <h3 class="title" data-aos="zoom-in" data-aos-delay="100" ><img loading="lazy" src="./s7/2.png" alt="信義區豪宅御用景觀設計師 大漢景觀徐世萃" /><span class="b">山水化境 自然成詩</span></h3>
-          <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" >信義區豪宅御用景觀設計師 大漢景觀徐世萃</div>
-          <div class="desc" data-aos="zoom-in" data-aos-delay="400" >
+          <h3 class="title"><img loading="lazy" src="./s10/2.png" alt="信義區豪宅御用景觀設計師 大漢景觀徐世萃" /><span class="b">山水化境 自然成詩</span></h3>
+          <div class="subtitle">信義區豪宅御用景觀設計師 大漢景觀徐世萃</div>
+          <div class="desc">
             「碧波白」景觀設計師專為頂級豪宅打造會呼吸的城市綠帶<br v-if="!isMobile" /><span v-else>，</span>
             完美融合建築與環境，讓空間與土地產生最自然的連結<br v-if="!isMobile" /><span v-else>，</span>
             讓生活日常隨風光水綠自在呼吸<br />
@@ -69,12 +70,12 @@
             代表作品｜維多利亞酒店、碧波白、城上城、希望城市
           </div>
         </div>
-          <div class="pagination absolute flex-ac" data-aos="zoom-in" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+          <div class="pagination absolute flex-ac" v-if="isPC">
+           <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
           </div>
       </div>
       <div class="list">
-      <div class="swipe swipe3" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe swipe3" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decMultiIndex(3)">
             <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
@@ -85,7 +86,7 @@
           </div>
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList3" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
@@ -93,9 +94,9 @@
         </div>
       </div>
         <div class="txt">
-          <h3 class="title" data-aos="zoom-in" data-aos-delay="100" ><img loading="lazy" src="./s7/3.png" alt="榮獲美國MUSE、義大利A’Design設計獎設計師 徐慈姿" /><span class="b">雍雅豐釀 國際邸蘊</span></h3>
-          <div class="subtitle" data-aos="zoom-in" data-aos-delay="200" >榮獲美國MUSE、義大利A’Design設計獎設計師 徐慈姿</div>
-          <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+          <h3 class="title"><img loading="lazy" src="./s10/3.png" alt="榮獲美國MUSE、義大利A’Design設計獎設計師 徐慈姿" /><span class="b">雍雅豐釀 國際邸蘊</span></h3>
+          <div class="subtitle">榮獲美國MUSE、義大利A’Design設計獎設計師 徐慈姿</div>
+          <div class="desc">
             以生活的立體感知為基底，透過光影轉換借景入境<br v-if="!isMobile" /><span v-else>，</span>
             讓公設空間不僅是頂級社交休閒場域<br v-if="!isMobile" /><span v-else>，</span>
             更成為家的空間延展，散發無限美學張力<br />
@@ -103,8 +104,8 @@
             代表作品｜頤海大院 · 台中帝寶 · 神采飛洋 · 希望城市
           </div>
         </div>
-          <div class="pagination absolute flex-ac" data-aos="zoom-in" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMultiIndex(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
+          <div class="pagination absolute flex-ac" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMultiIndex(3, index)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
           </div>
       </div>
     </div>
@@ -305,11 +306,13 @@
   padding: 0 0;
   z-index: 3;
   font-size: size(20);
+  pointer-events: none;
 
   .prev-btn,
   .next-btn {
     width: 1em;
     cursor: pointer;
+  pointer-events:auto;
   }
 }
 
@@ -421,49 +424,72 @@ export default {
       stopAutoPlay: true,
       slideList1: [
         {
-          img: require('./s7/1-1.jpg'),
+          img: require('./s10/1-1.jpg'),
           name: '陳朝雄',
         },
         {
-          img: require('./s7/1-2.jpg'),
+          img: require('./s10/1-2.jpg'),
           name: '力璞玉',
         },
         {
-          img: require('./s7/1-3.jpg'),
+          img: require('./s10/1-3.jpg'),
           name: '帝景',
         },
         {
-          img: require('./s7/1-4.jpg'),
+          img: require('./s10/1-4.jpg'),
+          name: '橋蓮雄鋒',
+        },
+        {
+          img: require('./s10/1-5.jpg'),
           name: '橋蓮雄鋒',
         },
       ],
-
       slideList2: [
         {
-          img: require('./s7/2-1.jpg'),
+          img: require('./s10/2-1.jpg'),
           name: '徐世萃',
         },
         {
-          img: require('./s7/2-2.jpg'),
+          img: require('./s10/2-2.jpg'),
+          name: '墾丁凱薩大飯店',
+        },
+        {
+          img: require('./s10/2-3.jpg'),
+          name: '維多利亞酒店',
+        },
+        {
+          img: require('./s10/2-4.jpg'),
           name: '碧波白',
         },
         {
-          img: require('./s7/2-3.jpg'),
-          name: '碧波白',
+          img: require('./s10/2-5.jpg'),
+          name: '希望城市',
         },
       ],
       slideList3: [
         {
-          img: require('./s7/3-1.jpg'),
+          img: require('./s10/3-1.jpg'),
           name: '徐慈姿',
         },
         {
-          img: require('./s7/3-2.jpg'),
-          name: '台中帝寶',
+          img: require('./s10/3-3.jpg'),
+          name: '波爾多',
         },
         {
-          img: require('./s7/3-3.jpg'),
-          name: '頤海大院',
+          img: require('./s10/3-4.jpg'),
+          name: '歡喜市',
+        },
+        {
+          img: require('./s10/3-5.jpg'),
+          name: '開璽吾界',
+        },
+        {
+          img: require('./s10/3-6.jpg'),
+          name: '開璽吾界',
+        },
+        {
+          img: require('./s10/3-2.jpg'),
+          name: '開璽吾界',
         },
       ],
     }
@@ -481,7 +507,7 @@ export default {
     viewIndex() {
       if (this.viewIndex === 3) {
         this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
+   //    console.log(this.slideIndex, 'slideIndex')
       }
     },
   },

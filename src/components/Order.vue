@@ -7,10 +7,10 @@
     </div> -->
     <div class="order-top">
       <div class="title-block">
-        <h3 class="order-title" data-aos="zoom-in" data-aos-delay="0" v-html="order.title"></h3>
-        <div class="order-subtitle" data-aos="zoom-in" data-aos-delay="200" v-html="order.subTitle" v-if="order.subTitle"></div>
+        <h3 class="order-title" v-html="order.title"></h3>
+        <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
       </div>
-      <div class="order" data-aos="zoom-in">
+      <div class="order">
         <div class="form">
           <div class="group">
             <div class="row">

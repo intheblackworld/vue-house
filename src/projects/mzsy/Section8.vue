@@ -5,7 +5,7 @@
         <img class="relative" loading="lazy" src="./s6/img4-1.png" alt="曾子" />
         <img class="absolute" data-aos="zoom-in" loading="lazy" src="./s6/img4-2.png" alt="曾子" />
       </div>
-    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -24,11 +24,11 @@
       </div>
     </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <div class="title" v-html="slideList[slideIndex].title"></div>
+      <div class="desc" v-html="slideList[slideIndex].desc"></div>
       </div>
-      <div class="pagination absolute flex-ac" data-aos="fade-up" v-if="isPC">
-        <div :class="`pagination-dot`" data-aos="zoom-in" data-aos-delay="300" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div class="pagination absolute flex-ac" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div>
     </div>
   </div>

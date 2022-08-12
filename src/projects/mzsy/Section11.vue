@@ -1,15 +1,15 @@
 <template>
   <div class="section11">
       <div class="txt">
-      <h3 class="title" data-aos="zoom-in" data-aos-delay="200">三五好友把酒言歡<br v-if="isMobile" /><span v-else>，</span>書院人文溫馨且愜意</h3>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="200">聰明購屋學 /山不在高有仙則名<br v-if="isMobile" /><span v-else>，</span>談笑往來皆鴻儒</div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="300">國際設計獎大師精心演繹國際奢旅飯店美學<br />
+      <h3 class="title">三五好友把酒言歡<br v-if="isMobile" /><span v-else>，</span>書院人文溫馨且愜意</h3>
+      <div class="subtitle">聰明購屋學 /山不在高有仙則名<br v-if="isMobile" /><span v-else>，</span>談笑往來皆鴻儒</div>
+      <div class="desc">國際設計獎大師精心演繹國際奢旅飯店美學<br />
 融合星級高端會所優雅氣質<br />
 無論宴客、閱讀、社交沙龍、兒童遊戲⋯⋯<br />
 多姿多彩的生活豐貌，就是幸福的愜意日常
 </div>
       </div>
-    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+    <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -17,7 +17,7 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
+        <div v-if="isPC" class="pagination absolute flex-ac">
           <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
             <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
           </div>
@@ -33,8 +33,8 @@
       </div>
     </div>
       <div class="txt2">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      <div class="title" v-html="slideList[slideIndex].title"></div>
+      <div class="desc" v-html="slideList[slideIndex].desc"></div>
       </div>
   </div>
 </template>
@@ -325,37 +325,37 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: require("./s8/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          img: require("./s11/1.jpg"),// isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
           name: '輝煌迎賓廳',
           title: '輝煌迎賓廳',
           desc: '挑高迎賓交誼大廳，移植國際奢旅飯店美學，綠意、光瀑流洩，搭配石材舖面與金屬裝飾寫意低調奢華，講述空間的人文氣韻。',
         },
         {
-          img: require("./s8/2.jpg"),
+          img: require("./s11/2.jpg"),
           name: '璽悅交誼廳',
           title: '璽悅交誼廳',
           desc: '充滿英倫紳士會所優雅氣質，融合LOUNGE BAR、GYMS休閒調性，創造可以放鬆談話交誼空間，讓賓主盡享無拘束互動氛圍。',
         },
         {
-          img: require("./s8/3.jpg"),
+          img: require("./s11/3.jpg"),
           name: '歡饗宴會廳',
           title: '歡饗宴會廳',
           desc: '媽媽廚藝室，不只是分享食藝的味覺工作坊，寬闊的大吧台與長餐桌也賦予更強的使用機能，亦可作為社區活動聯誼聚會場所。',
         },
         {
-          img: require("./s8/4.jpg"),
+          img: require("./s11/4.jpg"),
           name: '晶英閱覽室',
           title: '晶英閱覽室',
           desc: '透過清玻璃隔板設計，不論是大人小孩一起親子共讀、孩子放學回家寫作業自習、大人讀書會，創享不受干擾的閱讀樂趣。',
         },
         {
-          img: require("./s8/5.jpg"),
+          img: require("./s11/5.jpg"),
           name: '美力健身房',
           title: '美力健身房',
           desc: '不用去健身房人擠人，國際設計獎大師規劃、朗闊通透的健身房韻律室，男人的六塊肌與女人的馬甲線，在家就能輕鬆實現。',
         },
         {
-          img: require("./s8/6.jpg"),
+          img: require("./s11/6.jpg"),
           name: '童樂遊戲室',
           title: '童樂遊戲室',
           desc: '點綴繽紛色彩的樹屋、溜滑梯，解放孩子活潑好動的心靈與身體，一同玩樂成長；童趣帳篷滿足不論晴雨都能享受野營樂趣。',

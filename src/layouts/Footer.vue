@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
-    <img src="../assets/img/footerLogo.gif" alt="" />
-     <!-- <a href="https://www.h65.tw/admin/test/login.php" target="_blank">網頁製作</a>  -->
+    <img src="../assets/img/footerLogo.gif" alt="" /><!--
+      <a href="https://www.h65.tw/admin/test/login.php" target="_blank">網頁製作</a>  -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -12,6 +12,7 @@
   background: #333;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 12px;
   position: relative;
 

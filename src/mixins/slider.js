@@ -4,6 +4,8 @@ export default {
       slideIndex: 0,
       slideIndex1: 0,
       slideIndex2: 0,
+      slideIndex3: 0,
+      slideIndex4: 0,
       toggleTimer: true,
       stopAutoPlay: true,
     }
@@ -19,15 +21,15 @@ export default {
           this.addMultiIndex(1)
         }
 
-        if (this.slideList2) {
+        if (this.slideList2 && !this.stopAutoPlay) {
           this.addMultiIndex(2)
         }
 
-        if (this.slideList3) {
+        if (this.slideList3 && !this.stopAutoPlay) {
           this.addMultiIndex(3)
         }
 
-        if (this.slideList4) {
+        if (this.slideList4 && !this.stopAutoPlay) {
           this.addMultiIndex(4)
         }
       }

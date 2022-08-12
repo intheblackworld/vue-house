@@ -1,18 +1,18 @@
 <template>
     <div class="section7">      
       <div class="txt">
-      <div class="title" data-aos="zoom-in" v-if="!isMobile">豈止馳騁三千里，一高二快三捷運</div>
-      <div class="title" data-aos="zoom-in" v-else>豈止馳騁三千里<br />一高二快三捷運</div>
-<div class="subtitle" data-aos="zoom-in" data-aos-delay="200" v-if="!isMobile">購屋聰明學 /便捷交通，夫子周遊列國更輕鬆</div>
-<div class="subtitle" data-aos="zoom-in" data-aos-delay="200" v-else>購屋聰明學 /便捷交通<br />夫子周遊列國更輕鬆</div>
+      <div class="title" v-if="!isMobile">豈止馳騁三千里，一高二快三捷運</div>
+      <div class="title" v-else>豈止馳騁三千里<br />一高二快三捷運</div>
+<div class="subtitle" v-if="!isMobile">購屋聰明學 /便捷交通，夫子周遊列國更輕鬆</div>
+<div class="subtitle" v-else>購屋聰明學 /便捷交通<br />夫子周遊列國更輕鬆</div>
 
 
 
       <ul class="desc">
-        <li data-aos="zoom-in" data-aos-delay="200">明志路快速串連台65、國道1號</li>
-        <li data-aos="zoom-in" data-aos-delay="300">機捷泰山站、新蘆輔大站之心</li>
-        <li data-aos="zoom-in" data-aos-delay="400">一線雙北自由跨界，一線桃機環遊世界</li>
-        <li data-aos="zoom-in" data-aos-delay="500">五泰輕軌coming soon，義學站輕鬆進站</li>
+        <li>明志路快速串連台65、國道1號</li>
+        <li>機捷泰山站、新蘆輔大站之心</li>
+        <li>一線雙北自由跨界，一線桃機環遊世界</li>
+        <li>五泰輕軌coming soon，義學站輕鬆進站</li>
       </ul>
     </div>
   </div>
