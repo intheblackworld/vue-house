@@ -2,6 +2,17 @@
 export const company = [
   {
     index: 0,
+    date: '111/8/12',
+    title: '有愛更勇敢音樂會',
+    subtitle: '2022公益慈善音樂會',
+    desc: '欣聯建設股份有限公司.贊助由社團法人中華兩岸EMBA<br>主辦.「有愛更勇敢」公益慈善音樂會。<br>111年8月27日(星期六)<br>PM13:30-17:00<br>中油大樓.國光廳 / 台北市信義區松仁路3號',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/3/1.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 1,
     date: '105/9/3',
     title: '兆如安養中心',
     subtitle: '兆如安養中心敬老關懷演出',
@@ -17,7 +28,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 1,
+    index: 2,
     date: '106/9/23',
     title: '陽明教養院',
     subtitle: '陽明教養院敬老關懷演出',
