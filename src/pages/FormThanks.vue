@@ -52,10 +52,11 @@
 </style>
 
 <script>
-
+import head from '@/mixins/head.js'
 export default {
   name: 'formThanks',
   components: {},
+  mixins: [head],
 
   methods: {},
 }
