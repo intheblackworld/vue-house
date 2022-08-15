@@ -33,7 +33,7 @@
             有古典的精緻，有現代的時尚<br v-if="!isMobile" /><span v-else>，</span>
             高貴典雅沈穩大器，成就書苑建築之巔<br />
             <br />
-            代表作品｜波爾多、江翠PARK、金城舞、橋蓮雄鋒
+            代表作品｜帝景五期、僑蓮雄鋒、龍霖初心、德鄰居
           </div>
         </div>
         <div class="pagination absolute flex-ac" v-if="isPC">
@@ -67,7 +67,7 @@
             完美融合建築與環境，讓空間與土地產生最自然的連結<br v-if="!isMobile" /><span v-else>，</span>
             讓生活日常隨風光水綠自在呼吸<br />
             <br />
-            代表作品｜維多利亞酒店、碧波白、城上城、希望城市
+            代表作品｜墾丁凱薩大飯店、維多利亞酒店、碧波白、希望城市
           </div>
         </div>
           <div class="pagination absolute flex-ac" v-if="isPC">
@@ -100,8 +100,7 @@
             以生活的立體感知為基底，透過光影轉換借景入境<br v-if="!isMobile" /><span v-else>，</span>
             讓公設空間不僅是頂級社交休閒場域<br v-if="!isMobile" /><span v-else>，</span>
             更成為家的空間延展，散發無限美學張力<br />
-            <br />
-            代表作品｜頤海大院 · 台中帝寶 · 神采飛洋 · 希望城市
+            <br />代表作品｜波爾多、歡喜市、開璽吾界
           </div>
         </div>
           <div class="pagination absolute flex-ac" v-if="isPC">
@@ -429,19 +428,19 @@ export default {
         },
         {
           img: require('./s10/1-2.jpg'),
-          name: '力璞玉',
+          name: '帝景五期',
         },
         {
           img: require('./s10/1-3.jpg'),
-          name: '帝景',
+          name: '僑蓮雄鋒',
         },
         {
           img: require('./s10/1-4.jpg'),
-          name: '橋蓮雄鋒',
+          name: '龍霖初心',
         },
         {
           img: require('./s10/1-5.jpg'),
-          name: '橋蓮雄鋒',
+          name: '德鄰居',
         },
       ],
       slideList2: [
