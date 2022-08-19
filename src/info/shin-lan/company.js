@@ -2,6 +2,21 @@
 export const company = [
   {
     index: 0,
+    date: '111/8/19',
+    title: '北投區陽明養護中心',
+    subtitle: '欣聯心、傳遞愛、愛心捐贈',
+    desc: '欣聯建設機構 林榮三 董事長<br>捐贈 加菜金、奶粉、麥片、電風扇等物資<br>為弱勢團體善盡企業責任。<br><br>#陽明養護中心 原隸屬于台北市啟智協進會，民國六十三年五月在現址正式成立。更名為財團法人台北市私立陽明養護中心。<br><br>本中心為收容智能不足之身心障礙者，在養護期間有系統的訓練，俾能減少其對家庭社會之依賴性，期以增進社會福祉。',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/4/1.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/4/2.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/4/3.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/4/4.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/4/5.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 0,
     date: '111/8/12',
     title: '有愛更勇敢音樂會',
     subtitle: '2022公益慈善音樂會',
