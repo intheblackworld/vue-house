@@ -3,6 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open': ''}`" >
+        <img class="logo" src="../assets/img/navlogo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
      <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
        <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import info from '@/info'
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
 
@@ -41,6 +43,7 @@ export default {
   components: {},
   data() {
     return {
+      info,
       isOpen: false,
       isMobile,
       isTablet,

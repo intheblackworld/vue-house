@@ -1,6 +1,7 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
-    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
+    <img v-if="info.lixin_logo" src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
+    <img v-else src="~@/assets/img/loading_blogo0.gif" alt class="loading-icon" />
   </div>
 </template>
 
@@ -9,7 +10,6 @@
 
 .loading-bg {
   background-color: $loading_bg_color;
-  background-image: $loading_bg_image;
   position: fixed;
   left: 0;
   top: 0;
@@ -19,7 +19,7 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-      display: none;
+     display: none;
 
   .loading-icon {
     width: 150px;
@@ -44,7 +44,7 @@
 
   @keyframes hide {
     0% {
-      oacity: 1;
+      opacity: 1;
       left: 0;
       display: block;
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/zsgd/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/jajy/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -120,18 +120,18 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/zsgd/Section1.vue'
-import Section2 from '@/projects/zsgd/Section2.vue'
-import Section3 from '@/projects/zsgd/Section3.vue'
-import Section4 from '@/projects/zsgd/Section4.vue'
-import Section5 from '@/projects/zsgd/Section5.vue'
-import Section6 from '@/projects/zsgd/Section6.vue'
-import Section7 from '@/projects/zsgd/Section7.vue'
-import Section8 from '@/projects/zsgd/Section8.vue'
-/* import Section10 from '@/projects/zsgd/Section10.vue'
-import Section9 from '@/projects/zsgd/Section9.vue'
-import Section10 from '@/projects/zsgd/Section10.vue'
-import Section11 from '@/projects/zsgd/Section11.vue' */
+import Section1 from '@/projects/jajy/Section1.vue'
+import Section2 from '@/projects/jajy/Section2.vue'
+import Section3 from '@/projects/jajy/Section3.vue'
+import Section4 from '@/projects/jajy/Section4.vue'
+import Section5 from '@/projects/jajy/Section5.vue'
+import Section6 from '@/projects/jajy/Section6.vue'
+import Section7 from '@/projects/jajy/Section7.vue'
+import Section8 from '@/projects/jajy/Section8.vue'
+/* import Section10 from '@/projects/jajy/Section10.vue'
+import Section9 from '@/projects/jajy/Section9.vue'
+import Section10 from '@/projects/jajy/Section10.vue'
+import Section11 from '@/projects/jajy/Section11.vue' */
 
 export default {
   name: 'home',

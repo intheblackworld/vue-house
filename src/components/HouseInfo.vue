@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-  <!--   <Footer /> -->
+    <Footer v-if="info.lixin_logo" />
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   },
   data() {
     return {
+      info,
       houseInfos: info.houseInfos,
     }
   },
