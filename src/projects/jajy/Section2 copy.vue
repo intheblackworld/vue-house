@@ -1,35 +1,35 @@
 <template>
-  <div>
-    <div class="section2">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/4.png" alt="自漫美學 珍稀之作" class="c4">
-      <img src="./s2/2.png" alt="自漫美學 珍稀之作" class="c2">
-      <img src="./all/1.png" alt="自漫美學 珍稀之作" class="c1">
-    </div>
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+  <div class="section2">
+    <div class="img" data-aos="zoom-in-right"><img src="./s2/img.png" alt="img" /></div>
+   
+    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt>
+            <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+        </transition-group>
+        <div v-if="isPC" class="pagination absolute flex-ac" data-aos="fade" data-aos-delay="200">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
           </div>
         </div>
-      </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >自漫美學 珍稀之作</div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        「悅峰釀」外觀選用高質感冠軍磁磚配上不同深淺的顏色，使外牆層次分明有氣勢，運用淺色木紋隔柵帶入柔和日式氛圍，陽台搭配植栽呈現活潑朝氣之感，落地窗帶入自然風光，連結窗外自然風然景與建築的聯繫，集結現代美感與內在涵養的獨棟別墅，大氣而細緻優雅。
-      </div>
+        <div v-else class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+        </div>
       </div>
     </div>
+      <div class="txt">
+      <h3 class="title" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].title"></h3>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-html="slideList[slideIndex].subtitle"></div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300" v-html="slideList[slideIndex].desc"></div>
+      </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -39,18 +39,18 @@
   width:100%;
   height:auto;
   position: relative;
+  margin:0 auto 0;
+  padding: 9vw 0 5vw;
+  background: #FFF;
+  &::after{content: "";clear: both;display: block;height: 1px;}
 }
-
-.c{
-      position: absolute;left:0;right:0;
-      top:0;
-    img{
-      position: absolute;
-      animation:an 5s ease-in-out infinite alternate;}
-    .c1{width:size(451);top:size(500);right: size(-10);transform: translateX(-8%);animation-delay: -1s;}
-    .c2{width:size(246);top:size(950);right: size(-50);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;animation-delay: -2s;}
-    .c4{width:size(533);top:size(950);left:size(-300);transform: translateX(-15%);animation-delay: -1s;}
-  }
+.img{width: size(819);position: absolute;left: 0;bottom: size(-340);
+z-index: 2;
+img{width: 100%;transform: skewY(5deg) ;
+transform-origin: 0 50%;
+      animation: an 3s linear alternate infinite;
+      }
+}
 
 @keyframes an{
     to{
@@ -60,40 +60,43 @@
 .txt{
   position: relative;
   width: size(1500);
-  margin:0 auto 10em;
+  height: size(220);
+  margin: 0 auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(17);
-  font-weight: 400;
-  line-height: 1.2;
-  z-index: 3;
-  color: #666;
-  }
+  font-size: size(19);
+  font-weight: 600;
+  line-height: 1.4;
+  z-index: 2;
+  color: #2C5252;
 
 .title{
-  position: relative;
-  font-size: size(40);
-  margin:1em auto 0.5em;
-  letter-spacing:0.04em;
-  color: #52b559;
-  font-weight: 500;
+  font-size:2.2em;
+  margin:.4em auto 0;
+  font-weight: 900;
+  color: #002B69;
 }
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #A9292C;
+}
+
 .desc {
-  margin:1em auto;
-  line-height: 2;
-  letter-spacing:0.05em;
+  margin:0.1em auto;
+  line-height: 1.6;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
+  }
 /* Swipe */
 .swipe {
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(840);
+  height: size(844);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -161,14 +164,13 @@
   padding: 0.25em;
   margin: 0 0.2em;
   cursor: pointer;
-  z-index: 4;
 
   span {
     display: block;
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #ccc;
+    border: 0.2em solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -178,7 +180,7 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  #d4a680;
+    border:  0.105em solid  $pagination-active;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -199,8 +201,6 @@
     }
   }
 }
-
-
 .swipe-btns {
   width: 100%;
   height: 100%;
@@ -234,37 +234,42 @@
     height: auto;
     min-height: auto;
     max-height: initial;
+  padding:0;
   }
-
-.c{
-    .c1{width:sizem(230);top:sizem(600);right: sizem(60);}
-    .c2{width:sizem(120);top:sizem(500);right: sizem(-30);transform:skewY(-3deg)rotate(-3deg);transform-origin: 100% 50%;}
-    .c4{width:sizem(300);top:sizem(530);left:sizem(-80);}
-  }
+.img{width:  90%;bottom: sizem(-45);
+z-index: 2;}
   .txt{
     position: relative;
-    width: sizem(310);
-    margin:1.5em auto 13em;
+    width: sizem(320);
+  height: sizem(410);
+    margin:1.5em auto 2em;
     left:0;
     top:0;
-    font-size: sizem(15);
+    font-size: sizem(14);
+    .title{
+      font-size:1.5em;
+    }
+    .subtitle{
+      font-size:1.1em;
+    }
   }
-.title{
-    font-size: sizem(30);
-  letter-spacing:0.01em;
-}
-  .desc {
-  margin:0em auto;
-  font-size: sizem(15);
-  }
+
+  
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(220);
+    height: sizem(240);
     top:0;
     left:0;
   }
+
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
+}
+
   .swipe-btns {
   font-size: sizem(15);
   }
@@ -290,20 +295,38 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
+      dialogImg: null,
+      showMask: false,
       slideList: [
         {
-          img: require('./s2/1.jpg'),
-          name: '3D透視圖僅供參',
+          img: isMobile?require("./s2/1m.jpg"):require("./s2/1.jpg"),
+          name: '',
+          title: '全球科技城-西雅圖Seatle V.S 台灣矽谷城-新竹Hsinchu',
+          subtitle: '西雅圖Seatle',
+          desc: '集文化，歷史、科技、產業於一身的城市中，加上微軟、Google、亞馬遜總部，星巴克、波音跟Costco青睞，西雅圖，獨樹一格的高所得宜居城，成為美國西北地區最大都會區，也是全美人口稱長最快的城市。',
         },
         {
-          img: require('./s2/2.jpg'),
-          name: '3D透視圖僅供參',
+          img: isMobile?require("./s2/2m.jpg"):require("./s2/2.jpg"),
+          name: '',
+          title: '全球科技城-西雅圖Seatle V.S 台灣矽谷城-新竹Hsinchu',
+          subtitle: '新竹Hsinchu',
+          desc: '台積電、聯發科、智邦科技、緯創ＡＩ智慧園區，玻璃文創、水岸海岸休閒景觀及老中青幼全齡照顧，台灣新矽谷城在「新竹」。<br>109年起連續兩年淨遷入率及人口成長率全國第一，招商引資達65.1億，全國排名第二，更有引領國際的半導體、光電、電腦資訊軟體園區，媲美西雅圖，成為最適合移居的文化科技智慧樂活城。',
         },
-      ],
+      ]
     }
   },
 
-  methods: {},
+  methods: {
+    showDialog() {
+      this.isDialog = true;
+      this.showMask = true;
+      this.dialogImg = this.slideList[this.slideIndex].full;
+    },
+
+    handleScroll() {
+      this.showMask = false;
+    }
+  },
 
   created() {},
 
@@ -311,13 +334,6 @@ export default {
 
   computed: {},
 
-  watch: {
-    viewIndex() {
-      if (this.viewIndex === 7) {
-        this.slideIndex = 0
-        console.log(this.slideIndex, 'slideIndex')
-      }
-    },
-  },
+  watch: {}
 }
 </script>

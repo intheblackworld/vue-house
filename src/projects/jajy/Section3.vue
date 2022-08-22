@@ -1,5 +1,6 @@
 <template>
   <div class="section3">
+    <img src="./s3/bg.jpg" class="bg" />
     <div class="img" data-aos="zoom-in-left"> <img src="./s3/img.png" alt="img" /></div>
     <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -38,9 +39,16 @@
   position: relative;
   margin:0 auto 10vw;
   padding: 9vw 0;
-  background: #F3AFBC;
   &::after{content: "";clear: both;display: block;height: 1px;}
 }
+.bg{
+  position: absolute;
+  width: calc(100% * 2000 / 1920);height:auto;
+  top:size(-100);;
+  left:0;object-fit: cover;
+  z-index: -1;
+  filter: blur(.5vw);
+  }
 
 .img{width: size(648);position: absolute;right: 0;bottom: size(-500);
 z-index: 2;
