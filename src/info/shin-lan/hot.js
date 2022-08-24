@@ -2,10 +2,14 @@
 export const hot_case = [
   {
     title: '欣聯奇岩',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/1.jpg'),
+    img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/0.jpg'),
     imgs: [
       {
-        title: '樣品屋實景',
+        title: '主視覺',
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/1.jpg')
+      },
+      {
+        title: '公設示意圖',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/2.jpg')
       },
       {
@@ -17,7 +21,11 @@ export const hot_case = [
         img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/4.jpg')
       },
       {
-        title: '樣品屋實景',
+        title: '公園實景',
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/5.jpg')
+      },
+      {
+        title: '公設示意圖',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/2.jpg')
       },
       {
@@ -27,6 +35,10 @@ export const hot_case = [
       {
         title: '交通機能圖',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/4.jpg')
+      },
+      {
+        title: '公園實景',
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/5.jpg')
       },
     ], // 內頁用
     desc: '1.走公園回家：<br>奇岩站旁低密度開發之生態住宅區，以60%綠覆率深植5大公園，讓家享有自然健康綠意<br><br>2.擁自然採光：<br>基地雙面臨路，方正完整採光充足，全案配置2-3房，適居等質社區規劃<br><br>3.享平面車位：<br>超脫小宅限制，全案配置坡平車位，且可設置充電樁，愛車配件不委屈<br><br>4.全齡生活宅：<br>七大全齡公設規劃，會客室、多功能圖書室、物業櫃台、信箱區、中庭花園、頂樓空中花園、曬被區，以實用機能美學，滿足家人舒心生活<br><br>5.日式精品宅：<br>精選日本百年品牌，LIXIL、INAX、Rinnai、Panasonic，為家提供五星級的豪感生活。', // 內頁用
