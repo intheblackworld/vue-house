@@ -1,13 +1,17 @@
 <template>
   <div>
     <div class="section5">
-      <div class="img" data-aos="zoom-in-right">
-        <img src="./s5/img1.png" alt="img" />
-        <img src="./s5/img2.png" alt="img" />
-        <img src="./s5/img3.png" alt="img" />
-        <img src="./s5/img4.png" alt="img" />
-        <img src="./s5/img5.png" alt="img" />
+      <img src="./all/gold1.png" class="gold1 absolute" />
+      <img src="./all/gold1.png" class="gold2 absolute" />
+    <wimg class="w1 absolute" v-if="!isMobile" />
+      <img src="./all/gold1.png" class="gold3 absolute" />
+      <img src="./all/gold2.png" class="gold4 absolute" />
+      <div class="txt">
+      <h3 class="title"><img src="./s5/icon.png">
+    <img src="./s1/light.png" class="light" /><span>機能一等 便捷沛居</span><span>GET   CONVENIENTLY</span></h3>
       </div>
+
+
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -16,22 +20,14 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
-          </div> -->
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </div>
         </div>
-     <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>  -->
-      </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">12,743坪至善重劃區<br />居高臨下地王視野 </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">跳脫傳統舊市區舊建築，至善重劃區以整齊街道、方正街廓，為竹東人提供了新型態的生活方式。「至善高第」地居重劃區最高處，後倚山巒有靠，坐享好景觀、好視野，是至善重劃區居高臨下的地王，緊鄰公園水岸綠景步道，步行約150公尺竹東游泳池跟台大竹東分院，享有一整套優質好生活。</div>
       </div>
     </div>
   </div>
@@ -39,96 +35,130 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {
+.section5 {  
   width:100%;
   height:auto;
   position: relative;
-  margin:0 auto 0;
-  padding: 5vw 0 5vw;
-background:#FFF;
-&::after{content: "";clear: both;display: block;}
+  padding: 0 0 1.7vw 0;
 }
-.img{width: size(941);position: absolute;left: 0;top:calc(50% - 24vw);
-transform-origin:0% 50% ;
-z-index: 2;
-img{
-    position: absolute;
-    top: 0;left: 0;
-  &:nth-child(1){
-    position: relative;
-    width: 100%;
+.gold1{
+    top: -24vw;
+    left: -16vw;
+    width: 20vw; filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7))
     }
-  &:nth-child(2){
-    width: 100%;
- //   animation: an 3s linear alternate infinite;
-    transform:translateY(-3%);
-    animation: an 3s linear alternate infinite;
+.gold2{
+    top: -9vw;
+    left: -4vw;
+    width: 7vw;filter: drop-shadow(0 0 0.3vw rgba(0, 0, 0, 0.7))}
+.w1{
+    top: 32vw;
+    right: -44vw;
+    transform: rotate(-93deg) scaleX(-1);stroke:#FFF;
+    width: 85vw;}
+.gold3{
+    top: 50vw;
+    right: -2vw;
+    width: 18vw;filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7))
     }
-  &:nth-child(3){
-    width: 100%;
-    transform:rotate(10deg);
-    animation: an 2.5s linear alternate infinite;
-    }
-  &:nth-child(4){
-    width: 100%;
-    transform:rotate(30deg);
-    transform-origin: 26% 63.5%;
-    animation: an 2s ease-in-out alternate infinite;
-    }
-  &:nth-child(5){
-    width: 100%;
- //   animation: an 3s linear alternate infinite;
-    }
-}
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
-}
-}
-
+.gold4{
+    top: 42vw;
+    right: -14vw;
+    width: 22vw;filter: drop-shadow(0 0 0.3vw rgba(85, 27, 0, 0.7))}
 .txt{
-float: right;
   position: relative;
-  padding-top: 4vw;
-  width: size(580);
+  width: size(1606);
+  margin:0 auto 0;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
+  font-size: size(27);
+  font-weight: 700;
   line-height: 1.4;
   z-index: 2;
-  color: #2C5252;
-  margin-right: size(210);
-  }
 
 .title{
   font-size:2.2em;
-  margin:.4em auto 0;
+  margin:0.6em auto 0.75em;
   font-weight: 900;
-  color: #002B69;
-}
-.desc {
-  margin:1em auto;
-  line-height: 1.6;
-  letter-spacing:0.05em;
-  list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
+  color: #00537A;
+  display: block;
+  position: relative;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #FFF0 5%,#FFF6 22%,#FFF0 44%);
+  font-family: 'Noto Serif TC', serif;
+  /*
+    */
+  &::before,
+  &::after{
+    content: "";
+    display:block;
+    height: 1px;
+    width:10em;
+    background: linear-gradient(to right, rgba(4,102,128,1) 0%,rgba(33,128,164,1) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
+    margin:0 0 0 0.2em;
+    }
+  &::before{
+    background: linear-gradient(to right, rgba(4,102,128,0) 0%,rgba(33,128,164,0.5) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
+    margin:0 0 0 2em;
   }
+    img{height: 1.5em;
+  position: relative;
+  vertical-align: middle;
+    margin: -.35em .4em -0.03em 0;
+    &.light{position: absolute;top: .5em;left: .5em;
+      animation: light1 3s linear infinite;}
+    }
+
+@keyframes light1{
+    0%{
+      transform: rotate(180deg) scale(.3);
+    }
+    50%{
+      transform: rotate(0) scale(1);
+    }
+    100%{
+      transform: rotate(-180deg)scale(.3);
+    }
+}
+  span:last-child{
+    white-space: nowrap;
+  font-size:1.2em;
+  background:url("./s5/txtbg.jpg");
+  background-size: cover;
+  background-clip: text;
+  font-weight: 400;
+  letter-spacing: 0.0em;
+  -webkit-background-clip: text;
+  vertical-align:-0.05em;
+  color: transparent;font-family: 'Cantata One', serif;
+  margin: 0 0 0 0.35em;
+  filter: drop-shadow(0 0 0.4vw #fffc);
+  }
+
+}
+.subtitle{
+  font-size:1.3em;
+  margin:.5em auto 0;
+  letter-spacing:0.03em;
+  font-weight: 900;
+  color: #000;
 }
 
+.desc {
+  margin:1em auto 0.3em;
+  line-height: 1.6;
+  list-style: circle;
+}
+  }
 /* Swipe */
-
-.swipe {position: relative;
-float: left;
- // position: absolute;
-  width: size(840);
-  height: size(473);
-// top: size(185);
- // left: size(210);
-  margin-left: size(210);
+.swipe {
+  position: relative;
+  margin: auto;
+  width: size(1606);
+  height: size(758);
+  // left: size(210);
+  object-fit: cover;
   z-index: 3;
 }
 .slide-name {
@@ -184,11 +214,10 @@ float: left;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(0);
-  left:calc(100% + 50 * 100vw / 1920);
+  bottom: 8em;
+  right: 15.6em;
   justify-content: center;
-  font-size: size(20);
-
+  font-size: size(15);
 }
 .pagination-dot {
   padding: 0.25em;
@@ -201,7 +230,7 @@ float: left;
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  $pagination;
+    border:  2px solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -211,7 +240,8 @@ float: left;
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
+   // border:  2px solid  $pagination-active;
+   background: #fff;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -227,7 +257,7 @@ float: left;
         height: 100%;
         top: 0%;
         left: 0%;
-        transform: scale(1.6);
+        transform: scale(1.1);
       }
     }
   }
@@ -263,18 +293,41 @@ float: left;
   .section5 {
     width: 100%;
     height: auto;
+    min-height: auto;
+    max-height: initial;
   }
-.img{width: sizem(360);left: 0;top:auto;bottom:-22vw;}
+.gold1{
+    top: 37vw;
+    }
+.gold2{
+    top: 53vw;}
+.gold3{
+    top: 147vw;
+    right: -5vw;
+    }
+.gold4{
+    top: 136vw;
+    }
+
   .txt{
     position: relative;
-    width: sizem(320);
-    float: none;
-    margin:1.5em auto 22em;
-    left:0;
-    top:0;
-    font-size: sizem(14);
+    width: sizem(330);
+    margin:1.5em auto 2em;
+    font-size: sizem(12);
     .title{
-      font-size:1.5em;
+      font-size:2.2em;
+  line-height: 1.6;
+    img{height: 1.65em;
+  position: relative;
+  vertical-align: middle;
+    margin: -.35em .9em -0.03em 0;
+    }
+      
+  span:last-child{position: absolute;top: 0;left: 0;
+  transform: rotate(90deg) translate(18vw,-89vw);
+  font-size:1.1em;
+  transform-origin:0 0;
+  }
     }
     .subtitle{
       font-size:1.1em;
@@ -283,12 +336,9 @@ float: left;
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
-    float: none;
-    height: sizem(255);
-    top:0;
-    left:0;
-  margin-left:0;
+    width:sizem(310);
+    height: sizem(490);
+    margin: 0 auto 0 sizem(20);
   }
 .swipe-item {
   .slide-name {
@@ -299,18 +349,23 @@ float: left;
   font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import wimg from './w.vue'
 
 export default {
   name: 'section5',
 
   mixins: [slider],
   props: ['viewIndex'],
+  components: {
+    wimg,
+  },
 
   data() {
     return {
@@ -321,8 +376,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1.jpg'),
-          name: '現場基地空拍實景圖',
+          img: isMobile?require("./s5/1m.jpg"):require("./s5/1.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s5/2m.jpg"):require("./s5/2.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s5/3m.jpg"):require("./s5/3.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s5/4m.jpg"):require("./s5/4.jpg"),
+          name: '',
         },
       ],
     }
@@ -338,7 +405,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 7) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

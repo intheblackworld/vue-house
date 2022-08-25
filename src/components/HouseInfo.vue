@@ -35,7 +35,8 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
-  background: $house_bg;
+  background:$house_bg;
+  background-size: 100% auto;
   position: relative;
   z-index: 1;
 }
@@ -46,6 +47,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 0 20vw 0;
 }
 
 .title {
@@ -103,12 +105,15 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+.house-info {
+  background-size: 190% auto;
+}
   .content {
    // height: 35em;
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
-    padding-bottom: 50px;
+    padding-bottom: 35vw;
   }
 
   .title {

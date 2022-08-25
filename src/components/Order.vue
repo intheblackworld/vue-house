@@ -291,43 +291,6 @@ export default {
   right: -#{size(50)};
   width: size(148);
 }
-.o{
-  position: absolute;
-  top:size(5);
-  left:calc(50% - 10.5vw);
-  width: calc(2 * 10.5vw);
-  height:calc(2 * 10.5vw);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-
-.c{
-      position: absolute;left:0;right:0;
-      top:size(680);
-        z-index: -1;
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
-      }
-    .c1{
-      width:size(700);top:size(-150);right: size(-50);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: -1s;
-      img{width: 100%;
-      transform:rotate(6deg);}}
-    .c2{
-      width:size(300);top:size(100);left: size(120);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-      img{width: 100%;
-      transform:rotate(-30deg);}}
-  }
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
-}
 .bg-img {
   width: 110%;
   position: absolute;
@@ -360,26 +323,28 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     background-size: cover;
     background-position: bottom right;
     position: relative;
-    padding: 5vw 0 0 0;
+    padding: 0vw 0 0 0;
    // padding-bottom: 500px;
   }
   .order-title {
   position: relative;
    // font-family: $family1;
-  width: size(1500);
+  width: size(1606);
+  font-family: 'Noto Serif TC', serif;
     padding-top:0;
     padding-bottom:0;
     font-weight:700;
   line-height:2.222;
-  font-size: size(49);
+  font-size: size(39);
     letter-spacing: size(10);
     text-indent: size(10);
     text-align: center;
     color: $order_title_color;
     margin: 0 auto;
-    margin-bottom: size(20);
+    margin-bottom: size(100);
     display: inline-block;
     z-index: 3;
+    background:  #2B5161;
   }
   .order-title-img {
     width: 30vw;

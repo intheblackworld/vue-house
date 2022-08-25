@@ -54,13 +54,6 @@
     >
       <Section8 />
     </vue-lazy-component>
-<!--      
-    <vue-lazy-component
-      class="section"
-      id="section11"
-    >
-    <Section11 />
-    </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section9"
@@ -72,6 +65,13 @@
       id="section10"
     >
     <Section10 />
+    </vue-lazy-component>
+<!--      
+    <vue-lazy-component
+      class="section"
+      id="section11"
+    >
+    <Section11 />
     </vue-lazy-component>
   <vue-lazy-component
       class="section relative"
@@ -128,9 +128,9 @@ import Section5 from '@/projects/jajy/Section5.vue'
 import Section6 from '@/projects/jajy/Section6.vue'
 import Section7 from '@/projects/jajy/Section7.vue'
 import Section8 from '@/projects/jajy/Section8.vue'
-/* import Section10 from '@/projects/jajy/Section10.vue'
 import Section9 from '@/projects/jajy/Section9.vue'
 import Section10 from '@/projects/jajy/Section10.vue'
+/* import Section10 from '@/projects/jajy/Section10.vue'
 import Section11 from '@/projects/jajy/Section11.vue' */
 
 export default {
@@ -151,9 +151,9 @@ export default {
     Section6,
     Section7,
     Section8,
-    /* Section11,
     Section9,
     Section10,
+    /* Section11,
     Section11,
     */
   },

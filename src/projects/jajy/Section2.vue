@@ -10,20 +10,19 @@
       frameborder="0"
       allowfullscreen
     ></iframe> -->
-    <div class="video_box">
-      <div v-if="!isMobile" :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
+    <div class="video_box" v-if="!isMobile">
+      <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div>
+    <div class="video_box" v-else
+      @click="isDialog = true">
     <img
-      src="./s2/arrow.png"
+      src="data:image/svg+xml,%3Csvg fill='%23069' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15'/%3E%3Cpath fill='%23FFF' d='M22.6,15.8l-11.3,6.5c-0.6,0.3-1.3-0.1-1.3-0.8v-13c0-0.7,0.7-1.1,1.3-0.8l11.3,6.5C23.2,14.6,23.2,15.4,22.6,15.8z'/%3E%3C/svg%3E"
       alt=""
       class="play-btn"
-      v-if="isMobile"
-      @click="isDialog = true"
-    >
+    ></div>
     <div class="video" v-if="isDialog && isMobile">
-      <div class="video_box">
-        <iframe title="youtube" src="https://www.youtube.com/embed/zdbRyGcLa4Q
-        " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video_dialog" @click="isDialog = false">
+        <iframe title="youtube" src="https://www.youtube.com/embed/rYH3Tk4jeRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <img class="close" @click="isDialog = false" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTP////Pw8PLx8fLw8PLw8PPx8fHx8fLy8vLw8PXr6/Zeio0AAAALdFJOUwADRMS156s3KfgaAiHMOAAAAXtJREFUSMeFlr9qwzAQxnVZajoVLRLZTEMfoBAadywIt11t/AAGETqGhOzGoS/g0r20D1qRxLYsS/oy5Y/uk+/ud/eFnRoWecmcfTzdhX+n/Tf763bhAyJ7Z4l+DErQfdkw+izS0AGutiZY6JeABK2q8/XHMo0JhCXooUqvb/wSXNfXwIVXwjxBOmj5JLiqhzCh5+WkQzVG0bGYlVOscytIvG0cCWq/JjGn7md6YJlNQ5LsefKZfjsHA+cL6QQwdpvZidDevZKx1uZCZJtZ3okauaBVOQeRDmM5uco9tR+b2nPgSgxcjG1023uRGDiYA3KRCAn0EkGBXkKoOjgHC8OFna6nFsVOrvPILBou2tgoGkw6TxemXHTRdWA4iB+AV6CHNGk2UkXS5DqPFgqWGjULthsBA5GzoS19tUDYSzA4Zpzjo7dEw4vGX4IFYjiIryC0xHxr8MbGHy1SuIo5WObQDjgwFApZEnF9tiRkatAWobFCa4bmDv4evP4DsmNwZSA8CfQAAAAASUVORK5CYII=" />
     </div>
@@ -47,8 +46,6 @@
   overflow: hidden;
   // position: relative;
   height: size(700);
-  background: #000 url('./s2/v.jpg') no-repeat center;
-  background-size: cover;
   margin: size(125) 0  0 0;
   &::after {
     content: '';
@@ -64,19 +61,14 @@
 .video_box {
   width: 100%;
   position: absolute;
+  background: url('./s2/v.jpg') no-repeat center;
+  background-size: cover;
   z-index: 2;
   top:50%;
   transform: translateY(-50%);
   left: 0;
   overflow: hidden;
   height:100%;
-  opacity: 0;
-  animation: op 1s 3s ease-out forwards;
-}
-@keyframes op {
-  to {
-    opacity: 1;
-  }
 }
 .video-bg {
   width: 100vw;
@@ -112,8 +104,6 @@
 }
 
 @media only screen and (max-width: 1440px) {
-  .bg-img {
-  }
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
 }
@@ -125,26 +115,16 @@
 
 @media screen and (max-width: 767px) {
   .section2 {
-    margin: 0 0 0 0;
+    margin: 0;
     overflow: hidden;
     width: 100vw;
-    height: sizem(240);
-    min-height: sizem(240);
-    max-height: sizem(240);
-    margin-top: sizem(-60);
+    height: size-m(350);
+    position: relative;
   }
 
   .video_box {
-    width: 100%;
     position: absolute;
-    height: size-m(260);
-    // top: 50%;
-    // transform: translateY(-50%);
-    // left: 0;
-    // overflow: hidden;
-    // height: size(910);
-    opacity: 1;
-    // animation: op 1s 3s ease-out forwards;
+  z-index: 3;
   }
   .video-bg {
     width: size-m(1190);
@@ -176,19 +156,28 @@
 
   .play-btn {
    // @include img_c_m(32, 130);
+
+   position: relative;
+   margin:size-m(155) auto;
+   width:size-m(40);
     cursor: pointer;
-    z-index: 10;
+    z-index: 3;
   }
 
   .video {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    left: size-m(0);
+    
+    left: 0
+    ;
     top: 0;
-    background: rgba(0, 0, 0, 0.6);
+    //background: rgba(0, 0, 0, 0.6);
     z-index: 200;
-    transition: opacity 0.5s;
+   // transition: opacity 0.5s;
+    .video_dialog{
+    position: absolute;
+    width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);}
 
     iframe {
       width: 100vw;
@@ -196,8 +185,8 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      // top: 50%;
-      // transform: translateY(-50%);
+      top: 50%;
+      transform: translateY(-50%);
       position: absolute;
       background-color: #fff;
     }
@@ -222,7 +211,7 @@ export default {
     return {
       isMobile,
       player: '',
-      id: 'zdbRyGcLa4Q',
+      id: 'rYH3Tk4jeRg',
       isDialog: false,
     }
   },

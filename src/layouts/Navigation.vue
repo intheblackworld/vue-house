@@ -142,6 +142,11 @@ export default {
   //padding-left: 30px;
   li {
     height: 100%;
+    &:first-child{
+      .link {
+    &::after{
+      display: none;}}
+    }
   }
 
   .link {
@@ -149,8 +154,8 @@ export default {
     height:80%;
     text-align: center;
     cursor: pointer;
-    padding: 0 .5em;
-    margin: 0 0.5em;
+    padding: 0 1.3em;
+    margin: 0;
     transition: all 0.8s;
     display: flex;
     align-items: center;
@@ -160,23 +165,30 @@ export default {
     &:hover {
       color: $nav_link_hover_color;
     }
-
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;left: 0;width: 1px;height: 1em;background: #FFF9;}
     &.btn{
     color: $nav_btn_color;
     background:$nav_btn_bg;
     padding: 0 1.5em;
     border-radius:1.5em ;
+    margin: 0 0.5em;
 
     &:hover {
       color: $nav_btn_hover_color;
       background: $nav_btn_hover_bg;
     }
+    &::after{
+      display: none;
+      }
 
     }
 
 
     .title {
-      font-weight: bold;
+      font-weight: 500;
       position: relative;
       z-index: 3;
       > span {
@@ -219,13 +231,13 @@ export default {
     width: 30px;
     height: 3px;
     background-color:currentColor;
- box-shadow:0 0 10px #600,0 0 4px #600c ;
+ //box-shadow:0 0 10px #600,0 0 4px #600c ;
 z-index: 3;
     &::after,
     &::before {
     position: absolute;
     left: 0;
- box-shadow:0 0 7px #6009,0 0 4px #6009 ;
+ //box-shadow:0 0 7px #6009,0 0 4px #6009 ;
     content: "";
     display: block;
     width: 30px;
@@ -299,7 +311,7 @@ z-index: 3;
     width: 0;
   }
   .navigation {
-    background-color: transparent !important;
+   // background-color: transparent !important;
     height: $nav_phone_height;
     justify-content: center;
     font-size:sizem(17);
@@ -320,7 +332,7 @@ z-index: 3;
   .logo {
     width: $logo_phone_width;
     left: 15px;
-    display: none;
+   // display: none;
   }
 
   .nav {
@@ -360,12 +372,16 @@ z-index: 3;
     }
 
     .link {
-      height: 2.5em;
+      height: 4em;
       width: 100%;
-      margin-top: 0;
       align-items: center;
       justify-content: center;
-      margin: 0.35em auto;
+      padding: 0 0;
+      &::after{
+      display: block;
+      position: absolute;left: 0;
+      top:0;
+      width:100%;height: 1px;background: #FFF9;}
 
       img,
       span {
@@ -400,7 +416,7 @@ z-index: 3;
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color: #600c;
+      background-color:#1a4557cc;
     }
     .link {
       width: 10em;

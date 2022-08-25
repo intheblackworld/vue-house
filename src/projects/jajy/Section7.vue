@@ -1,8 +1,14 @@
 <template>
   <div>
     <div class="section7">
-<div class="img" data-aos="zoom-in"> <img src="./s7/img.png" alt="img" /></div>
-   
+      <img src="./all/gold2.png" class="gold1 absolute" />
+      <img src="./all/gold1.png" class="gold2 absolute" v-if="isMobile" />
+      <img src="./all/gold2.png" class="gold3 absolute" v-if="isMobile" />
+      <div class="txt">
+      <h3 class="title"><img src="./s5/icon.png">
+    <img src="./s1/light.png" class="light" /><span>全齡社區 樂活悠居</span><span>GET  LEISURELY</span></h3>
+      </div>
+
 
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -22,10 +28,10 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" >雙陽台・雙衛浴・雙開窗  超機能2~3房 </div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">「至善高第」針對首購、換屋、同鄰不同居，量身訂作超機能2~3房。</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">單層3戶及單層5戶，雙陽台、雙衛浴、雙開窗（*套房僅一套衛浴開窗）、大面積開窗，引光納景通風採光佳，住起來身心最舒適。規劃升等2房、幸福3房，單身、小家庭、同鄰不同居，滿足不同族群的需求。</div>
-      </div>
+      <p class="desc">
+作為湖子內特區指標建築的【佳昂•家易】<br v-if="isMobile" /><span v-else>，</span>在公共場域規劃方面更是別具心裁<br v-if="isMobile" /><span v-else>，</span>將新古典與現代設計語彙完美融合<br />
+巧妙運用石材、鏡面、木作…等特殊材質<br v-if="isMobile" /><span v-else>，</span>在建築門面的大廳、交誼廳、多功能室<br v-if="isMobile" /><span v-else>，</span>皆可見新古典風華極具層次的優雅美感</p>
+</div>
     </div>
   </div>
 </template>
@@ -36,41 +42,86 @@
   width:100%;
   height:auto;
   position: relative;
-  padding: 9vw 0 5vw;
-  background: #F3AFBC;
+  padding: 0 0 1.7vw 0;
 }
-
-.img{width: size(800);position: absolute;left: 0;bottom: size(-130);
-z-index: 2;
-img{width: 100%;
-// transform: skewY(5deg) ;
-// transform-origin: 0 50%;
-  //    animation: an 3s linear alternate infinite;
-      }
-}
-
-@keyframes an{
-    to{
-      transform: translateX(0);
+.gold1{
+    top: 20vw;
+    right: 3vw;
+    width: 21vw;filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7));
     }
-}.txt{
+
+.txt{
   position: relative;
-  width: size(1500);
-  margin: 0 auto 3em auto;
+  width: size(1606);
+  margin:0 auto 0;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
+  font-size: size(27);
+  font-weight: 500;
   line-height: 1.4;
   z-index: 2;
-  color: #2C5252;
 
 .title{
   font-size:2.2em;
-  margin:.4em auto 0;
+  margin:1.5em auto 0.75em;
   font-weight: 900;
-  color: #002B69;
+  color: #00537A;
+  display: block;
+  position: relative;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #FFF0 5%,#FFF6 22%,#FFF0 44%);
+  font-family: 'Noto Serif TC', serif;
+  /*
+    */
+  &::before,
+  &::after{
+    content: "";
+    display:block;
+    height: 1px;
+    width:10em;
+    background: linear-gradient(to right, rgba(4,102,128,1) 0%,rgba(33,128,164,1) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
+    margin:0 0 0 0.2em;
+    }
+  &::before{
+    background: linear-gradient(to right, rgba(4,102,128,0) 0%,rgba(33,128,164,0.5) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
+    margin:0 0 0 2em;
+  }
+    img{height: 1.5em;
+  position: relative;
+  vertical-align: middle;
+    margin: -.35em .4em -0.03em 0;
+    &.light{position: absolute;top: .5em;left: .5em;
+      animation: light1 3s linear infinite;}
+    }
+
+@keyframes light1{
+    0%{
+      transform: rotate(180deg) scale(.3);
+    }
+    50%{
+      transform: rotate(0) scale(1);
+    }
+    100%{
+      transform: rotate(-180deg)scale(.3);
+    }
+}
+  span:last-child{
+    white-space: nowrap;
+  font-size:1.2em;
+  background:url("./s5/txtbg.jpg");
+  background-size: cover;
+  background-clip: text;
+  font-weight: 400;
+  letter-spacing: 0.0em;
+  -webkit-background-clip: text;
+  vertical-align:-0.05em;
+  color: transparent;font-family: 'Cantata One', serif;
+  margin: 0 0 0 0.35em;
+  filter: drop-shadow(0 0 0.4vw #fffc);
+  }
+
 }
 .subtitle{
   font-size:1.3em;
@@ -81,7 +132,7 @@ img{width: 100%;
 }
 
 .desc {
-  margin:0.1em auto;
+  margin:1em auto 0.3em;
   line-height: 1.6;
   list-style: circle;
 }
@@ -90,8 +141,8 @@ img{width: 100%;
 .swipe {
   position: relative;
   margin: auto;
-  width: size(1500);
-  height: size(840);
+  width: size(1606);
+  height: size(800);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -231,28 +282,54 @@ img{width: 100%;
     min-height: auto;
     max-height: initial;
   }
-  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
+.gold1{
+    top: 66vw;
+    right: auto;
+    left: -21vw;
+    width: 25vw;
+    }
+.gold2{
+    top: 119vw;
+    right: -16vw;
+    width: 21vw;filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7));
+    }
+.gold3{
+    top: 96vw;
+    right: -22vw;
+    width: 32vw;filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7));
+    }
+
   .txt{
     position: relative;
-    width: sizem(320);
-    margin:1.5em auto 5em;
-    left:0;
-    top:0;
-    font-size: sizem(14);
+    width: sizem(330);
+    margin:1.5em auto 2em;
+    font-size: sizem(12);
     .title{
-      font-size:1.5em;
+      font-size:2.2em;
+  line-height: 1.6;
+    img{height: 1.65em;
+  position: relative;
+  vertical-align: middle;
+    margin: -.35em .9em -0.03em 0;
+    }
+      
+  span:last-child{position: absolute;top: 0;left: 0;
+  transform: rotate(90deg) translate(18vw,-89vw);
+  font-size:1.1em;
+  transform-origin:0 0;
+  }
     }
     .subtitle{
       font-size:1.1em;
     }
+    .desc{font-size: 1.15em;}
   }
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
-    height: sizem(255);
-    top:0;
-    left:0;
+    width:sizem(310);
+    height: sizem(350);
+    margin: 0 auto 0 sizem(20);
   }
 .swipe-item {
   .slide-name {
@@ -263,7 +340,6 @@ img{width: 100%;
   font-size: sizem(15);
   }
 }
-
 </style>
 <script>
 // @ is an alias to /src
@@ -286,8 +362,8 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/1.jpg'),
-          name: '情境示意圖',
+          img: isMobile?require("./s7/1m.jpg"):require("./s7/1.jpg"),
+          name: '',
         },
         {
           img: isMobile?require("./s7/2m.jpg"):require("./s7/2.jpg"),
@@ -295,6 +371,10 @@ export default {
         },
         {
           img: isMobile?require("./s7/3m.jpg"):require("./s7/3.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s7/4m.jpg"):require("./s7/4.jpg"),
           name: '',
         },
       ],

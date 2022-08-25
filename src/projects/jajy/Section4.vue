@@ -1,6 +1,16 @@
 <template>
   <div>
     <div class="section4">
+    <wimg class="w1 absolute" />
+    <wimg class="w2 absolute" />
+      <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" data-aos-delay="200" />
+      <div class="txt">
+      <h3 class="title">千坪星地標  「五居」 新能量</h3>
+      <p class="desc">
+【佳昂•家易】座落湖子內重劃區三期的商業中心區<br />
+為「佳昂建設」嘉義首發鉅作，推出擁有1682坪廣大基地的地標性建築，對外交通、商圈、學區，機能完善<br />
+對內社區規劃、配備選材，臻求完美，專屬【佳昂•家易】的「五居」新能量，絕對煥然一新的城市生活</p>
+      </div>
 
 
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -11,20 +21,14 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <!--   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+          </div> -->  
         </div>
-      </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" >大新竹正核心   快適生活圈</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">竹東，地理位置位於大新竹正核心，興合力建築團隊-唐誠建設精選竹東至善重劃區，打造「至善高第」。</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">「至善高第」公道五號、68快速道路打通竹東動脈，國道3號串接通網南北各地，工作在新竹、竹北，悠閒樂活在北埔、內灣、橫山、寶山。工作、居家、休閒一線牽，大新竹最宜居生活城！
-      </div>
       </div>
     </div>
   </div>
@@ -36,56 +40,56 @@
   width:100%;
   height:auto;
   position: relative;
-  margin: 5.3vw 0 0 0;
+  padding: 0 0 4.7vw 0;overflow: hidden;
 }
-
-.o{
-  position: absolute;
-  top:size(790);
-  left:size(100);
-  width:size(210);
-  height:size(210);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
-.c{
-      position: absolute;left:0;right:0;
-      top:calc(50% + (0 - 540) * 100vw / 1920);
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
-      }
-    .c1{
-      width:size(355);top:size(-4);right: size(-21);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: -3s;
-      img{width: 100%;
-      transform:rotate(-48deg)scaleX(-1);}}
-  }
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
+.w1{
+    top: -42vw;
+    left: 20vw;
+    width: 90vw;
+transform: rotate(100deg);
+transform-origin: 0 0;stroke:#FFF;
 }
+.w2{
+    top: 19vw;
+    right: -128vw;
+    width: 86vw;
+    transform: rotate(-152deg)scaleY(-1);
+transform-origin: 0 0;stroke:#FFF;
+}
+.leaf{
+    top: 39vw;
+    right: 4vw;
+    transform: translate(50%,-100%);
+    width: 16vw;}
 .txt{
   position: relative;
   width: size(1500);
-  margin: 0 auto 3em auto;
+  margin:0 auto 0;
   font-stretch: normal;
   font-style: normal;
-  text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
+  text-align: center;
+  font-size: size(27);
+  font-weight: 700;
   line-height: 1.4;
   z-index: 2;
-  color: #2C5252;
+  font-family: 'Noto Serif TC', serif;
 
 .title{
   font-size:2.2em;
-  margin:.4em auto 0;
+  margin:1.5em auto 0.3em;
   font-weight: 900;
-  color: #002B69;
+  color: #00537A;
+  &::before,
+  &::after{
+    content: "";
+    display: inline-block;
+    height: .9em;
+    width: .3em;
+    background: #006180;
+    vertical-align: middle;
+    margin:-0.2em 1.55em 0;
+    }
+
 }
 .subtitle{
   font-size:1.3em;
@@ -96,7 +100,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 }
 
 .desc {
-  margin:0.1em auto;
+  margin:0.1em auto 1.9em;
   line-height: 1.6;
   list-style: circle;
 }
@@ -106,7 +110,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(844);
+  height: size(590);
   // left: size(210);
   object-fit: cover;
   z-index: 3;
@@ -229,9 +233,6 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
 }
 
 /* 螢幕尺寸標準 */
@@ -246,21 +247,43 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     min-height: auto;
     max-height: initial;
   }
+  .w1{
+    top: -30vw;
+    left: 27vw;
+    width: 124vw;}
+  .w2{
+    top: 12vw;
+    right: -162vw;
+    width: 117vw;
+  }
+
+.leaf{
+    top: 105vw;}
 
   .txt{
-    position: relative;
-    width: sizem(320);
-    margin:1.5em auto 3em;
-    left:0;
-    top:0;
-    font-size: sizem(14);
-    .title{
-      font-size:1.5em;
+  //@include img_c_m(370, 50);
+    font-size:sizem(12);
+    width:sizem(310);
+    margin: auto;
+  .title {display: flex;
+  font-size:1.9em;
+    justify-content:space-between;
+    align-items:center;
+  margin:1.7em auto 0.3em;
+    // width: 13.5em;
+  &::before,
+  &::after{
+    content: "";
+    display:block;
+    flex: 0 0 3px;
+    background: #006180;
+  //  height: auto;
+  //  vertical-align: middle;
+    margin:0;
     }
-    .subtitle{
-      font-size:1.1em;
     }
-  }
+
+    }
   /* Swipe */
   .swipe {
     position: relative;
@@ -285,12 +308,16 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import wimg from './w.vue'
 
 export default {
   name: 'section4',
 
   mixins: [slider],
   props: ['viewIndex'],
+  components: {
+    wimg,
+  },
 
   data() {
     return {
@@ -301,20 +328,8 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile?require("./s4/1m.jpg"):require("./s4/1.jpg"),
-          name: '空拍實景圖',
-        },
-        {
-          img: require('./s4/2.jpg'),
-          name: '68快速道路',
-        },
-        {
-          img: require('./s4/3.jpg'),
-          name: '頭前溪生態公園',
-        },
-        {
-          img: require('./s4/4.jpg'),
-          name: '蕭如松藝術園區',
+          img:isMobile?require("./s4/1m.png"):require("./s4/1.png"),
+          name: '',
         },
       ],
     }

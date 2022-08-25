@@ -1,7 +1,8 @@
 <template>
   <div class="section1">
-    <img src="./s1/pc.jpg" class="t0" /><!--   -->
-    <img src="./s1/bg.png" class="bg" />
+    <!-- <img src="./s1/mo.jpg" class="t0" />  -->
+    <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
+    <img src="./s1/bg.png" class="bg" v-else />
     <img src="./s1/light.png" class="light1" />
     <div class="txt">
     <img src="./s1/light.png" class="light2" />
@@ -47,9 +48,9 @@
 .t0{
   position: absolute;
   width: 100%;height:auto;
-  top:-2.6vw;
+  top:0;
   left:0;object-fit: cover;
-  opacity: .0;
+  opacity: .5;
   }
 .bg{
   position: absolute;
@@ -90,7 +91,6 @@
   position: relative;
   // top:calc(50% + (253 - 540) * 100vw / 1920);
  //  left:size(-260);
- top: size(124);
  top:calc(37% + (124 - 1080 * 0.37) * 100vw / 1920);
   font-size: size(45);
   line-height: 1.35;
@@ -103,7 +103,6 @@
 .logo{
   position: relative;
   margin:0 auto 0.35em;
-  top: calc(50% - 19vw);
   width:size(397);
   }
   
@@ -153,6 +152,20 @@
     max-height: sizem(750);
     height: calc(100vh - 63px);
   margin: 0 0 0;
+  background-image: url("./s1/bg-m.jpg");
+  }
+.bg{
+  top:calc(50% + (586 - 302) * 100vw / 375);
+  }
+.light1{
+  top: calc(50% + 51vw);
+  width:sizem(100);
+  left:51.5%;
+  }
+.light2{
+  top: sizem(17);
+  width:sizem(75);
+  left:35.5%;
   }
 .img{top:calc(50% + 10vw);
   width:sizem(208);
@@ -178,27 +191,30 @@
   }
 .txt{
   font-size: sizem(24);
-  top:calc(50% + (220 - 302) * 100vw / 375);
-  left:sizem(-62);
-  .t1{
-  font-size: 0.73em;
-
+  top:calc(50% + (123 - 302) * 100vw / 375);
+.logo{
+  width:sizem(240);
+  margin:0 auto 0.6em;
   }
-  .t2{
-
-  span{display: block;
-    width: sizem(165);
-    margin: auto;
-  border: 1px solid currentColor;
-  &::after{
-    display: none;
-  }
-  }
-
+  .t1{font-size: 1.25em;
+  &::before,
+    &::after{
+      height: 1px;
+      width: .75em;
+      margin:-0.2em 0.3em 0;
     }
-  .phone{
-        margin:0em auto 0;
-    width: sizem(165);}
+  }
+
+  .t2{
+    width: 10.5em;
+  margin:0.65em auto 0.6em;
+  padding:0.2em 0 ;
+border: 1px solid #006180;
+  span{display: block;
+  &::after{display: none;
+  }
+  }
+  }
 }
 
 

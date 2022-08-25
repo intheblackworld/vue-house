@@ -136,7 +136,8 @@ export default {
   //border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
-  box-shadow: $contact_btn_border;
+ // box-shadow: $contact_btn_border;
+  border: $contact_btn_border;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -194,6 +195,7 @@ export default {
   font-weight: bold;
   float: left;
   //box-shadow: $contact_btn_border;
+  border: $contact_btn_border;
 }
 .google-btn {
   width: 280px;

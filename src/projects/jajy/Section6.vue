@@ -1,7 +1,15 @@
 <template>
   <div>
     <div class="section6">
-      <div class="img" data-aos="zoom-in-left"> <img src="./s6/img.png" alt="img" /></div>
+      <img src="./all/gold1.png" class="gold1 absolute" />
+      <img src="./all/gold2.png" class="gold2 absolute" v-if="isMobile" />
+    <wimg class="w1 absolute" v-else />
+      <div class="txt">
+      <h3 class="title"><img src="./s5/icon.png">
+    <img src="./s1/light.png" class="light" /><span>健康為上 安心適居</span><span>GET  HEALTHY</span></h3>
+      </div>
+
+
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -10,24 +18,14 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-       <!--   <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
-          </div> -->
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </div>
         </div>
-     <!-- <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div>  -->
-      </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">40米面寬迎賓大廳<br />後防疫全齡化會館</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">「至善高第」取法北歐與日本的青銀共享社區，規劃全齡化休閒會館。</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">面寬四十米迎賓大廳、信箱區、閱覽室、吧台區、咖啡廳、健身房、瑜珈室、會議間、兒童遊戲室、室內外儲藏室、管委會辦公室、自行車停車區等，提供住戶多樣休閒機能。更以貼心防疫考量，除當層排氣外，規劃對角開窗通風流動、人臉辨識、免接觸叫電梯、公設及電梯內空氣清淨機，打造安心休閒空間。
-      </div>
       </div>
     </div>
   </div>
@@ -35,50 +33,94 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section6 {
+.section6 {  
   width:100%;
   height:auto;
   position: relative;
-  margin:0 auto 0;
-  padding: 5vw 0 5vw;
-&::after{content: "";clear: both;display: block;}
+  padding: 0 0 1.7vw 0;
 }
-.img{width: size(615);position: absolute;right:  size(-140);bottom: size(-360);
-z-index: 2;
-img{width: 100%;
-/* transform: skewX(-2deg) ;
-transform-origin: 100% 100%;
-      animation: an 3s linear alternate infinite;  */
-      }
-}
-
-@keyframes an{
-    to{
-      transform: translateX(0);
+.gold1{
+    top: 31vw;
+    left: -6vw;
+    width: 20vw; filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7))
     }
-}
+.w1{
+    top: 8vw;
+    left: -50vw;
+    transform: rotate(80deg) scaleX(-1);stroke:#FFF;
+    width: 94vw;}
 .txt{
-float: left;
   position: relative;
-  padding-top: 4vw;
-  width: size(580);
- /*  left: size(300);
-  top: size(325);  */
+  width: size(1606);
+  margin:0 auto 0;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(19);
-  font-weight: 400;
-  line-height: 1.2;
-  z-index: 3;
-  color: #2C5252;
-  margin-left: size(210);
-  }
+  font-size: size(27);
+  font-weight: 700;
+  line-height: 1.4;
+  z-index: 2;
+  font-family: 'Noto Serif TC', serif;
+
 .title{
   font-size:2.2em;
-  margin:.4em auto 0;
+  margin:1.5em auto 0.75em;
   font-weight: 900;
-  color: #002B69;
+  color: #00537A;
+  display: block;
+  position: relative;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #FFF0 5%,#FFF6 22%,#FFF0 44%);
+  /*
+    */
+  &::before,
+  &::after{
+    content: "";
+    display:block;
+    height: 1px;
+    width:10em;
+    background: linear-gradient(to right, rgba(4,102,128,1) 0%,rgba(33,128,164,1) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
+    margin:0 0 0 0.2em;
+    }
+  &::before{
+    background: linear-gradient(to right, rgba(4,102,128,0) 0%,rgba(33,128,164,0.5) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
+    margin:0 0 0 2em;
+  }
+    img{height: 1.5em;
+  position: relative;
+  vertical-align: middle;
+    margin: -.35em .4em -0.03em 0;
+    &.light{position: absolute;top: .5em;left: .5em;
+      animation: light1 3s linear infinite;}
+    }
+
+@keyframes light1{
+    0%{
+      transform: rotate(180deg) scale(.3);
+    }
+    50%{
+      transform: rotate(0) scale(1);
+    }
+    100%{
+      transform: rotate(-180deg)scale(.3);
+    }
+}
+  span:last-child{
+    white-space: nowrap;
+  font-size:1.2em;
+  background:url("./s5/txtbg.jpg");
+  background-size: cover;
+  background-clip: text;
+  font-weight: 400;
+  letter-spacing: 0.0em;
+  -webkit-background-clip: text;
+  vertical-align:-0.05em;
+  color: transparent;font-family: 'Cantata One', serif;
+  margin: 0 0 0 0.35em;
+  filter: drop-shadow(0 0 0.4vw #fffc);
+  }
+
 }
 .subtitle{
   font-size:1.3em;
@@ -89,25 +131,53 @@ float: left;
 }
 
 .desc {
-  margin:0.1em auto;
+  margin:1em auto 0.3em;
   line-height: 1.6;
   list-style: circle;
 }
-
+  }
 /* Swipe */
 .swipe {
   position: relative;
-float: right;
-  width: size(840);
-  height: size(472);
- /* top: size(185);
-  right: size(210);
-  object-fit: cover; */
-  margin-right: size(210);
+  margin: auto;
+  width: size(1606);
+  height: size(758);
+  // left: size(210);
+  object-fit: cover;
   z-index: 3;
 }
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
 
-// begin
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -126,47 +196,15 @@ float: right;
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #fff;
-   text-shadow:0 0.1em 0.3em #000;
-  }
-}
-
+// pagination
 .pagination {
   width: auto;
-  bottom: size(0);
-  right:calc(100% + 50 * 100vw / 1920);
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
   font-size: size(20);
-}
 
+}
 .pagination-dot {
   padding: 0.25em;
   margin: 0 0.2em;
@@ -222,6 +260,7 @@ float: right;
     cursor: pointer;
   }
 }
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -237,20 +276,41 @@ float: right;
 
 @media screen and (max-width: 767px) {
   .section6 {
-    width: 100vw;
+    width: 100%;
     height: auto;
+    min-height: auto;
+    max-height: initial;
   }
-  .img{width: sizem(330);right: sizem(-30);bottom: sizem(-130);}
+.gold1{
+  top: 116vw;
+  left: -14vw;
+}
+.gold2{
+    top: 68vw;
+    right: -10vw;
+    width: 14vw;
+    filter: drop-shadow(0 0 0.3vw rgba(85, 27, 0, 0.7));
+    }
+
   .txt{
     position: relative;
-    width: sizem(320);
-    float: none;
-    margin:1.5em auto 10em;
-    left:0;
-    top:0;
-    font-size: sizem(14);
+    width: sizem(330);
+    margin:1.5em auto 2em;
+    font-size: sizem(12);
     .title{
-      font-size:1.5em;
+      font-size:2.2em;
+  line-height: 1.6;
+    img{height: 1.65em;
+  position: relative;
+  vertical-align: middle;
+    margin: -.35em .9em -0.03em 0;
+    }
+      
+  span:last-child{position: absolute;top: 0;left: 0;
+  transform: rotate(90deg) translate(18vw,-5vw);
+  font-size:1.1em;
+  transform-origin:0 0;
+  }
     }
     .subtitle{
       font-size:1.1em;
@@ -258,12 +318,10 @@ float: right;
   }
   /* Swipe */
   .swipe {
-    float: none;
     position: relative;
-    width: 100%;
-    height: sizem(255);
-    top:0;
-    left:0;
+    width:sizem(310);
+    height: sizem(490);
+    margin: 0 sizem(20) 0 auto;
   }
 .swipe-item {
   .slide-name {
@@ -280,12 +338,16 @@ float: right;
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import wimg from './w.vue'
 
 export default {
   name: 'section6',
 
   mixins: [slider],
   props: ['viewIndex'],
+  components: {
+    wimg,
+  },
 
   data() {
     return {
@@ -296,8 +358,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
-          name: '情境示意圖',
+          img: isMobile?require("./s6/1m.jpg"):require("./s6/1.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s6/2m.jpg"):require("./s6/2.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s6/3m.jpg"):require("./s6/3.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s6/4m.jpg"):require("./s6/4.jpg"),
+          name: '',
         },
       ],
     }
@@ -313,7 +387,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 7) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }
