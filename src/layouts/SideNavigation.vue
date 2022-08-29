@@ -7,17 +7,17 @@
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
-      <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+      <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" ></div>
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
         <li
           :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
+          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : item.offset) : (item.offset ? item.offset : item.mobileOffset)}"
           v-for="item in list"
           class="flex-ac"
           @click="toggleSidebar"
         >
           <span class="link">
-            <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+            <img v-if="item.imgSrc" :src="item.imgSrc" />
             <span>
               <div class="title">{{item.name}}</div>
               <span class="subTitle">{{item.subTitle}}</span>

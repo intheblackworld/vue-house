@@ -5,7 +5,7 @@
       <img src="./all/gold2.png" class="gold2 absolute" v-if="isMobile" />
     <wimg class="w1 absolute" v-else />
       <div class="txt">
-      <h3 class="title"><img src="./s5/icon.png">
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
     <img src="./s1/light.png" class="light" /><span>健康為上 安心適居</span><span>GET  HEALTHY</span></h3>
       </div>
 
@@ -145,6 +145,7 @@
   // left: size(210);
   object-fit: cover;
   z-index: 3;
+  box-shadow: .3vw .3vw .7vw #0006;
 }
 .slide-name {
     right:1.5em;
@@ -199,11 +200,10 @@
 // pagination
 .pagination {
   width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
+  bottom: 8em;
+  left: 15.6em;
   justify-content: center;
-  font-size: size(20);
-
+  font-size: size(15);
 }
 .pagination-dot {
   padding: 0.25em;
@@ -216,7 +216,7 @@
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  $pagination;
+    border:  2px solid  $pagination;
     position: relative;
     transition: all 0.5s;
 
@@ -226,7 +226,8 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
+   // border:  2px solid  $pagination-active;
+   background: #fff;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -242,7 +243,7 @@
         height: 100%;
         top: 0%;
         left: 0%;
-        transform: scale(1.6);
+        transform: scale(1.3);
       }
     }
   }
@@ -250,7 +251,7 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 0.75em;
+  padding: 0 0.75em 38vw 0.75em;
   z-index: 3;
   font-size: size(20);
 
@@ -322,6 +323,7 @@
     width:sizem(310);
     height: sizem(490);
     margin: 0 sizem(20) 0 auto;
+    box-shadow: 0.5vw 0.5vw 1.5vw #0006;
   }
 .swipe-item {
   .slide-name {

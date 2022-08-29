@@ -96,14 +96,40 @@
 	.st22{stroke-width:2.4;animation-delay:-0s}
 @keyframes ww{
     0%{
-      opacity:.8;
+      opacity:.5;
     }
     85%{
-      opacity:.8;
+      opacity:.5;
     }
     100%{
       opacity:1;
     }
+}
+@media screen and (max-width: 767px) {
+	.st1{stroke-width:0.4;}
+	.st2{stroke-width:0.55;}
+	.st3{stroke-width:0.7;}
+	.st4{stroke-width:0.85;}
+	.st5{stroke-width:1.0;}
+	.st6{stroke-width:1.15;}
+	.st7{stroke-width:1.3;}
+	.st8{stroke-width:1.45;}
+	.st9{stroke-width:1.6;}
+	.st10{stroke-width:1.75;}
+	.st11{stroke-width:1.9;}
+	.st12{stroke-width:2.05;}
+	.st13{stroke-width:2.2;}
+	.st14{stroke-width:2.35;}
+	.st15{stroke-width:2.5;}
+	.st16{stroke-width:2.65;}
+	.st17{stroke-width:2.8;}
+	.st18{stroke-width:2.95;}
+	.st19{stroke-width:3.1;}
+	.st20{stroke-width:3.25;}
+	.st21{stroke-width:3.4;}
+	.st22{stroke-width:3.55;}
+
+
 }
 </style>
 

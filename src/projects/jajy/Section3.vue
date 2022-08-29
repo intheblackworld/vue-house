@@ -3,8 +3,8 @@
     <img src="./s3/bg-m.jpg" class="bg" v-if="isMobile" />
     <img src="./s3/bg.jpg" class="bg" v-else />
     <div class="txt">
-      <h3 class="title">潛能豐藏湖子內<br v-if="isMobile" />  引領嘉義新未來</h3>
-      <p class="desc">嘉義市最大、最強<br v-if="isMobile" /><span v-else>，</span>市區唯一重劃 —「湖子內重劃區」<span  v-if="isMobile">，</span><br v-else />
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="0">潛能豐藏湖子內<br v-if="isMobile" />  引領嘉義新未來</h3>
+      <p class="desc" data-aos="zoom-in" data-aos-delay="200">嘉義市最大、最強<br v-if="isMobile" /><span v-else>，</span>市區唯一重劃 —「湖子內重劃區」<span  v-if="isMobile">，</span><br v-else />
 面積193公頃<br v-if="isMobile" /><span v-else>，</span>市府投入55億鉅資，傾力打造大嘉義最強心臟<br />
 住宅、商業、工業、休閒、文教，新願景生活，一次到位<br />
 睿智眼界先行，建設接力達標，及早入主潛力湖子內<br />

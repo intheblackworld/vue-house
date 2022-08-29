@@ -5,8 +5,8 @@
     <wimg class="w2 absolute" />
       <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" data-aos-delay="200" />
       <div class="txt">
-      <h3 class="title">千坪星地標  「五居」 新能量</h3>
-      <p class="desc">
+      <h3 class="title" data-aos="zoom-in" data-aos-delay="0">千坪星地標  「五居」 新能量</h3>
+      <p class="desc" data-aos="zoom-in" data-aos-delay="200">
 【佳昂•家易】座落湖子內重劃區三期的商業中心區<br />
 為「佳昂建設」嘉義首發鉅作，推出擁有1682坪廣大基地的地標性建築，對外交通、商圈、學區，機能完善<br />
 對內社區規劃、配備選材，臻求完美，專屬【佳昂•家易】的「五居」新能量，絕對煥然一新的城市生活</p>

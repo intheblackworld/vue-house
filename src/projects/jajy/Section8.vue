@@ -6,7 +6,7 @@
     <wimg class="w2 absolute" preserveAspectRatio="xMidYMid slice" v-if="isMobile" />
       <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" data-aos-delay="200" />
       <div class="txt">
-      <h3 class="title"><img src="./s5/icon.png">
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
     <img src="./s1/light.png" class="light" /><span>匠心工藝 安全良居</span><span>GET  QUALITY</span></h3>
       </div>
 
@@ -29,9 +29,7 @@
         </div>
       </div>
       <div class="txt">
-      <p class="desc">
-【佳昂•家易】使用地下筏式基礎與連續壁營建工法<br v-if="isMobile" /><span v-else>，</span>作為建築體的工程防護，鞏固地基<br v-if="isMobile" /><span v-else>，</span>紮實擋土、防水和承重<br v-if="!isMobile" /><span v-else>，</span>
-「佳昂建設」將每個步驟<br v-if="isMobile" /><span v-else></span>作踏實、每道工序做到最完美<br v-if="isMobile" /><span v-else>，</span>成就每位居住者一輩子的美好家園</p>
+      <p class="desc" data-aos="fade" data-aos-delay="0">【佳昂•家易】使用「地下筏式基礎」與「連續壁」營建工法，作為建築體的工程防護，鞏固地基，紮實擋土、防水和承重。<br v-if="!isMobile" />【佳昂建設】將每個步驟作踏實、每道工序做到最完美，成就每位居住者一輩子的美好家園。</p>
 </div>
     </div>
   </div>
@@ -153,6 +151,7 @@
   // left: size(210);
   object-fit: cover;
   z-index: 3;
+  box-shadow: .3vw .3vw .7vw #0006;
 }
 .slide-name {
     right:1.5em;
@@ -351,6 +350,7 @@
     width:sizem(310);
     height: sizem(350);
     margin: 0 sizem(20) 0 auto;
+    box-shadow: 0.5vw 0.5vw 1.5vw #0006;
   }
 .swipe-item {
   .slide-name {
@@ -388,7 +388,7 @@ export default {
       slideList: [
         {
           img: isMobile?require("./s8/1m.jpg"):require("./s8/1.jpg"),
-          name: '',
+          name: '情境示意圖',
         },
       ],
     }

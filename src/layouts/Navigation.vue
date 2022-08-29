@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open': ''}`" >
-        <img class="logo" src="../assets/img/navlogo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />
+        <img class="logo" src="../assets/img/navlogo.png" alt v-scroll-to="{ element: `#section1`, offset: 0 }" />
      <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
        <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
@@ -18,7 +18,7 @@
             <div :class="`menu-icon ${isOpen ? 'open': ''}`" ></div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: offset }" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : item.offset) : (item.offset ? item.offset : item.mobileOffset)}" v-for="item in list" class="flex-c" @click="toggleSidebar">
               <span :class="`link ${item.type}`">
                 <span>
                   <p :class="`title`" v-html="item.name"></p>

@@ -2,8 +2,8 @@ import { isMobile } from '../utils/index'
 export default {
   address: '嘉義市 健康九路・湖子內路口',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.5640792278596!2d121.0905563!3d24.741841700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346847c0ff9d9d9f%3A0xfde0c21acf6074e1!2z6Iez5ZaE6auY56ysLeaOpeW-heacg-mkqO-8iOiIiOWQiOWKm-W7uuevieWcmOmaii3llJDoqqDlu7roqK3vvIk!5e0!3m2!1szh-TW!2stw!4v1658989610500!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/wg3ETypf1BikQV16A',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7320.551801064808!2d120.43714563440675!3d23.450510456855305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd0798d074ebaebc4!2zMjPCsDI3JzAxLjgiTiAxMjDCsDI2JzI5LjUiRQ!5e0!3m2!1szh-TW!2stw!4v1661483266798!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/DA1ReHGWzm7cVfZeA',
   phone: '05-2854888',
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
@@ -15,7 +15,7 @@ export default {
     ['建築設計', '曾聰憲建築師事務所',],
     ['美學顧問', '關氏坊空間美學國際顧問公司',],
     ['公設設計', '瀚鼎設計有限公司',],
-    ['建築代銷', '新高創廣告有限公司',],
+    ['建築代銷', '新智力廣告有限公司',],
     ['建照號碼', 'A110嘉市府都建執字第0030號',],
     ['建案位置', '嘉義市西區健康九路與湖美十路交叉口',],
   ],

@@ -7,7 +7,7 @@
       <img src="./all/gold1.png" class="gold3 absolute" />
       <img src="./all/gold2.png" class="gold4 absolute" />
       <div class="txt">
-      <h3 class="title"><img src="./s5/icon.png">
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
     <img src="./s1/light.png" class="light" /><span>機能一等 便捷沛居</span><span>GET   CONVENIENTLY</span></h3>
       </div>
 
@@ -160,6 +160,7 @@
   // left: size(210);
   object-fit: cover;
   z-index: 3;
+  box-shadow: .3vw .3vw .7vw #0006;
 }
 .slide-name {
     right:1.5em;
@@ -257,7 +258,7 @@
         height: 100%;
         top: 0%;
         left: 0%;
-        transform: scale(1.1);
+        transform: scale(1.3);
       }
     }
   }
@@ -265,7 +266,7 @@
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 0.75em;
+  padding: 0 0.75em 38vw 0.75em;
   z-index: 3;
   font-size: size(20);
 
@@ -339,6 +340,7 @@
     width:sizem(310);
     height: sizem(490);
     margin: 0 auto 0 sizem(20);
+    box-shadow: 0.5vw 0.5vw 1.5vw #0006;
   }
 .swipe-item {
   .slide-name {

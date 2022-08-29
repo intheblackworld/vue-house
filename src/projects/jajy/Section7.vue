@@ -5,7 +5,7 @@
       <img src="./all/gold1.png" class="gold2 absolute" v-if="isMobile" />
       <img src="./all/gold2.png" class="gold3 absolute" v-if="isMobile" />
       <div class="txt">
-      <h3 class="title"><img src="./s5/icon.png">
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
     <img src="./s1/light.png" class="light" /><span>全齡社區 樂活悠居</span><span>GET  LEISURELY</span></h3>
       </div>
 
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="txt">
-      <p class="desc">
+      <p class="desc" data-aos="fade" data-aos-delay="0">
 作為湖子內特區指標建築的【佳昂•家易】<br v-if="isMobile" /><span v-else>，</span>在公共場域規劃方面更是別具心裁<br v-if="isMobile" /><span v-else>，</span>將新古典與現代設計語彙完美融合<br />
 巧妙運用石材、鏡面、木作…等特殊材質<br v-if="isMobile" /><span v-else>，</span>在建築門面的大廳、交誼廳、多功能室<br v-if="isMobile" /><span v-else>，</span>皆可見新古典風華極具層次的優雅美感</p>
 </div>
@@ -146,6 +146,7 @@
   // left: size(210);
   object-fit: cover;
   z-index: 3;
+  box-shadow: .3vw .3vw .7vw #0006;
 }
 .slide-name {
     right:1.5em;
@@ -200,11 +201,10 @@
 // pagination
 .pagination {
   width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
+  bottom: -2em;
+  right: 0em;
   justify-content: center;
-  font-size: size(20);
-
+  font-size: size(15);
 }
 .pagination-dot {
   padding: 0.25em;
@@ -217,7 +217,7 @@
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  $pagination;
+    border:  2px solid  #3e6779;
     position: relative;
     transition: all 0.5s;
 
@@ -227,7 +227,8 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
+   // border:  2px solid  $pagination-active;
+   background: #3e6779;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -243,7 +244,7 @@
         height: 100%;
         top: 0%;
         left: 0%;
-        transform: scale(1.6);
+        transform: scale(1.3);
       }
     }
   }
@@ -330,6 +331,7 @@
     width:sizem(310);
     height: sizem(350);
     margin: 0 auto 0 sizem(20);
+    box-shadow: 0.5vw 0.5vw 1.5vw #0006;
   }
 .swipe-item {
   .slide-name {
@@ -363,19 +365,19 @@ export default {
       slideList: [
         {
           img: isMobile?require("./s7/1m.jpg"):require("./s7/1.jpg"),
-          name: '',
+          name: '3D透視示意圖 僅供參考',
         },
         {
           img: isMobile?require("./s7/2m.jpg"):require("./s7/2.jpg"),
-          name: '',
+          name: '3D透視示意圖 僅供參考',
         },
         {
           img: isMobile?require("./s7/3m.jpg"):require("./s7/3.jpg"),
-          name: '',
+          name: '3D透視示意圖 僅供參考',
         },
         {
           img: isMobile?require("./s7/4m.jpg"):require("./s7/4.jpg"),
-          name: '',
+          name: '3D透視示意圖 僅供參考',
         },
       ],
     }

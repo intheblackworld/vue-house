@@ -9,53 +9,61 @@
     <wimg class="w2 absolute" preserveAspectRatio="xMaxYMid slice" v-if="!isMobile" />
     <wimg class="w3 absolute" preserveAspectRatio="xMaxYMid slice" v-if="!isMobile" />
       <div class="txt">
-      <h3 class="title"><img src="./s5/icon.png">
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
     <img src="./s1/light.png" class="light" /><span>大師陣容 締造湖子內新品味</span><span>CONSTRUCATION TEAM</span></h3>
       </div>
 
 
       <div class="box">
       <div class="list">
-        <div class="img" v-if="!isMobile">
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
           <img :src="slideList1[0].img" :alt="slideList1[0].name" />
           <div class="slide-name" v-html="slideList1[0].name"></div>
         </div>
-        <div class="swipe swipe1" v-else data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-          <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
-            <transition-group name="swipe-fade" mode="out-in">
-                <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
-                  <img loading="lazy" :src="slide.img" alt="">
-                  <div class="slide-name absolute" v-html="slide.name"></div>
-                </div>
-            </transition-group>
-            <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-                <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(1)">
-                <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(1)">
+      <div class="swipe swipe1" v-else @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(1)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addMultiIndex(1)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
           </div>
+        <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(1)" v-touch:swipe.right="() => addMultiIndex(1)">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img loading="lazy" :src="slide.img" alt="">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
         </div>
+      </div>
         <div class="subtxt">
           <div class="title" data-aos="fade" data-aos-delay="200" >耕耘 境好生活｜<span>曾聰憲</span></div>
           <div class="subtitle" data-aos="fade" data-aos-delay="200" >曾聰憲 建築師事務所</div>
           <div class="desc" data-aos="fade" data-aos-delay="400">知名建設御用大師<br />以專業品質遍績北、中、南</div>
         </div>
-        <div class="img" v-if="!isMobile"><img :src="slideList1[1].img" :alt="slideList1[1].name" /><div class="slide-name" v-html="slideList1[1].name"></div></div>
-        <div class="img" v-if="!isMobile"><img :src="slideList1[2].img" :alt="slideList1[2].name" /><div class="slide-name" v-html="slideList1[2].name"></div></div>
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList1[1].img" :alt="slideList1[1].name" /><div class="slide-name" v-html="slideList1[1].name"></div></div>
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList1[2].img" :alt="slideList1[2].name" /><div class="slide-name" v-html="slideList1[2].name"></div></div>
       </div>
       <div class="list">
-        <div class="img" v-if="!isMobile"><img :src="slideList2[0].img" :alt="slideList2[0].name" /><div class="slide-name" v-html="slideList2[0].name"></div></div>
-        <div class="swipe swipe1" v-else data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList2[0].img" :alt="slideList2[0].name" /><div class="slide-name" v-html="slideList2[0].name"></div></div>
+      <div class="swipe swipe2" v-else @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(2)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addMultiIndex(2)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+          </div>
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(2)" v-touch:swipe.right="() => addMultiIndex(2)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList2" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
-          </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(2)">
-            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(2)">
-          </div>
+          </transition-group>          
         </div>
       </div>
         <div class="subtxt">
@@ -63,23 +71,27 @@
       <div class="subtitle" data-aos="fade" data-aos-delay="200" >瀚鼎空間設計有限公司</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">超過20年的經驗<br />深具業界口碑的專業服務</div>
         </div>
-        <div class="img" v-if="!isMobile"><img :src="slideList2[1].img" :alt="slideList2[1].name" /><div class="slide-name" v-html="slideList2[1].name"></div></div>
-        <div class="img" v-if="!isMobile"><img :src="slideList2[2].img" :alt="slideList2[2].name" /><div class="slide-name" v-html="slideList2[2].name"></div></div>
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList2[1].img" :alt="slideList2[1].name" /><div class="slide-name" v-html="slideList2[1].name"></div></div>
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList2[2].img" :alt="slideList2[2].name" /><div class="slide-name" v-html="slideList2[2].name"></div></div>
       </div>
       <div class="list">
-        <div class="img" v-if="!isMobile"><img :src="slideList3[0].img" :alt="slideList3[0].name" /><div class="slide-name" v-html="slideList3[0].name"></div></div>
-        <div class="swipe swipe1" v-else data-aos="fade" data-aos-delay="100" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList3[0].img" :alt="slideList3[0].name" /><div class="slide-name" v-html="slideList3[0].name"></div></div>
+      <div class="swipe swipe3" v-else @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+          <div class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decMultiIndex(3)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addMultiIndex(3)">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+          </div>
         <div class="swipe-wrap relative" v-touch:swipe.left="() => decMultiIndex(3)" v-touch:swipe.right="() => addMultiIndex(3)">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList3" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img loading="lazy" :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <img loading="lazy" src="./all/prev-btn.png" alt="" class="prev-btn" @click="decMultiIndex(3)">
-            <img loading="lazy" src="./all/next-btn.png" alt="" class="next-btn" @click="addMultiIndex(3)">
-          </div>
         </div>
       </div>
         <div class="subtxt">
@@ -87,8 +99,8 @@
       <div class="subtitle" data-aos="fade" data-aos-delay="200" >關氏坊 空間創意美學</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">20年海內外經驗<br />以獨特品味賦予「美」全新定義</div>
         </div>
-        <div class="img" v-if="!isMobile"><img :src="slideList3[1].img" :alt="slideList3[1].name" /><div class="slide-name" v-html="slideList3[1].name"></div></div>
-        <div class="img" v-if="!isMobile"><img :src="slideList3[2].img" :alt="slideList3[2].name" /><div class="slide-name" v-html="slideList3[2].name"></div></div>
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList3[1].img" :alt="slideList3[1].name" /><div class="slide-name" v-html="slideList3[1].name"></div></div>
+        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList3[2].img" :alt="slideList3[2].name" /><div class="slide-name" v-html="slideList3[2].name"></div></div>
       </div>
       </div>
     </div>
@@ -136,6 +148,7 @@
     left: -46vw;
     width: 94vw;
     transform: rotate(99deg);
+    z-index: -1;
   }
   .w2{stroke:#7E602E;
     top: 73vw;
