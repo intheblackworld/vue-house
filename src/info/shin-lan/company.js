@@ -2,6 +2,21 @@
 export const company = [
   {
     index: 0,
+    date: '111/8/27',
+    title: '2022公益慈善音樂會',
+    subtitle: '',
+    desc: '欣聯建設股份有限公司.贊助由社團法人中華兩岸EMBA主辦.「有愛更勇敢」公益慈善音樂會。<br><br>特別邀請蝦米視障人聲樂團、小甜甜音樂藝術製作團隊、黃國倫、楊培安、楊蒨時等歌手與主持人派翠克精彩演出。<br><br>此次活動計畫捐助對象為臺北市四所特殊教育學校、及弱勢視障團體、與偏鄉學生所舉辦的「有愛 更勇敢」公益慈善音樂會，該音樂會是全台唯一對特教學校發起的公益慈善活動。',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/3/1.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/3/2.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/3/3.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/3/4.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/3/5.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 1,
     date: '111/8/19',
     title: '北投區陽明養護中心',
     subtitle: '欣聯心、傳遞愛、愛心捐贈',
@@ -12,17 +27,6 @@ export const company = [
       require('@/projects/shin-lan/shin-lan/csr/4/3.jpg'),
       require('@/projects/shin-lan/shin-lan/csr/4/4.jpg'),
       require('@/projects/shin-lan/shin-lan/csr/4/5.jpg'),
-    ],
-    slideIndex: 0,
-  },
-  {
-    index: 1,
-    date: '111/8/12',
-    title: '有愛更勇敢音樂會',
-    subtitle: '2022公益慈善音樂會',
-    desc: '欣聯建設股份有限公司.贊助由社團法人中華兩岸EMBA<br>主辦.「有愛更勇敢」公益慈善音樂會。<br>111年8月27日(星期六)<br>PM13:30-17:00<br>中油大樓.國光廳 / 台北市信義區松仁路3號',
-    imgs: [
-      require('@/projects/shin-lan/shin-lan/csr/3/1.jpg'),
     ],
     slideIndex: 0,
   },
