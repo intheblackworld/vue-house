@@ -14,10 +14,10 @@
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-<!---->
+<!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
-    </vue-lazy-component> 
+    </vue-lazy-component> -->
     <vue-lazy-component
       class="section"
       id="section3"
@@ -121,7 +121,6 @@ import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/jajy/Section1.vue'
-import Section2 from '@/projects/jajy/Section2.vue'
 import Section3 from '@/projects/jajy/Section3.vue'
 import Section4 from '@/projects/jajy/Section4.vue'
 import Section5 from '@/projects/jajy/Section5.vue'
@@ -130,7 +129,9 @@ import Section7 from '@/projects/jajy/Section7.vue'
 import Section8 from '@/projects/jajy/Section8.vue'
 import Section9 from '@/projects/jajy/Section9.vue'
 import Section10 from '@/projects/jajy/Section10.vue'
-/* import Section10 from '@/projects/jajy/Section10.vue'
+/* 
+import Section2 from '@/projects/jajy/Section2.vue'
+import Section10 from '@/projects/jajy/Section10.vue'
 import Section11 from '@/projects/jajy/Section11.vue' */
 
 export default {
@@ -144,7 +145,6 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
-    Section2,
     Section3,
     Section4,
     Section5,
@@ -153,7 +153,9 @@ export default {
     Section8,
     Section9,
     Section10,
-    /* Section11,
+    /* 
+    Section2,
+    Section11,
     Section11,
     */
   },

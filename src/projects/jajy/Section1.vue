@@ -57,7 +57,7 @@
   width: 100%;height:auto;
   top:calc(50% + (986 - 540) * 100vw / 1920);
   left:0;object-fit: cover;
-  z-index: 1;
+  z-index: 0;
   }
 .light1{
   position: absolute;
