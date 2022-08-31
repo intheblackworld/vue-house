@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open': ''}`" >
-        <img class="logo" src="../assets/img/navlogo.png" alt v-scroll-to="{ element: `#section1`, offset: 0 }" />
+      <!-- <img class="logo" src="../assets/img/navlogo.png" alt v-scroll-to="{ element: `#section1`, offset: 0 }" /> -->  
      <!--     <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
        <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
@@ -266,6 +266,7 @@ z-index: 3;
   .navigation {
     height: 70px;
     justify-content: center;
+  background: transparent;
     &.min {
       .logo {
         width: $logo_tablet_width;
@@ -315,6 +316,7 @@ z-index: 3;
     height: $nav_phone_height;
     justify-content: center;
     font-size:sizem(17);
+    background: none;
     &.min {
       .logo {
         width: $logo_phone_width;
@@ -416,7 +418,7 @@ z-index: 3;
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color:#1a4557cc;
+      background-color:#00235Ecc;
     }
     .link {
       width: 10em;

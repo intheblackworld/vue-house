@@ -19,7 +19,7 @@
 @import '../assets/style/function.scss';
 .map {
   // padding-top: sizem(150);
-  background-color: rgba(172, 221, 254, 1)
+ // background-color: rgba(172, 221, 254, 1)
 }
 .desc {
   width: sizem(310);

@@ -1,6 +1,5 @@
 <template>
   <div class="section1">
-    <!-- <img src="./s1/mo.jpg" class="t0" />  -->
     <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
     <img src="./s1/bg.png" class="bg" v-else />
     <img src="./s1/light.png" class="light1" />

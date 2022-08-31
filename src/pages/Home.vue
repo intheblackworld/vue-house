@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/jajy/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/vvs1/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -11,13 +11,17 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
+    <div class="bg1">
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-<!---->
+<!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
+
+
+-->
     <vue-lazy-component
       class="section"
       id="section3"
@@ -36,6 +40,7 @@
     >
       <Section5 />
     </vue-lazy-component>
+  </div>
     <vue-lazy-component
       class="section"
       id="section6"
@@ -54,6 +59,7 @@
     >
       <Section8 />
     </vue-lazy-component>
+<!--      
     <vue-lazy-component
       class="section"
       id="section9"
@@ -66,7 +72,6 @@
     >
     <Section10 />
     </vue-lazy-component>
-<!--      
     <vue-lazy-component
       class="section"
       id="section11"
@@ -105,6 +110,30 @@
 }
 #contact{z-index: 3;}
 .og{position: absolute;width:1px;}
+
+
+.bg1 {
+//padding-top: $nav_pc_height;
+position: relative;
+  // overflow: hidden;//試底下多的那塊哪來的
+  &::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+     right: 0;
+  bottom: 0;
+    z-index: -1;
+    background:url("~@/projects/vvs1/s1/bg.jpg");
+   // background-size: $bg-size;
+    overflow: hidden;//試底下多的那塊哪來的
+  }
+}
+
+
+
+
 </style>
 
 <script>
@@ -120,18 +149,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/jajy/Section1.vue'
-import Section2 from '@/projects/jajy/Section2.vue'
-import Section3 from '@/projects/jajy/Section3.vue'
-import Section4 from '@/projects/jajy/Section4.vue'
-import Section5 from '@/projects/jajy/Section5.vue'
-import Section6 from '@/projects/jajy/Section6.vue'
-import Section7 from '@/projects/jajy/Section7.vue'
-import Section8 from '@/projects/jajy/Section8.vue'
-import Section9 from '@/projects/jajy/Section9.vue'
-import Section10 from '@/projects/jajy/Section10.vue'
-/* import Section10 from '@/projects/jajy/Section10.vue'
-import Section11 from '@/projects/jajy/Section11.vue' */
+import Section1 from '@/projects/vvs1/Section1.vue'
+import Section2 from '@/projects/vvs1/Section2.vue'
+import Section3 from '@/projects/vvs1/Section3.vue'
+import Section4 from '@/projects/vvs1/Section4.vue'
+import Section5 from '@/projects/vvs1/Section5.vue'
+import Section6 from '@/projects/vvs1/Section6.vue'
+import Section7 from '@/projects/vvs1/Section7.vue'
+import Section8 from '@/projects/vvs1/Section8.vue'
+/* 
+import Section9 from '@/projects/vvs1/Section9.vue'
+import Section10 from '@/projects/vvs1/Section10.vue'
+import Section10 from '@/projects/vvs1/Section10.vue'
+import Section11 from '@/projects/vvs1/Section11.vue' */
 
 export default {
   name: 'home',
@@ -151,9 +181,10 @@ export default {
     Section6,
     Section7,
     Section8,
+    /* 
     Section9,
     Section10,
-    /* Section11,
+    Section11,
     Section11,
     */
   },

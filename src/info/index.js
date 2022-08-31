@@ -1,23 +1,22 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '嘉義市 健康九路・湖子內路口',
+  address: '台中市西屯區台灣大道三段251號旁(大遠百旁)',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7320.551801064808!2d120.43714563440675!3d23.450510456855305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd0798d074ebaebc4!2zMjPCsDI3JzAxLjgiTiAxMjDCsDI2JzI5LjUiRQ!5e0!3m2!1szh-TW!2stw!4v1661483266798!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/DA1ReHGWzm7cVfZeA',
-  phone: '05-2854888',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
-  caseName: '佳昂家易',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.2070367546457!2d120.64114233087344!3d24.164470828821717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7cf8636b6b3002c4!2zMjTCsDA5JzUyLjEiTiAxMjDCsDM4JzQ0LjMiRQ!5e0!3m2!1szh-TW!2stw!4v1661839157807!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/xQGLTC4Y7SHusnhw6',
+  phone: '04-2255-3338',
+  fbLink: 'https://www.facebook.com/100082849226852/',
+  fbMessage: 'https://m.me/100082849226852/',
+  caseName: 'VVS1',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '佳昂建設股份有限公司',],
-    ['建築設計', '曾聰憲建築師事務所',],
-    ['美學顧問', '關氏坊空間美學國際顧問公司',],
-    ['公設設計', '瀚鼎設計有限公司',],
-    ['建築代銷', '新智力廣告有限公司',],
-    ['建照號碼', 'A110嘉市府都建執字第0030號',],
-    ['建案位置', '嘉義市西區健康九路與湖美十路交叉口',],
+    ['投資興建', '潤隆建設',],
+    ['建築設計', '李明哲建築師事務所',],
+    ['公設設計', 'Pia Interior',],
+    ['外觀景觀', 'MAG玫格設計',],
+    ['銷售企劃', '巨豐旅館管理顧問',],
+    ['建照號碼', '103中都建字第02657號',],
   ],
 
   gtmCode: ['MH44SN4'], // 可放置多個
