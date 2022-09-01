@@ -11,7 +11,7 @@
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
         <li
           :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : item.offset) : (item.offset ? item.offset : item.mobileOffset)}"
+          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : item.offset) : (em.itoffset ? item.offset : item.mobileOffset)}"
           v-for="item in list"
           class="flex-ac"
           @click="toggleSidebar"

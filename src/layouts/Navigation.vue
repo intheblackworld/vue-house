@@ -18,7 +18,11 @@
             <div :class="`menu-icon ${isOpen ? 'open': ''}`" ></div>
           </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li :key="item.name" v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : item.offset) : (item.offset ? item.offset : item.mobileOffset)}" v-for="item in list" class="flex-c" @click="toggleSidebar">
+            <li :key="item.name"
+            v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : 0) : item.offset}"
+            v-for="item in list"
+            class="flex-c"
+            @click="toggleSidebar">
               <span :class="`link ${item.type}`">
                 <span>
                   <p :class="`title`" v-html="item.name"></p>
@@ -374,7 +378,7 @@ z-index: 3;
     }
 
     .link {
-      height: 4em;
+      height: 3em;
       width: 100%;
       align-items: center;
       justify-content: center;

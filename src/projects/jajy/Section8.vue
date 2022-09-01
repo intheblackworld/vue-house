@@ -43,17 +43,6 @@
   position: relative;
   padding: 0 0 1.7vw 0;
 }
-.w1{
-    top: 54vw;
-    right: -25vw;
-    width: 51vw;
-    transform: rotate(54deg);stroke:#FFF;
-}
-.leaf{
-    top: 50vw;
-    right: 0vw;
-    transform: translate(50%,-100%);
-    width: 16vw;}
 
 .txt{
   position: relative;

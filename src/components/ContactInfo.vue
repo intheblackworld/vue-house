@@ -20,9 +20,9 @@
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="addressall">
-          <div class="address flex-c" data-aos="fade-down" data-aos-delay="400">接待中心：<br v-if="isMobile">{{info.address}}</div>
-          <div class="google-btn flex-c" data-aos="fade-down" data-aos-delay="400" @click="showMapDialog">
+        <div class="addressall" data-aos="fade-down" data-aos-delay="400">
+          <div class="address flex-c">接待中心：<br v-if="isMobile">{{info.address}}</div>
+          <div class="google-btn flex-c" @click="showMapDialog">
             <span class="flex-c">
               <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
             </span>
@@ -89,7 +89,8 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background: $contact_bg;
+  background: $contact_bg ;
+
   // background-image: url('../assets/img/contact_bg.jpg');/
   // background-size: cover;
   //box-shadow: $contact_shadow;
@@ -99,13 +100,13 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  width: 1200px;
+  // width: 1200px;
   // height: 380px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 3vw auto 3vw;
+  margin: 3vw auto 0vw;
   //padding: 30px 0 40px;
   padding: 3vw 0;
   line-height: 1.4;
@@ -115,8 +116,8 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 2vw;
-  padding: 0 0 0 0;
+  margin: -3vw auto -8vw;
+  padding: 0 0 0 15vw
 }
 .info {
   width: 880px;
@@ -133,11 +134,11 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
-  //border-radius: 60px / 60px;
   color: $contact_btn_color;
   background: $contact_btn_bg;
  // box-shadow: $contact_btn_border;
   border: $contact_btn_border;
+  border-radius: 60px ;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -185,23 +186,26 @@ export default {
   }
 }
 .addressall{
-  width: 100%;
+  width: 99%;
+  border-radius:60px ;
+  background: #EEE;
 }
 .address {
   width:calc(100% - 280px);
   height: 60px;
-  background: #fff;
   color: #040000;
   font-weight: bold;
   float: left;
   //box-shadow: $contact_btn_border;
-  border: $contact_btn_border;
+  //border: $contact_btn_border;
 }
 .google-btn {
   width: 280px;
   height: 60px;
   font-size: 16px;
   cursor: pointer;
+  position: relative;
+  left: 1%;
   text-decoration: none;
   // border-top-right-radius: 60px;
   //border-bottom-right-radius: 60px;
@@ -210,6 +214,9 @@ export default {
   background-position: center !important;
   border: $contact_btn_border;
   transition: all 0.5s;
+  border-radius:60px ;
+  box-shadow: -2px 0 5px 1px #00235E;
+  font-weight: 600;
 
   svg {
     color: $contact_google_btn_icon;
@@ -247,7 +254,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .contact-info {
   //  background: $contact_bg_m;
-  background-size:sizem(700);
+    background-size: 250% auto;
     display: flex;
     width: 100%;
     //  max-width: 95%;
@@ -255,17 +262,17 @@ export default {
     padding:0 5% 5% 5%;
     transform: none;
     position: static;
-    margin: 0;
+    margin:10vw 0 0 0;
 
     .logo {
-      width: $contact_logo_mobile_width;
-      margin: 30% auto 10%;
+      width:155%;
+   //   margin: 30% auto 10%;
+  margin: -0vw -10% -15vw;
+  object-fit:cover;
+  height: sizem(300);
+  padding:0;
     }
   }
-.c{
-    .c4{width:sizem(200);top:sizem(-160);right:sizem(-80);}
-    .c6{width:sizem(100);top:sizem(-175);right: sizem(60);}
-}
 
 
   .btn {
@@ -315,14 +322,20 @@ export default {
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;*/
   }
+  .addressall{
+    width: 100%;
+    border-radius: 30px;}
   .address {
     // width: 280px;
     padding: 0 1em;
     text-align: justify;
+    font-size: 14px;
   }
 
   .google-btn {
     margin-top: 15px;
+    left: 0;
+  box-shadow: 0 -2px 5px 1px #00235E;
   }
 }
 

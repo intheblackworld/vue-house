@@ -116,21 +116,19 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-  &::before{
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-     right: 0;
-  bottom: 0;
-    z-index: -1;
-    background:url("~@/projects/vvs1/s1/bg.jpg");
-   // background-size: $bg-size;
-    overflow: hidden;//試底下多的那塊哪來的
-  }
+    background:url("~@/projects/vvs1/s1/bg.jpg") top center;
+&::after{content: "";clear: both;display: block;}
 }
 
+@media screen and (max-width: 767px) {
+
+.bg1 {
+    background-size: 250% auto;
+}
+
+
+
+}
 
 
 

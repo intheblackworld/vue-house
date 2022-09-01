@@ -25,6 +25,7 @@
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img1 + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div> 
       </div>
+      <div class="boxm" v-if="isMobile"></div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">建築界<br v-if="isMobile" />奧斯卡級大獎常勝軍</div>
       <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Pia萬豪酒店設計團隊</div>
@@ -50,7 +51,9 @@
 z-index: 2;
 }
 
+.boxm,
 .box{position: absolute;left: size(210);bottom: 0;
+  z-index: 1;
 background:  linear-gradient(to right, #00427A 0%, #112A49 50%, #04142A 100%);
   width: size(1710);height:size(170);}
 .txt{
@@ -237,13 +240,19 @@ float: left;
   .section7 {
     width: 100%;
     height: auto;
+  padding:0 0 sizem(240) 0;
   }
-.img{width: sizem(360);left: 0;top:auto;bottom:-22vw;}
+.img{width: sizem(423);left:sizem(-28);top:auto;bottom:0;}
+.boxm{left:0;bottom:auto;top: sizem(0);
+  position: relative;
+  width: sizem(375);height:sizem(60);}
+.box{left:0;bottom:0;top:auto;
+  width: sizem(375);height:sizem(95);}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1.5em auto 22em;
+    margin:1.5em auto 0;
     left:0;
     top:0;
     font-size: sizem(15);
@@ -267,6 +276,10 @@ float: left;
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
+  }
+  .img2 {
+    height: sizem(30);
+    margin: sizem(15) 0 0 sizem(15);
   }
 }
   .swipe-btns {

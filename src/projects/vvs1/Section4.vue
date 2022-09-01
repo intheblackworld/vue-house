@@ -2,7 +2,7 @@
   <div>
     <div class="section4">
       <img src="./s4/bg.png" alt="" class="bg" />
-      <img src="./s4/img.png" alt="" class="img" />
+      <img src="./s4/img.png" alt="" data-aos="fade" class="img" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -47,8 +47,9 @@
 }
 .bg{position: absolute;left: 0;top: 0;width: 100%;}
 .img{width: size(520);position: absolute;right: 0;top:calc(50% - 19vw);
-transform-origin:0% 50% ;
+transform-origin:100% 50% ;
 z-index: 2;
+transform: scale(0);
 }
 
 .txt{
@@ -230,17 +231,20 @@ float: left;
   .section4 {
     width: 100%;
     height: auto;
-    padding: 0;
+    padding: 0 0 sizem(190) 0;
+
   }
-.img{width: sizem(360);left: 0;top:auto;bottom:-22vw;}
+  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
+.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1.5em auto 12em;
+    margin:0em auto 0;
     left:0;
     top:0;
     font-size: sizem(15);
+  padding-top: 7vw;
     .title{
       font-size:1.9em;
     }

@@ -52,7 +52,7 @@ img{width: 100%;
 .txt{
   position: relative;
   width: size(1500);
-  margin: 0 auto 3em auto;
+  margin:1.5em auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -158,7 +158,7 @@ img{width: 100%;
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  $pagination;
+    border: 0.2em solid  #0003;
     position: relative;
     transition: all 0.5s;
 
@@ -168,7 +168,7 @@ img{width: 100%;
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
+    border:  0.105em solid #B00;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -222,15 +222,17 @@ img{width: 100%;
     height: auto;
     min-height: auto;
     max-height: initial;
+  padding: 0;
   }
   .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 5em;
+    margin:0em auto 3em;
     left:0;
     top:0;
     font-size: sizem(15);
+  padding-top: 7vw;
     .title{
       font-size:1.9em;
     }

@@ -329,22 +329,22 @@ export default {
   .order-title {
   position: relative;
    // font-family: $family1;
-  width: size(1606);
-  font-family: 'Noto Serif TC', serif;
-    padding-top:0;
+  // width: size(1500);
+  // font-family: 'Noto Serif TC', serif;
+    padding-top:2em;
     padding-bottom:0;
     font-weight:700;
-  line-height:2.222;
+  line-height:1.6;
   font-size: size(39);
     letter-spacing: size(10);
     text-indent: size(10);
     text-align: center;
     color: $order_title_color;
     margin: 0 auto;
-    margin-bottom: size(100);
+    margin-bottom: size(50);
     display: inline-block;
     z-index: 3;
-    background:  #2B5161;
+   // background:  #2B5161;
   }
   .order-title-img {
     width: 30vw;
@@ -488,35 +488,6 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-  .contact1 {
-    left: -#{sizem(80)};
-    width: sizem(410);
-    top: sizem(50);
-  }
-
-  .contact2 {
-    right: -#{sizem(15)};
-    width: sizem(64);
-    top: 0;
-  }
-
-.o{
-  position: absolute;
-  top:sizem(5);
-  left:calc(50% - 30vw);
-  width: calc(2 * 30vw);
-  height:calc(2 * 30vw);
-  }
-
-.c{
-      top:sizem(0);
-    .c1{
-      width:sizem(200);top:sizem(80);right: sizem(250);
-      }
-    .c2{
-      width:sizem(100);top:sizem(10);left: sizem(280);
-      }
-  }
   .order-bg {
     //background-color: $order_bg_color;
     background-image: $order_bg_image_m;
@@ -531,8 +502,6 @@ export default {
     }
     .order-title {
       width: 100%;
-      padding-top: 10px;
-      padding-bottom: 5px;
       font-size: calc(100vw * 30 / 375);
     }
     .order-title-img {

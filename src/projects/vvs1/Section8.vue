@@ -2,6 +2,7 @@
   <div>
     <div class="section8">
       <img src="./s8/img.png" alt="img" class="img" />
+      <div class="box"></div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -10,16 +11,16 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%2300235E' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%2300235E' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
           </div>
         </div>
-     <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div> 
       </div>
@@ -38,20 +39,23 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 5vw 0 5vw;
+  padding:5vw 0 5vw;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
-.img{width: size(941);position: absolute;left: 0;top:calc(50% - 24vw);
-transform-origin:0% 50% ;
+.img{width: size(640);position: absolute;left: size(300);bottom: 5vw;
 z-index: 2;
 }
+
+.box{position: absolute;left:size(210);bottom: 5vw;
+background:  linear-gradient(to right, #00427A 0%, #112A49 50%, #04142A 100%);
+  width: size(1500);height:size(80);}
 
 .txt{
 float: left;
   position: relative;
-  padding-top: 3vw;
-  width: size(580);
+  padding-top:8vw;
+  width: size(700);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -59,7 +63,7 @@ float: left;
   font-weight: 600;
   line-height: 1.4;
   z-index: 2;
-  margin-right: size(210);
+  margin-left: size(250);
   }
 
 .title{
@@ -81,27 +85,17 @@ float: left;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
 }
-.desc {
-  margin:1em auto;
-  line-height: 1.6;
-  letter-spacing:0.05em;
-  font-weight: 300;
-  list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
-}
 
 /* Swipe */
 
 .swipe {position: relative;
-float: left;
+float: right;
  // position: absolute;
-  width: size(840);
-  height: size(560);
+  width: size(670);
+  height: size(844);
 // top: size(185);
  // left: size(210);
-  margin-left: size(210);
+  margin-right: size(190);
   z-index: 3;
 }
 .slide-name {
@@ -158,7 +152,7 @@ float: left;
 .pagination {
   width: auto;
   bottom: size(0);
-  left:calc(100% + 50 * 100vw / 1920);
+  right:100%;
   justify-content: center;
   font-size: size(20);
 
@@ -236,13 +230,16 @@ float: left;
   .section8 {
     width: 100%;
     height: auto;
+  padding:0 0 sizem(280) 0;
   }
-.img{width: sizem(360);left: 0;top:auto;bottom:-22vw;}
+.img{width: sizem(360);left:sizem(5);top:auto;bottom:0vw;}
+.box{left:0;bottom:0;top:auto;
+  width: sizem(375);height:sizem(50);}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1.5em auto 12em;
+    margin:0em auto 0;
     left:0;
     top:0;
     font-size: sizem(15);
@@ -256,20 +253,20 @@ float: left;
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
+    width: sizem(310);
     float: none;
-    height: sizem(255);
-    top:0;
-    left:0;
-  margin-left:0;
+    height: sizem(357);
+    margin: sizem(50) auto 0;
+    top:auto;
+    left:auto;
   }
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
   }
 }
-  .swipe-btns {
-  font-size: sizem(15);
+  .swipe-btns {width: 120%;
+  font-size: sizem(15);margin-left: -10%;
   }
 }
 </style>

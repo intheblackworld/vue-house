@@ -1,12 +1,23 @@
 <template>
   <div class="section1">
-    
-    <img src="./s1/pc.jpg" class="t0" />
-    <!-- <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
+    <!-- 
+    <img src="./s1/mo.jpg" class="t0" />
+    <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
     <img src="./s1/bg.png" class="bg" v-else />  -->
     <img src="./s1/1.png" class="img1" />
+    <img src="./s1/light1.png" class="light8" />
     <div class="txt">
-      <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
+      <div class="logo" data-aos="zoom-in" data-aos-delay="0" >
+      <img src="./s1/light3.png" class="light3">
+      <img src="./s1/light3.png" class="light4">
+      <img src="./s1/light3.png" class="light5">
+      <img src="./s1/light3.png" class="light6">
+      <img src="./s1/light3.png" class="light7">
+      <img src="./s1/logo.png" class="logo1">
+      <!-- <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" class="logo2"> -->
+      <img src="./s1/light1.png" class="light1">
+      <img src="./s1/light2.png" class="light2">
+    </div>
       <div class="t1"  data-aos="zoom-in" data-aos-delay="600">人生幾何<span> </span>能夠如此心動</div>
       <div class="t2" data-aos="zoom-in" data-aos-delay="800">市政特區<span></span>文心大道<span></span>雙捷恆鑽地段</div>
     </div>
@@ -49,13 +60,32 @@
   width: 100%;height:auto;
   top:0;
   left:0;object-fit: cover;
-  opacity: .0;
+  opacity: .5;
   }
   .img1{
     position: absolute;
     bottom: 0;right: size(140);
     width: size(810);
   }
+  .light8{
+  position: absolute;
+    width:size(100);
+    bottom:size(270);
+    left: 62%;
+      animation: light3 2s linear infinite;
+  }
+@keyframes light3{
+    0%{
+      transform:rotate(-90deg) scale(0);opacity: 1;
+    }
+    50%{
+      transform:rotate(0deg)  scale(1.5,.8);opacity: 1;
+    }
+    100%{
+      transform:rotate(90deg)  scale(.8,1.5);opacity: 0;
+    }
+}
+
 .txt{
   position: relative;
   // top:calc(50% + (253 - 540) * 100vw / 1920);
@@ -70,11 +100,101 @@
     padding: 0 16em 0 0;
   font-weight: 300;
   //filter: drop-shadow(0 0 7px #eff);
+.logo1{
+  position: relative;
+  width:100%;
+  }
 .logo{
   position: relative;
   margin:0 auto -6em 3.5em;
   width:size(1410);
   }
+.logo2{
+  position: absolute;
+  width:100%;
+  top: 0;
+  left: 0;opacity: 0;
+  width:size(1410);
+  }
+@keyframes light1{
+    0%{
+      transform: scale(0) translateY(-5vw);opacity: 1;
+    }
+    40%{
+      transform: scale(1) translateY(0);;opacity: 1;
+    }
+    60%{
+      transform:  scale(2)  translateY(1vw);;opacity: 0;
+    }
+    100%{
+      transform:  scale(2)  translateY(1vw);;opacity: 0;
+    }
+}
+@keyframes light2{
+    0%{
+      transform: scale(0);opacity: 1;
+    }
+    60%{
+      transform: scale(1);opacity: 1;
+    }
+    100%{
+      transform: scale(3,1);opacity: 0;
+    }
+}
+
+  .light1{
+  position: absolute;
+    width: 10%;
+    top: 28%;
+    left: 43%;
+      transform: scale(0);
+      transform-origin: 50% 0%;opacity: 1;
+      animation: light1 2s linear infinite;
+  }
+
+  .light2{
+  position: absolute;
+    width: 71%;
+    top: 38.5%;
+    left: 8.5%;transform: scale(0);opacity: 1;
+      animation: light2 2s linear infinite;
+  }
+.light3{
+  position: absolute;
+    width: 16%;
+    top: 39%;
+    left: 42.5%;
+      animation: light3 2s linear infinite;
+  }
+.light4{
+  position: absolute;
+    width: 16%;
+    top: 35.5%;
+    left: 45.5%;
+      animation: light3 2s linear infinite;
+  }
+.light5{
+  position: absolute;
+    width: 16%;
+    top: 34.5%;
+    left: 48.6%;
+      animation: light3 2s linear infinite;
+  }
+.light6{
+  position: absolute;
+    width: 16%;
+    top: 35.5%;
+    left: 52%;
+      animation: light3 2s linear infinite;
+  }
+.light7{
+  position: absolute;
+    width: 16%;
+    top: 39%;
+    left: 55%;
+      animation: light3 2s linear infinite;
+  }
+
   
   .t1{
   font-size: 1.6em;
@@ -111,6 +231,11 @@
   .img1{
     bottom: 0;right:auto;left: 0;
     width: sizem(305);
+  }
+  .light8{
+    width:sizem(50);
+    bottom:sizem(98);
+    left: 21.2%;
   }
 .txt{
   font-size: sizem(14);

@@ -227,7 +227,8 @@ img{width: 100%;
   .txt{
     position: relative;
     width: sizem(320);
-    margin:1.5em auto 5em;
+    margin:0 auto 4em;
+  padding-top: 7vw;
     left:0;
     top:0;
     font-size: sizem(15);
@@ -242,7 +243,7 @@ img{width: 100%;
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    height: sizem(330);
     top:0;
     left:0;
   }
@@ -278,7 +279,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1.jpg'),
+          img: isMobile?require('./s5/1m.jpg'):require('./s5/1.jpg'),
           name: '區域與建築外觀3D示意',
         },
         {
