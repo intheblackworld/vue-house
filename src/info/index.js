@@ -7,7 +7,7 @@ export default {
   phone: '04-2255-3338',
   fbLink: 'https://www.facebook.com/100082849226852/',
   fbMessage: 'https://m.me/100082849226852/',
-  caseName: 'VVS1',
+  caseName: '自遊城',
   indigatorLength: 10,
 
   houseInfos: [

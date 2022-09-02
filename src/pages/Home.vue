@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/vvs1/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/free/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -116,7 +116,7 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/vvs1/s1/bg.jpg") top center;
+    background:url("~@/projects/free/s1/bg.jpg") top center;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -148,19 +148,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/vvs1/Section1.vue'
-import Section2 from '@/projects/vvs1/Section2.vue'
-import Section3 from '@/projects/vvs1/Section3.vue'
-import Section4 from '@/projects/vvs1/Section4.vue'
-import Section5 from '@/projects/vvs1/Section5.vue'
-import Section6 from '@/projects/vvs1/Section6.vue'
-import Section7 from '@/projects/vvs1/Section7.vue'
-import Section8 from '@/projects/vvs1/Section8.vue'
+import Section1 from '@/projects/free/Section1.vue'
+import Section2 from '@/projects/free/Section2.vue'
+import Section3 from '@/projects/free/Section3.vue'
+import Section4 from '@/projects/free/Section4.vue'
+import Section5 from '@/projects/free/Section5.vue'
+import Section6 from '@/projects/free/Section6.vue'
+import Section7 from '@/projects/free/Section7.vue'
+import Section8 from '@/projects/free/Section8.vue'
 /* 
-import Section9 from '@/projects/vvs1/Section9.vue'
-import Section10 from '@/projects/vvs1/Section10.vue'
-import Section10 from '@/projects/vvs1/Section10.vue'
-import Section11 from '@/projects/vvs1/Section11.vue' */
+import Section9 from '@/projects/free/Section9.vue'
+import Section10 from '@/projects/free/Section10.vue'
+import Section10 from '@/projects/free/Section10.vue'
+import Section11 from '@/projects/free/Section11.vue' */
 
 export default {
   name: 'home',
