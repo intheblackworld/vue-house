@@ -1,6 +1,6 @@
 <template>
   <div class="section3" id="scene">
-    <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand"></Map>
+    <Map :tagList="tagList" :bgSrc="bgSrc" :bgSrcpng="bgSrcpng" :hand="hand"></Map>
     <div class="mask" @click="showMask = false" v-show="showMask"></div>
     
   </div>
@@ -13,6 +13,8 @@
   position: relative;
   width: 100%;
   height:auto;
+ // background: #0006;
+  padding: 3vw 0;
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -23,6 +25,7 @@
     position: relative;
     width: size-m(375);
     height: auto;
+  padding: 8vw 0;
    
   .bg{
   width: calc(100% * 400 / 375);
@@ -53,7 +56,8 @@ export default {
       isMobile,
       info,
       tagList: [],
-      bgSrc: isMobile? require('./s3/mapm.jpg'):require('./s3/map.jpg'),
+      bgSrc: require('./s3/map.jpg'),
+      bgSrcpng: require('./s3/map.png'),
       hand: require('./s3/h.png'),
     };
   },

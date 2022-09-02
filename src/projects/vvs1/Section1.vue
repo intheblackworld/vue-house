@@ -20,7 +20,7 @@
       <img src="./s1/light2.png" class="light2">
     </div>
       <div class="t1"  data-aos="zoom-in" data-aos-delay="600">人生幾何<span> </span>能夠如此心動</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800">市政特區<span></span>文心大道<span></span>雙捷恆鑽地段</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="800">市政首席<span></span>文心大道<span></span>雙捷恆鑽地段</div>
     </div>
   </div>
 </template>
@@ -35,6 +35,8 @@
   max-height: size(1080);
  // overflow: hidden;
   position: relative;
+  background: url("./s1/bg.jpg") center;
+  background-size: 100% auto;
 }
 .t0{
   position: absolute;
@@ -45,8 +47,8 @@
   }
   .img{
     position: absolute;
-    bottom: 0;left: calc(50% + 5vw);
-    height:60%;
+    bottom:6%;left: calc(50% + 5vw);
+    height:65%;
   }
   .img1{
     position: relative;
@@ -54,9 +56,9 @@
   }
   .light8{
   position: absolute;
-    width:size(100);
-    bottom:size(190);
-    left: 26%;
+    width: 20%;
+    bottom: 38%;
+    left: 25%;
       animation: light3 2s linear infinite;
   }
 @keyframes light3{
@@ -212,15 +214,16 @@
     min-height: sizem(604);
     max-height: sizem(750);
     height: calc(100vh - 63px);
+  background-size: 250% auto;
+  }
+  .img{
+    bottom:calc(40% - 60vw);left: 7%;
+    height:auto;width: 63%;
   }
   .img1{
-    bottom: 0;right:auto;left: 0;
-    width: sizem(305);
-  }
-  .light8{
-    width:sizem(50);
-    bottom:sizem(98);
-    left: 21.2%;
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 .txt{
   font-size: sizem(14);

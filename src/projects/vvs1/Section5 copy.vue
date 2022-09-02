@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="section4">
-      <img src="./s4/bg.png" alt="" class="bg" />
-      <img src="./s4/img.png" alt="" data-aos="fade" class="img" />
+    <div class="section5">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -11,24 +9,18 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
-     <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">市政府站×文心櫻花站</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">近1500坪黃金角地×繁榮市心</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">機場、台中港、高鐵交通便利無國界；市府站VS文心櫻花站，綠線捷運250M讀秒返家，樂享七期豐富生活圈，新光三越、大遠百、星級餐廳、銅板美食、日用選購等，「應有近有」食衣住行娛樂，全面掌握。
-</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >中日團隊擘劃<br v-if="isMobile" /> 捷運W美學飯店宅</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">弧形外觀設計如同手牽手的樣貌，展現「聚」與「合」的意象。外牆綠化植栽，形塑垂直與水平線條，構成如「光」與「綠」的交織，一樓迎賓大廳石材鋪面，搭配白色細鋁格柵、玻璃，讓建築多了趣味、柔和及優雅。</div>
       </div>
     </div>
   </div>
@@ -36,29 +28,32 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
+.section5 {  
   width:100%;
   height:auto;
   position: relative;
-  margin:0 auto 0;
-  padding: 10vw 0 10vw;
-  background: url("./s1/bg.jpg") center;
-  background-size: 100% auto;
-  // background:#FFF;
+  padding: 0 0 5vw;
 &::after{content: "";clear: both;display: block;}
 }
-.bg{position: absolute;left: 0;top: 0;width: 100%;}
-.img{width: size(520);position: absolute;right: 0;top:calc(50% - 19vw);
-transform-origin:100% 50% ;
+
+.img{width: size(800);position: absolute;left: 0;bottom: size(-130);
 z-index: 2;
-transform: scale(0);
+img{width: 100%;
+// transform: skewY(5deg) ;
+// transform-origin: 0 50%;
+  //    animation: an 3s linear alternate infinite;
+      }
 }
 
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
 .txt{
-float: right;
   position: relative;
-  padding-top: 11.5vw;
-  width: size(580);
+  width: size(1500);
+  margin: 1.5em auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -67,8 +62,6 @@ float: right;
   line-height: 1.4;
   z-index: 2;
   color: #fff;
-  margin-right: size(210);
-  }
 
 .title{
   font-size:2.2em;
@@ -77,28 +70,22 @@ float: right;
   .subtitle{font-size: 1.25em;
     padding:.75em 0 0 0;
   }
+
 .desc {
- // margin:1em auto;
   padding:1em 0 0 0;
-  line-height: 1.6;
-  letter-spacing:0.05em;
   font-weight: 300;
+  line-height: 1.6;
   list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
 }
-
+  }
 /* Swipe */
-
-.swipe {position: relative;
-float: left;
- // position: absolute;
-  width: size(840);
-  height: size(560);
-// top: size(185);
- // left: size(210);
-  margin-left: size(210);
+.swipe {
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(840);
+  // left: size(210);
+  object-fit: cover;
   z-index: 3;
 }
 .slide-name {
@@ -154,8 +141,8 @@ float: left;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(0);
-  left:calc(100% + 50 * 100vw / 1920);
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
   font-size: size(20);
 
@@ -230,24 +217,21 @@ float: left;
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section5 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
-
+    min-height: auto;
+    max-height: initial;
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
   .txt{
     position: relative;
     width: sizem(320);
-    float: none;
-    margin:0em auto 0;
+    margin:0 auto 4em;
+  padding-top: 7vw;
     left:0;
     top:0;
     font-size: sizem(15);
-  padding-top: 7vw;
     .title{
       font-size:1.9em;
     }
@@ -259,11 +243,9 @@ float: left;
   .swipe {
     position: relative;
     width: 100%;
-    float: none;
-    height: sizem(250);
+    height: sizem(330);
     top:0;
     left:0;
-  margin-left:0;
   }
 .swipe-item {
   .slide-name {
@@ -274,6 +256,7 @@ float: left;
   font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
@@ -282,7 +265,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section4',
+  name: 'section5',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -296,20 +279,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/1.jpg'),
-          name: '台中市政府',
+          img: isMobile?require('./s5/1m.jpg'):require('./s5/1.jpg'),
+          name: '區域與建築外觀3D示意',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: '大遠百、新光三越',
+          img: require('./s5/2.jpg'),
+          name: '3D示意',
         },
         {
-          img: require('./s4/3.jpg'),
-          name: '捷運市政府站',
-        },
-        {
-          img: require('./s4/4.jpg'),
-          name: 'VVS1交通動線示意圖',
+          img: require('./s5/3.jpg'),
+          name: '3D示意',
         },
       ],
     }
@@ -325,7 +304,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 7) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

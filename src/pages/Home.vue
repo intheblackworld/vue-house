@@ -111,7 +111,7 @@
 #contact{z-index: 3;}
 .og{position: absolute;width:1px;}
 
-
+/*
 .bg1 {
 //padding-top: $nav_pc_height;
 position: relative;
@@ -129,6 +129,7 @@ position: relative;
 
 
 }
+*/
 
 
 

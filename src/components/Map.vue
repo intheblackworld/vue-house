@@ -2,6 +2,7 @@
   <div class="map" id="map" refs="map" @scroll="handleScroll">
     <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
+    <img class="map-bgpng" :src="bgSrcpng" alt ref="mapbg" v-if="bgSrcpng" />
     <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
     </div>
@@ -43,7 +44,7 @@
 import { isMobile } from '@/utils'
 export default {
   name: 'map',
-  props: ['tagList', 'bgSrc', 'hand', 'bgText'],
+  props: ['tagList', 'bgSrc' , 'bgSrcpng', 'hand', 'bgText'],
   data() {
     return {
       isMobile,

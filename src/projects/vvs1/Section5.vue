@@ -32,7 +32,7 @@
   width:100%;
   height:auto;
   position: relative;
-  padding: 0 0 5vw;
+  padding: 9vw 0 5vw;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -61,11 +61,12 @@ img{width: 100%;
   font-weight: 600;
   line-height: 1.4;
   z-index: 2;
-  color: #fff;
+ // color: #fff;
 
 .title{
   font-size:2.2em;
   margin:0 auto 0;
+  color: #B00;
 }
   .subtitle{font-size: 1.25em;
     padding:.75em 0 0 0;
@@ -158,7 +159,7 @@ img{width: 100%;
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  $pagination;
+    border: 0.2em solid  #0003;
     position: relative;
     transition: all 0.5s;
 
@@ -168,7 +169,7 @@ img{width: 100%;
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
+    border:  0.105em solid #B00;
       opacity: 1;
       position: absolute;
       top: 20%;

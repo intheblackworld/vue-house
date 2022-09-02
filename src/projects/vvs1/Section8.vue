@@ -151,7 +151,7 @@ float: right;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(0);
+  bottom: size(10);
   right:100%;
   justify-content: center;
   font-size: size(20);

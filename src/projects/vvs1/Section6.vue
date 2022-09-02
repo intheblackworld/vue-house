@@ -31,7 +31,9 @@
   width:100%;
   height:auto;
   position: relative;
-  padding: 5vw 0 5vw;
+  padding: 9vw 0 5vw;
+  background: url("./s1/bg.jpg") center;
+  background-size: 100% auto;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -60,12 +62,12 @@ img{width: 100%;
   font-weight: 600;
   line-height: 1.4;
   z-index: 2;
-  // color: #000;
+  color: #FFF;
 
 .title{
   font-size:2.2em;
   margin:0 auto 0;
-  color: #B00;
+  // color: #B00;
 }
   .subtitle{font-size: 1.25em;
     padding:.75em 0 0 0;
@@ -158,7 +160,7 @@ img{width: 100%;
     width:1em;
     height:1em;
     border-radius: 50%;
-    border: 0.2em solid  #0003;
+    border: 0.2em solid  #FFF6;
     position: relative;
     transition: all 0.5s;
 
@@ -168,7 +170,7 @@ img{width: 100%;
       height: 60%;
       display: block;
     border-radius: 50%;
-    border:  0.105em solid #B00;
+    border:  0.105em solid #FFF;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -222,7 +224,8 @@ img{width: 100%;
     height: auto;
     min-height: auto;
     max-height: initial;
-  padding: 0;
+  //padding: 0;
+  background-size: 250% auto;
   }
   .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
   .txt{

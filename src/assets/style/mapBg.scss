@@ -10,9 +10,15 @@
   position: relative;
   z-index: 1;
   .map-bg {
-    width: size(1500);
+    width:100%;
     height: auto;margin: auto;
     position: relative;
+  }
+  .map-bgpng {
+    width:100%;
+    height: auto;margin: auto;
+    position: absolute;
+    top: 0;left: 0;
   }
 
   .hand {
@@ -43,13 +49,18 @@
 }
 
 @media screen and (max-width: 767px) {
+  $map-h: sizem(520);
   .map {
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100vw;
     .map-bg {
       width: auto;
-      height: sizem(604);
+      height: $map-h;
+    }
+    .map-bgpng {
+      width: auto;
+      height:$map-h;
     }
 
     .map-text {
@@ -59,7 +70,7 @@
 
     img {
       width: auto;
-      height: sizem(604);
+      height: $map-h;
     }
 
     .mask {

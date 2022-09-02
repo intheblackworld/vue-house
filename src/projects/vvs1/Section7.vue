@@ -43,7 +43,7 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 5vw 0 5vw;
+  padding: 9vw 0 5vw;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
@@ -240,7 +240,7 @@ float: left;
   .section7 {
     width: 100%;
     height: auto;
-  padding:0 0 sizem(240) 0;
+  padding:9vw 0 sizem(240) 0;
   }
 .img{width: sizem(423);left:sizem(-28);top:auto;bottom:0;}
 .boxm{left:0;bottom:auto;top: sizem(0);
