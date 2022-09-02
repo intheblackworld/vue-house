@@ -2,10 +2,12 @@
   <div class="section1">
     <!-- 
     <img src="./s1/mo.jpg" class="t0" />
-    <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
-    <img src="./s1/bg.png" class="bg" v-else />  -->
+   -->
+   
+   <div class="img">
     <img src="./s1/1.png" class="img1" />
     <img src="./s1/light1.png" class="light8" />
+    </div>
     <div class="txt">
       <div class="logo" data-aos="zoom-in" data-aos-delay="0" >
       <img src="./s1/light3.png" class="light3">
@@ -14,33 +16,12 @@
       <img src="./s1/light3.png" class="light6">
       <img src="./s1/light3.png" class="light7">
       <img src="./s1/logo.png" class="logo1">
-      <!-- <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" class="logo2"> -->
       <img src="./s1/light1.png" class="light1">
       <img src="./s1/light2.png" class="light2">
     </div>
       <div class="t1"  data-aos="zoom-in" data-aos-delay="600">人生幾何<span> </span>能夠如此心動</div>
       <div class="t2" data-aos="zoom-in" data-aos-delay="800">市政特區<span></span>文心大道<span></span>雙捷恆鑽地段</div>
     </div>
-
-    <!-- 
-    <img src="./s1/light.png" class="light2" />
-    <div class="img" data-aos="zoom-in-left">
-      <img src="./s1/1.png" alt="img" class="img1">
-      <img src="./s1/2.png" alt="img" class="img2">
-      <img src="./s1/butterfly.gif" alt="img" class="img3">
-    </div>
-    <div class="logo">
-      <img src="./s1/logo1.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo1">
-      <img src="./s1/logot.png" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logot">
-      <img src="./s1/logof.png" data-aos="fade" data-aos-delay="400" alt="logo" class="logof">
-    </div>
-
-    <div class="txt">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">居高美地 風尚生活宅</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800"><span>玩美2-3房</span>台大竹東分院旁</div>
-      <img src="./s1/035957999.png" data-aos="zoom-in" data-aos-delay="1000" alt="035957999" class="phone">
-    </div>
-      -->
   </div>
 </template>
 
@@ -62,16 +43,20 @@
   left:0;object-fit: cover;
   opacity: .5;
   }
-  .img1{
+  .img{
     position: absolute;
-    bottom: 0;right: size(140);
-    width: size(810);
+    bottom: 0;left: calc(50% + 5vw);
+    height:60%;
+  }
+  .img1{
+    position: relative;
+    height: 100%;
   }
   .light8{
   position: absolute;
     width:size(100);
-    bottom:size(270);
-    left: 62%;
+    bottom:size(190);
+    left: 26%;
       animation: light3 2s linear infinite;
   }
 @keyframes light3{

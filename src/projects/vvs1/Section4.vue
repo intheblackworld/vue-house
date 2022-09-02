@@ -301,7 +301,7 @@ export default {
           name: '大遠百、新光三越',
         },
         {
-          img: require('./s4/2.jpg'),
+          img: require('./s4/3.jpg'),
           name: '捷運市政府站',
         },
       ],

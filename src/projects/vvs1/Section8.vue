@@ -295,11 +295,11 @@ export default {
           name: '台中 CBD時代廣場',
         },
         {
-          img: require('./s8/2.jpg'),
+          img: require('./s8/3.jpg'),
           name: '台中 樹禾院',
         },
         {
-          img: require('./s8/3.jpg'),
+          img: require('./s8/2.jpg'),
           name: '金山 凱悦酒店 3D示意',
         },
         {
