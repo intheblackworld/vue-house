@@ -20,7 +20,7 @@
       <img src="./s1/light2.png" class="light2">
     </div>
       <div class="t1"  data-aos="zoom-in" data-aos-delay="600">人生幾何<span> </span>能夠如此心動</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800">市政首席<span></span>文心大道<span></span>雙捷恆鑽地段</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="800">七期生活圈<span></span>文心大道<span></span>雙捷恆鑽地段</div>
     </div>
   </div>
 </template>
@@ -188,6 +188,7 @@
   font-weight: 700;
     }
   .t2{
+  font-size: 0.94em;
   span{display: inline-block;
   &::after{
     content: "";
