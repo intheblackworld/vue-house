@@ -1,5 +1,5 @@
 <template>
-  <div class="i">
+  <div>
     <img src="./s1/r3.png" class="r3" />
     <img src="./s1/r2.png" class="r2" />
     <img src="./s1/r1.png" class="r1" />

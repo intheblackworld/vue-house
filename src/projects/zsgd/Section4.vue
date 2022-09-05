@@ -301,20 +301,24 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile?require("./s4/1m.jpg"):require("./s4/1.jpg"),
-          name: '空拍實景圖',
+          img: isMobile?require("./s4/1_m.jpg"):require("./s4/1.jpg"),
+          name: '文中八公園',
         },
         {
-          img: require('./s4/2.jpg'),
-          name: '68快速道路',
+          img: isMobile?require("./s4/2_m.jpg"):require("./s4/2.jpg"),
+          name: '三友黃昏市場 示意',
         },
         {
-          img: require('./s4/3.jpg'),
-          name: '頭前溪生態公園',
+          img: isMobile?require("./s4/3_m.jpg"):require("./s4/3.jpg"),
+          name: '中山北路機能情境',
         },
         {
-          img: require('./s4/4.jpg'),
-          name: '蕭如松藝術園區',
+          img: isMobile?require("./s4/4_m.jpg"):require("./s4/4.jpg"),
+          name: '新民公園',
+        },
+        {
+          img: isMobile?require("./s4/5_m.jpg"):require("./s4/5.jpg"),
+          name: '水碓市民活動中心 示意',
         },
       ],
     }

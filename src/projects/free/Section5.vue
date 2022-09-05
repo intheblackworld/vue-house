@@ -24,10 +24,16 @@
       </div> 
       </div>
       <div class="txt">
+    <div class="cloud">
+    <cloud class="cloud1" />
+    <cloud class="cloud2" />
+    </div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">稀有地段  悠遊雙城心</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">座落中山北路黃金地段，隨心收納全機能，家樂福、全聯、燦坤、星巴克、POYA...採買便利；行政中心、運動中心、文化水岸、萬坪公園...完備驚豔，享現有成熟生活圈，近新市鎮重劃區，展望未來新市鎮發展。
 </div>
       </div>
+    <red class="red" />
+    <img src="./s5/chat.png" class="chat" />
     </div>
   </div>
 </template>
@@ -42,13 +48,55 @@
   padding: 5vw size(198) 4vw;
 &::after{content: "";clear: both;display: block;}
 }
-
+.chat{
+  position: absolute;
+  bottom:0;right: size(400);
+  z-index: 3;
+  width: size(150);
+}
+.cloud{
+  position: absolute;
+  top:4em;right: 0;
+  width: 94%;
+  font-size: size(15);
+  .cloud1{
+  position: absolute;
+  fill: #FFE8BC;
+    width: 5em;
+    top:0em;
+    left: 0em;
+      transform:translateX(110%);
+        animation: cloud 5s linear alternate infinite;
+  }
+  .cloud2{
+  position: absolute;
+  fill: #FFE8BC;
+    width: 2.8em;
+    top: 2.9em;
+    left: 6.8em;
+      transform:translateX(100%);
+        animation: cloud 5s linear alternate infinite;
+  }
+}
+  @keyframes cloud{
+    to{
+      transform:translateX(0);
+    }
+}
+.red{
+  position: absolute;
+  right: size(-190);
+  bottom: size(-450);
+  width: size(530);
+  transform: rotate(-25deg);
+  z-index: 3;pointer-events: none;
+}
 .txt{
 float: right;
   position: relative;
   width: size(635);
   height: size(708);
-  padding: 0 size(40);
+  padding: 0 size(40) 4em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -57,7 +105,8 @@ float: right;
   line-height: 1.4;
   z-index: 2;
   margin-right: 0;
-  background: #FFF;
+  background: #FFF url("./s5/bg.png") no-repeat 117% 100%;
+  background-size: size(393) auto;
   border-radius: size(20);
   display: flex;
     flex-direction:column;
@@ -66,7 +115,7 @@ float: right;
   }
 
 .title{
-  font-size:2.2em;
+  font-size:2em;
   margin:0 auto 0;
   color: #444;
   font-weight: 600;
@@ -82,7 +131,7 @@ float: right;
  // margin:1em auto;
   padding:1em 0 0 0;
   line-height: 1.6;
-  letter-spacing:0.05em;
+  //letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
@@ -120,7 +169,7 @@ float: left;
 }
 .slide-name {
     right:1.5em;
-    bottom:1em;
+    bottom:0;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -131,6 +180,7 @@ float: left;
     text-align: left;
     color: #ffffff;
    text-shadow:0 0.1em 0.3em #000;
+   z-index: 3;
 }
 
 .swipe-wrap {
@@ -144,7 +194,7 @@ float: left;
   &::before{
     content: "";
     position: absolute;
-    top: size(0);left:size(-20);
+    top: 0;left:size(-20);
     width: 100%;
     height: calc(100% + #{size(40)});
     background: #fff5;
@@ -272,45 +322,73 @@ float: left;
   .section5 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
+    padding: 0 0 sizem(50) 0;
   background-size: 250% auto;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+.chat{
+  right: sizem(150);
+  bottom:sizem(10);
+  width: sizem(80);
+}
+.cloud{
+  font-size: sizem(10);top:1em;
+}
+.red{
+  right: sizem(-90);
+  bottom: sizem(-170);
+  width: sizem(220);
+}
   .txt{
     position: relative;
-    width: sizem(320);
+    width: sizem(315);
+    height: auto;
     float: none;
-    margin:0em auto 0;
-    left:0;
-    top:0;
+    margin:1.5em auto 0em;
+    padding: 4em 1em 6.8em;
     font-size: sizem(15);
-  padding-top: 7vw;
+    border-radius: sizem(10);
+    background-size: sizem(193) auto;
     .title{
-      font-size:1.9em;
+      font-size:1.37em;
+  &::after{width: 100%;flex: 0 0 100%;
+  display: block;margin: .3em 0 0.3em 0;}
     }
     .subtitle{
       font-size:1.1em;
     }
   }
+.light{
+  width: sizem(70);
+top: sizem(-25);left: sizem(-25);
+    }
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
+    width: sizem(315);
     float: none;
     height: sizem(250);
-    top:0;
-    left:0;
-  margin-left:0;
+  margin:auto;
   }
 .swipe-item {
+  &::before{
+    top: 0;left:sizem(-12);
+    width: 100%;
+    height:100%;
+  border-radius: sizem(10);
+  }
+  &::after{
+    top: sizem(7);left:sizem(-5);
+  border-radius: sizem(10);
+  }
+  img {top: sizem(12);
+  border-radius: sizem(10);}
   .slide-name {
     font-size: sizem(12);
   }
 }
   .swipe-btns {
-  font-size: sizem(15);
+  font-size: sizem(15);top: sizem(6);
   }
 }
 </style>
@@ -319,9 +397,15 @@ float: left;
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import red from './red.vue'
+import cloud from './cloud.vue'
 
 export default {
   name: 'section5',
+  components: {
+    red,
+    cloud,
+  },
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -336,7 +420,19 @@ export default {
       slideList: [
         {
           img: isMobile?require('./s5/1_m.jpg'):require('./s5/1.jpg'),
-          name: '台中市政府',
+          name: '家樂福',
+        },
+        {
+          img: isMobile?require('./s5/2_m.jpg'):require('./s5/2.jpg'),
+          name: '運動中心',
+        },
+        {
+          img: isMobile?require('./s5/3_m.jpg'):require('./s5/3.jpg'),
+          name: '新市鎮兒童公園 示意',
+        },
+        {
+          img: isMobile?require('./s5/4_m.jpg'):require('./s5/4.jpg'),
+          name: '美麗新影城',
         },
       ],
     }

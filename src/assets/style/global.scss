@@ -58,8 +58,9 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: -2;
-   // background-size: $bg-size;
+    z-index: 0;
+    background: url("~@/projects/free/s4/bg.png") center;
+    background-size: 100% auto;
     overflow: hidden;//試底下多的那塊哪來的
   }
 }
@@ -346,6 +347,12 @@ img[lazy='loaded'] {
     padding-top: $nav_phone_height;
     &.no-padding-top {
       padding-top: 0;
+    }
+    &::before{
+      background-image: url("~@/projects/free/s4/bg_m.png");
+      background-size: 100% auto;
+     // background-size: $bg-size;
+      overflow: hidden;//試底下多的那塊哪來的
     }
   }
   

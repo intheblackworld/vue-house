@@ -35,7 +35,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
- // background:$house_bg;
+  background:$house_bg;
   background-size: 100% auto;
   position: relative;
   z-index: 1;
@@ -113,7 +113,7 @@ export default {
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
-    padding-bottom: 35vw;
+    padding-bottom: 5vw;
   }
 
   .title {

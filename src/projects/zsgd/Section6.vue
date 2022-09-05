@@ -296,8 +296,12 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
-          name: '情境示意圖',
+          img: isMobile?require("./s6/1_m.jpg"):require("./s6/1.jpg"),
+          name: '空拍實景圖',
+        },
+        {
+          img: isMobile?require("./s6/2_m.jpg"):require("./s6/2.jpg"),
+          name: '68快速道路',
         },
       ],
     }

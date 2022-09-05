@@ -1,6 +1,8 @@
 <template>
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
+    <yellow class="yellow" />
+    <red class="red" />
 
       <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <div class="info">
@@ -48,9 +50,13 @@ import { isMobile, isTablet } from '@/utils'
 import CallDialog from '@/components/Dialog/Call'
 import MessengerDialog from '@/components/Dialog/Messenger'
 import MapDialog from '@/components/Dialog/Map'
+import yellow from '@/projects/free/yellow.vue'
+import red from '@/projects/free/red.vue'
 export default {
   name: 'contactInfo',
   components: {
+    yellow,
+    red,
     CallDialog,
     MessengerDialog,
     MapDialog,
@@ -100,7 +106,8 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 3;
-  // width: 1200px;
+  width: 96%;
+  max-width: 1200px;
   // height: 380px;
   /* background-size: 100vw auto;
   background-attachment: fixed;
@@ -111,13 +118,25 @@ export default {
   padding: 3vw 0;
   line-height: 1.4;
 }
+.yellow{
+  position: absolute;
+  right: size(-380);
+  top:size(-150);
+  width: size(534);
+}
+.red{
+  position: absolute;
+  left: size(-330);
+  top:size(110);
+  width: size(350);
+}
 
 .logo {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: -3vw auto -8vw;
-  padding: 0 0 0 15vw
+  margin: 2vw auto 3vw;
+  padding: 0 0 0 0
 }
 .info {
   width: 880px;
@@ -188,7 +207,7 @@ export default {
 .addressall{
   width: 99%;
   border-radius:60px ;
-  background: #EEE;
+  background: #FFF;
 }
 .address {
   width:calc(100% - 280px);
@@ -215,7 +234,7 @@ export default {
   border: $contact_btn_border;
   transition: all 0.5s;
   border-radius:60px ;
-  box-shadow: -2px 0 5px 1px #00235E;
+  // box-shadow: -2px 0 5px 1px #00235E;
   font-weight: 600;
 
   svg {
@@ -259,17 +278,29 @@ export default {
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding:0 5% 5% 5%;
+    padding:20vw 5% 5% 5%;
     transform: none;
-    position: static;
-    margin:10vw 0 0 0;
+    position: relative;
+    margin:80vw 0 0 0;z-index:2;
+
+
+    .yellow{
+  right: sizem(-15);
+  top:sizem(-275);
+  width: sizem(250);z-index:-1;
+}
+.red{
+  left:sizem(0);
+  top:sizem(-180);
+  width: sizem(170);z-index:-1;
+}
 
     .logo {
-      width:155%;
+      width:$contact_logo_mobile_width;
    //   margin: 30% auto 10%;
-  margin: -0vw -10% -15vw;
+  // margin:0 auto;
   object-fit:cover;
-  height: sizem(300);
+  // height: sizem(300);
   padding:0;
     }
   }
@@ -335,7 +366,7 @@ export default {
   .google-btn {
     margin-top: 15px;
     left: 0;
-  box-shadow: 0 -2px 5px 1px #00235E;
+  // box-shadow: 0 -2px 5px 1px #00235E;
   }
 }
 

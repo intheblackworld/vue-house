@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section5">
+    <div class="section6">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <img src="./s5/light.png" class="light" />
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -24,7 +24,11 @@
       </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">便利交通網 行動不受限</div>
+    <div class="cloud">
+    <cloud class="cloud1" />
+    <cloud class="cloud2" />
+    </div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">便利交通網  行動不受限</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">輕軌新市一路站4分鐘，捷運淡水站6分鐘，公車站牌1分鐘，16條以上路線去哪都方便。 
 </div>
       </div>
@@ -34,13 +38,42 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {
+.section6 {
   width:100%;
   height:auto;
   position: relative;
   margin:0 auto 0;
   padding: 5vw size(198) 4vw;
 &::after{content: "";clear: both;display: block;}
+}
+.cloud{
+  position: absolute;
+  top:4em;right: 0;
+  width: 94%;
+  font-size: size(15);
+  .cloud1{
+  position: absolute;
+  fill: #FFE8BC;
+    width: 5em;
+    top:0em;
+    left: 0em;
+      transform:translateX(110%);
+        animation: cloud 5s linear alternate infinite;
+  }
+  .cloud2{
+  position: absolute;
+  fill: #FFE8BC;
+    width: 2.8em;
+    top: 2.9em;
+    left: 6.8em;
+      transform:translateX(100%);
+        animation: cloud 5s linear alternate infinite;
+  }
+}
+  @keyframes cloud{
+    to{
+      transform:translateX(0);
+    }
 }
 
 .txt{
@@ -55,9 +88,9 @@ float: left;
   font-size: size(19);
   font-weight: 400;
   line-height: 1.4;
-  z-index: 2;
+  z-index: 1;
   margin-right: 0;
-  background: #FFF;
+  background: #FFF url("./s6/bg.png") no-repeat 0% 100%;
   border-radius: size(20);
   display: flex;
     flex-direction:column;
@@ -82,7 +115,6 @@ float: left;
  // margin:1em auto;
   padding:1em 0 0 0;
   line-height: 1.6;
-  letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
@@ -116,11 +148,11 @@ float: right;
 // top: size(185);
  // left: size(210);
   margin-left: 0;
-  z-index: 3;
+  z-index: 2;
 }
 .slide-name {
     right:1.5em;
-    bottom:1em;
+    bottom:0;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -131,6 +163,7 @@ float: right;
     text-align: left;
     color: #ffffff;
    text-shadow:0 0.1em 0.3em #000;
+   z-index: 3;
 }
 
 .swipe-wrap {
@@ -269,48 +302,68 @@ float: right;
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
+  .section6 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
+    padding: 0 0 sizem(50) 0;
   background-size: 250% auto;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+.cloud{
+  font-size: sizem(10);top:1em;
+}
   .txt{
     position: relative;
-    width: sizem(320);
+    width: sizem(315);
+    height: auto;
     float: none;
-    margin:0em auto 0;
-    left:0;
-    top:0;
+    margin:1.5em auto 0em;
+    padding: 4em 1em 6.8em;
     font-size: sizem(15);
-  padding-top: 7vw;
+    background-position:  100% 100%;
+    border-radius: sizem(10);
+    background-size: sizem(193) auto;
     .title{
-      font-size:1.9em;
+      font-size:1.37em;
+  &::after{width: 100%;flex: 0 0 100%;
+  display: block;margin: .3em 0 0.3em 0;}
     }
     .subtitle{
       font-size:1.1em;
     }
   }
+.light{
+  width: sizem(70);
+top: sizem(-25);left: sizem(-25);
+    }
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
+    width: sizem(315);
     float: none;
     height: sizem(250);
-    top:0;
-    left:0;
-  margin-left:0;
+  margin:auto;
   }
 .swipe-item {
+  &::before{
+    top: 0;left:sizem(-12);
+    width: 100%;
+    height:100%;
+  border-radius: sizem(10);
+  }
+  &::after{
+    top: sizem(7);left:sizem(-5);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%);
+    border-radius: sizem(10);
+  }
+  img {top: sizem(12);
+  border-radius: sizem(10);}
   .slide-name {
     font-size: sizem(12);
   }
 }
   .swipe-btns {
-  font-size: sizem(15);
+  font-size: sizem(15);top: sizem(6);
   }
 }
 </style>
@@ -319,9 +372,13 @@ float: right;
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import cloud from './cloud.vue'
 
 export default {
-  name: 'section5',
+  name: 'section6',
+  components: {
+    cloud,
+  },
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -335,8 +392,12 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile?require('./s5/1_m.jpg'):require('./s5/1.jpg'),
-          name: '台中市政府',
+          img: isMobile?require('./s6/1_m.jpg'):require('./s6/1.jpg'),
+          name: '新市一路站',
+        },
+        {
+          img: isMobile?require('./s6/2_m.jpg'):require('./s6/2.jpg'),
+          name: '捷運淡水站',
         },
       ],
     }

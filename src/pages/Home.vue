@@ -11,7 +11,6 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
-    <div class="bg1">
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
@@ -40,7 +39,6 @@
     >
       <Section5 />
     </vue-lazy-component>
-  </div>
     <vue-lazy-component
       class="section"
       id="section6"
@@ -59,7 +57,6 @@
     >
       <Section8 />
     </vue-lazy-component>
-<!--      
     <vue-lazy-component
       class="section"
       id="section9"
@@ -78,6 +75,7 @@
     >
     <Section11 />
     </vue-lazy-component>
+<!--      
   <vue-lazy-component
       class="section relative"
       id="section10"
@@ -111,25 +109,6 @@
 #contact{z-index: 3;}
 .og{position: absolute;width:1px;}
 
-/*
-.bg1 {
-//padding-top: $nav_pc_height;
-position: relative;
-  // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/free/s1/bg.jpg") top center;
-&::after{content: "";clear: both;display: block;}
-}
-
-@media screen and (max-width: 767px) {
-
-.bg1 {
-    background-size: 250% auto;
-}
-
-
-
-}
-*/
 
 
 
@@ -156,11 +135,11 @@ import Section5 from '@/projects/free/Section5.vue'
 import Section6 from '@/projects/free/Section6.vue'
 import Section7 from '@/projects/free/Section7.vue'
 import Section8 from '@/projects/free/Section8.vue'
-/* 
 import Section9 from '@/projects/free/Section9.vue'
 import Section10 from '@/projects/free/Section10.vue'
-import Section10 from '@/projects/free/Section10.vue'
-import Section11 from '@/projects/free/Section11.vue' */
+import Section11 from '@/projects/free/Section11.vue'
+/* 
+import Section10 from '@/projects/free/Section10.vue' */
 
 export default {
   name: 'home',
@@ -180,10 +159,10 @@ export default {
     Section6,
     Section7,
     Section8,
-    /* 
     Section9,
     Section10,
     Section11,
+    /* 
     Section11,
     */
   },

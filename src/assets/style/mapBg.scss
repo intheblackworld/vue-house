@@ -49,7 +49,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  $map-h: sizem(520);
+  $map-h: sizem(623);
   .map {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -97,11 +97,11 @@
     .hand {
       position: absolute;
       z-index: 3;
-      width: sizem(45) !important;
+      width: sizem(120) !important;
       height: auto !important;
-      left: 100%;
+      left:170vw;
       right: auto;
-      top: sizem(251) !important;
+      top: sizem(480) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;

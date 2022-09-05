@@ -57,7 +57,7 @@ export default {
       tagList: [],
       bgSrc: require('./s3/bg.jpg'),
     //  bgSrcpng: require('./s3/map.png'),
-      hand: require('./s3/h.png'),
+      hand: require('./s3/finger.png'),
     };
   },
   methods: {

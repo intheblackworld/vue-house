@@ -1,14 +1,12 @@
 <template>
   <div>
     <div class="section7">
-      <img src="./s7/img.png" alt="img" class="img" />
-      <div class="box"></div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <img src="./s5/light.png" class="light" />
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img1" :class="`swipe-item absolute`">
-              <img :src="slide.img1" alt="" class="img1">
-              <img :src="slide.img2" alt="" class="img2">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -22,14 +20,16 @@
           </div>
         </div>
      <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img1 + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div> 
       </div>
-      <div class="boxm" v-if="isMobile"></div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">建築界<br v-if="isMobile" />奧斯卡級大獎常勝軍</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Pia萬豪酒店設計團隊</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">Pia interior 公司擁有超過20年的豐富經驗，團隊人員超過180多名，作品風格擅長將東、西方文化品味融合，混搭多重元素，營造輕鬆度假的休閒氛圍。世界級設計堅強實力有目共睹。
+    <div class="cloud">
+    <cloud class="cloud1" />
+    <cloud class="cloud2" />
+    </div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">淡江大橋  淡北道路 雙箭齊發</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">匯集各界矚目與期待，淡江大橋主橋段預計將在2024年底完工通車，未來淡水八里往返，可望節省約25分鐘車程，串聯機場更便捷。而2022年8月拍板淡北道路，並增建關渡新橋方案，未來前往新北市三重、蘆洲、五股、新莊等地，可行經關渡新橋，不必再多繞行進入臺北市，不僅紓解淡水對外交通，也減輕臺北市北投區的交通負擔。
 </div>
       </div>
     </div>
@@ -43,38 +43,83 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 9vw 0 5vw;
-  // background:#FFF;
+  padding: 5vw size(198) 4vw;
 &::after{content: "";clear: both;display: block;}
 }
-.img{width: size(762);position: absolute;right: size(70);bottom:0;
-z-index: 2;
+.chat{
+  position: absolute;
+  bottom:0;right: size(400);
+  z-index: 3;
+  width: size(150);
 }
-
-.boxm,
-.box{position: absolute;left: size(210);bottom: 0;
-  z-index: 1;
-background:  linear-gradient(to right, #00427A 0%, #112A49 50%, #04142A 100%);
-  width: size(1710);height:size(170);}
+.cloud{
+  position: absolute;
+  top:4em;right: 0;
+  width: 94%;
+  font-size: size(15);
+  .cloud1{
+  position: absolute;
+  fill: #FFE8BC;
+    width: 5em;
+    top:0em;
+    left: 0em;
+      transform:translateX(110%);
+        animation: cloud 5s linear alternate infinite;
+  }
+  .cloud2{
+  position: absolute;
+  fill: #FFE8BC;
+    width: 2.8em;
+    top: 2.9em;
+    left: 6.8em;
+      transform:translateX(100%);
+        animation: cloud 5s linear alternate infinite;
+  }
+}
+  @keyframes cloud{
+    to{
+      transform:translateX(0);
+    }
+}
+.red{
+  position: absolute;
+  right: size(-190);
+  bottom: size(-450);
+  width: size(530);
+  transform: rotate(-25deg);
+  z-index: 3;
+}
 .txt{
 float: right;
   position: relative;
-  padding-top: 0vw;
-  width: size(580);
+  width: size(635);
+  height: size(708);
+  padding: 0 size(40) 4em;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
   font-size: size(19);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.4;
   z-index: 2;
-  margin-right: size(210);
+  margin-right: 0;
+  background: #FFF;
+  border-radius: size(20);
+  display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
   }
 
 .title{
-  font-size:2.2em;
+  font-size:2em;
   margin:0 auto 0;
-  color: #B00;
+  color: #444;
+  font-weight: 600;
+  width: 100%;
+  &::after{display: block;
+    height: 2px;content: "";background: #CF5700;margin: 0 auto;width: 100%;
+  }
 }
   .subtitle{font-size: 1.25em;
     padding:.75em 0 0 0;
@@ -83,12 +128,28 @@ float: right;
  // margin:1em auto;
   padding:1em 0 0 0;
   line-height: 1.6;
-  letter-spacing:0.05em;
-  font-weight: 300;
+  //letter-spacing:0.05em;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
   }
+}
+.light{position: absolute;
+  width: size(100);
+z-index: 3;
+top: size(-35);left: size(-20);
+      animation: light3 2s linear infinite;
+    }
+@keyframes light3{
+    0%{
+      transform:rotate(-90deg) scale(0);opacity: 1;
+    }
+    50%{
+      transform:rotate(0deg)  scale(.8,1.5);opacity: 1;
+    }
+    100%{
+      transform:rotate(90deg) scale(1.5,.8);opacity: 0;
+    }
 }
 
 /* Swipe */
@@ -97,15 +158,15 @@ float: right;
 float: left;
  // position: absolute;
   width: size(840);
-  height: size(560);
+  height: size(668);
 // top: size(185);
  // left: size(210);
-  margin-left: size(210);
+  margin-left: 0;
   z-index: 3;
 }
 .slide-name {
     right:1.5em;
-    bottom:1em;
+    bottom:0;
     color: #fff;
     font-size: size(15);
     font-weight: normal;
@@ -116,6 +177,7 @@ float: left;
     text-align: left;
     color: #ffffff;
    text-shadow:0 0.1em 0.3em #000;
+   z-index: 3;
 }
 
 .swipe-wrap {
@@ -125,16 +187,33 @@ float: left;
 .swipe-item {
   width: 100%;
   height: 100%;
-  z-index: 0;
-  text-align: left;
-  .img1 {
+  z-index: 0; 
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;left:size(-20);
+    width: 100%;
+    height: calc(100% + #{size(40)});
+    background: #fff5;
+    z-index: 1;
+  border-radius: size(40);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: size(13);left:size(-7);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 20%);
+    z-index: 1;
+  border-radius: size(27);
+  }
+  img {position: relative;
+    z-index: 3;top: size(20);
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  .img2 {
-    height: size(44);
-    margin: size(25) 0 0 size(30);
+  border-radius: size(20);
   }
 }
 
@@ -161,8 +240,8 @@ float: left;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(-40);
-  right:0;
+  bottom: size(0);
+  left:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
   font-size: size(20);
 
@@ -240,50 +319,73 @@ float: left;
   .section7 {
     width: 100%;
     height: auto;
-  padding:9vw 0 sizem(240) 0;
+    padding: 0 0 sizem(50) 0;
+  background-size: 250% auto;
+
   }
-.img{width: sizem(423);left:sizem(-28);top:auto;bottom:0;}
-.boxm{left:0;bottom:auto;top: sizem(0);
-  position: relative;
-  width: sizem(375);height:sizem(60);}
-.box{left:0;bottom:0;top:auto;
-  width: sizem(375);height:sizem(95);}
+.chat{
+  right: sizem(150);
+  bottom:sizem(10);
+  width: sizem(80);
+}
+.cloud{
+  font-size: sizem(10);top:1em;
+}
+.red{
+  right: sizem(-90);
+  bottom: sizem(-170);
+  width: sizem(220);
+}
   .txt{
     position: relative;
-    width: sizem(320);
+    width: sizem(315);
+    height: auto;
     float: none;
-    margin:1.5em auto 0;
-    left:0;
-    top:0;
+    margin:1.5em auto 0em;
+    padding: 4em 1em 2em;
     font-size: sizem(15);
+    border-radius: sizem(10);
+    background-size: sizem(193) auto;
     .title{
-      font-size:1.9em;
+      font-size:1.37em;
+  &::after{width: 100%;flex: 0 0 100%;
+  display: block;margin: .3em 0 0.3em 0;}
     }
     .subtitle{
       font-size:1.1em;
     }
   }
+.light{
+  width: sizem(70);
+top: sizem(-25);left: sizem(-25);
+    }
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
+    width: sizem(315);
     float: none;
-    height: sizem(255);
-    top:0;
-    left:0;
-  margin-left:0;
+    height: sizem(250);
+  margin:auto;
   }
 .swipe-item {
+  &::before{
+    top: 0;left:sizem(-12);
+    width: 100%;
+    height:100%;
+  border-radius: sizem(10);
+  }
+  &::after{
+    top: sizem(7);left:sizem(-5);
+  border-radius: sizem(10);
+  }
+  img {top: sizem(12);
+  border-radius: sizem(10);}
   .slide-name {
     font-size: sizem(12);
   }
-  .img2 {
-    height: sizem(30);
-    margin: sizem(15) 0 0 sizem(15);
-  }
 }
   .swipe-btns {
-  font-size: sizem(15);
+  font-size: sizem(15);top: sizem(6);
   }
 }
 </style>
@@ -292,9 +394,15 @@ float: left;
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import red from './red.vue'
+import cloud from './cloud.vue'
 
 export default {
   name: 'section7',
+  components: {
+    red,
+    cloud,
+  },
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -308,24 +416,12 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img1: require('./s7/1.jpg'),
-          img2: require('./s7/1.png'),
-          name: '',
+          img: isMobile?require('./s7/1_m.jpg'):require('./s7/1.jpg'),
+          name: '淡江大橋示意',
         },
         {
-          img1: require('./s7/2.jpg'),
-          img2: require('./s7/2.png'),
-          name: '',
-        },
-        {
-          img1: require('./s7/3.jpg'),
-          img2: require('./s7/3.png'),
-          name: '',
-        },
-        {
-          img1: require('./s7/4.jpg'),
-          img2: require('./s7/4.png'),
-          name: '',
+          img: isMobile?require('./s7/2_m.jpg'):require('./s7/2.jpg'),
+          name: '淡北道路示意',
         },
       ],
     }

@@ -321,8 +321,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1.jpg'),
-          name: '現場基地空拍實景圖',
+          img: isMobile?require("./s5/1_m.jpg"):require("./s5/1.jpg"),
+          name: '家樂福',
+        },
+        {
+          img: isMobile?require("./s5/2_m.jpg"):require("./s5/2.jpg"),
+          name: '運動中心',
+        },
+        {
+          img: isMobile?require("./s5/3_m.jpg"):require("./s5/3.jpg"),
+          name: '新市鎮兒童公園 示意',
+        },
+        {
+          img: isMobile?require("./s5/4_m.jpg"):require("./s5/4.jpg"),
+          name: '美麗新影城',
         },
       ],
     }

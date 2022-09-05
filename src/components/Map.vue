@@ -4,8 +4,8 @@
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <img class="map-bgpng" :src="bgSrcpng" alt ref="mapbg" v-if="bgSrcpng" />
     <img class="map-text" :src="bgText" alt />
-    <div :class="`mask ${showMask ? 'active' : ''}`">
-    </div>
+   <!-- <div :class="`mask ${showMask ? 'active' : ''}`"></div> --> 
+    
     <img
       :src="tag"
       data-aos="fade-down"
@@ -64,7 +64,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
+        map.scrollTo(mapBg.clientWidth / 1.6 - window.innerWidth / 1.6 - 480, 0)
       }, 1200)
 
       setTimeout(() => {

@@ -4,7 +4,7 @@
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key ="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
@@ -33,6 +33,8 @@
   height:auto;
   position: relative;
   padding: 4vw 0 4vw;
+  background: url("./s4/city.png") no-repeat 0 80%;
+  background-size: 100% auto;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -229,22 +231,24 @@ img{width: 100%;
 
 @media screen and (max-width: 767px) {
   .section4 {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    max-height: initial;
+  padding: 11vw 0 1vw;
+  background:none;
   }
   .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
   .txt{
     position: relative;
-    width: sizem(320);
-    margin:0 auto 4em;
-  padding-top: 7vw;
+    width: sizem(345);
+    margin:-2em auto 4em;
+    padding: 3em 1em 1.3em;
     left:0;
     top:0;
     font-size: sizem(15);
+    border-radius: sizem(10);
     .title{
-      font-size:1.9em;
+      font-size:1.37em;
+      flex-wrap: wrap;
+  &::after{width: 100%;flex: 0 0 100%;
+  display: block;margin: .3em 0 0.3em 0;}
     }
     .subtitle{
       font-size:1.1em;
@@ -253,12 +257,17 @@ img{width: 100%;
   /* Swipe */
   .swipe {
     position: relative;
-    width: 100%;
-    height: sizem(330);
+    width: sizem(345);
+    height: sizem(352);
     top:0;
     left:0;
+    background: #FFF;
+    border: sizem(15) solid #FFF;
+    border-radius: sizem(10);
   }
 .swipe-item {
+  img {
+  border-radius: sizem(10);}
   .slide-name {
     font-size: sizem(12);
   }
