@@ -273,6 +273,7 @@ img{width: 100%;
 }
   .swipe-btns {
   font-size: sizem(15);
+  display: none;
   }
 }
 
