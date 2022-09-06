@@ -44,7 +44,7 @@ $ogType = 'website';
       "startDate" : "2022-01-19",
       "location" : {
         "@type" : "Place",
-        "name" : "接待中心",
+        "name" : "地址",
         "address" : {
           "@type" : "PostalAddress",
           "streetAddress" : "桃園市大園區環區西路與科二街交叉口"
