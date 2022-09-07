@@ -257,7 +257,7 @@ img{width: 100%;
   .swipe {
     position: relative;
     width: sizem(345);
-    height: sizem(352);
+    height: sizem(200);
     top:0;
     left:0;
     background: #FFF;
