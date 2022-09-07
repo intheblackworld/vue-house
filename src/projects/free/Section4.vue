@@ -300,7 +300,7 @@ export default {
       slideList: [
         {
           img: isMobile?require('./s4/1_m.jpg'):require('./s4/1.jpg'),
-          name: '水碓生活圈',
+          name: '文中八公園',
         },
         {
           img: isMobile?require('./s4/2_m.jpg'):require('./s4/2.jpg'),

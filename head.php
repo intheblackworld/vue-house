@@ -4,7 +4,7 @@
 #$case_code = "jw";特殊案使用
 $src =$_SERVER['SERVER_NAME']; 
 $case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
-$case_code = "jacy";
+$case_code = "free";
 
 $pdo = new pdo('mysql:host=localhost;dbname=htw12_web', 'htw12', '3hdaiU813Q');
 $pdo->exec("SET NAMES 'utf8'");
