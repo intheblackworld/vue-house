@@ -268,9 +268,11 @@ z-index: 3;
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
+    /*
     height: 70px;
     justify-content: center;
   background: transparent;
+  */
     &.min {
       .logo {
         width: $logo_tablet_width;
@@ -282,7 +284,7 @@ z-index: 3;
     width: $logo_tablet_width;
     // left: -240px;
   }
-
+/*
   .navlist {
     width: 85%;
   }
@@ -301,6 +303,7 @@ z-index: 3;
       margin-left: 6px;
     }
   }
+  */
 
   :global {
     .ui.fluid.container {

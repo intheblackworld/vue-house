@@ -315,7 +315,7 @@ export default {
       slideList: [
         {
           img:require('./s4/1.jpg'),
-          name: '遠東百貨		新光三越',
+          name: '遠東百貨',
         },
         {
           img:require('./s4/2.jpg'),

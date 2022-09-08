@@ -31,10 +31,10 @@
 【開車】<br />
  由中山高速公路下南崁交流道，至飯店約10分鐘<br /><br />
 【大眾運輸】<br />
-◆ 航空停靠站│ 桃園中正國際機場到站後轉乘，車程時間約30分鐘<br />
-◆ 高鐵│ 桃園青埔站，到站轉搭其他大眾運輸<br />
-◆ 公車│ 搭乘桃園客運106路至桃園復興路站，到站步行時間約6-7分鐘<br />
-◆ 台鐵│ 桃園車站，到站步行時間約5-6分鐘</div>
+◆ 航空停靠站｜桃園中正國際機場到站後轉乘，車程時間約30分鐘<br />
+◆ 高鐵｜桃園青埔站，到站轉搭其他大眾運輸<br />
+◆ 公車｜搭乘桃園客運106路至桃園復興路站，到站步行時間約6-7分鐘<br />
+◆ 台鐵｜桃園車站，到站步行時間約5-6分鐘</div>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
 float: right;
   position: relative;
   width: size(620);
-  height: size(560);
+  min-height: size(560);
   padding: 0 0 4em;
   font-stretch: normal;
   font-style: normal;
@@ -241,6 +241,13 @@ float: left;
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  
+.section8 {
+  padding: 5vw size(10) 4vw size(198);
+}
+.txt{
+  width: size(808);
+  }
 }
 
 @media screen and (max-width: 767px) {

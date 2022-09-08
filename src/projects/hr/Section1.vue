@@ -6,7 +6,7 @@
     <img src="./s1/bg.png" class="bg" />
     <div class="bgbox"></div>
     <div class="txt">
-      <div class="logo">
+      <div class="logo"  data-aos="zoom-in" data-aos-delay="0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 90" class="logo1">
 <path class="st0" d="M16.7,79.1c-1.3,0.1-1.5,0.2-1.5,1.7l0,6.6c0,1.4,0.1,1.5,1.5,1.7l0,0.5h-5.3l0-0.5c1.4-0.2,1.5-0.2,1.5-1.7
 	l0-3.2l-4.6,0l0,3.2c0,1.4,0.2,1.5,1.4,1.7l0,0.5H4.4l0-0.5c1.3-0.1,1.5-0.2,1.5-1.7l0-6.6c0-1.4-0.2-1.6-1.5-1.7l0-0.6h5.3l0,0.6
