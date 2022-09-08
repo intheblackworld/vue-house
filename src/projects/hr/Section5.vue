@@ -290,37 +290,37 @@ export default {
       slideList: [
         {
           img:require('./s5/1.jpg'),
-          name: '單人套房',
+          name: '單人套房 實際以現場為主',
           subtitle: '單人套房-7.3坪-1大床，',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },
         {
           img:require('./s5/2.jpg'),
-          name: '單人套房',
+          name: '單人套房 實際以現場為主',
           subtitle: '單人套房-7.3坪-1大床，',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },
         {
           img:require('./s5/3.jpg'),
-          name: '雙人套房',
+          name: '雙人套房 實際以現場為主',
           subtitle: '雙人套房-7.3坪- 2小床，',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },
         {
           img:require('./s5/4.jpg'),
-          name: '雙人套房',
+          name: '雙人套房 實際以現場為主',
           subtitle: '雙人套房-7.3坪- 2小床，',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },
         {
           img:require('./s5/5.jpg'),
-          name: '單人套房-衛浴',
+          name: '單人套房-衛浴 實際以現場為主',
           subtitle: '單人套房-7.3坪-1大床，',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },
         {
           img:require('./s5/6.jpg'),
-          name: '雙人套房- 衛浴',
+          name: '雙人套房-衛浴 實際以現場為主',
           subtitle: '雙人套房-7.3坪- 2小床，',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },

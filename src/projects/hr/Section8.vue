@@ -11,25 +11,25 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+     <!--     <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
-          </div>
+          </div> -->
         </div>
-     <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+     <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> 
+      </div>  -->
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">交通資訊</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">【地址】<br />
 桃園市桃園區民生路107號<br /><br />
 【開車】<br />
- 由中山高速公路下南崁交流道，至飯店約10分鐘<br /><br />
+ 由中山高速公路下南崁交流道，至飯店約10分鐘<br />由機埸高速公路下南桃園交流道，至飯店約10分鐘<br /><br />
 【大眾運輸】<br />
 ◆ 航空停靠站｜桃園中正國際機場到站後轉乘，車程時間約30分鐘<br />
 ◆ 高鐵｜桃園青埔站，到站轉搭其他大眾運輸<br />
@@ -66,7 +66,7 @@
 float: right;
   position: relative;
   width: size(620);
-  min-height: size(560);
+  min-height: size(620);
   padding: 0 0 4em;
   font-stretch: normal;
   font-style: normal;
@@ -109,7 +109,7 @@ float: right;
 float: left;
  // position: absolute;
   width: size(840);
-  height: size(560);
+  height: size(620);
 // top: size(185);
  // left: size(210);
   margin-left: 0;

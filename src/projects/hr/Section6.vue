@@ -308,23 +308,23 @@ export default {
       slideList: [
         {
           img:require('./s6/1.jpg'),
-          name: '智慧check in-建構中',
+          name: '智慧check in-建構中 實際以現場為主',
         },
         {
           img:require('./s6/2.jpg'),
-          name: '餐飲服務-建構中',
+          name: '餐飲服務-建構中 實際以現場為主',
         },
         {
           img:require('./s6/3.jpg'),
-          name: '國際商務中心-建構中',
+          name: '國際商務中心-建構中 實際以現場為主',
         },
         {
           img:require('./s6/4.jpg'),
-          name: '智慧大堂吧',
+          name: '智慧大堂吧 實際以現場為主',
         },
         {
           img:require('./s6/5.jpg'),
-          name: '自助洗衣房',
+          name: '自助洗衣房 實際以現場為主',
         },
       ],
     }

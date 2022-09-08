@@ -293,15 +293,15 @@ export default {
         },
         {
           img:require('./s2/2.jpg'),
-          name: '大廳',
+          name: '大廳 實際以現場為主',
         },
         {
           img:require('./s2/3.jpg'),
-          name: '櫃台',
+          name: '櫃台 實際以現場為主',
         },
         {
           img:require('./s2/4.jpg'),
-          name: '接待區',
+          name: '接待區 實際以現場為主',
         },
       ],
     }

@@ -29,7 +29,7 @@
       <div class="title" data-aos="fade-up" data-aos-delay="200">康健生活新趨勢</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">健身房<br />
 馨據點<br />
-洪教授36921健康餐廳-建構中即將完成<br />
+健康餐廳-建構中即將完成<br />
 智慧藥局--建構中即將完成
 </div>
       </div>
@@ -311,19 +311,19 @@ export default {
       slideList: [
         {
           img:require('./s7/1.jpg'),
-          name: '健身房',
+          name: '健身房 實際以現場為主',
         },
         {
           img:require('./s7/2.jpg'),
-          name: '馨據點--建構中',
+          name: '馨據點-建構中 實際以現場為主',
         },
         {
           img:require('./s7/3.jpg'),
-          name: '洪教授36921健康餐廳--建構中',
+          name: '健康餐廳-建構中 實際以現場為主',
         },
         {
           img:require('./s7/4.jpg'),
-          name: '智慧藥局--建構中',
+          name: '智慧藥局-建構中 實際以現場為主',
         },
       ],
     }
