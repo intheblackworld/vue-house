@@ -3,7 +3,7 @@
     <!-- <img class="og" src="@/projects/hr/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
-    <Navigation />
+    <!-- <Navigation /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
@@ -11,6 +11,7 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
+<!--      
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
@@ -59,7 +60,6 @@
     >
     <Section9 />
     </vue-lazy-component>
-<!--      
     <vue-lazy-component
       class="section"
       id="section10"
@@ -84,11 +84,12 @@
       id="section11"
     >
       <Section11 />
-    </vue-lazy-component> -->
+    </vue-lazy-component> 
+    <MobileNav />
+  -->
     <div class="section" id="contact">
       <ContactSection />
     </div>
-    <MobileNav />
   </div>
 </template>
 
@@ -114,15 +115,16 @@
 // @ is an alias to /src
 import $ from 'jquery'
 import info from '@/info'
-import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
-import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
+/* 
+import MobileNav from '@/layouts/MobileNav.vue'
+import Navigation from '@/layouts/Navigation.vue'
 import Section1 from '@/projects/hr/Section1.vue'
 import Section2 from '@/projects/hr/Section2.vue'
 import Section3 from '@/projects/hr/Section3.vue'
@@ -132,7 +134,6 @@ import Section6 from '@/projects/hr/Section6.vue'
 import Section7 from '@/projects/hr/Section7.vue'
 import Section8 from '@/projects/hr/Section8.vue'
 import Section9 from '@/projects/hr/Section9.vue'
-/* 
 import Section10 from '@/projects/hr/Section10.vue'
 import Section11 from '@/projects/hr/Section11.vue'
 import Section10 from '@/projects/hr/Section10.vue' */
@@ -142,10 +143,11 @@ export default {
   components: {
     Loading,
     // Indigator,
-    Navigation,
     // SideNavigation,
     // LeafFlow,
     ContactSection,
+    /* 
+    Navigation,
     MobileNav,
     Section1,
     Section2,
@@ -156,7 +158,6 @@ export default {
     Section7,
     Section8,
     Section9,
-    /* 
     Section10,
     Section11,
     Section11,
