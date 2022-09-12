@@ -159,7 +159,7 @@
   }
 .bg{
   position: absolute;opacity: .5;
-  top:calc(50% + (160 - 604 * 0.5) * 100vw / 375);left:auto;width:sizem(561);right: sizem(-13);
+  top:calc(50% + (290 - 604 * 0.5) * 100vw / 375);left:auto;width:100%;right: sizem(-13);
 }
 .txt{
   font-size: sizem(20);

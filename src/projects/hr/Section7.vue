@@ -28,9 +28,9 @@
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">康健生活新趨勢</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">健身房<br />
-馨據點<br />
+馨據點-建構中即將完成<br />
 健康餐廳-建構中即將完成<br />
-智慧藥局--建構中即將完成
+智慧藥局-建構中即將完成
 </div>
       </div>
     </div>
