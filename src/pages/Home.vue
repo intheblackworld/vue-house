@@ -23,26 +23,26 @@
 
 -->
 <VideoSection1  id="section2"
-      :playBtn="require('@/projects/sfdy/video/play-btn.png')"
-      title="開箱系列影片"
-      :close="require('@/projects/sfdy/video/close.png')"
-      :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]"
+      :playBtn="require('@/projects/vvs1/video/play-btn.png')"
+      title="建築×美學影片"
+      :close="require('@/projects/vvs1/video/close.png')"
+      :arrows="[require('@/projects/vvs1/video/arrow-left.png'), require('@/projects/vvs1/video/arrow-right.png')]"
       :slideList="[
         {
-          title: '內容街景大公開',
-          img: require('@/projects/sfdy/video/2.jpg'),
+          title: '恆鑽地段奢美居',
+          img: require('@/projects/vvs1/video/2.jpg'),
           video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
-          title: '屋內機密大公開',
-          img: require('@/projects/sfdy/video/3.jpg'),
+          title: '打造有溫度的家',
+          img: require('@/projects/vvs1/video/3.jpg'),
           video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
-          title: '回家就是享受的開始',
-          img: require('@/projects/sfdy/video/1.jpg'),
+          title: '樣品屋私藏設計',
+          img: require('@/projects/vvs1/video/1.jpg'),
           video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
@@ -85,13 +85,13 @@
     >
       <Section8 />
     </vue-lazy-component>
-<!--      
     <vue-lazy-component
       class="section"
       id="section9"
     >
     <Section9 />
     </vue-lazy-component>
+<!--      
     <vue-lazy-component
       class="section"
       id="section10"
@@ -182,11 +182,12 @@ import Section5 from '@/projects/vvs1/Section5.vue'
 import Section6 from '@/projects/vvs1/Section6.vue'
 import Section7 from '@/projects/vvs1/Section7.vue'
 import Section8 from '@/projects/vvs1/Section8.vue'
-/* 
 import Section9 from '@/projects/vvs1/Section9.vue'
+/* 
 import Section10 from '@/projects/vvs1/Section10.vue'
 import Section10 from '@/projects/vvs1/Section10.vue'
 import Section11 from '@/projects/vvs1/Section11.vue' */
+import VideoSection1 from '@/components/VideoSection1.vue'
 
 export default {
   name: 'home',
@@ -206,12 +207,13 @@ export default {
     Section6,
     Section7,
     Section8,
-    /* 
     Section9,
+    /* 
     Section10,
     Section11,
     Section11,
     */
+    VideoSection1,
   },
   data() {
     return {
