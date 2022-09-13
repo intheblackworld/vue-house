@@ -1,14 +1,6 @@
 <template>
   <div>
     <div class="section9">
-      <wimg class="w2 absolute" preserveAspectRatio="xMaxYMid slice" v-if="isMobile" />
-      <img src="./all/gold1.png" class="gold1 absolute" />
-      <img src="./all/gold2.png" class="gold2 absolute" />
-      <wimg class="w1 absolute" preserveAspectRatio="xMaxYMid slice" />
-      <div class="txt">
-      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
-    <img src="./s1/light.png" class="light" /><span>品牌首發 品味名居</span><span>GET  TASTEFULLY</span></h3>
-      </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -17,220 +9,86 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-            </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </div>
         </div>
       </div>
-      <div class="subtxt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">18年建築淬鍊</div>
-      <div class="subtitle" data-aos="fade-down" data-aos-delay="200">築起<span>幸福哲學</span></div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        在細節中，實踐居住理想的可能性<br />
-        近20年的建築經歷<br />
-        為近3000戶家庭成家圓夢<br />
-        在各大城市皆可看見「佳昂建設」<br />
-        用情打造的一座座幸福堡壘
-      </div>
+      <div class="txt">
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >飯店級生活<br v-if="isMobile" />  品味感官盛宴</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">Pia interior 將奢華帶入「周到設計thoughtful design」,將酒店的功能置入住宅，詮釋文化性與使用功能搭配細節混合，以多年設計經驗和思考的累積，讓公設回應到生活使用面上，在『家』享受到更好的愉悅體驗。</div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
-.section9 {
+.section9 {  
   width:100%;
-  height: auto;
+  height:auto;
   position: relative;
-  padding: 0 0 2.5vw 0;
-  &::after{content: "";display: block;clear: both;}
-}
-.gold1{
-    top: 38vw;
-    right: -13vw;
-    width: 18vw;
-    filter: drop-shadow(0 0 0.5vw rgba(0, 0, 0, 0.7));
-  }
-  .gold2 {
-    top: 19.5vw;
-    right: -19vw;
-    width: 27vw;
-    filter: drop-shadow(0 0 0.3vw rgba(85, 27, 0, 0.7));
-  }
-.w1{
-    top: 46vw;
-    right: -34vw;
-    width: 68vw;
-    height: 26vw;
-    transform: rotate(-84deg) scaleX(1);stroke:#FFF;
+  padding: 9vw 0 5vw;
+  background: url("./s1/bg.jpg") center;
+  background-size: 100% auto;
+&::after{content: "";clear: both;display: block;}
 }
 
+.img{width: size(800);position: absolute;left: 0;bottom: size(-130);
+z-index: 2;
+img{width: 100%;
+// transform: skewY(5deg) ;
+// transform-origin: 0 50%;
+  //    animation: an 3s linear alternate infinite;
+      }
+}
+
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
 .txt{
   position: relative;
-  width: size(1606);
-  margin:0 auto 0;
+  width: size(1500);
+  margin:1.5em auto 3em auto;
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
-  font-size: size(27);
-  font-weight: 700;
+  font-size: size(19);
+  font-weight: 600;
   line-height: 1.4;
   z-index: 2;
-  font-family: 'Noto Serif TC', serif;
+  color: #FFF;
 
 .title{
   font-size:2.2em;
-  margin:1.5em auto 0.75em;
-  font-weight: 900;
-  color: #00537A;
-  display: block;
-  position: relative;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  background: linear-gradient(135deg, #FFF0 5%,#FFF6 22%,#FFF0 44%);
-  /*
-    */
-  &::before,
-  &::after{
-    content: "";
-    display:block;
-    height: 1px;
-    width:10em;
-    background: linear-gradient(to right, rgba(4,102,128,1) 0%,rgba(33,128,164,1) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
-    margin:0 0 0 0.2em;
-    }
-  &::before{
-    background: linear-gradient(to right, rgba(4,102,128,0) 0%,rgba(33,128,164,0.5) 25%,rgba(4,102,128,1) 50%,rgba(4,102,128,0) 100%);
-    margin:0 0 0 2em;
+  margin:0 auto 0;
+  // color: #B00;
+}
+  .subtitle{font-size: 1.25em;
+    padding:.75em 0 0 0;
   }
-    img{height: 1.5em;
-  position: relative;
-  vertical-align: middle;
-    margin: -.35em .4em -0.03em 0;
-    &.light{position: absolute;top: .5em;left: .5em;
-      animation: light1 3s linear infinite;}
-    }
-
-@keyframes light1{
-    0%{
-      transform: rotate(180deg) scale(.3);
-    }
-    50%{
-      transform: rotate(0) scale(1);
-    }
-    100%{
-      transform: rotate(-180deg)scale(.3);
-    }
-}
-  span:last-child{
-    white-space: nowrap;
-  font-size:1.2em;
-  background:url("./s5/txtbg.jpg");
-  background-size: cover;
-  background-clip: text;
-  font-weight: 400;
-  letter-spacing: 0.0em;
-  -webkit-background-clip: text;
-  vertical-align:-0.05em;
-  color: transparent;font-family: 'Cantata One', serif;
-  margin: 0 0 0 0.35em;
-  filter: drop-shadow(0 0 0.4vw #fffc);
-  }
-
-}
-.subtitle{
-  font-size:1.3em;
-  margin:.5em auto 0;
-  letter-spacing:0.03em;
-  font-weight: 900;
-  color: #000;
-}
 
 .desc {
-  margin:0.1em auto 1.9em;
+  padding:1em 0 0 0;
+  font-weight: 300;
   line-height: 1.6;
   list-style: circle;
 }
   }
-
-.subtxt{
-  position: relative;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(27);
-  font-weight: 500;
-  line-height: 1.5;color: #000;
-  margin:0;
-  padding:2.7em 2em 0 0;
-  display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-  &::before,
-  &::after{
-    content: "";
-    display:block;
-    height: 1px;
-    width:17em;
-    background: #614115;
-  }
-
-  &::before{
-    margin:0em 0 4em 0;
-    }
-  &::after{
-    margin:5em 0 0em 0;
-    }
-.title{
-  font-family: 'Noto Serif TC', serif;font-weight: 900;
-  color: #614115;font-size: 2.4em;
-    padding:0;
-  line-height: 1.35;
-
-  }
-  .subtitle{font-size: 2em;font-weight: 900;
-  font-family: 'Noto Serif TC', serif;
-  line-height: 1.4;
-    color:#614115;
-    padding:0 0 1em 0;
-    span{
-      display:inline-block;
-      position: relative;
-  &::before,
-  &::after{
-    content: "";
-    display:inline-block;
-    height:0.8em;
-    width:3px;
-    background: currentColor;
-    margin:0 0 0 .4em;
-    }
-  &::before{
-    margin:0 .35em 0 .45em;
-    }
-    }
-  }
-}
-
 /* Swipe */
-
 .swipe {
-  width: size(1100);
-  height: size(800);
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(840);
+  // left: size(210);
   object-fit: cover;
   z-index: 3;
-  float: left;
-  box-shadow: .3vw .3vw .7vw #0006;
 }
 .slide-name {
     right:1.5em;
@@ -285,10 +143,11 @@
 // pagination
 .pagination {
   width: auto;
-  bottom: 0.5em;
-  left: 0.5em;
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
-  font-size: size(15);
+  font-size: size(20);
+
 }
 .pagination-dot {
   padding: 0.25em;
@@ -301,7 +160,7 @@
     width:1em;
     height:1em;
     border-radius: 50%;
-    border:  2px solid  $pagination;
+    border: 0.2em solid  #FFF6;
     position: relative;
     transition: all 0.5s;
 
@@ -311,8 +170,7 @@
       height: 60%;
       display: block;
     border-radius: 50%;
-   // border:  2px solid  $pagination-active;
-   background: #fff;
+    border:  0.105em solid #FFF;
       opacity: 1;
       position: absolute;
       top: 20%;
@@ -328,27 +186,22 @@
         height: 100%;
         top: 0%;
         left: 0%;
-        transform: scale(1.3);
+        transform: scale(1.6);
       }
     }
   }
 }
-
 .swipe-btns {
   width: 100%;
   height: 100%;
+  padding: 0 0.75em;
   z-index: 3;
   font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    padding: 0 0.75em;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    img{
     width: 1em;
-    }
+    cursor: pointer;
   }
 }
 
@@ -369,77 +222,34 @@
   .section9 {
     width: 100%;
     height: auto;
+    min-height: auto;
+    max-height: initial;
+  //padding: 0;
+  background-size: 250% auto;
   }
-.gold1{
-    top: 141vw;
-    right: 5vw;
-    width: 23vw;
-  }
-  .gold2 {
-    top: 117.5vw;
-    right: -17vw;
-    width: 36vw;
-  }
-.w1{
-    top: -43vw;
-    right: -51vw;
-    width: 101vw;
-    height: auto;
-}
-.w2{
-    top: 126vw;
-    right: -50vw;
-    width: 100vw;
-    transform: rotate(-84deg);stroke:#FFF;
-}
-
+  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
   .txt{
     position: relative;
-    width: sizem(330);
-    margin:1.5em auto 2em;
-    font-size: sizem(12);
+    width: sizem(320);
+    margin:0em auto 3em;
+    left:0;
+    top:0;
+    font-size: sizem(15);
+  padding-top: 7vw;
     .title{
-      font-size:2.2em;
-  line-height: 1.6;
-    img{height: 1.65em;
-  position: relative;
-  vertical-align: middle;
-    margin: -.35em .2em -0.03em 0;
+      font-size:1.9em;
     }
-      
-  span:last-child{position: absolute;top: 0;left: 0;
-  transform: rotate(90deg) translate(18vw,-89vw);
-  font-size:1.1em;
-  transform-origin:0 0;
-  }
+    .subtitle{
+      font-size:1.1em;
     }
   }
-.subtxt{
-    font-size: sizem(12);
-  padding:2.1em 0 0 0;
-    width:sizem(310);
-    margin: 0 auto 0 sizem(20);
-  display: block;
-  &::before,
-  &::after{
-    display: none;
-
-  }
-  .subtitle{
-    padding:0 0 .4em 0;
-  }
-
-  .desc{font-size: sizem(15);}
-}
-  
   /* Swipe */
   .swipe {
     position: relative;
-    width:sizem(310);
-    height: sizem(350);
-    margin: 0 auto 0 sizem(20);
-    float: none;
-    box-shadow: 0.5vw 0.5vw 1.5vw #0006;
+    width: 100%;
+    height: sizem(255);
+    top:0;
+    left:0;
   }
 .swipe-item {
   .slide-name {
@@ -450,22 +260,19 @@
   font-size: sizem(15);
   }
 }
+
 </style>
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
-import wimg from './w.vue'
 
 export default {
   name: 'section9',
 
   mixins: [slider],
   props: ['viewIndex'],
-  components: {
-    wimg,
-  },
 
   data() {
     return {
@@ -476,20 +283,28 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile?require("./s9/1m.jpg"):require("./s9/1.jpg"),
-          name: '太和2 外觀3D示意圖',
+          img: require('./s6/1.jpg'),
+          name: '氣派大廳 3D示意',
         },
         {
-          img: isMobile?require("./s9/2m.jpg"):require("./s9/2.jpg"),
-          name: '太和1 外觀3D示意圖',
+          img: require('./s6/2.jpg'),
+          name: 'Loung Bar 3D示意',
         },
         {
-          img: isMobile?require("./s9/3m.jpg"):require("./s9/3.jpg"),
-          name: '佳昂晴海 實景拍攝',
+          img: require('./s6/3.jpg'),
+          name: '鐵板燒區 3D示意',
         },
         {
-          img: isMobile?require("./s9/4m.jpg"):require("./s9/4.jpg"),
-          name: '佳昂幸福市 實景拍攝',
+          img: require('./s6/4.jpg'),
+          name: '家庭劇院 3D示意',
+        },
+        {
+          img: require('./s6/5.jpg'),
+          name: '健身房 3D示意',
+        },
+        {
+          img: require('./s6/6.jpg'),
+          name: '兒童遊戲室 3D示意',
         },
       ],
     }
@@ -505,7 +320,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 7) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

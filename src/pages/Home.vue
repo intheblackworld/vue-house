@@ -22,6 +22,32 @@
 
 
 -->
+<VideoSection1  id="section2"
+      :playBtn="require('@/projects/sfdy/video/play-btn.png')"
+      title="開箱系列影片"
+      :close="require('@/projects/sfdy/video/close.png')"
+      :arrows="[require('@/projects/sfdy/video/arrow-left.png'), require('@/projects/sfdy/video/arrow-right.png')]"
+      :slideList="[
+        {
+          title: '內容街景大公開',
+          img: require('@/projects/sfdy/video/2.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '屋內機密大公開',
+          img: require('@/projects/sfdy/video/3.jpg'),
+          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '回家就是享受的開始',
+          img: require('@/projects/sfdy/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+      ]"
+    />
     <vue-lazy-component
       class="section"
       id="section3"
