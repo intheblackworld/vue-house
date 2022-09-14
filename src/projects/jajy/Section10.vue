@@ -1,23 +1,23 @@
 <template>
   <div>
     <div class="section10">
-    <wimg class="w1 absolute" preserveAspectRatio="xMidYMid slice" v-if="!isMobile" />
-      <img src="./all/gold1.png" class="gold1 absolute" />
-      <img src="./all/gold1.png" class="gold4 absolute" v-if="isMobile" />
-      <img src="./all/gold2.png" class="gold2 absolute" />
-      <img src="./all/gold2.png" class="gold3 absolute" />
-    <wimg class="w2 absolute" preserveAspectRatio="xMaxYMid slice" v-if="!isMobile" />
-    <wimg class="w3 absolute" preserveAspectRatio="xMaxYMid slice" v-if="!isMobile" />
+    <wimg class="w1 absolute" preserveAspectRatio="xMidYMid slice" v-if="!isMobile" loading="lazy" />
+      <img src="./all/gold1.png" class="gold1 absolute" loading="lazy" />
+      <img src="./all/gold1.png" class="gold4 absolute" loading="lazy" v-if="isMobile" />
+      <img src="./all/gold2.png" class="gold2 absolute" loading="lazy" />
+      <img src="./all/gold2.png" class="gold3 absolute" loading="lazy" />
+    <wimg class="w2 absolute" preserveAspectRatio="xMaxYMid slice" v-if="!isMobile" loading="lazy" />
+    <wimg class="w3 absolute" preserveAspectRatio="xMaxYMid slice" v-if="!isMobile" loading="lazy" />
       <div class="txt">
-      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
-    <img src="./s1/light.png" class="light" /><span>大師陣容 締造湖子內新品味</span><span>CONSTRUCATION TEAM</span></h3>
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png" loading="lazy">
+    <img src="./s1/light.png" loading="lazy" class="light" /><span>大師陣容 締造湖子內新品味</span><span>CONSTRUCATION TEAM</span></h3>
       </div>
 
 
       <div class="box">
       <div class="list">
         <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0">
-          <img :src="slideList1[0].img" :alt="slideList1[0].name" />
+          <img :src="slideList1[0].img" :alt="slideList1[0].name" loading="lazy" />
           <div class="slide-name" v-html="slideList1[0].name"></div>
         </div>
       <div class="swipe swipe1" v-else @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -43,8 +43,8 @@
           <div class="subtitle" data-aos="fade" data-aos-delay="200" >曾聰憲 建築師事務所</div>
           <div class="desc" data-aos="fade" data-aos-delay="400">知名建設御用大師<br />以專業品質遍績北、中、南</div>
         </div>
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList1[1].img" :alt="slideList1[1].name" /><div class="slide-name" v-html="slideList1[1].name"></div></div>
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList1[2].img" :alt="slideList1[2].name" /><div class="slide-name" v-html="slideList1[2].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList1[1].img" :alt="slideList1[1].name" /><div class="slide-name" v-html="slideList1[1].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList1[2].img" :alt="slideList1[2].name" /><div class="slide-name" v-html="slideList1[2].name"></div></div>
       </div>
       <div class="list">
         <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList2[0].img" :alt="slideList2[0].name" /><div class="slide-name" v-html="slideList2[0].name"></div></div>
@@ -71,11 +71,11 @@
       <div class="subtitle" data-aos="fade" data-aos-delay="200" >瀚鼎空間設計有限公司</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">超過20年的經驗<br />深具業界口碑的專業服務</div>
         </div>
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList2[1].img" :alt="slideList2[1].name" /><div class="slide-name" v-html="slideList2[1].name"></div></div>
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList2[2].img" :alt="slideList2[2].name" /><div class="slide-name" v-html="slideList2[2].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList2[1].img" :alt="slideList2[1].name" /><div class="slide-name" v-html="slideList2[1].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList2[2].img" :alt="slideList2[2].name" /><div class="slide-name" v-html="slideList2[2].name"></div></div>
       </div>
       <div class="list">
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList3[0].img" :alt="slideList3[0].name" /><div class="slide-name" v-html="slideList3[0].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList3[0].img" :alt="slideList3[0].name" /><div class="slide-name" v-html="slideList3[0].name"></div></div>
       <div class="swipe swipe3" v-else @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-btns absolute flex-ac flex-jb">
             <div class="prev-btn" @click="decMultiIndex(3)">
@@ -99,8 +99,8 @@
       <div class="subtitle" data-aos="fade" data-aos-delay="200" >關氏坊 空間創意美學</div>
       <div class="desc" data-aos="fade" data-aos-delay="400">20年海內外經驗<br />以獨特品味賦予「美」全新定義</div>
         </div>
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList3[1].img" :alt="slideList3[1].name" /><div class="slide-name" v-html="slideList3[1].name"></div></div>
-        <div class="img" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img :src="slideList3[2].img" :alt="slideList3[2].name" /><div class="slide-name" v-html="slideList3[2].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList3[1].img" :alt="slideList3[1].name" /><div class="slide-name" v-html="slideList3[1].name"></div></div>
+        <div class="img" loading="lazy" v-if="!isMobile" data-aos="fade" data-aos-delay="0"><img loading="lazy" :src="slideList3[2].img" :alt="slideList3[2].name" /><div class="slide-name" v-html="slideList3[2].name"></div></div>
       </div>
       </div>
     </div>

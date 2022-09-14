@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="section6">
-      <img src="./all/gold1.png" class="gold1 absolute" />
-      <img src="./all/gold2.png" class="gold2 absolute" v-if="isMobile" />
-    <wimg class="w1 absolute" v-else />
+      <img src="./all/gold1.png" class="gold1 absolute" loading="lazy" />
+      <img src="./all/gold2.png" class="gold2 absolute" v-if="isMobile" loading="lazy" />
+    <wimg class="w1 absolute" v-else loading="lazy" />
       <div class="txt">
-      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
-    <img src="./s1/light.png" class="light" /><span>健康為上 安心適居</span><span>GET  HEALTHY</span></h3>
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png" loading="lazy">
+    <img src="./s1/light.png" class="light"  loading="lazy" /><span>健康為上 安心適居</span><span>GET  HEALTHY</span></h3>
       </div>
 
 
@@ -14,7 +14,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt="" loading="lazy">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -22,8 +22,8 @@
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" loading="lazy">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" loading="lazy">
           </div>
         </div>
       </div>

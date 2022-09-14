@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="section8">
-      <img src="./all/gold1.png" class="gold1 absolute" v-if="isMobile" />
-    <wimg class="w1 absolute" preserveAspectRatio="xMidYMid slice" />
-    <wimg class="w2 absolute" preserveAspectRatio="xMidYMid slice" v-if="isMobile" />
-      <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" data-aos-delay="200" />
+      <img src="./all/gold1.png" class="gold1 absolute" loading="lazy" v-if="isMobile" />
+    <wimg class="w1 absolute" preserveAspectRatio="xMidYMid slice" loading="lazy" />
+    <wimg class="w2 absolute" preserveAspectRatio="xMidYMid slice" loading="lazy" v-if="isMobile" />
+      <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" loading="lazy" data-aos-delay="200" />
       <div class="txt">
       <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
-    <img src="./s1/light.png" class="light" /><span>匠心工藝 安全良居</span><span>GET  QUALITY</span></h3>
+    <img src="./s1/light.png" loading="lazy" class="light" /><span>匠心工藝 安全良居</span><span>GET  QUALITY</span></h3>
       </div>
 
 
@@ -15,7 +15,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt="" loading="lazy">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>

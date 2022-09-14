@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="section4">
-    <wimg class="w1 absolute" />
-    <wimg class="w2 absolute" />
-      <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" data-aos-delay="200" />
+    <wimg class="w1 absolute" loading="lazy" />
+    <wimg class="w2 absolute" loading="lazy" />
+      <img src="./all/leaf.png" class="leaf absolute"  data-aos="fade" data-aos-delay="200" loading="lazy" />
       <div class="txt">
       <h3 class="title" data-aos="zoom-in" data-aos-delay="0">千坪星地標  「五居」 新能量</h3>
       <p class="desc" data-aos="zoom-in" data-aos-delay="200">
@@ -17,7 +17,7 @@
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
+              <img :src="slide.img" alt="" loading="lazy">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>

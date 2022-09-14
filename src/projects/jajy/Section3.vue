@@ -1,7 +1,7 @@
 <template>
   <div class="section3" id="scene">
-    <img src="./s3/bg-m.jpg" class="bg" v-if="isMobile" />
-    <img src="./s3/bg.jpg" class="bg" v-else />
+    <img src="./s3/bg-m.jpg" class="bg" v-if="isMobile" loading="lazy" />
+    <img src="./s3/bg.jpg" class="bg" v-else loading="lazy" />
     <div class="txt">
       <h3 class="title" data-aos="zoom-in" data-aos-delay="0">潛能豐藏湖子內<br v-if="isMobile" />  引領嘉義新未來</h3>
       <p class="desc" data-aos="zoom-in" data-aos-delay="200">嘉義市最大、最強<br v-if="isMobile" /><span v-else>，</span>市區唯一重劃 —「湖子內重劃區」<span  v-if="isMobile">，</span><br v-else />

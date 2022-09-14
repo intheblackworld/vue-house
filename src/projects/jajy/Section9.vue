@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="section9">
-      <wimg class="w2 absolute" preserveAspectRatio="xMaxYMid slice" v-if="isMobile" />
-      <img src="./all/gold1.png" class="gold1 absolute" />
-      <img src="./all/gold2.png" class="gold2 absolute" />
-      <wimg class="w1 absolute" preserveAspectRatio="xMaxYMid slice" />
+      <wimg class="w2 absolute" preserveAspectRatio="xMaxYMid slice" v-if="isMobile" loading="lazy" />
+      <img src="./all/gold1.png" class="gold1 absolute" loading="lazy" />
+      <img src="./all/gold2.png" class="gold2 absolute" loading="lazy" />
+      <wimg class="w1 absolute" preserveAspectRatio="xMaxYMid slice" loading="lazy" />
       <div class="txt">
-      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png">
-    <img src="./s1/light.png" class="light" /><span>品牌首發 品味名居</span><span>GET  TASTEFULLY</span></h3>
+      <h3 class="title" data-aos="fade" data-aos-delay="0"><img src="./s5/icon.png" loading="lazy">
+    <img src="./s1/light.png" class="light" loading="lazy" /><span>品牌首發 品味名居</span><span>GET  TASTEFULLY</span></h3>
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -19,10 +19,10 @@
           </transition-group>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
             <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
             </div>
           </div>
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
