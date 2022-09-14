@@ -61,9 +61,9 @@
   }
 .light1{
   position: absolute;
-  top: calc(50% + 15.9vw);
+  top: calc(50% + 4vw);
   width:size(160);
-  left:54.5%;
+  left:65.5%;
   z-index: 3;
   animation: light1 3s linear infinite;
   }
@@ -91,7 +91,7 @@
   position: relative;
   // top:calc(50% + (253 - 540) * 100vw / 1920);
  //  left:size(-260);
- top:calc(37% + (124 - 1080 * 0.37) * 100vw / 1920);
+ top:calc(37% + (104 - 1080 * 0.37) * 100vw / 1920);
   font-size: size(45);
   line-height: 1.35;
   color: transparent;
@@ -158,9 +158,9 @@
   top:calc(50% + (586 - 302) * 100vw / 375);
   }
 .light1{
-  top: calc(50% + 51vw);
-  width:sizem(100);
-  left:51.5%;
+  top: calc(50% + 38vw);
+  width:sizem(80);
+  left:75%;
   }
 .light2{
   top: sizem(17);
@@ -191,7 +191,7 @@
   }
 .txt{
   font-size: sizem(24);
-  top:calc(50% + (123 - 302) * 100vw / 375);
+  top:calc(30% + (95 - 604 * .3) * 100vw / 375);
 .logo{
   width:sizem(240);
   margin:0 auto 0.6em;
