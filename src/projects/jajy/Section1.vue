@@ -3,12 +3,12 @@
     <!-- <img src="./s1/mo.jpg" class="t0" />  -->
     <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
     <img src="./s1/bg.png" class="bg" v-else />
-    <img src="./s1/light.png" class="light1" />
+    <div data-aos="zoom-in" data-aos-delay="400" class="light1"><img src="./s1/light.png" /></div>
     <div class="txt">
-    <img src="./s1/light.png" class="light2" />
-      <img src="./s1/logo.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">嘉義 璀璨登場</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800">VAF活氧系統<span></span>市心重劃區<b>2-3</b>房</div>
+      <div data-aos="zoom-in" data-aos-delay="300" class="light2"><img src="./s1/light.png" /></div>
+      <img src="./s1/logo.png" data-aos="fade" data-aos-delay="0" data-aos-duration="300" alt="logo" class="logo">
+      <div class="t1"  data-aos="zoom-in" data-aos-delay="100">嘉義 璀璨登場</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="200">VAF活氧系統<span></span>市心重劃區<b>2-3</b>房</div>
     </div>
 
     <!-- 
@@ -65,7 +65,8 @@
   width:size(160);
   left:65.5%;
   z-index: 3;
-  animation: light1 3s linear infinite;
+  img{width: 100%;
+  animation: light1 3s linear infinite;}
   }
 .light2{
   position: absolute;
@@ -74,7 +75,8 @@
   left:46.5%;
   z-index: 3;
   transform: rotate(360deg);
-      animation: light1 3s linear infinite;
+  img{width: 100%;
+  animation: light1 3s linear infinite;}
   }
 @keyframes light1{
     0%{
