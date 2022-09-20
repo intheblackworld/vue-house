@@ -9,14 +9,21 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        台鐵、捷運，沙鹿新站輕盈交匯
+        台灣大道海線都心<br v-if="isMobile" />  雙捷交匯贏家格局
       </div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="400">復刻台中捷運綠線驚人漲幅，藍線增值列車即將啟航<br />
+      <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+台鐵、捷運，沙鹿新站輕盈交匯<br />
+復刻台中捷運綠線驚人漲幅，藍線增值列車即將啟航<br />
 近距沙鹿車站200米，捷運藍線約800米<br />
-暢遊大台中，軌道經濟大時代正式來臨！</div>
+暢遊大台中，軌道經濟大時代正式來臨！	<br /><br />
+
+一高、雙捷、三大道<br />
+「勝麗交響曲」10分鐘輕鬆串連三大道<br v-if="isMobile" /><span v-else>，</span>20分鐘四大產業園區<br />
+台中海線新核心，未來台中首位。
+</div>
     </div>
     <div class="swiper">
-    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
+    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
         <img :src="slide.img" alt>
         <div class="slide-name absolute" v-html="slide.name"></div>

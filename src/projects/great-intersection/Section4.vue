@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class="swiper">
-    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="fade" data-aos-delay="200" class="item-list flex-jb flex-as">
+    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="zoom-out" data-aos-delay="200" class="item-list flex-jb flex-as">
       <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
         <img :src="slide.img" alt>
         <div class="slide-name absolute" v-html="slide.name"></div>
