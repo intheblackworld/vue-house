@@ -15,8 +15,8 @@
       <img src="./s1/4.png" data-aos="fade-left" data-aos-duration="1600" class="img4" alt="" loading="lazy">
 </div>
 <div class="txt">
-<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>人生MVP</b> <br v-if="isMobile">生活紅不讓</span></h2>
-<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">全能綠生活 核心雙商圈</h3>
+<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>雙公園</b> 會呼吸的家</span></h2>
+<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">安南中心｜綠浪2-3房｜<span>06 283-5866</span></h3>
 </div>
 
 
@@ -28,6 +28,7 @@
 
 .section1 {
  // background-image: url('~@/projects/hbl/s1/bg.jpg');
+ background:#00797f;
   width: 100%;
   height: 100vh;
   min-height: size(900);
