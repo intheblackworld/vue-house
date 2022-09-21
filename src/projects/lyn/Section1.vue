@@ -36,7 +36,7 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
- // background-image: url('~@/projects/anan/s1/bg.jpg');
+ // background-image: url('~@/projects/cfyd/s1/bg.jpg');
   width: 100%;
   height: 100vh;
   min-height: size(900);

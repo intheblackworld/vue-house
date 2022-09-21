@@ -4,18 +4,17 @@
 <div  data-aos="fade">
 <img src="./s1/bg.png" v-if="!isMobile" class="bg-img" alt="" loading="lazy">
 <img src="./s1/bgm.png" v-else class="bg-img" alt="" loading="lazy"></div>
-<img src="./s1/synlogo.png" class="synlogo" alt="" loading="lazy">
-<img src="./s1/style.png"  v-if="!isMobile" class="style" alt="" loading="lazy">
-<img src="./s1/style.png" v-if="!isMobile" class="style2" alt="" loading="lazy">
-<div class="bird">
-      <img src="./s1/bird.png" class="bird1" alt="" loading="lazy">
-   <!--  <img src="./s1/bird.png" v-if="!isMobile" class="bird2" alt=""> -->
-</div>
+
+<img src="./s1/style1.png" class="style2" alt="" loading="lazy">
+<img src="./s1/style2.png" class="style" alt="" loading="lazy">
+<img src="./s1/en.png" class="en" alt="" loading="lazy">
+
 <div class="txt">
  <img src="./s1/logo.png" v-if="!isMobile" data-aos="fade-left" data-aos-duration="1600" class="logo" alt="" loading="lazy">
  <img src="./s1/logom.png" v-if="isMobile" data-aos="fade-left" data-aos-duration="1600" class="logo" alt="" loading="lazy">
-<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span>雙公園 會呼吸的家</span></h2>
-<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">安南中心｜綠浪2-3房｜<span><font>06</font> 283-5866</span></h3>
+<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span>市政永華 明星學區</span></h2>
+<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">安平國中小｜41-52 坪</h3>
+<img src="./s1/synlogo.png" class="synlogo" alt="" loading="lazy">
 </div>
 
 
@@ -26,8 +25,8 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
- // background-image: url('~@/projects/cfyd/s1/bg.jpg');
- background:#00797f;
+  background-image: url('~@/projects/cfyd/s1/bg.png');
+ background:linear-gradient(to right, #0e79dc, #0e79dc);
   width: 100%;
   height: 100vh;
   min-height: size(900);
@@ -36,55 +35,47 @@
   //z-index: 3;
 }
 .a1{position: absolute;top: 0;left: 0;width: 100%;opacity: .5;}
-.synlogo{
-  position: absolute;
-  right:size(20);
-  top:size(20);
-  width: size(350);
-}
+
 .style{
   position: absolute;
-   opacity : 0.5 ;
   left:size(-250);
-  bottom:size(150);
-  width: size(800);
+  top:size(0);
+  width: size(900);
   z-index: 0;
-  animation: anx1 2s ease-in-out infinite alternate;
 }
 
 .style2{
   position: absolute;
-   opacity : 0.5 ;
-  right:size(-250);
-  bottom:size(150);
-  width: size(800);
+  right:size(-210);
+  bottom:size(-1);
+  width: size(1000);
   z-index: 0;
-  animation: anx2 2s ease-in-out infinite alternate;
-  transform:scaleX(-1);
+}
+
+.en{
+  position: absolute;
+  z-index: 2;
+  width: size(230);
+  bottom: size(50);
+  right: size(400);
 }
 
 .bg-img{
 
   position: absolute;
-  width:size(2000);
+  width:size(1920);
   height:auto;
-  left:size(-40);
+  left:size(0);
   bottom:0;
-  z-index: 1;
-  transform:skewX(2deg);
+  z-index: 0;
+  transform:skewY(3deg);
   transform-origin: 50% 100%;
-  animation: anx 2s ease-in-out infinite alternate;
+  animation: anx 3s ease-in-out infinite alternate;
 }
 @keyframes anx{
-  to {transform:skewX(-2deg);}
-}
-@keyframes anx1{
-  to {transform:skewY(-2deg);}
-}
-@keyframes anx2{
-  to {transform:skewY(-2deg) scaleX(-1);
+  to {
+    transform:skewY(-3deg);
   }
-  
 }
 
 
@@ -107,29 +98,10 @@
     width: 9.4vw;
     top: -0.2vw;}
 }
-.bird{position: absolute;
-  width: 100%;
-  left: 0;
-  top: 5%;
-  img{position: absolute}
-  .bird1{
-    left: -20vw;
-    width:20vw;
-    top: 3vw;
-    animation:bird 10s linear infinite;
-    }
-  .bird2{left: 42vw;
-    width: 19.4vw;
-    top: 8.1vw;}
-}
 
-@keyframes bird{
-  50% {transform:translate(60vw,-50%);}
-  to {transform:translate(120vw,0);}
-}
 .txt{
   @include img_c_pc(1800, 271);
-  top: calc(50% + (350 - 540) * 100vw / 1920);
+  top: calc(50% + (280 - 540) * 100vw / 1920);
   font-size:size(73);
   line-height: 1.59;
   letter-spacing: 0;
@@ -143,15 +115,23 @@
   -webkit-filter: drop-shadow(0em 0em 0.2em rgba(0, 0, 0, 0.4));
   filter: drop-shadow(0em 0em 0.2em rgba(0, 0, 0, 0.4));
  }
+
+ .synlogo{
+  width: size(350);
+  filter: drop-shadow(0em 0em 0.2em rgba(25, 40, 127, 1));
+  
+}
  
+
+
 .t1{
 font-size: size(60);
-font-family: "Noto Sans TC", sans-serif;
+font-family: "Noto Serif TC",serif;
 //border-radius: .9em;
 letter-spacing: 0em;
 font-weight: 700;
 line-height: 1.78;
-text-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.4);
+text-shadow: 0em 0em 0.2em rgba(25, 40, 127, 1);
 margin: auto;
 span{
   display: inline-block;
@@ -166,11 +146,11 @@ b{
   font-weight:700;
   letter-spacing: 0.05em;
   text-indent: 0.1em;
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Noto Serif TC",serif;
   font-size: size(40);
   padding: 0.14em 0 0;
   color: #ffffff;
-  text-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.4);
+  text-shadow: 0em 0em 0.2em rgba(25, 40, 127, 1);
 
   span{
   color: #fff100; 
@@ -201,9 +181,34 @@ b{
   z-index: 99;
 }
 
+.style{
+  position: absolute;
+  left:size-m(-80);
+  top:size-m(0);
+  width: size-m(300);
+  z-index: 0;
+}
 
-.bg-img{width: 120%;left: -10%;
-  bottom:calc(50% + (0 - 302) * 100vw / 375);}
+.style2{
+  position: absolute;
+  right:size-m(-210);
+  bottom:size-m(-1);
+  width: size-m(500);
+  z-index: 0;
+}
+
+.en{
+  position: absolute;
+  z-index: 2;
+  width: size-m(150);
+  bottom: size-m(20);
+  right: size-m(50);
+}
+
+
+.bg-img{width: 125%;left: -10%;
+  bottom:calc(50% + (-10 - 302) * 100vw / 375);}
+  
   
 .img{width: 200%;
 animation: img 8s ease-in-out infinite alternate;
@@ -231,17 +236,7 @@ animation: img 8s ease-in-out infinite alternate;
  60% {transform:translate(-50%);}
   100% {transform:translate(-50%);}
 }
-.bird{ .bird1 {
-    left: -70vw;
-    width: 70vw;
-    top: 0vw;
-    animation:bird 8s linear infinite;
-    }}
-  
-@keyframes bird{
-  50% {transform:translate(85vw,-50%);}
-  to {transform:translate(170vw,0);}
-}
+
 
 .txt{
   width: 100%;

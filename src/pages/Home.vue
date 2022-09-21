@@ -58,9 +58,9 @@ import Loading from '@/components/Loading.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/anan/Section1.vue'
-import Section2 from '@/projects/anan/Section2.vue'
-import Section3 from '@/projects/anan/Section3.vue'
+import Section1 from '@/projects/cfyd/Section1.vue'
+import Section2 from '@/projects/cfyd/Section2.vue'
+import Section3 from '@/projects/cfyd/Section3.vue'
 
 export default {
   name: 'home',

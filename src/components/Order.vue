@@ -14,12 +14,12 @@
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
             </div>
-            <div class="row" v-if="order.room_type">
+            <!--div class="row" v-if="order.room_type">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
                 <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
               </el-select>
-            </div>
+            </div-->
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
@@ -296,7 +296,7 @@ export default {
 .order-bg {
   //background-color: $order_bg_color;
   //background-image: $order_bg_image;
-  background-color: $order_bg_color;
+  background: linear-gradient(to bottom, #c0d3e4, #cfbaf3);
   background-repeat: no-repeat;
   position: relative;
   background-size: 110vw auto;
