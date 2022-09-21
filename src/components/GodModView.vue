@@ -92,7 +92,7 @@ export default {
       autoScrollViewOffset: 150, //自動調整偏移微調
       viewAspectRatioPercentage: isMobile ? "150" : "46.82", // 鳥瞰圖比例 高÷寬×100
       // bgUrl: require("@/projects/ruo/s2/bg.jpg"), //置換圖片路徑即可
-      swipeUrl: require("@/projects/hbl/s2/swipe-hand.svg"), //置換圖片路徑即可
+      swipeUrl: require("@/projects/anan/s2/swipe-hand.svg"), //置換圖片路徑即可
     };
   },
   methods: {

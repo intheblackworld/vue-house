@@ -1,14 +1,20 @@
 <template>
   <article class="house-info" id="house-info">
-  <!--  <div class="content">
+    <div class="content">
       <h3 class="title" data-aos="zoom-in" data-aos-delay="0">建案資訊</h3>
       <section class="info">
         <div class="item" :key="infos[0]" v-for="(infos, index) in houseInfos" data-aos="zoom-in" :data-aos-delay="100 + index * 100" data-aos-offset="-300">
           <h3 class="label">{{infos[0]}}</h3>
           <p class="desc" v-html="infos[1]"></p>
         </div>
+        <div class="item f-logo">
+          <h3 class="label">行銷企劃</h3>
+          <p class="desc">
+            <img src="@/assets/img/synlogo.png" alt="上揚國際">
+          </p>
+        </div>
       </section>
-    </div>  -->
+    </div>  
     <Footer />
   </article>
 </template>
@@ -47,13 +53,13 @@ export default {
   z-index: 1;
 }
 .content {
-  width: 706px;
+  width: 900px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -76,7 +82,7 @@ export default {
   font-size:1em;
   margin-bottom:1em;
   margin-right: 10em;
-  width: 270px;
+  width: 350px;
   //height: 30px;
   line-height: 1.4;
  // border-left: 4px solid $house_border_color;
@@ -116,6 +122,10 @@ export default {
     color: $house_desc_color;
     font-family: $family1;
     font-weight: 700;
+
+    img{
+      width: 100%;
+    }
   }
 }
 
@@ -148,6 +158,7 @@ export default {
     flex: 1;
     justify-content: space-around;
     align-content: space-around;
+    margin-bottom: 0em;
   }
   .item {
     .label {

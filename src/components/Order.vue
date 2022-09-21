@@ -83,7 +83,10 @@
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </article>
-
+    <!--div class="style-fl">
+      <img src="@/assets/img/flower.png" class="fl1" alt="" loading="lazy">
+      <img src="@/assets/img/flower.png" class="fl2" alt="" loading="lazy">
+    </div-->
     <ContactInfo />
     <GoogleMap v-if="info.address" />
     <PolicyDialog :policyVisible="policyVisible"  @hidePolicyDialog="hidePolicyDialog" />
@@ -267,9 +270,33 @@ export default {
   right: -2%;
   pointer-events: none;
 }
+.style-fl{
+  width: 100%;
+  
+  img{
+    opacity: 0.3;
+  }
+
+  .fl1{
+    position: absolute;
+    bottom:size(280);
+    right: size(-200);
+    width: size(750);
+    }
+  .fl2{
+    position: absolute;
+    bottom:size(280);
+    left: size(-200);
+    width: size(750);
+    transform:scaleX(-1);
+    }
+  }
+  
+  
 .order-bg {
   //background-color: $order_bg_color;
   //background-image: $order_bg_image;
+  background-color: $order_bg_color;
   background-repeat: no-repeat;
   position: relative;
   background-size: 110vw auto;
@@ -295,12 +322,12 @@ export default {
     width: auto;
     padding-top: 0.4em;
     padding-bottom: 1.5em;
-    margin: 0 auto 0.2em;
+    margin: 0 auto;
     display: inline-block;
     font-weight:700;
     line-height: 1.7;
-    letter-spacing: 0.5em;
-    font-size: calc(100vw * 50 / 1920);
+    letter-spacing: 0em;
+    font-size: size(40);
     text-align: center;
     color: $order_title_color;
     position: relative;
@@ -462,9 +489,34 @@ export default {
     > img {
       display: block;
     }
+
+  .style-fl{
+    width: 100%;
+  
+    img{
+    opacity: 0.3;
+    }
+
+    .fl1{
+    position: absolute;
+    bottom:size-m(880);
+    right: size-m(-180);
+    width: size-m(400);
+    transform:rotate(25deg);
+    }
+
+    .fl2{
+    position: absolute;
+    top:size-m(-230);
+    left: size-m(-80);
+    width: size-m(380);
+    transform:scaleX(-1);
+    }
+  }
+
     .order-title {
       padding-top: 10px;
-      padding-bottom: 5px;
+      padding-bottom: 30px;
       font-size: calc(100vw * 30 / 375);
     }
     .order-title-img {

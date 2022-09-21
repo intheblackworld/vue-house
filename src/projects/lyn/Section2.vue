@@ -39,7 +39,7 @@ background: linear-gradient(to bottom, rgba(211,95,159,0) 0%,rgba(211,95,159,1) 
   background-size: 100%;
   background-position: bottom;
   background-color: #eb5c20;
-  background-image: url("~@/projects/hbl/s2/map.jpg");
+  background-image: url("~@/projects/anan/s2/map.jpg");
   z-index: 1;
   */
   .txt{

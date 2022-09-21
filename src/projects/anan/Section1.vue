@@ -4,19 +4,18 @@
 <div  data-aos="fade">
 <img src="./s1/bg.png" v-if="!isMobile" class="bg-img" alt="" loading="lazy">
 <img src="./s1/bgm.png" v-else class="bg-img" alt="" loading="lazy"></div>
+<img src="./s1/synlogo.png" class="synlogo" alt="" loading="lazy">
+<img src="./s1/style.png"  v-if="!isMobile" class="style" alt="" loading="lazy">
+<img src="./s1/style.png" v-if="!isMobile" class="style2" alt="" loading="lazy">
 <div class="bird">
       <img src="./s1/bird.png" class="bird1" alt="" loading="lazy">
    <!--  <img src="./s1/bird.png" v-if="!isMobile" class="bird2" alt=""> -->
 </div>
-<div class="img">
-      <img src="./s1/1.png" data-aos="fade-right" data-aos-duration="1600"  class="img1" alt="" loading="lazy">
-      <img src="./s1/2.png" data-aos="fade-right" data-aos-duration="1000" class="img2" alt="" loading="lazy">
-      <img src="./s1/3.png" data-aos="fade-left" data-aos-duration="1000" class="img3" alt="" loading="lazy">
-      <img src="./s1/4.png" data-aos="fade-left" data-aos-duration="1600" class="img4" alt="" loading="lazy">
-</div>
 <div class="txt">
-<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span><b>人生MVP</b> 生活紅不讓</span></h2>
-<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">全能綠生活 核心雙商圈</h3>
+ <img src="./s1/logo.png" v-if="!isMobile" data-aos="fade-left" data-aos-duration="1600" class="logo" alt="" loading="lazy">
+ <img src="./s1/logom.png" v-if="isMobile" data-aos="fade-left" data-aos-duration="1600" class="logo" alt="" loading="lazy">
+<h2 class="t1" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000"><span>雙公園 會呼吸的家</span></h2>
+<h3 class="t2" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">安南中心｜綠浪2-3房｜<span><font>06</font> 283-5866</span></h3>
 </div>
 
 
@@ -35,30 +34,59 @@
   max-height: size(1080);
   position: relative;
   //z-index: 3;
-  &::before{content: "";
-  display: block;
-  position: absolute;
-  bottom:calc(50% + (90 - 540 - 640) * 100vw / 1920 );
-  left: 0;
-  width: 100%;
-  height: size(640);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
-  }
 }
 .a1{position: absolute;top: 0;left: 0;width: 100%;opacity: .5;}
+.synlogo{
+  position: absolute;
+  right:size(20);
+  top:size(20);
+  width: size(350);
+}
+.style{
+  position: absolute;
+   opacity : 0.5 ;
+  left:size(-250);
+  bottom:size(150);
+  width: size(800);
+  z-index: 0;
+  animation: anx1 2s ease-in-out infinite alternate;
+}
+
+.style2{
+  position: absolute;
+   opacity : 0.5 ;
+  right:size(-250);
+  bottom:size(150);
+  width: size(800);
+  z-index: 0;
+  animation: anx2 2s ease-in-out infinite alternate;
+  transform:scaleX(-1);
+}
+
 .bg-img{
+
   position: absolute;
   width:size(2000);
   height:auto;
   left:size(-40);
-  bottom:calc(50% + (90 - 540) * 100vw / 1920);
-  z-index: 0;transform:skewX(2deg);
+  bottom:0;
+  z-index: 1;
+  transform:skewX(2deg);
   transform-origin: 50% 100%;
   animation: anx 2s ease-in-out infinite alternate;
 }
 @keyframes anx{
   to {transform:skewX(-2deg);}
 }
+@keyframes anx1{
+  to {transform:skewY(-2deg);}
+}
+@keyframes anx2{
+  to {transform:skewY(-2deg) scaleX(-1);
+  }
+  
+}
+
 
 .img{position: absolute;
   width: 100%;
@@ -82,17 +110,17 @@
 .bird{position: absolute;
   width: 100%;
   left: 0;
-  top: 50%;
+  top: 5%;
   img{position: absolute}
   .bird1{
     left: -20vw;
     width:20vw;
-    top: 7.5vw;
+    top: 3vw;
     animation:bird 10s linear infinite;
     }
   .bird2{left: 42vw;
     width: 19.4vw;
-    top: 8.1vw;;}
+    top: 8.1vw;}
 }
 
 @keyframes bird{
@@ -101,14 +129,23 @@
 }
 .txt{
   @include img_c_pc(1800, 271);
-  top: calc(50% + (271 - 540) * 100vw / 1920);
+  top: calc(50% + (350 - 540) * 100vw / 1920);
   font-size:size(73);
   line-height: 1.59;
   letter-spacing: 0;
   z-index: 3;
   color:#FFF;}
+
+ .logo{
+  left: 42vw;
+  width:size(650);
+  top: 8.1vw;
+  -webkit-filter: drop-shadow(0em 0em 0.2em rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0em 0em 0.2em rgba(0, 0, 0, 0.4));
+ }
+ 
 .t1{
-font-size: size(100);
+font-size: size(60);
 font-family: "Noto Sans TC", sans-serif;
 //border-radius: .9em;
 letter-spacing: 0em;
@@ -130,7 +167,7 @@ b{
   letter-spacing: 0.05em;
   text-indent: 0.1em;
   font-family: "Noto Sans TC", sans-serif;
-  font-size: size(50);
+  font-size: size(40);
   padding: 0.14em 0 0;
   color: #ffffff;
   text-shadow: 0em 0em 0.2em rgba(0, 0, 0, 0.4);
@@ -138,7 +175,7 @@ b{
   span{
   color: #fff100; 
 
-   font{ font-size: size(40); } 
+   font{ font-size: size(30); } 
   }
 }
 /* 螢幕尺寸標準 */
@@ -157,6 +194,14 @@ b{
   height: sizem(750);
   bottom:calc(50% + (0 - 302 - 750) * 100vw / 375);}
 }
+.synlogo{
+  width: sizem(200);
+  top:sizem(10);
+  right:sizem(10);
+  z-index: 99;
+}
+
+
 .bg-img{width: 120%;left: -10%;
   bottom:calc(50% + (0 - 302) * 100vw / 375);}
   
@@ -189,7 +234,7 @@ animation: img 8s ease-in-out infinite alternate;
 .bird{ .bird1 {
     left: -70vw;
     width: 70vw;
-    top: 24.5vw;
+    top: 0vw;
     animation:bird 8s linear infinite;
     }}
   
@@ -201,17 +246,36 @@ animation: img 8s ease-in-out infinite alternate;
 .txt{
   width: 100%;
   left: 0;
-  font-size:sizem(20.8);
-  top: calc(60% + (85 -  604 * .6) * 100vw / 375);
+  font-size:size-m(20.8);
+  top: calc(60% + (100 -  604 * .6) * 100vw / 375);
   filter:drop-shadow(0 0 5vw #8d4e8d66); 
 }
+.logo{
+  left: 42vw;
+  width:size-m(230);
+  top: 8.1vw;
+  -webkit-filter: drop-shadow(0em 0em 0.2em rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0em 0em 0.2em rgba(0, 0, 0, 0.4));
+ }
+
 .t1{
-font-size: 2.75em;line-height: 1.2;
+font-size: size-m(30);line-height: 1.2;
 span{padding: 0.3em 0;
 b{
  font-size: 1.13em;
  margin: 0;
-}}
+}
+}
+}
+
+.t2{
+font-size: size-m(20);
+
+span{
+  font{
+    font-size: size-m(15);
+  }
+}
 }
 
 }
