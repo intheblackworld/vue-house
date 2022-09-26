@@ -2,8 +2,8 @@ import { isMobile } from '../utils/index'
 export default {
    address: '接待中心：台南市北區北安路一段314號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7233.216230269212!2d121.44955870556367!3d24.979444400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xebe5d55c176b7a21!2zMjTCsDU4JzQ2LjAiTiAxMjHCsDI3JzEyLjIiRQ!5e0!3m2!1szh-TW!2stw!4v1653555645240!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/BLMcLg1QMsJrBg1b9',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14688.412497979318!2d120.2065395!3d23.0199855!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcf3de62719514af7!2z5pil56aP5a6J5a6J!5e0!3m2!1szh-TW!2stw!4v1664174288394!5m2!1szh-TW!2stw',
+  googleLink: 'https://g.page/CHUNFUSTUDIES?share',
   phone: '02-2264-6789',
   fbLink: 'https://www.facebook.com/116528067724267/',
   fbMessage: 'https://m.me/116528067724267/',
