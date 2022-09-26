@@ -1,25 +1,30 @@
 <template>
-  <div class="section1">
-    <!-- <img src="./s1/mo.jpg" class="t0">  -->
-    <div class="img" data-aos="zoom-in-left">
-      <img src="./s1/1.png" alt="img" class="img1">
-      <img src="./s1/2.png" alt="img" class="img2">
-      <img src="./s1/butterfly.gif" alt="img" class="img3">
-    </div>
-    <div class="logo">
-      <img src="./s1/logo1.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo1">
-      <img src="./s1/logot.png" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logot">
-      <img src="./s1/logof.png" data-aos="fade" data-aos-delay="400" alt="logo" class="logof">
-    </div>
-
-    <div class="txt">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">居高美地 風尚生活宅</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800"><span>玩美2-3房</span>台大竹東分院旁</div>
-      <img src="./s1/035957999.png" data-aos="zoom-in" data-aos-delay="1000" alt="035957999" class="phone">
+  <div class="section1">   
+    <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt>
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div v-if="isPC" class="pagination absolute flex-ac">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)">
+            <span :class="`${slideIndex === index ? 'active' : ''}`"></span>
+          </div>
+        </div>
+        <div v-else class="swipe-btns absolute flex-ac flex-jb">
+            <div class="prev-btn" @click="decIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
@@ -31,98 +36,140 @@
  // overflow: hidden;
   position: relative;
 }
-.t0{
-  position: absolute;
-  width: 100%;height:auto;
-  // top:50vw;
-  left: 0;object-fit: cover;
-  opacity: 0.5;
-  }
-.img{
-      position: absolute;right:0;top:calc(50% + 3.5vw);
-      width:size(730);
-      z-index: 2;
-    // top:calc(50% + (0 - 540) * 100vw / 1920);
-    .img1{
-      width:100%;
-      transform:skewY(-5deg);
-      transform-origin: 100% 90%;
-      animation: an 5s linear alternate infinite;
-
-      }
-    .img2{
-      position: absolute;
-      top: -5%;
-      left: 46%;
-      width: 22.2%;
-      transform:translateY(10%);
-      animation: an 5s linear alternate infinite;
-      }
-    .img3{
-      position: absolute;
-      top: -11%;
-      left: 33%;
-      width: 43.9%;
-      transform: rotate(10deg)translateY(3%) ;
-      animation: an 3s linear alternate infinite;
-      }
-
-  }
-
-
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
+/* Swipe */
+.swipe {
+  position: relative;
+  width:100%;
+  margin:auto;
+  padding: calc(16 * 3.7 * 100vw / 1920) 0 0 0;
+  height:100%;
+  // left: size(210);
+  object-fit: cover;
+  z-index: 3;
 }
-.logo{
-  position: relative;
-  margin:0 auto 0;
-  top: calc(50% - 19vw);
-  width:size(994);
-  .logo1{width: 70.8%;margin: auto auto 1%;}
-  .logot{width: 100%;}
-  .logof{width: 10.1%;position: absolute;
-    bottom: 2%;
-    right: 14.3%;
-    transform-origin: 100% 0;
-    transform: scale(.5) translate(100%, -300%);
-    }
-  }
-.txt{
-  position: relative;
-  top:calc(50% + (253 - 540) * 100vw / 1920);
-  left:size(-260);
-  font-size: size(47);
-  line-height: 1.6;
-  color: #fff;
-  text-align: center;
- // width:size(850);
-    letter-spacing:0.02em;
-  font-weight: 700;
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
 
-  .t1{
-  color: #717071;
-  font-size: 1.38em;
-    }
-  .t2{font-weight: 900;
-  span{font-weight: 700;display: inline-block;
-  &::after{
-    content: "";
-    display: inline-block;
-    width: 2px;
-    height: 1.2em;
-    background: #FFF;
-    vertical-align: middle;
-    margin:-0.2em 0.45em 0;
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  }
-  }
-  .phone{
-        margin:0.5em auto 0;
-    width: size(600);}
+}
+
+// 過場動畫
+// begin 
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// pagination
+.pagination {
+  width: auto;
+  bottom: 1em;
+  left: 50%;
+  transform:translateX(-50%);
+  justify-content: center;
+  font-size: size(20);
 
 }
+.pagination-dot {
+  padding: 0.25em;
+  margin: 0 0.2em;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width:1em;
+    height:1em;
+    border-radius: 50%;
+    border: 0.2em solid  $pagination;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+    border-radius: 50%;
+    border:  0.105em solid  $pagination-active;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        transform: scale(1.6);
+      }
+    }
+  }
+}
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75em;
+  z-index: 3;
+  font-size: size(20);
+
+  .prev-btn,
+  .next-btn {
+    width: 1em;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -130,68 +177,40 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    min-height: sizem(604);
+    min-height: sizem(667);
     max-height: sizem(750);
     height: calc(100vh - 63px);
-  margin: 0 0 0;
+  padding:0;
   }
-.img{top:calc(50% + 10vw);
-  width:sizem(208);
-  right:sizem(-48);
-    .img2{
-    top: -13%;
-    left: 30%;
-    width: 25.2%;
+  
+  /* Swipe */
+  .swipe {
+  padding:0;
+  }
 
-    }
-    .img3{
-    top: -18%;
-    left: 16%;
-    width: 51.9%;
-
-    }
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
 }
 
-
-.logo{
-  width:sizem(287);
-  top: calc(50% - 35vw);
+  .swipe-btns {
+  font-size: sizem(15);
   }
-.txt{
-  font-size: sizem(24);
-  top:calc(50% + (220 - 302) * 100vw / 375);
-  left:sizem(-62);
-  .t1{
-  font-size: 0.73em;
-
-  }
-  .t2{
-
-  span{display: block;
-    width: sizem(165);
-    margin: auto;
-  border: 1px solid currentColor;
-  &::after{
-    display: none;
-  }
-  }
-
-    }
-  .phone{
-        margin:0em auto 0;
-    width: sizem(165);}
 }
 
-
-}
 </style>
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
 
 export default {
   name: 'section1',
+
+  mixins: [slider],
+  props: ['viewIndex'],
 
   data() {
     return {
@@ -199,15 +218,48 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
+      dialogImg: null,
+      showMask: false,
+      slideList: [
+        {
+          img: isMobile?require("./s1/1m.jpg"):require("./s1/1.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s1/2m.jpg"):require("./s1/2.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s1/3m.jpg"):require("./s1/3.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s1/4m.jpg"):require("./s1/4.jpg"),
+          name: '',
+        },
+      ]
     }
   },
 
-  methods: {},
+  methods: {
+    showDialog() {
+      this.isDialog = true;
+      this.showMask = true;
+      this.dialogImg = this.slideList[this.slideIndex].full;
+    },
 
-  mounted() {},
+    handleScroll() {
+      this.showMask = false;
+    }
+  },
 
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {}
 }
 </script>
