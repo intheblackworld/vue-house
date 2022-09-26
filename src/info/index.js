@@ -4,7 +4,7 @@ export default {
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14688.412497979318!2d120.2065395!3d23.0199855!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcf3de62719514af7!2z5pil56aP5a6J5a6J!5e0!3m2!1szh-TW!2stw!4v1664174288394!5m2!1szh-TW!2stw',
   googleLink: 'https://g.page/CHUNFUSTUDIES?share',
-  phone: '02-2264-6789',
+  phone: '06-283-5866',
   fbLink: 'https://www.facebook.com/116528067724267/',
   fbMessage: 'https://m.me/116528067724267/',
   caseName: '春福安安',
