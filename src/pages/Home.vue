@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/free/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/ls/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -14,13 +14,9 @@
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-<!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
-    </vue-lazy-component> 
-
-
--->
+    </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section3"
@@ -51,6 +47,7 @@
     >
       <Section7 />
     </vue-lazy-component>
+<!--      
      <vue-lazy-component
       class="section"
       id="section8"
@@ -75,7 +72,6 @@
     >
     <Section11 />
     </vue-lazy-component>
-<!--      
   <vue-lazy-component
       class="section relative"
       id="section10"
@@ -127,19 +123,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/free/Section1.vue'
-import Section2 from '@/projects/free/Section2.vue'
-import Section3 from '@/projects/free/Section3.vue'
-import Section4 from '@/projects/free/Section4.vue'
-import Section5 from '@/projects/free/Section5.vue'
-import Section6 from '@/projects/free/Section6.vue'
-import Section7 from '@/projects/free/Section7.vue'
-import Section8 from '@/projects/free/Section8.vue'
-import Section9 from '@/projects/free/Section9.vue'
-import Section10 from '@/projects/free/Section10.vue'
-import Section11 from '@/projects/free/Section11.vue'
+import Section1 from '@/projects/ls/Section1.vue'
+import Section2 from '@/projects/ls/Section2.vue'
+import Section3 from '@/projects/ls/Section3.vue'
+import Section4 from '@/projects/ls/Section4.vue'
+import Section5 from '@/projects/ls/Section5.vue'
+import Section6 from '@/projects/ls/Section6.vue'
+import Section7 from '@/projects/ls/Section7.vue'
 /* 
-import Section10 from '@/projects/free/Section10.vue' */
+import Section8 from '@/projects/ls/Section8.vue'
+import Section9 from '@/projects/ls/Section9.vue'
+import Section10 from '@/projects/ls/Section10.vue'
+import Section11 from '@/projects/ls/Section11.vue'
+import Section10 from '@/projects/ls/Section10.vue' */
 
 export default {
   name: 'home',
@@ -158,11 +154,11 @@ export default {
     Section5,
     Section6,
     Section7,
+    /* 
     Section8,
     Section9,
     Section10,
     Section11,
-    /* 
     Section11,
     */
   },

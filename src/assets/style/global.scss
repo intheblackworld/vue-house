@@ -50,19 +50,23 @@ body {
       height: 100vh;
     }
   }
+  /*
   &::before{
     content: "";
     display: block;
-    position: fixed;
+    position: absolute;
     left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 53vw;
+    height: 420vw;
+    width: 100%;
     z-index: 0;
-    background: url("~@/projects/free/s4/bg.png") center;
-    background-size: 100% auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 940 4375' fill='none' stroke='%23000' stroke-width='1' stroke-opacity='0.2' stroke-dasharray='7,7'%3E%3Cpath d='M336.1,0C1326.5,346.2-354.1,773.2,528,976.4c587.2,135.2,182.9,415.9-234.5,489.7c-341.3,60.4-167.3,394.2,109,479.6c247.7,76.6,329.6,394.9-36.7,505c-519.6,156.2-471.1,911.8,178.3,673.4c750.1-275.4,116.3,463.6,260.9,593.8c110.5,99.5,105.5,270-201.5,346c-474.3,117.4-367.6,276.1-267.3,311.2'/%3E%3C/svg%3E");
+    background-position: 50% 0;
+    background-repeat: repeat-y;
+    background-size: 98% auto;
     overflow: hidden;//試底下多的那塊哪來的
   }
+  */
 }
 
 .fullscreen {
@@ -348,12 +352,12 @@ img[lazy='loaded'] {
     &.no-padding-top {
       padding-top: 0;
     }
-    &::before{
-      background-image: url("~@/projects/free/s4/bg_m.png");
+  /*  &::before{
+      background-image: url("~@/projects/ls/s4/bg_m.png");
       background-size: 100% auto;
      // background-size: $bg-size;
       overflow: hidden;//試底下多的那塊哪來的
-    }
+    }  */
   }
   
   .full-bg {

@@ -299,11 +299,11 @@ export default {
   pointer-events: none;
 }
 .order-bg {
-  background: url("~@/assets/img/order-bg.png") no-repeat 0 35%;
-  background-size: 100% auto;
-  background-color: $order_bg_color;
-  //background-image: $order_bg_image;
-  background-repeat: no-repeat;
+  // background: url("~@/assets/img/order-bg.png") no-repeat 0 35%;
+  // background-size: 100% auto;
+  // background-color: $order_bg_color;
+  // background-image: $order_bg_image;
+  // background-repeat: no-repeat;
   position: relative;
  // background-size: 110vw auto;
   //background-position: top;
