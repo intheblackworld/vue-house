@@ -319,23 +319,23 @@ export default {
         },
         {
           img: require('./s7/a2.jpg'),
-          building: 'A1',
+          building: 'A2',
           floor: '3F-9F',
         },
         {
           img: require('./s7/a5.jpg'),
-          building: 'A1',
+          building: 'A5',
           floor: '3F-9F',
         },
         {
           img: require('./s7/a6.jpg'),
-          building: 'A1',
+          building: 'A6',
           floor: '3F-9F',
         },
         {
           img: require('./s7/b1.jpg'),
-          building: 'A1',
-          floor: '3F-9F',
+          building: 'B1',
+          floor: '3F-7F',
         },
       ],
     }
