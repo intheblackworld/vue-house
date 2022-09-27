@@ -126,6 +126,16 @@
   letter-spacing: 0.08em;
   text-align: justify;
 
+  .bg-img{
+    width: 100%;
+
+    @include md {
+     height: 311px;
+     width: auto;
+    }
+
+  }
+
   // 手機版
   @include md {
     font-size: sizem(15);
