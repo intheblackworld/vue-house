@@ -981,6 +981,31 @@ export default {
           hint: '',
           label: '',
         },
+        //伴月灣
+        {
+          title: '伴月灣',
+          title2: '伴月灣',
+          desc: '新北市｜五股區<br />19-24坪<br />面水岸 近捷運 鄰公園',
+          img: require('../works/9/1.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜五股區<br />19-24坪<br />面水岸 近捷運 鄰公園',
+          info2: '投資興建：中德建設<br />規劃坪數：19-24坪',
+          info3:
+            '水岸豪景第一排<br />蘆洲捷運站5分鐘<br />新蘆特區水岸宜居<br />前迎8800坪雙公園<br />背倚5600坪生態保護區',
+          contact:
+            '貴賓專線｜02-8292-2333<br />接待會館｜<br>新北市五股區成泰路三段與號成洲三路交叉口',
+          link: 'https://wv.debang.tw/',
+          logo: require('../works/9/1.jpg'),
+          imgs: [
+            require('../works/9/2.jpg'),
+            require('../works/9/3.jpg'),
+            require('../works/9/4.jpg'),
+            require('../works/9/5.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
         //太陽
         {
           title: '太陽<br />帝國',
@@ -1059,51 +1084,6 @@ export default {
             require('../works/3/2.jpg'),
             require('../works/3/3.jpg'),
             require('../works/3/4.jpg'),
-          ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
-        //陽明迴鄉
-        {
-          title: '陽明<br />迴鄉',
-          title2: '陽明迴鄉',
-          desc: '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
-          img: require('../works/7/0.jpg'),
-          isEmpty: false,
-          info1:
-            '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
-          info2: '投資興建：寶程國際<br />坪數房型：2-3房',
-          info3:
-            '陽明山下出將入相富人特區<br />高綠覆低建蔽濃蔭街廓<br />近擁薇閣高中郁郁文風<br />近享捷運新北投站增值通勤<br />戶戶三面採光通風，防疫級規劃',
-          contact:
-            '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
-          link: 'https://ymvilla.debang.tw/',
-          logo: require('../works/7/0.jpg'),
-          imgs: [require('../works/7/1.jpg')],
-          hint: '',
-          label: '',
-        },
-        //陽光
-        {
-          title: '陽光<br />PARK',
-          title2: '陽光PARK',
-          desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
-          img: require('../works/2/0.jpg'),
-          isEmpty: false,
-          info1: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
-          info2:
-            '建設公司：統一工商綜合區開發股份有限公司<br />坪數規劃：27-54坪',
-          info3:
-            '新店陽光公園特區，高綠覆率 <br />輕軌K8新和國小站 682米<br />千坪花園生態池',
-          contact:
-            '貴賓專線｜02-2211-7711<br />接待會館｜新北市新店區安興路107號',
-          link: 'https://pk.h88.tw/',
-          logo: require('../works/2/0.jpg'),
-          imgs: [
-            require('../works/2/1.jpg'),
-            require('../works/2/2.jpg'),
-            require('../works/2/3.jpg'),
-            require('../works/2/4.jpg'),
           ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
