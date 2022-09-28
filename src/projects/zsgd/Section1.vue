@@ -222,10 +222,12 @@ export default {
       dialogImg: null,
       showMask: false,
       slideList: [
+        /*
         {
           img: isMobile?require("./s1/1m.jpg"):require("./s1/1.jpg"),
           name: '',
         },
+        */
         {
           img: isMobile?require("./s1/2m.jpg"):require("./s1/2.jpg"),
           name: '',
