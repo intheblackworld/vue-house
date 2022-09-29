@@ -1,8 +1,8 @@
 <template>
-  <div class="home no-padding-top" ><h1>紅布朗花園</h1>
+  <div class="home no-padding-top" >
       <Loading :loading="load" />
-      <!-- <SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" /> -->
+      <!--  --><SideNavigation v-if="isMobile" />
+      <Navigation v-if="!isMobile" />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"
@@ -56,9 +56,9 @@ h1{position: absolute;top:-2em;}
 // @ is an alias to /src
 import info from '@/info'
 import $ from 'jquery'
-// import Navigation from '@/layouts/Navigation.vue'
+import Navigation from '@/layouts/Navigation.vue'
 import { isMobile } from '@/utils'
-// import SideNavigation from '@/layouts/SideNavigation.vue'
+import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import MobileNav from '@/layouts/MobileNav.vue'
 import Loading from '@/components/Loading.vue'
@@ -76,8 +76,8 @@ export default {
   components: {
     Loading,
     // Indigator,
-    // Navigation,
-    // SideNavigation,
+    Navigation,
+    SideNavigation,
     // LeafFlow,
     ContactSection,
     MobileNav,
