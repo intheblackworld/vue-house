@@ -7,17 +7,17 @@
         <!-- <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />-->
       </div>
-      <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
+      <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" ></div>
       <ul :class="`navlist ${isOpen ? 'open': ''}`">
         <li
           :key="item.name"
-          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : offset) : (item.offset ? item.offset : offset) }"
+          v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : item.offset) : (em.itoffset ? item.offset : item.mobileOffset)}"
           v-for="item in list"
           class="flex-ac"
           @click="toggleSidebar"
         >
           <span class="link">
-            <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+            <img v-if="item.imgSrc" :src="item.imgSrc" />
             <span>
               <div class="title">{{item.name}}</div>
               <span class="subTitle">{{item.subTitle}}</span>
@@ -97,7 +97,7 @@ export default {
   right: 30px;
   width: 40px;
   height: 40px;
-  background-color: #c49b63;
+  background-color: #af1f24;
   cursor: pointer;
 
   // img {
@@ -172,7 +172,7 @@ export default {
 .navlist {
   position: fixed;
   z-index: 111;
-  background: $nav_bg;
+  background:transparent;
   width: 0%;
   right: 0;
   top: $nav_phone_height;
@@ -1230,7 +1230,7 @@ select::-ms-expand {
 html,
 body {
   height: 100%;
-  //font-family: 'Noto Serif JP', '微軟正黑體', serif;
+  font-family: 'Noto Serif JP', '微軟正黑體', serif;
   font-style: normal;
 }
 html.stop-scroll,
@@ -3725,7 +3725,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 1005;
-  //font-family: 'Noto Serif JP', '微軟正黑體', serif;
+  font-family: 'Noto Serif JP', '微軟正黑體', serif;
 }
 .modal_inner {
   position: relative;

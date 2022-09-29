@@ -1,5 +1,5 @@
 <template>
-  <div class="section2">
+  <div class="section7">
     <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
@@ -9,11 +9,16 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        城市遠見ALL in ONE<br v-if="isMobile" /><span v-else>︱</span>沙鹿正核心，新站優生活
+        富域金流，中部科技走廊<br v-if="isMobile" />三大園區一脈共榮
       </div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="400">陸海空到位<br v-if="isMobile" /><span v-else>，</span>「門戶科技城」+「海港娛樂城」加乘效益<br />
-沙鹿新站特區首發，勝麗建設再創美學天際<br />
-台中最值得期待的一次城市跳躍！</div>
+      <div class="subtitle" data-aos="zoom-in" data-aos-delay="400">
+        台積電欽定奈米廠落定中科園區二期
+      </div>
+      <ul class="desc">
+        <li data-aos="zoom-in" data-aos-delay="600"><span>台中科學園區</span>2021年產值破兆，與竹科並列全台產值破兆科學園區，佈局中科錢景就趁現在！</li>
+        <li data-aos="zoom-in" data-aos-delay="800"><span>台中工業區</span>光電、精密電子享譽國際，年產值約3,300億元，提供約4萬個工作機會。</li>
+        <li data-aos="zoom-in" data-aos-delay="1000"><span>科技精密園區</span>提供約2萬個工作機會，為全球重要的精密機械產業聚落。</li>
+      </ul>
     </div>
     <div class="swiper">
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
@@ -26,13 +31,13 @@
           <div class="prev-btn" slot="button-prev" v-if="isMobile"></div>
           <div class="next-btn" slot="button-next" v-if="isMobile"></div>
         </div>
-      </div>
+        </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/style/function.scss";
 $b_margin:size(50);
-.section2 {
+.section7 {
   width: 100%;
   height: auto;
   position: relative;
@@ -60,9 +65,9 @@ img{
 position: absolute;
     top: 36%;
     right: 43%;
-      }
 }
-  .f1{width: 100%;transform:scaleX(-1);
+      }
+       .f1{width: 100%;transform:scaleX(-1);
 position: relative;
   img{
 position: absolute;
@@ -87,7 +92,6 @@ position: absolute;
 @keyframes an3{
   to {transform:translateY(-10%);}
 }
-
 }
 
 .content {
@@ -95,7 +99,7 @@ position: absolute;
   //height: 100%;
   //in-height: size(1080);
  // background: #bccf00;
-  padding: 4.8em 0 0 0;
+  padding:3.6em 0 0 0;
   display: block;
   color: #FFF;
   text-align: center;
@@ -117,27 +121,50 @@ position: absolute;
   font-weight: bold;
   color: #DDAC98;
   font-size:1.36em;
-  margin: 0 auto 1.15em;
+  margin: 0 auto 0.4em;
 
 }
 
 .subtitle {
-  font-size:1.5em;
+  font-size:1.27em;
   font-weight: bold;
-  margin: 0 auto .3em;
+  margin: 0 auto 1em;
+  background:#DDAC98;
+  color: #603772;
+  width:18.5em;
+  line-height: 1.25;
+  border-radius: 1.5em;
+  padding: 0 0 0.1em;
+
 }
 
-.desc {
+.desc {display: inline-block;
+  font-size:0.9em;
+  text-align: justify;
   font-family:  'Noto Sans TC', sans-serif;
-
+  margin:0em auto;
+  line-height: 1.5;
+  letter-spacing:0.05em;
+  overflow: hidden;
+  li{list-style:inherit;margin: 0.3em 0 0.3em 1em;position: relative;
+  &::before{
+    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='%23F5E76D'%3E%3Cpath class='st0' d='M9,7L9,7L9,7L9,7L9,7c-0.4,0-1.5-1.1-2.5-2.7c-1-1.5,0-4,2.5-4l0,0h0c2.6,0,3.6,2.5,2.5,4C10.5,5.9,9.4,6.9,9,7z M4.3,6.5c-1.5-1-4,0-4,2.5c0,2.6,2.5,3.6,4,2.5C5.9,10.5,6.9,9.4,7,9C6.9,8.6,5.9,7.5,4.3,6.5z M6.5,13.7c-1,1.5,0,4,2.5,4l0,0h0c2.6,0,3.6-2.5,2.5-4c-1-1.5-2.1-2.6-2.5-2.7l0,0l0,0l0,0l0,0C8.6,11.1,7.5,12.1,6.5,13.7z M17.7,9c0-2.6-2.5-3.6-4-2.5c-1.5,1-2.6,2.1-2.7,2.5c0,0.4,1.1,1.5,2.7,2.5C15.2,12.6,17.7,11.6,17.7,9z'/%3E%3C/svg%3E");
+    width: .6em;display:block;position: absolute;top: 0em;left: -1em;
+  }
+  span{
+ font-weight: 800;display: inline-block;position: relative;margin: 0 0.5em 0 0 ;
+  &::after{
+    content: "";display: inline-block;margin: 0 0 -.1em  0.5em;
+    height: .9em;width: 2px;background: currentColor;}
+  }
+  }
 }
-
 
 /* Swipe */
 .swiper {
   width: 100%;
   height: size(586);
-  //z-index: 1;
+ // z-index: 1;
     position: relative;
 }
 .swiper-container {
@@ -170,6 +197,55 @@ position: absolute;
     text-align: right;
     text-shadow: 0 0.3em 1em #0003 ,0 0 .2em #000;
     padding: 0.7em;
+  }
+}
+
+.pagination {
+  width: auto;
+  bottom:-2em;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  justify-content: center;
+  font-size: size(15);
+}
+
+.pagination-dot {
+  padding:0.4em;
+  margin: 0 0.4em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 0.8em;
+    height:0.8em;
+    border-radius: 0.8em;
+    position: relative;
+    background-color: #fff9;
+    transition: all 0.5s;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      // transform: translateY(-50%);
+      left: 0;
+      transition: all 0.3s;
+      transform-origin: 50% 50%;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        transform: scale(1);
+      }
+    }
   }
 }
 
@@ -224,13 +300,11 @@ position: absolute;
     transform: scaleX(-1);
   }
 }
-
 @keyframes btn {
   to {
     transform: rotate(45deg) translate(10%, -10%);
   }
 }
-
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -245,29 +319,36 @@ position: absolute;
 }
 
 @media screen and (max-width: 767px) {
-.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-50);
+.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-10);
 z-index:4;
 }
   .content {
   font-size: sizem(14);
+  color: #FFFC;
   }
 .title {
   font-size:1.65em;
   line-height: 1.5;
-  margin: 0 auto 0.7em;
+  margin: 2.5em auto 0.7em;
 
 }
-
-  .mouse {
-    display: none;
+.desc {
+  margin:0em auto;
+  font-size:1em;
+  width: sizem(320);
+  li{ 
+  span{display:flex; color: #FFF;
+  align-items: center;
+    &::after{height: 1px;width: calc(100% - 8em);flex: 1;margin: 0 0 0 0.5em;}
   }
+  }
+}
+
 
   /* Swipe */
 .swiper {
     height: sizem(250);
   }
-
-
 .item {
     .slide-name {
       font-size: sizem(12);
@@ -302,7 +383,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section2',
+  name: 'section7',
 
   components: {
     swiper,
@@ -317,20 +398,25 @@ export default {
       isTablet,
       isAnimateBg: true,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 2,
+        slidesPerView: isMobile ? 1 : 3,
         spaceBetween: 0,
-        allowSlidePrev:true,
-        allowSlideNext:true,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
         loop: isMobile ? true : false,
         autoplay: {
           delay: 5000,
           disableOnInteraction:isMobile ? false : true,
         },
          /*
-        slideToClickedSlide: isMobile ? true : false,
         slidesPerColumn: isMobile ? 1 : 1,
        centeredSlides: isMobile ? true : false,
 
+        slideToClickedSlide: isMobile ? true : false,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
         effect: 'fade',
         */
         navigation: {
@@ -340,11 +426,15 @@ export default {
       },
       slideList: [
         {
-          img: require("./s2/1.jpg"),
+          img: require("./s4/1.jpg"),
           name: "情境示意參考圖",
         },
         {
-          img: require("./s2/2.jpg"),
+          img: require("./s4/2.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s4/3.jpg"),
           name: "情境示意參考圖",
         },
       ],

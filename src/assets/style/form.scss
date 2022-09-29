@@ -2,13 +2,13 @@
 
 .el-select {
   //margin-left: 21px;
-  font-family:$family3;
+  font-family:$family1;
   position: relative;
   font-size:1em !important;
   font-weight: bold;
   display: inline-block;flex: 1;
 }
-.el-scrollbar{font-family:$family3;}
+.el-scrollbar{font-family:$family1;}
 
 .el-date-editor.el-input {
   position: relative !important;
@@ -29,7 +29,7 @@
   border:0px solid #ccc !important;
   background: #FFF0 !important;
   color: $order_input_color;
-  font-family:$family3;
+  font-family:$family1;
   border-radius: inherit;
   transition: all 0.5s;
   //font-size: 1em !important;
@@ -54,7 +54,7 @@
     padding-top: 10px !important;
     border:0 !important;
     background:$order_input_bg;
-  font-family:$family3;
+  font-family:$family1;
 
     &::placeholder {
       color: $order_input_placeholder;
@@ -102,7 +102,7 @@ $border-radius:1.8em;
   color: $order_submit_color;
   // z-index: 10;
  // border: none !important;
-  font-family: $family3;
+  font-family: $family1;
   position: relative;
   overflow: hidden;
   &::after{

@@ -2,45 +2,30 @@
   <div :class="`navigation ${min ? 'min' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
-        <div class="nav">
-          <img
-            class="logo"
-            src="@/assets/img/nav-logo.png"
-            alt
-             v-scroll-to="{ element: `#section1`, offset: offset }"
-          />
-          <div
-            class="menu"
-            @click="toggleSidebar"
-            v-show="!isOpen"
-          >
+        <div :class="`nav ${isOpen ? 'open': ''}`" >
+     <!--    
+          <img class="logo" src="../assets/img/navlogo.png" alt v-scroll-to="{ element: `#section1`, offset: 0 }" /> <img class="logo" src="@/projects/nina/s1/logo.png" alt v-scroll-to="{ element: `#section1`, offset: offset }" />  -->
+       <!--   <div class="menu" @click="toggleSidebar" v-show="!isOpen">
             <font-awesome-icon icon="bars" />
-          </div>
-          <div :class="`mask ${isOpen ? 'open' : ''}`">
-            <div
-              class="close"
-              @click="isOpen = false"
-            >
-              <img
-                src="../assets/img/close.png"
-                alt=""
-              >
+          </div>  -->
+
+          <div class="mask" @click="isOpen = false">
+            <div class="close" @click="isOpen = false">
+              <img src="../assets/img/close.png" alt="">
             </div>
           </div>
+          <div class="menu" @click="toggleSidebar" v-if="isMobile">
+            <div :class="`menu-icon ${isOpen ? 'open': ''}`" ></div>
+          </div>
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li
-              :key="item.name"
-              v-scroll-to="{ element: `#${item.section}`, offset: item.offset }"
-              v-for="item in list"
-              class="flex-c"
-              @click="toggleSidebar"
-            >
-              <span class="link">
-                <span class="flex-c">
-                  <h1
-                    class="title"
-                    v-html="item.name"
-                  ></h1>
+            <li :key="item.name"
+            v-scroll-to="{ element: `#${item.section}`, offset: isMobile ? (item.mobileOffset ? item.mobileOffset : 0) : item.offset}"
+            v-for="item in list"
+            class="flex-c"
+            @click="toggleSidebar">
+              <span :class="`link ${item.type}`">
+                <span>
+                  <p :class="`title`" v-html="item.name"></p>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -53,6 +38,7 @@
 </template>
 
 <script>
+import info from '@/info'
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
 
@@ -61,6 +47,7 @@ export default {
   components: {},
   data() {
     return {
+      info,
       isOpen: false,
       isMobile,
       isTablet,
@@ -91,56 +78,34 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-// .navigation {
-//   .title {
-//     font-size: 19px !important;
-//     width: 140px;
-//     height: 40px;
-//     color: #fff;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background-image: linear-gradient(to right, #d70032 0%, #eb5500 100%);
-//     border-radius: 20px / 20px;
-//     position: relative;
-//     z-index: 3;
-//     &:hover {
-//       background-image: linear-gradient(to left, #d70032 0%, #eb5500 100%);
-//     }
-//   }
-// }
-</style>
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
 @import '../assets/style/function.scss';
 
 .navigation {
- // background-color: $nav_bg;
+ // background: $nav_bg;
   // background-image: $nav_bg;
- // background-size: cover;
+ // background-size: 100% 100%;
   height: $nav_pc_height;
-  z-index: 10;
+  z-index:4;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   display: flex !important;
   align-items: center;
- // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  background: $nav_bg;
+  font-size:size(16);
 
-
- &::after{content:"";width: 100%; height: 100%;background:url("data:image/svg+xml,%3Csvg version='1.1' id='圖層_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1920 80' xml:space='preserve'%3E%3Cpath fill='%23f15a24' d='M960,68.6c339.9,0,664,4,960,11.4V0H0v80C296,72.7,620.1,68.6,960,68.6z'/%3E%3C/svg%3E") no-repeat center;
- background-size: cover;
- position: absolute;top: 0;left: 0;}
-
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  //@function&::after{content: "";height:100%;width: 150%;top: -100%;left: 0;z-index:9;position: absolute;box-shadow:0 size(0) size(72) size(72)  #005566;}
 }
 
 .nav-container {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;z-index:10;
 }
 
 .nav {
@@ -148,7 +113,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: flex-end;
   position: relative;
   a {
     display: block;
@@ -164,7 +129,8 @@ export default {
   display: block;
   top: 50%;
   transform: translate(3%, -50%);
-  transition: all .3s;
+  transition: all 0.3s;
+  z-index: 3;
 }
 
 .mask {
@@ -176,96 +142,63 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100%;
- // overflow: hidden;
-  padding-left: 30px;
+  overflow: hidden;
+  //padding-left: 30px;
   li {
     height: 100%;
-
-    &:nth-last-child(1) {
+    &:first-child{
       .link {
-        border-right: none;
-      }
+    &::after{
+      display: none;}}
     }
   }
 
   .link {
     color: $nav_link_color;
-    height: 100%;
-   // border-right: 1px solid #fff;
+    height:80%;
     text-align: center;
-    display: block;
     cursor: pointer;
-    padding: 0 1.2em;
-    // margin: 0 10px;
+    padding: 0 1.3em;
+    margin: 0;
     transition: all 0.8s;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    // overflow: hidden;
-    // border-right: 1px solid $nav_link_hover_bg;
-      font-size: 24px !important;
-      line-height: 1.6;
 
     &:hover {
       color: $nav_link_hover_color;
-      // background: $nav_link_hover_bg;
     }
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;left: 0;width: 1px;height: 1em;background: #FFF9;}
+    &.btn{
+    color: $nav_btn_color;
+    background:$nav_btn_bg;
+    padding: 0 1.5em;
+    border-radius:1.5em ;
+    margin: 0 0.5em;
 
-     &::before {
-       content: '';
-       width:1em;
-       height:1em;
-       display: block;
-       background:#ffff00; // second bg
-       position: absolute;
-       border-radius: 50%;
-     //  transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-       top:calc(50% - 1.5em);
-       z-index: 2;
-       transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);transform-origin: 50% 50%;
-       box-shadow: 0 0 0.03em #fff;
-     transform:scale(0.3) translateX(0%);
-     }
+    &:hover {
+      color: $nav_btn_hover_color;
+      background: $nav_btn_hover_bg;
+    }
+    &::after{
+      display: none;
+      }
 
-     &:hover::before {
-       //opacity: 1;
-  animation: light 0.6s linear alternate infinite;
-      // width: 70%;
-     //  top:calc(50% + 0.8em);
-     transform:scale(7) translateY(-16%);
-   }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
-
-    /*
-@keyframes light {
-  0%{
-    transform: translateX(-5%);
-  }
-  to {
-    transform: translateX(5%);
-  }
-}
-*/
+    }
 
 
     .title {
-      font-size: 1em !important;
-      font-weight: 800;
+      font-weight: 500;
       position: relative;
-   //   color: #fff;
       z-index: 3;
       > span {
-      //  font-size: 24px !important;
+        font-size: 24px !important;
       }
     }
-    h1.title{font-family: "Noto Sans TC";}
 
     .subTitle {
       color: $nav_link_subtitle_color;
@@ -273,41 +206,87 @@ export default {
     }
 
     img {
-      // width: 35px;
-      // height: 35px;
       margin-right: 10px;
     }
   }
+
+  
 }
 
 .menu {
-  display: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 112;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+  // background-color: #008796;
+    cursor: pointer;
+    flex: 1 0 50%;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $nav_link_color;
+}
+.menu-icon {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color:currentColor;
+ //box-shadow:0 0 10px #600,0 0 4px #600c ;
+z-index: 3;
+    &::after,
+    &::before {
+    position: absolute;
+    left: 0;
+ //box-shadow:0 0 7px #6009,0 0 4px #6009 ;
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: currentColor;
+    transition: transform .2s ease-in,top .2s linear .2s;}
+    &::before {
+    top: -10px;
+}
+    &::after {
+    top: 10px;
+}
+&.open{
+    background-color: transparent;
+    &::after,
+    &::before {top: 0;transition: top .2s linear,transform .2s ease-in .2s;}
+    &::after{transform: rotate(-45deg);}
+    &::before{transform: rotate(45deg);}
+
 }
 
-.link {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 16px;
 }
 
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: 70px;
+  height: $nav_tablet_height;
+    /* height: 70px;
     justify-content: center;
-  &.min {
-    .logo {
-    width: $logo_tablet_width;
+  background: transparent;
+  */
+    &.min {
+      .logo {
+        width: $logo_tablet_width;
+      }
     }
   }
-}
 
   .logo {
     width: $logo_tablet_width;
     // left: -240px;
   }
-
+/*
   .navlist {
-    width: 85%;
+   // width: 85%;
   }
 
   .navlist .link {
@@ -324,6 +303,7 @@ export default {
       margin-left: 6px;
     }
   }
+  */
 
   :global {
     .ui.fluid.container {
@@ -335,22 +315,20 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+  .nav {
+    width: 0;
+  }
   .navigation {
-    background-color: transparent !important;
+   // background-color: transparent !important;
     height: $nav_phone_height;
-  //  background-color: #fff;
-    height: 70px;
     justify-content: center;
-    &::after{display: none;}
-
-
-  &.min {
-    .logo {
-    width: $logo_phone_width;
+    font-size:sizem(17);
+    &.min {
+      .logo {
+        width: $logo_phone_width;
+      }
     }
   }
-}
-
 
   .nav-container {
     display: block;
@@ -362,74 +340,74 @@ export default {
   .logo {
     width: $logo_phone_width;
     left: 15px;
-    display: none;
+   // display: none;
   }
 
   .nav {
     position: static;
-    height:60px;
+    width: 100%;
+    height: 100%;
   }
-
-  .menu {
-    display: block;
+  .mask{
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: sizem(50);
-    height: sizem(50);
-    padding-top: sizem(8);
-    background-color: $mobile_nav_background;
-    z-index: 112;
-
-    svg {
-      width: sizem(35);
-      height: sizem(35);
-      color: $nav_btn_color;
-    }
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
   }
 
+.menu{
+    top: 10px;}
   .navlist {
     position: absolute;
     z-index: 111;
     background: transparent;
+    background: #0003;
     background-size: cover;
     width: 0%;
     right: 0;
-    top: $nav_phone_height;
-    height: calc(100vh - #{$nav_phone_height});
+    top: 0;
+    height: calc(100vh - 63px);
     text-align: center;
     transition: all 0.3s ease-in;
-    display: block;
     transform: translateX(40%);
-    display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
 
     li {
-      width: 100vw;
-      height: 70px;
-      margin-bottom:0;
+      width: 100%;
+      height:auto;
+      margin-bottom: 0;
     }
 
     .link {
-      height: 50px;
+      height: 3em;
       width: 100%;
-      font-size: 17px;
-      margin-top:0;
-      display: flex;
       align-items: center;
       justify-content: center;
-      display: none;
+      padding: 0 0;
+      &::after{
+      display: block;
+      position: absolute;left: 0;
+      top:0;
+      width:100%;height: 1px;background: #FFF9;}
 
       img,
       span {
         display: block;
       }
+    /*
       span {
         line-height: 16px;
       }
+      */
+      
+    &.btn{
+      height: 3em;
+      margin: 0.35em auto;
+    }
     }
   }
 
@@ -443,27 +421,16 @@ export default {
   }
 
   .navlist {
-    display: none;
+  //  display: none;
+
+    &.open {
+    //  display: block;
+      width: 100%;
+      transform: translateX(0%);
+      background-color:#005475ee;
+    }
     .link {
-      width: auto;
-      padding: 0;
-      .title {
-        font-size: 12px !important;
-        margin-top: 14px;
-        width: auto;
-        height: auto;
-        color: #333;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        background-image: none;
-        border-radius: 0;
-        position: relative;
-        z-index: 3;
-        &:hover {
-          background-image: none;
-        }
-      }
+      width: 10em;
     }
   }
 }

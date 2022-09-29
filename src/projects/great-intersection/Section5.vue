@@ -1,6 +1,6 @@
 <template>
-  <div class="section2">
-    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
+  <div class="section5">
+    <div class="img1" data-aos="zoom-in-right"><img src="./s1/music2.png" alt="img" />
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
         <img src="./s1/f12.png" alt="" loading="lazy" />
@@ -9,11 +9,18 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        城市遠見ALL in ONE<br v-if="isMobile" /><span v-else>︱</span>沙鹿正核心，新站優生活
+        站前之心<br v-if="isMobile" /> 沙鹿完美加值
       </div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="400">陸海空到位<br v-if="isMobile" /><span v-else>，</span>「門戶科技城」+「海港娛樂城」加乘效益<br />
-沙鹿新站特區首發，勝麗建設再創美學天際<br />
-台中最值得期待的一次城市跳躍！</div>
+      <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+        生活機能超成熟，居住便利很完美。沙鹿國中小雙學區，文教素質領先。<br />
+市集連鎖、麥當勞、星巴克，銀行、區公所、光田醫院面面俱到。<br />
+近距三井OUTLET 遊憩購物天堂，一擁海線最豐富的生活饗宴。<br /><br />
+
+三大商圈動能 生活滿意加分 <br />
+站前複合式商圈｜政府機關 金融中心 大型連鎖<br />
+家樂福光華商圈｜五大銀行 美食連鎖 量販購物<br />
+北勢頭生活商圈｜小吃美食 校園商圈 美食健身
+</div>
     </div>
     <div class="swiper">
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
@@ -26,13 +33,13 @@
           <div class="prev-btn" slot="button-prev" v-if="isMobile"></div>
           <div class="next-btn" slot="button-next" v-if="isMobile"></div>
         </div>
-      </div>
+        </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/style/function.scss";
 $b_margin:size(50);
-.section2 {
+.section5 {
   width: 100%;
   height: auto;
   position: relative;
@@ -53,16 +60,16 @@ $b_margin:size(50);
   }
  // background: url("./s2/pc.png");
 }
-.img1{width: size(245);position: absolute;right: size(10);top: size(20);
+.img1{width: size(245);position: absolute;left: size(25);top: size(30);
 z-index: 2;
 img{
   &:first-child{width:136%;
 position: absolute;
-    top: 36%;
-    right: 43%;
-      }
+    top: 42%;
+    left: 50%;
 }
-  .f1{width: 100%;transform:scaleX(-1);
+}
+ .f1{width: 100%;
 position: relative;
   img{
 position: absolute;
@@ -87,7 +94,6 @@ position: absolute;
 @keyframes an3{
   to {transform:translateY(-10%);}
 }
-
 }
 
 .content {
@@ -131,13 +137,11 @@ position: absolute;
   font-family:  'Noto Sans TC', sans-serif;
 
 }
-
-
 /* Swipe */
 .swiper {
   width: 100%;
   height: size(586);
-  //z-index: 1;
+  // z-index: 1;
     position: relative;
 }
 .swiper-container {
@@ -170,6 +174,55 @@ position: absolute;
     text-align: right;
     text-shadow: 0 0.3em 1em #0003 ,0 0 .2em #000;
     padding: 0.7em;
+  }
+}
+
+.pagination {
+  width: auto;
+  bottom:-2em;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  justify-content: center;
+  font-size: size(15);
+}
+
+.pagination-dot {
+  padding:0.4em;
+  margin: 0 0.4em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width: 0.8em;
+    height:0.8em;
+    border-radius: 0.8em;
+    position: relative;
+    background-color: #fff9;
+    transition: all 0.5s;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      // transform: translateY(-50%);
+      left: 0;
+      transition: all 0.3s;
+      transform-origin: 50% 50%;
+      transform: scale(0);
+    }
+    &.active {
+      &::before {
+        transform: scale(1);
+      }
+    }
   }
 }
 
@@ -245,8 +298,12 @@ position: absolute;
 }
 
 @media screen and (max-width: 767px) {
-.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-50);
+.img1{width: sizem(130);position: absolute;left: sizem(-40);top: sizem(-10);
 z-index:4;
+img{
+  &:first-child{
+    top: 37%;transform: rotate(-3deg);
+}}
 }
   .content {
   font-size: sizem(14);
@@ -254,27 +311,19 @@ z-index:4;
 .title {
   font-size:1.65em;
   line-height: 1.5;
-  margin: 0 auto 0.7em;
+  margin: 1.5em auto 0.7em;
 
 }
-
-  .mouse {
-    display: none;
-  }
-
   /* Swipe */
 .swiper {
     height: sizem(250);
   }
-
-
 .item {
     .slide-name {
       font-size: sizem(12);
     padding: 1em 1.3em;
     }
   }
-
 
   .swipe-btns {
     .prev-btn,
@@ -302,7 +351,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section2',
+  name: 'section5',
 
   components: {
     swiper,
@@ -319,18 +368,23 @@ export default {
       swiperOption: {
         slidesPerView: isMobile ? 1 : 2,
         spaceBetween: 0,
-        allowSlidePrev:true,
-        allowSlideNext:true,
+        allowSlidePrev: isMobile ? true : true,
+        allowSlideNext: isMobile ? true : true,
         loop: isMobile ? true : false,
         autoplay: {
           delay: 5000,
           disableOnInteraction:isMobile ? false : true,
         },
          /*
-        slideToClickedSlide: isMobile ? true : false,
         slidesPerColumn: isMobile ? 1 : 1,
        centeredSlides: isMobile ? true : false,
 
+        slideToClickedSlide: isMobile ? true : false,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
         effect: 'fade',
         */
         navigation: {
@@ -340,11 +394,11 @@ export default {
       },
       slideList: [
         {
-          img: require("./s2/1.jpg"),
+          img: require("./s3/1.jpg"),
           name: "情境示意參考圖",
         },
         {
-          img: require("./s2/2.jpg"),
+          img: require("./s3/2.jpg"),
           name: "情境示意參考圖",
         },
       ],

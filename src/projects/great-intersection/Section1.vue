@@ -9,15 +9,19 @@
       <img src="./s1/o2.png" data-aos="fade-right" data-aos-duration="1000" class="o2" alt="" loading="lazy">
       <img src="./s1/o1.png" data-aos="fade-right" data-aos-duration="1600"  class="o1" alt="" loading="lazy">
       
-      <div class="f1"  data-aos="fade-right">
-        <img src="./s1/f11.png" alt="" loading="lazy" />
-        <img src="./s1/f12.png" alt="" loading="lazy" />
-        <img src="./s1/f13.png" alt="" loading="lazy" />
-        <img src="./s1/f14.png" alt="" loading="lazy" />
-      </div>
-      <img src="./s1/img1.png" data-aos="fade-left" data-aos-duration="1600" class="img1" alt="" loading="lazy">
+      <img src="./s1/music1.png" data-aos="fade-left" data-aos-duration="1600" class="img4" alt="" loading="lazy">
+      <img src="./s1/img1.png"  class="img1" alt="" loading="lazy">
       <img src="./s1/img2.png" data-aos="fade-left" data-aos-duration="1600" class="img2" alt="" loading="lazy">
       <img src="./s1/img3.png" data-aos="fade-left" data-aos-duration="1600" class="img3" alt="" loading="lazy">
+      <div class="f1"  data-aos="fade-right">
+        <img src="./s1/f11.png" alt="" loading="lazy" />
+        <img src="./s1/f4.png" alt="" loading="lazy" />
+        <img src="./s1/f3.png" alt="" loading="lazy" />
+        <img src="./s1/f12.png" alt="" loading="lazy" />
+        <img src="./s1/f13.png" alt="" loading="lazy" />
+        <img src="./s1/f2.png" alt="" loading="lazy" />
+        <img src="./s1/f14.png" alt="" loading="lazy" />
+      </div>
 </div>
 <div class="txt">
   <svg viewBox="0 0 664 230" class="logo" xmlns="http://www.w3.org/2000/svg">
@@ -139,23 +143,44 @@
   animation: anx 3.5s ease-in-out infinite alternate;}
   .f1{
     position: absolute;
-    bottom: -2.5vw;
-    left: -3vw;
-  width:size(391);
+    bottom: -5vw;
+    left: 0;
+  width:size(400);
   img{
-    &:first-child{position: relative;width: 100%;
+    &:first-child{position: relative;
+    width: 87%;
+    left: 23%;
   animation: an2 4s ease-in-out infinite alternate;
   transform-origin: 0 50%;}
-    &:nth-child(2){width: 27%;
-    top: 46%;
-  animation: an3 4s ease-in-out infinite alternate;
-    left: 56%;}
-    &:nth-child(3){width: 54.2%;top: 31%; left: 0%;
+    &:nth-child(2){
+    width: 118%;
+    top: 52%;
+    left: 0;
   animation: an3 4s ease-in-out infinite alternate;}
-    &:nth-child(4){width: 46.5%;
-    top: 7%;
-  animation: an3 4s ease-in-out infinite alternate;
-    left: 55%;}
+    &:nth-child(3){
+    width: 46%;
+    top: 56%;
+    left: 40%;
+  transform-origin: 0 50%;
+  animation: an2 4s ease-in-out infinite alternate;}
+    &:nth-child(4){width: 22%;
+    top: 46%;
+    left: 75%;
+  animation: an3 4s ease-in-out infinite alternate;}
+    &:nth-child(5){
+    width: 44.2%;
+    top: 29%;
+    left: 30%;
+  animation: an3 4s ease-in-out infinite alternate;}
+    &:nth-child(6){width: 46.5%;
+    top: 17%;
+    left: -2%;
+  animation: an3 4s ease-in-out infinite alternate;}
+    &:nth-child(7){
+    width: 40%;
+    top: 8%;
+    left: 72%;
+  animation: an3 4s ease-in-out infinite alternate;}
   }
   }
 }
@@ -171,12 +196,14 @@
   to {transform:translateY(-10%);}
 }
 
-.img1{position: absolute;
+.img1{position: absolute;opacity: .1;
   left:size(35);width: size(350);bottom: size(10);}
 .img2{position: absolute;
   right:0;width: size(383);bottom:0;}
 .img3{position: absolute;
   right:0;width: size(493);top: size(-5);}
+.img4{position: absolute;
+  right:size(146);width: size(669);bottom: size(23);}
 
 .txt{
   @include img_c_pc(900, 305);
