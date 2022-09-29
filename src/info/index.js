@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14465.841750809457!2d121.4176849034059!3d24.98446584634964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681d2332acc56f%3A0xf150a001426633e3!2zMjIw5paw5YyX5biC5p2_5qmL5Y2A5rqq5Z-O6LevNjPomZ8!5e0!3m2!1szh-TW!2stw!4v1663919363982!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/ncUsfA1Lgvb7ZHar5',
   phone: '02-7709-9099',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  fbLink: 'https://www.facebook.com/ChenGo007',
+  fbMessage: 'https://m.me/ChenGo007',
   caseName: '樂晴',
   indigatorLength: 10,
 
