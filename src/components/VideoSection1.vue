@@ -1,6 +1,6 @@
 <template>
-  <div class="section3">
-    <div class="bg fullscreen" v-if="!isMobile">
+  <div class="video">
+    <div class="bg" v-if="!isMobile">
       <div class="container">
         <div class="content">
           <h3 class="title">{{title}}</h3>
@@ -77,6 +77,10 @@
 
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
+.video{
+  width: 100%;
+  height: auto;
+}
 .bg {
   position: relative;
   overflow: hidden;
@@ -84,8 +88,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $video_section_bg;
-  padding: 60px 0 0 0;
+  // background: $video_section_bg;
+  padding: calc(100vw * 60 / 1920) 0;
 }
 .container {
   width: calc(100vw * 1550 / 1920);
@@ -123,6 +127,8 @@
   .item {
     flex: 1 1 auto;
     border-top: 1px solid $video_section_item_border;
+     border-image: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
+	  border-image-slice: 1;
     padding: 8px 0;
     cursor: pointer;
 
@@ -149,26 +155,35 @@
     }
     &:nth-last-child(1) {
       border-bottom: 1px solid $video_section_item_border;
+     border-image: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
+	  border-image-slice: 1;
     }
   }
 }
 
 .video-container {
   width: calc(100vw * 1080 / 1920);
-  height: calc(100vw * 810 / 1920);
+  height: calc(100vw * 550 / 1920);
   position: relative;
   margin: 0 0 0 calc(100vw * 20 / 1920);
+  
   &::before {
     content: '';
     width: 100%;
     height: 100%;
-    border: 5px solid $video_section_item_border;
+     border: 2px solid $video_section_item_border;
+     border-image: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
+	  border-image-slice: 1;
     position: absolute;
-    top: calc(100vw * 30 / 1920);
-    left: calc(100vw * 30 / 1920);
+    top: calc(100vw * 20 / 1920);
+    left: calc(100vw * 20 / 1920);
+    z-index: 4;
+    pointer-events: none;
+
   }
   .video-item {
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -176,6 +191,8 @@
     transition: opacity 0.5s;
     img {
       width: 100%;
+    height: 100%;
+    object-fit: cover;
       position: absolute;
       top: 0;
       left: 0;
@@ -249,13 +266,14 @@
     display: block;
     padding-top: calc(100vh * 155 / 750);
     height: calc(100vw * 750 / 375) !important;
-    background: $video_section_bg_m;
+ //   background: $video_section_bg_m;
     background-size: 100% 100%;
   }
 
   .video-container {
     width: 100vw;
     height: calc(100vw * 280 / 375);
+    margin: 0;
     &::before {
       display: none;
     }

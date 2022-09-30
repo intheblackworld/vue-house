@@ -45,26 +45,32 @@
       </vue-lazy-component>
     <VideoSection1
       :playBtn="require('@/projects/great-intersection/video/play-btn.png')"
-      title="開箱系列影片"
+      title="影片區標題"
       :close="require('@/projects/great-intersection/video/close.png')"
       :arrows="[require('@/projects/great-intersection/video/arrow-left.png'), require('@/projects/great-intersection/video/arrow-right.png')]"
       :slideList="[
         {
-          title: '內容街景大公開',
-          img: require('@/projects/great-intersection/video/2.jpg'),
-          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '屋內機密大公開',
-          img: require('@/projects/great-intersection/video/3.jpg'),
-          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '回家就是享受的開始',
+          title: '單影片1標題',
           img: require('@/projects/great-intersection/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
+          video: 'https://www.youtube.com/embed/5rrIx7yrxwQ?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '單影片2標題',
+          img: require('@/projects/great-intersection/video/2.jpg'),
+          video: 'https://www.youtube.com/embed/CiiggJ71tng?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '單影片3標題',
+          img: require('@/projects/great-intersection/video/3.jpg'),
+          video: 'https://www.youtube.com/embed/GKquUwHLkHc?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '單影片4標題',
+          img: require('@/projects/great-intersection/video/4.jpg'),
+          video: 'https://www.youtube.com/embed/q44byNXKSUI?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
       ]"
