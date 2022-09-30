@@ -43,10 +43,36 @@
       <vue-lazy-component class="section" id="section11" style="">
          <Section11 />
       </vue-lazy-component>
+    <VideoSection1
+      :playBtn="require('@/projects/great-intersection/video/play-btn.png')"
+      title="開箱系列影片"
+      :close="require('@/projects/great-intersection/video/close.png')"
+      :arrows="[require('@/projects/great-intersection/video/arrow-left.png'), require('@/projects/great-intersection/video/arrow-right.png')]"
+      :slideList="[
+        {
+          title: '內容街景大公開',
+          img: require('@/projects/great-intersection/video/2.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '屋內機密大公開',
+          img: require('@/projects/great-intersection/video/3.jpg'),
+          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '回家就是享受的開始',
+          img: require('@/projects/great-intersection/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+      ]"
+    />
+      <!-- 
       <vue-lazy-component class="section" id="section12" style="">
          <Section12 />
       </vue-lazy-component>
-      <!-- 
       <vue-lazy-component class="section" id="section3">
         <Section3 />
       </vue-lazy-component>
@@ -101,7 +127,8 @@ import Section8 from '@/projects/great-intersection/Section8.vue'
 import Section9 from '@/projects/great-intersection/Section9.vue'
 import Section10 from '@/projects/great-intersection/Section10.vue'
 import Section11 from '@/projects/great-intersection/Section11.vue'
-import Section12 from '@/projects/great-intersection/Section12.vue'
+import VideoSection1 from '@/components/VideoSection1.vue'
+// import Section12 from '@/projects/great-intersection/Section12.vue'
 
 export default {
   name: 'home',
@@ -125,8 +152,9 @@ export default {
     Section9,
     Section10,
     Section11,
-    Section12,
+    VideoSection1,
     /*
+    Section12,
     Section6,
     */
   },
@@ -154,6 +182,13 @@ export default {
     }
   },
   created() {
+    this.$Lazyload.$on('loaded', ({ el, src }) => {
+      setTimeout(() => {
+        if (this.loading) {
+          this.loading = false
+        }
+      }, 0)
+    })
     // $(document).ready(() => {
     //   // Images loaded is zero because we're going to process a new set of images.
     //   var imagesLoaded = 0
@@ -182,6 +217,9 @@ export default {
     // }
   },
   methods: {
+    onDone() {
+      console.log('done')
+    },
     init() {},
     // onScroll() {
     //   // 获取所有锚点元素
