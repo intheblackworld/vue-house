@@ -43,6 +43,9 @@
       <vue-lazy-component class="section" id="section11" style="">
          <Section11 />
       </vue-lazy-component>
+      <vue-lazy-component class="section" id="section12" style="">
+         <Section12 />
+      </vue-lazy-component>
       <!-- 
       <vue-lazy-component class="section" id="section3">
         <Section3 />
@@ -98,6 +101,7 @@ import Section8 from '@/projects/great-intersection/Section8.vue'
 import Section9 from '@/projects/great-intersection/Section9.vue'
 import Section10 from '@/projects/great-intersection/Section10.vue'
 import Section11 from '@/projects/great-intersection/Section11.vue'
+import Section12 from '@/projects/great-intersection/Section12.vue'
 
 export default {
   name: 'home',
@@ -121,6 +125,7 @@ export default {
     Section9,
     Section10,
     Section11,
+    Section12,
     /*
     Section6,
     */
