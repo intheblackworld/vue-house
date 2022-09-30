@@ -8,16 +8,61 @@
         <img src="./s1/f14.png" alt="" loading="lazy" />
       </div></div>
     <div class="content">
-      <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        富域金流，中部科技走廊<br v-if="isMobile" />三大園區一脈共榮
+      <svg class="txt" viewBox="0 0 1480 486" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M731.514 426.888C834.156 426.888 917.364 343.681 917.364 241.038C917.364 138.396 834.156 55.1885 731.514 55.1885C628.872 55.1885 545.664 138.396 545.664 241.038C545.664 343.681 628.872 426.888 731.514 426.888Z" fill="#E3B0B0"/>
+<path d="M731.52 463.549C672.09 463.549 616.21 440.409 574.19 398.379C532.16 356.349 509.02 300.479 509.02 241.049C509.02 181.619 532.16 125.739 574.19 83.7193C616.22 41.6893 672.09 18.5493 731.52 18.5493C790.95 18.5493 846.83 41.6893 888.85 83.7193C930.88 125.749 954.02 181.619 954.02 241.049C954.02 300.479 930.88 356.359 888.85 398.379C846.82 440.409 790.95 463.549 731.52 463.549ZM731.52 20.6393C609.99 20.6393 511.11 119.519 511.11 241.049C511.11 362.579 609.99 461.459 731.52 461.459C853.05 461.459 951.93 362.579 951.93 241.049C951.93 119.519 853.05 20.6393 731.52 20.6393V20.6393Z" fill="url(#paint5)"/>
+<path d="M881.26 76.8795L879.77 75.3995L912.44 42.4395H1079.76V44.5295H913.32L881.26 76.8795Z" fill="url(#paint5)"/>
+<path d="M1079.76 436.149H912.44L879.77 403.189L881.26 401.709L913.32 434.049H1079.76V436.149Z" fill="url(#paint5)"/>
+<path d="M1131.87 239.999H955.04V242.089H1131.87V239.999Z" fill="url(#paint5)"/>
+<path d="M583.89 76.8795L551.83 44.5295H385.39V42.4395H552.71L585.38 75.3995L583.89 76.8795Z" fill="url(#paint5)"/>
+<path d="M552.71 436.149H385.39V434.049H551.83L583.89 401.709L585.38 403.189L552.71 436.149Z" fill="url(#paint5)"/>
+<path d="M510.11 239.999H341.27V242.089H510.11V239.999Z" fill="url(#paint5)"/>
+<rect width="23.41" height="23.41" transform="translate(868.81 64.4395)" fill="url(#paint7)"/>
+<rect width="23.41" height="23.41" transform="translate(572.93 64.4395)" fill="url(#paint7)"/>
+<rect width="23.41" height="23.41" transform="translate(498.41 229.339)" fill="url(#paint7)"/>
+<rect width="23.41" height="23.41" transform="translate(868.81 390.739)" fill="url(#paint7)"/>
+<rect width="23.41" height="23.41" transform="translate(572.93 390.739)" fill="url(#paint7)"/>
+<rect width="23.41" height="23.41" transform="translate(943.34 229.339)" fill="url(#paint7)"/>
+<defs>
+<linearGradient id="paint5" x1="385.39" y1="418.93" x2="954.021" y2="241.051" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E0B39E"/>
+<stop offset="0.125" stop-color="#D28B75"/>
+<stop offset="0.25" stop-color="#895043"/>
+<stop offset="0.375" stop-color="#824B40"/>
+<stop offset="0.5" stop-color="#BE806C"/>
+<stop offset="0.625" stop-color="#DA9C86"/>
+<stop offset="0.75" stop-color="#E2BCA9"/>
+<stop offset="0.875" stop-color="#DCA18C"/>
+<stop offset="1" stop-color="#7E4947"/>
+</linearGradient>
+<linearGradient id="paint7" x1="4.94748e-07" y1="11.7051" x2="23.41" y2="11.7051" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E0B39E"/>
+<stop offset="0.125" stop-color="#D28B75"/>
+<stop offset="0.25" stop-color="#895043"/>
+<stop offset="0.375" stop-color="#824B40"/>
+<stop offset="0.5" stop-color="#BE806C"/>
+<stop offset="0.625" stop-color="#DA9C86"/>
+<stop offset="0.75" stop-color="#E2BCA9"/>
+<stop offset="0.875" stop-color="#DCA18C"/>
+<stop offset="1" stop-color="#7E4947"/>
+</linearGradient>
+</defs>
+</svg>
+
+      <div class="title" data-aos="zoom-in" data-aos-delay="300">
+        置產沙鹿<br />六大優勢<span>Advantage</span>
       </div>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="400">
-        台積電欽定奈米廠落定中科園區二期
-      </div>
-      <ul class="desc">
-        <li data-aos="zoom-in" data-aos-delay="600"><span>台中科學園區</span>2021年產值破兆，與竹科並列全台產值破兆科學園區，佈局中科錢景就趁現在！</li>
-        <li data-aos="zoom-in" data-aos-delay="800"><span>台中工業區</span>光電、精密電子享譽國際，年產值約3,300億元，提供約4萬個工作機會。</li>
-        <li data-aos="zoom-in" data-aos-delay="1000"><span>科技精密園區</span>提供約2萬個工作機會，為全球重要的精密機械產業聚落。</li>
+      <ul class="desc desc1">
+        <li data-aos="zoom-in" data-aos-delay="400">雙醫療中心</li>
+        <li data-aos="zoom-in" data-aos-delay="500">門戶國際城</li>
+      </ul>
+      <ul class="desc desc2">
+        <li data-aos="zoom-in" data-aos-delay="600">三大生活圈</li>
+        <li data-aos="zoom-in" data-aos-delay="700">核心雙軸線</li>
+      </ul>
+      <ul class="desc desc3">
+        <li data-aos="zoom-in" data-aos-delay="800">五大就業園區</li>
+        <li data-aos="zoom-in" data-aos-delay="900">雙捷交匯線</li>
       </ul>
     </div>
     <div class="swiper">
@@ -58,7 +103,7 @@ $b_margin:size(50);
   }
  // background: url("./s2/pc.png");
 }
-.img1{width: size(245);position: absolute;right: size(10);top: size(20);
+.img1{width: size(320);position: absolute;right: size(0);top: size(-70);
 z-index: 2;
 img{
   &:first-child{width:136%;
@@ -95,50 +140,44 @@ position: absolute;
 }
 
 .content {
-  //@include img_r_pc(622, 0, 0);
-  //height: 100%;
-  //in-height: size(1080);
- // background: #bccf00;
   padding:3.6em 0 0 0;
   display: block;
-  color: #FFF;
+  color:#603772;
   text-align: center;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.7;
-  font-size: size(38);
-  font-weight: normal;
+  line-height: 1.3;
+  font-size: size(50);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   letter-spacing:0.0em;
- // height:20em;
-  margin: 0 auto 3em;
+  margin: 0 auto 1.5em;
+  position: relative;
 
 
+}
+.txt{
+  width: size(1478);
+ // margin-bottom: size(-370);
 }
 
 .title {
+  position: absolute;
+  top:size(320);
+  left:calc(50% - 2.2em);
   font-weight: bold;
-  color: #DDAC98;
-  font-size:1.36em;
-  margin: 0 auto 0.4em;
-
+  font-size:1.15em;
+  span{color: #FFF;display: block;
+  font-size:0.65em;
+  margin: 0.3em auto 0;
+  font-weight: 300;
+  font-family:  'Noto Sans TC', sans-serif;
 }
-
-.subtitle {
-  font-size:1.27em;
-  font-weight: bold;
-  margin: 0 auto 1em;
-  background:#DDAC98;
-  color: #603772;
-  width:18.5em;
-  line-height: 1.25;
-  border-radius: 1.5em;
-  padding: 0 0 0.1em;
-
 }
-
-.desc {display: inline-block;
+.desc {
+  position: absolute;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
   font-size:0.9em;
   text-align: justify;
   font-family:  'Noto Sans TC', sans-serif;
@@ -146,18 +185,23 @@ position: absolute;
   line-height: 1.5;
   letter-spacing:0.05em;
   overflow: hidden;
-  li{list-style:inherit;margin: 0.3em 0 0.3em 1em;position: relative;
-  &::before{
-    content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='%23F5E76D'%3E%3Cpath class='st0' d='M9,7L9,7L9,7L9,7L9,7c-0.4,0-1.5-1.1-2.5-2.7c-1-1.5,0-4,2.5-4l0,0h0c2.6,0,3.6,2.5,2.5,4C10.5,5.9,9.4,6.9,9,7z M4.3,6.5c-1.5-1-4,0-4,2.5c0,2.6,2.5,3.6,4,2.5C5.9,10.5,6.9,9.4,7,9C6.9,8.6,5.9,7.5,4.3,6.5z M6.5,13.7c-1,1.5,0,4,2.5,4l0,0h0c2.6,0,3.6-2.5,2.5-4c-1-1.5-2.1-2.6-2.5-2.7l0,0l0,0l0,0l0,0C8.6,11.1,7.5,12.1,6.5,13.7z M17.7,9c0-2.6-2.5-3.6-4-2.5c-1.5,1-2.6,2.1-2.7,2.5c0,0.4,1.1,1.5,2.7,2.5C15.2,12.6,17.7,11.6,17.7,9z'/%3E%3C/svg%3E");
-    width: .6em;display:block;position: absolute;top: 0em;left: -1em;
+  li{list-style:inherit;margin: 0.3em 0 0.3em 0em;position: relative;
+    background: #ECCCCC;
+    text-align: center;border-radius: .8em;
+    width: size(350);
   }
-  span{
- font-weight: 800;display: inline-block;position: relative;margin: 0 0.5em 0 0 ;
-  &::after{
-    content: "";display: inline-block;margin: 0 0 -.1em  0.5em;
-    height: .9em;width: 2px;background: currentColor;}
-  }
-  }
+}
+.desc1 {width:size(1200);
+  top:size(175);
+  left: calc(50% - #{size(1200 * .5)});
+}
+.desc2 {width:size(1478);
+  top:size(370);
+  left: calc(50% - #{size(1478 * .5)});
+}
+.desc3 {width:size(1200);
+  top:size(565);
+  left: calc(50% - #{size(1200 * .5)});
 }
 
 /* Swipe */
@@ -189,7 +233,7 @@ position: absolute;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -426,16 +470,28 @@ export default {
       },
       slideList: [
         {
-          img: require("./s4/1.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s7/1.jpg"),
+          name: "雙醫療中心",
         },
         {
-          img: require("./s4/2.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s7/2.jpg"),
+          name: "三大生活圈",
         },
         {
-          img: require("./s4/3.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s7/3.jpg"),
+          name: "五大就業園區",
+        },
+        {
+          img: require("./s7/4.jpg"),
+          name: "門戶國際城",
+        },
+        {
+          img: require("./s7/5.jpg"),
+          name: "核心雙軸線",
+        },
+        {
+          img: require("./s7/6.jpg"),
+          name: "雙捷交匯線",
         },
       ],
     }

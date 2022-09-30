@@ -1,5 +1,5 @@
 <template>
-  <div class="section6">
+  <div class="section10">
     <div class="img1" data-aos="zoom-in-right"><img src="./s1/music2.png" alt="img" />
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
@@ -9,29 +9,36 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        沙鹿新站特區<br v-if="isMobile" />  全區首座重劃指標
+        7大公設親子花園  聆聽生活美麗樂章
       </div>
-      <div class="desc" data-aos="zoom-in" data-aos-delay="400">沙鹿新站特區位於市區核心地帶，以車站生活圈為中心，重劃區內60％為純住宅區，40%為公園綠帶，街廓整齊，無價生活質感。<br /><br />
-        重劃特區四大優勢： <br />
-1.市心生活圈，純住開發<br />
-2.沙鹿首座指標重劃特區<br />
-3.站前200Ｍ商圈機能強<br />
-4.台鐵、捷運藍線雙交匯
-</div>
+      <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+        全新生活，在家享受。豐富而實用的公設場域，滿足個人舒壓時光，<br />
+        鄰里友善互動，為全家大小量身訂作幸福生活情境，200坪親子中庭，<br />
+        自由奔放、自由呼吸，在大樹微風裡，給孩子盡情奔跑的權利。
+      </div>
     </div>
-    <div class="pic" data-aos="flip-up" data-aos-delay="200"></div>
+    <div class="swiper">
+    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
+      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
+        <img :src="slide.img" alt>
+        <div class="slide-name absolute" v-html="slide.name"></div>
+      </swiper-slide>
+    </swiper>
+        <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="prev-btn" slot="button-prev" v-if="isMobile"></div>
+          <div class="next-btn" slot="button-next" v-if="isMobile"></div>
+        </div>
+        </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/style/function.scss";
 $b_margin:size(50);
-.section6 {
+.section10 {
   width: 100%;
   height: auto;
   position: relative;
-  padding: size(50) size(50) size(50) size(140);
-&::after{content: "";clear: both;display: block;}
-  &::before{
+  &::after{
     pointer-events: none;
     content: "";
     display: block;
@@ -85,13 +92,14 @@ position: absolute;
 }
 
 .content {
-float: left;
-  width: size(750);
-  height: size(856);
-  position: relative;
-  padding:0;
+  //@include img_r_pc(622, 0, 0);
+  //height: 100%;
+  //in-height: size(1080);
+ // background: #bccf00;
+  padding:3.6em 0 0 0;
+  display: block;
   color: #FFF;
-  text-align: justify;
+  text-align: center;
   line-height: 1.7;
   font-size: size(30);
   font-weight: 300;
@@ -99,11 +107,7 @@ float: left;
   font-style: normal;
   letter-spacing:0.0em;
  // height:20em;
-  margin: 0 auto 0;
-  display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+  margin: 0 auto 1.3em;
 
 
 }
@@ -111,31 +115,18 @@ float: left;
 .title {
   font-weight: bold;
   color: #DDAC98;
-  font-size:1.7em;
-  margin: 0 auto 0.4em 0;
-
-}
-
-.subtitle {
-  font-size:1.27em;
-  font-weight: bold;
-  margin: 0 auto 1em;
-  background:#DDAC98;
-  color: #603772;
-  width:18.5em;
-  line-height: 1.25;
-  border-radius: 1.5em;
-  padding: 0 0 0.1em;
+  font-size:1.36em;
+  margin: 0 auto 0.4em;
 
 }
 
 .desc {display: inline-block;
   font-size:0.9em;
-  text-align: justify;
+  text-align: center;
   font-family:  'Noto Sans TC', sans-serif;
   margin:0em auto;
   line-height: 1.5;
-  letter-spacing:0em;
+  letter-spacing:0.05em;
   overflow: hidden;
   li{list-style:inherit;margin: 0.3em 0 0.3em 1em;position: relative;
   &::before{
@@ -152,15 +143,12 @@ float: left;
 }
 
 /* Swipe */
-.pic {
-  width: size(852);
-  height: size(856);
-  float: right;
-  position: relative;
-  background: url("./s6/1.png") 0 50%;
-  background-size:auto size(900);
+.swiper {
+  width: 100%;
+  height: size(743);
+ // z-index: 1;
+    position: relative;
 }
-/*
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -183,7 +171,7 @@ float: left;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -299,7 +287,6 @@ float: left;
     transform: rotate(45deg) translate(10%, -10%);
   }
 }
-*/
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -378,7 +365,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section6',
+  name: 'section10',
 
   components: {
     swiper,
@@ -393,7 +380,7 @@ export default {
       isTablet,
       isAnimateBg: true,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
+        slidesPerView: 1,
         spaceBetween: 0,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
@@ -421,16 +408,28 @@ export default {
       },
       slideList: [
         {
-          img: require("./s4/1.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s10/1.jpg"),
+          name: "多功能室",
         },
         {
-          img: require("./s4/2.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s10/2.jpg"),
+          name: "大廳",
         },
         {
-          img: require("./s4/3.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s10/3.jpg"),
+          name: "多功能室",
+        },
+        {
+          img: require("./s10/4.jpg"),
+          name: "兒童遊戲室",
+        },
+        {
+          img: require("./s10/5.jpg"),
+          name: "音樂教室",
+        },
+        {
+          img: require("./s10/6.jpg"),
+          name: "音樂教室",
         },
       ],
     }

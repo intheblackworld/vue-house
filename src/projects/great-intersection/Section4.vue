@@ -103,11 +103,9 @@ position: absolute;
   display: block;
   color: #FFF;
   text-align: center;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.7;
   font-size: size(38);
-  font-weight: normal;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   letter-spacing:0.0em;
@@ -152,7 +150,7 @@ position: absolute;
     width: .6em;display:block;position: absolute;top: 0em;left: -1em;
   }
   span{
- font-weight: 800;display: inline-block;position: relative;margin: 0 0.5em 0 0 ;
+ font-weight: 500;display: inline-block;position: relative;margin: 0 0.5em 0 0 ;
   &::after{
     content: "";display: inline-block;margin: 0 0 -.1em  0.5em;
     height: .9em;width: 2px;background: currentColor;}
@@ -189,7 +187,7 @@ position: absolute;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;

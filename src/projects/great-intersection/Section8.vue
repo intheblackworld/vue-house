@@ -1,6 +1,6 @@
 <template>
-  <div class="section4">
-    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
+  <div class="section8">
+    <div class="img1" data-aos="zoom-in-right"><img src="./s1/music2.png" alt="img" />
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
         <img src="./s1/f12.png" alt="" loading="lazy" />
@@ -9,16 +9,11 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        富域金流，中部科技走廊<br v-if="isMobile" />三大園區一脈共榮
+        勝麗建設海線旗艦代表作
       </div>
-      <div class="subtitle" data-aos="zoom-in" data-aos-delay="400">
-        台積電欽定奈米廠落定中科園區二期
+      <div class="desc" data-aos="zoom-in" data-aos-delay="400">
+        2千坪車站特區壯闊開發，三面臨路暢快動線，10-16米大器退縮林蔭大道，七大悠悅飯店級公設，<br />近200坪親子花園廣場，勝麗建設用心待表作，再奏悠揚建築樂音。
       </div>
-      <ul class="desc">
-        <li data-aos="zoom-in" data-aos-delay="600"><span>台中科學園區</span>2021年產值破兆，與竹科並列全台產值破兆科學園區，佈局中科錢景就趁現在！</li>
-        <li data-aos="zoom-in" data-aos-delay="800"><span>台中工業區</span>光電、精密電子享譽國際，年產值約3,300億元，提供約4萬個工作機會。</li>
-        <li data-aos="zoom-in" data-aos-delay="1000"><span>科技精密園區</span>提供約2萬個工作機會，為全球重要的精密機械產業聚落。</li>
-      </ul>
     </div>
     <div class="swiper">
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
@@ -37,7 +32,7 @@
 <style lang="scss" scoped>
 @import "@/assets/style/function.scss";
 $b_margin:size(50);
-.section4 {
+.section8 {
   width: 100%;
   height: auto;
   position: relative;
@@ -58,16 +53,16 @@ $b_margin:size(50);
   }
  // background: url("./s2/pc.png");
 }
-.img1{width: size(245);position: absolute;right: size(10);top: size(20);
+.img1{width: size(270);position: absolute;left: size(0);top: size(-40);
 z-index: 2;
 img{
   &:first-child{width:136%;
 position: absolute;
-    top: 36%;
-    right: 43%;
+    top: 42%;
+    left: 50%;
 }
-      }
-       .f1{width: 100%;transform:scaleX(-1);
+}
+ .f1{width: 100%;
 position: relative;
   img{
 position: absolute;
@@ -103,16 +98,14 @@ position: absolute;
   display: block;
   color: #FFF;
   text-align: center;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.7;
-  font-size: size(38);
-  font-weight: normal;
+  font-size: size(30);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   letter-spacing:0.0em;
  // height:20em;
-  margin: 0 auto 3em;
+  margin: 0 auto 1.3em;
 
 
 }
@@ -120,27 +113,14 @@ position: absolute;
 .title {
   font-weight: bold;
   color: #DDAC98;
-  font-size:1.36em;
+  font-size:1.7em;
   margin: 0 auto 0.4em;
-
-}
-
-.subtitle {
-  font-size:1.27em;
-  font-weight: bold;
-  margin: 0 auto 1em;
-  background:#DDAC98;
-  color: #603772;
-  width:18.5em;
-  line-height: 1.25;
-  border-radius: 1.5em;
-  padding: 0 0 0.1em;
 
 }
 
 .desc {display: inline-block;
   font-size:0.9em;
-  text-align: justify;
+  text-align: center;
   font-family:  'Noto Sans TC', sans-serif;
   margin:0em auto;
   line-height: 1.5;
@@ -163,7 +143,7 @@ position: absolute;
 /* Swipe */
 .swiper {
   width: 100%;
-  height: size(586);
+  height: size(930);
  // z-index: 1;
     position: relative;
 }
@@ -189,7 +169,7 @@ position: absolute;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -383,7 +363,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'section4',
+  name: 'section8',
 
   components: {
     swiper,
@@ -398,7 +378,7 @@ export default {
       isTablet,
       isAnimateBg: true,
       swiperOption: {
-        slidesPerView: isMobile ? 1 : 3,
+        slidesPerView: 1,
         spaceBetween: 0,
         allowSlidePrev: isMobile ? true : true,
         allowSlideNext: isMobile ? true : true,
@@ -426,16 +406,8 @@ export default {
       },
       slideList: [
         {
-          img: require("./s4/1.jpg"),
-          name: "情境示意參考圖",
-        },
-        {
-          img: require("./s4/2.jpg"),
-          name: "情境示意參考圖",
-        },
-        {
-          img: require("./s4/3.jpg"),
-          name: "情境示意參考圖",
+          img: require("./s8/1.jpg"),
+          name: "外觀透視3D示意圖",
         },
       ],
     }

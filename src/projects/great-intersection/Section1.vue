@@ -1,8 +1,8 @@
 <template>
   <article class="section1">
    <!--  
-  -->
     <img class="a1" src="./s1/pc.jpg" alt="" />
+  -->
 
 <div class="img">
       <img src="./s1/o2.png" data-aos="fade-left" data-aos-duration="1000" class="o3" alt="" loading="lazy">
@@ -116,7 +116,7 @@
   }
   */
 }
-.a1{position: absolute;top: 0;left: 0;width: 100%;opacity: .5;}
+.a1{position: absolute;top: 270px;left: 0;width: 100%;opacity: .5;}
 
 .img{
   position: absolute;
@@ -143,8 +143,9 @@
   animation: anx 3.5s ease-in-out infinite alternate;}
   .f1{
     position: absolute;
-    bottom: -5vw;
+    bottom: -6vw;
     left: 0;
+    z-index: 3;
   width:size(400);
   img{
     &:first-child{position: relative;
@@ -196,7 +197,7 @@
   to {transform:translateY(-10%);}
 }
 
-.img1{position: absolute;opacity: .1;
+.img1{position: absolute;
   left:size(35);width: size(350);bottom: size(10);}
 .img2{position: absolute;
   right:0;width: size(383);bottom:0;}
@@ -233,13 +234,14 @@ margin:0.25em auto 0.35em auto;}
   font-family:'Noto Sans TC', sans-serif;
 font-size: 1em;
  span{display: inline-block;
-    vertical-align: 0.1em;
+    vertical-align: 0.05em;
 font-size: 0.77em;
+  font-weight:400;
  &::before,
  &::after{
   content:"";width: 100%;height: 2px;display: block;
  background:currentColor}
- &::before{margin: 0 0 0.05em;}}
+ &::before{margin: 0 0;}}
  }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */

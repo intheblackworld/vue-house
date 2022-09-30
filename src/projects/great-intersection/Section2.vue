@@ -1,6 +1,6 @@
 <template>
   <div class="section2">
-    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
+    <div class="img1" data-aos="zoom-in-left">
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
         <img src="./s1/f12.png" alt="" loading="lazy" />
@@ -99,11 +99,9 @@ position: absolute;
   display: block;
   color: #FFF;
   text-align: center;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.7;
   font-size: size(38);
-  font-weight: normal;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   letter-spacing:0.0em;
@@ -162,7 +160,7 @@ position: absolute;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;

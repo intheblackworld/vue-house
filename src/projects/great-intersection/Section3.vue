@@ -105,11 +105,9 @@ position: absolute;
   display: block;
   color: #FFF;
   text-align: center;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.7;
-  font-size: size(38);
-  font-weight: normal;
+  font-size: size(30);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   letter-spacing:0.0em;
@@ -122,7 +120,7 @@ position: absolute;
 .title {
   font-weight: bold;
   color: #DDAC98;
-  font-size:1.36em;
+  font-size:1.7em;
   margin: 0 auto 1.15em;
 
 }
@@ -166,7 +164,7 @@ position: absolute;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;

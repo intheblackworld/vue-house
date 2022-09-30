@@ -1,6 +1,6 @@
 <template>
   <div class="section5">
-    <div class="img1" data-aos="zoom-in-right"><img src="./s1/music2.png" alt="img" />
+    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
         <img src="./s1/f12.png" alt="" loading="lazy" />
@@ -60,16 +60,16 @@ $b_margin:size(50);
   }
  // background: url("./s2/pc.png");
 }
-.img1{width: size(245);position: absolute;left: size(25);top: size(30);
+.img1{width: size(245);position: absolute;right: size(10);top: size(20);
 z-index: 2;
 img{
   &:first-child{width:136%;
 position: absolute;
-    top: 42%;
-    left: 50%;
+    top: 36%;
+    right: 43%;
 }
-}
- .f1{width: 100%;
+      }
+       .f1{width: 100%;transform:scaleX(-1);
 position: relative;
   img{
 position: absolute;
@@ -105,11 +105,9 @@ position: absolute;
   display: block;
   color: #FFF;
   text-align: center;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.7;
-  font-size: size(38);
-  font-weight: normal;
+  font-size: size(30);
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   letter-spacing:0.0em;
@@ -122,15 +120,9 @@ position: absolute;
 .title {
   font-weight: bold;
   color: #DDAC98;
-  font-size:1.36em;
-  margin: 0 auto 1.15em;
+  font-size:1.7em;
+  margin: 0 auto .4em;
 
-}
-
-.subtitle {
-  font-size:1.5em;
-  font-weight: bold;
-  margin: 0 auto .3em;
 }
 
 .desc {
@@ -166,7 +158,7 @@ position: absolute;
     bottom:0;
     color: #fff;
     font-size: size(16);
-    font-weight: normal;
+    font-weight: 300;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -394,11 +386,35 @@ export default {
       },
       slideList: [
         {
-          img: require("./s3/1.jpg"),
+          img: require("./s5/1.jpg"),
           name: "情境示意參考圖",
         },
         {
-          img: require("./s3/2.jpg"),
+          img: require("./s5/2.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s5/3.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s5/4.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s5/5.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s5/6.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s5/7.jpg"),
+          name: "情境示意參考圖",
+        },
+        {
+          img: require("./s5/8.jpg"),
           name: "情境示意參考圖",
         },
       ],
