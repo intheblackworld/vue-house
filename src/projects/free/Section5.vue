@@ -428,7 +428,7 @@ export default {
         },
         {
           img: isMobile?require('./s5/3_m.jpg'):require('./s5/3.jpg'),
-          name: '新市鎮兒童公園 示意',
+          name: '新市鎮兒童公園',
         },
         {
           img: isMobile?require('./s5/4_m.jpg'):require('./s5/4.jpg'),

@@ -304,7 +304,7 @@ export default {
         },
         {
           img: isMobile?require('./s4/2_m.jpg'):require('./s4/2.jpg'),
-          name: '三友黃昏市場 示意',
+          name: '三友黃昏市場',
         },
         {
           img: isMobile?require('./s4/3_m.jpg'):require('./s4/3.jpg'),
@@ -316,7 +316,7 @@ export default {
         },
         {
           img: isMobile?require('./s4/5_m.jpg'):require('./s4/5.jpg'),
-          name: '水碓市民活動中心 示意',
+          name: '水碓市民活動中心',
         },
       ],
     }

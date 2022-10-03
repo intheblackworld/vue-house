@@ -408,11 +408,11 @@ export default {
       slideList: [
         {
           img: isMobile?require('./s8/1_m.jpg'):require('./s8/1.jpg'),
-          name: '新興國小 示意',
+          name: '新興國小',
         },
         {
           img: isMobile?require('./s8/2_m.jpg'):require('./s8/2.jpg'),
-          name: '正德國中 示意',
+          name: '正德國中',
         },
       ],
     }
