@@ -3,9 +3,6 @@
     <div class="img1" data-aos="zoom-in-right">
       <img src="@/projects/great-intersection/s5/1.png" alt="img" />
     </div>
-    <div class="img2" data-aos="zoom-in-left">
-      <img src="@/projects/great-intersection/s5/2.png" alt="img" />
-    </div>
     <article class="order-top">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in"></h2>
       <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in" v-if="order.subTitle"></div>

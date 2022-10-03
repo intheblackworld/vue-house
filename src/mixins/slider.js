@@ -11,6 +11,9 @@ export default {
 
   mounted() {
     setInterval(() => {
+      if (this.isShowDialog) {
+        return
+      }
       if (this.toggleTimer) {
         if (this.slideList && !this.stopAutoPlay) {
           this.addIndex()

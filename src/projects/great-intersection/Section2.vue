@@ -248,9 +248,10 @@ z-index:4;
 }
   .content {
   font-size: sizem(14);
+  padding: 5.4em 0 0 0;
   }
 .title {
-  font-size:1.65em;
+  font-size:1.8em;
   line-height: 1.5;
   margin: 0 auto 0.7em;
 

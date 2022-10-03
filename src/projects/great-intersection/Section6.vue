@@ -314,23 +314,31 @@ float: left;
 }
 
 @media screen and (max-width: 767px) {
+.section6 {
+  padding: size(50) size(50) size(50) size(50);
+
+}
 .img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-10);
 z-index:4;
 }
   .content {
+float: none;
   font-size: sizem(14);
   color: #FFFC;
+  width: sizem(320);
+  height:auto;
+  margin: 4.8em auto 2em;
   }
 .title {
   font-size:1.65em;
   line-height: 1.5;
   margin: 2.5em auto 0.7em;
+  text-align: center;
 
 }
 .desc {
   margin:0em auto;
   font-size:1em;
-  width: sizem(320);
   li{ 
   span{display:flex; color: #FFF;
   align-items: center;
@@ -338,9 +346,18 @@ z-index:4;
   }
   }
 }
+.pic {
+  width:100%;
+  height: sizem(325);
+float: none;
+  position: relative;
+  background: url("./s6/1.png") 50% 50%;
+  background-size:100% auto;
+}
 
 
   /* Swipe */
+  /*
 .swiper {
     height: sizem(250);
   }
@@ -366,6 +383,7 @@ z-index:4;
       }
     }
   }
+  */
 }
 </style>
 <script>

@@ -12,7 +12,7 @@
         勝麗建設海線旗艦代表作
       </div>
       <div class="desc" data-aos="zoom-in" data-aos-delay="400">
-        2千坪車站特區壯闊開發，三面臨路暢快動線，10-16米大器退縮林蔭大道，七大悠悅飯店級公設，<br />近200坪親子花園廣場，勝麗建設用心待表作，再奏悠揚建築樂音。
+        2千坪車站特區壯闊開發，<br v-if="isMobile" />三面臨路暢快動線，<br v-if="isMobile" />10-16米大器退縮林蔭大道，<br v-if="isMobile" />七大悠悅飯店級公設，<br />近200坪親子花園廣場，<br v-if="isMobile" />勝麗建設用心待表作，<br v-if="isMobile" />再奏悠揚建築樂音。
       </div>
     </div>
     <div class="swiper">

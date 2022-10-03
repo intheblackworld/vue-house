@@ -93,11 +93,10 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 112;
-  top: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  background-color: #af1f24;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
 
   // img {
@@ -365,8 +364,8 @@ export default {
   .menu {
     display: flex;
     position: fixed;
-    right: 30px;
-    top: 30px;
+  //  right: 30px;
+ //   top: 30px;
 
     img {
       width: 100%;

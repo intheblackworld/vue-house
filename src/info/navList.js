@@ -1,11 +1,14 @@
 export default [
   /* */
-  { name: '捷運金樂', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:-75 , type: '' },
-  { name: '效率快樂', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:-80,  type: '' },
-  { name: '商圈饗樂', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:-60,mobileOffset:-80, type: '' },
-  { name: '公園歡樂', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
-  { name: '校園閲樂', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
-  { name: '空間鈔樂', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+  { name: '勝麗交響曲', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:-75 , type: '' },
+  { name: '城市遠見', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:-75 , type: '' },
+  { name: '海線都心', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:-80,  type: '' },
+  { name: '富域金流', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:-60,mobileOffset:-80, type: '' },
+  { name: '重劃指標', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+  { name: '六大優勢', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+  { name: '海線旗艦', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+  { name: '樣品屋', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+  { name: '影片', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
   //{ name: '嚴選建材', imgSrc: '', subTitle: '', section: 'section10', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
   // { name: '樣品屋預留', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '',offset:-60, mobileOffset:0 , type: '' },
   

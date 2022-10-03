@@ -9,12 +9,12 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        7大公設親子花園  聆聽生活美麗樂章
+        7大公設親子花園<br v-if="isMobile" />  聆聽生活美麗樂章
       </div>
       <div class="desc" data-aos="zoom-in" data-aos-delay="400">
-        全新生活，在家享受。豐富而實用的公設場域，滿足個人舒壓時光，<br />
-        鄰里友善互動，為全家大小量身訂作幸福生活情境，200坪親子中庭，<br />
-        自由奔放、自由呼吸，在大樹微風裡，給孩子盡情奔跑的權利。
+        全新生活，在家享受。<br v-if="isMobile" />豐富而實用的公設場域，滿足個人舒壓時光，<br />
+        鄰里友善互動，為全家大小量身訂作<br v-if="isMobile" />幸福生活情境，200坪親子中庭，<br />
+        自由奔放、自由呼吸，在大樹微風裡，<br v-if="isMobile" />給孩子盡情奔跑的權利。
       </div>
     </div>
     <div class="swiper">
@@ -307,6 +307,7 @@ z-index:4;
   .content {
   font-size: sizem(14);
   color: #FFFC;
+  padding:4.6em 0 0 0;
   }
 .title {
   font-size:1.65em;

@@ -12,9 +12,9 @@
         站前之心<br v-if="isMobile" /> 沙鹿完美加值
       </div>
       <div class="desc" data-aos="zoom-in" data-aos-delay="400">
-        生活機能超成熟，居住便利很完美。沙鹿國中小雙學區，文教素質領先。<br />
-市集連鎖、麥當勞、星巴克，銀行、區公所、光田醫院面面俱到。<br />
-近距三井OUTLET 遊憩購物天堂，一擁海線最豐富的生活饗宴。<br /><br />
+        生活機能超成熟，居住便利很完美。<br v-if="isMobile" />沙鹿國中小雙學區，文教素質領先。<br />
+市集連鎖、麥當勞、星巴克，<br v-if="isMobile" />銀行、區公所、光田醫院面面俱到。<br />
+近距三井OUTLET 遊憩購物天堂，<br v-if="isMobile" />一擁海線最豐富的生活饗宴。<br /><br />
 
 三大商圈動能 生活滿意加分 <br />
 站前複合式商圈｜政府機關 金融中心 大型連鎖<br />
@@ -299,6 +299,7 @@ img{
 }
   .content {
   font-size: sizem(14);
+  padding: 1em 0 0 0;
   }
 .title {
   font-size:1.65em;

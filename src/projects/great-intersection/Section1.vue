@@ -1,7 +1,7 @@
 <template>
   <article class="section1">
    <!--  
-    <img class="a1" src="./s1/pc.jpg" alt="" />
+    <img class="a1" src="./s1/mo.jpg" alt="" />
   -->
 
 <div class="img">
@@ -116,7 +116,7 @@
   }
   */
 }
-.a1{position: absolute;top: 270px;left: 0;width: 100%;opacity: .5;}
+.a1{position: absolute;top: 0;left: 0;width: 100%;opacity: .5;}
 
 .img{
   position: absolute;
@@ -200,7 +200,7 @@
 .img1{position: absolute;
   left:size(35);width: size(350);bottom: size(10);}
 .img2{position: absolute;
-  right:0;width: size(383);bottom:0;}
+  right:size(-150);width: size(535);bottom:size(-155);}
 .img3{position: absolute;
   right:0;width: size(493);top: size(-5);}
 .img4{position: absolute;
@@ -257,37 +257,51 @@ font-size: 0.77em;
     }
 .img{
   .o1{
-    top: 19.2vw;
-    left: -12vw;
-  width:sizem(90);}
-  .o2{
-    top: 3.6vw;
-    right: 20.9vw;
+    top: 14.2vw;
+    left: -2vw;
   width:sizem(68);}
+  .o2{
+    top: -38.4vw;
+    right: 20.9vw;
+  width:sizem(230);}
   .o3{
-    top: -7.2vw;
-    right: -12.6vw;
-  width:sizem(143);}
+    top: 72.8vw;
+    right: -33.6vw;
+  width:sizem(190);}
   .f1{
-    bottom: -12.5vw;
-    left: -8vw;
+    bottom: -17vw;
+    left: 0vw;
     z-index: 3;
-  width:sizem(138);}
-  .img1{
-    bottom: -5.8vw;
-    right: -4vw;
-    z-index: 3;
-  width:sizem(291);}
+  width:sizem(180);
+  img{
+    &:nth-child(2){
+    top: 47%;}
+    &:nth-child(3){
+    width: 43%;
+    top: 45%;
+    left: 47%;}}}
 }
 
+.img1{
+  left:sizem(10);width: sizem(140);bottom: sizem(0);}
+.img2{
+  right:0;width: sizem(150);bottom:0;}
+.img3{
+  right:sizem(-10);width: sizem(240);top: sizem(-15);}
+.img4{
+  right:sizem(-21);width: sizem(275);bottom: sizem(47);}
 
 .txt{
   width: 100%;
   left: 0;
-  font-size:sizem(33);
-  top: calc(60% + (128 -  604 * .6) * 100vw / 375);
+  font-size:sizem(27);
+  top: calc(60% + (152 -  604 * .6) * 100vw / 375);
+  .logo{
+    width:sizem(255) ;
+    fill: #FFF;
+  }
 .t2{
-  width:6.4em;
+ // width:6.4em;
   margin: auto;
 }
 }
