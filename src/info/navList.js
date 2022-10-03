@@ -1,6 +1,6 @@
 export default [
   /* */
-  { name: '勝麗交響曲', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:-75 , type: '' },
+  { name: '勝麗交響曲', imgSrc: '', subTitle: '', section: 'section1', svgSrc: '',offset:-60,mobileOffset:-75 , type: '' },
   { name: '城市遠見', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:-75 , type: '' },
   { name: '海線都心', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:-80,  type: '' },
   { name: '富域金流', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:-60,mobileOffset:-80, type: '' },
