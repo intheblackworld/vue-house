@@ -318,8 +318,10 @@ float: left;
   padding: size(50) size(50) size(50) size(50);
 
 }
-.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-10);
+.img1{width: sizem(130);position: absolute;right: sizem(-10);top: sizem(-50);
 z-index:4;
+
+
 }
   .content {
 float: none;
@@ -327,7 +329,7 @@ float: none;
   color: #FFFC;
   width: sizem(320);
   height:auto;
-  margin: 4.8em auto 2em;
+  margin: 2em auto 2em;
   }
 .title {
   font-size:1.65em;

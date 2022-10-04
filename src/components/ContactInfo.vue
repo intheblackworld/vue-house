@@ -416,9 +416,10 @@ $border-radius:1.8em;
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding: 10% 8% 40vw 8%;
+    padding: 10% 8% 5vw 8%;
     transform: none;
     margin: 0;
+     border: 0px solid transparent;
 
     .logo {
       width: $contact_logo_mobile_width;
@@ -437,6 +438,7 @@ font-size:51vw;
 .btn {
  // flex: 1;
   flex-basis: 100%;
+  margin: 0 0 20px 0;
     &.half {
       width: 280px;
     }

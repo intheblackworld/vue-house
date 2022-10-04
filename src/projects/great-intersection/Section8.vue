@@ -299,7 +299,7 @@ position: absolute;
 }
 
 @media screen and (max-width: 767px) {
-.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-10);
+.img1{width: sizem(130);position: absolute;right: sizem(-10);top: sizem(-30);
 z-index:4;
 }
   .content {

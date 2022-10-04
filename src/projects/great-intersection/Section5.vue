@@ -290,11 +290,11 @@ position: absolute;
 }
 
 @media screen and (max-width: 767px) {
-.img1{width: sizem(130);position: absolute;left: sizem(-40);top: sizem(-10);
-z-index:4;
+.img1{width: sizem(130);position: absolute;right: sizem(-20);top: sizem(-10);
+z-index:2;
 img{
   &:first-child{
-    top: 37%;transform: rotate(-3deg);
+    top: 20%;transform: rotate(5deg);
 }}
 }
   .content {

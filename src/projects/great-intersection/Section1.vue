@@ -285,7 +285,7 @@ font-size: 0.77em;
 .img1{
   left:sizem(10);width: sizem(140);bottom: sizem(0);}
 .img2{
-  right:0;width: sizem(150);bottom:0;}
+  right:sizem(-60);width: sizem(200);bottom:sizem(-30);}
 .img3{
   right:sizem(-10);width: sizem(240);top: sizem(-15);}
 .img4{

@@ -1,8 +1,8 @@
 <template>
   <div class="home no-padding-top" >
       <Loading :loading="load" />
-      <!--  --><SideNavigation v-if="isMobile" />
-      <Navigation v-if="!isMobile" />
+      <!-- <SideNavigation v-if="isMobile" /> -->
+      <Navigation />
       <!-- <Indigator :viewIndex="viewIndex" /> -->
       <!-- <full-page
       ref="fullPage"

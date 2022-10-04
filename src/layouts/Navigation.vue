@@ -88,7 +88,7 @@ export default {
   // background-image: $nav_bg;
  // background-size: 100% 100%;
   height: $nav_pc_height;
-  z-index:4;
+  z-index:9;
   position: fixed;
   top: 0;
   width: 100%;
@@ -405,8 +405,9 @@ z-index: 3;
       */
       
     &.btn{
-      height: 3em;
-      margin: 0.35em auto;
+      display: none;
+    //  height: 2.5em;
+      margin: 0.2em auto;
     }
     }
   }
@@ -427,7 +428,7 @@ z-index: 3;
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color:#005475ee;
+      background-color:#48215cee;
     }
     .link {
       width: 10em;
