@@ -304,7 +304,7 @@ export default {
         },
         {
           img: isMobile?require('./s4/2_m.jpg'):require('./s4/2.jpg'),
-          name: '三友黃昏市場',
+          name: '三友市場水碓生活圈',
         },
         {
           img: isMobile?require('./s4/3_m.jpg'):require('./s4/3.jpg'),
