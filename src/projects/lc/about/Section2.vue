@@ -10,7 +10,7 @@
           立瑾建築機構旗下包含
         </div>
         <div class="desc">
-          立瑾建設、立澄建設、立榮建設、鼎禾建設
+          立瑾建設、立澄建設、立榮建設、鼎禾建設、詠齊建設
         </div>
         <div class="title">
           合作優質營造商
@@ -79,7 +79,7 @@
     width: calc(100% - 5vw);
     height: calc(100% - 5vw);
   background-color: #fff;
-  padding: size(20) size(30);
+  padding: size(8) size(30) 0;
   font-size: size(25);
   font-weight: normal;
   font-stretch: normal;

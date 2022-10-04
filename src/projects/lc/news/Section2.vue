@@ -431,6 +431,32 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '立瑾建築機構-詠齊建設，開幕誌慶活動剪影',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/12/1.jpg'),
+            require('../news/s2/12/2.jpg'),
+            require('../news/s2/12/3.jpg'),
+            require('../news/s2/12/4.jpg'),
+            require('../news/s2/12/5.jpg'),
+            require('../news/s2/12/6.jpg'),
+            require('../news/s2/12/7.jpg'),
+            require('../news/s2/12/8.jpg'),
+          ],
+
+          desc: '',
+          links: [
+         /*        {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+       */
+          ],
+        },
+        {
           title: '豎千年柱，架萬代樑 立瑾綻上樑大吉',
           subtitle: '',
           date: '',
