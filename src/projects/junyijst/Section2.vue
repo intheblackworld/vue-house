@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s2/bgm.jpg" uk-parallax="bgy: -200" alt="" class="bg" v-if="isMobile" />
-      <img src="./s2/group1.jpg" alt="" class="bg" v-else />
+      <img src="./s2/bgm.jpg" alt="" class="bg" v-if="isMobile" />
+      <img src="./s2/group1.jpg" uk-parallax="y: 0,50 10%,150 50%"  alt="" class="bg" v-else />
    <img src="./s1/gif4.gif" class="gif" />
    <img src="./s1/gif4.gif" class="gif2" />
 
-      <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">多數人想像</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">GRAND RIVERSIDE</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">少數人私享</div>
+      <div class="txt" >
+      <div class="title">多數人想像</div>
+      <div class="subtitle">GRAND RIVERSIDE</div>
+      <div class="desc">少數人私享</div>
       </div>
 
       <div class="txt2" data-aos="fade-up" data-aos-delay="200">
@@ -31,7 +31,7 @@
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
-.bg{position: relative;margin:size(36) auto;width: size(1836);z-index: 1;}
+.bg{position: absolute;margin:size(36) auto;width: size(1836);z-index: 1;}
 
 .gif{
     position: absolute;
@@ -169,6 +169,8 @@
 </style>
 <script>
 // @ is an alias to /src
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
