@@ -52,13 +52,14 @@ export default {
 
 .title {
   font-size: 32px;
-  line-height: 36px;
+  line-height: 1.6;
   margin: 60px 0;
   font-weight: 500;
   color: $house_title_color;
   //font-family: $family3;
   font-weight: bold;
   letter-spacing: 0.06em;
+  border-bottom: 2px solid #C9A063;
 }
 
 .info {
@@ -72,13 +73,12 @@ export default {
   margin-right: 10em;
   width: 260px;
   //height: 30px;
-  line-height: 1.4;
+  line-height: 1.5;
   //border-left: 4px solid $house_border_color;
   padding-left: 10px;
   display: flex;
   align-items: center;
   white-space: nowrap;position: relative;
-  &::before{content: "";width: 4px;height: 1.4em;background:$house_border_color;margin: 0px 0.8em 0 0;position: absolute;top:0;left: 0;}
   &:nth-of-type(even) {
     margin-right: 0;
   }
@@ -86,11 +86,12 @@ export default {
   .label {
     font-size:1em;
     color: $house_label_color;
-    margin-bottom: 0;
     margin-right:0.8em;
     white-space: nowrap;
+    text-align: left;
    // font-family: $family3;
-    width: 4em;
+    width: 5em;position: relative;
+  &::after{content: "";width: 2px;height: 1.4em;background:$house_border_color;margin:0;position: absolute;top:0.05em;right: 0;}
   }
 
   .desc {
@@ -98,7 +99,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
   //  font-family: $family3;
-    font-weight: bold;
+    font-weight: 300;
   }
 }
 

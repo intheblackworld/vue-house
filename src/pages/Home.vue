@@ -1,48 +1,46 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/vvs1/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/junyijst/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
-    <!-- <SideNavigation /> -->
-    <Navigation />
+    <!-- <SideNavigation />
+    <Navigation /> -->
     <!-- <Indigator :viewIndex="viewIndex" /> -->
     <!-- <full-page
       ref="fullPage"
       :options="options"
-      id="fullpage"
+      id="fullpage"<div class="bg1">
     > -->
     <!-- <LeafFlow /> -->
-    <div class="bg1">
+    
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-<!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
+<!--
 
-
--->
 <VideoSection1  id="section2"
-      :playBtn="require('@/projects/vvs1/video/play-btn.png')"
+      :playBtn="require('@/projects/junyijst/video/play-btn.png')"
       title="建築×美學影片"
-      :close="require('@/projects/vvs1/video/close.png')"
-      :arrows="[require('@/projects/vvs1/video/arrow-left.png'), require('@/projects/vvs1/video/arrow-right.png')]"
+      :close="require('@/projects/junyijst/video/close.png')"
+      :arrows="[require('@/projects/junyijst/video/arrow-left.png'), require('@/projects/junyijst/video/arrow-right.png')]"
       :slideList="[
         {
           title: '恆鑽地段奢美居',
-          img: require('@/projects/vvs1/video/2.jpg'),
+          img: require('@/projects/junyijst/video/2.jpg'),
           video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '打造有溫度的家',
-          img: require('@/projects/vvs1/video/3.jpg'),
+          img: require('@/projects/junyijst/video/3.jpg'),
           video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '樣品屋私藏設計',
-          img: require('@/projects/vvs1/video/1.jpg'),
+          img: require('@/projects/junyijst/video/1.jpg'),
           video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
@@ -91,6 +89,8 @@
     >
     <Section9 />
     </vue-lazy-component>
+
+-->
 <!--      
     <vue-lazy-component
       class="section"
@@ -142,7 +142,7 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/vvs1/s1/bg.jpg") top center;
+    background:url("~@/projects/junyijst/s1/bg.jpg") top center;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -174,19 +174,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/vvs1/Section1.vue'
-import Section2 from '@/projects/vvs1/Section2.vue'
-import Section3 from '@/projects/vvs1/Section3.vue'
-import Section4 from '@/projects/vvs1/Section4.vue'
-import Section5 from '@/projects/vvs1/Section5.vue'
-import Section6 from '@/projects/vvs1/Section6.vue'
-import Section7 from '@/projects/vvs1/Section7.vue'
-import Section8 from '@/projects/vvs1/Section8.vue'
-import Section9 from '@/projects/vvs1/Section9.vue'
+import Section1 from '@/projects/junyijst/Section1.vue'
+import Section2 from '@/projects/junyijst/Section2.vue'
 /* 
-import Section10 from '@/projects/vvs1/Section10.vue'
-import Section10 from '@/projects/vvs1/Section10.vue'
-import Section11 from '@/projects/vvs1/Section11.vue' */
+import Section3 from '@/projects/junyijst/Section3.vue'
+import Section4 from '@/projects/junyijst/Section4.vue'
+import Section5 from '@/projects/junyijst/Section5.vue'
+import Section6 from '@/projects/junyijst/Section6.vue'
+import Section7 from '@/projects/junyijst/Section7.vue'
+import Section8 from '@/projects/junyijst/Section8.vue'
+import Section9 from '@/projects/junyijst/Section9.vue'
+import Section10 from '@/projects/junyijst/Section10.vue'
+import Section10 from '@/projects/junyijst/Section10.vue'
+import Section11 from '@/projects/junyijst/Section11.vue' */
 import VideoSection1 from '@/components/VideoSection1.vue'
 
 export default {
@@ -194,13 +194,16 @@ export default {
   components: {
     Loading,
     // Indigator,
+    /*
     Navigation,
-    // SideNavigation,
-    // LeafFlow,
+    SideNavigation,
+    LeafFlow,
+    */
     ContactSection,
     MobileNav,
     Section1,
     Section2,
+    /* 
     Section3,
     Section4,
     Section5,
@@ -208,7 +211,6 @@ export default {
     Section7,
     Section8,
     Section9,
-    /* 
     Section10,
     Section11,
     Section11,

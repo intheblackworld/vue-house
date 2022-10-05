@@ -1,6 +1,11 @@
 <template>
   <div class="order-bg" ref="parallax2">
     <div class="order-top">
+   <div class="img">
+    <img src="@/projects/junyijst/s1/3.png" class="img1" />
+    <img src="@/projects/junyijst/s1/1.png" class="img2" />
+    <img src="@/projects/junyijst/s1/2.png" class="img3" />
+    </div>
       <div class="title-block">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>
       <div class="order-subtitle" v-html="order.subTitle" data-aos="zoom-in" v-if="order.subTitle"></div>
@@ -280,16 +285,11 @@ export default {
 @import "@/assets/style/variableColor.scss";
 @import "@/assets/style/function.scss";
 
-.contact1 {
-  position: absolute;
-  left: size(200);
-  width: size(756);
-}
-
-.contact2 {
-  position: absolute;
-  right: -#{size(50)};
-  width: size(148);
+.img{
+  padding:6vw 0 0 0;
+  .img1{width:size(120); margin: 0  -2vw 0 5vw;}}
+  .img2{width:size(267);}
+  .img3{width:size(160);
 }
 .bg-img {
   width: 110%;
@@ -299,13 +299,13 @@ export default {
   pointer-events: none;
 }
 .order-bg {
-  //background-color: $order_bg_color;
-  //background-image: $order_bg_image;
+  // background-color: $order_bg_color;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
-  background-size: 110vw auto;
-  background-position: top;
-  //font-family: $family3;
+  background-size: 100% auto;
+  background-position:0 0;
+  // font-family: $family3;
   // padding-top: 10vw;
   pointer-events: unset !important;
 
@@ -344,6 +344,7 @@ export default {
     margin-bottom: size(50);
     display: inline-block;
     z-index: 3;
+    border-bottom: 2px solid #C9A063;
    // background:  #2B5161;
   }
   .order-title-img {
@@ -406,7 +407,7 @@ export default {
     flex-wrap: wrap;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid rgba(255, 255, 255, 0.5);
       margin-right: 40px;
       padding-right: 40px;
       .row {
@@ -488,10 +489,21 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+
+  .img{
+  padding:6vw 0 0 0;
+  .img1{width:sizem(60); margin: 0  -2vw 0 5vw;}}
+  .img2{width:sizem(140);}
+  .img3{width:sizem(80);margin: 0 3vw 0 -5vw;
+}
+
+
+
   .order-bg {
     //background-color: $order_bg_color;
-    background-image: $order_bg_image_m;
-    background-size: contain;
+   // background-image: $order_bg_image_m;
+   // background-size: contain;
+   background-size: 250% auto;
     padding-top: 0;
     margin: 0;
     position: relative;
@@ -501,8 +513,8 @@ export default {
       display: block;
     }
     .order-title {
-      width: 100%;
       font-size: calc(100vw * 30 / 375);
+      margin: 0 0 8vw;
     }
     .order-title-img {
       width: 80vw;

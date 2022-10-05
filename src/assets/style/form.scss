@@ -75,8 +75,6 @@
 
 .form-submit {
   width: 320px !important;
- // height: 72px !important;
-  // opacity: 0 !important;
   font-size: 20px !important;
   font-weight: bold !important;
   letter-spacing: 10px;
@@ -84,9 +82,8 @@
   line-height: 3.6 !important;
   background: $order_submit_bg;
   background-position: center !important;
-  border-radius: 1.8em !important;
+  border-radius: .5em !important;
   border: 0 solid #00537A !important;
- // border-radius: 72px / 72px !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
@@ -94,9 +91,6 @@
   position: relative;
   overflow: hidden;
   padding: 0 !important;
-  // z-index: 10;
-  //border: none !important;
-  //font-family: $family3;
 
   &.is-disabled {
     background-color: $order_sumbit_disable_bg;

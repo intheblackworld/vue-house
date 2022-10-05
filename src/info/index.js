@@ -1,22 +1,20 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台中市西屯區台灣大道三段251號旁(大遠百旁)',
+  address: '新北市淡水區民權路12之3號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.2070367546457!2d120.64114233087344!3d24.164470828821717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7cf8636b6b3002c4!2zMjTCsDA5JzUyLjEiTiAxMjDCsDM4JzQ0LjMiRQ!5e0!3m2!1szh-TW!2stw!4v1661839157807!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/xQGLTC4Y7SHusnhw6',
-  phone: '04-2255-3338',
-  fbLink: 'https://www.facebook.com/100082849226852/',
-  fbMessage: 'https://m.me/100082849226852/',
-  caseName: 'VVS1',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3611.9297995876846!2d121.4588077!3d25.1380641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af9d175295b3%3A0x8f737e713280e2cb!2zMjUx5paw5YyX5biC5reh5rC05Y2A5rCR5qyK6LevMTLomZ8!5e0!3m2!1szh-TW!2stw!4v1664958945196!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/C4sa5A5FsZjosZtYA',
+  phone: '02-8809-2345',
+  fbLink: 'https://www.facebook.com/',
+  fbMessage: 'https://m.me/',
+  caseName: '景上汀',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '潤隆建設',],
-    ['建築設計', '李明哲建築師事務所',],
-    ['公設設計', 'Pia Interior',],
-    ['外觀景觀', 'MAG玫格設計',],
-    ['銷售企劃', '巨豐旅館管理顧問',],
-    ['建照號碼', '103中都建字第02657號',],
+    ['投資興建', '鐵冠建設股份有限公司',],
+    ['廣告代銷', '君頤廣告股份有限公司',],
+    ['連絡電話', '02-8809-2345',],
+    ['建照號碼', '111淡建字第00273號',],
   ],
 
   gtmCode: ['TJ344HX'], // 可放置多個
