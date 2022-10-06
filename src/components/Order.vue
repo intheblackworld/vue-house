@@ -2,9 +2,9 @@
   <div class="order-bg" ref="parallax2">
     <div class="order-top">
    <div class="img">
-    <img src="@/projects/junyijst/s1/3.png" class="img1" />
-    <img src="@/projects/junyijst/s1/1.png" class="img2" />
-    <img src="@/projects/junyijst/s1/2.png" class="img3" />
+    <img src="@/projects/junyijst/s1/3.png" class="img1" data-aos="zoom-in" data-aos-delay="200"   />
+    <img src="@/projects/junyijst/s1/1.png" class="img2" data-aos="zoom-in" data-aos-delay="0" />
+    <img src="@/projects/junyijst/s1/2.png" class="img3" data-aos="zoom-in" data-aos-delay="400" />
     </div>
       <div class="title-block">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>
@@ -287,9 +287,13 @@ export default {
 
 .img{
   padding:6vw 0 0 0;
-  .img1{width:size(120); margin: 0  -2vw 0 5vw;}}
-  .img2{width:size(267);}
+  .img1{width:size(120); margin: 0  -2vw 0 5vw;
+    transform-origin: 50% 100%;}
+  .img2{width:size(267);
+    transform-origin: 50% 100%;}
   .img3{width:size(160);
+    transform-origin: 50% 100%;
+}
 }
 .bg-img {
   width: 110%;

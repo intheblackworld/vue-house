@@ -1,20 +1,28 @@
 <template>
   <div>
     <div class="section2">
-      <img src="./s2/bgm.jpg" alt="" class="bg" v-if="isMobile" />
-      <img src="./s2/group1.jpg" uk-parallax="y: 0,50 10%,150 50%"  alt="" class="bg" v-else />
+      <div class="bgbox">
+      <div class="bg" uk-parallax="viewport:.9;y:0,-16%;" v-if="isMobile" >
+      <img src="./s2/bgm.jpg" alt="" class="bgimg" />
    <img src="./s1/gif4.gif" class="gif" />
    <img src="./s1/gif4.gif" class="gif2" />
-
+    </div>
+      <div class="bg" uk-parallax="viewport:.8;y:0,-15%,-28%,-40%,-50%;" v-else >
+      <img src="./s2/group1.jpg"  alt="" class="bgimg"/>
+   <img src="./s1/gif4.gif" class="gif" />
+   <img src="./s1/gif4.gif" class="gif2" />
+    </div>
       <div class="txt" >
-      <div class="title">多數人想像</div>
-      <div class="subtitle">GRAND RIVERSIDE</div>
-      <div class="desc">少數人私享</div>
+      <div class="title" uk-parallax="viewport:0.6;scale: 2,1,1;opacity: 0,1,1">多數人想像</div>
+      <div class="subtitle" uk-parallax="viewport:0.8;scale: 2,1,1;opacity: 0,1,1">GRAND RIVERSIDE</div>
+      <div class="desc" uk-parallax="viewport:1;scale: 2,1,1;opacity: 0,1,1">少數人私享</div>
       </div>
+    </div>
 
-      <div class="txt2" data-aos="fade-up" data-aos-delay="200">
-      <div class="title" >即｜將｜公｜開</div>
-      <div class="subtitle" >COMING SOON</div>
+      <div class="txt2">
+      <div class="title" data-aos="fade" data-aos-delay="0" >即｜將｜公｜開</div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >COMING SOON</div>
+      <div class="desc" data-aos="fade" data-aos-delay="400"></div>
       </div>
     </div>
   </div>
@@ -30,28 +38,34 @@
   padding:0;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
+&::before{content: "";clear: both;display: block;height: calc((#{size(1080)} - 100vh) * .5);max-height:size(100);min-height: 0;}
 }
-.bg{position: absolute;margin:size(36) auto;width: size(1836);z-index: 1;}
 
+.bgbox{position: relative;overflow: hidden;
+  margin:0 auto size(36);width: size(1836);z-index: 1;
+  height: size(1100);background:#093768;
+
+}
+.bg{position: relative;width: 100%;z-index: 1;
+  img{width: 100%;}
+}
 .gif{
     position: absolute;
-    width: size(1836);
     height: size(300);z-index: 2;
-    top: size(1030);opacity: .5;left: 0;right: 0;margin: auto;
+    top: size(1000);opacity: .5;left: 0;right: 0;margin: auto;
     left: 0;mix-blend-mode: soft-light;filter: blur(0.05vw);
   }
   .gif2{
     position: absolute;
-    width: size(1836);
     height: size(555);z-index: 2;
-    top: size(1330);opacity: .2;left: 0;right: 0;margin: auto;
+    top: size(1300);opacity: .2;left: 0;right: 0;margin: auto;
     mix-blend-mode: soft-light;filter: blur(0.05vw);
   }
   
 
 .txt{
   position: absolute;
-  top: size(235);left: 0;right: 0;margin: auto;
+  top: size(130);left: 0;right: 0;margin: auto;
   font-stretch: normal;
   font-style: normal;
   text-align:center;
@@ -101,15 +115,18 @@
   font-weight: 600;
   letter-spacing:0.48em;
   text-indent:0.15em;
-  color: #C9A063
+  color: #C9A063;
+  transform: scaleX(2);
 }
   .subtitle{font-size: 1em;
   font-weight: 400;
     padding: 0 0 0.45em 0;
     font-family:'Playfair Display', serif;
   letter-spacing:0.12em;
+  transform: scaleX(1.5);
   }
-  &::after{content:"";width: 5.5em;height: 2px;display: block;background: #C9A063;margin: auto;}
+  .desc{width: 5.5em;height: 2px;display: block;background: #C9A063;margin: auto;
+  transform: scaleX(0);}
 
   }
 
@@ -133,9 +150,11 @@
   margin:0 auto 23vw;
 
   }
-  .bg{
-    width: 100%;margin: 0;
-  }
+.bgbox{
+  margin:0;width:100%;;
+  height:sizem(550);;background:#093768;
+
+}
 .gif{
     width: 100%;
     height: sizem(100);

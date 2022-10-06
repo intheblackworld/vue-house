@@ -9,16 +9,16 @@
    
    <img src="./s1/gif4.gif" class="gif" />
    <div class="img">
-    <img src="./s1/1.png" class="img1" />
-    <img src="./s1/2.png" class="img2" />
-    <img src="./s1/2.png" class="img3" />
-    <img src="./s1/3.png" class="img4" />
+    <img src="./s1/1.png" data-aos="zoom-in" data-aos-delay="0" class="img1" />
+    <img src="./s1/2.png" data-aos="zoom-in" data-aos-delay="300" class="img2" />
+    <img src="./s1/2.png" data-aos="zoom-in" data-aos-delay="100" class="img3" />
+    <img src="./s1/3.png" data-aos="zoom-in" data-aos-delay="400" class="img4" />
     </div>
     <div class="txt">
       <div class="t1" data-aos="zoom-in" data-aos-delay="600">沁心丰景<br />自在人生<span>。</span></div>
       <div class="t2" data-aos="zoom-in" data-aos-delay="800">仁者樂山，智者樂水</div>
-      <div class="t3" data-aos="zoom-in" data-aos-delay="800">11-25坪 河岸第一排</div>
-      <div class="t4" data-aos="zoom-in" data-aos-delay="800">搶先預約</div>
+      <div class="t3" data-aos="zoom-in" data-aos-delay="900">11-25坪 河岸第一排</div>
+      <div class="t4" data-aos="zoom-in" data-aos-delay="1000">搶先預約</div>
     </div>
   </div>
 </template>
@@ -67,6 +67,7 @@
     // top: size(495);
     top: calc(50% + (495 - 535) * 100vw / 1920);
     left: size(140);
+    transform-origin: 50% 100%;
   }
   .img2{
     position: absolute;
@@ -74,6 +75,7 @@
     // top: size(800);
     top: calc(50% + (800 - 535) * 100vw / 1920);
     left: size(470);
+    transform-origin: 50% 100%;
   }
   .img3{
     position: absolute;
@@ -81,6 +83,7 @@
     // top: size(445);
     top: calc(50% + (450 - 535) * 100vw / 1920);
     right: size(175);
+    transform-origin: 50% 100%;
   }
   .img4{
     position: absolute;
@@ -88,6 +91,7 @@
     // top: size(530);
     top: calc(50% + (535 - 535) * 100vw / 1920);
     right: size(425);
+    transform-origin: 50% 100%;
   }
 
 .txt{
