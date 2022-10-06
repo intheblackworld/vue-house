@@ -5,9 +5,9 @@
     <!-- 
     <img src="./s1/mo.jpg" class="t0" />
    -->
-    <img src="./s1/bg.jpg" class="bg" />
+    <img src="./s1/bg.jpg" class="bg"  data-aos="fade" data-aos-delay="0" />
    
-   <img src="./s1/gif4.gif" class="gif" />
+   <img src="./s1/gif4.gif" class="gif"  data-aos="fade" data-aos-delay="0" />
    <div class="img">
     <img src="./s1/1.png" data-aos="zoom-in" data-aos-delay="0" class="img1" />
     <img src="./s1/2.png" data-aos="zoom-in" data-aos-delay="300" class="img2" />
@@ -18,7 +18,7 @@
       <div class="t1" data-aos="zoom-in" data-aos-delay="600">沁心丰景<br />自在人生<span>。</span></div>
       <div class="t2" data-aos="zoom-in" data-aos-delay="800">仁者樂山，智者樂水</div>
       <div class="t3" data-aos="zoom-in" data-aos-delay="900">11-25坪 河岸第一排</div>
-      <div class="t4" data-aos="zoom-in" data-aos-delay="1000">搶先預約</div>
+      <div class="t4" data-aos="zoom-in" data-aos-delay="1000" v-scroll-to="{ element: `#contact`, offset: offset }">搶先預約</div>
     </div>
   </div>
 </template>
@@ -139,14 +139,23 @@
   text-indent:0.3em;
   cursor: pointer;
   overflow: hidden;
-  &::after{content:"";display: block;background: #FFF6;position: absolute;left: -5%;top: 0;width:120%;height: 2em;z-index: -1;transform: skewX(-30deg)translateX(-100%);transition:transform .2s ;transform-origin: 0 0;
+  box-shadow: 0 0 0 #fff9, 0 0 0 #fff9;
+      animation: t4 .8s ease-in-out infinite alternate;
+
+  &::after{content:"";display: block;background: #FFF6;position: absolute;left: -15%;top: 0;width:120%;height: 2em;z-index: -1;transform: skewX(-30deg)translateX(-100%);transition:transform .2s ;transform-origin: 0 0;
 }
 
   &:hover{
   color: #FFF;background-color: #C9A063;
-  &:after{transform:skewX(-30deg)translateX(100%);}
+  &:after{transform:skewX(-30deg)translateX(120%);}
   }
   }
+@keyframes t4{
+    to{
+       box-shadow: 0 0 4px #fff9,0 0 10px #fff9;
+    }
+}
+
 
 
 }

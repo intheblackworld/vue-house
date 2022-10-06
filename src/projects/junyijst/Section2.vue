@@ -13,9 +13,9 @@
    <img src="./s1/gif4.gif" class="gif2" />
     </div>
       <div class="txt" >
-      <div class="title" uk-parallax="viewport:0.6;scale: 2,1,1;opacity: 0,1,1">多數人想像</div>
-      <div class="subtitle" uk-parallax="viewport:0.8;scale: 2,1,1;opacity: 0,1,1">GRAND RIVERSIDE</div>
-      <div class="desc" uk-parallax="viewport:1;scale: 2,1,1;opacity: 0,1,1">少數人私享</div>
+      <div class="title" data-aos="fade" data-aos-delay="0" >多數人想像</div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >GRAND RIVERSIDE</div>
+      <div class="desc" data-aos="fade" data-aos-delay="400" >少數人私享</div>
       </div>
     </div>
 
@@ -35,6 +35,7 @@
   height:auto;
   position: relative;
   margin:0 auto 5vw;
+  min-height: size(900);
   padding:0;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
@@ -81,6 +82,7 @@
   font-weight: 600;
   letter-spacing:0.7em;
   text-indent:0.6em;
+  transform: scaleX(1.2);
 }
   .subtitle{font-size: 1em;
   font-weight: 400;
@@ -88,6 +90,7 @@
     font-family:'Playfair Display', serif;
 
   letter-spacing:0.88em;
+  transform: scaleX(1.2);
     
   }
 .desc {
@@ -95,6 +98,7 @@
   font-weight: 300;
   letter-spacing:0.7em;
   text-indent:0.6em;
+  transform: scaleX(1.2);
 }
 
   }
@@ -116,14 +120,14 @@
   letter-spacing:0.48em;
   text-indent:0.15em;
   color: #C9A063;
-  transform: scaleX(2);
+  transform: scaleX(1.2);
 }
   .subtitle{font-size: 1em;
   font-weight: 400;
     padding: 0 0 0.45em 0;
     font-family:'Playfair Display', serif;
   letter-spacing:0.12em;
-  transform: scaleX(1.5);
+  transform: scaleX(1.2);
   }
   .desc{width: 5.5em;height: 2px;display: block;background: #C9A063;margin: auto;
   transform: scaleX(0);}
