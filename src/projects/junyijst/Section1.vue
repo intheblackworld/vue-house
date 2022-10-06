@@ -139,13 +139,11 @@
   text-indent:0.3em;
   cursor: pointer;
   overflow: hidden;
-  &::before{content:"";display: block;background: #C9A063;position: absolute;left: -5%;top: 0;width:120%;height: 2em;z-index: -1;transform: skewX(-30deg)translateX(-100%);transition:transform .2s .1s;transform-origin: 0 0;
-}
   &::after{content:"";display: block;background: #FFF6;position: absolute;left: -5%;top: 0;width:120%;height: 2em;z-index: -1;transform: skewX(-30deg)translateX(-100%);transition:transform .2s ;transform-origin: 0 0;
 }
+
   &:hover{
-  color: #FFF;background-color: #C9A06333;
-  &:before{transform:skewX(-30deg)translateX(0%);}
+  color: #FFF;background-color: #C9A063;
   &:after{transform:skewX(-30deg)translateX(100%);}
   }
   }

@@ -2,7 +2,7 @@
   <div>
     <div class="section2">
       <div class="bgbox">
-      <div class="bg" uk-parallax="viewport:.9;y:0,-16%;" v-if="isMobile" >
+      <div class="bg" uk-parallax="viewport:.9;y:0,-16%,-16%;" v-if="isMobile" >
       <img src="./s2/bgm.jpg" alt="" class="bgimg" />
    <img src="./s1/gif4.gif" class="gif" />
    <img src="./s1/gif4.gif" class="gif2" />

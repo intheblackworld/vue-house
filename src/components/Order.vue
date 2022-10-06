@@ -496,11 +496,11 @@ export default {
 
   .img{
   padding:6vw 0 0 0;
-  .img1{width:sizem(60); margin: 0  -2vw 0 5vw;}}
+  .img1{width:sizem(60); margin: 0  -2vw 0 5vw;}
   .img2{width:sizem(140);}
   .img3{width:sizem(80);margin: 0 3vw 0 -5vw;
 }
-
+}
 
 
   .order-bg {
