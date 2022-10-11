@@ -18,6 +18,8 @@
     <div class="map">
     <img src="./s2/map.jpg" alt="">
     <img src="./s2/map.png" alt=""></div>
+    <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand"></Map>
+    <div class="mask" @click="showMask = false" v-show="showMask"></div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -166,23 +168,30 @@ position: absolute;
 </style>
 
 <script>
-// @ is an alias to /src
-import { isMobile } from "@/utils";
-export default {
-  name: "section2",
-  components: {
-  },
-  data() {
-    return {
-      isMobile,
-    };
-  },
-  methods: {
-    scrollTo(el) {
-      this.scrollInstance.scrollTo(el);
+  // @ is an alias to /src
+  import { isMobile } from "@/utils";
+  import Map from '@/components/Map.vue'
+  import info from '@/info'
+  export default {
+    name: "section2",
+    components: {
+      Map,
     },
-  },
-  mounted() {},
-  created() {},
-};
-</script>
+    data() {
+      return {
+        isMobile,
+        info,
+        tagList: [],
+        bgSrc: require('./s2/map.jpg'),
+        hand: require('./s2/h.png'),
+      };
+    },
+    methods: {
+   /*   scrollTo(el) {
+        this.scrollInstance.scrollTo(el);
+      },*/
+    },
+    mounted() {},
+    created() {},
+  };
+  </script>
