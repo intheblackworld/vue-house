@@ -27,7 +27,7 @@
 .section10 {  
   width:100%;
   height: 100vh;
-  min-height: size(900);
+  min-height: size(1080);
   max-height: size(1080);
   position: relative;
    overflow: hidden;
@@ -98,7 +98,7 @@
 .pagination {
   width: auto;
   bottom: size(20);
-  right: size(10);
+  left: size(10);
   justify-content: center;
  // display: none;
 }
@@ -114,7 +114,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 4px solid  #ccc;
+    border: 4px solid  #FFFA;
     position: relative;
     transition: all 0.5s;
 
@@ -162,9 +162,9 @@
 @media screen and (max-width: 767px) {
   .section10 {
     height: auto;
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
+    min-height: sizem(677);
+    max-height: sizem(677);
+    height: sizem(677);
   }
 
   .swipe-item {
@@ -206,12 +206,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img:isMobile? require('./s10/01m.jpg'):require('./s10/01.jpg'),
-          name: '3D透視示意圖',
+          img:isMobile? require('./s10/1m.jpg'):require('./s10/1.jpg'),
+          name: '',
         },
         {
-          img:isMobile? require('./s10/02m.jpg'):require('./s10/02.jpg'),
-          name: '店面情境示意圖',
+          img:isMobile? require('./s10/2m.jpg'):require('./s10/2.jpg'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s10/3m.jpg'):require('./s10/3.jpg'),
+          name: '',
         },
       ],
     }
