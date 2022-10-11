@@ -15,9 +15,6 @@
 沙鹿新站特區首發，勝麗建設再創美學天際<br />
 台中最值得期待的一次城市跳躍！</div>
     </div>
-    <div class="map">
-    <img src="./s2/map.jpg" alt="">
-    <img src="./s2/map.png" alt=""></div>
     <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand"></Map>
     <div class="mask" @click="showMask = false" v-show="showMask"></div>
   </div>
@@ -133,31 +130,21 @@ position: absolute;
 @media only screen and (max-width: 767px) {
   .section2 {
     position: relative;
-    width: size-m(375);
-    height: size-m(700);
-    background-position-x: size-m(-280);
-  background-size:auto size-m(700);
-  &::after,
-  &::before{
-    height:150vw;
   }
-  &::before{
-    top:calc(-150vw * .3);
-    }
-  &::after{
-    bottom:calc(-150vw * .7);
+  
+.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-50);
+z-index:4;
+}
+  .content {
+  font-size: sizem(14);
+  padding: 5.4em 0 0 0;
   }
- // background: none;
-  .bg{height:size-m(700);width: auto;
-  left:size-m(-280);
-  }
-  .txt{
-  @include img_c_m(370, 0);
-    font-size:sizem(21);
-  .title {
-    font-size:1.9em;line-height: 1.05;margin: 0 .3em  0.5em 0;}
-    }
-  }
+.title {
+  font-size:1.8em;
+  line-height: 1.5;
+  margin: 0 auto 0.7em;
+
+}
 }
 // 避免內容電腦過渡平板時，設計未考量的調整
 @media only screen and (min-width: 1025px) and (max-width: 1199.98px) {
