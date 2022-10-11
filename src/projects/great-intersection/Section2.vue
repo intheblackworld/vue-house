@@ -1,5 +1,5 @@
 <template>
-  <div class="section2">
+  <div class="section2" id="scene">
     <div class="img1" data-aos="zoom-in-left">
       <div class="f1">
         <img src="./s1/f11.png" alt="" loading="lazy" />
@@ -15,27 +15,20 @@
 沙鹿新站特區首發，勝麗建設再創美學天際<br />
 台中最值得期待的一次城市跳躍！</div>
     </div>
-    <div class="swiper">
-    <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
-      <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" :class="`item`">
-        <img :src="slide.img" alt>
-        <div class="slide-name absolute" v-html="slide.name"></div>
-      </swiper-slide>
-    </swiper>
-        <div class="swipe-btns absolute flex-ac flex-jb">
-          <div class="prev-btn" slot="button-prev" v-if="isMobile"></div>
-          <div class="next-btn" slot="button-next" v-if="isMobile"></div>
-        </div>
-      </div>
+    <div class="map">
+    <img src="./s2/map.jpg" alt="">
+    <img src="./s2/map.png" alt=""></div>
   </div>
 </template>
 <style lang="scss" scoped>
+@import "@/assets/style/variableDefault.scss";
 @import "@/assets/style/function.scss";
+/* 螢幕尺寸標準 */
 $b_margin:size(50);
 .section2 {
-  width: 100%;
-  height: auto;
   position: relative;
+  width: 100%;
+  height:auto;
   &::after{
     pointer-events: none;
     content: "";
@@ -51,7 +44,6 @@ $b_margin:size(50);
      border-image: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
 	  border-image-slice: 1;
   }
- // background: url("./s2/pc.png");
 }
 .img1{width: size(245);position: absolute;right: size(10);top: size(20);
 z-index: 2;
@@ -89,12 +81,14 @@ position: absolute;
 }
 
 }
-
+.map{
+  width: 100%;
+  img{
+    position: relative;width: 100%;
+    &:last-child{position: absolute;top: 0;left: 0;}
+  }
+}
 .content {
-  //@include img_r_pc(622, 0, 0);
-  //height: 100%;
-  //in-height: size(1080);
- // background: #bccf00;
   padding: 4.8em 0 0 0;
   display: block;
   color: #FFF;
@@ -130,241 +124,65 @@ position: absolute;
 
 }
 
-
-/* Swipe */
-.swiper {
-  width: 100%;
-  height: size(586);
-  //z-index: 1;
-    position: relative;
-}
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-.item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-  height: 100%;
-      object-fit: cover;
-  }
-
-  .slide-name {
-    font-family: "Noto Sans TC";
-    left: 0;
-    width: 100%;
-    bottom:0;
-    color: #fff;
-    font-size: size(16);
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: 0.03em;
-    text-align: right;
-    text-shadow: 0 0.3em 1em #0003 ,0 0 .2em #000;
-    padding: 0.7em;
-  }
-}
-
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0;
-  z-index: 3;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-    pointer-events: none;z-index: 3;
-  .prev-btn,
-  .next-btn {
-    pointer-events:painted;
-    position: relative;
-    height: 100%;
-    width: 2em;
-    font-size: size(20);
-    cursor: pointer;
-    &::before {
-      content: "";
-    //  position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      transform: translateX(100%);
-      background-color: #0004;
-      transition: all 0.3s;
-    }
-    &::after {
-      content: "";
-      width: 1em;
-      height: 1em;
-      position: absolute;
-      top: calc(50% - 0.5em);
-      left: calc(50% - 0.75em);
-      border: solid #fff;
-      border-width: 0.1em 0.1em 0 0;
-      transform: rotate(45deg) translate(-10%, 10%);
-    }
-    &:hover:before {
-      transform: translateX(0%);
-    }
-    &:hover:after {
-      animation: btn 0.5s ease-in-out infinite alternate;
-    }
-  }
-  .prev-btn {
-    transform: scaleX(-1);
-  }
-}
-
-@keyframes btn {
-  to {
-    transform: rotate(45deg) translate(10%, -10%);
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1280px) and (min-width: 1025px) {
-  .fullscreen {
-    height: 100vh;
-  }
-}
-
-/* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
-
-@media screen and (max-width: 767px) {
-.img1{width: sizem(160);position: absolute;right: sizem(-10);top: sizem(-50);
-z-index:4;
-}
-  .content {
-  font-size: sizem(14);
-  padding: 5.4em 0 0 0;
+/* 手機尺寸 */
+@media only screen and (max-width: 767px) {
+  .section2 {
+    position: relative;
+    width: size-m(375);
+    height: size-m(700);
+    background-position-x: size-m(-280);
+  background-size:auto size-m(700);
+  &::after,
+  &::before{
+    height:150vw;
   }
-.title {
-  font-size:1.8em;
-  line-height: 1.5;
-  margin: 0 auto 0.7em;
-
-}
-
-  .mouse {
-    display: none;
+  &::before{
+    top:calc(-150vw * .3);
+    }
+  &::after{
+    bottom:calc(-150vw * .7);
   }
-
-  /* Swipe */
-.swiper {
-    height: sizem(250);
+ // background: none;
+  .bg{height:size-m(700);width: auto;
+  left:size-m(-280);
   }
-
-
-.item {
-    .slide-name {
-      font-size: sizem(12);
-    padding: 1em 1.3em;
+  .txt{
+  @include img_c_m(370, 0);
+    font-size:sizem(21);
+  .title {
+    font-size:1.9em;line-height: 1.05;margin: 0 .3em  0.5em 0;}
     }
   }
-
-
-  .swipe-btns {
-    .prev-btn,
-    .next-btn {
-      font-size: sizem(15);
-      background-color: rgba(0, 0, 0, 0);
-      &::before {display: none;
-      }
-      &::after {
-        border-color: #fff;
-        border-width: 0.15em 0.15em 0 0;
-        animation: btn 0.5s ease-in-out infinite alternate;
-      }
-    }
-  }
+}
+// 避免內容電腦過渡平板時，設計未考量的調整
+@media only screen and (min-width: 1025px) and (max-width: 1199.98px) {
+}
+// 避免過度到 1280 x 720 時，設計未考量的調整
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
 }
 </style>
+
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from "@/utils";
-import info from "@/info";
-//import slider from "@/mixins/slider.js";
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-
+import { isMobile } from "@/utils";
 export default {
-  name: 'section2',
-
+  name: "section2",
   components: {
-    swiper,
-    swiperSlide,
   },
-
   data() {
     return {
-      info,
-      isPC,
       isMobile,
-      isTablet,
-      isAnimateBg: true,
-      swiperOption: {
-        slidesPerView: isMobile ? 1 : 2,
-        spaceBetween: 0,
-        allowSlidePrev:true,
-        allowSlideNext:true,
-        loop: isMobile ? true : false,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction:isMobile ? false : true,
-        },
-         /*
-        slideToClickedSlide: isMobile ? true : false,
-        slidesPerColumn: isMobile ? 1 : 1,
-       centeredSlides: isMobile ? true : false,
-
-        effect: 'fade',
-        */
-        navigation: {
-          prevEl: '.prev-btn',
-          nextEl: '.next-btn',
-        },
-      },
-      slideList: [
-        {
-          img: require("./s2/1.jpg"),
-          name: "情境示意參考圖",
-        },
-        {
-          img: require("./s2/2.jpg"),
-          name: "情境示意參考圖",
-        },
-      ],
-    }
+    };
   },
-
   methods: {
+    scrollTo(el) {
+      this.scrollInstance.scrollTo(el);
+    },
   },
-
-  mounted() {
-    if (this.isMobile) {
-      this.toggleTimer = false
-    }
-  },
-
+  mounted() {},
   created() {},
-
-  computed: {
-    // isCurrent() {
-    //   return this.slideIndex
-    // },
-  },
-}
+};
 </script>
