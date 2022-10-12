@@ -19,7 +19,7 @@ export default {
     ['基地位置', '新北市板橋區金門街369巷57弄底',],
   ],
 
-  gtmCode: ['TXR7L7K'], // 可放置多個
+  gtmCode: ['N2BKJLX'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
