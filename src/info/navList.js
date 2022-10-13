@@ -7,8 +7,8 @@ export default [
   { name: '重劃指標', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
   { name: '六大優勢', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
   { name: '海線旗艦', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
-  { name: '樣品屋', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
-  { name: '影片', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+ // { name: '樣品屋', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
+ // { name: '影片', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:-80 , type: '' },
   //{ name: '嚴選建材', imgSrc: '', subTitle: '', section: 'section10', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
   // { name: '樣品屋預留', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '',offset:-60, mobileOffset:0 , type: '' },
   

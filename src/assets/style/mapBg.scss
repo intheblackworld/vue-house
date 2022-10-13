@@ -67,18 +67,17 @@
     }
 
     .mask {
-      width: 200vw;
+      width: 300vw;
       height: sizem(57);
-      background-color: rgba(179, 57, 0, 0.6);
+      background-color:#48215ccc;
       // animation: swing 2.5s ease-in-out 0s infinite;
-      left: 35vw;
+      left: 0;
       position: absolute;
       top: sizem(285);
-      left: 0;
-      opacity: 0;
+      opacity: 1;
       transition: opacity .5s;
-      &.active {
-        opacity: 1;
+      &.hide {
+        opacity: 0;
       }
     }
 
@@ -87,16 +86,16 @@
       z-index: 3;
       width: sizem(87) !important;
       height: auto !important;
-      left: sizem(425);
+      left: 171vw;
       right: 0;
       margin: 0 auto;
       top: sizem(298) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
-      opacity: 0;
+      opacity: 1;
       transition: opacity .5s;
-      &.active {
-        opacity: 1;
+      &.hide {
+        opacity: 0;
       }
     }
   }

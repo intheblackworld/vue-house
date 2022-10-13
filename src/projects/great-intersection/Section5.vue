@@ -388,35 +388,35 @@ export default {
       slideList: [
         {
           img: require("./s5/1.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/2.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/3.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/4.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/5.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/6.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/7.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s5/8.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
       ],
     }

@@ -81,11 +81,10 @@ position: absolute;
 
 }
 .map{
+  position: relative;
+  z-index: 2;
   width: 100%;
-  img{
-    position: relative;width: 100%;
-    &:last-child{position: absolute;top: 0;left: 0;}
-  }
+
 }
 .content {
   padding: 4.8em 0 0 0;

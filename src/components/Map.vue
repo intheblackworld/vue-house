@@ -1,10 +1,10 @@
 <template>
-  <div class="map" id="map" refs="map" @scroll="handleScroll">
-    <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
-    <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
-    <img class="map-text" :src="bgText" alt />
-    <div :class="`mask ${showMask ? 'active' : ''}`">
-    </div>
+  <div class="map" id="map" @scroll="hide = true">
+    <img :src="hand" alt :class="`hand ${hide ? 'hide' : ''}`" />
+    <div :class="`mask ${hide ? 'hide' : ''}`"></div>
+    <img class="map-bg" :src="bgSrc" alt />
+    <slot></slot>
+    <img src="../projects/great-intersection/s2/map.png" alt="" class="logo">
     <img
       :src="tag"
       data-aos="fade-down"
@@ -13,48 +13,22 @@
       v-for="(tag, index) in tagList"
       :key="tag"
     />
+    <div class="name"></div>
   </div>
 </template>
-<style lang="scss" scoped>
-@import '../assets/style/function.scss';
-.map {
-  // padding-top: size-m(150);
-  background-color: rgba(172, 221, 254, 1)
-}
-.desc {
-  width: size-m(310);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-left: size-m(450);
-  margin-top: size-m(80);
-  font-size: size-m(15);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.73;
-  letter-spacing: 1.5px;
-  text-align: left;
-  color: #231815;
 
-}
-</style>
 <script>
 import { isMobile } from '@/utils'
 export default {
   name: 'map',
-  props: ['tagList', 'bgSrc', 'hand', 'bgText'],
+  props: ['tagList', 'bgSrc', 'hand'],
   data() {
     return {
       isMobile,
-      map: '',
-      showMask: false,
+      hide: false,
     }
   },
   mounted() {
-    this.map = this.$refs.map
-
-    if (this.isMobile) {
       setTimeout(() => {
         const map = document.querySelector('.map')
         const mapBg = document.querySelector('.map-bg')
@@ -62,19 +36,20 @@ export default {
         if (text) {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
+        const hand = document.querySelector('.map .hand')
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
-      }, 1200)
+        if (hand) {
+          // hand.style.width = `${mapBg.clientWidth}px`
+        //  hand.style.left = `${mapBg.clientWidth / 2 + 50}px`
+        }
 
+        map.scrollTo((mapBg.clientWidth  - window.innerWidth ) * .6 , 0)
+      }, 600)
       setTimeout(() => {
-        this.showMask = true
-      }, 1500)
-    }
-  },
-  methods: {
-    handleScroll() {
-      this.showMask = false
-    }
+        this.hide = false
+      }, 1000)
+      
+    this.scrollView()
   },
 }
 </script>
