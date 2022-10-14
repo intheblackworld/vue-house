@@ -958,7 +958,7 @@ export default {
             o_subtitle: '已完售，預計2023年初完工。',
             img: require('../process/list/20/1.jpg'),
             title: '2022/10',
-            subtitle: '13樓版施工照片',
+            subtitle: '13樓施工照片',
             isFinished: true,
             imgs: [
               require('../process/list/20/1.jpg'),
