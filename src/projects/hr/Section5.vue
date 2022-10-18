@@ -291,7 +291,7 @@ export default {
         {
           img:require('./s5/1.jpg'),
           name: '1大床房型 實際以現場為主',
-          subtitle: '1大床房型，',
+          subtitle: '1大床房型',
           desc: '精緻裝修、精品傢俱、豪華衛浴、舒適寢具',
         },
         {
