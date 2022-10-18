@@ -59,7 +59,7 @@
     width: 20%;
     bottom: 38%;
     left: 25%;
-      animation: light3 2s linear infinite;
+    animation: light3 2s linear infinite;
   }
 @keyframes light3{
     0%{

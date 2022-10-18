@@ -89,7 +89,7 @@ export default {
 @import '@/assets/style/variableDefault.scss';
 
 .contact-info {
-  background: $contact_bg ;
+  //background: $contact_bg ;
 
   // background-image: url('../assets/img/contact_bg.jpg');/
   // background-size: cover;
@@ -116,8 +116,7 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: -3vw auto -8vw;
-  padding: 0 0 0 15vw
+  margin: 0 auto size(80);
 }
 .info {
   width: 880px;
@@ -215,7 +214,6 @@ export default {
   border: $contact_btn_border;
   transition: all 0.5s;
   border-radius:60px ;
-  box-shadow: -2px 0 5px 1px #00235E;
   font-weight: 600;
 
   svg {

@@ -299,7 +299,7 @@ export default {
   pointer-events: none;
 }
 .order-bg {
-  //background-color: $order_bg_color;
+  background: $order_bg_color;
   //background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
