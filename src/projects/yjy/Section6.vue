@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="section6">
+      <img v-if="isPC" src="./s6/style.png" alt="" data-aos="fade" class="style" />
+      <img v-else src="./s6/style_m.png" alt="" data-aos="fade" class="style" />
+      <img v-if="isMobile" src="./s5/flower.png" alt="" data-aos="fade" class="img" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -37,11 +40,18 @@
   width:100%;
   height:auto;
   position: relative;
-  padding: 9vw 0 5vw;
+  padding: 10vw 0 5vw;
   //background: url("./s1/bg.jpg") center;
   background-size: 100% auto;
 &::after{content: "";clear: both;display: block;}
 }
+.style{
+ position: absolute; 
+ width: size(550); 
+ left: size(0);
+ top: size(-100);
+ mix-blend-mode: multiply;
+}  
 
 .img{width: size(800);position: absolute;left: 0;bottom: size(-130);
 z-index: 2;
@@ -248,37 +258,101 @@ img{width: 100%;
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+
+.section6 {
     width: 100%;
     height: auto;
-    min-height: auto;
-    max-height: initial;
-  //padding: 0;
-  background-size: 250% auto;
+    padding: 0 0 sizem(0) 0;
+    background-size: 250% auto;
+    display: flex;
+    flex-direction: column-reverse;
   }
-  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
+.bg{
+position: absolute;
+left: 0;
+top:auto;
+bottom:sizem(0);
+width: 100%;
+}
+
+.img{
+  width: sizem(70);
+  left:auto;
+  right:sizem(0);
+  top:sizem(180);
+  bottom:auto;
+  z-index: 5;
+  transform: rotate(0deg) skewY(5deg);
+  transform-origin: 100% 0%;
+  animation: flower 5s ease-out alternate infinite;
+  }
+
+  @keyframes flower {
+    to {
+    transform: rotate(-0deg) skewY(-10deg);
+    }
+  }
+
+.style{
+ position: absolute; 
+ width: sizem(150); 
+ right: auto;
+ left: sizem(0);
+ bottom: auto;
+ top:sizem(-50);
+ mix-blend-mode: multiply;
+}  
   .txt{
     position: relative;
     width: sizem(320);
-    margin:0em auto 3em;
+    float: none;
+    margin:0em auto 0;
     left:0;
     top:0;
-    font-size: sizem(15);
-  padding-top: 7vw;
+    padding-top: 7vw;
+    margin: sizem(30) auto sizem(30);
     .title{
-      font-size:1.9em;
+      font-size:sizem(30);
     }
+
     .subtitle{
-      font-size:1.1em;
+      font-size:sizem(15);
     }
+    .desc {
+      font-size:sizem(13);
+    }
+
+    .linestyle{
+    width: sizem(95);
+    left:sizem(190);
+    top:sizem(50);
+    bottom: auto;
+
+      .lineicon{
+        img{
+        width: sizem(25);
+        top:sizem(-13);
+        right:sizem(-35);
+        }  
+      }
+    }
+
   }
+  
+  
+
+
+  
+  
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    float: none;
+    height: sizem(250);
     top:0;
     left:0;
+  margin-left:0;
   }
 .swipe-item {
   .slide-name {

@@ -110,20 +110,20 @@ export default {
 }
   .content {
    // height: 35em;
-    width: 100%;
+    width: 90%;
     margin-bottom: 0;
     font-size: 15px;
-    padding-bottom: 35vw;
+    padding-bottom: 10vw;
   }
 
   .title {
     font-size: 32px;
-    margin: 0.8em 0 0.5em 0;
+    margin: 0.8em 0 0.8em 0;
   }
 
   .item {
     align-items: flex-start;
-    margin: 10px 0 10px 20px;
+    margin: 10px  20px;
     width: 100%;
     height: auto;
     white-space: normal;

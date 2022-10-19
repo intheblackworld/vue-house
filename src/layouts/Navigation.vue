@@ -223,12 +223,13 @@ export default {
     top: 15px;
     width: 40px;
     height: 40px;
-  // background-color: #008796;
+    background-color: #b6325e;
     cursor: pointer;
     flex: 1 0 50%;
     margin-bottom: 1rem;
     text-align: center;
     color: $nav_link_color;
+
 }
 .menu-icon {
     position: relative;
@@ -422,7 +423,7 @@ z-index: 3;
     //  display: block;
       width: 100%;
       transform: translateX(0%);
-      background-color:#00235Ecc;
+      background-color:#7d1538ce;
     }
     .link {
       width: 10em;

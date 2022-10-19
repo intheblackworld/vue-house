@@ -263,12 +263,12 @@ export default {
     margin:10vw 0 0 0;
 
     .logo {
-      width:155%;
+      width:sizem(300);
    //   margin: 30% auto 10%;
-  margin: -0vw -10% -15vw;
-  object-fit:cover;
-  height: sizem(300);
-  padding:0;
+      margin: 10vw auto;
+      object-fit:cover;
+      height: auto;
+      padding:0;
     }
   }
 
@@ -333,7 +333,7 @@ export default {
   .google-btn {
     margin-top: 15px;
     left: 0;
-  box-shadow: 0 -2px 5px 1px #00235E;
+  //box-shadow: 0 -2px 5px 1px #00235E;
   }
 }
 

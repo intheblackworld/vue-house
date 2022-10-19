@@ -12,7 +12,9 @@
       <img src="./s1/logo.png" class="logo1">
     </div>
       <div class="t1"  data-aos="zoom-in" data-aos-delay="600">樹林市心壓軸2字頭</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800">萬大線捷運預定站<span></span>雙併73-76坪<span></span>02-7709-2200</div>
+
+      <div class="t2" v-if="isPC" data-aos="zoom-in" data-aos-delay="800">萬大線捷運預定站<span></span>雙併73-76坪<span></span>02-7709-2200</div>
+      <div class="t2" v-else data-aos="zoom-in" data-aos-delay="800">萬大線捷運預定站<br>雙併73-76坪<span></span>02-7709-2200</div>
       
     </div>
       <div class="t3" >● 本案為乙種工業用地</div>
@@ -139,52 +141,49 @@
     min-height: sizem(604);
     max-height: sizem(750);
     height: calc(100vh - 63px);
-  background-size: 250% auto;
+
+    background: url("./s1/bg_m.jpg") center;
   }
   .img{
-    bottom:calc(40% - 60vw);left: 7%;
-    height:auto;width: 63%;
-  }
-  .img1{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: auto;
+    right: 0;
+  }
+  .img1{
+    bottom:sizem(-25);
+    width:sizem(470);
+    height: auto;
+    left: sizem(-95);
+
   }
 .txt{
   font-size: sizem(14);
-  top:calc(50% + (15 - 302) * 100vw / 375);
+  top:calc(50% + (48 - 302) * 100vw / 375);
   line-height: 1.1;
+  padding: 0;
+
 .logo{
-  width:sizem(620);
-  margin:0 auto -6em sizem(-55);
+  width:sizem(250);
+  top:sizem(10);
   }
+
   .t1{
-    font-size: 1.50em;
+    font-size: sizem(26);
     position: absolute;
-    top:sizem(200);
-    right: sizem(65);
-    width: 1.2em;
-    span{
-    display:block;
-    height:1px;width: 1;
-    margin:0.2em 0;}
+    top:sizem(210);
+    left: sizem(75);
   }
 
   .t2{
-
     position: absolute;
-    top:sizem(230);
-    right: sizem(95);
-    width: 1.2em;
-    span{
-    display:block;
+    line-height: sizem(30);
+    font-size: sizem(20);
+    top:sizem(250);
+    left: sizem(40);
 
-  &::after{
-    background: #fff0;
-    height:2px;
-    display:block;
-    margin:0.2em 0;
-  }
+    span{
+    display: inline-block;
   }
 
   }

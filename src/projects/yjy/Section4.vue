@@ -2,8 +2,9 @@
   <div>
     <div class="section4">
       <img src="./s4/fly.png" alt="" data-aos="fade" class="img" />
-      <img src="./s4/flower.png" alt="" data-aos="fade" class="flower" />
-      <img src="./s4/style.png" alt="" data-aos="fade" class="style" />
+      <img v-if="isPC" src="./s4/flower.png" alt="" data-aos="fade" class="flower" />
+      <img v-if="isPC" src="./s4/style.png" alt="" data-aos="fade" class="style" />
+      <img v-else src="./s4/style_m.png" alt="" data-aos="fade" class="style" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -47,7 +48,7 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 10vw 0 10vw;
+  padding: 10vw 0 5vw;
   //background: url("./s1/bg.jpg") center;
   background-size: 100% auto;
 
@@ -75,7 +76,7 @@ animation: flower 5s ease-out alternate infinite;
 
 .style{
  position: absolute; 
- width: size(600); 
+ width: size(500); 
  right: size(-50);
  bottom: size(-360);
  mix-blend-mode: multiply;
@@ -138,16 +139,13 @@ animation-direction: alternate;
   left:size(480);
 
   .lineicon{
-  
-  img{
-  position:absolute;
-  width: size(30);
-  top:size(-15);
-  right:size(-40);
+    img{
+    position:absolute;
+    width: size(30);
+    top:size(-15);
+    right:size(-40);
+    }  
   }
-  
-  }
-
 }
 
 .desc {
@@ -307,12 +305,34 @@ float: left;
   .section4 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
+    padding: 0 0 sizem(0) 0;
+    background-size: 250% auto;
+    display: flex;
+    flex-direction: column-reverse;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+.bg{
+position: absolute;
+left: 0;
+top:auto;
+bottom:sizem(0);
+width: 100%;
+}
+
+.img{
+  width: sizem(80);
+  right:sizem(50);
+  top:sizem(35);
+  bottom:auto;
+  }
+
+.style{
+ position: absolute; 
+ width: sizem(300); 
+ right: sizem(0);
+ bottom: sizem(100);
+ mix-blend-mode: multiply;
+}  
   .txt{
     position: relative;
     width: sizem(320);
@@ -320,15 +340,36 @@ float: left;
     margin:0em auto 0;
     left:0;
     top:0;
-    font-size: sizem(15);
-  padding-top: 7vw;
+    padding-top: 7vw;
+    margin: sizem(80) auto sizem(50);
     .title{
-      font-size:1.9em;
+      font-size:sizem(30);
     }
+
     .subtitle{
-      font-size:1.1em;
+      font-size:sizem(15);
+    }
+    .desc {
+      font-size:sizem(13);
     }
   }
+  .linestyle{
+    width: sizem(95);
+    left:sizem(190);
+    top:sizem(50);
+
+    .lineicon{
+    img{
+    width: sizem(25);
+    top:sizem(-13);
+    right:sizem(-35);
+    }  
+    }
+
+  }
+
+  
+  
   /* Swipe */
   .swipe {
     position: relative;

@@ -2,6 +2,8 @@
   <div>
     <div class="section5">
       <img src="./s5/fly.png" alt="" data-aos="fade" class="img" />
+      <img v-if="isPC" src="./s5/flower.png" alt="" data-aos="fade" class="flower" />
+      <img v-if="isMobile" src="./s4/style_m.png" alt="" data-aos="fade" class="style" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -45,7 +47,7 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 10vw 0 10vw;
+  padding: 10vw 0 5vw;
   //background: url("./s1/bg.jpg") center;
   background-size: 100% auto;
 &::after{content: "";clear: both;display: block;}
@@ -60,6 +62,24 @@ top:size(100);
 transform-origin:100% 50% ;
 z-index: 5;
 }
+
+.flower{
+position: absolute;
+width: size(280); 
+right:size(0);
+bottom:size(-20);
+z-index: 5;
+transform: rotate(0deg) skewY(5deg);
+transform-origin: 100% 0%;
+animation: flower 5s ease-out alternate infinite;
+}
+
+
+@keyframes flower {
+    to {
+    transform: rotate(-0deg) skewY(-10deg);
+    }
+  }
 
 
 .txt{
@@ -266,12 +286,49 @@ float: right;
   .section5 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
+    padding: 0 0 sizem(0) 0;
+    background-size: 250% auto;
+    display: flex;
+    flex-direction: column-reverse;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+.bg{
+position: absolute;
+left: 0;
+top:auto;
+bottom:sizem(0);
+width: 100%;
+}
+
+.img{
+  width: sizem(60);
+  left:auto;
+  right:sizem(80);
+  top:sizem(25);
+  bottom:auto;
+  transform: translate(10%, 10%);
+  animation: fly 2s linear infinite;
+  animation-direction: alternate;
+  }
+
+
+@keyframes fly{
+    0%{
+      transform: translate(10%, 10%);
+    }
+
+    100%{
+      transform: translate(0%, 0%);
+    }
+}  
+
+.style{
+ position: absolute; 
+ width: sizem(300); 
+ right: sizem(0);
+ bottom: sizem(100);
+ mix-blend-mode: multiply;
+}  
   .txt{
     position: relative;
     width: sizem(320);
@@ -279,15 +336,36 @@ float: right;
     margin:0em auto 0;
     left:0;
     top:0;
-    font-size: sizem(15);
-  padding-top: 7vw;
+    padding-top: 7vw;
+    margin: sizem(80) auto sizem(50);
     .title{
-      font-size:1.9em;
+      font-size:sizem(30);
     }
+
     .subtitle{
-      font-size:1.1em;
+      font-size:sizem(15);
+    }
+    .desc {
+      font-size:sizem(13);
     }
   }
+  .linestyle{
+    width: sizem(95);
+    left:sizem(190);
+    top:sizem(50);
+
+    .lineicon{
+    img{
+    width: sizem(25);
+    top:sizem(-13);
+    right:sizem(-35);
+    }  
+    }
+
+  }
+
+  
+  
   /* Swipe */
   .swipe {
     position: relative;
