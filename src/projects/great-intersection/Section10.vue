@@ -410,27 +410,27 @@ export default {
       slideList: [
         {
           img: require("./s10/1.jpg"),
-          name: "多功能室",
+          name: "田園四季交誼廳",
         },
         {
           img: require("./s10/2.jpg"),
-          name: "大廳",
+          name: "新世紀迎賓門廳",
         },
         {
           img: require("./s10/3.jpg"),
-          name: "多功能室",
+          name: "舒曼媽媽教室",
         },
         {
           img: require("./s10/4.jpg"),
-          name: "兒童遊戲室",
+          name: "胡桃鉗兒遊空間",
         },
         {
           img: require("./s10/5.jpg"),
-          name: "音樂教室",
+          name: "霍夫曼音樂教室",
         },
         {
           img: require("./s10/6.jpg"),
-          name: "音樂教室",
+          name: "海頓健身中心",
         },
       ],
     }
