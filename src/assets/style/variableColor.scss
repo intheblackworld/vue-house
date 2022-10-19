@@ -1,5 +1,5 @@
 /* html, body */
-$bg:url("~@/projects/vvs1/s1/bgs.jpg");
+$bg:#F39801;
 $bg-size:auto;
 
 /* font-family */
@@ -9,16 +9,16 @@ $family1:  'Noto Sans TC', sans-serif;
 $family3: 'Noto Sans TC',sans-serif; */
 $color:#000;
 /* navigation */
-$nav_bg:#00235E;// #f8dee100;background: linear-gradient(to bottom, rgba(97,14,0,1) 0%,rgba(97,14,0,0) 100%);
+$nav_bg:#86B593;// #f8dee100;background: linear-gradient(to bottom, rgba(97,14,0,1) 0%,rgba(97,14,0,0) 100%);
 $nav_link_color: #FFF;
 $nav_line_color: #fff;
 $nav_btn_color: #FFF;
-$nav_btn_bg: #1579ac;
+$nav_btn_bg: #D96251;
 $nav_link_subtitle_color: #000;
 $nav_link_hover_color: #FFC;
-$nav_link_hover_bg: #2d90c2;
+$nav_link_hover_bg: #D96251;
 $nav_btn_hover_color: #FFF;
-$nav_btn_hover_bg: #2d90c2;
+$nav_btn_hover_bg: #b44320;
 
 /* loading */
 $loading_bg_color: #ccc;

@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/vvs1/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/smilecastle/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -23,26 +23,26 @@
 
 -->
 <VideoSection1  id="section2"
-      :playBtn="require('@/projects/vvs1/video/play-btn.png')"
+      :playBtn="require('@/projects/smilecastle/video/play-btn.png')"
       title="建築×美學影片"
-      :close="require('@/projects/vvs1/video/close.png')"
-      :arrows="[require('@/projects/vvs1/video/arrow-left.png'), require('@/projects/vvs1/video/arrow-right.png')]"
+      :close="require('@/projects/smilecastle/video/close.png')"
+      :arrows="[require('@/projects/smilecastle/video/arrow-left.png'), require('@/projects/smilecastle/video/arrow-right.png')]"
       :slideList="[
         {
           title: '恆鑽地段奢美居',
-          img: require('@/projects/vvs1/video/2.jpg'),
+          img: require('@/projects/smilecastle/video/2.jpg'),
           video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '打造有溫度的家',
-          img: require('@/projects/vvs1/video/3.jpg'),
+          img: require('@/projects/smilecastle/video/3.jpg'),
           video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '樣品屋私藏設計',
-          img: require('@/projects/vvs1/video/1.jpg'),
+          img: require('@/projects/smilecastle/video/1.jpg'),
           video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
@@ -142,7 +142,7 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/vvs1/s1/bg.jpg") top center;
+    background:url("~@/projects/smilecastle/s1/bg.jpg") top center;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -174,19 +174,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/vvs1/Section1.vue'
-import Section2 from '@/projects/vvs1/Section2.vue'
-import Section3 from '@/projects/vvs1/Section3.vue'
-import Section4 from '@/projects/vvs1/Section4.vue'
-import Section5 from '@/projects/vvs1/Section5.vue'
-import Section6 from '@/projects/vvs1/Section6.vue'
-import Section7 from '@/projects/vvs1/Section7.vue'
-import Section8 from '@/projects/vvs1/Section8.vue'
-import Section9 from '@/projects/vvs1/Section9.vue'
+import Section1 from '@/projects/smilecastle/Section1.vue'
+import Section2 from '@/projects/smilecastle/Section2.vue'
+import Section3 from '@/projects/smilecastle/Section3.vue'
+import Section4 from '@/projects/smilecastle/Section4.vue'
+import Section5 from '@/projects/smilecastle/Section5.vue'
+import Section6 from '@/projects/smilecastle/Section6.vue'
+import Section7 from '@/projects/smilecastle/Section7.vue'
+import Section8 from '@/projects/smilecastle/Section8.vue'
+import Section9 from '@/projects/smilecastle/Section9.vue'
 /* 
-import Section10 from '@/projects/vvs1/Section10.vue'
-import Section10 from '@/projects/vvs1/Section10.vue'
-import Section11 from '@/projects/vvs1/Section11.vue' */
+import Section10 from '@/projects/smilecastle/Section10.vue'
+import Section10 from '@/projects/smilecastle/Section10.vue'
+import Section11 from '@/projects/smilecastle/Section11.vue' */
 import VideoSection1 from '@/components/VideoSection1.vue'
 
 export default {
