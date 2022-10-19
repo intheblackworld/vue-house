@@ -410,27 +410,27 @@ export default {
       slideList: [
         {
           img: require("./s10/1.jpg"),
-          name: "田園四季交誼廳",
+          name: "田園四季交誼廳3D模擬圖",
         },
         {
           img: require("./s10/2.jpg"),
-          name: "新世紀迎賓門廳",
+          name: "新世紀迎賓門廳3D模擬圖",
         },
         {
           img: require("./s10/3.jpg"),
-          name: "舒曼媽媽教室",
+          name: "舒曼媽媽教室3D模擬圖",
         },
         {
           img: require("./s10/4.jpg"),
-          name: "胡桃鉗兒遊空間",
+          name: "胡桃鉗兒遊空間3D模擬圖",
         },
         {
           img: require("./s10/5.jpg"),
-          name: "霍夫曼音樂教室",
+          name: "霍夫曼音樂教室3D模擬圖",
         },
         {
           img: require("./s10/6.jpg"),
-          name: "海頓健身中心",
+          name: "海頓健身中心3D模擬圖",
         },
       ],
     }
