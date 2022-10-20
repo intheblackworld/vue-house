@@ -2,6 +2,7 @@
   <div>
     <div class="section5">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -9,85 +10,79 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
           </div>
         </div>
+     <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" >中日團隊擘劃<br v-if="isMobile" /> 捷運W美學飯店宅</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">弧形外觀設計如同手牽手的樣貌，展現「聚」與「合」的意象。外牆綠化植栽，形塑垂直與水平線條，構成如「光」與「綠」的交織，一樓迎賓大廳石材鋪面，搭配白色細鋁格柵、玻璃，讓建築多了趣味、柔和及優雅。</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">富饒之地 生活應有盡有</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">最富裕的生活圈，食衣住行育樂通通滿足。最迷人的書香，新高雙語小學、新平國小與新光國中，明星學校作伴；最便捷的採購，全聯、楓康和新光黃昏市場，鮮食一次買齊；最舒服的環境，立文、廍興以及馬卡龍公園，綠意公園為鄰。</div>
       </div>
+      <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+    <img src="./all/f2.png" class="f2" />
+    </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {  
+.section5 {
   width:100%;
   height:auto;
   position: relative;
-  padding: 9vw 0 5vw;
+  margin:0 auto 0;
+  padding: 10vw 0 10vw;
+  // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
+.img{position:absolute;top: 50%;right: 0;transform-origin: 0% 0%;
+img{position:absolute;pointer-events: none;}
+.f2{width:size(330);top:size(420);right:size(-400);
+  transform-origin: 0% 0%;transform:rotate(180deg);
+animation: an 3s ease-in-out infinite alternate;}
 
-.img{width: size(800);position: absolute;left: 0;bottom: size(-130);
-z-index: 2;
-img{width: 100%;
-// transform: skewY(5deg) ;
-// transform-origin: 0 50%;
-  //    animation: an 3s linear alternate infinite;
-      }
 }
-
 @keyframes an{
-    to{
-      transform: translateX(0);
-    }
+  to{
+    transform:rotate(176deg);
+  }
 }
+
 .txt{
+float: right;
   position: relative;
-  width: size(1500);
-  margin: 1.5em auto 3em auto;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
-  line-height: 1.4;
+  padding-top: 9.5vw;
+  width: size(580);
   z-index: 2;
- // color: #fff;
-
-.title{
-  font-size:2.2em;
-  margin:0 auto 0;
-  color: #B00;
-}
-  .subtitle{font-size: 1.25em;
-    padding:.75em 0 0 0;
+  margin-right: size(210);
+  @include txt(size(18));
   }
 
-.desc {
-  padding:1em 0 0 0;
-  font-weight: 300;
-  line-height: 1.6;
-  list-style: circle;
-}
-  }
 /* Swipe */
-.swipe {
-  position: relative;
-  margin: auto;
-  width: size(1500);
-  height: size(840);
-  // left: size(210);
-  object-fit: cover;
+
+.swipe {position: relative;
+float: left;
+ // position: absolute;
+  width: size(840);
+  height: size(560);
+// top: size(185);
+ // left: size(210);
+  margin-left: size(210);
   z-index: 3;
+  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(-1vw , -1vw);
+  &::before{content: "";position: absolute;display: block;
+  left: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(-1vw , -1vw);}
+  }
 }
 .slide-name {
     right:1.5em;
@@ -142,53 +137,35 @@ img{width: 100%;
 // pagination
 .pagination {
   width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
+  bottom: size(0);
+  left:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
-  font-size: size(20);
+    font-size: size(20);
+  .pagination-dot {
+    padding: 0.25em;
+    margin: 0 0.15em;
+    cursor: pointer;
+    z-index: 4;
 
-}
-.pagination-dot {
-  padding: 0.25em;
-  margin: 0 0.2em;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width:1em;
-    height:1em;
-    border-radius: 50%;
-    border: 0.2em solid  #0003;
-    position: relative;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
+    span {
       display: block;
-    border-radius: 50%;
-    border:  0.105em solid #B00;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+      width:3em;
+      height:12px;
+      position: relative;
+      &::before{content: "";
+      transition: transform 0.5s, background 0.5s;
+      display: block;width: 100%;height:100%;
+      background: $pagination;
+        transform: scaleY(.25);transform-origin: 50% 50%;
     }
-    &.active {
-      box-shadow: none;
-      &::before {
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        transform: scale(1.6);
+      &.active {
+        &::before{  transform: scaleY(1);
+      background:$pagination-active;
+    }
       }
     }
   }
+
 }
 .swipe-btns {
   width: 100%;
@@ -221,32 +198,29 @@ img{width: 100%;
   .section5 {
     width: 100%;
     height: auto;
-    min-height: auto;
-    max-height: initial;
+    padding: 0 0 sizem(190) 0;
+  background-size: 250% auto;
+
   }
-  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
+  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
+.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:0 auto 4em;
-  padding-top: 7vw;
-    left:0;
-    top:0;
+    float: none;
+    margin:1em auto 3em;
     font-size: sizem(15);
-    .title{
-      font-size:1.9em;
-    }
-    .subtitle{
-      font-size:1.1em;
-    }
+  padding-top: 0;
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(330);
+    float: none;
+    height: sizem(250);
     top:0;
     left:0;
+  margin-left:0;
   }
 .swipe-item {
   .slide-name {
@@ -257,7 +231,6 @@ img{width: 100%;
   font-size: sizem(15);
   }
 }
-
 </style>
 <script>
 // @ is an alias to /src
@@ -280,16 +253,28 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile?require('./s5/1m.jpg'):require('./s5/1.jpg'),
-          name: '區域與建築外觀3D示意',
+          img: require('./s5/1.jpg'),
+          name: '台74號快速道路，現場實景經電腦修飾示意',
         },
         {
           img: require('./s5/2.jpg'),
-          name: '3D示意',
+          name: '台鐵精武站，現場實景經電腦修飾示意',
         },
         {
           img: require('./s5/3.jpg'),
-          name: '3D示意',
+          name: '中山路商圈，現場實景經電腦修飾示意',
+        },
+        {
+          img: require('./s5/4.jpg'),
+          name: '新光黃昏市場，現場實景經電腦修飾示意',
+        },
+        {
+          img: require('./s5/5.jpg'),
+          name: '立文公園，現場實景經電腦修飾示意',
+        },
+        {
+          img: require('./s5/6.jpg'),
+          name: '新高國小，現場實景經電腦修飾示意',
         },
       ],
     }
@@ -305,7 +290,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 7) {
+      if (this.viewIndex === 3) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

@@ -1,15 +1,16 @@
 <template>
   <div>
     <div class="section6">
+      <!--    -->  
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
-          </transition-group>
-      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+          </transition-group><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
@@ -19,9 +20,19 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" >飯店級生活<br v-if="isMobile" />  品味感官盛宴</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">Pia interior 將奢華帶入「周到設計thoughtful design」,將酒店的功能置入住宅，詮釋文化性與使用功能搭配細節混合，以多年設計經驗和思考的累積，讓公設回應到生活使用面上，在『家』享受到更好的愉悅體驗。</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >輕盈歐式 別墅有天有地</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">以歐式精神巧妙結合現代設計手法，創造輕歐式莊園質感，有天有地的起居空間，可以蒔花弄草的前庭後院，生活無拘無束。室內規劃一樓以上皆為挑高設計，減少壓迫感。客廳面寬5米，自在佈置動線不受影響，地下室規劃雙停車位，同時保留室內可作為主人的收藏房或是外出物品的收納間，便利一舉兩得。</div>
       </div>
+    <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+      <div>
+    <img src="./all/f3.png" class="f3" />
+    <img src="./all/f2.png" class="f2" />
+    <img src="./all/f4.png" class="f4" />
+      <div>
+    <img src="./all/f5.png" class="f5" />
+  </div>
+  </div>
+    </div>
     </div>
   </div>
 </template>
@@ -32,54 +43,54 @@
   height:auto;
   position: relative;
   padding: 9vw 0 5vw;
-  background: url("./s1/bg.jpg") center;
-  background-size: 100% auto;
 &::after{content: "";clear: both;display: block;}
 }
 
-.img{width: size(800);position: absolute;left: 0;bottom: size(-130);
-z-index: 2;
-img{width: 100%;
-// transform: skewY(5deg) ;
-// transform-origin: 0 50%;
-  //    animation: an 3s linear alternate infinite;
-      }
+.img{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
+  z-index: 4;
+img{position:absolute;pointer-events: none;}
+> div{ transform: rotate(-56deg);
+  > div{transform: rotate(89deg) scaleY(-1);}
 }
+.f2{width:size(373);
+    top: 4vw;
+    left: -15vw;
+  transform-origin: 0% 0%;transform: rotate(4deg);
+animation: an 3s ease-in-out infinite alternate;}
+.f3{width:size(80);
+    top: -9vw;
+    left: -5vw;
+  transform: rotate(132deg);transform-origin: 90% 100%;
+animation: an2 3s -.8s ease-in-out infinite alternate;}
+.f4{width:size(444);
+    top: 2vw;
+    left: -13vw;
+  transform-origin: 0% 0%;transform: rotate(3deg);
+animation: an 3s -.2s ease-in-out infinite alternate;}
+.f5{width:size(330);
+    top: -14vw;
+    left: 0vw;transform-origin: 0% 0%;transform: rotate(-5deg);
+animation: an 3s -.4s ease-in-out infinite alternate;}
 
+}
 @keyframes an{
-    to{
-      transform: translateX(0);
-    }
+  to{
+    transform: rotate(0deg);
+  }
+}
+@keyframes an2{
+  to{
+    transform: rotate(129deg);
+  }
 }
 .txt{
   position: relative;
   width: size(1500);
-  margin:1.5em auto 3em auto;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
-  line-height: 1.4;
+  margin: 1em auto 3em auto;
   z-index: 2;
-  color: #FFF;
-
-.title{
-  font-size:2.2em;
-  margin:0 auto 0;
-  // color: #B00;
-}
-  .subtitle{font-size: 1.25em;
-    padding:.75em 0 0 0;
+  @include txt(size(18));
   }
 
-.desc {
-  padding:1em 0 0 0;
-  font-weight: 300;
-  line-height: 1.6;
-  list-style: circle;
-}
-  }
 /* Swipe */
 .swipe {
   position: relative;
@@ -87,8 +98,12 @@ img{width: 100%;
   width: size(1500);
   height: size(840);
   // left: size(210);
-  object-fit: cover;
   z-index: 3;
+  object-fit: cover;
+  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , -1vw);
+  &::before{content: "";position: absolute;display: block;
+  right: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , -1vw);}
+  }
 }
 .slide-name {
     right:1.5em;
@@ -147,49 +162,31 @@ img{width: 100%;
   right: -0.5em;
   justify-content: center;
   font-size: size(20);
+  .pagination-dot {
+    padding: 0.25em;
+    margin: 0 0.15em;
+    cursor: pointer;
+    z-index: 4;
 
-}
-.pagination-dot {
-  padding: 0.25em;
-  margin: 0 0.2em;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width:1em;
-    height:1em;
-    border-radius: 50%;
-    border: 0.2em solid  #FFF6;
-    position: relative;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
+    span {
       display: block;
-    border-radius: 50%;
-    border:  0.105em solid #FFF;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+      width:3em;
+      height:12px;
+      position: relative;
+      &::before{content: "";
+      transition: transform 0.5s, background 0.5s;
+      display: block;width: 100%;height:100%;
+      background: $pagination;
+        transform: scaleY(.25);transform-origin: 50% 50%;
     }
-    &.active {
-      box-shadow: none;
-      &::before {
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        transform: scale(1.6);
+      &.active {
+        &::before{  transform: scaleY(1);
+      background:$pagination-active;
+    }
       }
     }
   }
+
 }
 .swipe-btns {
   width: 100%;
@@ -284,27 +281,27 @@ export default {
       slideList: [
         {
           img: require('./s6/1.jpg'),
-          name: '氣派大廳 3D示意',
+          name: '建築空間，現場實景經電腦修飾示意',
         },
         {
           img: require('./s6/2.jpg'),
-          name: 'Loung Bar 3D示意',
+          name: '建築空間，現場實景經電腦修飾示意',
         },
         {
           img: require('./s6/3.jpg'),
-          name: '鐵板燒區 3D示意',
+          name: '建築空間，現場實景經電腦修飾示意',
         },
         {
           img: require('./s6/4.jpg'),
-          name: '家庭劇院 3D示意',
+          name: '建築空間，現場實景經電腦修飾示意',
         },
         {
           img: require('./s6/5.jpg'),
-          name: '健身房 3D示意',
+          name: '建築空間，現場實景經電腦修飾示意',
         },
         {
           img: require('./s6/6.jpg'),
-          name: '兒童遊戲室 3D示意',
+          name: '建築空間，現場實景經電腦修飾示意',
         },
       ],
     }

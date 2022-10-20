@@ -1,9 +1,8 @@
 <template>
   <div>
     <div class="section4">
-      <img src="./s4/bg.png" alt="" class="bg" />
-      <img src="./s4/img.png" alt="" data-aos="fade" class="img" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -11,7 +10,7 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
             <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
@@ -20,15 +19,21 @@
             </div>
           </div>
         </div>
-     <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
         <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">市政府站×文心櫻花站</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">近1500坪黃金角地×繁榮市心</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">機場、台中港、高鐵交通便利無國界；市府站VS文心櫻花站，綠線捷運250M讀秒返家，樂享七期豐富生活圈，新光三越、大遠百、星級餐廳、銅板美食、日用選購等，「應有近有」食衣住行娛樂，全面掌握。
-</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">您終究要住別墅</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">人生第一次置產，先求有同時求好，減擔成家首購別墅就上手，第一次買房就選輕歐式全新電梯別墅【微笑莊園】。<br />
+讓地上權買房不買地的優勢助您一臂之力，無需經歷換房的陣痛或是機能不全的難受，第一次成家就入主市區生活的有天有地大空間，全家人幸福的生活藍圖就在這裡。</div>
+      </div>
+      <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+        <div>
+        <img src="./all/f3.png" class="f3" />
+        <img src="./all/f1.png" class="f1" />
+        <img src="./all/f4.png" class="f4" />
+        <img src="./all/f5.png" class="f5" /></div>
       </div>
     </div>
   </div>
@@ -42,64 +47,71 @@
   position: relative;
   margin:0 auto 0;
   padding: 10vw 0 10vw;
-  background: url("./s1/bg.jpg") center;
-  background-size: 100% auto;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
-.bg{position: absolute;left: 0;top: 0;width: 100%;}
-.img{width: size(520);position: absolute;right: 0;top:calc(50% - 19vw);
-transform-origin:100% 50% ;
-z-index: 2;
-transform: scale(0);
+
+.img{position:absolute;top: 0;right: 0;transform-origin: 0% 0%;
+  > div{transform: rotate(100deg);}
+img{position:absolute;pointer-events: none;}
+.f1{
+    width: 9.5vw;
+    top: -9.6vw;
+    left: 3.3vw;transform:scaleX(-1) rotate(-176.43deg);transform-origin: 90% 100%;
+animation: an1 3s -.5s ease-in-out infinite alternate;
+}
+.f3{width:size(100);top:size(-430);left:size(150);transform:scaleX(-1) rotate(190deg);transform-origin: 90% 100%;
+animation: an2 3s -.8s ease-in-out infinite alternate;}
+.f4{width:size(380);
+    top: -10.5vw;
+    left: 7vw;transform-origin: 0% 0%;transform: rotate(3deg);
+animation: an 3s -.2s ease-in-out infinite alternate;}
+.f5{width:size(290);top:size(-160);left:size(100);transform-origin: 0% 0%;transform: rotate(5deg);
+animation: an 3s -.4s ease-in-out infinite alternate;}
+
+}
+@keyframes an{
+  to{
+    transform: rotate(0deg);
+  }
+}
+@keyframes an1{
+  to{
+    transform:scaleX(-1) rotate(-173.43deg);
+  }
+}
+@keyframes an2{
+  to{
+    transform:scaleX(-1)  rotate(194deg);
+  }
 }
 
 .txt{
-float: right;
+  float: left;
   position: relative;
-  padding-top: 11.5vw;
+  padding-top: 9.5vw;
   width: size(580);
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
-  line-height: 1.4;
   z-index: 2;
-  color: #fff;
-  margin-right: size(210);
+  margin-left: size(210);
+  @include txt(size(18));
   }
 
-.title{
-  font-size:2.2em;
-  margin:0 auto 0;
-}
-  .subtitle{font-size: 1.25em;
-    padding:.75em 0 0 0;
-  }
-.desc {
- // margin:1em auto;
-  padding:1em 0 0 0;
-  line-height: 1.6;
-  letter-spacing:0.05em;
-  font-weight: 300;
-  list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
-}
 
 /* Swipe */
 
 .swipe {position: relative;
-float: left;
+float: right;
  // position: absolute;
   width: size(840);
   height: size(560);
 // top: size(185);
  // left: size(210);
-  margin-left: size(210);
-  z-index: 3;
+  margin-right: size(210);
+ // z-index: 3; 
+  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , 1vw);
+  &::before{content: "";position: absolute;display: block;
+  right: 0;bottom: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , 1vw);}
+  }
 }
 .slide-name {
     right:1.5em;
@@ -155,52 +167,34 @@ float: left;
 .pagination {
   width: auto;
   bottom: size(0);
-  left:calc(100% + 50 * 100vw / 1920);
+  right:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
-  font-size: size(20);
+    font-size: size(20);
+  .pagination-dot {
+    padding: 0.25em;
+    margin: 0 0.15em;
+    cursor: pointer;
+    z-index: 4;
 
-}
-.pagination-dot {
-  padding: 0.25em;
-  margin: 0 0.2em;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width:1em;
-    height:1em;
-    border-radius: 50%;
-    border: 0.2em solid  $pagination;
-    position: relative;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
+    span {
       display: block;
-    border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+      width:3em;
+      height:12px;
+      position: relative;
+      &::before{content: "";
+      transition: transform 0.5s, background 0.5s;
+      display: block;width: 100%;height:100%;
+      background: $pagination;
+        transform: scaleY(.25);transform-origin: 50% 50%;
     }
-    &.active {
-      box-shadow: none;
-      &::before {
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        transform: scale(1.6);
+      &.active {
+        &::before{  transform: scaleY(1);
+      background:$pagination-active;
+    }
       }
     }
   }
+
 }
 .swipe-btns {
   width: 100%;
@@ -243,17 +237,9 @@ float: left;
     position: relative;
     width: sizem(320);
     float: none;
-    margin:0em auto 0;
-    left:0;
-    top:0;
+    margin:1em auto 3em;
     font-size: sizem(15);
-  padding-top: 7vw;
-    .title{
-      font-size:1.9em;
-    }
-    .subtitle{
-      font-size:1.1em;
-    }
+    padding-top: 0;
   }
   /* Swipe */
   .swipe {
@@ -297,19 +283,19 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '台中市政府',
+          name: '情境示意',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '大遠百、新光三越',
+          name: '情境示意',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '捷運市政府站',
+          name: '情境示意',
         },
         {
           img: require('./s4/4.jpg'),
-          name: 'VVS1交通動線示意圖',
+          name: '情境示意',
         },
       ],
     }

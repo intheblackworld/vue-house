@@ -45,8 +45,8 @@
   // height: 100vh;
   overflow: hidden;
   // position: relative;
-  height: size(700);
-  margin: size(125) 0  0 0;
+  height: size(800);
+  margin: 0;
   &::after {
     content: '';
     display: block;
@@ -229,7 +229,7 @@ export default {
         playerVars: {
           autoplay: 1,
           loop: 1,
-          controls: 0,
+          controls: 1,
           showinfo: 0,
           autohide: 1,
           modestbranding: 1,

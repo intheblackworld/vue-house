@@ -1,14 +1,12 @@
 <template>
   <div>
-    <div class="section7">
-      <img src="./s7/img.png" alt="img" class="img" />
-      <div class="box"></div>
+    <div class="section4">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img1" :class="`swipe-item absolute`">
-              <img :src="slide.img1" alt="" class="img1">
-              <img :src="slide.img2" alt="" class="img2">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
@@ -22,15 +20,25 @@
           </div>
         </div>
      <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img1 + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
       </div> 
       </div>
-      <div class="boxm" v-if="isMobile"></div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">建築界<br v-if="isMobile" />奧斯卡級大獎常勝軍</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Pia萬豪酒店設計團隊</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">Pia interior 公司擁有超過20年的豐富經驗，團隊人員超過180多名，作品風格擅長將東、西方文化品味融合，混搭多重元素，營造輕鬆度假的休閒氛圍。世界級設計堅強實力有目共睹。
+      <div class="title" data-aos="fade-up" data-aos-delay="200">麗寶集團 品質值得信賴</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">麗寶集團成立至今已逾40年，從房地產起家後，事業版圖橫跨連鎖飯店、主題樂園、商場百貨以及生技產業。住宅仍是麗寶的老本行，不僅堅持細節工法，更提倡永續經營，提供住宅保固為的就是讓住戶安心。<br /><br />
+15年結構保固<br />
+5年防水保固<br />
+3年一般設備保固
 </div>
+      </div>
+      <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+        <div>
+        <img src="./all/f3.png" class="f3" />
+    <img src="./all/f6.png" class="f6" />
+        <img src="./all/f1.png" class="f1" />
+    <img src="./all/f2.png" class="f2" />
+        <img src="./all/f4.png" class="f4" />
+        <img src="./all/f5.png" class="f5" /></div>
       </div>
     </div>
   </div>
@@ -38,70 +46,85 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section7 {
+.section4 {
   width:100%;
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 9vw 0 5vw;
+  padding: 10vw 0 10vw;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
-.img{width: size(762);position: absolute;right: size(70);bottom:0;
-z-index: 2;
+
+.img{position:absolute;top: 0;right: 0;transform-origin: 0% 0%;
+  z-index: 4;
+  > div{transform: rotate(100deg);}
+img{position:absolute;pointer-events: none;}
+.f1{
+    width: 10.5vw;
+    top: -26.6vw;
+    left: 4.3vw;transform:rotate(-154deg);transform-origin: 90% 100%;
+animation: an1 3s -.5s ease-in-out infinite alternate;
+}
+.f2{width:size(350);top:size(120);left:size(15);
+  transform-origin: -10% -10%;transform: rotate(4deg);
+animation: an 3s ease-in-out infinite alternate;}
+.f3{width:size(90);top:size(-490);left:size(-50);transform:rotate(135deg);transform-origin: 90% 100%;
+animation: an2 3s -.8s ease-in-out infinite alternate;}
+.f4{width:size(380);
+    top: -8.5vw;
+    left: -15vw;transform-origin: 0% 0%;transform: rotate(3deg);
+animation: an 3s -.2s ease-in-out infinite alternate;}
+.f5{width:size(290);
+    top: -8vw;
+    left: -1.8vw;transform-origin: 0% 0%;transform: rotate(5deg);
+animation: an 3s -.4s ease-in-out infinite alternate;}
+.f6{width:size(290);top:size(-200);left:size(90);transform-origin: 0% 0%;transform: rotate(4deg);
+animation: an 3s -.6s ease-in-out infinite alternate;}
+
+}
+@keyframes an{
+  to{
+    transform: rotate(0deg);
+  }
+}
+@keyframes an1{
+  to{
+    transform: rotate(-157deg);
+  }
+}
+@keyframes an2{
+  to{
+    transform:rotate(131deg);
+  }
 }
 
-.boxm,
-.box{position: absolute;left: size(210);bottom: 0;
-  z-index: 1;
-background:  linear-gradient(to right, #00427A 0%, #112A49 50%, #04142A 100%);
-  width: size(1710);height:size(170);}
 .txt{
-float: right;
+  float: left;
   position: relative;
-  padding-top: 0vw;
+  padding-top: 9.5vw;
   width: size(580);
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
-  line-height: 1.4;
   z-index: 2;
-  margin-right: size(210);
+  margin-left: size(210);
+  @include txt(size(18));
   }
 
-.title{
-  font-size:2.2em;
-  margin:0 auto 0;
-  color: #B00;
-}
-  .subtitle{font-size: 1.25em;
-    padding:.75em 0 0 0;
-  }
-.desc {
- // margin:1em auto;
-  padding:1em 0 0 0;
-  line-height: 1.6;
-  letter-spacing:0.05em;
-  font-weight: 300;
-  list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
-}
 
 /* Swipe */
 
 .swipe {position: relative;
-float: left;
+float: right;
  // position: absolute;
   width: size(840);
   height: size(560);
 // top: size(185);
  // left: size(210);
-  margin-left: size(210);
-  z-index: 3;
+  margin-right: size(210);
+  z-index: 3; 
+  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , 1vw);
+  &::before{content: "";position: absolute;display: block;
+  right: 0;bottom: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , 1vw);}
+  }
 }
 .slide-name {
     right:1.5em;
@@ -126,15 +149,10 @@ float: left;
   width: 100%;
   height: 100%;
   z-index: 0;
-  text-align: left;
-  .img1 {
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  .img2 {
-    height: size(44);
-    margin: size(25) 0 0 size(30);
   }
 }
 
@@ -161,53 +179,35 @@ float: left;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(-40);
-  right:0;
+  bottom: size(0);
+  right:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
-  font-size: size(20);
+    font-size: size(20);
+  .pagination-dot {
+    padding: 0.25em;
+    margin: 0 0.15em;
+    cursor: pointer;
+    z-index: 4;
 
-}
-.pagination-dot {
-  padding: 0.25em;
-  margin: 0 0.2em;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width:1em;
-    height:1em;
-    border-radius: 50%;
-    border: 0.2em solid  $pagination;
-    position: relative;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
+    span {
       display: block;
-    border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+      width:3em;
+      height:12px;
+      position: relative;
+      &::before{content: "";
+      transition: transform 0.5s, background 0.5s;
+      display: block;width: 100%;height:100%;
+      background: $pagination;
+        transform: scaleY(.25);transform-origin: 50% 50%;
     }
-    &.active {
-      box-shadow: none;
-      &::before {
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        transform: scale(1.6);
+      &.active {
+        &::before{  transform: scaleY(1);
+      background:$pagination-active;
+    }
       }
     }
   }
+
 }
 .swipe-btns {
   width: 100%;
@@ -237,38 +237,29 @@ float: left;
 }
 
 @media screen and (max-width: 767px) {
-  .section7 {
+  .section4 {
     width: 100%;
     height: auto;
-  padding:9vw 0 sizem(240) 0;
+    padding: 0 0 sizem(190) 0;
+  background-size: 250% auto;
+
   }
-.img{width: sizem(423);left:sizem(-28);top:auto;bottom:0;}
-.boxm{left:0;bottom:auto;top: sizem(0);
-  position: relative;
-  width: sizem(375);height:sizem(60);}
-.box{left:0;bottom:0;top:auto;
-  width: sizem(375);height:sizem(95);}
+  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
+.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1.5em auto 0;
-    left:0;
-    top:0;
+    margin:1em auto 3em;
     font-size: sizem(15);
-    .title{
-      font-size:1.9em;
-    }
-    .subtitle{
-      font-size:1.1em;
-    }
+    padding-top: 0;
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
     float: none;
-    height: sizem(255);
+    height: sizem(250);
     top:0;
     left:0;
   margin-left:0;
@@ -276,10 +267,6 @@ float: left;
 .swipe-item {
   .slide-name {
     font-size: sizem(12);
-  }
-  .img2 {
-    height: sizem(30);
-    margin: sizem(15) 0 0 sizem(15);
   }
 }
   .swipe-btns {
@@ -294,7 +281,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section7',
+  name: 'section4',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -308,24 +295,28 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img1: require('./s7/1.jpg'),
-          img2: require('./s7/1.png'),
-          name: '',
+          img: require('./s7/1.jpg'),
+          name: '微笑城堡',
         },
         {
-          img1: require('./s7/2.jpg'),
-          img2: require('./s7/2.png'),
-          name: '',
+          img: require('./s7/2.jpg'),
+          name: '福容大飯店 淡水漁人碼頭',
         },
         {
-          img1: require('./s7/3.jpg'),
-          img2: require('./s7/3.png'),
-          name: '',
+          img: require('./s7/3.jpg'),
+          name: '鵬程NEW1',
         },
         {
-          img1: require('./s7/4.jpg'),
-          img2: require('./s7/4.png'),
-          name: '',
+          img: require('./s7/4.jpg'),
+          name: '鵬程V1',
+        },
+        {
+          img: require('./s7/5.jpg'),
+          name: '麗寶集團提供建築保固，讓住戶更安心',
+        },
+        {
+          img: require('./s7/6.jpg'),
+          name: '麗寶樂園 天空之夢',
         },
       ],
     }

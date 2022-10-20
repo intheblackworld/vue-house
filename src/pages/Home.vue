@@ -15,13 +15,12 @@
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
+
 <!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
 
-
--->
 <VideoSection1  id="section2"
       :playBtn="require('@/projects/smilecastle/video/play-btn.png')"
       title="建築×美學影片"
@@ -48,6 +47,7 @@
         },
       ]"
     />
+  -->
     <vue-lazy-component
       class="section"
       id="section3"
@@ -79,6 +79,7 @@
     >
       <Section7 />
     </vue-lazy-component>
+<!--      
      <vue-lazy-component
       class="section"
       id="section8"
@@ -91,7 +92,6 @@
     >
     <Section9 />
     </vue-lazy-component>
-<!--      
     <vue-lazy-component
       class="section"
       id="section10"
@@ -181,13 +181,13 @@ import Section4 from '@/projects/smilecastle/Section4.vue'
 import Section5 from '@/projects/smilecastle/Section5.vue'
 import Section6 from '@/projects/smilecastle/Section6.vue'
 import Section7 from '@/projects/smilecastle/Section7.vue'
+/* 
 import Section8 from '@/projects/smilecastle/Section8.vue'
 import Section9 from '@/projects/smilecastle/Section9.vue'
-/* 
 import Section10 from '@/projects/smilecastle/Section10.vue'
 import Section10 from '@/projects/smilecastle/Section10.vue'
-import Section11 from '@/projects/smilecastle/Section11.vue' */
-import VideoSection1 from '@/components/VideoSection1.vue'
+import Section11 from '@/projects/smilecastle/Section11.vue'
+import VideoSection1 from '@/components/VideoSection1.vue' */
 
 export default {
   name: 'home',
@@ -206,14 +206,14 @@ export default {
     Section5,
     Section6,
     Section7,
+    /* 
     Section8,
     Section9,
-    /* 
     Section10,
     Section11,
     Section11,
-    */
     VideoSection1,
+    */
   },
   data() {
     return {
