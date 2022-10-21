@@ -1,234 +1,217 @@
 <template>
-  <div class="section1">
-    <!-- <img src="./s1/mo.jpg" class="t0" />  -->
-    <img src="./s1/bg-m.png" class="bg" v-if="isMobile" />
-    <img src="./s1/bg.png" class="bg" v-else />
-    <div data-aos="zoom-in" data-aos-delay="400" class="light1"><img src="./s1/light.png" /></div>
-    <div class="txt">
-      <div data-aos="zoom-in" data-aos-delay="300" class="light2"><img src="./s1/light.png" /></div>
-      <img src="./s1/logo.png" data-aos="fade" data-aos-delay="0" data-aos-duration="300" alt="logo" class="logo">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="100">嘉義 璀璨登場</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="200">VAF活氧系統<span></span>市心重劃區<b>2-3</b>房</div>
-    </div>
+  <div>
+    <div class="section1">
+    <wimg class="w1 absolute" v-if="!isMobile" loading="lazy" />
 
-    <!-- 
-    <div class="img" data-aos="zoom-in-left">
-      <img src="./s1/1.png" alt="img" class="img1">
-      <img src="./s1/2.png" alt="img" class="img2">
-      <img src="./s1/butterfly.gif" alt="img" class="img3">
-    </div>
-    <div class="logo">
-      <img src="./s1/logo1.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo1">
-      <img src="./s1/logot.png" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logot">
-      <img src="./s1/logof.png" data-aos="fade" data-aos-delay="400" alt="logo" class="logof">
-    </div>
 
-    <div class="txt">
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">居高美地 風尚生活宅</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="800"><span>玩美2-3房</span>台大竹東分院旁</div>
-      <img src="./s1/035957999.png" data-aos="zoom-in" data-aos-delay="1000" alt="035957999" class="phone">
+      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="" loading="lazy">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+      <!--   -->   <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" loading="lazy">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" loading="lazy">
+          </div>
+        </div>
+      </div>
     </div>
-      -->
   </div>
 </template>
-
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section1 {
-  width: 100%;
+.section1 {  
+  width:100%;
+  height:auto;
+  position: relative;
+  padding: 0 0 1.7vw 0;
+}
+/* Swipe */
+.swipe {
+  position: relative;
+  margin: auto;
+  width: size(1920);
   height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
- // overflow: hidden;
-  position: relative;
-  background: url("./s1/bg.jpg") center;
-  background-size:100% auto;
-}
-.t0{
-  position: absolute;
-  width: 100%;height:auto;
-  top:0;
-  left:0;object-fit: cover;
-  opacity: .5;
-  }
-.bg{
-  position: absolute;
-  width: 100%;height:auto;
-  top:calc(50% + (986 - 540) * 100vw / 1920);
-  left:0;object-fit: cover;
-  z-index: 0;
-  }
-.light1{
-  position: absolute;
-  top: calc(50% + 4vw);
-  width:size(160);
-  left:65.5%;
+  // left: size(210);
+  object-fit: cover;
   z-index: 3;
-  img{width: 100%;
-  animation: light1 3s linear infinite;}
-  }
-.light2{
-  position: absolute;
-  top: size(55);
-  width:size(75);
-  left:46.5%;
-  z-index: 3;
-  transform: rotate(360deg);
-  img{width: 100%;
-  animation: light1 3s linear infinite;}
-  }
-@keyframes light1{
-    0%{
-      transform: rotate(180deg) scale(.3);
-    }
-    50%{
-      transform: rotate(0) scale(1);
-    }
-    100%{
-      transform: rotate(-180deg)scale(.3);
-    }
+  box-shadow: .3vw .3vw .7vw #0006;
 }
-.txt{
-  position: relative;
-  // top:calc(50% + (253 - 540) * 100vw / 1920);
- //  left:size(-260);
- top:calc(37% + (104 - 1080 * 0.37) * 100vw / 1920);
-  font-size: size(45);
-  line-height: 1.35;
-  color: transparent;
-  text-align: center;
- // width:size(850);
-    letter-spacing:0.02em;
-  font-weight: 700;
-  filter: drop-shadow(0 0 7px #eff);
-.logo{
-  position: relative;
-  margin:0 auto 0.35em;
-  width:size(397);
-  }
-  
-  .t1{
-  background: linear-gradient(135deg, #006180 38%,#2180a4 44%,#006180 50%,#2180a4 56%,#006180 62%);//#006180 #2180a4
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-size: 1.43em;font-weight: 900;
-  &::before,
-  &::after{
-    content: "";
-    display: inline-block;
-    height: 2px;
-    width: 1.6em;
-    background: #006180;
-    vertical-align: middle;
-    margin:-0.2em 0.55em 0;
-    }
-    }
-  .t2{font-weight: 900;
-  background: linear-gradient(135deg, #006180 38%,#2180a4 44%,#006180 50%,#2180a4 56%,#006180 62%);//#006180 #2180a4
-  background-clip: text;
-  span{display: inline-block;
-  &::after{
-    content: "";
-    display: inline-block;
-    width: 2px;
-    height: 0.82em;
-    background: #006180;
-    vertical-align: middle;
-    margin:-0.2em 0.45em 0;
-  }
-  }
-  b{font-size: 1.2em;font-weight: 900;
-    vertical-align: -.05em;}
-  }
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
 
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
 }
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// pagination
+.pagination {
+  width: auto;
+  bottom: size(20);
+  right: size(960);
+  justify-content: center;
+  font-size: size(15);
+}
+.pagination-dot {
+  padding: 0.25em;
+  margin: 0 0.2em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width:1em;
+    height:1em;
+    border-radius: 50%;
+    border:  2px solid  $pagination;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+    border-radius: 50%;
+   // border:  2px solid  $pagination-active;
+   background: #fff;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75em 0 0.75em;
+  z-index: 3;
+  font-size: size(20);
+
+  .prev-btn,
+  .next-btn {
+    width: 1em;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
-  .section1 {
-    min-height: sizem(604);
-    max-height: sizem(750);
-    height: calc(100vh - 63px);
-  margin: 0 0 0;
-  background-image: url("./s1/bg-m.jpg");
+  .section5 {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: initial;
   }
-.bg{
-  top:calc(50% + (586 - 302) * 100vw / 375);
+  /* Swipe */
+  .swipe {
+    position: relative;
+    width:sizem(375);
+    height: 100vh;
+    box-shadow: 0.5vw 0.5vw 1.5vw #0006;
   }
-.light1{
-  top: calc(50% + 38vw);
-  width:sizem(80);
-  left:75%;
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
   }
-.light2{
-  top: sizem(17);
-  width:sizem(75);
-  left:35.5%;
-  }
-.img{top:calc(50% + 10vw);
-  width:sizem(208);
-  right:sizem(-48);
-    .img2{
-    top: -13%;
-    left: 30%;
-    width: 25.2%;
-
-    }
-    .img3{
-    top: -18%;
-    left: 16%;
-    width: 51.9%;
-
-    }
 }
-
-
-.logo{
-  width:sizem(287);
-  top: calc(50% - 35vw);
-  }
-.txt{
-  font-size: sizem(24);
-  top:calc(30% + (95 - 604 * .3) * 100vw / 375);
-.logo{
-  width:sizem(240);
-  margin:0 auto 0.6em;
-  }
-  .t1{font-size: 1.25em;
-  &::before,
-    &::after{
-      height: 1px;
-      width: .75em;
-      margin:-0.2em 0.3em 0;
-    }
-  }
-
-  .t2{
-    width: 10.5em;
-  margin:0.65em auto 0.6em;
-  padding:0.2em 0 ;
-border: 1px solid #006180;
-  span{display: block;
-  &::after{display: none;
-  }
-  }
+  .swipe-btns {
+  font-size: sizem(15);
   }
 }
 
-
-}
 </style>
 <script>
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+import wimg from './w.vue'
 
 export default {
-  name: 'section1',
+  name: 'section5',
+
+  mixins: [slider],
+  props: ['viewIndex'],
+  components: {
+    wimg,
+  },
 
   data() {
     return {
@@ -236,15 +219,35 @@ export default {
       isPC,
       isMobile,
       isTablet,
+      isDialog: false,
+      slideList: [
+        {
+          img: isMobile?require("./s1/slider/slider_1_m.jpg"):require("./s1/slider/slider_1.jpg"),
+          name: '',
+        },
+        {
+          img: isMobile?require("./s1/slider/slider_2_m.jpg"):require("./s1/slider/slider_2.jpg"),
+          name: '',
+        },
+      ],
     }
   },
 
   methods: {},
 
-  mounted() {},
-
   created() {},
 
+  mounted() {},
+
   computed: {},
+
+  watch: {
+    viewIndex() {
+      if (this.viewIndex === 7) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
+  },
 }
 </script>
