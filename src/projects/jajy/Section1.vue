@@ -34,6 +34,8 @@
 .section1 {
   width: 100%;
   height: 100vh;
+  min-height: size(900);
+  max-height: size(1080);
   position: relative;
  // background: url("./s2/pc.png");
 }
@@ -59,7 +61,7 @@
 /* Swipe */
 .swipe {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 1;
 }
 
@@ -94,6 +96,8 @@
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .slide-name {
