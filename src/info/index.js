@@ -2,11 +2,11 @@ import { isMobile } from '../utils/index'
 export default {
   address: '台中市太平區立功路182號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14562.009388335817!2d120.70625676827464!3d24.154109079149517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346922aa5f06207d%3A0xd045e44d2a1a5b6a!2zNDEx5Y-w5Lit5biC5aSq5bmz5Y2A56uL5Yqf6LevMTgy6Jmf!5e0!3m2!1szh-TW!2stw!4v1666161741722!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/7S63qwguej7DHRm4A',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7281.02115119459!2d120.7144321!3d24.1538203!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x695ba004dc75cbc!2z5b6u56yR6I6K5ZyS!5e0!3m2!1szh-TW!2stw!4v1666334970905!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/vH4nH8VPRyD1aA6K6',
   phone: '04-2398-1111',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  fbLink: 'https://www.facebook.com/PC.SMILECASTLE',
+  fbMessage: 'https://m.me/PC.SMILECASTLE',
   caseName: '微笑莊園',
   indigatorLength: 10,
 
@@ -18,7 +18,7 @@ export default {
     ['行銷企劃', '海沃創意行銷',],
   ],
 
-  gtmCode: ['TJ344HX'], // 可放置多個
+  gtmCode: [''], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',

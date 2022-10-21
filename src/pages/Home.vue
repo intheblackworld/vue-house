@@ -14,11 +14,11 @@
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-
-<!--
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
+
+<!--
 
 <VideoSection1  id="section2"
       :playBtn="require('@/projects/smilecastle/video/play-btn.png')"

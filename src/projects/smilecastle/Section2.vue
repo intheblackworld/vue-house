@@ -46,7 +46,7 @@
   overflow: hidden;
   // position: relative;
   height: size(800);
-  margin: 0;
+  margin: 0 0 5vw 0;
   &::after {
     content: '';
     display: block;
@@ -115,11 +115,11 @@
 
 @media screen and (max-width: 767px) {
   .section2 {
-    margin: 0;
     overflow: hidden;
     width: 100vw;
     height: size-m(350);
     position: relative;
+  margin: 0 0 10vw 0;
   }
 
   .video_box {

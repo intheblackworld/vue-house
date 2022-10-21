@@ -102,7 +102,7 @@ animation: an 3s -.6s ease-in-out infinite alternate;}
 .txt{
   float: left;
   position: relative;
-  padding-top: 9.5vw;
+  padding-top: 7vw;
   width: size(580);
   z-index: 2;
   margin-left: size(210);
