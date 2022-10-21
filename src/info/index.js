@@ -7,19 +7,19 @@ export default {
   phone: '04-2255-3338',
   fbLink: 'https://www.facebook.com/100082849226852/',
   fbMessage: 'https://m.me/100082849226852/',
-  caseName: 'VVS1',
+  caseName: 'sjzy',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '潤隆建設',],
-    ['建築設計', '李明哲建築師事務所',],
-    ['公設設計', 'Pia Interior',],
-    ['外觀景觀', 'MAG玫格設計',],
-    ['銷售企劃', '巨豐旅館管理顧問',],
-    ['建照號碼', '103中都建字第02657號',],
+    ['投資興建', '',],
+    ['建築設計', '',],
+    ['公設設計', '',],
+    ['外觀景觀', '',],
+    ['銷售企劃', '',],
+    ['建照號碼', '',],
   ],
 
-  gtmCode: ['TJ344HX'], // 可放置多個
+  gtmCode: ['WRD7T6M'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
