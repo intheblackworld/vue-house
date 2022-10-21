@@ -227,19 +227,34 @@ float: right;
   .section4 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
+    padding: 0;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+  
+
+.img{top:auto;bottom:sizem(0);z-index: 4;
+
+  .f1{
+    width: sizem(77);
+    top: -16.6vw;
+    left: 14.3vw;
+}
+.f3{width:sizem(36);
+    top: -33.5vw;
+    left: 24vw;
+}
+.f4{width:sizem(155);
+    top: -23.5vw;
+    left: -13vw;}
+.f5{width:sizem(114);top:sizem(-40);left:sizem(60);}
+}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1em auto 3em;
     font-size: sizem(15);
     padding-top: 0;
+    margin:2em auto 6em;
   }
   /* Swipe */
   .swipe {

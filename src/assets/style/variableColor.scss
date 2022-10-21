@@ -48,49 +48,49 @@ $order_input_bg: #fff !important;
 $order_input_border: solid 0px #988068; 
 $order_input_focus_border: solid 1px #fff !important;
 $order_input_selected_color: solid 1px #fff !important;
-$order_check_desc_color: #00235E !important;
+$order_check_desc_color: #000 !important;
 $order_check_span_color: #C00 !important;
-$order_submit_bg: #00235E !important;
+$order_submit_bg: #D96251 !important;
 $order_submit_color: #FFF !important;
 $order_sumbit_disable_bg: #FFF !important;
 
 // contactInfo
-$contact_bg: url("~@/projects/vvs1/s1/bg.jpg") top center;
+$contact_bg:#86B593;
 $contact_bg_m:transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border:0px solid #00235E;
-$contact_btn_color: #000;
-$contact_btn_icon: #00235E;
-$contact_btn_bg: #fff;
-$contact_btn_hover_color: #000;
-$contact_btn_hover_icon: #000;
-$contact_btn_hover_bg: #00ccff;
+$contact_btn_color: #FFF;
+$contact_btn_icon: #FFF;
+$contact_btn_bg: #D96251;
+$contact_btn_hover_color: #FFF;
+$contact_btn_hover_icon: #FFF;
+$contact_btn_hover_bg: #b44320;
 
-$contact_google_btn_color: #00235E;
-$contact_google_btn_icon: #00235E;
-$contact_google_btn_bg: #FFF;
-$contact_google_hover_btn_color: #000;
-$contact_google_hover_btn_icon: #000;
-$contact_google_hover_btn_bg: #00ccff;
+$contact_google_btn_color: #FFF;
+$contact_google_btn_icon: #FFF;
+$contact_google_btn_bg: #D96251;
+$contact_google_hover_btn_color: #FFF;
+$contact_google_hover_btn_icon: #FFF;
+$contact_google_hover_btn_bg: #D96251;
 
 // houseInfo
-$house_bg: url("~@/assets/img/house_bg.png") no-repeat bottom;
+$house_bg: #FFF;
 $house_title_color: #00235E;
 $house_border_color: #00235E;
 $house_label_color: #00235E;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background: #00235E;
+$mobile_nav_background: #86B593;
 $mobile_nav_color: #fff;
-$mobile_nav_border:#7c949e;
+$mobile_nav_border:#698170;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #00537A;
+$mobile_dialog_icon: #86B593;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #00537A;
+$mobile_dialog_submit_bg: #86B593;
 $mobile_dialog_submit_color: #fff;
 
 

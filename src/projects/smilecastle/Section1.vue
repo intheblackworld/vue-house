@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
     <!-- 
+    <img src="./s1/mo.jpg" class="t0" />
    -->
-    <img src="./s1/pc.jpg" class="t0" />
     <img src="./s1/0.png" class="img0" data-aos="zoom-in" data-aos-delay="200" />
 
    
@@ -40,7 +40,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
  // overflow: hidden;
   position: relative;
@@ -56,7 +56,7 @@
   }
 .img0{
     position: absolute;left:size(-120);;width:size(820);
-  top:size(460);transform-origin: 0% 50%;
+  bottom:size(-520);transform-origin: 0% 50%;
   }
 
 .imglt{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
@@ -150,13 +150,13 @@ animation: an3 3s ease-in-out infinite alternate;}
 @media screen and (max-width: 767px) {
   .section1 {
     min-height: sizem(604);
-    max-height: sizem(604);
+    max-height: sizem(750);
     height: calc(100vh - 63px);
   background-size: 250% auto;
   }
 
   .img0{left:sizem(-150);;width:sizem(390);
-  top:sizem(300);transform-origin: 0% 50%;
+  bottom:sizem(-230);transform-origin: 0% 50%;
   }
 .imglt{
 .f1{width:sizem(113);top:sizem(-90);left:sizem(-40);}

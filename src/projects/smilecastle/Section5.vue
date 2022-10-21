@@ -198,19 +198,20 @@ float: left;
   .section5 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
+    padding: 0;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+.img{top: 100%;
+.f2{width:sizem(105);top:sizem(100);right:sizem(-127);}
+
+}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1em auto 3em;
     font-size: sizem(15);
   padding-top: 0;
+    margin:2em auto 6em;
   }
   /* Swipe */
   .swipe {

@@ -1,5 +1,14 @@
 <template>
   <div class="order-bg" ref="parallax2">
+    <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+      <div>
+      <div>
+    <img src="@/projects/smilecastle/all/f6.png" class="f6" />
+  </div>
+    <img src="@/projects/smilecastle/all/f3.png" class="f3" />
+    <img src="@/projects/smilecastle/all/f1.png" class="f1" />
+  </div>
+    </div>
     <div class="order-top">
       <div class="title-block">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>
@@ -291,6 +300,43 @@ export default {
   right: -#{size(50)};
   width: size(148);
 }
+.img{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
+img{position:absolute;} 
+> div{
+ transform:rotate(72deg);
+> div{
+ transform:rotate(-151deg);
+}
+}
+.f1{
+    width: 10vw;
+    top: -9vw;
+    left: 0vw;
+  transform:rotate(3deg);
+  transform-origin: 90% 100%;
+animation: an 3s -.4s ease-in-out infinite alternate;
+}
+.f3{
+    width: 5vw;
+    top: -15vw;
+    left: 4vw;
+  transform: rotate(4deg);
+  transform-origin: 90% 100%;
+animation: an 3s -.8s ease-in-out infinite alternate;}
+.f6{
+    width: 14vw;
+    top: -4vw;
+    left: -15vw;
+  transform-origin: 0% 0%;
+  transform:rotate(3deg);
+animation: an 3s -.6s ease-in-out infinite alternate;}
+
+}
+@keyframes an{
+  to{
+    transform: rotate(0deg);
+  }
+}
 .bg-img {
   width: 110%;
   position: absolute;
@@ -330,13 +376,13 @@ export default {
   position: relative;
    // font-family: $family1;
   // width: size(1500);
-  // font-family: 'Noto Serif TC', serif;
+   font-family: 'Noto Serif TC', serif;
     padding-top:2em;
     padding-bottom:0;
     font-weight:700;
   line-height:1.6;
   font-size: size(39);
-    letter-spacing: size(10);
+    letter-spacing: 0.06em;
     text-indent: size(10);
     text-align: center;
     color: $order_title_color;
@@ -399,7 +445,7 @@ export default {
   }
 
   .group {
-    height: 300px;
+    height: 240px;
     margin-bottom: 40px;
     align-content: space-between;
     display: flex;
@@ -488,6 +534,35 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+
+  
+.img{right: 0;left: auto;
+> div{
+ transform:rotate(110deg)scaleY(-1);
+> div{
+ transform:rotate(-151deg);
+}
+}
+.f1{
+    width: 22vw;
+    top: -26vw;
+    left: auto;
+    right: 1vw;
+}
+.f3{
+    width: 9vw;
+    top: -38vw;
+    left: auto;
+    right: 3vw;
+  }
+.f6{
+    width: 25vw;
+    top: -9vw;
+    left: auto;
+    right: -20vw;
+  }
+
+}
   .order-bg {
     //background-color: $order_bg_color;
     background-image: $order_bg_image_m;

@@ -35,7 +35,7 @@ export default {
 @import '@/assets/style/variableColor.scss';
 .house-info {
   width: 100vw;
- // background:$house_bg;
+  background:$house_bg;
   background-size: 100% auto;
   position: relative;
   z-index: 1;
@@ -56,9 +56,10 @@ export default {
   margin: 60px 0;
   font-weight: 500;
   color: $house_title_color;
-  //font-family: $family3;
   font-weight: bold;
   letter-spacing: 0.06em;
+  font-family: 'Noto Serif TC',sans-serif;
+
 }
 
 .info {
@@ -67,10 +68,10 @@ export default {
 }
 
 .item {
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom:2em;
   margin-right: 10em;
-  width: 260px;
+  width:10em;
   //height: 30px;
   line-height: 1.4;
   //border-left: 4px solid $house_border_color;
@@ -94,7 +95,7 @@ export default {
   }
 
   .desc {
-    font-size: 14px;
+    font-size:1em;
     text-align: left;
     color: $house_desc_color;
   //  font-family: $family3;
@@ -123,13 +124,11 @@ export default {
 
   .item {
     align-items: flex-start;
-    margin: 10px 0 10px 20px;
+    margin: 15px 0 10px 20px;
     width: 100%;
     height: auto;
     white-space: normal;
-  .desc {
-    font-size: 14px;
-  }
+    font-size: 15px;
   }
 
   .info {

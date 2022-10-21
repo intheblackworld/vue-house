@@ -221,18 +221,33 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
     height: auto;
     min-height: auto;
     max-height: initial;
-  //padding: 0;
-  background-size: 250% auto;
+  padding: 0;
   }
-  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
+  .img{
+    > div{ transform: rotate(-37deg);}
+    .f2{width:sizem(110);
+    top: -3vw;
+    left: -4vw;}
+.f3{width:sizem(30);
+    top: -30vw;
+    left: 9vw;}
+.f4{width:sizem(131);
+    top: -1vw;
+    left: 2vw;}
+.f5{width:sizem(103);
+    top: 2vw;
+    left: -12vw;}
+
+  
+  }
   .txt{
     position: relative;
     width: sizem(320);
-    margin:0em auto 3em;
+    margin:2em auto 6em;
     left:0;
     top:0;
     font-size: sizem(15);
-  padding-top: 7vw;
+  padding-top:0;
     .title{
       font-size:1.9em;
     }
@@ -244,7 +259,7 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(255);
+    height: sizem(270);
     top:0;
     left:0;
   }

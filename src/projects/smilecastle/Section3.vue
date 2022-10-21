@@ -12,6 +12,7 @@
       <div class="desc" data-aos="fade-up" data-aos-delay="300">大臺中裡碩果僅存的超值補漲重劃區，不僅位於74環內，同時享有成熟生活機能與順暢交通機能，一線可抵高鐵台中站與市政特區，【新光特區】大台中最後一匹黑馬，絕對值得。</div>
       </div>
    <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+    <img src="./all/f6.png" class="f3" v-if="isMobile" />
     <img src="./all/f3.png" class="f2" />
     <img src="./all/f1.png" class="f1" />
     </div>
@@ -104,11 +105,24 @@ animation: an 3s -.4s ease-in-out infinite alternate-reverse;}
     min-height: auto;
     max-height: initial;
   }
-  .img{width: sizem(300);left: sizem(45);bottom: sizem(-50);}
+.img{bottom: 0;top:auto;
+.f1{width:sizem(88);top:auto;bottom:sizem(-10);left:sizem(-110);}
+.f2{width:sizem(39);top:auto;bottom:sizem(-10);left:sizem(-60);}
+.f3{width:sizem(113);top:sizem(50);left:sizem(-60);
+  transform-origin: 0% 0%;transform: rotate(-80deg);
+ animation: an1 3s -.6s ease-in-out infinite alternate;
+}
+
+}
+@keyframes an1{
+  to{
+    transform: rotate(-85deg);
+  }
+}
   .txt{
     position: relative;
     width: sizem(320);
-   // margin:0 auto 4em;
+    margin:2em auto 6em;
     font-size: sizem(15);
   }
 .pic{

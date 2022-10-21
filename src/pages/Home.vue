@@ -11,7 +11,6 @@
       id="fullpage"
     > -->
     <!-- <LeafFlow /> -->
-    <div class="bg1">
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
@@ -66,7 +65,6 @@
     >
       <Section5 />
     </vue-lazy-component>
-  </div>
     <vue-lazy-component
       class="section"
       id="section6"

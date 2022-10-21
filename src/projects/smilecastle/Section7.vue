@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section4">
+    <div class="section7">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -46,7 +46,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
+.section7 {
   width:100%;
   height:auto;
   position: relative;
@@ -237,20 +237,40 @@ float: right;
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section7 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
+    padding: 0;
 
   }
-  .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
-.img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
+  .img{
+.f1{
+    width:sizem(57);
+    top: -32.6vw;
+    left: -7.7vw;
+}
+.f2{width:sizem(95);
+    top: 16.4vw;
+    left: -12.7vw;}
+.f3{width:sizem(25);
+    top: -28.6vw;
+    left: -16.7vw;}
+.f4{width:sizem(112);
+    top: -8.5vw;
+    left: -37vw;}
+.f5{width:sizem(89);
+    top: -8vw;
+    left: -19.8vw;}
+.f6{width:sizem(73);
+    top: -2.6vw;
+    left: -12.7vw;}
+
+}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
-    margin:1em auto 3em;
+    margin:2em auto 6em;
     font-size: sizem(15);
     padding-top: 0;
   }
@@ -281,7 +301,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section4',
+  name: 'section7',
 
   mixins: [slider],
   props: ['viewIndex'],
