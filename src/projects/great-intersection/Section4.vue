@@ -161,7 +161,7 @@ position: absolute;
 /* Swipe */
 .swiper {
   width: 100%;
-  height: size(586);
+  height: size(480);
  // z-index: 1;
     position: relative;
 }
