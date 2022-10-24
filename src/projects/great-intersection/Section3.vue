@@ -388,7 +388,7 @@ export default {
       slideList: [
         {
           img: require("./s3/1.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s3/2.jpg"),

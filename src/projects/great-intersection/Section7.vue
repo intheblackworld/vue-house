@@ -61,7 +61,7 @@
         <li data-aos="zoom-in" data-aos-delay="700">核心雙軸線</li>
       </ul>
       <ul class="desc desc3">
-        <li data-aos="zoom-in" data-aos-delay="800">五大就業園區</li>
+        <li data-aos="zoom-in" data-aos-delay="800">七大就業園區</li>
         <li data-aos="zoom-in" data-aos-delay="900">雙捷交匯線</li>
       </ul>
     </div>

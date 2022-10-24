@@ -425,15 +425,15 @@ export default {
       slideList: [
         {
           img: require("./s4/1.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s4/2.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
         {
           img: require("./s4/3.jpg"),
-          name: "情境示意參考圖",
+          name: "實景拍攝",
         },
       ],
     }
