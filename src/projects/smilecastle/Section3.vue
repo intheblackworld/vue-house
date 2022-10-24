@@ -1,13 +1,19 @@
 <template>
   <div>
     <div class="section3">
+      <div class="txt" v-if="!isMobile">
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >74環內 最後黑馬補漲</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">
+        大臺中裡碩果僅存的超值補漲重劃區，不僅位於74環內，<br />同時享有成熟生活機能與順暢交通機能，<br />
+        一線可抵高鐵台中站與市政特區，<br />【新光特區】大台中最後一匹黑馬，絕對值得。</div>
+      </div>
       <div class="pic">
         <div class="box" v-if="!isMobile"></div>
         <img src="./s3/1.jpg" alt="" />
         <img src="./s3/1.png" alt="" class="img2" />
-        <div class="name">台74線串聯大台中，正環內優質生活</div>
+        <div class="slide-name">台74線串聯大台中，正環內優質生活</div>
       </div>
-      <div class="txt">
+      <div class="txt" v-if="isMobile">
       <div class="title" data-aos="fade-up" data-aos-delay="200" >74環內 最後黑馬補漲</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">大臺中裡碩果僅存的超值補漲重劃區，不僅位於74環內，同時享有成熟生活機能與順暢交通機能，一線可抵高鐵台中站與市政特區，【新光特區】大台中最後一匹黑馬，絕對值得。</div>
       </div>
@@ -26,7 +32,7 @@
   width:100%;
   height:auto;
   position: relative;
-  padding: 3vw 0 5vw;
+  padding: 0vw 0 5vw;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -51,6 +57,9 @@ animation: an 3s -.4s ease-in-out infinite alternate-reverse;}
   margin: 1em auto 3em auto;
   z-index: 2;
   @include txt(size(18));
+    text-align: center;
+
+
   }
 
   .pic{
@@ -58,9 +67,9 @@ animation: an 3s -.4s ease-in-out infinite alternate-reverse;}
   margin: auto;
   width: size(1500);
   height: size(845);
-  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , -1vw);
+  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , 1vw);
   &::before{content: "";position: absolute;display: block;
-  right: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , -1vw);}
+  right: 0;bottom: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , 1vw);}
   }
   img{width: 100%;position: relative;
     height: 100%;
@@ -69,21 +78,7 @@ animation: an 3s -.4s ease-in-out infinite alternate-reverse;}
     filter: drop-shadow(.1vw .1vw .2vw rgba(0, 0, 0, 1));
   }
   }
-  .name {
-    position: absolute;
-    right:1em;
-    bottom:0.5em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: 0.06em;
-    text-align: left;
-   text-shadow:0 0.1em 0.3em #000;
-}
-
+  @include name();
   }
 @media only screen and (max-width: 1440px) {
 }
@@ -124,6 +119,7 @@ animation: an 3s -.4s ease-in-out infinite alternate-reverse;}
     width: sizem(320);
     margin:2em auto 6em;
     font-size: sizem(15);
+    text-align: justify;
   }
 .pic{
 width:100%;

@@ -105,20 +105,8 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
   right: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , -1vw);}
   }
 }
-.slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-}
+
+@include name();
 
 .swipe-wrap {
   width: 100%;
@@ -263,11 +251,7 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
     top:0;
     left:0;
   }
-.swipe-item {
-  .slide-name {
-    font-size: sizem(12);
-  }
-}
+
   .swipe-btns {
   font-size: sizem(15);
   }
@@ -310,10 +294,11 @@ export default {
           img: require('./s6/4.jpg'),
           name: '建築空間，現場實景經電腦修飾示意',
         },
-        {
+    /*    {
           img: require('./s6/5.jpg'),
           name: '建築空間，現場實景經電腦修飾示意',
         },
+        */
         {
           img: require('./s6/6.jpg'),
           name: '建築空間，現場實景經電腦修飾示意',

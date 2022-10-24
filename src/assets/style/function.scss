@@ -52,3 +52,25 @@ $pagination-active:#fff;
   }
 }
 // 主要文字樣式 END
+
+
+//圖說樣式
+@mixin name() {
+  .slide-name{
+  position: absolute;
+  right:1em;
+  bottom:0.5em;
+  color: #fff;
+  font-size: size(15);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-align: left;
+ text-shadow:0 0.1em 0.3em #000;
+}
+ @media screen and (max-width: 767px) {
+  .slide-name{font-size: sizem(12);} 
+}
+}

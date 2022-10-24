@@ -84,20 +84,8 @@ float: left;
   left: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(-1vw , -1vw);}
   }
 }
-.slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-}
+
+@include name();
 
 .swipe-wrap {
   width: 100%;
@@ -223,11 +211,7 @@ float: left;
     left:0;
   margin-left:0;
   }
-.swipe-item {
-  .slide-name {
-    font-size: sizem(12);
-  }
-}
+
   .swipe-btns {
   font-size: sizem(15);
   }
