@@ -15,13 +15,13 @@
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1 />
     </vue-lazy-component>
-<!--
+
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
 
 
--->
+
 <!--
 <VideoSection1  id="section2"
       :playBtn="require('@/projects/sjzy/video/play-btn.png')"
@@ -56,19 +56,22 @@
     >
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
+
     <vue-lazy-component
       class="section"
       id="section4"
     >
       <Section4 />
     </vue-lazy-component>
+</div>
+<!--     
     <vue-lazy-component
       class="section"
       id="section5"
     >
       <Section5 />
     </vue-lazy-component>
-  </div>
+  
     <vue-lazy-component
       class="section"
       id="section6"
@@ -93,7 +96,7 @@
     >
     <Section9 />
     </vue-lazy-component>
-<!--      
+     
     <vue-lazy-component
       class="section"
       id="section10"

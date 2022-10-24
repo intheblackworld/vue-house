@@ -2,7 +2,7 @@
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
 
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -106,7 +106,7 @@ export default {
   background-attachment: fixed;
   background-position: 0% 50%; */
   transform: translateY(0);
-  margin: 3vw auto 0vw;
+  margin: 20vw auto 0vw;
   //padding: 30px 0 40px;
   padding: 3vw 0;
   line-height: 1.4;
@@ -138,7 +138,7 @@ export default {
   background: $contact_btn_bg;
  // box-shadow: $contact_btn_border;
   border: $contact_btn_border;
-  border-radius: 60px ;
+  border-radius: 0px ;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -187,7 +187,7 @@ export default {
 }
 .addressall{
   width: 99%;
-  border-radius:60px ;
+  border-radius:0px ;
   background: #EEE;
 }
 .address {
@@ -214,8 +214,7 @@ export default {
   background-position: center !important;
   border: $contact_btn_border;
   transition: all 0.5s;
-  border-radius:60px ;
-  box-shadow: -2px 0 5px 1px #00235E;
+  border-radius:0px ;
   font-weight: 600;
 
   svg {

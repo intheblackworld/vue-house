@@ -2,9 +2,12 @@
   <div class="section1">
     <div class="txt">
       <img src="./s1/logo.png" class="logo">
+      <div v-if="isPC" class="t1"  data-aos="zoom-in" data-aos-delay="600">聯發開發事業有限公司</div>
     </div>
+    <div v-if="isMobile" class="t1"  data-aos="zoom-in" data-aos-delay="600">聯發開發事業有限公司</div>
       <img src="./s1/bg_mask.png" class="mask">
-      <img src="./s1/srtye_1.png" class="style1">
+      <img v-if="isPC" src="./s1/srtye_1.png" class="style1">
+      <img v-else src="./s1/srtye_1_m.png" class="style1">
   </div>
 </template>
 
@@ -31,7 +34,7 @@
 } 
 .style1{
   position: absolute;
-  width:size(612);
+  width:size(550);
   top:0;
   left: 0;
   mix-blend-mode: hard-light ;
@@ -54,6 +57,15 @@ position: relative;
   position: relative;
   width:size(800);
   }
+ .t1{
+  font-size: size(20);
+  position: absolute;
+  right:size(150);
+  z-index: 10;
+  color: #000;
+  bottom:size(30);
+  font-weight: 700;
+ } 
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -72,19 +84,34 @@ position: relative;
 .mask{
   width:sizem(375);
   bottom:sizem(0);
-  left: 0;
-  right:0;
+  z-index: 1;
 } 
+
+
+.style1{
+  width:sizem(160);
+  left: sizem(0);
+  top: sizem(0)
+} 
+
+.t1{
+  font-size: sizem(15);
+  right:sizem(30);
+  bottom:sizem(120);
+  position: absolute;
+  font-weight: 700;
+  z-index: 11;
+ }  
 
 .txt{
   font-size: sizem(14);
-  top:calc(50% + (180 - 302) * 100vw / 375);
+  top:calc(50% + (100 - 302) * 100vw / 375);
   line-height: 1.1;
 
 .logo{
   width:sizem(300);
   z-index: 10;
-  }
+  } 
 
 }
 

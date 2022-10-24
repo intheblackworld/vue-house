@@ -2,7 +2,8 @@
   <div class="section3" id="scene">
     <Map :tagList="tagList" :bgSrc="bgSrc" :bgSrcpng="bgSrcpng" :hand="hand"></Map>
     <div class="mask" @click="showMask = false" v-show="showMask"></div>
-    
+    <img v-if="isPC" src="./s1/srtye_1.png" class="style1">
+    <img v-else src="./s1/srtye_1_m.png" class="style1">
   </div>
 </template>
 <style lang="scss" scoped>
@@ -15,6 +16,20 @@
   height:auto;
  // background: #0006;
   padding: 3vw 0;
+
+  .map{
+  width: 80%;
+  margin: 0px auto;
+  }
+
+  .style1{
+  position: absolute;
+  width:size(380);
+  top:size(-250);
+  left: 0;
+  mix-blend-mode: hard-light ;
+  z-index: -1;
+} 
 }
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -26,11 +41,23 @@
     width: size-m(375);
     height: auto;
   padding: 8vw 0;
+
+  .style1{
+  width:sizem(160);
+  left: sizem(0);
+  top: sizem(-50)
+}
+
+  .map{
+  width: 100%;
+  }
    
   .bg{
   width: calc(100% * 400 / 375);
   top:size-m(-20);
   }
+
+  
   }
 }
 // 避免內容電腦過渡平板時，設計未考量的調整

@@ -1,35 +1,20 @@
 <template>
   <div>
     <div class="section4">
-      <img src="./s4/bg.png" alt="" class="bg" />
-      <img src="./s4/img.png" alt="" data-aos="fade" class="img" />
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
-          </div>
-        </div>
-     <!--  --><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> 
-      </div>
+      <img  src="./s4/mapimg.png" alt="" data-aos="fade" class="mapimg" />
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">市政府站×文心櫻花站</div>
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">近1500坪黃金角地×繁榮市心</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">機場、台中港、高鐵交通便利無國界；市府站VS文心櫻花站，綠線捷運250M讀秒返家，樂享七期豐富生活圈，新光三越、大遠百、星級餐廳、銅板美食、日用選購等，「應有近有」食衣住行娛樂，全面掌握。
-</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">建案資訊</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">
+        <span>建設公司：</span>合硯建設股份有限公司<br>
+        <span>代銷公司：</span>聯發開發事業有限公司<br>
+        <span>建案特色：</span><br>
+        千坪壯闊美地，鳳鳴國小步行約3分鐘、鳳鳴國中步行約8分鐘，上下學免煩惱。
+        散步約3分鐘就到8800坪公四公園，緊鄰台鐵鳳鳴站 (預定113年11月完工)。
+        車程5分鐘直上大湳交流道，鄰近桃鶯路商圈，豐富生活機能不用等。
       </div>
+      </div>
+      <img v-if="isPC" src="./s2/style_2.png" class="style2">
+      <img v-else src="./s4/style_2_m.png" class="style2">
     </div>
   </div>
 </template>
@@ -42,23 +27,33 @@
   position: relative;
   margin:0 auto 0;
   padding: 10vw 0 10vw;
-  background: url("./s1/bg.jpg") center;
+  font-family: "Noto Serif TC";
   background-size: 100% auto;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
+.style2{
+  position: absolute;
+  width:size(580);
+  top:size(-810);
+  right: 0;
+  mix-blend-mode: hard-light ;
+  z-index: -1;
+} 
 .bg{position: absolute;left: 0;top: 0;width: 100%;}
 .img{width: size(520);position: absolute;right: 0;top:calc(50% - 19vw);
 transform-origin:100% 50% ;
 z-index: 2;
 transform: scale(0);
 }
+.mapimg{
+  width: size(670);
+}
 
 .txt{
 float: right;
   position: relative;
-  padding-top: 11.5vw;
-  width: size(580);
+  width: size(700);
   font-stretch: normal;
   font-style: normal;
   text-align: justify;
@@ -71,21 +66,29 @@ float: right;
   }
 
 .title{
-  font-size:2.2em;
+  font-size:size(43);
+  width: 100%;
   margin:0 auto 0;
+  color: #F9E07E;
+  border-bottom:1px solid #fff;
+  padding-bottom: size(15);
 }
   .subtitle{font-size: 1.25em;
     padding:.75em 0 0 0;
   }
 .desc {
+  font-size:size(18);
  // margin:1em auto;
   padding:1em 0 0 0;
-  line-height: 1.6;
+  line-height: 2;
   letter-spacing:0.05em;
-  font-weight: 300;
+  font-weight: 600;
   list-style: circle;
   overflow: hidden;
   li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
+  }
+  span{
+  color: #F9E07E;
   }
 }
 
@@ -233,9 +236,22 @@ float: left;
   .section4 {
     width: 100%;
     height: auto;
-    padding: 0 0 sizem(190) 0;
-  background-size: 250% auto;
+    padding: 0 ;
+    background-size: 250% auto;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: sizem(50);
 
+  }
+
+  .style2{
+    width:100%;
+    right: sizem(-0);
+    top: sizem(-310);
+  }
+  .mapimg{
+  width: sizem(300);
+  margin:sizem(50) auto;
   }
   .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}
 .img{width: sizem(320);right:sizem(-20);top:auto;bottom:sizem(-10);}
@@ -247,12 +263,18 @@ float: left;
     left:0;
     top:0;
     font-size: sizem(15);
-  padding-top: 7vw;
+    padding-top: 7vw;
     .title{
-      font-size:1.9em;
+      font-size:sizem(23);
+      padding-bottom: sizem(10);
     }
     .subtitle{
       font-size:1.1em;
+    }
+
+    .desc {
+      font-size:sizem(15);
+      letter-spacing:0.02em;
     }
   }
   /* Swipe */

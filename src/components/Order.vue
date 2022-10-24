@@ -1,5 +1,6 @@
 <template>
   <div class="order-bg" ref="parallax2">
+    <img src="@/assets/img/bg.png" class="bg">
     <div class="order-top">
       <div class="title-block">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>
@@ -15,12 +16,6 @@
             <div class="row">
               <label>手機<span>*</span></label>
               <el-input v-model="form.phone" placeholder></el-input>
-            </div>
-            <div class="row" v-if="order.room_type">
-              <label>需求房型</label>
-              <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
-              </el-select>
             </div>
             <div class="row">
               <label>居住城市</label>
@@ -285,6 +280,13 @@ export default {
   left: size(200);
   width: size(756);
 }
+.bg{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right:0;
+  width: 100%;
+}
 
 .contact2 {
   position: absolute;
@@ -300,7 +302,7 @@ export default {
 }
 .order-bg {
   //background-color: $order_bg_color;
-  //background-image: $order_bg_image;
+  background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   background-size: 110vw auto;
@@ -313,7 +315,8 @@ export default {
   textarea,
   button {
   // font-family: $family3;
-    background: $order_submit_bg;
+  background: $order_submit_bg;
+  border-radius:0 !important;
   //  border-radius: $order_submit_borderradius !important;
   }
   .order-top {
@@ -330,7 +333,7 @@ export default {
   position: relative;
    // font-family: $family1;
   // width: size(1500);
-  // font-family: 'Noto Serif TC', serif;
+  font-family: 'Noto Serif TC', serif;
     padding-top:2em;
     padding-bottom:0;
     font-weight:700;
