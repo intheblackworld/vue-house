@@ -287,6 +287,10 @@ export default {
           name: '建築空間，現場實景經電腦修飾示意',
         },
         {
+          img: require('./s6/9.jpg'),
+          name: '建築空間，現場實景經電腦修飾示意',
+        },
+        {
           img: require('./s6/3.jpg'),
           name: '建築空間，現場實景經電腦修飾示意',
         },
@@ -299,6 +303,14 @@ export default {
           name: '建築空間，現場實景經電腦修飾示意',
         },
         */
+        {
+          img: require('./s6/8.jpg'),
+          name: '建築空間，現場實景經電腦修飾示意',
+        },
+        {
+          img: require('./s6/7.jpg'),
+          name: '建築空間，現場實景經電腦修飾示意',
+        },
         {
           img: require('./s6/6.jpg'),
           name: '建築空間，現場實景經電腦修飾示意',
