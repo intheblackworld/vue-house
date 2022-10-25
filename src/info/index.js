@@ -1,6 +1,6 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台中市西屯區台灣大道三段251號旁(大遠百旁)',
+  address: '新北市鶯歌區鶯歌路、永和二街路口',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.2070367546457!2d120.64114233087344!3d24.164470828821717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7cf8636b6b3002c4!2zMjTCsDA5JzUyLjEiTiAxMjDCsDM4JzQ0LjMiRQ!5e0!3m2!1szh-TW!2stw!4v1661839157807!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/xQGLTC4Y7SHusnhw6',

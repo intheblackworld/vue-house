@@ -1,6 +1,12 @@
 <template>
   <div class="order-bg" ref="parallax2">
-    <img src="@/assets/img/bg.png" class="bg">
+    
+    
+    <img v-if="isPC" src="@/assets/img/bg.png" class="bg">
+
+    <img v-if="isMobile" src="@/assets/img/style.png" class="style">
+
+
     <div class="order-top">
       <div class="title-block">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>
@@ -500,9 +506,19 @@ export default {
     position: relative;
     z-index: 2;
 
+    
+
     > img {
       display: block;
     }
+
+    .style{
+      position: absolute;
+      width: sizem(200);
+      left: 0;
+      top:0;
+    }
+
     .order-title {
       width: 100%;
       font-size: calc(100vw * 30 / 375);

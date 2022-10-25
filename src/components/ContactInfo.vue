@@ -1,8 +1,7 @@
 <template>
   <div>
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
-
-      
+      <img v-if="isMobile" src="@/assets/img/bg_m.png" class="bg">
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -261,7 +260,19 @@ export default {
     padding:0 5% 5% 5%;
     transform: none;
     position: static;
-    margin:10vw 0 0 0;
+    margin:80vw 0 0 0;
+    position: relative;
+    
+
+
+    .bg{
+      position: absolute;
+      left: 0;
+      right:0;
+      bottom:sizem(-200);
+      width: 100%;
+      z-index: -1;
+    }
 
     .logo {
       width:155%;
@@ -323,7 +334,7 @@ export default {
   }
   .addressall{
     width: 100%;
-    border-radius: 30px;}
+    border-radius: 0px;}
   .address {
     // width: 280px;
     padding: 0 1em;
@@ -334,7 +345,6 @@ export default {
   .google-btn {
     margin-top: 15px;
     left: 0;
-  box-shadow: 0 -2px 5px 1px #00235E;
   }
 }
 
