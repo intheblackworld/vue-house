@@ -425,15 +425,15 @@ export default {
       slideList: [
         {
           img: require("./s4/1.jpg"),
-          name: "實景拍攝",
+          name: "中部科學園區 實景拍攝",
         },
         {
           img: require("./s4/2.jpg"),
-          name: "實景拍攝",
+          name: "台中精密園區 實景拍攝",
         },
         {
           img: require("./s4/3.jpg"),
-          name: "實景拍攝",
+          name: "台中工業區 實景拍攝",
         },
       ],
     }

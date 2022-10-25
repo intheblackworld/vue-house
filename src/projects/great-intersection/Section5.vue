@@ -383,35 +383,35 @@ export default {
       slideList: [
         {
           img: require("./s5/1.jpg"),
-          name: "實景拍攝",
+          name: "沙鹿區公所 實景拍攝",
         },
         {
           img: require("./s5/2.jpg"),
-          name: "實景拍攝",
+          name: "沙鹿公園 實景拍攝",
         },
         {
           img: require("./s5/3.jpg"),
-          name: "實景拍攝",
+          name: "沙鹿國中 實景拍攝",
         },
         {
           img: require("./s5/4.jpg"),
-          name: "實景拍攝",
+          name: "家樂福 實景拍攝",
         },
         {
           img: require("./s5/5.jpg"),
-          name: "實景拍攝",
+          name: "鰲峰山 實景拍攝",
         },
         {
           img: require("./s5/6.jpg"),
-          name: "實景拍攝",
+          name: "三井Outlet 實景拍攝",
         },
         {
           img: require("./s5/7.jpg"),
-          name: "實景拍攝",
+          name: "高美濕地 實景拍攝",
         },
         {
           img: require("./s5/8.jpg"),
-          name: "實景拍攝",
+          name: "海洋生態館 實景拍攝",
         },
       ],
     }
