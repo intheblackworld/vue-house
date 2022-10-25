@@ -1,28 +1,20 @@
 <template>
   <div class="section1">
       <img src="./all/nina.jpg" :alt="`${info.caseName}_logo`" class="nina">
-    <!-- <img src="./s1/0m.jpg" alt="`${info.caseName}_bg" class="t0"> 
-      <img src="./s1/bg.png" alt="悅峰釀_bg" class="bg" v-if="isMobile"> -->
-      <img src="./s1/bg1.png" alt="bgx" class="bgx" v-if="isMobile" data-aos="fade" data-aos-delay="100" data-aos-duration="1700">
-    <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
-      <img src="./all/7.png" alt="7" class="c7">
-      <img src="./all/6.png" alt="6" class="c6" v-if="!isMobile">
-      <img src="./all/5.png" alt="5" class="c5">
-      <img src="./all/4.png" alt="4" class="c4">
-      <img src="./all/8.png" alt="8" class="c3" v-if="isMobile">
-      <img src="./all/3.png" alt="3" class="c3" v-if="!isMobile">
-      <img src="./all/2.png" alt="2" class="c2">
-      <img src="./all/1.png" alt="1" class="c1">
-    </div>
-    <div class="logo">
-      <img src="./s1/logo1.png" data-aos="fade-down" data-aos-delay="0" alt="logo" class="logo1">
-      <img src="./s1/logo2.png" data-aos="fade-down" data-aos-delay="100" alt="logo" class="logo2">
-    </div>
+
+      <div class="mark">
+       <img src="./s1/mark.png" data-aos="fade-down" data-aos-delay="0" alt="" class="mark1">
+       <img src="./s1/star1.png" data-aos="fade-down" data-aos-delay="0" alt="" class="star1">
+       <img src="./s1/star2.png" data-aos="fade-down" data-aos-delay="0" alt="" class="star2">  
+        </div>
+
+      <img src="./s1/logo.png" data-aos="fade-down" data-aos-delay="0" alt="logo" class="logo">
+      
     <div class="txt">
-      <img src="./s1/t.png" alt="時光淬鍊．豐釀生活" class="t1" data-aos="fade-down" data-aos-delay="300">
-      <div class="t2" v-if="!isMobile" data-aos="fade-down" data-aos-delay="400">日式前院美墅<b></b>高規精品建材<b></b>國際雙語學區</div>
-      <div class="t2" v-if="isMobile" data-aos="fade-down" data-aos-delay="400"><b></b>日式前院美墅<b></b>03-3855000<b></b></div>
-      <div class="t3" v-if="!isMobile" data-aos="fade-down" data-aos-delay="500"><span class="button" v-scroll-to="{ element: `#contact`, offset: 0 }">立即預約</span>03-3855000</div>
+
+      <img v-if="isPC" src="./s1/txt.png" alt="" class="t1" data-aos="fade-down" data-aos-delay="300">
+      <img v-if="isMobile" src="./s1/txt_m.png" alt="" class="t1" data-aos="fade-down" data-aos-delay="300">
+      <div class="button" v-if="isPC"  v-scroll-to="{ element: `#contact`, offset: 0 }">立即預約</div>
     </div>
   </div>
 </template>
@@ -31,6 +23,8 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
+  background: url('./s1/bg.jpg') center center;
+  background-size: cover;
   width: 100%;
   height: 100vh;
   min-height: size(900);
@@ -75,56 +69,91 @@
     }
 }
 .logo{
-  position: absolute;left: size(200);
-      top:calc(50% + (455 - 540) * 100vw / 1920);
-      width:size(389);
-    .logo1{
-      width:100%;
-    }
-    .logo2{
-      position: absolute;
-      width:66.3239%;top:-58%;left:41.1311%;
-    }
+  position: absolute;
+  left: size(220);
+  top:calc(50% + (400 - 540) * 100vw / 1920);
+  width:size(561);
   }
+
+
+.mark{
+  position: relative;
+  left: size(845);
+  top:size(245);
+  width:size(264);
+
+  .mark1{
+   width:100%;
+  }
+  .star1{
+   width:size(127);
+   position: absolute;
+   left:size(-10);
+   top:size(10);
+   transform: rotate(1turn);
+   animation:star 3s linear infinite reverse;
+  }
+  .star2{
+   width:size(114);
+   position: absolute;
+   right:size(15);
+   bottom:size(10);
+   transform: rotate(0turn);
+   animation:star 3s linear infinite reverse;
+  }
+
+  @keyframes star{
+    to{
+      transform: rotate(1turn);
+    }
+}
+
+}
+
+
+
 .txt{
   position: absolute;
-      top:calc(50% + (370 - 540) * 100vw / 1920);
+      top:calc(50% + (250 - 540) * 100vw / 1920);
   left:size(870);
   font-size: size(34);
   font-weight: 500;
   line-height: 1.6;
   color: #444;
   text-align: center;
+
+  
+
+
   .t1{
-     width:size(744);
+     width:size(809);
+     top:calc(50% + (560 - 540) * 100vw / 1920);
+     left: size(10);
+     position: absolute;
     }
-  .t2{
-    letter-spacing: 0.1em;
-        margin:0.3em 0 0.2em;
-    b{vertical-align: middle;
-    display: inline-block;width:2px;height: 0.7em;background:#52b559;margin: auto 0.5em .1em 0.5em;}
-  }
-  .t3{
-    font-size:2.3em;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
     .button{
-    font-size:0.68em;
+      position: absolute;
+      left: size(17);
+      bottom:size(-475);
+      width:size(220) ;
+      font-size:size(34);
+      border-radius: 40px;
+      letter-spacing:0em;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 500;
+      color: #fff;
       cursor: pointer;
       display: inline-block;
-      border:2px solid #52b559;
-      width: 5.2em;
+      border:2px solid #efb66d;
       vertical-align: middle;
       margin: 0 0.5em 0.2em 0;
-      padding: 0 0 0.1em 0;
+      padding: 0.1em 1em ;
       transition: all 0.3s;
       &:hover{
-        background:#52b559cc;
+        background:#efb66d;
         color: #FFF;
       }
     }
-  }
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -133,10 +162,12 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
+    background: url('./s1/bg_m.jpg') center center;
+    background-size:cover;
     min-height: sizem(604);
     max-height: sizem(750);
     height: calc(100vh - 63px);
-  margin: 0 0 25vw;
+    margin: 0 0 25vw;
   }
 
 .bg{
@@ -163,23 +194,44 @@
 }
 
 .logo{
-   width:sizem(190);
-   top:calc(50% + (222 - 302) * 100vw / 375);
-   left:sizem(85);
+   width:sizem(245);
+   top:calc(50% + (230 - 302) * 100vw / 375);
+   left:sizem(65);
   }
+
+      .mark{
+      position: relative;
+      margin: 0px auto;
+      left: auto;
+      width:sizem(130);
+      top:calc(50% + (95 - 302) * 100vw / 375);
+
+      .mark1{
+      width:100%;
+      }
+      .star1{
+      width:sizem(55);
+      position: absolute;
+      left:sizem(2);
+      top:sizem(10);
+      }
+      .star2{
+      width:sizem(50);
+      position: absolute;
+      right:sizem(15);
+      bottom:sizem(10);
+      }
+
+    }
+
+
 .txt{
-   left:sizem(0);
-   top:calc(50% + (470 - 302) * 100vw / 375);
+   left:sizem(57);
+   top:calc(50% + (356 - 302) * 100vw / 375);
    width: 100%;
-  font-size: sizem(20);
+
   .t1{
-     width:sizem(283);
-    }
-  .t2{
-    letter-spacing: 0.04em;
-        margin:0;
-        b{margin: auto 0.4em .1em 0.4em;
-    }
+     width:sizem(259);
     }
 }
 

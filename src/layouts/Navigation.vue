@@ -204,7 +204,7 @@ export default {
     top: 15px;
     width: 40px;
     height: 40px;
-  // background-color: #008796;
+    background-color: #efb76dd0;
     cursor: pointer;
     flex: 1 0 50%;
     margin-bottom: 1rem;
