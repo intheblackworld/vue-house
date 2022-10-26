@@ -14,7 +14,7 @@
       </div>
       </div>
       <img v-if="isPC" src="./s2/style_2.png" class="style2">
-      <img v-else src="./s4/style_2_m.png" class="style2">
+      <img v-if="isMobile" src="./s4/style_2_m.png" class="style2">
     </div>
   </div>
 </template>
@@ -35,8 +35,10 @@
 .style2{
   position: absolute;
   width:size(580);
-  top:size(-810);
-  right: 0;
+  //top:size(-810);
+  top:size(0);
+  right:size(-200);
+  //right: 0;
   mix-blend-mode: hard-light ;
   z-index: -1;
 } 
