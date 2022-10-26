@@ -17,11 +17,10 @@
     </vue-lazy-component>
 
 
-<!--
+
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
--->
 
 
 <!--
@@ -58,14 +57,14 @@
     >
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
-
+ -->
     <vue-lazy-component
       class="section"
       id="section4"
     >
       <Section4 />
     </vue-lazy-component>
-    -->
+   
 </div>
 <!--     
     <vue-lazy-component

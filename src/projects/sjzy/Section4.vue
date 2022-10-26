@@ -240,7 +240,8 @@ float: left;
     background-size: 250% auto;
     display: flex;
     flex-direction: column-reverse;
-    margin-top: sizem(50);
+    //margin-top: sizem(50);
+    margin-top: sizem(200);
 
   }
 

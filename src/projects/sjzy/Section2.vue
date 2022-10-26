@@ -35,6 +35,7 @@
       </div>
 
       </div>
+      <!--
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
@@ -54,6 +55,7 @@
         </div>
       </div>
     </div>
+    -->
       
     </div>
   </div>
