@@ -9,7 +9,7 @@
         </div>
       </div>
     </div-->
-    <Footer v-if="info.lixin_logo" />
+    <Footer  />
   </div>
 </template>
 

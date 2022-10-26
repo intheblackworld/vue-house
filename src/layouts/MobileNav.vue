@@ -17,6 +17,10 @@
       <font-awesome-icon icon="map-marker-alt" />
       <div class="label">地圖導航</div>
     </a>
+    <a class="nav-item" href="https://lin.ee/66APHIK">
+      <img src="@/assets/img/lineicon.png" >
+      <div class="label">Line官方</div>
+    </a>
     <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
@@ -105,24 +109,26 @@ export default {
   transition: all .5s;
 
   .nav-item {
+    text-decoration:none;
     flex: 1;
     color: $mobile_nav_color;
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
 
-    &:nth-child(4) {
+    &:nth-child(5) {
       border-right: none;
     }
   }
 
-  svg {
+  svg,img {
     width: 20px !important;
     height: 25px;
     color: $mobile_nav_icon;
+    margin-bottom: 5px;
   }
 
   .label {

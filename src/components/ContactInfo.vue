@@ -19,6 +19,11 @@
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
+        <a class="btn flex-c btfanpage" href="https://lin.ee/66APHIK" target="_blank" data-aos="fade-down" data-aos-delay="300">
+          <span class="flex-c">
+            <img src="@/assets/img/lineicon.png" ><span>Line官方</span>
+          </span>
+        </a>
         <div class="addressall" data-aos="fade-down" data-aos-delay="400">
           <div class="address flex-c">接待中心：<br v-if="isMobile">{{info.address}}</div>
           <div class="google-btn flex-c" @click="showMapDialog">
@@ -127,7 +132,7 @@ export default {
 }
 
 .btn {
-  width: 280px;
+  width: 210px;
   height: 60px;
   font-size: 16px;
   margin-bottom: 20px;
@@ -145,7 +150,7 @@ export default {
   &.half {
     width: 49%;
   }
-  svg {
+  svg,img {
     color: $contact_btn_icon;
     width: 24px;
     height: 24px;
@@ -289,7 +294,7 @@ export default {
     &.half {
       width: 280px;
     }
-    svg {
+    svg,img {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

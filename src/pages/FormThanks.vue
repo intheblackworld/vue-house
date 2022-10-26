@@ -1,13 +1,9 @@
 <template>
   <div class="thanks">
   <!-- <img src="https://bcp.crwdcntrl.net/5/c=13578/b=78113418" width="1" height="1"/>  -->
-    <a href="/" v-if="info.lixin_logo">
+    <a href="/">
       <img src="~@/assets/img/thank-img.png" alt="" class="img">
       <img src="~@/assets/img/thank-img-hover.png" alt="" class="img-hover">
-    </a>
-    <a href="/" v-else>
-      <img src="~@/assets/img/thank-imglogo0.png" alt="" class="img">
-      <img src="~@/assets/img/thank-img-hoverlogo0.png" alt="" class="img-hover">
     </a>
   </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${isOpacity ? 'opacity': ''}`">
-    <img v-if="info.lixin_logo" src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
-    <img v-else src="~@/assets/img/loading_blogo0.gif" alt class="loading-icon" />
+    <img src="~@/assets/img/loading_b.gif" alt class="loading-icon" />
   </div>
 </template>
 
