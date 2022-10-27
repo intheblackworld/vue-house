@@ -29,7 +29,7 @@
     height: auto;
   min-height: 0;
   max-height: size-m(900);
-  padding: 8vw 0;
+  padding: 0 0;
    
   .bg{
   width: calc(100% * 400 / 375);

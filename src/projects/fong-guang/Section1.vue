@@ -29,16 +29,16 @@
     <div class="tree" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-300">
     <img src="./s1/tree.png" class="tree1" />
     <img src="./s1/tree.png" class="tree2" />
-    <img src="./s1/tree.png" class="tree3" />
+    <img src="./s1/tree.png" class="tree3" v-if="!isMobile" />
     <img src="./s1/img.png" class="tree4" />
     </div>
     <div class="cloud" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-300">
-    <div><img src="./s1/cloud2.png" class="cloud1" /></div>
+    <div v-if="!isMobile"><img src="./s1/cloud2.png" class="cloud1" /></div>
     <img src="./s1/cloud2.png" class="cloud2" />
-    <div><img src="./s1/cloud1.png" class="cloud3" /></div>
+    <div v-if="!isMobile"><img src="./s1/cloud1.png" class="cloud3" /></div>
     <img src="./s1/cloud1.png" class="cloud4" />
-    <img src="./s1/cloud2.png" class="cloud5" />
-    <img src="./s1/cloud1.png" class="cloud6" />
+    <img src="./s1/cloud2.png" class="cloud5"  v-if="!isMobile" />
+    <img src="./s1/cloud1.png" class="cloud6"  v-if="!isMobile" />
     </div>
 
     <div class="txt">
@@ -299,7 +299,7 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
   }
 
   .img1{position:absolute; width: 100%;}
-.img2{position:absolute; width: 100%;mix-blend-mode: screen;}
+.img2{position:absolute; width: 100%;mix-blend-mode: screen; filter: blur(size(1)); }
 
 .imglt{position:absolute;top: size(-37);left:size(-335);transform-origin: 0% 0%; width: size(1040);
  > div{
@@ -313,6 +313,7 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
 
 }
 .imglb{position:absolute;bottom:size(-5);left:size(-760);transform-origin: 0% 0%; width: size(1550);z-index: 2;
+
  > div{
     transform: rotate(13deg);}
  img{left: 0;bottom: 0;}
@@ -375,7 +376,8 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
   //filter: drop-shadow(0 0 7px #eff);
 .logo{
   width:size(310);filter: drop-shadow(0.3vw 0.2vw 0.1vw #000c);
-  margin: 0 auto 0em;.st0{fill:#FFF;stroke-width:0;}
+  margin: 0 auto 0em;
+  .st0{fill:#FFF;stroke-width:0;}
 	path{fill:none;stroke:#FFF;stroke-linecap:round;stroke-miterlimit:10;}
 	.an1{stroke-dasharray:74;stroke-dashoffset:74;animation:letterDraw 0.1258s 0s forwards;}
 	.an2{stroke-dasharray:26;stroke-dashoffset:26;animation:letterDraw 0.0442s 0.1258s linear forwards;} 
@@ -431,35 +433,40 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
 @media screen and (max-width: 767px) {
   .section1 {
     min-height: sizem(604);
-    max-height: sizem(750);
+    max-height: sizem(604);
     height: calc(100vh - 63px);
-  background-size: 250% auto;
   }
+.bg{
+  position: absolute;
+  width: 100%;height: sizem(604);
+  top:calc(50% + (-72 - 604 * 0.5) * 100vw / 375);
+  left:0;object-fit: cover;}
 
-  .img0{left:sizem(-150);;width:sizem(390);
-  bottom:sizem(-230);transform-origin: 0% 50%;
-  }
-.imglt{
-.f1{width:sizem(113);top:sizem(-90);left:sizem(-40);}
-.f2{width:sizem(187);top:sizem(-5);left:sizem(100);}
-.f3{width:sizem(50);top:sizem(-240);left:sizem(70);}
-.f4{width:sizem(222);top:sizem(-62);left:sizem(-135);}
-.f5{width:sizem(176);top:sizem(-68);left:sizem(-11);}
-.f6{width:sizem(145);top:sizem(-26);left:sizem(73);}
-
+.imglt{top: sizem(-80);left:sizem(-200); width: sizem(520);}
+.imgrt{top:sizem(-20);right: sizem(-380);width: sizem(580);}
+.imglb{bottom:sizem(-2);left:sizem(-540);width: sizem(690);opacity: .5;}
+.imgrb{bottom:sizem(5);right: sizem(-550);width: sizem(750);}
+.tree{bottom:sizem(0);
+.tree1{right:sizem(-26);bottom:sizem(20);width:sizem(85);}
+.tree2{left:sizem(-32);bottom:sizem(-10);width:sizem(109);}
+.tree4{right:sizem(60);bottom:sizem(0);width:sizem(105);}
 }
-.imgrc{
-.f1{width:sizem(120);top:sizem(160);right:sizem(-25);}
-.f2{width:sizem(45);top:sizem(255);right:sizem(-30);}
-.f3{width:sizem(60);top:sizem(65);right:sizem(-110);}
+.cloud{
+.cloud2{left:sizem(76);bottom:sizem(80);width:sizem(62);}
+.cloud4{right:sizem(34);bottom:sizem(107);width:sizem(99);}
+
 }
 .txt{
-  font-size: sizem(20);
-  top:calc(50% + (260 - 302) * 100vw / 375);
+  font-size: sizem(24);
+  top:calc(50% + (160 - 302) * 100vw / 375);
   width:sizem(300);
 .logo{
-  margin: 0 auto 1.3em;
+  width:sizem(200);filter: drop-shadow(1vw 0.7vw 0.4vw #000c);
+  margin: 0 auto 0.6em;
 }
+.t2{
+  margin:0.8em 0 0 0;
+    }
 }
 }
 </style>

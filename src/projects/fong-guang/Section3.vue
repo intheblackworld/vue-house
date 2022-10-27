@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div class="section5">
+    <div class="section3">
+    <div class="img">
+    <img src="./s3/bg.jpg" class="bg1" />
+    <img src="./s3/bg.jpg" class="bg2" />
+    <img src="./s1/tree.png" class="tree1" />
+    </div>
     <div class="imglt" data-aos="zoom-in" data-aos-delay="0" >
       <div>
     <img src="./s1/g.png" class="img1" />
@@ -11,8 +16,12 @@
     <img src="./s1/g.png" class="img1" />
     <img src="./s1/g.gif" class="img2" /></div>
     </div>
+    <div class="imgrb" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-300">
+      <div>
+    <img src="./s1/w.png" class="img1" />
+    <img src="./s1/w.gif" class="img2" /></div>
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -43,7 +52,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {
+.section3 {
   width:100%;
   height:auto;
   position: relative;
@@ -53,7 +62,7 @@
 &::after{content: "";clear: both;display: block;}
 }
 .img1{position:absolute; width: 100%;}
-.img2{position:absolute; width: 100%;mix-blend-mode: screen;}
+.img2{position:absolute; width: 100%;mix-blend-mode: screen; filter: blur(size(1)); }
 
 .imglt{position:absolute;top: size(-127);left:size(-335);transform-origin: 0% 0%; width: size(1040);
  > div{
@@ -65,6 +74,16 @@
  > div{transform: rotate(26deg);}
  img{right: 0;top: 0;}
 
+}
+.imgrb{position:absolute;bottom:size(80);right: size(-800);transform-origin: 100% 0%;width: size(1550);z-index: 2;
+ > div{transform: rotate(-21deg);}
+ img{right: 0;bottom: 0;}
+
+}
+.img{position:absolute;top: 0;left: 0;width: 100%;
+.bg1{position:absolute;top:size(-350);right: 0;width: 100%;transform: rotate(180deg);}
+.bg2{position:absolute;top:size(500);left : 0;width: size(1405);transform: scaleY(-1);opacity: .5;}
+.tree1{position:absolute;top:size(595);right:size(390);width:size(220);}
 }
 
 .txt{
@@ -110,14 +129,12 @@ float: right;
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
+  .section3 {
     width: 100%;
     height: auto;
-    padding: 0;
+    padding:10vw 0;
   }
-  .img{top: 100%;
-    .f2{width:sizem(105);top:sizem(100);right:sizem(-127);}
-  }
+
   .txt{
     position: relative;
     width: sizem(320);
@@ -131,6 +148,7 @@ float: right;
     width: 100%;
     float: none;
     height: sizem(250);
+    margin-left:0;
   }
 }
 </style>
@@ -141,7 +159,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section5',
+  name: 'section3',
 
   mixins: [slider],
   props: ['viewIndex'],

@@ -2,7 +2,6 @@
   <div>
     <div class="section4">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -24,16 +23,8 @@
       </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">您終究要住別墅</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">人生第一次置產，先求有同時求好，減擔成家首購別墅就上手，第一次買房就選輕歐式全新電梯別墅【微笑莊園】。<br />
-讓地上權買房不買地的優勢助您一臂之力，無需經歷換房的陣痛或是機能不全的難受，第一次成家就入主市區生活的有天有地大空間，全家人幸福的生活藍圖就在這裡。</div>
-      </div>
-      <div class="img" data-aos="zoom-in" data-aos-delay="0" >
-        <div>
-        <img src="./all/f3.png" class="f3" />
-        <img src="./all/f1.png" class="f1" />
-        <img src="./all/f4.png" class="f4" />
-        <img src="./all/f5.png" class="f5" /></div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">豐厚綠意  隨手愜意</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">溪頭公園、河濱公園，大台北最奢華的濃綠饗宴，都在「豐光」隨手即美。波光在前，濃蔭在旁，悠然風華，完美至極。</div>
       </div>
     </div>
   </div>
@@ -46,7 +37,7 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 10vw 0 10vw;
+  padding: 8.5vw 0;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
@@ -101,54 +92,11 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
 
 .swipe {position: relative;
 float: right;
- // position: absolute;
   width: size(840);
   height: size(560);
-// top: size(185);
- // left: size(210);
   margin-right: size(210);
- // z-index: 3; 
-  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , 1vw);
-  &::before{content: "";position: absolute;display: block;
-  right: 0;bottom: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , 1vw);}
-  }
 }
-  @include name();
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-}
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-// 過場動畫
-// begin 
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
+@include swipe();
 
 // pagination
 .pagination {
@@ -157,44 +105,6 @@ float: right;
   right:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
     font-size: size(20);
-  .pagination-dot {
-    padding: 0.25em;
-    margin: 0 0.15em;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width:3em;
-      height:12px;
-      position: relative;
-      &::before{content: "";
-      transition: transform 0.5s, background 0.5s;
-      display: block;width: 100%;height:100%;
-      background: $pagination;
-        transform: scaleY(.25);transform-origin: 50% 50%;
-    }
-      &.active {
-        &::before{  transform: scaleY(1);
-      background:$pagination-active;
-    }
-      }
-    }
-  }
-
-}
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0.75em;
-  z-index: 3;
-  font-size: size(20);
-
-  .prev-btn,
-  .next-btn {
-    width: 1em;
-    cursor: pointer;
-  }
 }
 
 @media only screen and (max-width: 1440px) {

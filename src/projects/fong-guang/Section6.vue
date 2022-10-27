@@ -1,75 +1,63 @@
 <template>
   <div>
-    <div class="section6">
-      <!--    -->  
+    <div class="section4">
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
-          </transition-group><div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </transition-group>
+         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+            <div class="prev-btn" @click="decIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
+            </div>
+            <div class="next-btn" @click="addIndex">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
+            </div>
           </div>
         </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
+        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200" >輕盈歐式 別墅有天有地</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">以歐式精神巧妙結合現代設計手法，創造輕歐式莊園質感，有天有地的起居空間，可以蒔花弄草的前庭後院，生活無拘無束。室內規劃一樓以上皆為挑高設計，減少壓迫感。客廳面寬5米，自在佈置動線不受影響，地下室規劃雙停車位，同時保留室內可作為主人的收藏房或是外出物品的收納間，便利一舉兩得。</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">戶戶邊間  醇淨迎光</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">精緻基地，建築堅持退縮留距，就是要把日陽作為最重要的尺度建材，讓生活空間明亮，也讓每一天都舒心健康。</div>
       </div>
-    <div class="img" data-aos="zoom-in" data-aos-delay="0" >
-      <div>
-    <img src="./all/f3.png" class="f3" />
-    <img src="./all/f2.png" class="f2" />
-    <img src="./all/f4.png" class="f4" />
-      <div>
-    <img src="./all/f5.png" class="f5" />
-  </div>
-  </div>
-    </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.section6 {  
+
+.section4 {
   width:100%;
   height:auto;
   position: relative;
-  padding: 9vw 0 5vw;
+  margin:0 auto 0;
+  padding: 8.5vw 0;
+  // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
 
-.img{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
-  z-index: 4;
+.img{position:absolute;top: 0;right: 0;transform-origin: 0% 0%;
+  > div{transform: rotate(100deg);}
 img{position:absolute;pointer-events: none;}
-> div{ transform: rotate(-56deg);
-  > div{transform: rotate(89deg) scaleY(-1);}
+.f1{
+    width: 9.5vw;
+    top: -9.6vw;
+    left: 3.3vw;transform:scaleX(-1) rotate(-176.43deg);transform-origin: 90% 100%;
+animation: an1 3s -.5s ease-in-out infinite alternate;
 }
-.f2{width:size(373);
-    top: 4vw;
-    left: -15vw;
-  transform-origin: 0% 0%;transform: rotate(4deg);
-animation: an 3s ease-in-out infinite alternate;}
-.f3{width:size(80);
-    top: -9vw;
-    left: -5vw;
-  transform: rotate(132deg);transform-origin: 90% 100%;
+.f3{width:size(100);top:size(-430);left:size(150);transform:scaleX(-1) rotate(190deg);transform-origin: 90% 100%;
 animation: an2 3s -.8s ease-in-out infinite alternate;}
-.f4{width:size(444);
-    top: 2vw;
-    left: -13vw;
-  transform-origin: 0% 0%;transform: rotate(3deg);
+.f4{width:size(380);
+    top: -10.5vw;
+    left: 7vw;transform-origin: 0% 0%;transform: rotate(3deg);
 animation: an 3s -.2s ease-in-out infinite alternate;}
-.f5{width:size(330);
-    top: -14vw;
-    left: 0vw;transform-origin: 0% 0%;transform: rotate(-5deg);
+.f5{width:size(290);top:size(-160);left:size(100);transform-origin: 0% 0%;transform: rotate(5deg);
 animation: an 3s -.4s ease-in-out infinite alternate;}
 
 }
@@ -78,116 +66,45 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
     transform: rotate(0deg);
   }
 }
-@keyframes an2{
+@keyframes an1{
   to{
-    transform: rotate(129deg);
+    transform:scaleX(-1) rotate(-173.43deg);
   }
 }
+@keyframes an2{
+  to{
+    transform:scaleX(-1)  rotate(194deg);
+  }
+}
+
 .txt{
+  float: left;
   position: relative;
-  width: size(1500);
-  margin: 1em auto 3em auto;
+  padding-top: 9.5vw;
+  width: size(580);
   z-index: 2;
+  margin-left: size(210);
   @include txt(size(18));
   }
 
+
 /* Swipe */
-.swipe {
-  position: relative;
-  margin: auto;
-  width: size(1500);
-  height: size(840);
-  // left: size(210);
-  z-index: 3;
-  object-fit: cover;
-  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(1vw , -1vw);
-  &::before{content: "";position: absolute;display: block;
-  right: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(1vw , -1vw);}
-  }
-}
 
-@include name();
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
+.swipe {position: relative;
+float: right;
+  width: size(840);
+  height: size(560);
+  margin-right: size(210);
 }
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-// 過場動畫
-// begin 
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
+@include swipe();
 
 // pagination
 .pagination {
   width: auto;
-  bottom: -2.2em;
-  right: -0.5em;
+  bottom: size(0);
+  right:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
-  font-size: size(20);
-  .pagination-dot {
-    padding: 0.25em;
-    margin: 0 0.15em;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width:3em;
-      height:12px;
-      position: relative;
-      &::before{content: "";
-      transition: transform 0.5s, background 0.5s;
-      display: block;width: 100%;height:100%;
-      background: $pagination;
-        transform: scaleY(.25);transform-origin: 50% 50%;
-    }
-      &.active {
-        &::before{  transform: scaleY(1);
-      background:$pagination-active;
-    }
-      }
-    }
-  }
-
-}
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0.75em;
-  z-index: 3;
-  font-size: size(20);
-
-  .prev-btn,
-  .next-btn {
-    width: 1em;
-    cursor: pointer;
-  }
+    font-size: size(20);
 }
 
 @media only screen and (max-width: 1440px) {
@@ -204,59 +121,52 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section4 {
     width: 100%;
     height: auto;
-    min-height: auto;
-    max-height: initial;
-  padding: 0;
-  }
-  .img{
-    > div{ transform: rotate(-37deg);}
-    .f2{width:sizem(110);
-    top: -3vw;
-    left: -4vw;}
-.f3{width:sizem(30);
-    top: -30vw;
-    left: 9vw;}
-.f4{width:sizem(131);
-    top: -1vw;
-    left: 2vw;}
-.f5{width:sizem(103);
-    top: 2vw;
-    left: -12vw;}
+    padding: 0;
 
-  
   }
+  
+
+.img{top:auto;bottom:sizem(0);z-index: 4;
+
+  .f1{
+    width: sizem(77);
+    top: -16.6vw;
+    left: 14.3vw;
+}
+.f3{width:sizem(36);
+    top: -33.5vw;
+    left: 24vw;
+}
+.f4{width:sizem(155);
+    top: -23.5vw;
+    left: -13vw;}
+.f5{width:sizem(114);top:sizem(-40);left:sizem(60);}
+}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:2em auto 6em;
-    left:0;
-    top:0;
+    float: none;
     font-size: sizem(15);
-  padding-top:0;
-    .title{
-      font-size:1.9em;
-    }
-    .subtitle{
-      font-size:1.1em;
-    }
+    padding-top: 0;
+    margin:2em auto 6em;
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(270);
+    float: none;
+    height: sizem(250);
     top:0;
     left:0;
+  margin-left:0;
   }
-
   .swipe-btns {
   font-size: sizem(15);
   }
 }
-
 </style>
 <script>
 // @ is an alias to /src
@@ -265,7 +175,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section4',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -279,42 +189,20 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
+          img: require('./s4/2.jpg'),
+          name: '情境示意',
         },
         {
-          img: require('./s6/2.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
-        },
-        { 
-          img: require('./s6/9.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
+          img: require('./s4/4.jpg'),
+          name: '情境示意',
         },
         {
-          img: require('./s6/4.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
-        },
-        /*   
-        {
-          img: require('./s6/3.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
+          img: require('./s4/1.jpg'),
+          name: '情境示意',
         },
         {
-          img: require('./s6/5.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
-        },
-        {
-          img: require('./s6/6.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
-        },
-        */
-        {
-          img: require('./s6/8.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
-        },
-        {
-          img: require('./s6/7.jpg'),
-          name: '建築空間，現場實景經電腦修飾示意',
+          img: require('./s4/3.jpg'),
+          name: '情境示意',
         },
       ],
     }
@@ -330,7 +218,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 7) {
+      if (this.viewIndex === 3) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }

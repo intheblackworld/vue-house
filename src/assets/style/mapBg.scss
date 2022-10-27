@@ -14,6 +14,11 @@
   .hand {
     display: none;
   }
+  .box{
+   position: absolute;top: 0;left: 0;width: 100%;
+   height: size(400);
+   background: linear-gradient(180deg, #02130D 0%, rgba(0, 52, 81, 0.718567) 28.65%, rgba(0, 92, 158, 0.416667) 59.37%, rgba(0, 112, 205, 0) 100%);
+  }
 
   img {
     display: block;
@@ -46,11 +51,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  $map-h: sizem(520);
+  $map-h: sizem(700);
   .map {
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100vw;
+    .box{width:sizem(1244);
+     height: sizem(400);
+    }
     .map-bg {
       width: auto;
       height: $map-h;
@@ -94,11 +102,11 @@
     .hand {
       position: absolute;
       z-index: 3;
-      width: sizem(45) !important;
+      width: sizem(70) !important;
       height: auto !important;
-      left: 100%;
+      left:100%;
       right: auto;
-      top: sizem(251) !important;
+      top: sizem(400) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;

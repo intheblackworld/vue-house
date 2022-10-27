@@ -4,9 +4,9 @@
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
     <div class="box"></div>
     <img class="map-bgpng" :src="bgSrcpng" alt ref="mapbg" v-if="bgSrcpng" />
-    <!-- <img class="map-text" :src="bgText" alt /> -->
+    <!-- <img class="map-text" :src="bgText" alt />
     <div :class="`mask ${showMask ? 'active' : ''}`">
-    </div>
+    </div> -->
     <img
       :src="tag"
       data-aos="fade-down"
@@ -19,15 +19,6 @@
 </template>
 <style lang="scss" scoped>
 @import '../assets/style/function.scss';
-.map {
-  // padding-top: sizem(150);
- // background-color: rgba(172, 221, 254, 1)
- .box{
-  position: absolute;top: 0;left: 0;width: 100%;
-  height: size(400);
-  background: linear-gradient(180deg, #02130D 0%, rgba(0, 52, 81, 0.718567) 28.65%, rgba(0, 92, 158, 0.416667) 59.37%, rgba(0, 112, 205, 0) 100%);
- }
-}
 .desc {
   width: sizem(310);
   left: 0;
@@ -70,7 +61,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
+        map.scrollTo((mapBg.clientWidth  - window.innerWidth) / 3.9, 0)
       }, 1200)
 
       setTimeout(() => {

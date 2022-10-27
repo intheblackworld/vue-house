@@ -1,8 +1,16 @@
 <template>
   <div>
-    <div class="section5">
+    <div class="section3">
+    <div class="img">
+    <img src="./s3/bg.jpg" class="bg2" />
+    <img src="./s1/tree.png" class="tree1" />
+    </div>
+    <div class="imgrb" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-300">
+      <div>
+    <img src="./s1/w.png" class="img1" />
+    <img src="./s1/w.gif" class="img2" /></div>
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -10,7 +18,7 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+     <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb">
             <div class="prev-btn" @click="decIndex">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
             </div>
@@ -24,44 +32,53 @@
       </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">富饒之地 生活應有盡有</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">最富裕的生活圈，食衣住行育樂通通滿足。最迷人的書香，新高雙語小學、新平國小與新光國中，明星學校作伴；最便捷的採購，全聯、楓康和新光黃昏市場，鮮食一次買齊；最舒服的環境，立文、廍興以及馬卡龍公園，綠意公園為鄰。</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">商圈漫走  書香可期</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">裕民商圈、四維商圈、新埔商圈，輕鬆來往；捷運江翠站、新埔民生站、新埔站，悠遊選擇，自在行動；文中小預定地在身邊，滿滿學風，養成在即。</div>
       </div>
-      <div class="img" data-aos="zoom-in" data-aos-delay="0" >
-    <img src="./all/f2.png" class="f2" />
-    </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section5 {
+.section3 {
   width:100%;
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 10vw 0 10vw;
+  padding: 8.5vw 0;
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
-.img{position:absolute;top: 50%;right: 0;transform-origin: 0% 0%;
-img{position:absolute;pointer-events: none;}
-.f2{width:size(330);top:size(420);right:size(-400);
-  transform-origin: 0% 0%;transform:rotate(180deg);
-animation: an 3s ease-in-out infinite alternate;}
+.img1{position:absolute; width: 100%;}
+.img2{position:absolute; width: 100%;mix-blend-mode: screen; filter: blur(size(1)); }
+
+.imglt{position:absolute;top: size(-127);left:size(-335);transform-origin: 0% 0%; width: size(1040);
+ > div{
+    transform: rotate(-20deg);}
+ img{left: 0;top: 0;}
 
 }
-@keyframes an{
-  to{
-    transform:rotate(176deg);
-  }
+.imgrt{position:absolute;top:size(-78);right: size(-640);transform-origin: 100% 0%;width: size(1170);
+ > div{transform: rotate(26deg);}
+ img{right: 0;top: 0;}
+
+}
+.imgrb{position:absolute;bottom:size(80);right: size(-800);transform-origin: 100% 0%;width: size(1550);z-index: 2;
+ > div{transform: rotate(-21deg);}
+ img{right: 0;bottom: 0;}
+
+}
+.img{position:absolute;top: 0;left: 0;width: 100%;
+.bg1{position:absolute;top:size(-350);right: 0;width: 100%;transform: rotate(180deg);}
+.bg2{position:absolute;top:size(500);left : 0;width: size(1405);transform: scaleY(-1);opacity: .5;}
+.tree1{position:absolute;top:size(595);right:size(390);width:size(220);}
 }
 
 .txt{
 float: right;
   position: relative;
-  padding-top: 9.5vw;
+  padding-top: 8.5vw;
   width: size(580);
   z-index: 2;
   margin-right: size(210);
@@ -69,58 +86,14 @@ float: right;
   }
 
 /* Swipe */
-
 .swipe {position: relative;
-float: left;
- // position: absolute;
+  float: left;
   width: size(840);
   height: size(560);
-// top: size(185);
- // left: size(210);
   margin-left: size(210);
-  z-index: 3;
-  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(-1vw , -1vw);
-  &::before{content: "";position: absolute;display: block;
-  left: 0;top: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(-1vw , -1vw);}
-  }
+  z-index: 2;
 }
-
-@include name();
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-}
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-// 過場動畫
-// begin 
-.swipe-fade-leave-to {
-  opacity: 0;
-  z-index: 0;
-}
-// end
-.swipe-fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.swipe-fade-enter-active {
-  transition: all 0.5s ease;
-}
-
-.swipe-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
+@include swipe();
 
 // pagination
 .pagination {
@@ -129,46 +102,8 @@ float: left;
   left:calc(100% + 50 * 100vw / 1920);
   justify-content: center;
     font-size: size(20);
-  .pagination-dot {
-    padding: 0.25em;
-    margin: 0 0.15em;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width:3em;
-      height:12px;
-      position: relative;
-      &::before{content: "";
-      transition: transform 0.5s, background 0.5s;
-      display: block;width: 100%;height:100%;
-      background: $pagination;
-        transform: scaleY(.25);transform-origin: 50% 50%;
-    }
-      &.active {
-        &::before{  transform: scaleY(1);
-      background:$pagination-active;
-    }
-      }
-    }
-  }
-
 }
-.swipe-btns {
-  width: 100%;
-  height: 100%;
-  padding: 0 0.75em;
-  z-index: 3;
-  font-size: size(20);
-
-  .prev-btn,
-  .next-btn {
-    width: 1em;
-    cursor: pointer;
-  }
-}
-
+/*
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -176,44 +111,33 @@ float: left;
     height: 100vh;
   }
 }
-
+*/
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
-  .section5 {
+  .section3 {
     width: 100%;
     height: auto;
-    padding: 0;
-
+    padding:10vw 0;
   }
-.img{top: 100%;
-.f2{width:sizem(105);top:sizem(100);right:sizem(-127);}
 
-}
   .txt{
     position: relative;
     width: sizem(320);
     float: none;
     font-size: sizem(15);
-  padding-top: 0;
+    padding-top: 0;
     margin:2em auto 6em;
   }
   /* Swipe */
   .swipe {
-    position: relative;
     width: 100%;
     float: none;
     height: sizem(250);
-    top:0;
-    left:0;
-  margin-left:0;
-  }
-
-  .swipe-btns {
-  font-size: sizem(15);
+    margin-left:0;
   }
 }
 </style>
@@ -224,7 +148,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section5',
+  name: 'section3',
 
   mixins: [slider],
   props: ['viewIndex'],
