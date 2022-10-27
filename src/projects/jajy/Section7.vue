@@ -365,19 +365,31 @@ export default {
       slideList: [
         {
           img: isMobile?require("./s7/1m.jpg"):require("./s7/1.jpg"),
-          name: '3D透視示意圖 僅供參考',
+          name: '大廳 3D透視示意圖 僅供參考',
         },
         {
           img: isMobile?require("./s7/2m.jpg"):require("./s7/2.jpg"),
-          name: '3D透視示意圖 僅供參考',
+          name: '大廳 3D透視示意圖 僅供參考',
         },
         {
           img: isMobile?require("./s7/3m.jpg"):require("./s7/3.jpg"),
-          name: '3D透視示意圖 僅供參考',
+          name: '品茗室 3D透視示意圖 僅供參考',
         },
         {
           img: isMobile?require("./s7/4m.jpg"):require("./s7/4.jpg"),
-          name: '3D透視示意圖 僅供參考',
+          name: '多功能室 3D透視示意圖 僅供參考',
+        },
+        {
+          img: isMobile?require("./s7/4m.jpg"):require("./s7/5.jpg"),
+          name: '兒童遊戲室 3D透視示意圖 僅供參考',
+        },
+        {
+          img: isMobile?require("./s7/4m.jpg"):require("./s7/6.jpg"),
+          name: '健身房 3D透視示意圖 僅供參考',
+        },
+        {
+          img: isMobile?require("./s7/4m.jpg"):require("./s7/7.jpg"),
+          name: '電子遊戲區 3D透視示意圖 僅供參考',
         },
       ],
     }
