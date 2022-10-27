@@ -20,14 +20,14 @@ $pagination-active:#fff;
   font-style: normal;
   text-align: justify;
   font-size:$fontsize;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
   .title{
     font-family: 'Noto Serif TC',sans-serif;
     font-size:2.3em;
     margin:0 auto 0;
-    color: #002B69;
-    font-weight: 800;
+    color: #FFF;
+    font-weight: 700;
     line-height: 1.4;
   }
     .subtitle{font-size: 1.25em;
@@ -73,4 +73,106 @@ $pagination-active:#fff;
  @media screen and (max-width: 767px) {
   .slide-name{font-size: sizem(12);} 
 }
+}
+
+
+
+//輪播圖圈圈箭頭樣式
+@mixin swipe() {
+  @include name();
+  
+  .swipe-wrap {
+    width: 100%;
+    height: 100%;
+  }
+  .swipe-item {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // 過場動畫
+  // begin 
+  .swipe-fade-leave-to {
+    opacity: 0;
+    z-index: 0;
+  }
+  // end
+  .swipe-fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .swipe-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+  
+  .swipe-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .pagination-dot {
+    padding: 0.25em;
+    margin: 0 0.2em;
+    cursor: pointer;
+    z-index: 4;
+  
+    span {
+      display: block;
+      width:1em;
+      height:1em;
+      border-radius: 50%;
+      border: 0.2em solid  $pagination;
+      position: relative;
+      transition: all 0.5s;
+  
+      &::before {
+        content: '';
+        width: 60%;
+        height: 60%;
+        display: block;
+      border-radius: 50%;
+      border:  0.105em solid  $pagination-active;
+        opacity: 1;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        transition: all 0.3s;
+        transform-origin: center;
+        transform: scale(0);
+      }
+      &.active {
+        box-shadow: none;
+        &::before {
+          width: 100%;
+          height: 100%;
+          top: 0%;
+          left: 0%;
+          transform: scale(1.6);
+        }
+      }
+    }
+  }
+  .swipe-btns {
+    width: 100%;
+    height: 100%;
+    padding: 0 0.75em;
+    z-index: 3;
+    font-size: size(20);
+  
+    .prev-btn,
+    .next-btn {
+      width: 1em;
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .swipe-btns {
+    font-size: sizem(15);
+    }
+ }
 }

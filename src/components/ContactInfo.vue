@@ -4,18 +4,18 @@
 
     <div class="imgl" data-aos="zoom-in" data-aos-delay="0" >
       <div>
-    <img src="@/projects/smilecastle/all/f6.png" class="f6" />
-    <img src="@/projects/smilecastle/all/f2.png" class="f2" />
-    <img src="@/projects/smilecastle/all/f3.png" class="f3" />
-    <img src="@/projects/smilecastle/all/f5.png" class="f5" />
-    <img src="@/projects/smilecastle/all/f1.png" class="f1" /></div>
+    <img src="@/projects/fong-guang/all/f6.png" class="f6" />
+    <img src="@/projects/fong-guang/all/f2.png" class="f2" />
+    <img src="@/projects/fong-guang/all/f3.png" class="f3" />
+    <img src="@/projects/fong-guang/all/f5.png" class="f5" />
+    <img src="@/projects/fong-guang/all/f1.png" class="f1" /></div>
     </div>
    <div class="imgr" data-aos="zoom-in" data-aos-delay="0"><div>
-    <img src="@/projects/smilecastle/all/f3.png" class="f3" />
-    <img src="@/projects/smilecastle/all/f3.png" class="f5" />
-    <img src="@/projects/smilecastle/all/f2.png" class="f2" />
-    <img src="@/projects/smilecastle/all/f4.png" class="f4" />
-    <img src="@/projects/smilecastle/all/f1.png" class="f1" /></div>
+    <img src="@/projects/fong-guang/all/f3.png" class="f3" />
+    <img src="@/projects/fong-guang/all/f3.png" class="f5" />
+    <img src="@/projects/fong-guang/all/f2.png" class="f2" />
+    <img src="@/projects/fong-guang/all/f4.png" class="f4" />
+    <img src="@/projects/fong-guang/all/f1.png" class="f1" /></div>
     </div>
 
     <!--  <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" /> --> 

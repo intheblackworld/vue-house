@@ -265,14 +265,6 @@ float: left;
     left:0;
   margin-left:0;
   }
-.swipe-item {
-  .slide-name {
-    font-size: sizem(12);
-  }
-}
-  .swipe-btns {
-  font-size: sizem(15);
-  }
 }
 </style>
 <script>
