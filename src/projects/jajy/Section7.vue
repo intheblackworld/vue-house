@@ -376,15 +376,15 @@ export default {
           name: '品茗室 3D透視示意圖 僅供參考',
         },
         {
-          img: isMobile?require("./s7/4m.jpg"):require("./s7/6.jpg"),
+          img: isMobile?require("./s7/6m.jpg"):require("./s7/6.jpg"),
           name: '健身房 3D透視示意圖 僅供參考',
         },
         {
-          img: isMobile?require("./s7/4m.jpg"):require("./s7/5.jpg"),
+          img: isMobile?require("./s7/5m.jpg"):require("./s7/5.jpg"),
           name: '兒童遊戲室 3D透視示意圖 僅供參考',
         },
         {
-          img: isMobile?require("./s7/4m.jpg"):require("./s7/7.jpg"),
+          img: isMobile?require("./s7/7m.jpg"):require("./s7/7.jpg"),
           name: '電子遊戲區 3D透視示意圖 僅供參考',
         },
         {
