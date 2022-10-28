@@ -1,14 +1,5 @@
 <template>
   <div class="order-bg" ref="parallax2">
-    <div class="img" data-aos="zoom-in" data-aos-delay="0" >
-      <div>
-      <div>
-    <img src="@/projects/fong-guang/all/f6.png" class="f6" />
-  </div>
-    <img src="@/projects/fong-guang/all/f3.png" class="f3" />
-    <img src="@/projects/fong-guang/all/f1.png" class="f1" />
-  </div>
-    </div>
     <div class="order-top">
       <div class="title-block">
       <h2 class="order-title" v-html="order.title" data-aos="zoom-in" v-if="order.title"></h2>

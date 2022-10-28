@@ -173,28 +173,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1.jpg'),
-          name: '台74號快速道路，現場實景經電腦修飾示意',
+          img: require('./s3/1.jpg'),
+          name: '新北大橋示意圖',
         },
         {
-          img: require('./s5/2.jpg'),
-          name: '台鐵精武站，現場實景經電腦修飾示意',
+          img: require('./s3/2.jpg'),
+          name: '華翠橋示意圖',
         },
         {
-          img: require('./s5/3.jpg'),
-          name: '中山路商圈，現場實景經電腦修飾示意',
-        },
-        {
-          img: require('./s5/4.jpg'),
-          name: '新光黃昏市場，現場實景經電腦修飾示意',
-        },
-        {
-          img: require('./s5/5.jpg'),
-          name: '立文公園，現場實景經電腦修飾示意',
-        },
-        {
-          img: require('./s5/6.jpg'),
-          name: '新高國小，現場實景經電腦修飾示意',
+          img: require('./s3/3.jpg'),
+          name: '華江橋示意圖',
         },
       ],
     }

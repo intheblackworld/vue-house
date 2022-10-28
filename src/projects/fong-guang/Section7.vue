@@ -36,45 +36,8 @@
   height:auto;
   position: relative;
   padding: 9vw 0 5vw;
+  background: url("./s7/bg.jpg");
 &::after{content: "";clear: both;display: block;}
-}
-
-.img{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
-  z-index: 4;
-img{position:absolute;pointer-events: none;}
-> div{ transform: rotate(-56deg);
-  > div{transform: rotate(89deg) scaleY(-1);}
-}
-.f2{width:size(373);
-    top: 4vw;
-    left: -15vw;
-  transform-origin: 0% 0%;transform: rotate(4deg);
-animation: an 3s ease-in-out infinite alternate;}
-.f3{width:size(80);
-    top: -9vw;
-    left: -5vw;
-  transform: rotate(132deg);transform-origin: 90% 100%;
-animation: an2 3s -.8s ease-in-out infinite alternate;}
-.f4{width:size(444);
-    top: 2vw;
-    left: -13vw;
-  transform-origin: 0% 0%;transform: rotate(3deg);
-animation: an 3s -.2s ease-in-out infinite alternate;}
-.f5{width:size(330);
-    top: -14vw;
-    left: 0vw;transform-origin: 0% 0%;transform: rotate(-5deg);
-animation: an 3s -.4s ease-in-out infinite alternate;}
-
-}
-@keyframes an{
-  to{
-    transform: rotate(0deg);
-  }
-}
-@keyframes an2{
-  to{
-    transform: rotate(129deg);
-  }
 }
 .txt{
   position: relative;
@@ -82,8 +45,29 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
   margin: 1em auto 3em auto;
   z-index: 2;
   @include txt(size(18));
+
+  .title{
+  .title1{
+    color: #795E49;
+    
+  }
+  .title2{
+    color: #A28A78;
+    margin: 0 0.5em;
+  }
+  .title3{
+    color: #A28A78;
+    border: 2px solid #C6BA9A;
+    display: inline-block;
+    font-size: .8em;
+    padding: 0 0.4em;
+    vertical-align: bottom;
+    
+  }
+    
   }
 
+  }
 /* Swipe */
 .swipe {
   position: relative;
@@ -93,8 +77,23 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
   // left: size(210);
   z-index: 3;
   object-fit: cover;
+ background: #fff4;
 }
 @include swipe();
+.slide-name{
+  color: #000c;
+ text-shadow:0 0 0 #0000;
+}
+
+.pagination-dot {
+  span {
+    border: 0.2em solid #C6BA9A;
+    &::before {
+    border:  0.105em solid #A28A78;
+    }
+  }
+}
+
 
 // pagination
 .pagination {
@@ -167,25 +166,25 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1.jpg'),
+          img: require('./s7/1.png'),
           name: '本傢配圖僅供參考，實際規劃及建材以合約書建造執照核准圖為準',
           title1: '奢享兩房',
           title2: '風光之最',
           title3: 'A棟／37坪',
         },
         {
-          img: require('./s6/2.jpg'),
+          img: require('./s7/2.png'),
           name: '本傢配圖僅供參考，實際規劃及建材以合約書建造執照核准圖為準',
-          title1: '奢享兩房',
-          title2: '風光之最',
-          title3: 'A棟／37坪',
+          title1: '寬裕三房',
+          title2: '雍容生活',
+          title3: 'B棟／47坪',
         },
         { 
-          img: require('./s6/9.jpg'),
+          img: require('./s7/3.png'),
           name: '本傢配圖僅供參考，實際規劃及建材以合約書建造執照核准圖為準',
-          title1: '奢享兩房',
-          title2: '風光之最',
-          title3: 'A棟／37坪',
+          title1: '大戶人家',
+          title2: '尊寵四房',
+          title3: 'A棟／70坪',
         },
       ],
     }

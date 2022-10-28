@@ -189,20 +189,16 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/2.jpg'),
-          name: '情境示意',
-        },
-        {
-          img: require('./s4/4.jpg'),
-          name: '情境示意',
-        },
-        {
           img: require('./s4/1.jpg'),
-          name: '情境示意',
+          name: '溪頭公園示意圖',
+        },
+        {
+          img: require('./s4/2.jpg'),
+          name: '河濱公園示意圖',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '情境示意',
+          name: '河濱公園示意圖',
         },
       ],
     }

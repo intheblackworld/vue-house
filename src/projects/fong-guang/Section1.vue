@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
     <!-- 
-   -->
     <img src="./s1/pc.jpg" class="t0" />
+   -->
     <img src="./s1/bg.jpg" class="bg" />
 
    
@@ -261,7 +261,7 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
 </svg>
 
 
-<div class="t1"  data-aos="zoom-in" data-aos-delay="400">醇日光  心居地
+<div :class="`t1 ${cls}`" data-aos="zoom-in" data-aos-delay="400">{{title}}
 </div>
       <div class="t2"  data-aos="zoom-in" data-aos-delay="400">37｜47｜70坪</div>
     </div>
@@ -367,7 +367,7 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
   line-height: 1.5;
   color: #fff;
   text-align: center;
-  width:size(630);
+  width:size(800);
     letter-spacing:0em;
     padding: 0;
   font-weight: 300;
@@ -464,6 +464,10 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
   width:sizem(200);filter: drop-shadow(1vw 0.7vw 0.4vw #000c);
   margin: 0 auto 0.6em;
 }
+.t1{
+  &.s8{
+  font-size: .8em;}
+    }
 .t2{
   margin:0.8em 0 0 0;
     }
@@ -477,6 +481,9 @@ import { isPC, isMobile, isTablet } from '@/utils'
 
 export default {
   name: 'section1',
+  components: {},
+
+  props: ['title', 'cls'],
 
   data() {
     return {

@@ -93,7 +93,7 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
 .swipe {position: relative;
 float: right;
   width: size(840);
-  height: size(560);
+  height: size(650);
   margin-right: size(210);
 }
 @include swipe();
@@ -189,20 +189,12 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s4/2.jpg'),
-          name: '情境示意',
+          img: require('./s6/1.jpg'),
+          name: '精緻基地',
         },
         {
-          img: require('./s4/4.jpg'),
-          name: '情境示意',
-        },
-        {
-          img: require('./s4/1.jpg'),
-          name: '情境示意',
-        },
-        {
-          img: require('./s4/3.jpg'),
-          name: '情境示意',
+          img: require('./s6/2.jpg'),
+          name: '明亮空間示意圖',
         },
       ],
     }

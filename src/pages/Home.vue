@@ -12,7 +12,7 @@
     > -->
     <!-- <LeafFlow /> -->
     <vue-lazy-component class="section relative" id="section1" @init="init">
-      <Section1 />
+      <Section1  title="醇日光 心居地" cls="s1"/>
     </vue-lazy-component>
     <vue-lazy-component class="section" id="section2">
       <Section2 />
@@ -83,6 +83,9 @@
     >
       <Section8 />
     </vue-lazy-component>
+    <vue-lazy-component class="section" id="section9" @init="init">
+      <Section1 title="江翠新富區｜全新落成  風光入席" cls="s8" />
+    </vue-lazy-component>
 <!--      
     <vue-lazy-component
       class="section"
@@ -134,7 +137,6 @@
 }
 #contact{z-index: 3;}
 .og{position: absolute;width:1px;}
-
 /*
 .bg1 {
 //padding-top: $nav_pc_height;
