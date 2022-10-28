@@ -253,7 +253,7 @@ float: left;
     top: sizem(-310);
   }
   .mapimg{
-  width: sizem(300);
+  width: sizem(330);
   margin:sizem(50) auto;
   }
   .bg{position: absolute;left: 0;top:auto;bottom:sizem(0);width: 100%;}

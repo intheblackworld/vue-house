@@ -2,9 +2,9 @@
   <div class="section1">
     <div class="txt">
       <img src="./s1/logo.png" class="logo">
-      <div v-if="isPC" class="t1"  data-aos="zoom-in" data-aos-delay="600">聯發開發事業有限公司</div>
+      <!--div v-if="isPC" class="t1"  data-aos="zoom-in" data-aos-delay="600">聯發開發事業有限公司</div-->
     </div>
-    <div v-if="isMobile" class="t1"  data-aos="zoom-in" data-aos-delay="600">聯發開發事業有限公司</div>
+    <!--div v-if="isMobile" class="t1"  data-aos="zoom-in" data-aos-delay="600">聯發開發事業有限公司</div-->
       <img src="./s1/bg_mask.png" class="mask">
       <img v-if="isPC" src="./s1/srtye_1.png" class="style1">
       <img v-else src="./s1/srtye_1_m.png" class="style1">
