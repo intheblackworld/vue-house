@@ -22,14 +22,14 @@
       </div>
 
       <div v-if="isPC" class="desc2" data-aos="fade-up" data-aos-delay="300">
-        <font color="white">鳳鳴國小第一排，步行3分鐘達8,800<br>坪公四公園，文教綠意皆滿分</font><br>
+        <font color="white">鳳鳴國小第一排，社區私藏庭院花園，四季風情萬種 <br>【五大公園】休憩資源豐富，文教綠意皆滿分</font><br>
         鳳鳴國小首席、千坪大基地<br>
-        四季庭園、雙面臨路、全齡公設
+        四季庭園、雙面臨路、豐富公設
       </div>
       <div v-else class="desc2" data-aos="fade-up" data-aos-delay="300">
-        <font color="white">鳳鳴國小第一排，步行3分鐘達8,800坪公四公園，文教綠意皆滿分</font><br>
+        <font color="white">鳳鳴國小第一排，社區私藏庭院花園，四季風情萬種【五大公園】<br>休憩資源豐富，文教綠意皆滿分</font><br>
         鳳鳴國小首席、千坪大基地<br>
-        四季庭園、雙面臨路、全齡公設
+        四季庭園、雙面臨路、豐富公設
       </div>
 
       </div>
