@@ -1,7 +1,15 @@
 <template>
   <div>
-    <div class="section6">
-      <!--    -->  
+    <div class="section7">
+    <div class="imgrb" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-300">
+      <div>
+    <img src="./s1/w.png" class="img1" />
+    <img src="./s1/w.gif" class="img2" /></div>
+    </div>
+    <div class="tree" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-300">
+    <img src="./s1/tree.png" class="tree1" />
+    <img src="./s1/tree.png" class="tree2" />
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -31,18 +39,32 @@
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-.section6 {  
+.section7 {  
   width:100%;
   height:auto;
   position: relative;
-  padding: 9vw 0 5vw;
+  padding: 5vw 0 5vw;
   background: url("./s7/bg.jpg");
 &::after{content: "";clear: both;display: block;}
+}
+
+.img1{position:absolute; width: 100%;}
+.img2{position:absolute; width: 100%;
+ filter: blur(size(1));
+}
+.imgrb{position:absolute;bottom:size(-50);right: size(-800);transform-origin: 100% 0%;width: size(1550);z-index: 2;
+ > div{transform: rotate(-21deg);}
+ img{right: 0;bottom: 0;}
+
+}
+.tree{position:absolute;bottom:size(0);left: 0;width: 100%;
+.tree1{position: absolute;left:size(0);bottom:size(0);width:size(210);}
+.tree2{position: absolute;right:size(10);bottom:size(150);width:size(135);}
 }
 .txt{
   position: relative;
   width: size(1500);
-  margin: 1em auto 3em auto;
+  margin: 1em auto 0em auto;
   z-index: 2;
   @include txt(size(18));
 
@@ -118,29 +140,52 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section6 {
+  .section7 {
     width: 100%;
     height: auto;
     min-height: auto;
     max-height: initial;
-  padding: 0;
+  padding: 0 0 23vw;
   }
+.imgrb{bottom:sizem(0);right: sizem(-500);width: sizem(700);
+
+}
+.tree{
+.tree1{left:sizem(-30);bottom:sizem(40);width:sizem(90);}
+.tree2{right:sizem(60);bottom:sizem(-30);width:sizem(70);}
+}
   .txt{
     position: relative;
     width: sizem(320);
-    margin:2em auto 6em;
+    margin:1em auto 0;
     left:0;
     top:0;
     font-size: sizem(15);
   padding-top:0;
+  .title{
+      font-size:1.6em;
+  .title2{
+    margin: 0 0.3em;
+  }
+  .title3{
+    padding: 0 0.3em;
+    
+  }
+    }
   }
   /* Swipe */
   .swipe {
     position: relative;
     width: 100%;
-    height: sizem(270);
+    height: sizem(280);
     top:0;
     left:0;
+ background:#FFF0;
+  }
+  .swipe-item {
+    img {
+      object-fit: contain;
+    }
   }
 }
 
@@ -152,7 +197,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section6',
+  name: 'section7',
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -167,21 +212,21 @@ export default {
       slideList: [
         {
           img: require('./s7/1.png'),
-          name: '本傢配圖僅供參考，實際規劃及建材以合約書建造執照核准圖為準',
+          name: '家配圖僅供參考，實際以合約書建照執照核准圖為主',
           title1: '奢享兩房',
           title2: '風光之最',
           title3: 'A棟／37坪',
         },
         {
           img: require('./s7/2.png'),
-          name: '本傢配圖僅供參考，實際規劃及建材以合約書建造執照核准圖為準',
+          name: '家配圖僅供參考，實際以合約書建照執照核准圖為主',
           title1: '寬裕三房',
           title2: '雍容生活',
           title3: 'B棟／47坪',
         },
         { 
           img: require('./s7/3.png'),
-          name: '本傢配圖僅供參考，實際規劃及建材以合約書建造執照核准圖為準',
+          name: '家配圖僅供參考，實際以合約書建照執照核准圖為主',
           title1: '大戶人家',
           title2: '尊寵四房',
           title3: 'A棟／70坪',

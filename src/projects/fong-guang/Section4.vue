@@ -1,6 +1,18 @@
 <template>
   <div>
     <div class="section4">
+    <div class="cloud" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-300">
+    <img src="./s1/cloud1.png" class="cloud1" />
+    </div>
+    <div class="img">
+    <img src="./s1/tree.png" class="tree1" />
+    <img src="./s1/img.png" class="tree2" />
+    </div>
+    <div class="imglb" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-300">
+      <div>
+    <img src="./s1/w.png" class="img1" />
+    <img src="./s1/w.gif" class="img2" /></div>
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -42,41 +54,31 @@
 &::after{content: "";clear: both;display: block;}
 }
 
-.img{position:absolute;top: 0;right: 0;transform-origin: 0% 0%;
-  > div{transform: rotate(100deg);}
-img{position:absolute;pointer-events: none;}
-.f1{
-    width: 9.5vw;
-    top: -9.6vw;
-    left: 3.3vw;transform:scaleX(-1) rotate(-176.43deg);transform-origin: 90% 100%;
-animation: an1 3s -.5s ease-in-out infinite alternate;
+.img{position:absolute;top: 0;left: 0;width: 100%;
+.tree1{position:absolute;top:size(620);left:size(250);width:size(220);}
+.tree2{position: absolute;left:size(650);top:size(50);width:size(250);z-index: 2;}
 }
-.f3{width:size(100);top:size(-430);left:size(150);transform:scaleX(-1) rotate(190deg);transform-origin: 90% 100%;
-animation: an2 3s -.8s ease-in-out infinite alternate;}
-.f4{width:size(380);
-    top: -10.5vw;
-    left: 7vw;transform-origin: 0% 0%;transform: rotate(3deg);
-animation: an 3s -.2s ease-in-out infinite alternate;}
-.f5{width:size(290);top:size(-160);left:size(100);transform-origin: 0% 0%;transform: rotate(5deg);
-animation: an 3s -.4s ease-in-out infinite alternate;}
-
+.img1{position:absolute; width: 100%;}
+.img2{position:absolute; width: 100%;
+   filter: blur(size(1));
 }
-@keyframes an{
-  to{
-    transform: rotate(0deg);
-  }
+.imglb{
+  position:absolute;bottom:size(-5);
+  z-index: 2;
+  left:size(-760);transform-origin: 0% 0%; width: size(1550);
+> div{transform: rotate(13deg);}
+img{left:0;bottom:0;}
 }
-@keyframes an1{
-  to{
-    transform:scaleX(-1) rotate(-173.43deg);
-  }
+.cloud{position:absolute;top:0;left: 0;
+.cloud1{position: absolute;left:size(550);top:size(550);width:size(250);
+      animation: cloud 3s -.5s linear infinite alternate;
+      transform: translateX(-10%);}
 }
-@keyframes an2{
-  to{
-    transform:scaleX(-1)  rotate(194deg);
-  }
+@keyframes cloud{
+    to{
+      transform: translateX(0%);
+    }
 }
-
 .txt{
   float: left;
   position: relative;
@@ -124,30 +126,11 @@ float: right;
   .section4 {
     width: 100%;
     height: auto;
-    padding: 0;
-
+    padding:10vw 0 0 0;
   }
-  
-
-.img{top:auto;bottom:sizem(0);z-index: 4;
-
-  .f1{
-    width: sizem(77);
-    top: -16.6vw;
-    left: 14.3vw;
-}
-.f3{width:sizem(36);
-    top: -33.5vw;
-    left: 24vw;
-}
-.f4{width:sizem(155);
-    top: -23.5vw;
-    left: -13vw;}
-.f5{width:sizem(114);top:sizem(-40);left:sizem(60);}
-}
   .txt{
     position: relative;
-    width: sizem(320);
+    width: sizem(310);
     float: none;
     font-size: sizem(15);
     padding-top: 0;
@@ -163,9 +146,18 @@ float: right;
     left:0;
   margin-left:0;
   }
-  .swipe-btns {
-  font-size: sizem(15);
-  }
+  
+  .img{
+.tree1{top:sizem(475);left:sizem(90);width:sizem(65);}
+.tree2{top:sizem(450);left:sizem(250);width:sizem(90);}
+}
+  .cloud{
+.cloud1{top:sizem(480);left:sizem(220);width:sizem(100);}
+}
+.imglb{
+  bottom:sizem(-127);left:sizem(-320);
+  width: sizem(600);
+}
 }
 </style>
 <script>

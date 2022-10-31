@@ -299,7 +299,9 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
   }
 
   .img1{position:absolute; width: 100%;}
-.img2{position:absolute; width: 100%;mix-blend-mode: screen; filter: blur(size(1)); }
+.img2{position:absolute; width: 100%;
+   filter: blur(size(1));
+}
 
 .imglt{position:absolute;top: size(-37);left:size(-335);transform-origin: 0% 0%; width: size(1040);
  > div{

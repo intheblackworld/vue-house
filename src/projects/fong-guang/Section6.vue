@@ -1,6 +1,15 @@
 <template>
   <div>
-    <div class="section4">
+    <div class="section6">
+    <div class="img">
+    <img src="./s3/bg.jpg" class="bg1" />
+    <img src="./s1/img.png" class="tree2" />
+    </div>
+    <div class="imglb" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-300">
+      <div>
+    <img src="./s1/w.png" class="img1" />
+    <img src="./s1/w.gif" class="img2" /></div>
+    </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -32,7 +41,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
+.section6 {
   width:100%;
   height:auto;
   position: relative;
@@ -41,42 +50,28 @@
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
-
-.img{position:absolute;top: 0;right: 0;transform-origin: 0% 0%;
-  > div{transform: rotate(100deg);}
-img{position:absolute;pointer-events: none;}
-.f1{
-    width: 9.5vw;
-    top: -9.6vw;
-    left: 3.3vw;transform:scaleX(-1) rotate(-176.43deg);transform-origin: 90% 100%;
-animation: an1 3s -.5s ease-in-out infinite alternate;
-}
-.f3{width:size(100);top:size(-430);left:size(150);transform:scaleX(-1) rotate(190deg);transform-origin: 90% 100%;
-animation: an2 3s -.8s ease-in-out infinite alternate;}
-.f4{width:size(380);
-    top: -10.5vw;
-    left: 7vw;transform-origin: 0% 0%;transform: rotate(3deg);
-animation: an 3s -.2s ease-in-out infinite alternate;}
-.f5{width:size(290);top:size(-160);left:size(100);transform-origin: 0% 0%;transform: rotate(5deg);
-animation: an 3s -.4s ease-in-out infinite alternate;}
-
-}
-@keyframes an{
-  to{
-    transform: rotate(0deg);
+.img{position:absolute;bottom: 0;left: 0;width: 100%;
+  .bg1{
+    position:absolute;bottom:size(-100);
+    left:size(-20);width: size(900);
   }
-}
-@keyframes an1{
-  to{
-    transform:scaleX(-1) rotate(-173.43deg);
-  }
-}
-@keyframes an2{
-  to{
-    transform:scaleX(-1)  rotate(194deg);
+  .tree2{
+    position: absolute;right:size(50);
+    bottom:size(50);width:size(250);
   }
 }
 
+.img1{position:absolute; width: 100%;}
+.img2{position:absolute; width: 100%;
+ filter: blur(size(1));
+}
+.imglb{position:absolute;bottom:size(-5);left:size(-760);transform-origin: 0% 0%; width: size(1550);z-index: 2;
+
+> div{
+   transform: rotate(13deg);}
+img{left: 0;bottom: 0;}
+
+}
 .txt{
   float: left;
   position: relative;
@@ -121,30 +116,12 @@ float: right;
 }
 
 @media screen and (max-width: 767px) {
-  .section4 {
+  .section6 {
     width: 100%;
     height: auto;
-    padding: 0;
+    padding:10vw 0;
 
   }
-  
-
-.img{top:auto;bottom:sizem(0);z-index: 4;
-
-  .f1{
-    width: sizem(77);
-    top: -16.6vw;
-    left: 14.3vw;
-}
-.f3{width:sizem(36);
-    top: -33.5vw;
-    left: 24vw;
-}
-.f4{width:sizem(155);
-    top: -23.5vw;
-    left: -13vw;}
-.f5{width:sizem(114);top:sizem(-40);left:sizem(60);}
-}
   .txt{
     position: relative;
     width: sizem(320);
@@ -158,14 +135,22 @@ float: right;
     position: relative;
     width: 100%;
     float: none;
-    height: sizem(250);
+    height: sizem(300);
     top:0;
     left:0;
   margin-left:0;
   }
-  .swipe-btns {
-  font-size: sizem(15);
+  .img{
+  .bg1{bottom:sizem(-60);
+    left:sizem(-130);width: sizem(600);
   }
+  .tree2{right:sizem(50);
+    bottom:sizem(30);width:sizem(90);
+  }
+}
+.imglb{bottom:sizem(2);left:sizem(-370);
+  width: sizem(650);
+}
 }
 </style>
 <script>
@@ -175,7 +160,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section4',
+  name: 'section6',
 
   mixins: [slider],
   props: ['viewIndex'],

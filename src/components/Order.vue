@@ -280,61 +280,6 @@ export default {
 @import "@/assets/style/variableColor.scss";
 @import "@/assets/style/function.scss";
 
-.contact1 {
-  position: absolute;
-  left: size(200);
-  width: size(756);
-}
-
-.contact2 {
-  position: absolute;
-  right: -#{size(50)};
-  width: size(148);
-}
-.img{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
-img{position:absolute;} 
-> div{
- transform:rotate(72deg);
-> div{
- transform:rotate(-151deg);
-}
-}
-.f1{
-    width: 10vw;
-    top: -9vw;
-    left: 0vw;
-  transform:rotate(3deg);
-  transform-origin: 90% 100%;
-animation: an 3s -.4s ease-in-out infinite alternate;
-}
-.f3{
-    width: 5vw;
-    top: -15vw;
-    left: 4vw;
-  transform: rotate(4deg);
-  transform-origin: 90% 100%;
-animation: an 3s -.8s ease-in-out infinite alternate;}
-.f6{
-    width: 14vw;
-    top: -4vw;
-    left: -15vw;
-  transform-origin: 0% 0%;
-  transform:rotate(3deg);
-animation: an 3s -.6s ease-in-out infinite alternate;}
-
-}
-@keyframes an{
-  to{
-    transform: rotate(0deg);
-  }
-}
-.bg-img {
-  width: 110%;
-  position: absolute;
-  top: 0;
-  right: -2%;
-  pointer-events: none;
-}
 .order-bg {
   //background-color: $order_bg_color;
   //background-image: $order_bg_image;
@@ -351,7 +296,7 @@ animation: an 3s -.6s ease-in-out infinite alternate;}
   button {
   // font-family: $family3;
     background: $order_submit_bg;
-  //  border-radius: $order_submit_borderradius !important;
+    border-radius: .5em !important;
   }
   .order-top {
     //background-color: $order_bg_color;
@@ -362,6 +307,7 @@ animation: an 3s -.6s ease-in-out infinite alternate;}
     position: relative;
     padding: 0vw 0 0 0;
    // padding-bottom: 500px;
+   z-index: 2;
   }
   .order-title {
   position: relative;

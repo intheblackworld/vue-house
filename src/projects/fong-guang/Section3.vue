@@ -6,12 +6,12 @@
     <img src="./s3/bg.jpg" class="bg2" />
     <img src="./s1/tree.png" class="tree1" />
     </div>
-    <div class="imglt" data-aos="zoom-in" data-aos-delay="0" >
+    <div class="imglt" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="0" >
       <div>
     <img src="./s1/g.png" class="img1" />
     <img src="./s1/g.gif" class="img2" /></div>
     </div>
-   <div class="imgrt" data-aos="zoom-in" data-aos-delay="0">
+   <div class="imgrt" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="0">
       <div>
     <img src="./s1/g.png" class="img1" />
     <img src="./s1/g.gif" class="img2" /></div>
@@ -20,6 +20,9 @@
       <div>
     <img src="./s1/w.png" class="img1" />
     <img src="./s1/w.gif" class="img2" /></div>
+    </div>
+    <div class="cloud" v-if="!isMobile" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-300">
+    <img src="./s1/cloud1.png" class="cloud1" />
     </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -61,9 +64,20 @@
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
+.cloud{position:absolute;top:0;right: 0;
+.cloud1{position: absolute;right:size(150);top:size(150);width:size(250);
+      animation: cloud 3s -.5s linear infinite alternate;
+      transform: translateX(-10%);}
+}
+@keyframes cloud{
+    to{
+      transform: translateX(0%);
+    }
+}
 .img1{position:absolute; width: 100%;}
-.img2{position:absolute; width: 100%;mix-blend-mode: screen; filter: blur(size(1)); }
-
+.img2{position:absolute; width: 100%;
+   filter: blur(size(1));
+}
 .imglt{position:absolute;top: size(-127);left:size(-335);transform-origin: 0% 0%; width: size(1040);
  > div{
     transform: rotate(-20deg);}
@@ -81,8 +95,8 @@
 
 }
 .img{position:absolute;top: 0;left: 0;width: 100%;
-.bg1{position:absolute;top:size(-350);right: 0;width: 100%;transform: rotate(180deg);}
-.bg2{position:absolute;top:size(500);left : 0;width: size(1405);transform: scaleY(-1);opacity: .5;}
+.bg1{position:absolute;top:size(-350);right:0;width: 100%;transform: rotate(180deg);}
+.bg2{position:absolute;top:size(500);left:0;width: size(1405);transform: scaleY(-1);}
 .tree1{position:absolute;top:size(595);right:size(390);width:size(220);}
 }
 
@@ -102,7 +116,6 @@ float: right;
   width: size(840);
   height: size(560);
   margin-left: size(210);
-  z-index: 2;
 }
 @include swipe();
 
@@ -132,12 +145,12 @@ float: right;
   .section3 {
     width: 100%;
     height: auto;
-    padding:10vw 0;
+    padding:10vw 0 0 0;
   }
 
   .txt{
     position: relative;
-    width: sizem(320);
+    width: sizem(310);
     float: none;
     font-size: sizem(15);
     padding-top: 0;
@@ -150,6 +163,14 @@ float: right;
     height: sizem(250);
     margin-left:0;
   }
+.img{
+.bg1{top:sizem(-50);}
+.bg2{top:sizem(420);left:sizem(-200);width: sizem(650);}
+.tree1{top:sizem(450);right:sizem(55);width:sizem(92);}
+}
+.imgrb{bottom:sizem(-105);right: sizem(-480);
+  width: sizem(700);
+}
 }
 </style>
 <script>

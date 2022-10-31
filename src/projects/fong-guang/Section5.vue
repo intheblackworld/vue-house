@@ -1,9 +1,8 @@
 <template>
   <div>
-    <div class="section3">
+    <div class="section5">
     <div class="img">
-    <img src="./s3/bg.jpg" class="bg2" />
-    <img src="./s1/tree.png" class="tree1" />
+    <img src="./s3/bg.jpg" class="bg1" />
     </div>
     <div class="imgrb" data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-300">
       <div>
@@ -41,7 +40,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section3 {
+.section5 {
   width:100%;
   height:auto;
   position: relative;
@@ -50,29 +49,18 @@
   // background:#FFF;
 &::after{content: "";clear: both;display: block;}
 }
+
 .img1{position:absolute; width: 100%;}
-.img2{position:absolute; width: 100%;mix-blend-mode: screen; filter: blur(size(1)); }
-
-.imglt{position:absolute;top: size(-127);left:size(-335);transform-origin: 0% 0%; width: size(1040);
- > div{
-    transform: rotate(-20deg);}
- img{left: 0;top: 0;}
-
+.img2{position:absolute; width: 100%;
+ filter: blur(size(1));
 }
-.imgrt{position:absolute;top:size(-78);right: size(-640);transform-origin: 100% 0%;width: size(1170);
- > div{transform: rotate(26deg);}
- img{right: 0;top: 0;}
-
-}
-.imgrb{position:absolute;bottom:size(80);right: size(-800);transform-origin: 100% 0%;width: size(1550);z-index: 2;
+.imgrb{position:absolute;bottom:size(30);right: size(-500);transform-origin: 100% 0%;width: size(1550);z-index: 2;
  > div{transform: rotate(-21deg);}
  img{right: 0;bottom: 0;}
 
 }
-.img{position:absolute;top: 0;left: 0;width: 100%;
-.bg1{position:absolute;top:size(-350);right: 0;width: 100%;transform: rotate(180deg);}
-.bg2{position:absolute;top:size(500);left : 0;width: size(1405);transform: scaleY(-1);opacity: .5;}
-.tree1{position:absolute;top:size(595);right:size(390);width:size(220);}
+.img{position:absolute;top: 0;right: 0;width: 100%;
+.bg1{position:absolute;top:size(120);right: size(-120);width: size(900);transform: scaleX(-1);}
 }
 
 .txt{
@@ -91,7 +79,6 @@ float: right;
   width: size(840);
   height: size(560);
   margin-left: size(210);
-  z-index: 2;
 }
 @include swipe();
 
@@ -118,15 +105,15 @@ float: right;
 }
 
 @media screen and (max-width: 767px) {
-  .section3 {
+  .section5 {
     width: 100%;
     height: auto;
-    padding:10vw 0;
+    padding:10vw 0 0 0;
   }
 
   .txt{
     position: relative;
-    width: sizem(320);
+    width: sizem(310);
     float: none;
     font-size: sizem(15);
     padding-top: 0;
@@ -139,6 +126,12 @@ float: right;
     height: sizem(250);
     margin-left:0;
   }
+.imgrb{bottom:sizem(-80);right: sizem(-530);width: sizem(850);
+}
+.img{
+.bg1{top:sizem(250);right: sizem(-320);width: sizem(650);}
+}
+
 }
 </style>
 <script>
@@ -148,7 +141,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
-  name: 'section3',
+  name: 'section5',
 
   mixins: [slider],
   props: ['viewIndex'],
