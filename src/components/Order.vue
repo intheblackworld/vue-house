@@ -296,7 +296,6 @@ export default {
   button {
   // font-family: $family3;
     background: $order_submit_bg;
-    border-radius: .5em !important;
   }
   .order-top {
     //background-color: $order_bg_color;
@@ -313,7 +312,7 @@ export default {
   position: relative;
    // font-family: $family1;
   // width: size(1500);
-   font-family: 'Noto Serif TC', serif;
+   //font-family: 'Noto Serif TC', serif;
     padding-top:2em;
     padding-bottom:0;
     font-weight:700;
@@ -415,8 +414,8 @@ export default {
     align-items: center;
     align-content: space-between;
     justify-content: space-between;
-    //margin-bottom: 15px;
     background: $order_input_bg;
+    border-radius:.8em;
 
     &.house {
       margin-top: 50px;
@@ -515,6 +514,7 @@ export default {
     .order-title {
       width: 100%;
       font-size: calc(100vw * 30 / 375);
+    padding-top:4em;
     }
     .order-title-img {
       width: 80vw;

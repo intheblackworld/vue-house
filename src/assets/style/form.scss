@@ -25,7 +25,7 @@
   line-height: 48px !important;
   font-size: 16px !important;
   border: $order_input_border !important;
-  background: $order_input_bg;
+  background:transparent !important;
   color: $order_input_color;
   //font-family:$family3;
 
@@ -42,12 +42,11 @@
   height: 95% !important;
   .el-textarea__inner {
     height: 100% !important;
-    border-radius: 0 !important;
     color: #333;
     padding-top: 10px !important;
     font-size: 16px !important;
     border: $order_input_border !important;
-    background:#FFF;
+    background:transparent;
  // font-family:$family3;
 
     &::placeholder {
@@ -84,10 +83,8 @@
   line-height: 3.6 !important;
   background: $order_submit_bg;
   background-position: center !important;
- // border-radius: 1.8em !important;
- border-radius: 0 !important;
-  border: 0 solid #00537A !important;
- // border-radius: 72px / 72px !important;
+  border: 2px solid #F4DB8C !important;
+ border-radius: 1em !important;
   margin: 0 auto !important;
   margin-top: 20px !important;
   transition: all 0.3s !important;
