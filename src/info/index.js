@@ -5,9 +5,9 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14456.109303975161!2d121.4878747682847!3d25.067062943117875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a921646ff751%3A0xdd50bc3b055b8e3f!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5q2j576p5YyX6LevMTUz6Jmf!5e0!3m2!1szh-TW!2stw!4v1667196611872!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/nXVMQRGDDwRo7iE48',
   phone: '02-2983-9777',
-  fbLink: 'https://www.facebook.com/100085391143657',
-  fbMessage: 'https://m.me/100085391143657',
-  caseName: '豐光',
+  fbLink: 'https://www.facebook.com/101707636076747',
+  fbMessage: 'https://m.me/101707636076747',
+  caseName: '欣懋極綻',
   indigatorLength: 10,
 
   houseInfos: [
