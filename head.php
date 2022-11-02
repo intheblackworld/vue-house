@@ -1,6 +1,7 @@
 <?php
 // $src = $_SERVER['SERVER_NAME'];
 // $case_code = substr($src, 0, -7); // 砍掉後面七個字 .h35.tw -h35.tw
+$src = $_SERVER['SERVER_NAME'];
 $case_code = "fong-guang";
 $pdo = new pdo('mysql:host=localhost;dbname=htw12_web', 'htw12', '3hdaiU813Q');
 $pdo->exec("SET NAMES 'utf8'");
@@ -22,7 +23,7 @@ if (count($dataList) > 0) :
     <meta property="og:title" content="<?php echo $docTitle; ?>" />
     <meta property="og:description" content="<?php echo $docDesc ?>" />
     <meta property="og:site_name" content="<?php echo $siteName; ?>" />
-    <meta property="og:image" content="https://fong-guang.tw/img/og.jpg" />
+    <meta property="og:image" content="https://<?php echo $src; ?>/img/og.jpg" />
     <meta name="twitter:description" content="<?php echo $docDesc ?>" />
     <meta name="twitter:title" content="<?php echo $docTitle; ?>" />
     <meta itemprop="name" content="<?php echo $docTitle; ?>" />
