@@ -10,14 +10,14 @@
       <div v-if="isPC" class="desc" data-aos="fade-up" data-aos-delay="300">
         2012年，鶯歌獲選全球宜居城市<br>
         2022年，鳳鳴重劃區領銜升級，未來還會更好！<br>
-        捷運三鶯線、台鐵鳳鳴站2年內到位，北北桃生活圈更完整。
+        捷運三鶯線、台鐵鳳鳴站預定2年內到位，北北桃生活圈更完整。
       </div>
       <div v-else class="desc" data-aos="fade-up" data-aos-delay="300">
         2012年<br>
         鶯歌獲選全球宜居城市<br>
         2022年<br>
         鳳鳴重劃區領銜升級，未來還會更好！<br>
-        捷運三鶯線、台鐵鳳鳴站2年內到位<br>
+        捷運三鶯線、台鐵鳳鳴站預定2年內到位<br>
         北北桃生活圈更完整。
       </div>
 
@@ -118,7 +118,7 @@ img{width: 100%;}
   width: size(1000);
   color: #F9E07E;
   font-size:size(22);
-  padding: size(20) size(200);
+  padding: size(20) size(180);
   margin: size(20) auto;
   line-height: 1.8;
   border:1px solid #B48328;
