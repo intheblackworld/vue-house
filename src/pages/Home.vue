@@ -183,13 +183,7 @@ import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/sjzy/Section1.vue'
 import Section2 from '@/projects/sjzy/Section2.vue'
-import Section3 from '@/projects/sjzy/Section3.vue'
 import Section4 from '@/projects/sjzy/Section4.vue'
-import Section5 from '@/projects/sjzy/Section5.vue'
-import Section6 from '@/projects/sjzy/Section6.vue'
-import Section7 from '@/projects/sjzy/Section7.vue'
-import Section8 from '@/projects/sjzy/Section8.vue'
-import Section9 from '@/projects/sjzy/Section9.vue'
 /* 
 import Section10 from '@/projects/sjzy/Section10.vue'
 import Section10 from '@/projects/sjzy/Section10.vue'
@@ -208,13 +202,7 @@ export default {
     MobileNav,
     Section1,
     Section2,
-    Section3,
     Section4,
-    Section5,
-    Section6,
-    Section7,
-    Section8,
-    Section9,
     /* 
     Section10,
     Section11,

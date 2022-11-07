@@ -319,7 +319,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+   /*   slideList: [
         {
           img: require('./s4/1.jpg'),
           name: '台中市政府',
@@ -336,7 +336,7 @@ export default {
           img: require('./s4/4.jpg'),
           name: 'VVS1交通動線示意圖',
         },
-      ],
+      ], */
     }
   },
 

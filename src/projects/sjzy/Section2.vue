@@ -411,7 +411,7 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      slideList: [
+ /*     slideList: [
         {
           img: isMobile?require('./s2/slider_1_m.jpg'):require('./s2/slider_1.jpg'),
           name: '圖說',
@@ -425,6 +425,7 @@ export default {
           name: '圖說',
         },
       ],
+      */
     }
   },
 
