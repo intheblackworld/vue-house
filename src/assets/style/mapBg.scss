@@ -39,6 +39,23 @@
     // background: linear-gradient(to bottom,#0000 0%,#000 100%);
     z-index: 2;
   }
+  .name {
+    font-family: "Noto Sans TC";
+    left: 0;
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    color: #fff;
+    font-size: size(16);
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    text-align: right;
+    text-shadow: 0 0.3em 1em #0003 ,0 0 .2em #000;
+    padding: 0.7em;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -97,6 +114,11 @@
       &.hide {
         opacity: 0;
       }
+    }
+    .name {
+      font-size: sizem(12);
+    padding: 1em 1.3em;
+    text-align: left;
     }
   }
 }

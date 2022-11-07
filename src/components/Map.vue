@@ -13,7 +13,7 @@
       v-for="(tag, index) in tagList"
       :key="tag"
     />
-    <div class="name"></div>
+    <div class="name">3D鳥瞰示意圖</div>
   </div>
 </template>
 
