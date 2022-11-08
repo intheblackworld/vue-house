@@ -23,7 +23,7 @@ if (count($dataList) > 0) :
     <meta property="og:title" content="<?php echo $docTitle; ?>" />
     <meta property="og:description" content="<?php echo $docDesc ?>" />
     <meta property="og:site_name" content="<?php echo $siteName; ?>" />
-    <meta property="og:image" content="https://<?php echo $src; ?>/img/og.jpg" />
+    <meta property="og:image" content="https://<?php echo $src; ?>/img/og1.jpg" />
     <meta name="twitter:description" content="<?php echo $docDesc ?>" />
     <meta name="twitter:title" content="<?php echo $docTitle; ?>" />
     <meta itemprop="name" content="<?php echo $docTitle; ?>" />
