@@ -371,19 +371,20 @@ export default {
   .form {
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     margin: 0 auto;
     justify-content: space-between;
+    margin-bottom:25px;
+    height: 300px;
     > .group {
       flex: 1;
-      align-items: flex-start;
+      align-items:stretch;
     }
   }
 
   .group {
-    height: 240px;
-    margin-bottom: 40px;
-    align-content: space-between;
+    height:100%;
+    align-content:stretch;
     display: flex;
     flex-wrap: wrap;
 
@@ -414,7 +415,7 @@ export default {
     align-items: center;
     align-content: space-between;
     justify-content: space-between;
-    //margin-bottom: 15px;
+    margin-bottom: 15px;
     background: $order_input_bg;
 
     &.house {
@@ -479,24 +480,6 @@ export default {
  transform:rotate(-151deg);
 }
 }
-.f1{
-    width: 22vw;
-    top: -26vw;
-    left: auto;
-    right: 1vw;
-}
-.f3{
-    width: 9vw;
-    top: -38vw;
-    left: auto;
-    right: 3vw;
-  }
-.f6{
-    width: 25vw;
-    top: -9vw;
-    left: auto;
-    right: -20vw;
-  }
 
 }
   .order-bg {
@@ -542,11 +525,11 @@ export default {
 
     .form {
       flex-direction: column;
+      height: auto;
     }
 
     .group {
       width: 100%;
-      height: auto !important;
       margin-bottom: 0px !important;
       border: none !important;
       padding-right: 0 !important;
