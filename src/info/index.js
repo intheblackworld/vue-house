@@ -11,20 +11,20 @@ export default {
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '潤旺建設股份有限公司',],
-    ['建築設計', '李承洋建築師',],
-    ['行銷企劃', '澄果廣告有限公司',],
-    ['經紀人', '翁文正（95）北市經證字第00592號',],
+    ['投資興建', '清景祥資產有限公司',],
+    ['行銷企劃', '清揚國際實業股份有限公司',],
+    ['坪數規劃', '22-41坪',],
+    ['房型規劃', '兩房、三房',],
   ],
 
-  gtmCode: ['P6WKXZF'], // 可放置多個
+  gtmCode: ['PDH8S8G'], // 可放置多個
   recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {
     title: '預約賞屋',
     // subTitle: '若想了解更多資訊，歡迎填寫表單或來電洽詢，將由專人為您服務，謝謝！
-  //  room_type: ['兩房','三房'],//房型
+    room_type: ['兩房','三房'],//房型
   },
   lixin_logo:true, //false
 

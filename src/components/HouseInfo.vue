@@ -58,7 +58,7 @@ export default {
   color: $house_title_color;
   font-weight: bold;
   letter-spacing: 0.06em;
-  font-family: 'Noto Serif TC',sans-serif;
+ // font-family: 'Noto Serif TC',sans-serif;
 
 }
 
@@ -92,6 +92,7 @@ export default {
     white-space: nowrap;
    // font-family: $family3;
     width: 4em;
+  font-weight: 700;
   }
 
   .desc {
@@ -99,7 +100,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
   //  font-family: $family3;
-    font-weight: bold;
+  font-weight:400;
   }
 }
 
@@ -114,7 +115,7 @@ export default {
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
-    padding-bottom: 35vw;
+    padding-bottom: 20vw;
   }
 
   .title {
