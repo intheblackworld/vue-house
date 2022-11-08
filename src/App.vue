@@ -9,7 +9,7 @@
 <style lang="scss">
 // @import url('https://fonts.googleapis.com/css2?family=Cantata+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:700&subset=chinese-traditional');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,700&subset=chinese-traditional');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500&subset=chinese-traditional');
 // @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
 </style>
 

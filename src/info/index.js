@@ -1,13 +1,13 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市板橋區華江八路70號',
+  address: '東區中華東路一段223號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.9617872641097!2d121.46601131557011!3d25.03537084438926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9919921fe48a447!2zMjXCsDAyJzA3LjMiTiAxMjHCsDI4JzA1LjUiRQ!5e0!3m2!1szh-TW!2stw!4v1666950888153!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/BpgGt2r5rxCqbtQx9',
-  phone: '02-2252-7755',
-  fbLink: 'https://www.facebook.com/100085391143657',
-  fbMessage: 'https://m.me/100085391143657',
-  caseName: '豐光',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14691.708819046626!2d120.22513335271438!3d22.989704200000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e776304771f6d%3A0x8c386d94002b09a6!2z56CU5qOuIOaOpeW-heacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1667810284978!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/iCQyjRDPffFFRHcg8',
+  phone: ' 06-2090-888',
+  fbLink: 'https://www.facebook.com/MORIARCHITECTURE',
+  fbMessage: 'https://m.me/MORIARCHITECTURE',
+  caseName: '研森',
   indigatorLength: 10,
 
   houseInfos: [

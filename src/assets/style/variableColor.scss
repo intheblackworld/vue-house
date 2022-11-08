@@ -1,5 +1,5 @@
 /* html, body */
-$bg:#021710;
+$bg:#254B60;
 $bg-size:auto;
 
 /* font-family */
@@ -39,7 +39,7 @@ $mask_icon_color: #00235E;
 $order_bg_color: transparent;
 $order_bg_image: transparent;
 $order_bg_image_m: transparent;
-$order_title_color: #F9E07E;
+$order_title_color: #fff;
 $order_subtitle_color: #F9E07E;
 $order_input_label_color: #333;
 $order_input_color: #1a1a1a !important;
@@ -50,7 +50,7 @@ $order_input_focus_border: solid 1px #fff !important;
 $order_input_selected_color: solid 1px #fff !important;
 $order_check_desc_color: #FFF !important;
 $order_check_span_color: #FF0 !important;
-$order_submit_bg:linear-gradient(180deg, #E8DBB8 0%, #BBA468 51.56%, #9A813E 54.69%, #DFC888 100%) !important;
+$order_submit_bg:#0070C6 !important;
 $order_submit_color: #FFF !important;
 $order_sumbit_disable_bg: #FFF !important;
 
@@ -62,17 +62,17 @@ $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 $contact_btn_border:0px solid #00235E;
 $contact_btn_color: #FFF;
 $contact_btn_icon: #FFF;
-$contact_btn_bg: linear-gradient(180deg, #E8DBB8 0%, #BBA468 51.56%, #9A813E 54.69%, #DFC888 100%) ;
+$contact_btn_bg: #0070C6 ;
 $contact_btn_hover_color: #FFF;
 $contact_btn_hover_icon: #FFF;
-$contact_btn_hover_bg:  linear-gradient(180deg, #E8DBB8 0%, #a89052 51.56%, #806e3d 54.69%, #cfb05a 100%);
+$contact_btn_hover_bg:  #00518f;
 
 $contact_google_btn_color: #FFF;
 $contact_google_btn_icon: #FFF;
-$contact_google_btn_bg:linear-gradient(180deg, #E8DBB8 0%, #BBA468 51.56%, #9A813E 54.69%, #DFC888 100%) ;
+$contact_google_btn_bg:#0070C6 ;
 $contact_google_hover_btn_color: #FFF;
 $contact_google_hover_btn_icon: #FFF;
-$contact_google_hover_btn_bg:  linear-gradient(180deg, #E8DBB8 0%, #a89052 51.56%, #806e3d 54.69%, #cfb05a 100%);
+$contact_google_hover_btn_bg:  #00518f;
 
 // houseInfo
 $house_bg: #FFF;

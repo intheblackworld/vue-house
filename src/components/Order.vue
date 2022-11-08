@@ -305,7 +305,7 @@ export default {
     background-size: cover;
     background-position: bottom right;
     position: relative;
-    padding: 0vw 0 0 0;
+    padding:0;
    // padding-bottom: 500px;
    z-index: 2;
   }
@@ -313,12 +313,11 @@ export default {
   position: relative;
    // font-family: $family1;
   // width: size(1500);
-   font-family: 'Noto Serif TC', serif;
-    padding-top:2em;
+    padding-top:2.4em;
     padding-bottom:0;
-    font-weight:700;
+    font-weight:500;
   line-height:1.6;
-  font-size: size(39);
+  font-size: size(42);
     letter-spacing: 0.06em;
     text-indent: size(10);
     text-align: center;
