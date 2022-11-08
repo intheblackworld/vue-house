@@ -9,7 +9,7 @@
       </div>
       <div>
         <div class="title-block">
-          <h3 class="title">歷年築跡</h3>
+          <h3 class="title">完銷建案</h3>
           <div class="subtitle">The Projects</div>
         </div>
         <div class="container" v-if="!isMobile">

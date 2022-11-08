@@ -1,6 +1,6 @@
 <template>
   <div class="section1">
-    <div class="title">歷年業績</div>
+    <div class="title">完銷建案</div>
     <div class="subtitle">
       Past Results
     </div>

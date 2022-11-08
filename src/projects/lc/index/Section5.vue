@@ -1,10 +1,14 @@
 <template>
   <div class="section5">
-    <div class="title">歷年業績</div>
+    <div class="title">完銷建案</div>
     <div class="subtitle">
-      Products
+      Past Results
     </div>
-    <img src="./s5/bg.png" alt="" class="bg-img s-bg">
+    <div class="bg-img s-bg">
+    <img src="./s5/bg_01.png" alt="" />
+    <img src="./s5/bg_02.jpg" alt="" />
+
+    </div>
     <carousel-3d ref="mycarousel" :width="imgWidth" :height="imgHeight" :autoplay="false" :autoplayTimeout="5000" :autoplayHoverPause="true" :perspective="0" :disable3d="isMobile ? false : false" :border="0" :display="isMobile ? 3 : 3" :space="isMobile ? 'auto' : 'auto'" @after-slide-change="onAfterSlideChange">
       <slide v-for="(slide, index) in slideList" :index="index" :key="slide.img" class="carousel-3d-item">
         <img :src="slide.img" :class="`carousel-3d-img`" :alt="slide.alt" />
@@ -69,11 +73,10 @@
   top: 0;
   left: 0;
   display: block;
-  object-fit: cover;
   margin-top: 0;
-  &:nth-child(1) {
-    position: relative;
-  }
+  img{width: 100%;vertical-align: bottom;
+  object-fit: cover;
+    position: relative;}
 }
 
 .title {
@@ -220,16 +223,15 @@
   .bg-img {
     width: sizem(375);
     height: sizem(402);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    object-fit: cover;
-    margin-top: 0;
-
-    &:nth-child(1) {
-      position: relative;
+    
+  img{
+    &:nth-child(1){
+      height: 33.33%;
     }
+    &:nth-child(2){
+      height: 66.66%;
+    }
+  }
   }
 
   .title {
