@@ -17,24 +17,33 @@
           <div class="group">
             <div class="row">
               <label>姓名<span>*</span></label>
-              <el-input placeholder></el-input>
+              <el-input v-model="form.name" placeholder></el-input>
             </div>
             <div class="row">
               <label>手機<span>*</span></label>
-              <el-input placeholder></el-input>
+              <el-input v-model="form.phone" placeholder></el-input>
             </div>
             <div class="row">
               <label>居住城市</label>
-              <el-select placeholder>
+              <el-select v-model="form.city" placeholder>
                 <el-option
+                  v-for="city in cityList"
+                  :key="city.value"
+                  :label="city.label"
+                  :value="city.value"
                   no-data-text="無數據"
                 ></el-option>
               </el-select>
             </div>
             <div class="row">
               <label>居住地區</label>
-              <el-select placeholder>
+              <el-select v-model="form.area" placeholder>
                 <el-option
+                  v-for="area in areaList"
+                  :key="area.value"
+                  :label="area.label"
+                  :value="area.value"
+                  no-data-text="請先選擇居住城市"
                 ></el-option>
               </el-select>
             </div>
@@ -45,6 +54,7 @@
                 type="textarea"
                 :rows="7"
                 placeholder="請輸入您的留言 (選填)"
+                v-model="form.msg"
               ></el-input>
             </div>
           </div>
@@ -53,14 +63,31 @@
           <el-checkbox v-model="checked">
             <h3>
               本人知悉並同意
-              <span>「個資告知事項聲明」</span>
+              <span @click="showPolicyDialog">「個資告知事項聲明」</span>
               內容
             </h3>
           </el-checkbox>
         </div>
+        <div style="margin: 0 auto; z-index: 2" v-if="!isMobile">
+          <vue-recaptcha
+            :sitekey="info.recaptcha_site_key_v2"
+            @verify="isVerify = true"
+            :loadRecaptchaScript="true"
+          ></vue-recaptcha>
+        </div>
+        <div style="margin: 0 auto; z-index: 2" v-if="isMobile">
+          <vue-recaptcha
+            :sitekey="info.recaptcha_site_key_v2"
+            @verify="isVerify = true"
+            :loadRecaptchaScript="true"
+          ></vue-recaptcha>
+        </div>
         <el-button
           class="form-submit bt_registration btregistration"
           type="primary"
+          :disabled="!checked || !isVerify"
+          @click="submit"
+          :loading="isSubmit"
           >立即預約</el-button
         >
         <Loading :loading="isSubmit" :isOpacity="true" />
@@ -103,6 +130,19 @@ export default {
       order: info.order,
       isMobile,
       form: {
+        name: "",
+        phone: "",
+        contacttime: "",
+        city: "",
+        area: "",
+        gender: "",
+        infosource: "",
+        room_type: '',
+        parking: "",
+        houseStyle: "",
+        msg: "",
+        time_start: "",
+        time_end: "",
       },
       checked: false,
       isSubmit: false,
@@ -155,7 +195,78 @@ export default {
       });
     },
 
-    
+    submit() {
+      if (this.isSubmit) return;
+      if (!this.isVerify) return;
+      if (!this.checked) return;
+      this.isSubmit = true;
+      if (
+        !this.form.name ||
+        !this.form.phone
+        // ||
+        // !this.form.time_start ||
+        // !this.form.time_end
+        // ||
+        // !this.form.email ||
+      ) {
+        this.alertValidate('「姓名、手機」是必填欄位')
+        this.isSubmit = false;
+        return;
+      }
+      if (this.form.phone.length != 10) {
+        this.alertValidate('手機號碼請填10碼')
+        this.isSubmit = false;
+        return;
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get("utm_source");
+      const utmMedium = urlParams.get("utm_medium");
+      const utmContent = urlParams.get("utm_content");
+      const utmCampaign = urlParams.get("utm_campaign");
+      const formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("contacttime", this.form.contacttime);
+      formData.append("msg", this.form.msg);
+      formData.append("room_type", this.form.room_type);
+      // formData.append('time_start', this.form.time_start)
+      // formData.append('time_end', this.form.time_end)
+      formData.append("city", this.form.city);
+      formData.append("area", this.form.area);
+      formData.append("gender", this.form.area);
+      formData.append("infosource", this.form.area);
+      formData.append("parking", this.form.area);
+      formData.append("houseStyle", this.form.area);
+      formData.append("utm_source", utmSource);
+      formData.append("utm_medium", utmMedium);
+      formData.append("utm_content", utmContent);
+      formData.append("utm_campaign", utmCampaign);
+      const time = new Date();
+      const year = time.getFullYear();
+      const month = time.getMonth() + 1;
+      const day = time.getDate();
+      const hour = time.getHours();
+      const min = time.getMinutes();
+      const sec = time.getSeconds();
+      const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`;
+      fetch(
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&room_type=${this.form.room_type}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+      `,
+        {
+          method: "GET",
+        }
+      );
+      fetch("contact-form.php", {
+        method: "POST",
+        body: formData,
+      }).then((response) => {
+        this.isSubmit = false;
+        if (response.status === 200) {
+          window.location.href = "formThanks";
+        }
+      });
+    },
   },
 };
 </script>
