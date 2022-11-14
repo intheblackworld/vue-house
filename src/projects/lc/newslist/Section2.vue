@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/13/1.jpg'),
+          title: '立瑾建築機構-鼎禾建設，開工動土慶典活動',
+        },
+        {
           img: require('../news/s2/12/1.jpg'),
           title: '立瑾建築機構-詠齊建設，開幕誌慶活動剪影',
         },

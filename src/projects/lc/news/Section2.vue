@@ -431,6 +431,32 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '立瑾建築機構-鼎禾建設，開工動土慶典活動',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/13/1.jpg'),
+            require('../news/s2/13/2.jpg'),
+            require('../news/s2/13/3.jpg'),
+            require('../news/s2/13/4.jpg'),
+            require('../news/s2/13/5.jpg'),
+            require('../news/s2/13/6.jpg'),
+            require('../news/s2/13/7.jpg'),
+            require('../news/s2/13/8.jpg'),
+          ],
+
+          desc: '立瑾建築機構·鼎禾建設<br>汐止案開工動土大典<br><br>感謝貴賓齊聚一堂<br>見證我們的美好啟航<br><br>汐止中興正核心<br>完美建築·即將誕生<br><br>鼎禾匠心 起筆每一個家的旅程用心值得等待～',
+          links: [
+         /*        {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+       */
+          ],
+        },
+        {
           title: '立瑾建築機構-詠齊建設，開幕誌慶活動剪影',
           subtitle: '',
           date: '',
