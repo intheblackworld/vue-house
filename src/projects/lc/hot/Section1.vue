@@ -55,6 +55,9 @@
 鼎禾匠心 與您品味相約<br />
 在繁中之境  收藏一座心靈的微行館！ 
         </div>
+        <a class="btn flex-c" href="https://lc-h35.tw/contacts">
+          聯絡預約
+        </a>
         <!--
         <div class="s-title">
           現正熱銷
@@ -69,9 +72,6 @@
 <b>立瑾建築</b>用心打造三代同堂的溫情住宅<br />
 <br />
         </div>
-        <a class="btn flex-c" href="https://jhan.lc-h35.tw/" target="_blank">
-          官網預約
-        </a>
 
         -->
         <!-- <img src="./s1/youtube.jpg" alt="" class="video">  -->
