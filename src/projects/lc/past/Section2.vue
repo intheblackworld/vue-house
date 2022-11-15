@@ -1,6 +1,6 @@
 <template>
   <div class="section2">
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 2 === 0">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 0">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -14,10 +14,24 @@
         </div>
       </div>
     </div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 2 === 1">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 1">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList2" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex">
+        </div>
+      </div>
+    </div>
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 2">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList3" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
@@ -35,11 +49,14 @@
         官網賞析
       </a>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 2 === 0">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 0">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 2 === 1">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 1">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 2">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
@@ -633,6 +650,11 @@ export default {
       tabIndex: 0,
       contentList: [
         {
+          title: '立瑾綻',
+          desc: '<b>鶯歌鳳福段 立瑾綻</b><br>2021年7月份<br>有多少少年年輕時在外打拼<br>只為了有天可以孝敬長輩<br>有多少已進入老邁的年紀<br>仍住著每天爬樓梯的老舊房子<br><b>立瑾建築</b>用心打造三代同堂的溫情住宅',
+          link: 'https://jhan.lc-h35.tw/',
+        },
+        {
           title: '立瑾醞',
           desc: '基地位置： 三重區神農街433號～439號<br />完工時間： 2020年<br />規劃樓層： 地上12層，地下2層<br />個案特色：<br />◆ 校園第一排、河畔第一境<br />◆ 結合陽光、空氣、水的絕美建築<br />◆ 低建蔽率，高公共生活空間',
         },
@@ -641,46 +663,35 @@ export default {
           desc: '2020年11月<br>延續著住戶的期盼<br>今年11月19日於鶯歌鳳鳴重劃區<br>辦理開工動土祈福典禮<br>並秉持著給予住戶最好的期盼<br>於2021年3月份公開<br>即在一個月內創造完銷的佳績',
           link: 'https://way.h35.tw/',
         },
-        {
-          title: '立瑾醞',
-          desc: '基地位置： 三重區神農街433號～439號<br />完工時間： 2020年<br />規劃樓層： 地上12層，地下2層<br />個案特色：<br />◆ 校園第一排、河畔第一境<br />◆ 結合陽光、空氣、水的絕美建築<br />◆ 低建蔽率，高公共生活空間',
-        },
-        {
-          title: '鶯歌鳳鳴 立瑾Way',
-          desc: '2020年11月<br>延續著住戶的期盼，<br>2020年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br><b>基地地址：鶯歌鳳鳴段</b>',
-          link: 'https://way.h35.tw/',
-        },
       ],
       slideList: [
         {
-          img: require('../works/1/1.jpg'),
-          // name: '台北101',
+          img: require('../works/3/1.jpg'),
         },
         {
-          img: require('../works/1/4.jpg'),
-          // name: '台北101',
-        },
-        {
-          img: require('../works/1/5.jpg'),
-          // name: '台北101',
+          img: require('../works/3/2.jpg'),
         },
       ],
       slideList2: [
         {
           img: require('../works/2/1.jpg'),
-          // name: '台北101',
         },
         {
           img: require('../works/2/2.jpg'),
-          // name: '台北101',
         },
-     /*       {
-          img: require('../works/2/3.jpg'),
-          // name: '台北101',
-        },*/  
-   {
+        {
           img: require('../works/2/4.jpg'),
-          // name: '台北101',
+        },
+      ],
+      slideList3: [
+        {
+          img: require('../works/2/1.jpg'),
+        },
+        {
+          img: require('../works/2/2.jpg'),
+        },
+        {
+          img: require('../works/2/4.jpg'),
         },
       ],
     }

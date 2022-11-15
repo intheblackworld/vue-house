@@ -37,11 +37,25 @@
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div> -->
-            <div class="pagination absolute flex-ac">
+          <!-- <div class="pagination absolute flex-ac">
               <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goToMul(2, index)"><span :class="`${slideIndex2 === index ? 'active' : ''}`"></span></div>
-            </div>
+            </div> -->
           </div>
         </div>
+        <div class="s-title">
+          即將公開
+        </div>
+        <div class="content-title">
+          鼎禾建設 <br />汐止北山段 琢壹
+        </div>
+        <div class="content-desc">
+          前瞻台北新東區未來潛能<br />
+即將在汐止中興路．康寧街口與您相見！<br />
+豐彩機能、精工團隊、國際建材、時尚美學<br />
+鼎禾匠心 與您品味相約<br />
+在繁中之境  收藏一座心靈的微行館！ 
+        </div>
+        <!--
         <div class="s-title">
           現正熱銷
         </div>
@@ -58,6 +72,8 @@
         <a class="btn flex-c" href="https://jhan.lc-h35.tw/" target="_blank">
           官網預約
         </a>
+
+        -->
         <!-- <img src="./s1/youtube.jpg" alt="" class="video">  -->
         <img src="./s1/rb.png" alt="" class="rb">
       </div>
@@ -67,7 +83,6 @@
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
-        <!-- <img src="../works/3/1.jpg" alt="" class="img"> -->
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
@@ -291,7 +306,7 @@
 /* Swipe */
 .swipe {
   width: size(1244);
-  height: size(700);
+  height: size(1100);
   margin: size(117) 0;
   left: size(-145);
   float: left;
@@ -482,6 +497,7 @@
 
 .content-title {
   @include div_r_pc(391, 63, 300, 76);
+  height: auto;
   font-size: size(42.5);
   font-weight: bold;
   font-stretch: normal;
@@ -494,7 +510,7 @@
 }
 
 .content-desc {
-  @include div_r_pc(463, 100, 400, 0);
+  @include div_r_pc(463, 100, 440, 0);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
@@ -1058,11 +1074,9 @@ export default {
             '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         }, */
         {
-          img: require('../works/3/1.jpg'),
+          img: require('../works/4/01.jpg'),
           alt: '',
-          name: '立瑾綻',
-          desc:
-            '<b>基地位置：</b>三重區神農街433號～439號<br>完工時間： 2020年<br>規劃樓層： 地上12層，地下2層<br>個案特色：<br>◆  校園第一排、河畔第一境<br>◆  結合陽光、空氣、水的絕美建築<br>◆ 低建蔽率，高公共生活空間',
+          name: '琢壹',
         },
       ],
       /*
@@ -1087,7 +1101,7 @@ export default {
       */
       slideList2: [
         {
-          img: require('../works/3/1.jpg'),
+          img: require('../works/4/01.jpg'),
           name: '3D模擬示意圖',
         },
      /*   {
