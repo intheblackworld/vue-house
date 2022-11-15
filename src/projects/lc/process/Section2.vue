@@ -1195,7 +1195,7 @@ export default {
         [ //立瑾綻
           {
             o_title: '2021 立瑾綻',
-            o_subtitle: '公開銷售中。',
+            o_subtitle: '已完售，預計2023年初完工',
             img: require('../process/list/11/image001.jpg'),
             title: '2022/04',
             subtitle: ' 4FL灌漿完成',
