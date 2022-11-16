@@ -295,6 +295,30 @@ export default {
         {
           icon: require('./s1/icon2.png'),
           type: 2,
+          desc: '【鏡周刊】新北「這區」CP值高！親民房價擄獲大量首購族芳心',
+          img: require('../newimg/17/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '【住展房屋網】外貌協會，從建案外觀就知道他貴—雙北5大特色建築榜，住過就回不去了',
+          img: require('../newimg/14/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '【idSHOW】跨界藝術｜與藝術零距離！將藝術融入生活，讓空間形塑獨有的人文氣息',
+          img: require('../newimg/13/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '【Yahoo房地產】建案開案站穩8字頭',
+          img: require('../newimg/12/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
           desc: '【商周】萬隆捷運站新建案《自慢藏》 珍藏人生最美風景',
           img: require('../newimg/9/3e6e77c8-960a-1bf1-ea24-310cedcf7ef3.jpg'),
         },
