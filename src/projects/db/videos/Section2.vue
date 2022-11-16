@@ -379,7 +379,7 @@ export default {
           type:3,
           title: '【快樂王國】洲子洋新蘆特區 快樂王國夢享城 @EBC地產王',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/a2xCLQD7ecU',
         },
         {
@@ -387,7 +387,7 @@ export default {
           type:3,
           title: '【快樂王國】與蘆洲站僅一橋之隔 「快樂王國」CP值高吸首購族',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/bLVDNXiN9Gg',
         },
         {
@@ -395,7 +395,7 @@ export default {
           type:3,
           title: '【太陽帝國】中和建案實登創天價 專家：鋼骨捷運是房價保證',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/2NllXiMjN88',
         },
         {
@@ -403,7 +403,7 @@ export default {
           type:3,
           title: '【太陽帝國】雙和「華爾街天際線」現蹤！「太陽帝國」登區域最高價！ @這!不是新聞',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/0ogndmE3_GI',
         },
         {
@@ -411,7 +411,7 @@ export default {
           type:1,
           title: '【太陽帝國】PTW亞洲之最 美國建築設計雙料金獎肯定',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/hYJzFmd2mEg',
         },
         {
@@ -419,7 +419,7 @@ export default {
           type:1,
           title: '【快樂王國】新蘆特區寓言 全家人的樂園',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/5dZlrQ6Rk0Q',
         },
         {
@@ -427,7 +427,7 @@ export default {
           type:1,
           title: '【太陽帝國】 『PTW亞洲之最 美國建築設計雙料金獎肯定』',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/DmuwVtk30Sg',
         },
         {
@@ -435,7 +435,7 @@ export default {
           type:1,
           title: '【伴月灣】 『公園水岸雙首排 最強水岸休憩宅』',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/YqpsA2Sa2vE',
         },
         {
@@ -443,7 +443,7 @@ export default {
           type:1,
           title: '【太陽帝國】 『仰望雙和的新高度』',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/irs0m1qWkl8',
         },
         {
@@ -451,14 +451,14 @@ export default {
           type:1,
           title: '【神采飛洋】 HOUSE OF HAPPINESS｜設計師篇',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/qa-XGxKFT-4',
         },
         {
           type: 1,
           title: '【碧波白】五大建築獎',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/Shj6X2xxyoQ'
         },
         {
@@ -466,7 +466,7 @@ export default {
           type:1,
           title: '【太陽帝國】不是王牌出手 雙和第一峰',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/vBy5ZjC4Q9U',
         },
         {
@@ -474,7 +474,7 @@ export default {
           type: 1,
           title: '【碧波白】碧波白 金獎篇',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/F9Y7UvuctSE',
         },
         {
@@ -482,7 +482,7 @@ export default {
           type: 1,
           title: '【神采飛洋】首購族買房神曲唱起來!台北車站10分鐘，有薪就有家',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/Z_hsfRlA4dg',
         },
         {
@@ -490,7 +490,7 @@ export default {
           type: 1,
           title: '【碧波白】碧波白 肺腑之言',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/0BPv41BCVmk',
         },
         {
@@ -498,7 +498,7 @@ export default {
           type: 3,
           title: '【東森新聞】坐擁全齡機能! 新店碧波白兩代宅躍升換屋首選',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/nkg8R28fa5U',
         },
         {
@@ -506,7 +506,7 @@ export default {
           type: 3,
           title: '【東森新聞】36層全棟鋼骨制震宅 南勢角建案太陽帝國熱銷',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/UcxPCDzs_yw',
         },
         {
@@ -514,7 +514,7 @@ export default {
           type: 3,
           title: '【三立新聞】租不如買！「神采飛洋」區域最低價　入住洲子洋蛋黃區',
           desc: '',
-          img: require('../hot/s1/imgbg.jpg'),
+          // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/rXN9VphSzaw',
         },
       ],
