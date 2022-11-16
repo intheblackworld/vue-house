@@ -964,6 +964,42 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
+         //預推個案
+        {
+          title: '預推<br />個案',
+          title2: '預推個案',
+          desc: '新北市｜五股區<br />站前四鐵特區 國門廣場對坐<br />基隆山河海灣大景即將現身',
+          img: require('../works/11/1.jpg'),
+          isEmpty: false,
+          info1: '高雄市｜楠梓高大特區<br />敬請期待 COMING SOON',
+          info2: '',
+          info3: '敬請期待 COMING SOON',
+          contact: '',
+          link: '',
+          logo: require('../works/11/1.jpg'),
+          imgs: [
+            require('../works/11/2.jpg'),],
+          hint: '',
+          label: '',
+        },
+        //預推個案
+        {
+          title: '預推<br />個案',
+          title2: '預推個案',
+          desc: '高雄市｜楠梓高大特區<br />敬請期待 COMING SOON',
+          img: require('../works/10/1.jpg'),
+          isEmpty: false,
+          info1: '高雄市｜楠梓高大特區<br />敬請期待 COMING SOON',
+          info2: '',
+          info3: '敬請期待 COMING SOON',
+          contact: '',
+          link: '',
+          logo: require('../works/10/1.jpg'),
+          imgs: [
+            require('../works/10/2.jpg'),],
+          hint: '',
+          label: '',
+        },
         //快樂王國
         {
           title: '快樂<br />王國',
