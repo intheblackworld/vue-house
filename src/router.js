@@ -68,7 +68,7 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "hot" */ './pages/Hot.vue')
     },
-
+/*
     {
       path: '/past',
       name: 'past',
@@ -76,9 +76,9 @@ export default new Router({
       // this generates a separate chunk (past.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "past" */ './pages/Past.vue')
+    //    import( webpackChunkName: "past" './pages/Past.vue')
     },
-
+*/
     {
       path: '/news',
       name: 'news',
