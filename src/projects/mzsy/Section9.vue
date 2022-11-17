@@ -285,15 +285,15 @@ export default {
       slideList: [
         {
           img: require('./s9/1.jpg'),
-          name: '外觀3D示意圖',
+          name: '此為3D示意圖，建設公司保有修改權利',
         },
         {
           img: require('./s9/2.jpg'),
-          name: '外觀3D示意圖',
+          name: '此為3D示意圖，建設公司保有修改權利',
         },
         {
           img: require('./s9/3.jpg'),
-          name: '外觀3D示意圖',
+          name: '此為3D示意圖，建設公司保有修改權利',
         },
       ],
     }
