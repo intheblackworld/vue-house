@@ -243,7 +243,7 @@
 
   @include md {
     margin-top: 0.3em;
-    font-size: sizem(20);
+    font-size: sizem(16);
     border-bottom: none;
     text-align: center;
   }
