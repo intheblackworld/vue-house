@@ -81,40 +81,6 @@ export const hot_case = [
     desc_home: `1.走公園回家：<br>奇岩站旁低密度開發之生態住宅區，以60%綠覆率深植5大公園，讓家享有自然健康綠意<br><br>2.擁自然採光：<br>基地雙面臨路，方正完整採光充足，全案配置2-3房，適居等質社區規劃<br><br>3.享平面車位：<br>超脫小宅限制，全案配置坡平車位，且可設置充電樁，愛車配件不委屈...` // 首頁用
   },
   {
-    title: '欣聯心',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯心/0.jpg'),
-    imgs: [
-      {
-        title: '封面',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯心/0.jpg')
-      },
-      {
-        title: '建築透視',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯心/1.jpg')
-      },
-      {
-        title: '坐擁裕隆城',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯心/2.jpg')
-      },
-      {
-        title: '交通樞紐',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯心/3.jpg')
-      },
-      {
-        title: '樣品屋實景',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯心/4.jpg')
-      },
-      {
-        title: '樣品屋實景',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯心/5.jpg')
-      },
-    ], // 內頁用
-    desc: '1. 全案為獨棟設計，標準層為18-35坪1~3房規劃，6戶共用兩部電梯。<br />2. 沒有暗廳或暗房的缺點。二房以上戶別，每戶都有四件式衛浴。<br />3. 距捷運大坪林站約300公尺，走路約3分鐘左右可達(5號出口)<br />4. 散步6分鐘可達家樂福及裕隆城，10分鐘可達建國市場。<br />5. 同時配備社區型淨水器(長庚生技活水)+各戶型淨水器(愛惠浦淨水)。<br />6. 四件式衛浴，使用TOTO免治馬桶與KOHLER五金。全坡平車位。', // 內頁用
-    link: '/hot_case/3',
-    media_link: '', // 首頁用
-    desc_home: `1. 全案為獨棟設計，標準層為18-35坪1~3房規劃，6戶共用兩部電梯。<br />2. 沒有暗廳或暗房的缺點。二房以上戶別，每戶都有四件式衛浴。<br />3. 距捷運大坪林站約300公尺，走路約3分鐘左右可達(5號出口)<br />4. 散步6分鐘可達家樂福及裕隆城，10分鐘可達建國市場。<br />5. 同時配備社區型淨水器(長庚生技活水)+各戶型淨水器(愛惠浦淨水)。<br />6. 四件式衛浴，使用TOTO免治馬桶與KOHLER五金。全坡平車位。` // 首頁用
-  },
-  {
     title: '欣聯大心',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/0.jpg'),
     imgs: [
@@ -186,44 +152,6 @@ export const hot_case = [
    // media_link: '', // 首頁用
   //  desc_home: `` // 首頁用
   //},
-  {
-    title: '欣聯鉅星',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/0.jpg'),
-    imgs: [
-      {
-        title: '封面',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/0.jpg')
-      },
-      {
-        title: '欣聯鉅星',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/1.jpg')
-      },
-      {
-        title: '交通動線圖',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/2.jpg')
-      },
-      {
-        title: '交通脈絡',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/3.jpg')
-      },
-      {
-        title: '外觀透視圖',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/4.jpg')
-      },
-      {
-        title: '8大旗艦',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/5.jpg')
-      },
-      {
-        title: '機能地圖',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯鉅星/6.jpg')
-      },
-    ], // 內頁用
-    desc: '「欣聯鉅星」座落於新店區正25米寶橋路上，機能豐富，鄰近寶橋工業區，<br>周邊重要開發案「裕隆城商圈」動⼯中，「寶⾼智慧產業園區」預計2021年正式啟⽤，未來發展可期。<br>旗艦級大器規劃、寬敞舒適，80~500坪多元空間，宜廠宜辦。<br>距新店交流道3分鐘⾞程，步⾏7分鐘捷運七張站、超過6條公⾞路網<br>⾞程12分鐘接軌新北環快及64快速道路，交通四通八達，輕鬆串聯⼤臺北', // 內頁用
-    link: '/hot_case/5',
-    media_link: '', // 首頁用
-    desc_home: `「欣聯鉅星」座落於新店區正25米寶橋路上，機能豐富，鄰近寶橋工業區，<br>周邊重要開發案「裕隆城商圈」動⼯中，「寶⾼智慧產業園區」預計2021年正式啟⽤，未來發展可期。<br>旗艦級大器規劃、寬敞舒適，80~500坪多元空間，宜廠宜辦。<br>距新店交流道3分鐘⾞程，步⾏7分鐘捷運七張站、超過6條公⾞路網<br>⾞程12分鐘接軌新北環快及64快速道路，交通四通八達，輕鬆串聯⼤臺北` // 首頁用
-  },
   {
     title: '欣聯詠心',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/0.jpg'),
