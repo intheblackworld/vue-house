@@ -27,10 +27,10 @@
         <div class="close" @click="closeProjectDialog"></div>
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
-        <div class="hr"></div>
+        <div class="hr"  v-if="dialogData.info2 || dialogData.info3 || dialogData.contact || dialogData.link"></div>
         <div class="txt">
           <div class="product-info2" v-html="dialogData.info2"></div>
-          <div class="info-title">建案特色：</div>
+          <div class="info-title" v-if="dialogData.info3">建案特色：</div>
           <div class="product-info3" v-html="dialogData.info3"></div>
           <div class="product-contact" v-html="dialogData.contact"></div>
           <a class="product-btn" :href="dialogData.link" target="_blank" v-if="dialogData.link">建案官網</a>
@@ -968,12 +968,29 @@ export default {
         {
           title: '預推<br />個案',
           title2: '預推個案',
+          desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />即將與您相見 COMING SOON',
+          img: require('../works/12/1.jpg'),
+          isEmpty: false,
+          info1: '新北市｜新莊副都心',
+          info2: '即將與您相見 COMING SOON',
+          info3: '',
+          contact: '',
+          link: '',
+          logo: require('../works/12/1.jpg'),
+          imgs: [
+            require('../works/12/2.jpg'),],
+          hint: '',
+          label: '',
+        },
+        {
+          title: '預推<br />個案',
+          title2: '預推個案',
           desc: '基隆市｜站前特區<br />站前四鐵特區 國門廣場對坐<br />基隆山河海灣大景即將現身',
           img: require('../works/11/1.jpg'),
           isEmpty: false,
           info1: '基隆市｜站前特區<br />敬請期待 COMING SOON',
-          info2: '',
-          info3: '敬請期待 COMING SOON',
+          info2: '敬請期待 COMING SOON',
+          info3: '',
           contact: '',
           link: '',
           logo: require('../works/11/1.jpg'),
@@ -982,7 +999,6 @@ export default {
           hint: '',
           label: '',
         },
-        //預推個案
         {
           title: '預推<br />個案',
           title2: '預推個案',
@@ -990,8 +1006,8 @@ export default {
           img: require('../works/10/1.jpg'),
           isEmpty: false,
           info1: '高雄市｜楠梓高大特區<br />敬請期待 COMING SOON',
-          info2: '',
-          info3: '敬請期待 COMING SOON',
+          info2: '敬請期待 COMING SOON',
+          info3: '',
           contact: '',
           link: '',
           logo: require('../works/10/1.jpg'),
