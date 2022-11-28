@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="section4">
-      <div class="swipe absolute" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+      <img class="img-o" src="./all/o.png" alt="o" data-aos="zoom-in">
+    
+
+      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -9,44 +12,22 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-          <div class="pagination absolute flex-ac" v-if="isPC">
+          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>
+          </div>  
         </div>
       </div>
       <div class="txt">
-      <h3 class="title" data-aos="flip-up" data-aos-delay="400">
-        迎向天空人生峰景 <span>讓別人都羨慕憧憬</span>
-      </h3>
-      <div class="hr" data-aos="zoom-in-right" data-aos-delay="600"></div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="800">
-        洲子洋即將迎來最美的天空，<br />
-        「天空之邑」近兩千坪寬闊基地、千坪日式庭園，<br />
-        打造稀有24層雙塔地標，晉級洲子洋宜居新指標。
-      </div>
-      <div class="list">
-        <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1000">
-          <img src="./s6/06_text_1.png" alt="" class="icon">
-          <h3 class="text">
-            <span>地標</span> 區域稀有24層雙塔新地標
-          </h3>
-        </div>
-        <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1100">
-          <img src="./s6/06_text_2.png" alt="" class="icon">
-          <h3 class="text">
-            <span>基地</span> 區域稀有近兩千坪寬闊基地
-          </h3>
-        </div>
-        <div class="flex-ac item" data-aos="fade-up" data-aos-delay="1200">
-          <img src="./s6/06_text_3.png" alt="" class="icon">
-          <h3 class="text">
-            <span>生活</span> 區域稀有千坪日式雅致莊園
-          </h3>
-        </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >5公園環繞 收納為家的日常豐景</div>
+      <div class="sub" data-aos="fade-down" data-aos-delay="300">4大明星學府，敦敦氣質從小養成</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">
+        都心最難得的公園綠地，在家就能欣賞綠色窗景，下樓永恆綠意；六張公園、三張公園、六合公園、大同公園、二二八和平公園輕鬆到。<br>
+        贏在起跑點，4校圍繞的人文之地，十二年國教氣質一路相陪，厚德國小、修德國小、明志國中、格致國高中等明星名校環繞家旁，一流學府孕育無數人才，書香薰陶，書寫菁英典範。
+
       </div>
       </div>
     </div>
@@ -55,112 +36,132 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section4 {
-  width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+.section4 {  
+  width:100%;
+  height:auto;
   position: relative;
-  // background-color: #fff;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
-&::after{
-  content: "";
-  width: 120%;
-  height: size(120);
-  position: absolute;bottom:  size(-90);left:-10%;
-  background: url("./all/section_bg.jpg") fixed;
-  background-size: cover;
-  border-radius: 100% 100% 0 0;z-index: 2;
-}
-&::after{
-  border-radius: 0 0 100% 100%;top:  size(-90);bottom: auto;
+  margin: 5.3vw 0 0 0;
 }
 
+.img-o{
+  width: size(160);
+  position: absolute;
+  opacity:0.3 !important;
+  top:size(790);
+  left:size(100);
 }
 
-.txt{
-  @include img_l_pc(600, 0, 328);
-  height: 100%;filter: drop-shadow(0 0 5px #036);
-  display: flex;justify-content: center;
-    flex-direction:column;
+.o{
+  position: absolute;
+  top:size(790);
+  left:size(100);
+  width:size(210);
+  height:size(210);
+  border-radius: 50%;
+background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
+.c{
+      position: absolute;left:0;right:0;
+      top:calc(50% + (0 - 540) * 100vw / 1920);
+      div{
+        position: absolute;
+        animation:an 5s ease-in-out infinite alternate;
+        img{width: 100%;}
+      }
+    .c1{
+      width:size(355);top:size(-4);right: size(-21);
+      transform:rotate(3deg);
+      transform-origin: 50% 50%;
+    animation-delay: -3s;
+      img{width: 100%;
+      transform:rotate(-48deg)scaleX(-1);}}
   }
-.title {
-  font-size: size(50);
-  font-weight: 900;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.44;
-  letter-spacing:0.01em;
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-  span {
-    display: block;
-    font-size: size(35);
-    letter-spacing: size(3.5);
-  }
-}
-
-.hr {
-  width: 100%;
-  // height: 35px;
-  border-top: size(1) solid #fff;
-  margin: size(15) 0;
-}
-
-.desc {
- // text-shadow: 0 2px 5px rgba(0, 0, 0, 0.44);
-  font-size: size(18);
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.94;
-  letter-spacing: size(0.9);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.list {
-}
-
-.item {
-  .icon {
-    width: size(68);
-    margin-right: 10px;
-  }
-
-  .text {
-    font-size: size(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 5.42;
-    letter-spacing:0.05em;
-    text-align: left;
-    color: #fffc;
-    span {
-      color: #f15a24;
+@keyframes an{
+    to{
+      transform: translateX(0);
     }
+}
+.txt{
+  position: relative;
+  width: size(1500);
+  margin:0 auto 6em;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(17);
+  font-weight: 400;
+  line-height: 1.2;
+  z-index: 3;
+  color: #242424;
   }
+
+  .sub{
+  position: relative;
+  font-size: size(25);
+  margin:1em auto 0.5em;
+  letter-spacing:0.04em;
+  color: #000000;
+  font-weight: 700;
 }
 
+.title{
+  position: relative;
+  font-size: size(40);
+  margin:1em auto 0.5em;
+  letter-spacing:0.04em;
+  color: #00537A;
+  font-weight: 700;
+}
+.desc {
+  margin:1em auto;
+  line-height: 2;
+  letter-spacing:0.05em;
+  list-style: circle;
+  overflow: hidden;
+  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
+  }
+}
 /* Swipe */
 .swipe {
-  width:100%;
-  height:100%;
-  bottom: size(0);
-  left: 0;
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(840);
+  // left: size(210);
   object-fit: cover;
-  // background:#0344;
+  z-index: 3;
+}
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
 }
 
-// begin
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
 .swipe-fade-leave-to {
   opacity: 0;
   z-index: 0;
@@ -179,95 +180,28 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-.swipe-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.swipe-item {
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .slide-name {
-    left: 2em;
-    bottom: 1.2em;
-    color: #fff;
-    font-size: size(18);
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.6;
-    letter-spacing: 0.03em;
-    text-align: left;
-    text-shadow: 0 0.3em 1em #000;
-  }
-
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
-}
-
+// pagination
 .pagination {
   width: auto;
-  bottom: size(44);
-  right: 0;
-  left: 0;
-  margin: 0 auto;
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
-}
+  font-size: size(20);
 
+}
 .pagination-dot {
-  padding: 5px;
-  margin: 0 5px;
+  padding: 0.25em;
+  margin: 0 0.2em;
   cursor: pointer;
   z-index: 4;
 
   span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px #fff;
+    width:1em;
+    height:1em;
+    border-radius: 50%;
+    border: 0.2em solid  rgba(255, 255, 255, 0.5);
     position: relative;
-    background-color: transparent;
     transition: all 0.5s;
 
     &::before {
@@ -275,12 +209,11 @@
       width: 60%;
       height: 60%;
       display: block;
-      background: #fff;
-      border-radius: 20px;
+    border-radius: 50%;
+    border:  0.105em solid  #c99637;
       opacity: 1;
       position: absolute;
       top: 20%;
-      // transform: translateY(-50%);
       left: 20%;
       transition: all 0.3s;
       transform-origin: center;
@@ -289,32 +222,27 @@
     &.active {
       box-shadow: none;
       &::before {
-        content: '';
         width: 100%;
         height: 100%;
-        display: block;
-        background: #fff;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
         top: 0%;
-        // transform: translateY(-50%);
         left: 0%;
-        transform: scale(1);
+        transform: scale(1.6);
       }
     }
   }
 }
 
+
 .swipe-btns {
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 0.75em;
   z-index: 3;
+  font-size: size(20);
 
   .prev-btn,
   .next-btn {
-    width: size(20);
+    width: 1em;
     cursor: pointer;
   }
 }
@@ -334,237 +262,61 @@
 
 @media screen and (max-width: 767px) {
   .section4 {
-    width: 100vw;
-    height: sizem(650);
+    width: 100%;
+    height: auto;
     min-height: auto;
     max-height: initial;
-    // background-image: url('./s2/bg.jpg');
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
-    overflow: hidden;
-&::after,
-&::before{
-  display: none;
+  }
+
+.o{
+  top:sizem(260);
+  left:sizem(10);
+  width:sizem(90);
+  height:sizem(90);
+
 }
+.c{
+    .c1{width:sizem(130);top:sizem(340);left: sizem(280);}
   }
-
-.txt{
-    @include img_l_m(330, 25, 25);
-  height:auto;filter: drop-shadow(0 0 5px #036);display: block;
+  .txt{
+    position: relative;
+    width: sizem(310);
+    margin:1.5em auto 8em;
+    left:0;
+    top:0;
+    font-size: sizem(15);
   }
-  .title {
-   // @include img_r_m(260, 409, 71);
-    font-size: sizem(26);
-    font-weight: bold;
-    letter-spacing: normal;
-  line-height: 2;
-  span {
-    display: block;
-    font-size: sizem(20);
-    letter-spacing:0.01em;
-  }
-  }
-
-  .hr {
-  //  @include img_r_m(230, 458, 102);
-    height: sizem(1);
-    margin:sizem(12) 0;
-  }
-
+.title{
+    font-size: sizem(30);
+  letter-spacing:0.01em;
+}
   .desc {
-   // @include img_r_m(292, 474, 40);
-    font-size: sizem(14);
-    font-weight: normal;
-    letter-spacing: normal;
-    white-space: normal;
-    margin: 0 0 1.5em 0;
+  margin:0em auto;
+  font-size: sizem(15);
   }
-  .item {
-  .icon {
-    width: sizem(39);
-    margin-right:sizem(4);
-  }
-
-  .text {
-    font-size: sizem(14);
-    letter-spacing: size(0.9);
-    line-height: 3.3;
-  }
-}
-
-
   /* Swipe */
   .swipe {
+    position: relative;
     width: 100%;
-    height: 100%;
-    min-height: auto;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+    height: sizem(255);
+    top:0;
+    left:0;
   }
-
-  // begin
-  .swipe-fade-leave-to {
-    opacity: 0;
-    z-index: 0;
-  }
-  // end
-  .swipe-fade-enter {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  .swipe-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .swipe-fade-leave-active {
-    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  }
-
-  // begin
-  // .swipe-left-leave-to {
-  //   margin-left: -100vw;
-  //   z-index: 0;
-  // }
-  // // end
-  // .swipe-left-enter {
-  //   opacity: 0.5;
-  //   margin-left: 0;
-  //   z-index: 1;
-  // }
-
-  // .swipe-left-enter-active {
-  //   transition: all 0.5s ease;
-  // }
-
-  // .swipe-left-leave-active {
-  //   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-  // }
-
-  .swipe-wrap {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swipe-item {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      position: absolute;
-      left: 0;bottom: 0;
-    }
-
-    // &:nth-child(1) {
-    //   z-index: 1;
-    //   // opacity: 1;
-    // }
-
-    // &.base {
-    //   z-index: 1;
-    //   opacity: 1;
-    // }
-    // &.active {
-    //   z-index: 2;
-    //   // opacity: 1;
-    // }
-    .slide-name {
-      right: auto;
-      top: auto;
-      bottom: 1.2rem;
-      left: 1.2rem;
-      font-size: sizem(15);
-    }
-  }
-
-  .pagination {
-    width: auto;
-    bottom: size(91);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .pagination-dot {
-    padding: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    z-index: 4;
-
-    span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px #fff;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.01);
-      transition: all 0.5s;
-
-      &::before {
-        content: '';
-        width: 60%;
-        height: 60%;
-        display: block;
-        background: #004ea2;
-        border-radius: 20px;
-        opacity: 1;
-        position: absolute;
-        top: 20%;
-        // transform: translateY(-50%);
-        left: 20%;
-        transition: all 0.3s;
-        transform-origin: center;
-        transform: scale(0);
-      }
-      &.active {
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
-          background: #004ea2;
-          border-radius: 20px;
-          opacity: 1;
-          position: absolute;
-          top: 0%;
-          // transform: translateY(-50%);
-          left: 0%;
-          transform: scale(1);
-        }
-      }
-    }
-  }
-
-  .swipe-btns {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: sizem(370);
-    padding: 0 15px;
-    z-index: 3;
-
-    .prev-btn,
-    .next-btn {
-      width: sizem(15);
-      cursor: pointer;
-    }
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
   }
 }
+  .swipe-btns {
+  font-size: sizem(15);
+  }
+}
+
 </style>
 <script>
 // @ is an alias to /src
-import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
 export default {
@@ -582,71 +334,9 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile
-            ? require('./s6/06_slider_8_m.jpg')
-            : require('./s6/02_mask.jpg'),
-           name: '3D外觀示意',
+          img: require('./s4/1.jpg'),
+          name: '淡江大橋示意',
         },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_10_m.jpg')
-            : require('./s6/10_mask.jpg'),
-           name: '日式庭園示意圖',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_11_m.jpg')
-            : require('./s6/13_mask.jpg'),
-           name: '日式庭園示意圖',
-        },
-  /*      {
-          img: isMobile
-            ? require('./s6/06_slider_2_m.jpg')
-            : require('./s6/02.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_3_m.jpg')
-            : require('./s6/03.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_4_m.jpg')
-            : require('./s6/04.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_5_m.jpg')
-            : require('./s6/05.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_6_m.jpg')
-            : require('./s6/06.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_7_m.jpg')
-            : require('./s6/07.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_8_m.jpg')
-            : require('./s6/08.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        },
-        {
-          img: isMobile
-            ? require('./s6/06_slider_9_m.jpg')
-            : require('./s6/09.jpg'),
-          // name: '臺北市私立靜心高級中學',
-        }, */
       ],
     }
   },
@@ -660,12 +350,12 @@ export default {
   computed: {},
 
   watch: {
-    // viewIndex() {
-    //   if (this.viewIndex === 5) {
-    //     this.slideIndex = 0
-    //     console.log(this.slideIndex, 'slideIndex')
-    //   }
-    // },
+    viewIndex() {
+      if (this.viewIndex === 7) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
   },
 }
 </script>
