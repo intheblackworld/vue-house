@@ -14,11 +14,19 @@
     <vue-lazy-component class="section relative" id="section1" @init="init">
       <Section1/>
     </vue-lazy-component>
-<!--      
+      
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
 
+    <vue-lazy-component class="section" id="section3">
+      <Section3 />
+    </vue-lazy-component> 
+
+    <vue-lazy-component class="section" id="section4">
+      <Section4 />
+    </vue-lazy-component> 
+<!--
 <VideoSection1  id="section2"
       :playBtn="require('@/projects/ji-jhan/video/play-btn.png')"
       title="建築×美學影片"
@@ -171,6 +179,9 @@ import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
 import Section1 from '@/projects/ji-jhan/Section1.vue'
+import Section2 from '@/projects/ji-jhan/Section2.vue'
+import Section3 from '@/projects/ji-jhan/Section3.vue'
+import Section4 from '@/projects/ji-jhan/Section4.vue'
 /* 
 import Navigation from '@/layouts/Navigation.vue'
 import Section2 from '@/projects/ji-jhan/Section2.vue'
@@ -196,6 +207,9 @@ export default {
     ContactSection,
     MobileNav,
     Section1,
+    Section2,
+    Section3,
+    Section4,
     /* 
     Navigation,
     Section2,
