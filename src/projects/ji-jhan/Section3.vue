@@ -311,6 +311,15 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   height:sizem(90);
 
 }
+
+.style1{
+  width: sizem(600);
+  position: absolute;
+  opacity:0.3 !important;
+  right:sizem(0);
+  left:sizem(0);
+  top:sizem(-150);
+}
 .c{
     .c1{width:sizem(270);top:sizem(330);left: sizem(130);}
   }
