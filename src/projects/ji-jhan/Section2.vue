@@ -2,6 +2,9 @@
   <div>
     <div class="section2">
       <img class="img-o" src="./all/o.png" alt="o" data-aos="zoom-in">
+      
+
+      
 
     
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
@@ -24,7 +27,7 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200">7橋3快3捷1高，雙城共榮</div>
-      <div class="sub" data-aos="fade-down" data-aos-delay="300">5分鐘悠活圈，咫尺雙北一手掌握</div>
+      <div class="sub" data-aos="fade-down" data-aos-delay="300">5分鐘悠活圈，咫尺雙北一手掌握  </div>
       <div class="desc" data-aos="fade-down" data-aos-delay="400">
         7橋：台北橋、忠孝橋、中興橋、重新橋、重陽橋、新北大橋、重翠橋<br>
         3快：64快速道路、新北環快、環河快速道路<br>
@@ -55,6 +58,9 @@
   top:size(350);
   right:size(280);
 }
+
+
+
 .t0{
   position: absolute;
   width: 100%;height:auto;
@@ -130,6 +136,16 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   letter-spacing:0.04em;
   color: #000000;
   font-weight: 700;
+
+  .line{
+    position: absolute;
+    width: size(210);
+    height: size(2);
+    background: #c49847;
+    top:size(15);
+    right:size(0);
+
+    }
 }
 .desc {
   margin:1em auto;
@@ -309,13 +325,22 @@ margin:1.5em auto 10em;
   left:0;
   top:0;
   font-size: sizem(15);
+  text-align: center;
   }
 .title{
-    font-size: sizem(30);
+    font-size: sizem(25);
+}
+
+.sub{
+  font-size: sizem(18);
 }
   .desc {
    //line-height: 1.73;
   margin:0em auto;
+  text-align: left;
+  letter-spacing:0em;
+  margin-top: sizem(20);
+
   }
   /* Swipe */
   .swipe {
@@ -374,6 +399,10 @@ export default {
         {
           img: require('./s2/5.jpg'),
           name: '捷運三重國小站',
+        },
+        {
+          img: require('./s2/6.jpg'),
+          name: '重陽路上高速公路',
         },
       ],
     }

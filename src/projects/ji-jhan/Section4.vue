@@ -22,8 +22,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" >5公園環繞 收納為家的日常豐景</div>
-      <div class="sub" data-aos="fade-down" data-aos-delay="300">4大明星學府，敦敦氣質從小養成</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="!isMobile">5公園環繞 收納為家的日常豐景</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile">5公園環繞<br>收納為家的日常豐景</div>
+      <div class="sub" data-aos="fade-down" data-aos-delay="300">4大明星學府，敦敦氣質從小養成  </div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
         都心最難得的公園綠地，在家就能欣賞綠色窗景，下樓永恆綠意；六張公園、三張公園、六合公園、大同公園、二二八和平公園輕鬆到。<br>
         贏在起跑點，4校圍繞的人文之地，十二年國教氣質一路相陪，厚德國小、修德國小、明志國中、格致國高中等明星名校環繞家旁，一流學府孕育無數人才，書香薰陶，書寫菁英典範。
@@ -101,6 +102,16 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   letter-spacing:0.04em;
   color: #000000;
   font-weight: 700;
+
+  .line{
+    position: absolute;
+    width: size(125);
+    height: size(2);
+    background: #c49847;
+    top:size(15);
+    right:size(0);
+
+    }
 }
 
 .title{
@@ -285,14 +296,22 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     left:0;
     top:0;
     font-size: sizem(15);
+    text-align: center;
   }
 .title{
-    font-size: sizem(30);
-  letter-spacing:0.01em;
+    font-size: sizem(25);
+}
+
+.sub{
+  font-size: sizem(18);
 }
   .desc {
+   //line-height: 1.73;
   margin:0em auto;
-  font-size: sizem(15);
+  text-align: left;
+  letter-spacing:0em;
+  margin-top: sizem(20);
+
   }
   /* Swipe */
   .swipe {

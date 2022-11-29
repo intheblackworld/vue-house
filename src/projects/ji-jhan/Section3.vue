@@ -2,6 +2,7 @@
   <div>
     <div class="section3">
       <img class="img-o" src="./all/o.png" alt="o" data-aos="zoom-in">
+      <img class="style1" src="./s3/style1.png" alt="style1">
     
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -22,8 +23,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">3大商圈、全方位行政中心、多元生活場域</div>
-      <div class="sub" data-aos="fade-down" data-aos-delay="300">黃金地段、生活機能完美俱備</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="!isMobile">3大商圈、全方位行政中心、多元生活場域</div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile">3大商圈、全方位行政中心<br>多元生活場域</div>
+      <div class="sub" data-aos="fade-down" data-aos-delay="300">黃金地段、生活機能完美俱備  </div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
         城市核心獨攬機能優勢，鄰近大智、正義、三和成熟商圈，享樂超便利；三重市政中心、市場、全聯、頂好等出門左右逢源；圖書館、聯合醫院、綜合體育館，運動、休閒、藝文、醫療等豐富資源，全方位一次滿足！ 
 
@@ -50,6 +52,21 @@
   opacity:0.3 !important;
   top:size(350);
   left:size(190);
+}
+.style1{
+  width: size(1920);
+  position: absolute;
+  opacity:0.3 !important;
+  right:size(0);
+  left:size(0);
+  top:size(-150);
+}
+
+.style{
+  width: size(433);
+  position: absolute;
+  bottom:size(0);
+  right:size(0);
 }
 
 .o{
@@ -114,6 +131,17 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   letter-spacing:0.04em;
   color: #000000;
   font-weight: 700;
+
+
+  .line{
+    position: absolute;
+    width: size(125);
+    height: size(2);
+    background: #c49847;
+    top:size(15);
+    right:size(0);
+
+    }
 }
 
 .desc {
@@ -293,13 +321,22 @@ margin:1.5em auto 10em;
   left:0;
   top:0;
   font-size: sizem(15);
+  text-align: center;
   }
 .title{
-    font-size: sizem(29);
+    font-size: sizem(25);
+}
+
+.sub{
+  font-size: sizem(18);
 }
   .desc {
    //line-height: 1.73;
   margin:0em auto;
+  text-align: left;
+  letter-spacing:0em;
+  margin-top: sizem(20);
+
   }
   /* Swipe */
   .swipe {
