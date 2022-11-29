@@ -335,7 +335,27 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '淡江大橋示意',
+          name: '三張公園',
+        },
+        {
+          img: require('./s4/2.jpg'),
+          name: '六張公園',
+        },
+        {
+          img: require('./s4/3.jpg'),
+          name: '六合公園',
+        },
+        {
+          img: require('./s4/4.jpg'),
+          name: '厚德國小',
+        },
+        {
+          img: require('./s4/5.jpg'),
+          name: '明志國中',
+        },
+        {
+          img: require('./s4/6.jpg'),
+          name: '格致中學',
         },
       ],
     }

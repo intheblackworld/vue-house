@@ -341,11 +341,27 @@ export default {
       slideList: [
         {
           img: require('./s3/1.jpg'),
-          name: '新光影城',
+          name: '三和正義商圈',
         },
         {
           img: require('./s3/2.jpg'),
-          name: '行政中心站',
+          name: '重陽路商圈',
+        },
+        {
+          img: require('./s3/3.jpg'),
+          name: '正義市場',
+        },
+        {
+          img: require('./s3/4.jpg'),
+          name: '新北圖書館三重分館',
+        },
+        {
+          img: require('./s3/5.jpg'),
+          name: '新北市立醫院三重院區',
+        },
+        {
+          img: require('./s3/6.jpg'),
+          name: '三重綜合體育館',
         },
       ],
     }

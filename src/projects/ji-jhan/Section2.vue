@@ -357,19 +357,23 @@ export default {
       slideList: [
         {
           img: require('./s2/1.jpg'),
-          name: '萬坪公園',
+          name: '台北橋',
         },
         {
           img: require('./s2/2.jpg'),
-          name: '運動中心',
+          name: '中興橋',
         },
         {
           img: require('./s2/3.jpg'),
-          name: '家樂福',
+          name: '重新橋',
         },
         {
           img: require('./s2/4.jpg'),
-          name: '中山北路機能情境',
+          name: '環河快速道',
+        },
+        {
+          img: require('./s2/5.jpg'),
+          name: '捷運三重國小站',
         },
       ],
     }
