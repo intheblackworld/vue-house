@@ -391,7 +391,9 @@
 	c-3.2,0-5.3-0.2-8.1-0.1c-0.9-0.2,0.2-0.4,0.5-0.4c0.4-0.1,0.5-0.5,0.6-1C413.8,13.6,413.7,7.5,413.6,4.5z"/>
 </svg>
 <div class="t3" data-aos="zoom-in" data-aos-delay="600">巨擎新案 即將現身</div>
+<a class="contact-btn" v-scroll-to="{ element: `#contact`, offset: offset }">
 <div class="t4" data-aos="zoom-in" data-aos-delay="800">立即預約</div>
+</a>
 </div>
 </div>
 </template>
@@ -523,8 +525,12 @@
     margin: 0 .6em .1em;
   }
     }
-  .t4{margin: auto;
- width: 10.22em;
+  .contact-btn{
+   width: 10.22em;
+	}	
+  .t4{
+width: 10.22em;
+margin: auto;
 background: #134965;
 border: 2px solid #F4DB8C;
 border-radius: 0.57em;
@@ -604,6 +610,7 @@ padding:.5em 0;
     width: 2.1em;
     margin: 0 .4em .1em;
   }
+
 }
 }
 }
