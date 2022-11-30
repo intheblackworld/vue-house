@@ -210,7 +210,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.05;
-    letter-spacing: size(0.72);
+    letter-spacing: 0.02em;
     text-align: left;
     color: #000000;
   }
@@ -221,7 +221,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.05;
-    letter-spacing: size(0.72);
+    letter-spacing: 0.03em;
     text-align: left;
     color: #000000;
     position: absolute;
@@ -247,7 +247,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.35;
-    letter-spacing: size(0.73);
+    letter-spacing: 0.02em;
     text-align: center;
     color: #8e8e8e;
   }
@@ -555,15 +555,17 @@
     height: sizem(450);
     margin: 0 sizem(0) sizem(70);
     border-bottom: none;
-    cursor: pointer;
-
-    .add {
-    }
 
     img {
       width: sizem(310);
       height: sizem(305);
       object-fit: cover;
+    }
+    > span {
+      &::before,
+      &::after {
+        font-size: sizem(27.5);
+      }
     }
     &::before,
     &::after {
@@ -582,69 +584,39 @@
       height: sizem(43);
       margin-right: sizem(15);
     }
-
-    .item-desc {
-      width: sizem(238);
-      width: 100%;
-      font-size: sizem(15);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.4;
-      letter-spacing: sizem(0.9);
-      text-align: left;
-      color: #4d4d4d;
-    }
     .item-title {
       width: 100%;
       font-size: sizem(20);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
       line-height: 1.6;
       letter-spacing: 0.06em;
-      text-align: left;
       justify-content: flex-start;
-      color: #333333;
       margin-bottom: sizem(10);
     }
 
     .item-label {
       font-size: sizem(20);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
       line-height: 1.6;
       letter-spacing: 0.06em;
-      text-align: left;
       justify-content: flex-start;
-      color: #333333;
-      position: absolute;
-      right: 10px;
       top: sizem(305);
+    }
+
+    .item-desc {
+      width: sizem(238);
+      width: 100%;
+      font-size: sizem(15);
+      line-height: 1.4;
+      letter-spacing: 0.06em;
     }
 
     .item-coming {
       font-size: sizem(24);
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.35;
-      letter-spacing: size(0.73);
-      text-align: center;
-      color: #8e8e8e;
     }
   }
   .product-dialog {
     width: 100vw;
     height: 100vh;
-    background-color: #fff;
-    position: fixed;
-    height: 100vh;
     overflow-y: scroll;
-    top: 0;
-    left: 0;
-    z-index: 10000;
   }
 
   .border-container {
