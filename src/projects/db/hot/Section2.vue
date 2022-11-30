@@ -1178,6 +1178,7 @@ export default {
         this.dialogData = item
         this.slideList = this.dialogData.imgs
         this.isProjectDialog = true
+        this.slideIndex = 0
       }
     },
 
