@@ -431,6 +431,29 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '祈安、祈福，立瑾WAY上樑大吉',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/14/1.jpg'),
+            require('../news/s2/14/2.jpg'),
+            require('../news/s2/14/3.jpg'),
+            require('../news/s2/14/4.jpg'),
+            require('../news/s2/14/5.jpg'),
+          ],
+
+          desc: '',
+          links: [
+         /*        {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+       */
+          ],
+        },
+        {
           title: '立瑾建築機構-鼎禾建設，開工動土慶典活動',
           subtitle: '',
           date: '',
