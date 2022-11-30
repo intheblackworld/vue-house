@@ -80,7 +80,7 @@
         <div class="hr"></div>
         <div class="txt">
           <div class="product-info2" v-html="dialogData.info2"></div>
-          <div class="info-title">建案特色：</div>
+          <div class="info-title" v-if="dialogData.info3">建案特色：</div>
           <div class="product-info3" v-html="dialogData.info3"></div>
           <div class="product-contact" v-html="dialogData.contact"></div>
           <a class="product-btn" :href="dialogData.link" target="_blank" v-if="dialogData.link">建案官網</a>
@@ -978,7 +978,9 @@ export default {
           link: '',
           logo: require('../works/12/1.jpg'),
           imgs: [
-            require('../works/12/2.jpg'),],
+          isMobile?
+          require('../works/12/2m.jpg') :
+          require('../works/12/2.jpg'),],
           hint: '',
           label: '',
         },
