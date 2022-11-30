@@ -22,7 +22,7 @@
 <!-- <div class="title2" data-aos="zoom-in" data-aos-delay="1000" >
 明志書苑</div>  -->
 <div class="title3">明志書院旁 泰山智慧家<br />
-捷運A5站 2-3房 02-2600-8889
+捷運A5站 2-3房 02-2904-6888
       </div>
     </div>
   </div>
