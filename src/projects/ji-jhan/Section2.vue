@@ -27,7 +27,7 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200">7橋3快3捷1高，雙城共榮</div>
-      <div class="sub" data-aos="fade-down" data-aos-delay="300">5分鐘悠活圈，咫尺雙北一手掌握  </div>
+      <div class="sub" data-aos="fade-down" data-aos-delay="300">15分鐘悠活圈，咫尺雙北一手掌握  </div>
       <div class="desc" data-aos="fade-down" data-aos-delay="400">
         7橋：台北橋、忠孝橋、中興橋、重新橋、重陽橋、新北大橋、重翠橋<br>
         3快：64快速道路、新北環快、環河快速道路<br>
