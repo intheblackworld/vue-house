@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/ji-jhan/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/gtcip/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation />
     <Navigation /> -->
@@ -28,26 +28,26 @@
     </vue-lazy-component> 
 <!--
 <VideoSection1  id="section2"
-      :playBtn="require('@/projects/ji-jhan/video/play-btn.png')"
+      :playBtn="require('@/projects/gtcip/video/play-btn.png')"
       title="建築×美學影片"
-      :close="require('@/projects/ji-jhan/video/close.png')"
-      :arrows="[require('@/projects/ji-jhan/video/arrow-left.png'), require('@/projects/ji-jhan/video/arrow-right.png')]"
+      :close="require('@/projects/gtcip/video/close.png')"
+      :arrows="[require('@/projects/gtcip/video/arrow-left.png'), require('@/projects/gtcip/video/arrow-right.png')]"
       :slideList="[
         {
           title: '恆鑽地段奢美居',
-          img: require('@/projects/ji-jhan/video/2.jpg'),
+          img: require('@/projects/gtcip/video/2.jpg'),
           video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '打造有溫度的家',
-          img: require('@/projects/ji-jhan/video/3.jpg'),
+          img: require('@/projects/gtcip/video/3.jpg'),
           video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '樣品屋私藏設計',
-          img: require('@/projects/ji-jhan/video/1.jpg'),
+          img: require('@/projects/gtcip/video/1.jpg'),
           video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
@@ -147,7 +147,7 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/ji-jhan/s1/bg.jpg") top center;
+    background:url("~@/projects/gtcip/s1/bg.jpg") top center;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -178,23 +178,16 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/ji-jhan/Section1.vue'
-import Section2 from '@/projects/ji-jhan/Section2.vue'
-import Section3 from '@/projects/ji-jhan/Section3.vue'
-import Section4 from '@/projects/ji-jhan/Section4.vue'
+import Section1 from '@/projects/gtcip/Section1.vue'
+import Section2 from '@/projects/gtcip/Section2.vue'
+import Section3 from '@/projects/gtcip/Section3.vue'
+import Section4 from '@/projects/gtcip/Section4.vue'
 /* 
 import Navigation from '@/layouts/Navigation.vue'
-import Section2 from '@/projects/ji-jhan/Section2.vue'
-import Section3 from '@/projects/ji-jhan/Section3.vue'
-import Section4 from '@/projects/ji-jhan/Section4.vue'
-import Section5 from '@/projects/ji-jhan/Section5.vue'
-import Section6 from '@/projects/ji-jhan/Section6.vue'
-import Section7 from '@/projects/ji-jhan/Section7.vue'
-import Section8 from '@/projects/ji-jhan/Section8.vue'
-import Section9 from '@/projects/ji-jhan/Section9.vue'
-import Section10 from '@/projects/ji-jhan/Section10.vue'
-import Section10 from '@/projects/ji-jhan/Section10.vue'
-import Section11 from '@/projects/ji-jhan/Section11.vue'
+import Section2 from '@/projects/gtcip/Section2.vue'
+import Section3 from '@/projects/gtcip/Section3.vue'
+import Section4 from '@/projects/gtcip/Section4.vue'
+import Section5 from '@/projects/gtcip/Section5.vue'
 import VideoSection1 from '@/components/VideoSection1.vue' */
 
 export default {
