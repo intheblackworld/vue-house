@@ -1,10 +1,10 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '000',
+  address: '新北市新莊區昌德街33號旁',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14456.109303975161!2d121.4878747682847!3d25.067062943117875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a921646ff751%3A0xdd50bc3b055b8e3f!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5q2j576p5YyX6LevMTUz6Jmf!5e0!3m2!1szh-TW!2stw!4v1667196611872!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/nXVMQRGDDwRo7iE48',
-  phone: '02-000',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.3847262875265!2d121.45499929999998!3d25.054946200000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9b321c197c5%3A0x2bb68e2704c516c1!2z5Ymv6YO95b-D6Z2S6Z2SIOaOpeW-heS4reW_gy3mlrDljJcv5paw6I6KL-W7uuahiC_mlrDlu7rmoYgv6aCQ5ZSu5bGLL-aWsOaIkOWxiw!5e0!3m2!1szh-TW!2stw!4v1670319353712!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/y7M89BffH2o9Uq46A',
+  phone: '02-2276-7272',
   fbLink: 'https://www.facebook.com/',
   fbMessage: 'https://m.me/',
   caseName: '雙橡園',
