@@ -1,37 +1,8 @@
 <template>
   <div>
     <div class="section4">
-      <img class="img-o" src="./all/o.png" alt="o" data-aos="zoom-in">
-    
-
-      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
-        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
-            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-              <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
-            </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
-            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
-            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div>  
-        </div>
-      </div>
-      <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="!isMobile">5公園環繞 收納為家的日常豐景</div>
-      <div class="title" data-aos="fade-down" data-aos-delay="200" v-if="isMobile">5公園環繞<br>收納為家的日常豐景</div>
-      <div class="sub" data-aos="fade-down" data-aos-delay="300">4大明星學府，敦敦氣質從小養成  </div>
-      <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        都心最難得的公園綠地，在家就能欣賞綠色窗景，下樓永恆綠意；六張公園、三張公園、六合公園、大同公園、二二八和平公園輕鬆到。<br>
-        贏在起跑點，4校圍繞的人文之地，十二年國教氣質一路相陪，厚德國小、修德國小、明志國中、格致國高中等明星名校環繞家旁，一流學府孕育無數人才，書香薰陶，書寫菁英典範。
-
-      </div>
-      </div>
-    </div>
+      
+  </div>
   </div>
 </template>
 <style lang="scss" scoped>

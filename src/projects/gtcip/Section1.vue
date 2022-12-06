@@ -1,8 +1,8 @@
 <template>
   <div class="section1">
     <!-- 
+    <img src="./s1/mo.jpg" class="t0" />
    -->
-    <img src="./s1/pc.jpg" class="t0" />
   <img src="./s1/img1.png" class="img1" data-aos="fade" data-aos-delay="200" />
   <img src="./s1/img2.png" class="img2" data-aos="fade" data-aos-delay="0" />
     <div class="txt">
@@ -328,7 +328,7 @@
 </svg>
 
 
-<div class="t1" data-aos="zoom-in" data-aos-delay="200">知識的田 幸福的園
+<div class="t1" data-aos="zoom-in" data-aos-delay="200" v-if="!isMobile">知識的田 幸福的園
 </div>
 <div class="t2" data-aos="zoom-in" data-aos-delay="400">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169 22" >
@@ -361,6 +361,8 @@
 	v0.9h9.1V2.2z M163,4.1H154v1h9.1V4.1z M159.7,12.2h3.9v-1.3h-3.9V12.2z M159.7,14.6h3.9v-1.3h-3.9V14.6z"/>
 </svg>
 </div>
+<div class="t1" data-aos="zoom-in" data-aos-delay="200" v-if="isMobile">知識的田<br />幸福的園
+</div>
 <div class="t3" data-aos="zoom-in" data-aos-delay="600">Coming Soon</div>
 <div class="t4 contact-btn" v-scroll-to="{ element: `#contact`, offset: offset }" data-aos="zoom-in" data-aos-delay="600">即 將 公 開</div>
 </div>
@@ -373,7 +375,7 @@
 .section1 {
   width: 100%;
   height: 100vh;
-  min-height: size(1080);
+  min-height: size(900);
   max-height: size(1080);
  // overflow: hidden;
   position: relative;
@@ -395,10 +397,9 @@
 }
 
 .img2{position: absolute;left:size(-322);
-	top:size(155);
 	top:calc(50% + (155 - 1080 * 0.5) * 100vw / 1920);
 	width: size(1100);
-	transform: translateX(-10%);
+	transform: translateX(-10%);z-index: 3;
 }
 
 
@@ -482,54 +483,49 @@ vertical-align: middle;
 
 @media screen and (max-width: 767px) {
   .section1 {
-    min-height: sizem(667);
-    max-height: sizem(812);
+    min-height: sizem(604);
+    max-height: sizem(604);
     height:100vh;
   }
-  .img1{bottom:auto;top: sizem(-345);width:auto;height: sizem(345);
-    transform: rotate(90deg);transform-origin: 0 100%;}
-    .img11{bottom:auto;top: sizem(-345);width:sizem(199.19);height: sizem(345);
-      transform: rotate(90deg);transform-origin: 0 100%;
-
-    }
-
-.img2{left: 0;bottom: sizem(214);width:auto;height: sizem(375);
-    transform: rotate(90deg);transform-origin: 0 100%;}
-.img22,
-.img23{
-  left: 0;bottom: sizem(214);width:sizem(402.77);height: sizem(375);
-  transform: rotate(90deg);transform-origin: 0 100%;
+  .img1{left:sizem(-56);
+	top:calc(50% + (-123 - 604 * 0.5) * 100vw / 375);
+	width: sizem(328);
 }
-    .box{position: absolute;
-      width: 100%;height:sizem(200);bottom:sizem(-100);background: linear-gradient(to bottom, #A4D2D900 0%,#A4D2D9 50%,#A4D2D900 100%);display: block;}
-
+.img2{left:sizem(-130);
+	top:calc(50% + (332 - 604 * 0.5) * 100vw / 375);
+	width: sizem(314);
+}
 .txt{
   font-size: sizem(25);
-  top:calc(50% + (174 - 667 * .5) * 100vw / 375);
+  top:calc(50% + (107 - 604 * .5) * 100vw / 375);
   width:100%;
 .logo{
-  width:sizem(286);
-  margin: 0 auto 0.2em;
+  width:sizem(196);
+  margin: 0 auto 0.65em;
 }
 .t1{
-  font-size: 1em;
+  font-size: sizem(26);
   line-height: 1.48;
-  margin: 0 auto -.5em auto;
-  span{display: block;font-size:0.95em;}
+  margin: 0 0 .2em sizem(160);
     }
   .t2{
-  width:sizem(238);
+  width:sizem(209);
+	padding: 0em;
+	background: #FFF;
+  margin: 0 auto 2.2em;
+  svg{
+  width:sizem(169);}
     }
   .t3{
-  font-size: 1em;
-  margin: .2em auto 1.2em auto;
-  &::after,
-  &::before{
-    content: "";
-    width: 2.1em;
-    margin: 0 .4em .1em;
-  }
+	font-size: sizem(17);
+  margin: 0 0 0em sizem(160);
+  display: block;
 
+}
+  .t4{
+	font-size: sizem(15);
+width: 7.4em;
+  margin: 0 0 0 sizem(160);
 }
 }
 }

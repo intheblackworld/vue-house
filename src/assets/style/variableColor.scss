@@ -1,5 +1,5 @@
 /* html, body */
-$bg:#300; //#DD0615
+$bg:#DD0615; //#DD0615
 $bg-size:auto;
 
 /* font-family */
@@ -36,10 +36,10 @@ $mask_icon_color: #00235E;
 
 /* contactSection */
 // order
-$order_bg_color: transparent;
+$order_bg_color: #860009;
 $order_bg_image: transparent;
 $order_bg_image_m: transparent;
-$order_title_color: #00537A;
+$order_title_color: #FFF;
 $order_subtitle_color: #333;
 $order_input_label_color: #333;
 $order_input_color: #1a1a1a !important;
@@ -48,31 +48,35 @@ $order_input_bg: #fff !important;
 $order_input_border: solid 0px #fff; 
 $order_input_focus_border: solid 1px #fff !important;
 $order_input_selected_color: solid 1px #fff !important;
-$order_check_desc_color: #333 !important;
-$order_check_span_color: #00537A !important;
-$order_submit_bg:#00537A !important;
+$order_check_desc_color: #FFF !important;
+$order_check_span_color: #FF0 !important;
+$order_submit_bg:#C79E63 !important;
 $order_submit_color: #FFF !important;
-$order_sumbit_disable_bg: #FFF !important;
+$order_sumbit_disable_bg: #C79E63  !important;
+$order_sumbit_radius_pc: 1em !important;
+$order_sumbit_radius_mo: .5em !important;
+
+
 
 // contactInfo
-$contact_bg:transparent;
+$contact_bg:#860009;
 $contact_bg_m:transparent;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
-$contact_btn_border:2px solid #F4DB8C;
+$contact_btn_border:0px solid #F4DB8C;
 $contact_btn_color: #FFF;
 $contact_btn_icon: #FFF;
-$contact_btn_bg: #134965;
+$contact_btn_bg: #C79E63;
 $contact_btn_hover_color: #FFF;
 $contact_btn_hover_icon: #FFF;
-$contact_btn_hover_bg:#06354d;
+$contact_btn_hover_bg:#004488;
 
 $contact_google_btn_color: #FFF;
 $contact_google_btn_icon: #FFF;
-$contact_google_btn_bg:#134965;
+$contact_google_btn_bg:#C79E63;
 $contact_google_hover_btn_color: #FFF;
 $contact_google_hover_btn_icon: #FFF;
-$contact_google_hover_btn_bg: #06354d;
+$contact_google_hover_btn_bg: #004488;
 
 // houseInfo
 $house_bg: #FFF;
@@ -82,7 +86,7 @@ $house_label_color: #BB9259;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background:linear-gradient(180deg, #dfcfa3 0%, #C78A03 100%);
+$mobile_nav_background:#004488;
 $mobile_nav_color: #fff;
 $mobile_nav_border:#fff6;
 $mobile_nav_icon: #fff;

@@ -22,10 +22,6 @@
     <vue-lazy-component class="section" id="section3">
       <Section3 />
     </vue-lazy-component> 
-
-    <vue-lazy-component class="section" id="section4">
-      <Section4 />
-    </vue-lazy-component> 
 <!--
 <VideoSection1  id="section2"
       :playBtn="require('@/projects/gtcip/video/play-btn.png')"
@@ -181,7 +177,6 @@ import Indigator from '@/components/Indigator.vue'
 import Section1 from '@/projects/gtcip/Section1.vue'
 import Section2 from '@/projects/gtcip/Section2.vue'
 import Section3 from '@/projects/gtcip/Section3.vue'
-import Section4 from '@/projects/gtcip/Section4.vue'
 /* 
 import Navigation from '@/layouts/Navigation.vue'
 import Section2 from '@/projects/gtcip/Section2.vue'
@@ -202,7 +197,6 @@ export default {
     Section1,
     Section2,
     Section3,
-    Section4,
     /* 
     Navigation,
     Section2,
