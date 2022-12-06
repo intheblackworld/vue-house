@@ -47,7 +47,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 0 5vw 0;
+  padding: 0 0 2vw 0;
 }
 
 .title {

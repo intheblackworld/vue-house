@@ -381,7 +381,7 @@ export default {
   }
 
   .group {
-    height: 240px;
+    height: 300px;
     margin-bottom: 40px;
     align-content: space-between;
     display: flex;
