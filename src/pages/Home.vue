@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/ji-jhan/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/mhsd2/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation />
     <Navigation /> -->
@@ -28,26 +28,26 @@
     </vue-lazy-component> 
 <!--
 <VideoSection1  id="section2"
-      :playBtn="require('@/projects/ji-jhan/video/play-btn.png')"
+      :playBtn="require('@/projects/mhsd2/video/play-btn.png')"
       title="建築×美學影片"
-      :close="require('@/projects/ji-jhan/video/close.png')"
-      :arrows="[require('@/projects/ji-jhan/video/arrow-left.png'), require('@/projects/ji-jhan/video/arrow-right.png')]"
+      :close="require('@/projects/mhsd2/video/close.png')"
+      :arrows="[require('@/projects/mhsd2/video/arrow-left.png'), require('@/projects/mhsd2/video/arrow-right.png')]"
       :slideList="[
         {
           title: '恆鑽地段奢美居',
-          img: require('@/projects/ji-jhan/video/2.jpg'),
+          img: require('@/projects/mhsd2/video/2.jpg'),
           video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '打造有溫度的家',
-          img: require('@/projects/ji-jhan/video/3.jpg'),
+          img: require('@/projects/mhsd2/video/3.jpg'),
           video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
         {
           title: '樣品屋私藏設計',
-          img: require('@/projects/ji-jhan/video/1.jpg'),
+          img: require('@/projects/mhsd2/video/1.jpg'),
           video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
@@ -147,7 +147,7 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/ji-jhan/s1/bg.jpg") top center;
+    background:url("~@/projects/mhsd2/s1/bg.jpg") top center;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -178,23 +178,23 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/ji-jhan/Section1.vue'
-import Section2 from '@/projects/ji-jhan/Section2.vue'
-import Section3 from '@/projects/ji-jhan/Section3.vue'
-import Section4 from '@/projects/ji-jhan/Section4.vue'
+import Section1 from '@/projects/mhsd2/Section1.vue'
+import Section2 from '@/projects/mhsd2/Section2.vue'
+import Section3 from '@/projects/mhsd2/Section3.vue'
+import Section4 from '@/projects/mhsd2/Section4.vue'
 /* 
 import Navigation from '@/layouts/Navigation.vue'
-import Section2 from '@/projects/ji-jhan/Section2.vue'
-import Section3 from '@/projects/ji-jhan/Section3.vue'
-import Section4 from '@/projects/ji-jhan/Section4.vue'
-import Section5 from '@/projects/ji-jhan/Section5.vue'
-import Section6 from '@/projects/ji-jhan/Section6.vue'
-import Section7 from '@/projects/ji-jhan/Section7.vue'
-import Section8 from '@/projects/ji-jhan/Section8.vue'
-import Section9 from '@/projects/ji-jhan/Section9.vue'
-import Section10 from '@/projects/ji-jhan/Section10.vue'
-import Section10 from '@/projects/ji-jhan/Section10.vue'
-import Section11 from '@/projects/ji-jhan/Section11.vue'
+import Section2 from '@/projects/mhsd2/Section2.vue'
+import Section3 from '@/projects/mhsd2/Section3.vue'
+import Section4 from '@/projects/mhsd2/Section4.vue'
+import Section5 from '@/projects/mhsd2/Section5.vue'
+import Section6 from '@/projects/mhsd2/Section6.vue'
+import Section7 from '@/projects/mhsd2/Section7.vue'
+import Section8 from '@/projects/mhsd2/Section8.vue'
+import Section9 from '@/projects/mhsd2/Section9.vue'
+import Section10 from '@/projects/mhsd2/Section10.vue'
+import Section10 from '@/projects/mhsd2/Section10.vue'
+import Section11 from '@/projects/mhsd2/Section11.vue'
 import VideoSection1 from '@/components/VideoSection1.vue' */
 
 export default {

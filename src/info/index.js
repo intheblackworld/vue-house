@@ -7,16 +7,16 @@ export default {
   phone: '02-2983-9777',
   fbLink: 'https://www.facebook.com/101707636076747',
   fbMessage: 'https://m.me/101707636076747',
-  caseName: '欣懋極綻',
+  caseName: '漫活時代2',
   indigatorLength: 10,
 
   houseInfos: [
-  /*
+  
     ['投資興建', '潤旺建設股份有限公司',],
     ['建築設計', '李承洋建築師',],
     ['行銷企劃', '澄果廣告有限公司',],
     ['經紀人', '翁文正（95）北市經證字第00592號',],
-  */
+  
   ],
 
   gtmCode: ['5TWXKCV'], // 可放置多個
