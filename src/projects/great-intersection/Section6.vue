@@ -9,14 +9,18 @@
       </div></div>
     <div class="content">
       <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        沙鹿新站特區<br v-if="isMobile" />  全區首座重劃指標
+        <br v-if="!isMobile"/>沙鹿新站特區<br v-if="isMobile" />  全區首座重劃指標
       </div>
       <div class="desc" data-aos="zoom-in" data-aos-delay="400">沙鹿新站特區位於市區核心地帶，以車站生活圈為中心，重劃區內60％為純住宅區，40%為公園綠帶，街廓整齊，無價生活質感。<br /><br />
-        重劃特區四大優勢： <br />
-1.市心生活圈，純住開發<br />
-2.沙鹿首座指標重劃特區<br />
-3.站前200Ｍ商圈機能強<br />
-4.台鐵、捷運藍線雙交匯
+        重劃特區八大優勢： <br />
+        鄰市心 - 台中稀有中心重劃，媲美七期重劃區 <br />
+機能佳 - 近享沙鹿車站商圈，解決重劃初期無機能 <br />
+享交通 - 海線唯一捷交匯，連接台中市區及串聯高鐵 <br />
+新重劃 - 沙鹿首座重劃區，提供優質住宅聚落 <br />
+純住宅 - 單純不複雜，房價較保值 <br />
+面積小 - 開發時程短，整體成形快 <br />
+供給少 - 全區總開發預計約2000戶，供不應求 <br />
+享增值 - 重劃首案基期低，交通建設利多未來享增值
 </div>
     </div>
     <div class="pic" data-aos="flip-up" data-aos-delay="200"></div>
