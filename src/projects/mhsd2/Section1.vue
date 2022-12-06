@@ -2,25 +2,15 @@
 <div class="section1">
 
 <div class="txt">
-<div class="logo" data-aos="zoom-in" data-aos-delay="200" >
-<img src="./s1/t1.png" />	
-</div>
-<div class="t1" data-aos="zoom-in" data-aos-delay="200" >
-<img src="./s1/t2.png" />	
-</div>
-</div>
+<img src="./s1/t1.png" class="logo" data-aos="zoom-in" data-aos-delay="200"/>	
+<img src="./s1/t2.png" class="t1" data-aos="zoom-in" data-aos-delay="200" />
+</div>	
 
-<div class="t3" data-aos="zoom-in" data-aos-delay="200" >
-<img src="./s1/t3.png" />	
-</div>
+<img class="t3" src="./s1/t3.png" data-aos="zoom-in" data-aos-delay="200"  />	
 
 <div class="leafstyle">
-	<div class="leaf1">
-	<img src="./s1/leaf1.png" />		
-	</div>
-	<div class="leaf2">
-	<img src="./s1/leaf2.png" />		
-	</div>
+	<img class="leaf1" src="./s1/leaf1.png" />		
+	<img class="leaf2" src="./s1/leaf2.png" />		
 </div>
 
 <div class="main">
@@ -32,6 +22,7 @@
 	<img class="shadow" src="./s1/shadow.png" />		
 	</div>
 </div>
+<img class="train" src="./s1/train.png" />	
 
 
 
@@ -50,26 +41,28 @@
  // overflow: hidden;
 position: relative;
 overflow: hidden;
-background: url("./s1/pc.jpg") center;
+background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
 }
 
 
 
 .txt{
-  position: absolute;
-  top:size(175);
-  right:size(235);
+  position: relative;
+  top:size(115);
+  right:size(20);
   z-index: 10;
   
 
 .logo{
+  position: absolute;
   width:size(531);
-  margin: 0px auto;
+  right:size(280);
 }
 .t1{
-   width:size(815);
-   margin-top:size(30);
+  position: absolute;
+  width:size(815);
+  top:size(180);
 }
 }
 
@@ -81,20 +74,38 @@ background: url("./s1/pc.jpg") center;
   z-index: 10;
 }
 
-.leafstyle{
-z-index: 1;
+
 .leaf1{
+  z-index: 1;
 	position: absolute;
 	width: size(1176);
 	left: size(-195);
  	bottom: size(-300);
+  animation: tree1 5s ease-in-out alternate infinite;
+  transform-origin: 0% 100%;
+  transform: skew(5deg);
 }
 .leaf2{
+  z-index: 1;
 	position: absolute;
 	width: size(1428);
 	bottom: size(-90);
 	left: size(-140);
+  animation: tree2 3s ease-in-out alternate infinite;
+  transform-origin: 0% 100%;
+  transform: skew(2deg);
 }
+
+@keyframes tree1{
+    to {
+    transform:skew(-5deg);
+    }
+}
+
+@keyframes tree2{
+    to {
+    transform:skew(-2deg);
+    }
 }
 
 .main{
@@ -134,6 +145,23 @@ width: size(1920);
 }
 }
 
+.train{
+  z-index: 2;
+  position: absolute;
+	width: size(2533);
+  bottom: size(140);
+  right: size(-1330);
+  transform: translate(100%, 0%);
+  animation: train 3s ease-out forwards;
+  transform-origin: 0% 100%;
+}
+
+@keyframes train{
+    to {
+    transform:translate(0px, 0%);
+    }
+}
+
 
 
 
@@ -149,54 +177,81 @@ width: size(1920);
     min-height: sizem(667);
     max-height: sizem(812);
     height:100vh;
+    background: url("./s1/bg_m.jpg") top center;
+    background-size:100% ;
   }
-  .img1{bottom:auto;top: sizem(-345);width:auto;height: sizem(345);
-    transform: rotate(90deg);transform-origin: 0 100%;}
-    .img11{bottom:auto;top: sizem(-345);width:sizem(199.19);height: sizem(345);
-      transform: rotate(90deg);transform-origin: 0 100%;
-
-    }
-
-.img2{left: 0;bottom: sizem(214);width:auto;height: sizem(375);
-    transform: rotate(90deg);transform-origin: 0 100%;}
-.img22,
-.img23{
-  left: 0;bottom: sizem(214);width:sizem(402.77);height: sizem(375);
-  transform: rotate(90deg);transform-origin: 0 100%;
-}
-    .box{position: absolute;
-      width: 100%;height:sizem(200);bottom:sizem(-100);background: linear-gradient(to bottom, #A4D2D900 0%,#A4D2D9 50%,#A4D2D900 100%);display: block;}
 
 .txt{
-  font-size: sizem(25);
-  top:calc(50% + (174 - 667 * .5) * 100vw / 375);
-  width:100%;
+  top:sizem(78);
+  right:auto;
+  
+
 .logo{
-  width:sizem(286);
-  margin: 0 auto 0.2em;
+  width:sizem(210);
+  right:sizem(82);
 }
 .t1{
-  font-size: 1em;
-  line-height: 1.48;
-  margin: 0 auto -.5em auto;
-  span{display: block;font-size:0.95em;}
-    }
-  .t2{
-  width:sizem(238);
-    }
-  .t3{
-  font-size: 1em;
-  margin: .2em auto 1.2em auto;
-  &::after,
-  &::before{
-    content: "";
-    width: 2.1em;
-    margin: 0 .4em .1em;
-  }
+  width:sizem(320);
+  top:sizem(68);
+  right:sizem(28);
+}
+}
+
+.t3{
+  width:sizem(224);
+  right: sizem(75);
+  bottom:auto;
+  top:sizem(200);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3))
+}
+
+
+.leaf1{
+  width:sizem(417);
+  left: sizem(-117);
+  bottom: sizem(-20);
+}
+.leaf2{
+  width:sizem(506);
+  bottom: sizem(55);
+  left: sizem(-95);
+}
+
+.main{
+width: sizem(375);
+.child{
+	width: sizem(160);
+	bottom: sizem(85);
+	left: sizem(30);
+}
+
+
+
+.shadow{
+	width: sizem(190);
+	bottom: sizem(75);
+	left: sizem(0);
+}
+
+
+
+.floor{
+	width: auto;
+  height: sizem(159);
+  left: sizem(-150);
 
 }
 }
+
+.train{
+  width: sizem(672);
+  bottom: sizem(130);
+  right: sizem(-280);
 }
+
+
+}
+
 </style>
 <script>
 // @ is an alias to /src

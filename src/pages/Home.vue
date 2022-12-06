@@ -15,17 +15,7 @@
       <Section1/>
     </vue-lazy-component>
       
-    <vue-lazy-component class="section" id="section2">
-      <Section2 />
-    </vue-lazy-component> 
-
-    <vue-lazy-component class="section" id="section3">
-      <Section3 />
-    </vue-lazy-component> 
-
-    <vue-lazy-component class="section" id="section4">
-      <Section4 />
-    </vue-lazy-component> 
+    
 <!--
 <VideoSection1  id="section2"
       :playBtn="require('@/projects/mhsd2/video/play-btn.png')"

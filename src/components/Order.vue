@@ -282,8 +282,8 @@ export default {
 
 .order-bg {
   //background-color: $order_bg_color;
-  //background-image: $order_bg_image;
-  background-repeat: no-repeat;
+  background-image: $order_bg_image;
+  background-repeat: repeat;
   position: relative;
   background-size: 110vw auto;
   background-position: top;
@@ -312,7 +312,7 @@ export default {
   position: relative;
    // font-family: $family1;
   // width: size(1500);
-   //font-family: 'Noto Serif TC', serif;
+   font-family: 'Noto Serif TC', serif;
     padding-top:2em;
     padding-bottom:0;
     font-weight:700;
@@ -514,7 +514,7 @@ export default {
     .order-title {
       width: 100%;
       font-size: calc(100vw * 30 / 375);
-    padding-top:4em;
+    padding-top:2em;
     }
     .order-title-img {
       width: 80vw;

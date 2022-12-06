@@ -65,6 +65,7 @@ export default {
 .info {
   display: flex;
   flex-wrap: wrap;
+  font-family: 'Noto Serif TC',sans-serif;
 }
 
 .item {
@@ -92,6 +93,7 @@ export default {
     white-space: nowrap;
    // font-family: $family3;
     width: 4em;
+    
   }
 
   .desc {
@@ -99,7 +101,7 @@ export default {
     text-align: left;
     color: $house_desc_color;
   //  font-family: $family3;
-    font-weight: bold;
+    font-weight: 400;
   }
 }
 
@@ -114,7 +116,7 @@ export default {
     width: 100%;
     margin-bottom: 0;
     font-size: 15px;
-    padding-bottom: 35vw;
+    padding-bottom: 10vw;
   }
 
   .title {

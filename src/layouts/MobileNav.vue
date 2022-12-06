@@ -95,7 +95,7 @@ export default {
   width: 100%;
   height: 63px;
   background: $mobile_nav_background;
-
+  font-family: "Noto Serif TC", serif;
   display: flex;
   position: fixed;
   bottom: 0;
@@ -107,7 +107,7 @@ export default {
   .nav-item {
     flex: 1;
     color: $mobile_nav_color;
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +123,7 @@ export default {
     width: 20px !important;
     height: 25px;
     color: $mobile_nav_icon;
+    margin-bottom: 5px;
   }
 
   .label {

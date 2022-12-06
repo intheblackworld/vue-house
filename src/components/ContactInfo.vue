@@ -1,7 +1,7 @@
 <template>
   <div> 
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
-
+      <img class="logo" src="~@/projects/mhsd2/s1/t1.png" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -20,7 +20,7 @@
           </span>
         </a>
         <div class="addressall" data-aos="fade-down" data-aos-delay="400">
-          <div class="address flex-c">接待中心：<br v-if="isMobile">{{info.address}}</div>
+          <div class="address flex-c">{{info.address}}</div>
           <div class="google-btn flex-c" @click="showMapDialog">
             <span class="flex-c">
               <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
@@ -94,16 +94,19 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: 60%;
   max-width: 100%;
   transform: translateY(0);
-  margin: 5vw auto 2vw;
-  padding: 3vw 0;
+  margin: 5vw auto 0vw;
+  padding: 5vw 0 3vw;
   line-height: 1.4;
   &::before{content: "";
-  position: absolute;top: 0;left: 0;right: 0;bottom: 0;
+  position: absolute;
+  top: 0;left: 0;right: 0;bottom: 0;
   background: $contact_bg;
- display: block;z-index: 2;}
+  display: block;z-index: 2;}
+
+  
 }
 
 .img1{position:absolute; width: 100%;}
@@ -137,7 +140,7 @@ img{right: 0;bottom: 0;}
   padding: 0 0 0 0;
   fill: #FFF;
   position: relative;z-index: 3;
-      filter: drop-shadow(0.3vw 0.2vw 0.1vw #000c);
+  
 }
 .info {
   width: 880px;
@@ -155,11 +158,12 @@ img{right: 0;bottom: 0;}
   margin-bottom: 20px;
   cursor: pointer;
   text-decoration: none;
+  font-family: "Noto Serif TC", serif;
   color: $contact_btn_color;
   background: $contact_btn_bg;
  // box-shadow: $contact_btn_border;
-  border: $contact_btn_border;
-border-radius: 1em;
+  //border: $contact_btn_border;
+border-radius: 10em;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -208,15 +212,17 @@ border-radius: 1em;
 }
 .addressall{
   width: 99%;
-  border-radius: 1em;
+  border-radius: 5em;
   background: #FFF;
-  border: $contact_btn_border;
+  font-family: "Noto Serif TC", serif;
+  //border: $contact_btn_border;
 }
 .address {
   width:calc(100% - 280px);
   height: 60px;
   color: #040000;
   font-weight: bold;
+  
   float: left;
   //box-shadow: $contact_btn_border;
   //border: $contact_btn_border;
@@ -235,9 +241,9 @@ border-radius: 1em;
   background: $contact_google_btn_bg;
   background-position: center !important;
   transition: all 0.5s;
-  border-radius: 1em;
+  border-radius: 10em;
   font-weight: 600;
-  border: $contact_btn_border;
+  //border: $contact_btn_border;
   border-width: 0 2px 0 2px;
 
   svg {
@@ -273,16 +279,20 @@ border-radius: 1em;
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .contact-info {
-  //  background: $contact_bg_m;
-    background-size: 250% auto;
+    
     display: flex;
     width: 100%;
     //  max-width: 95%;
     height: auto;
-    padding:0 5% 5% 5%;
+    padding:0 5% 7% 5%;
     transform: none;
     // position: static;
     margin:20vw 0 0 0;
+
+    &::before{
+      background: $contact_bg_m;
+      background-size: 100% auto;
+    }
   }
 .imglb{top:sizem(180);left:sizem(-450);width: sizem(609);
 }
@@ -327,10 +337,11 @@ border-radius: 1em;
 
   .logo {
   margin: 15vw auto 10vw;
-    left: auto;
-    position: relative;
-      width: $contact_logo_mobile_width;
-      filter: drop-shadow(1vw 0.7vw 0.4vw #000c);
+  left: auto;
+  position: relative;
+  width: $contact_logo_mobile_width;
+
+    //filter: drop-shadow(1vw 0.7vw 0.4vw #000c);
   }
   .btn,
   .address,
@@ -340,14 +351,16 @@ border-radius: 1em;
  // .google-btn {  }
   .addressall{
     width: 100%;
+    border-radius: 2em;
  //   border-radius: 30px;
   }
   .address {
     // width: 280px;
-    padding: .9em 1em;
+    padding: 1em 1em;
     text-align: justify;
     //font-size: 14px;
     height: auto;
+    
   }
 
   .google-btn {
