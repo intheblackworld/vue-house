@@ -1,8 +1,8 @@
 <template>
   <div class="section10">
     <div class="button">
-      <div class="button1" @click="showDialog('https://www.eyehouse.co/i?c=c7957066829')"><h3>A1樣品屋<br>VR 720 實境觀看</h3></div>
-      <div class="button2" @click="showDialog('https://www.eyehouse.co/i?c=c6935839981')"><h3>B1樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button1" @click="showDialog('https://vr333.8sms.tw/')"><h3>A1樣品屋<br>VR 720 實境觀看</h3></div>
+      <div class="button2" @click="showDialog('https://vr336.8sms.tw/')"><h3>B1樣品屋<br>VR 720 實境觀看</h3></div>
       <div class="button3" @click="showDialog('https://www.eyehouse.co/i?c=c533952085')"><h3>風禾公園<br>VR 720 實境觀看</h3></div>
     </div>
       <div :class="`dialog`" v-if="isShowDialog">
