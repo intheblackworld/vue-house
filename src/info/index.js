@@ -1,16 +1,16 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市新莊區昌德街33號旁',
+  address: '新北市新莊區中原路101號對面',
   googleSrc:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3614.3847262875265!2d121.45499929999998!3d25.054946200000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9b321c197c5%3A0x2bb68e2704c516c1!2z5Ymv6YO95b-D6Z2S6Z2SIOaOpeW-heS4reW_gy3mlrDljJcv5paw6I6KL-W7uuahiC_mlrDlu7rmoYgv6aCQ5ZSu5bGLL-aWsOaIkOWxiw!5e0!3m2!1szh-TW!2stw!4v1670319353712!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/y7M89BffH2o9Uq46A',
-  phone: '02-2276-7272',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  phone: '02-8521-1313',
+  fbLink: 'https://www.facebook.com/gtcip.debang',
+  fbMessage: 'https://m.me/gtcip.debang',
   caseName: '雙橡園',
   indigatorLength: 10,
 
-  houseInfos: [
+  houseInfos: [ 
   /*
     ['投資興建', '潤旺建設股份有限公司',],
     ['建築設計', '李承洋建築師',],
@@ -19,7 +19,7 @@ export default {
   */
   ],
 
-  gtmCode: ['5TWXKCV'], // 可放置多個
+  gtmCode: ['5C8RWW'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',//(主)1:6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz  (主)2:6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
