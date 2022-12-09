@@ -241,6 +241,7 @@
     height: auto;
     min-height: sizem(667);
     max-height: sizem(667);
+    margin-top: 50px;
   }
 
 
