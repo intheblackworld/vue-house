@@ -46,7 +46,7 @@
   overflow: hidden;
   // position: relative;
   height: size(1080);
-  margin: size(125) 0  0 0;
+  //margin: size(125) 0  0 0;
   &::after {
     content: '';
     display: block;
