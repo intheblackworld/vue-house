@@ -9,8 +9,8 @@
     <a href="https://drive.google.com/file/d/1323vWyJN6iwqFYvTjfPYXoiwHS_92cJS/view?usp=sharing" class="btn1">
       <img src="./s1/btn_1.png" :alt="`${info.caseName}_btn1`" data-aos="fade-up" data-aos-delay="400">
     </a>
-    <a href="https://drive.google.com/drive/folders/1SO43omscXI2M_1wX_fJEGqk70uXkpp-E?usp=sharing" class="btn2" target="_blank">
-      <img src="./s1/btn_2.png" :alt="`${info.caseName}_btn2`" data-aos="fade-up" data-aos-delay="600">
+    <a href="https://drive.google.com/file/d/1OqvzEhPCjnqNF_-rlggR4vpUXuG_kPK5/view?usp=sharing" class="btn2" target="_blank">
+      <img src="./s1/btn_2.png" :alt="`${info.caseName}_btn2`" data-aos="fade-up" data-aos-delay="400">
     </a>
   </div>
 </template>
@@ -119,16 +119,16 @@
   }
 
   .btn1 {
-    @include img_c_m(270, 378);
-    top: calc(50% + 100vw * (448 - 302) / 375);
+    @include img_c_m(270, 358);
+    top: calc(50% + 100vw * (428 - 302) / 375);
     img {
       width: 100%;
     }
   }
 
   .btn2 {
-    @include img_c_m(270, 490);
-    top: calc(50% + 100vw * (550 - 302) / 375);
+    @include img_c_m(270, 470);
+    top: calc(50% + 100vw * (510 - 302) / 375);
     img {
       width: 100%;
     }
