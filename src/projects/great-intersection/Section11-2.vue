@@ -409,6 +409,10 @@ export default {
           name: "樣品屋現場拍攝",
         },
         {
+          img: require("./s11/27.jpg"),
+          name: "樣品屋現場拍攝",
+        },
+        {
           img: require("./s11/22.jpg"),
           name: "樣品屋現場拍攝",
         },
