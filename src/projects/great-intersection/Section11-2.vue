@@ -1,21 +1,9 @@
 <template>
   <div class="section11">
-    <div class="img1" data-aos="zoom-in-left"><img src="./s1/music1.png" alt="img" />
-      <div class="f1">
-        <img src="./s1/f11.png" alt="" loading="lazy" />
-        <img src="./s1/f12.png" alt="" loading="lazy" />
-        <img src="./s1/f13.png" alt="" loading="lazy" />
-        <img src="./s1/f14.png" alt="" loading="lazy" />
-      </div></div>
     <div class="content">
-      <div class="title" data-aos="zoom-in" data-aos-delay="200">
-        極上優雅格局，空間的圓舞曲
+      <div class="subtitle">上城菁英4房
       </div>
-    <!--  <div class="subtitle" v-html="slideList[slideIndex].subtitle">
-      </div>  -->
-      <div class="subtitle">法式女王2房
-      </div>
-      <div class="desc">自由揮灑的平面創意空間，光線自在遊走，玄關收納有容，衛浴開窗，主臥女王更衣室收藏每一季的時尚。</div>
+      <div class="desc">隱藏在細節中的品味，動靜分區極奢極美，間間採光通透，大器宴客餐廳，雍容有度，L型國王大主臥，屬於菁英的上乘風華。</div>
     </div>
     <div class="swiper">
     <swiper :navigation="true" :options="swiperOption" ref="mySwiper" data-aos="flip-up" data-aos-delay="200" class="item-list flex-jb flex-as">
@@ -43,14 +31,14 @@ $b_margin:size(50);
     content: "";
     display: block;
     position: absolute;
-    top:$b_margin;
+    top:0;
     left:$b_margin;
     right:$b_margin;
-    bottom:0;
+    bottom:$b_margin;
     z-index: 1;
 
      border: 2px solid transparent;
-     border-width: 2px 2px 0 2px;
+     border-width: 0 2px 2px 2px;
      border-image: linear-gradient(135deg, #db9d88 0%,#e2bda9 4%,#da927b 15%,#824b40 34%,#da927b 61%,#e2bda9 71%,#da927b 81%,#824b40 100%);
 	  border-image-slice: 1;
   }
@@ -97,7 +85,7 @@ position: absolute;
   //height: 100%;
   //in-height: size(1080);
  // background: #bccf00;
-  padding:3.6em 0 0 0;
+  padding:2.2em 0 0 0;
   display: block;
   color: #FFF;
   text-align: center;
@@ -417,27 +405,27 @@ export default {
       },
       slideList: [
         {
-          img: require("./s11/11.jpg"),
+          img: require("./s11/21.jpg"),
           name: "樣品屋現場拍攝",
         },
         {
-          img: require("./s11/12.jpg"),
+          img: require("./s11/22.jpg"),
           name: "樣品屋現場拍攝",
         },
         {
-          img: require("./s11/13.jpg"),
+          img: require("./s11/23.jpg"),
           name: "樣品屋現場拍攝",
         },
         {
-          img: require("./s11/14.jpg"),
+          img: require("./s11/24.jpg"),
           name: "樣品屋現場拍攝",
         },
         {
-          img: require("./s11/15.jpg"),
+          img: require("./s11/25.jpg"),
           name: "樣品屋現場拍攝",
         },
         {
-          img: require("./s11/16.jpg"),
+          img: require("./s11/26.jpg"),
           name: "樣品屋現場拍攝",
         },
       ],

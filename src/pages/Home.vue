@@ -36,13 +36,16 @@
       </vue-lazy-component>
       <vue-lazy-component class="section" id="section10" style="">
          <Section10 />
+      <vue-lazy-component class="section" id="section11" style="">
+         <Section11 />
+      </vue-lazy-component>
+      <vue-lazy-component class="section" id="section11-2" style="">
+         <Section11_2 />
+      </vue-lazy-component>
       </vue-lazy-component>
       <!--
       <vue-lazy-component class="section" id="section9" style="">
          <Section9 />
-      </vue-lazy-component>
-      <vue-lazy-component class="section" id="section11" style="">
-         <Section11 />
       </vue-lazy-component>
     <VideoSection1
       :playBtn="require('@/projects/great-intersection/video/play-btn.png')"
@@ -133,10 +136,11 @@ import Section6 from '@/projects/great-intersection/Section6.vue'
 import Section7 from '@/projects/great-intersection/Section7.vue'
 import Section8 from '@/projects/great-intersection/Section8.vue'
 import Section10 from '@/projects/great-intersection/Section10.vue'
+import Section11 from '@/projects/great-intersection/Section11.vue'
+import Section11_2 from '@/projects/great-intersection/Section11-2.vue'
 
 /* 
 import Section9 from '@/projects/great-intersection/Section9.vue'
-import Section11 from '@/projects/great-intersection/Section11.vue'
 import VideoSection1 from '@/components/VideoSection1.vue'
  */
 
@@ -160,9 +164,10 @@ export default {
     Section7,
     Section8,
     Section10,
+    Section11,
+    Section11_2,
     /*
     Section9,
-    Section11,
     VideoSection1,
     Section12,
     Section6,
