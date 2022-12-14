@@ -19,7 +19,7 @@ export default {
   */
   ],
 
-  gtmCode: ['5C8RWW'], // 可放置多個
+  gtmCode: ['5C8RWW7'], // 可放置多個
   recaptcha_site_key_v2: '6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz',//(主)1:6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz  (主)2:6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
