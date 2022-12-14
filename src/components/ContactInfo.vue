@@ -338,14 +338,14 @@
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
         </a>
-        <div class="addressall" data-aos="fade-down" data-aos-delay="400">
+        <!--div class="addressall" data-aos="fade-down" data-aos-delay="400">
           <div class="address flex-c">接待中心：<br v-if="isMobile">{{info.address}}</div>
           <div class="google-btn flex-c" @click="showMapDialog">
             <span class="flex-c">
               <font-awesome-icon icon="map-marker-alt" /><span>導航 Google 地圖</span>
             </span>
           </div>
-        </div>
+        </div-->
       </div>
     </div>
     <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
