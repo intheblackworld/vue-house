@@ -103,6 +103,8 @@ border-width: .1em 0 .1em .1em;left: -35px;}
   .logo {
     width: sizem(308);
   }
+
+
 .imgbg{
   bottom: sizem(-1);
   right:sizem(-90);
@@ -121,8 +123,19 @@ border-width: .1em 0 .1em .1em;left: -35px;}
   width:23em;
   top:calc(50% - 30vw);
   margin: auto;
+
+  .title{
+     font-size: sizem(26);
+  &::after{
+    right: -10px;
+  }
+  &::before{
+    left: -10px;
+  }
+}
+
   .desc{
-  font-size:1.45em;}
+  font-size:sizem(28)}
 
 }
 
