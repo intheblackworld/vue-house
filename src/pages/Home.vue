@@ -1,6 +1,6 @@
 <template>
   <div class="home no-padding-top">
-    <!-- <img class="og" src="@/projects/fong-guang/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
+    <!-- <img class="og" src="@/projects/ssb/all/og.jpg" :alt="`${info.caseName}_ogimg`"> -->
     <Loading :loading="load" />
     <!-- <SideNavigation /> -->
     <Navigation />
@@ -8,45 +8,16 @@
     <!-- <full-page
       ref="fullPage"
       :options="options"
-      id="fullpage"
+      id="fullpage"  <Section1  title="醇日光 心居地" cls="s1"/>
     > -->
     <!-- <LeafFlow /> -->
     <vue-lazy-component class="section relative" id="section1" @init="init">
-      <Section1  title="醇日光 心居地" cls="s1"/>
+      <Section1 />
     </vue-lazy-component>
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
 
-<!--
-
-<VideoSection1  id="section2"
-      :playBtn="require('@/projects/fong-guang/video/play-btn.png')"
-      title="建築×美學影片"
-      :close="require('@/projects/fong-guang/video/close.png')"
-      :arrows="[require('@/projects/fong-guang/video/arrow-left.png'), require('@/projects/fong-guang/video/arrow-right.png')]"
-      :slideList="[
-        {
-          title: '恆鑽地段奢美居',
-          img: require('@/projects/fong-guang/video/2.jpg'),
-          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '打造有溫度的家',
-          img: require('@/projects/fong-guang/video/3.jpg'),
-          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '樣品屋私藏設計',
-          img: require('@/projects/fong-guang/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-      ]"
-    />
-  -->
     <vue-lazy-component
       class="section"
       id="section3"
@@ -83,9 +54,41 @@
     >
       <Section8 />
     </vue-lazy-component>
-    <vue-lazy-component class="section" id="section9" @init="init">
-      <Section1 title="江翠新富區｜全新落成  風光入席" cls="s8" />
+     <vue-lazy-component
+      class="section"
+      id="section9"
+    >
+      <Section9 />
     </vue-lazy-component>
+<!--
+
+<VideoSection1  id="section2"
+      :playBtn="require('@/projects/ssb/video/play-btn.png')"
+      title="建築×美學影片"
+      :close="require('@/projects/ssb/video/close.png')"
+      :arrows="[require('@/projects/ssb/video/arrow-left.png'), require('@/projects/ssb/video/arrow-right.png')]"
+      :slideList="[
+        {
+          title: '恆鑽地段奢美居',
+          img: require('@/projects/ssb/video/2.jpg'),
+          video: 'https://www.youtube.com/embed/-60Gqkr3TtU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '打造有溫度的家',
+          img: require('@/projects/ssb/video/3.jpg'),
+          video: 'https://www.youtube.com/embed/d7aWvSn2tQc?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+        {
+          title: '樣品屋私藏設計',
+          img: require('@/projects/ssb/video/1.jpg'),
+          video: 'https://www.youtube.com/embed/9UEKBWJladU?&enablejsapi=1&playerapiid=ytplayer',
+          isPlay: false,
+        },
+      ]"
+    />
+  -->
 <!--      
     <vue-lazy-component
       class="section"
@@ -142,7 +145,7 @@
 //padding-top: $nav_pc_height;
 position: relative;
   // overflow: hidden;//試底下多的那塊哪來的
-    background:url("~@/projects/fong-guang/s1/bg.jpg") top center;
+    background:url("~@/projects/ssb/s1/bg.jpg") top center;
 &::after{content: "";clear: both;display: block;}
 }
 
@@ -174,19 +177,19 @@ import Loading from '@/components/Loading.vue'
 import Indigator from '@/components/Indigator.vue'
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/fong-guang/Section1.vue'
-import Section2 from '@/projects/fong-guang/Section2.vue'
-import Section3 from '@/projects/fong-guang/Section3.vue'
-import Section4 from '@/projects/fong-guang/Section4.vue'
-import Section5 from '@/projects/fong-guang/Section5.vue'
-import Section6 from '@/projects/fong-guang/Section6.vue'
-import Section7 from '@/projects/fong-guang/Section7.vue'
-import Section8 from '@/projects/fong-guang/Section8.vue'
+import Section1 from '@/projects/ssb/Section1.vue'
+import Section2 from '@/projects/ssb/Section2.vue'
+import Section3 from '@/projects/ssb/Section3.vue'
+import Section4 from '@/projects/ssb/Section4.vue'
+import Section5 from '@/projects/ssb/Section5.vue'
+import Section6 from '@/projects/ssb/Section6.vue'
+import Section7 from '@/projects/ssb/Section7.vue'
+import Section8 from '@/projects/ssb/Section8.vue'
+import Section9 from '@/projects/ssb/Section9.vue'
 /* 
-import Section9 from '@/projects/fong-guang/Section9.vue'
-import Section10 from '@/projects/fong-guang/Section10.vue'
-import Section10 from '@/projects/fong-guang/Section10.vue'
-import Section11 from '@/projects/fong-guang/Section11.vue'
+import Section10 from '@/projects/ssb/Section10.vue'
+import Section10 from '@/projects/ssb/Section10.vue'
+import Section11 from '@/projects/ssb/Section11.vue'
 import VideoSection1 from '@/components/VideoSection1.vue' */
 
 export default {
@@ -207,8 +210,8 @@ export default {
     Section6,
     Section7,
     Section8,
-    /* 
     Section9,
+    /* 
     Section10,
     Section11,
     Section11,

@@ -17,26 +17,6 @@
     />
   </div>
 </template>
-<style lang="scss" scoped>
-@import '../assets/style/function.scss';
-.desc {
-  width: sizem(310);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-left: sizem(450);
-  margin-top: sizem(80);
-  font-size: sizem(15);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.73;
-  letter-spacing: 1.5px;
-  text-align: left;
-  color: #231815;
-
-}
-</style>
 <script>
 import { isMobile } from '@/utils'
 export default {
@@ -61,7 +41,7 @@ export default {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
 
-        map.scrollTo((mapBg.clientWidth  - window.innerWidth) / 3.9, 0)
+        map.scrollTo((mapBg.clientWidth  - window.innerWidth) / 2.06, 0)
       }, 1200)
 
       setTimeout(() => {

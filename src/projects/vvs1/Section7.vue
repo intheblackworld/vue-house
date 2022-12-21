@@ -9,7 +9,7 @@
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img1" :class="`swipe-item absolute`">
               <img :src="slide.img1" alt="" class="img1">
               <img :src="slide.img2" alt="" class="img2">
-              <div class="slide-name absolute" v-html="slide.name"></div>
+              <div class="slide-name absolute" v-html="slide.name" v-if="slide.name"></div>
             </div>
           </transition-group>
      <!--  -->    <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">

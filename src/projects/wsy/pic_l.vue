@@ -8,7 +8,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
               <img :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
+              <div class="slide-name absolute" v-html="slide.name" v-if="slide.name"></div>
             </div>
           </transition-group>
         <!--  <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">

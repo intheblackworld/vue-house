@@ -9,7 +9,7 @@
 .map {
   position: relative;
   z-index: 1;
-  height:100%;
+  width:100%;
 
   .hand {
     display: none;
@@ -17,7 +17,7 @@
   .box{
    position: absolute;top: 0;left: 0;width: 100%;
    height: size(400);
-   background: linear-gradient(180deg, #02130D 0%, rgba(0, 52, 81, 0.718567) 28.65%, rgba(0, 92, 158, 0.416667) 59.37%, rgba(0, 112, 205, 0) 100%);
+   
   }
 
   img {
@@ -51,7 +51,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  $map-h: sizem(700);
+  $map-h: sizem(549);
   .map {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -78,12 +78,9 @@
       height: $map-h;
     }
 
-    .mask {
-    //  animation: swing 2.5s ease-in-out 0s infinite;
-      left: 50%;
-    }
 
     .mask {
+      left: 50%;
       width: 200vw;
       height: sizem(57);
       background-color: rgba(0, 53, 97, 0.72);
@@ -104,9 +101,9 @@
       z-index: 3;
       width: sizem(70) !important;
       height: auto !important;
-      left:100%;
+      left:133%;
       right: auto;
-      top: sizem(400) !important;
+      top: sizem(240) !important;
       display: block;
       animation: swing 2.5s ease-in-out 0s infinite alternate-reverse;
       opacity: 0;

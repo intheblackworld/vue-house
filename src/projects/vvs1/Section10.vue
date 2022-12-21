@@ -33,7 +33,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img loading="lazy" :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
+              <div class="slide-name absolute" v-html="slide.name" v-if="slide.name"></div>
             </div>
           </transition-group>
         </div>
@@ -61,7 +61,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img loading="lazy" :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
+              <div class="slide-name absolute" v-html="slide.name" v-if="slide.name"></div>
             </div>
           </transition-group>          
         </div>
@@ -89,7 +89,7 @@
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img" :class="`swipe-item absolute`">
               <img loading="lazy" :src="slide.img" alt="">
-              <div class="slide-name absolute" v-html="slide.name"></div>
+              <div class="slide-name absolute" v-html="slide.name" v-if="slide.name"></div>
             </div>
           </transition-group>
         </div>

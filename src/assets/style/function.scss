@@ -20,13 +20,12 @@ $pagination-active:#fff;
   font-style: normal;
   text-align: justify;
   font-size:$fontsize;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   .title{
-    font-family: 'Noto Serif TC',sans-serif;
     font-size:2.3em;
     margin:0 auto 0;
-    color: #FFF;
+    color: #AE8047;
     font-weight: 700;
     line-height: 1.4;
   }
@@ -35,6 +34,7 @@ $pagination-active:#fff;
       font-weight: 700;
     }
   .desc {
+    font-family:'Noto Sans TC', serif;
     padding:.8em 0 0 0;
     list-style: circle;
     overflow: hidden;
@@ -58,8 +58,8 @@ $pagination-active:#fff;
 @mixin name() {
   .slide-name{
   position: absolute;
-  right:1em;
-  bottom:0.5em;
+  right:0;
+  bottom:0;left: 0;
   color: #fff;
   font-size: size(15);
   font-weight: normal;
@@ -67,8 +67,10 @@ $pagination-active:#fff;
   font-style: normal;
   line-height: 1.6;
   letter-spacing: 0.06em;
-  text-align: left;
+  text-align: right;
  text-shadow:0 0.1em 0.3em #000;
+ padding: 0.5em 1em 0.5em 0;
+ background: linear-gradient(77.76deg, rgba(174, 128, 71, 0) 50%, #AE8047 84.85%);
 }
  @media screen and (max-width: 767px) {
   .slide-name{font-size: sizem(12);} 
