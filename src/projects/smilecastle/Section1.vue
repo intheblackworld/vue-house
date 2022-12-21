@@ -5,7 +5,11 @@
    -->
     <img src="./s1/0.png" class="img0" data-aos="zoom-in" data-aos-delay="200" />
 
-   
+    <a href="https://lin.ee/Ek7kHw1" target="_blank" v-if="!isMobile">
+    <img src="./s1/lineicon.png" class="lineicon" data-aos="zoom-in" data-aos-delay="200" /> 
+    </a>
+
+
     <div class="imglt" data-aos="zoom-in" data-aos-delay="0" >
     <img src="./all/f3.png" class="f3" />
     <img src="./all/f1.png" class="f1" />
@@ -46,6 +50,17 @@
   position: relative;
   // background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
+
+
+}
+
+.lineicon{
+  position: fixed;
+  width: size(80);
+  height: size(80);
+  right: size(20);
+  bottom: size(120);
+  z-index: 99;
 }
 .t0{
   position: absolute;
