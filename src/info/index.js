@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3611.9297995876846!2d121.4588077!3d25.1380641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af9d175295b3%3A0x8f737e713280e2cb!2zMjUx5paw5YyX5biC5reh5rC05Y2A5rCR5qyK6LevMTLomZ8!5e0!3m2!1szh-TW!2stw!4v1664958945196!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/C4sa5A5FsZjosZtYA',
   phone: '02-8809-2345',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  fbLink: 'https://www.facebook.com/junyijst/',
+  fbMessage: 'https://m.me/junyijst',
   caseName: '景上汀',
   indigatorLength: 10,
 
