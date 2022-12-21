@@ -2,7 +2,6 @@
   <div>
     <div class="section8">
       <wimg class="w1 absolute" />
-      <mimg class="img absolute" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -25,9 +24,9 @@
       </div> 
       </div>
       <div class="txt">
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Time to relax</div>
-      <div class="title" data-aos="fade-up" data-aos-delay="200">府中慢漫走<br />隨手採集生活靈感</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">步出府中站，沿著風格小店、香氣馥郁的咖啡館輕移腳步，隨手拾起即是精彩亮點，府中生活如同走進藝文展演走廊，每一處細節都值得細細欣賞，稀鬆的日常在這裡也有了個人風格。</div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Handmade boutique</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">10大嚴選建材<br />建築經典訂製</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">建材優質選品-日本TOTO、德國KRONOTEX、義大利系統櫃體，營造品味家居生活。社區全智能管理系統搭配各戶智慧門鎖，全面打造安全安心家居。</div>
       </div>
     </div>
   </div>
@@ -40,23 +39,20 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 8.5vw 0;
+  padding: 15vw 0;
+  z-index: 2;
   background:#ECDDC0;
 &::after{content: "";clear: both;display: block;}
 }
-.w1{bottom:size(-70);left: 0;width: size(1920);z-index: 2;
+.w1{bottom:size(20);left: 0;width: size(1920);z-index: 2;
 		height: size(250);}
-.img{
-  width:size(440);right: size(-91);bottom:size(-160);z-index: 2;
-  margin: 0 auto 0em;
-}
 
 
 
 .txt{
 float: right;
   position: relative;
-  padding-top: 8.5vw;
+  padding-top: 3.8vw;
   width: size(580);
   z-index: 2;
   margin-right: size(210);
@@ -95,11 +91,12 @@ float: right;
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
+
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100%;
     height: auto;
-    padding:10vw 0 0 0;
+    padding: 0;
   }
 
   .txt{
@@ -107,8 +104,8 @@ float: right;
     width: sizem(310);
     float: none;
     font-size: sizem(15);
-    padding-top: 0;
-    margin:2em auto 6em;
+    padding:2em 0 6em;
+    margin: auto;
   }
   /* Swipe */
   .swipe {
@@ -117,14 +114,6 @@ float: right;
     height: sizem(250);
     margin-left:0;
   }
-.img{
-.bg1{top:sizem(-50);}
-.bg2{top:sizem(420);left:sizem(-200);width: sizem(650);}
-.tree1{top:sizem(450);right:sizem(55);width:sizem(92);}
-}
-.imgrb{bottom:sizem(-105);right: sizem(-480);
-  width: sizem(700);
-}
 }
 </style>
 <script>
@@ -154,7 +143,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/1.jpg'),
+          img: require('./s8/1.png'),
           name: '',
         },
         {

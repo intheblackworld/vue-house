@@ -134,7 +134,7 @@
     display: block;
   font-size: 1.08em;
     letter-spacing:0.07em;
-  color: #F9E07E;
+  color: #E0C38F;
   margin: -0.1em 0 0 0 ;
     }
   .t2{

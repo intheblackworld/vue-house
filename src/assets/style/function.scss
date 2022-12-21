@@ -11,8 +11,8 @@
   @return #{$c-size};
 }
 
-$pagination:#FFF9;
-$pagination-active:#fff;
+$pagination:#FFF;
+$pagination-active:#AE8047;
 
 // 主要文字樣式
 @mixin txt($fontsize) {
@@ -47,6 +47,7 @@ $pagination-active:#fff;
     }
     .subtitle{
       font-size:1.1em;
+      padding:0 0 .55em 0;
     }
 
   }

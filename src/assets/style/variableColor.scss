@@ -39,8 +39,8 @@ $mask_icon_color: #00235E;
 $order_bg_color: transparent;
 $order_bg_image: transparent;
 $order_bg_image_m: transparent;
-$order_title_color: #F9E07E;
-$order_subtitle_color: #F9E07E;
+$order_title_color: #E0C38F;
+$order_subtitle_color: #E0C38F;
 $order_input_label_color: #333;
 $order_input_color: #1a1a1a !important;
 $order_input_placeholder: #666 !important;
@@ -50,7 +50,7 @@ $order_input_focus_border: solid 1px #fff !important;
 $order_input_selected_color: solid 1px #fff !important;
 $order_check_desc_color: #FFF !important;
 $order_check_span_color: #FF0 !important;
-$order_submit_bg:linear-gradient(180deg, #E8DBB8 0%, #BBA468 51.56%, #9A813E 54.69%, #DFC888 100%) !important;
+$order_submit_bg:#AE7F47 !important;
 $order_submit_color: #FFF !important;
 $order_sumbit_disable_bg: #FFF !important;
 
@@ -62,14 +62,14 @@ $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 $contact_btn_border:0px solid #00235E;
 $contact_btn_color: #FFF;
 $contact_btn_icon: #FFF;
-$contact_btn_bg: linear-gradient(180deg, #E8DBB8 0%, #BBA468 51.56%, #9A813E 54.69%, #DFC888 100%) ;
+$contact_btn_bg: #AE7F47;
 $contact_btn_hover_color: #FFF;
 $contact_btn_hover_icon: #FFF;
 $contact_btn_hover_bg:  linear-gradient(180deg, #E8DBB8 0%, #a89052 51.56%, #806e3d 54.69%, #cfb05a 100%);
 
 $contact_google_btn_color: #FFF;
 $contact_google_btn_icon: #FFF;
-$contact_google_btn_bg:linear-gradient(180deg, #E8DBB8 0%, #BBA468 51.56%, #9A813E 54.69%, #DFC888 100%) ;
+$contact_google_btn_bg:#AE7F47;
 $contact_google_hover_btn_color: #FFF;
 $contact_google_hover_btn_icon: #FFF;
 $contact_google_hover_btn_bg:  linear-gradient(180deg, #E8DBB8 0%, #a89052 51.56%, #806e3d 54.69%, #cfb05a 100%);
@@ -82,7 +82,7 @@ $house_label_color: #BB9259;
 $house_desc_color: #000;
 
 // mobileNav
-$mobile_nav_background:linear-gradient(180deg, #DFC888 0%, #9A813E 100%);;
+$mobile_nav_background:#AE7F47;
 $mobile_nav_color: #fff;
 $mobile_nav_border:#fff6;
 $mobile_nav_icon: #fff;

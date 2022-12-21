@@ -92,6 +92,7 @@ export default {
     white-space: nowrap;
    // font-family: $family3;
     width: 4em;
+    font-family:'Noto Sans TC', serif;
   }
 
   .desc {
@@ -100,6 +101,8 @@ export default {
     color: $house_desc_color;
   //  font-family: $family3;
     font-weight: bold;
+      font-weight:400;
+    font-family:'Noto Sans TC', serif;
   }
 }
 

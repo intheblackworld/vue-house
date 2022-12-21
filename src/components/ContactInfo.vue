@@ -100,6 +100,7 @@ export default {
   margin: 5vw auto 2vw;
   padding: 3vw 0;
   line-height: 1.4;
+    font-family:'Noto Sans TC', serif;
   &::before{content: "";
   position: absolute;top: 0;left: 0;right: 0;bottom: 0;
   background: $contact_bg;

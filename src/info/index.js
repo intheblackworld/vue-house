@@ -1,20 +1,19 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市板橋區華江八路70號',
+  address: '新北市板橋區四川路一段4號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.9617872641097!2d121.46601131557011!3d25.03537084438926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9919921fe48a447!2zMjXCsDAyJzA3LjMiTiAxMjHCsDI4JzA1LjUiRQ!5e0!3m2!1szh-TW!2stw!4v1666950888153!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/BpgGt2r5rxCqbtQx9',
-  phone: '02-2252-7755',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14463.204348660613!2d121.45269935233136!3d25.006874099999997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346802a7a4be4d8b%3A0x623dadc4af82d6b0!2zMjIw5paw5YyX5biC5p2_5qmL5Y2A5Zub5bed6Lev5LiA5q61NOiZnw!5e0!3m2!1szh-TW!2stw!4v1671612883612!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/aGHdwbu3EhvTKQca7',
+  phone: '02-2954-9193',
   fbLink: 'https://www.facebook.com/100085391143657',
   fbMessage: 'https://m.me/100085391143657',
-  caseName: '豐光',
+  caseName: '尚新板',
   indigatorLength: 10,
 
   houseInfos: [
-    ['投資興建', '潤旺建設股份有限公司',],
-    ['建築設計', '李承洋建築師',],
-    ['行銷企劃', '澄果廣告有限公司',],
-    ['經紀人', '翁文正（95）北市經證字第00592號',],
+    ['投資興建', '盛隆機構 <span style=font-size:.85em>盛峰開發</span>',],
+    ['企劃銷售', '欣和地產',],
+    ['產品規劃', '樓高13層．2-3房',],
   ],
 
   gtmCode: ['P6WKXZF'], // 可放置多個

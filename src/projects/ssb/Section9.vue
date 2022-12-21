@@ -1,5 +1,5 @@
 <template>
-  <div class="section1">
+  <div class="section9">
     <!-- 
    -->
     <div class="bg">
@@ -64,9 +64,7 @@
 <path class="st2" d="M631,247.8H468.7"/>
 </svg>
 
-<div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜挑高3.6米
-</div>
-      <div class="t2"  data-aos="zoom-in" data-aos-delay="600">炫曜24-45坪</div>
+<div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜24-45坪｜挑高3米6</div>
     </div>
   </div>
 </template>
@@ -74,51 +72,41 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section1 {
+.section9 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
-  overflow: hidden;
-  position: relative;
+  height: size(650);
+  // overflow: hidden;
+  position: relative;z-index: 1;
   // background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
 }
 .bg{
   position: absolute;
-  width:size(2000);height:auto;
-  top:calc(50% + (-555 - 1080 * 0.5) * 100vw / 1920);
-  right:size(-250);
-  img{width: 100%;
+  width:size(3000);
+  top:size(-800);
+  right:size(-450);
+  img{width: 100%;height:size(3500);
   transform: rotate(20deg)scale(.8)translateX(10%);}
 }
-.t0{
-  position: absolute;
-  width: 100%;height:auto;
-  top:0;
-  left:0;object-fit: cover;
-   opacity: .5;
-   z-index: 5;
-  }
 .img{
-  width:size(1068);left: size(-191);top:size(-129);
-  margin: 0 auto 0em;
+  width:size(1068);left: size(-200);top:size(-140);
+  margin: 0 auto 0em;opacity: .5;
 }
 
 .txt{
   position: relative;
   // top:calc(50% + (253 - 540) * 100vw / 1920);
  //  left:size(-260);
-  top:calc(50% + (335 - 1080 * 0.5) * 100vw / 1920);
+  top:size(190);
   font-size: size(36);
   line-height: 1.5;
   color: #fff;
   text-align: center;
-  width:size(1140);
+  width:size(1920);
     letter-spacing:0em;
     padding: 0;
   font-weight: 900;
-  margin: auto 0 auto auto;
+  margin: auto auto auto auto;
 
   //filter: drop-shadow(0 0 7px #eff);
 
@@ -133,7 +121,6 @@
     display: block;
   font-size: 1.5em;
     letter-spacing:0.07em;
-  color: #F9E07E;
   margin: -0.1em 0 0 0 ;
     }
   .t2{
@@ -153,7 +140,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section1 {
+  .section9 {
     min-height: sizem(604);
     max-height: sizem(604);
     height: calc(100vh - 63px);
@@ -203,7 +190,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import mimg from './m.vue'
 
 export default {
-  name: 'section1',
+  name: 'section9',
   components: {},
 
   props: ['title', 'cls'],

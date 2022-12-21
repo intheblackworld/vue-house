@@ -2,7 +2,6 @@
   <div>
     <div class="section5">
       <wimg class="w1 absolute" />
-      <mimg class="img absolute" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -43,19 +42,15 @@
   background:#ECDDC0;
 &::after{content: "";clear: both;display: block;}
 }
-.w1{bottom:size(-70);left: 0;width: size(1920);z-index: 2;
+.w1{bottom:size(-120);left: 0;width: size(1920);z-index: 2;
 		height: size(250);}
-.img{
-  width:size(440);left: size(-91);bottom:size(-160);z-index: 2;
-  margin: 0 auto 0em;
-}
 
 .txt{
   float: left;
   position: relative;
   padding-top: 9.5vw;
   width: size(580);
-  z-index: 2;
+  z-index: 3;
   margin-left: size(210);
   color: #555;
   @include txt(size(18));
@@ -69,6 +64,7 @@ float: right;
   width: size(840);
   height: size(560);
   margin-right: size(210);
+  z-index: 3;
 }
 @include swipe();
 

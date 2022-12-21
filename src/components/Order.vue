@@ -389,7 +389,7 @@ export default {
     flex-wrap: wrap;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid #FFF6;
       margin-right: 40px;
       padding-right: 40px;
       .row {

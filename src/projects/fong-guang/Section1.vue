@@ -415,7 +415,7 @@ M223.1,98.4c14.3,16.9,9.1,13.8-2,44.9c-7.3,20.4,51.2,21.6,67.9,10.4c-6.3-11.7-8.
   font-weight: 700;
   margin: 0;
     letter-spacing:0.07em;
-  color: #F9E07E;
+  color: #E0C38F;
     }
   .t2{
     display: inline-block;

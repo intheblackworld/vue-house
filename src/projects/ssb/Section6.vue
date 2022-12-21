@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="section6">
+      <wimg class="w1 absolute" />
+      <mimg class="img absolute" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -34,8 +36,22 @@
   width:100%;
   height:auto;
   position: relative;
-  padding: 5vw 0 5vw;
+  padding: 10vw 0 15vw;
 &::after{content: "";clear: both;display: block;}
+}
+.w1{bottom:size(-30);left: 0;width: size(1920);z-index: 1;
+		height: size(250);
+  &::after{content: "";position: absolute;width: 30%;
+height: 120%;left: 0;top: -10%;
+  margin: 0 auto;
+  right: 0;
+background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
+  }
+.img{
+  width:size(177);left:0;
+  right: 0;
+  bottom:size(20);z-index: 2;
+  margin: 0 auto 0em;opacity: .5;
 }
 .txt{
   position: relative;
@@ -126,12 +142,18 @@
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import wimg from './w.vue'
+import mimg from './m.vue'
 
 export default {
   name: 'section6',
 
   mixins: [slider],
   props: ['viewIndex'],
+  components: {
+    wimg,
+    mimg,
+  },
 
   data() {
     return {
