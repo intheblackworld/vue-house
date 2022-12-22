@@ -32,8 +32,8 @@
 	<g style="clip-path:url(#SVGID_4);">
 		<path class="an3 l" style="stroke-width:57;" d="M613.1,541.6c0,0-75.2-91.9-141.5-167.7C379.8,269,431.3,127.5,533.1,38.3c133.2,115.8,121.8,261.8,32.2,345.8"/>
 		<path class="an4 l" style="stroke-width:57;" d="M312,342.3c0,0,188.8,218.9,247.8,287C697.6,788.4,651,908.9,534,1024.7c-113.9-106.2-195.1-234.6-36.6-361.8"/>
-		<path class="an5 l" style="stroke-width:35;" d="M321.5,492V289.3"/>
-		<path class="an6 l" style="stroke-width:120;" d="M322.9,735.8V492"/>
+		<path class="an5 l" style="stroke-width:35;" d="M321.5,495V289"/>
+		<path class="an6 l" style="stroke-width:120;" d="M322.9,735V488"/>
 		<path class="an7 l" style="stroke-width:120;" d="M753.7,306v429.8"/>
 		<path class="an8 l" style="stroke-width:29;" d="M595.2,446.5L790,280"/>
 </g>
@@ -47,7 +47,7 @@
 .an3 {stroke-dasharray:997;stroke-dashoffset:997;animation: letterDraw 1s 1.8s linear forwards;}
 .an4 {stroke-dasharray:1265;stroke-dashoffset:1265;animation: letterDraw 1.2s 1.5s linear forwards;}
 .an5 {stroke-dasharray:203;stroke-dashoffset:203;animation: letterDraw .2s 1.3s linear forwards;}
-.an6 {stroke-dasharray:244;stroke-dashoffset:244;animation: letterDraw .3s 1s linear forwards;}
+.an6 {stroke-dasharray:248;stroke-dashoffset:248;animation: letterDraw .3s 1s linear forwards;}
 .an7 {stroke-dasharray:430;stroke-dashoffset:430;animation: letterDraw .8s 2.3s linear forwards;}
 .an8 {stroke-dasharray:257;stroke-dashoffset:257;animation: letterDraw .5s 1.8s linear forwards;}
 @keyframes letterDraw {
