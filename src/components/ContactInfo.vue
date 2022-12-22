@@ -2,6 +2,8 @@
   <div> 
     <div id="contact-info" class="contact-info" data-aos="fade" data-aos-delay="0">
 
+      <wimg class="w1 absolute" />
+      <mimg class="img" />
       <div class="info">
         <div class="btn flex-c" @click="showCallDialog" data-aos="fade-down" data-aos-delay="100">
           <span class="flex-c">
@@ -47,17 +49,20 @@ import { isMobile, isTablet } from '@/utils'
 import CallDialog from '@/components/Dialog/Call'
 import MessengerDialog from '@/components/Dialog/Messenger'
 import MapDialog from '@/components/Dialog/Map'
+import wimg from '@/projects/ssb/w.vue'
+import mimg from '@/projects/ssb/m.vue'
 export default {
   name: 'contactInfo',
   components: {
     CallDialog,
     MessengerDialog,
     MapDialog,
+    wimg,
+    mimg,
   },
   data() {
     return {
       info,
-
       isMobile,
       isTablet,
       isShowCallDialog: false,
@@ -106,28 +111,17 @@ export default {
   background: $contact_bg;
  display: block;z-index: 2;}
 }
-
-.img1{position:absolute; width: 100%;}
-.img2{position:absolute; width: 100%;
- filter: blur(size(1));
-}
-.imglb{position:absolute;top:size(280);left:size(-800);transform-origin: 0% 0%; width: size(1450);z-index: 2;
-
-> div{
-   transform: rotate(13deg);}
-img{left: 0;bottom: 0;}
-
-}
-.imgrb{position:absolute;top:size(270);right: size(-750);transform-origin: 100% 0%;width: size(1400);z-index: 2;
-> div{transform: rotate(-21deg);}
-img{right: 0;bottom: 0;}
-
-}
-.tree{position:absolute;top:size(0);left: 0;width: 100%;
-  .bg1{position:absolute;top:size(-150);right:0;width:90%;transform: rotate(180deg);}
-.tree1{position: absolute;right:size(410);top:size(140);width:size(135);}
-.tree2{position: absolute;left:size(280);top:size(0);width:size(210);}
-.tree4{position: absolute;left:size(-10);top:size(0);width:size(200);}
+.w1{top:size(20);left: 0;width: size(1920);z-index: 1;
+		height: size(250);
+  &::after{content: "";position: absolute;width: 30%;
+height: 120%;left: 0;top: -10%;
+  margin: 0 auto;
+  right: 0;
+background:  radial-gradient(ellipse at center,  #472610FF 20%,#47261000 65%);}
+  }
+.img{
+  width:size(177);z-index: 2;
+  margin: 0vw auto 5vw;
 }
 
 .logo {
@@ -283,15 +277,10 @@ img{right: 0;bottom: 0;}
     // position: static;
     margin:10vw 0 0 0;
   }
-.imglb{top:sizem(180);left:sizem(-450);width: sizem(609);
-}
-.imgrb{top:sizem(150);right: sizem(-470);width: sizem(585);
-}
-.tree{
-  .bg1{top:sizem(-50);right:sizem(-270);width:sizem(920);}
-.tree1{right:sizem(20);top:sizem(90);width:sizem(65);}
-.tree2{left:sizem(-10);top:sizem(60);width:sizem(91);}
-.tree4{left:sizem(300);top:sizem(-70);width:sizem(90);}
+  .w1{bottom:sizem(15);width: sizem(575);
+		height: sizem(110);left: sizem(-100);}
+.img{
+  width:sizem(80);bottom:sizem(35);
 }
 
   .btn {

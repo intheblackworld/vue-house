@@ -281,14 +281,10 @@ export default {
 @import "@/assets/style/function.scss";
 
 .order-bg {
-  //background-color: $order_bg_color;
-  //background-image: $order_bg_image;
   background-repeat: no-repeat;
   position: relative;
   background-size: 110vw auto;
   background-position: top;
-  //font-family: $family3;
-  // padding-top: 10vw;
   pointer-events: unset !important;
 
   input,

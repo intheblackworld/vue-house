@@ -65,14 +65,14 @@ $contact_btn_icon: #FFF;
 $contact_btn_bg: #AE7F47;
 $contact_btn_hover_color: #FFF;
 $contact_btn_hover_icon: #FFF;
-$contact_btn_hover_bg:  linear-gradient(180deg, #E8DBB8 0%, #a89052 51.56%, #806e3d 54.69%, #cfb05a 100%);
+$contact_btn_hover_bg: #996b33;
 
 $contact_google_btn_color: #FFF;
 $contact_google_btn_icon: #FFF;
 $contact_google_btn_bg:#AE7F47;
 $contact_google_hover_btn_color: #FFF;
 $contact_google_hover_btn_icon: #FFF;
-$contact_google_hover_btn_bg:  linear-gradient(180deg, #E8DBB8 0%, #a89052 51.56%, #806e3d 54.69%, #cfb05a 100%);
+$contact_google_hover_btn_bg:#996b33;
 
 // houseInfo
 $house_bg: #FFF;
@@ -88,9 +88,9 @@ $mobile_nav_border:#fff6;
 $mobile_nav_icon: #fff;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #86B593;
+$mobile_dialog_icon: #AE7F47;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #86B593;
+$mobile_dialog_submit_bg: #AE7F47;
 $mobile_dialog_submit_color: #fff;
 
 
@@ -106,9 +106,9 @@ $phone_thanks_link_color: #fff;
 /* VideoSection1 */
 $video_section_bg: #0000;
 $video_section_bg_m: #0000;
-$video_section_title_color: #00537A;
-$video_section_item_border: #00537A;
-$video_section_item_color: #00537A;
+$video_section_title_color: #AE7F47;
+$video_section_item_border: #AE7F47;
+$video_section_item_color: #AE7F47;
 $video_section_item_bg_hover: rgba(255, 255, 255, 0.1);
 $video_section_btn_bg: rgba(255, 255, 255, 0.1);
 $video_section_btn_hover_bg: rgba(255, 255, 255, 0.5);

@@ -47,6 +47,16 @@
       transform: translateX(-50%);
     }
 }
+@media screen and (max-width: 767px) {
+	.w{
+	.wave{
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1860 250' preserveAspectRatio='none'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:url(%23SVGID_1_);stroke-width:1.5%7D%0A%3C/style%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='0' y1='125' x2='1860' y2='125'%3E%3Cstop offset='0' style='stop-color:%23AE8047'/%3E%3Cstop offset='0.4' style='stop-color:%23FFE1AC'/%3E%3Cstop offset='1' style='stop-color:%23AE8047'/%3E%3C/linearGradient%3E%3Cpath class='st0' d='M1860,240c-465,0-465-230-930-230S465,240,0,240'/%3E%3C/svg%3E%0A");}
+
+}
+
+
+}
+
 </style>
 
 <script>

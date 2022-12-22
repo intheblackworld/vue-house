@@ -102,7 +102,8 @@
    z-index: 5;
   }
 .img{
-  width:size(1068);left: size(-191);top:size(-129);
+  width:size(1068);left: size(-191);
+  top:calc(50% + (-129 - 1080 * 0.5) * 100vw / 1920);
   margin: 0 auto 0em;
 }
 
@@ -155,8 +156,8 @@
 
 @media screen and (max-width: 767px) {
   .section1 {
-    min-height: sizem(667);
-    max-height: sizem(667);
+    min-height: sizem(604);
+    max-height: sizem(750);
     height: calc(100vh - 63px);
   }
 .bg{
@@ -166,7 +167,8 @@ transform: rotate(90deg);
   right:sizem(-190);
 }
 .img{
-  width:sizem(270);left: 0;top:sizem(31);right: 0;
+  width:sizem(270);left: 0;right: 0;
+  top:calc(40% + (31 - 667 * 0.4) * 100vw / 375);
   margin: 0 auto 0em;
 }
 

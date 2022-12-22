@@ -116,6 +116,11 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
     max-height: initial;
   padding: 0 0 23vw;
   }
+.w1{bottom:sizem(15);width: sizem(575);
+		height: sizem(110);left: sizem(-100);}
+.img{
+  width:sizem(80);bottom:sizem(35);
+}
   .txt{
     position: relative;
     width: sizem(310);

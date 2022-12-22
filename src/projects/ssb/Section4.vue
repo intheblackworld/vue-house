@@ -106,13 +106,18 @@ float: right;
     height: auto;
     padding: 0;
   }
-
+  .w1{bottom:sizem(-15);width: sizem(700);
+		height: sizem(110);
+  &::after{display:none;}}
+.img{
+  width:sizem(160);right: sizem(-30);bottom:sizem(250);
+}
   .txt{
     position: relative;
     width: sizem(310);
     float: none;
     font-size: sizem(15);
-    padding:2em 0 6em;
+    padding:2em 0 8em;
     margin: auto;
   }
   /* Swipe */

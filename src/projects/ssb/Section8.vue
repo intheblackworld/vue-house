@@ -98,13 +98,15 @@ float: right;
     height: auto;
     padding: 0;
   }
+  .w1{bottom:sizem(0);width: sizem(700);
+		height: sizem(110);}
 
   .txt{
     position: relative;
     width: sizem(310);
     float: none;
     font-size: sizem(15);
-    padding:2em 0 6em;
+    padding:2em 0 8em;
     margin: auto;
   }
   /* Swipe */
@@ -143,7 +145,7 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/1.png'),
+          img:isMobile? require('./s8/1m.png'):require('./s8/1.png'),
           name: '',
         },
         {

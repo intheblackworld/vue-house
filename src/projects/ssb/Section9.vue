@@ -83,9 +83,9 @@
 .bg{
   position: absolute;
   width:size(3000);
-  top:size(-800);
+  top:size(-900);
   right:size(-450);
-  img{width: 100%;height:size(3500);
+  img{width: 100%;height:size(4200);
   transform: rotate(20deg)scale(.8)translateX(10%);}
 }
 .img{
@@ -98,7 +98,7 @@
   // top:calc(50% + (253 - 540) * 100vw / 1920);
  //  left:size(-260);
   top:size(190);
-  font-size: size(36);
+  font-size: size(54);
   line-height: 1.5;
   color: #fff;
   text-align: center;
@@ -119,18 +119,9 @@
   
 .t1{
     display: block;
-  font-size: 1.5em;
+  font-size: 1em;
     letter-spacing:0.07em;
   margin: -0.1em 0 0 0 ;
-    }
-  .t2{
-    display: inline-block;
-  font-size: 1.4em;
-  line-height: 1.2;
-  border: 1px solid currentColor;
-  margin:0.2em 0 0 0;
-  padding: 0 0 0.1em 0;
-  width:size(620);
     }
 
 }
@@ -141,45 +132,27 @@
 
 @media screen and (max-width: 767px) {
   .section9 {
-    min-height: sizem(604);
-    max-height: sizem(604);
-    height: calc(100vh - 63px);
+  height: sizem(460);
   }
 .bg{
-  position: absolute;
-  width: 100%;height: sizem(604);
-  top:calc(50% + (-72 - 604 * 0.5) * 100vw / 375);
-  left:0;object-fit: cover;}
-
-.imglt{top: sizem(-80);left:sizem(-200); width: sizem(520);}
-.imgrt{top:sizem(-20);right: sizem(-380);width: sizem(580);}
-.imglb{bottom:sizem(-2);left:sizem(-540);width: sizem(690);opacity: .5;}
-.imgrb{bottom:sizem(5);right: sizem(-550);width: sizem(750);}
-.tree{bottom:sizem(0);
-.tree1{right:sizem(-26);bottom:sizem(20);width:sizem(85);}
-.tree2{left:sizem(-32);bottom:sizem(-10);width:sizem(109);}
-.tree4{right:sizem(60);bottom:sizem(0);width:sizem(105);}
+  width:sizem(1175);
+  top:sizem(-280);
+  right:sizem(-180);
+  transform: scaleY(-1);
+  img{height:sizem(1175);}
 }
-.cloud{
-.cloud2{left:sizem(76);bottom:sizem(80);width:sizem(62);}
-.cloud4{right:sizem(34);bottom:sizem(107);width:sizem(99);}
-
+.img{
+  width:sizem(198);left: sizem(88);top:sizem(75);
+  margin: 0 auto 0em;opacity: 1;
 }
+
 .txt{
-  font-size: sizem(24);
-  top:calc(50% + (160 - 302) * 100vw / 375);
+  font-size: sizem(18);
+  top:sizem(300);
   width:sizem(300);
 .logo{
-  width:sizem(200);filter: drop-shadow(1vw 0.7vw 0.4vw #000c);
-  margin: 0 auto 0.6em;
+  width:sizem(200);
 }
-.t1{
-  &.s8{
-  font-size: .8em;}
-    }
-.t2{
-  margin:0.8em 0 0 0;
-    }
 }
 }
 </style>

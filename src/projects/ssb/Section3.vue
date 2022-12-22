@@ -108,10 +108,11 @@ float: right;
     height: auto;
     padding:10vw 0 0 0;
   }
-.w1{bottom:sizem(-70);width: sizem(1000);
-		height: sizem(105);}
+.w1{bottom:sizem(-15);width: sizem(700);
+		height: sizem(110);
+  &::after{width:50%;}}
 .img{
-  width:sizem(171);left: sizem(-30);bottom:sizem(-30);
+  width:sizem(160);left: sizem(-30);bottom:sizem(-40);
 }
   .txt{
     width: sizem(310);

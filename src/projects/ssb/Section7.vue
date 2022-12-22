@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="section7">
+      <wimg class="w1 absolute"  v-if="isMobile" />
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -100,6 +101,8 @@
     max-height: initial;
   padding: 0 0 23vw;
   }
+  .w1{left: 0;z-index: 1;bottom:sizem(15);width: sizem(600);
+		height: sizem(110);  }
   .txt{
     position: relative;
     width: sizem(310);
@@ -126,12 +129,16 @@
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
+import wimg from './w.vue'
 
 export default {
   name: 'section7',
 
   mixins: [slider],
   props: ['viewIndex'],
+  components: {
+    wimg,
+  },
 
   data() {
     return {
