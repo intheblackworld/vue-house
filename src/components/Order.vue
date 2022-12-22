@@ -51,7 +51,6 @@
             <div class="row" style="height: 100%">
               <el-input
                 type="textarea"
-                :rows="7"
                 placeholder="請輸入您的留言 (選填)"
                 v-model="form.msg"
               ></el-input>
@@ -368,7 +367,7 @@ export default {
   .form {
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items:stretch;
     margin: 0 auto;
     justify-content: space-between;
     > .group {
@@ -378,11 +377,12 @@ export default {
   }
 
   .group {
-    height: 240px;
+   // height: 240px;
     margin-bottom: 40px;
     align-content: space-between;
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
 
     &:nth-child(1) {
       border-right: 1px solid #FFF6;
@@ -539,6 +539,7 @@ export default {
 
     .form {
       flex-direction: column;
+      gap: 15px;
     }
 
     .group {
@@ -547,6 +548,7 @@ export default {
       margin-bottom: 0px !important;
       border: none !important;
       padding-right: 0 !important;
+      gap: 15px;
       &:nth-child(1) {
         .row {
           .el-input {
@@ -556,7 +558,7 @@ export default {
       }
     }
     .row {
-      margin-bottom: 12px !important;
+    //  margin-bottom: 12px !important;
 
       &.house {
         margin-top: 20px;
@@ -569,8 +571,8 @@ export default {
     }
 
     .control {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .hint {
