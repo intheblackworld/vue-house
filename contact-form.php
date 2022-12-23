@@ -1,5 +1,5 @@
 <?php
-#h65 111-4 版
+#h35 111-4 版
 #下3段式抓 為案件編號 $case_code
 #$case_code_test 是用來判斷是否為1的測試頁
 #$case_code = "jw";特殊案使用
@@ -8,7 +8,7 @@ $case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
 $case_code = "ssb";
 
 # PDO DB 連線 Start
-    $pdo=new pdo('mysql:host=localhost;dbname=htw12_web','htw12','3hdaiU813Q');
+    $pdo=new pdo('mysql:host=localhost;dbname=htw_web','htw','748aSgl5Ni');
     $pdo->exec("SET NAMES 'utf8'");
 # PDO DB 連線 End
 
@@ -245,7 +245,7 @@ if ($name == '') {
     $mail->Username = $mailName; //設定驗證帳號
     $mail->Password = $mailPwd; //設定驗證密碼
 
-    $mail->From = "noreply@h65.tw"; //設定寄件者信箱
+    $mail->From = "noreply@h35.tw"; //設定寄件者信箱
     $mail->FromName = $case_name." - 官網網站"; //設定寄件者姓名
 
     $mail->Subject = $case_name." - 官網網站"; //設定郵件標題
@@ -326,7 +326,7 @@ document.location.replace('formThanks');
 </html>
 <?php
     # PDO DB 連線 Start
-    $pdo=new pdo('mysql:host=localhost;dbname=htw12_web','htw12','3hdaiU813Q');
+    $pdo=new pdo('mysql:host=localhost;dbname=htw_web','htw','748aSgl5Ni');
     $pdo->exec("SET NAMES 'utf8'");
     # PDO DB 連線 End
 
