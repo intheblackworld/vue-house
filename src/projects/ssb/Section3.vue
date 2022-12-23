@@ -60,7 +60,7 @@ background: linear-gradient(20deg, #ECDDC0FF 20%,#ECDDC000 65%);}
 .txt{
   float: left;
   position: relative;
-  padding-top: 8.5vw;
+  padding-top: 7vw;
   width: size(580);
   z-index: 3;
   margin-left: size(210);
@@ -175,7 +175,7 @@ export default {
         },
         {
           img: require('./s3/4.jpg'),
-          name: '大遠百︱名品時尚街區',
+          name: '萬坪公園︱都心奢華綠帶',
         },
       ],
     }

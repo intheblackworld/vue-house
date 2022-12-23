@@ -82,10 +82,10 @@
 }
 .bg{
   position: absolute;
-  width:size(3000);
-  top:size(-900);
-  right:size(-450);
-  img{width: 100%;height:size(4200);
+  width:size(3700);
+  top:size(-800);
+  right:size(-450);filter: blur(2px);
+  img{width: 100%;
   transform: rotate(20deg)scale(.8)translateX(10%);}
 }
 .img{
@@ -136,10 +136,10 @@
   }
 .bg{
   width:sizem(1175);
-  top:sizem(-280);
-  right:sizem(-180);
+  top:sizem(-300);
+  right:sizem(-190);
   transform: scaleY(-1);
-  img{height:sizem(1175);}
+  img{}
 }
 .img{
   width:sizem(198);left: sizem(88);top:sizem(75);

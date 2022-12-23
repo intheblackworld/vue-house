@@ -23,7 +23,7 @@
       <div class="txt">
       <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Modern mansion</div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">手工訂製38席限量經典</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">唯有限量值得典藏，稀有正南雅南路一席難求珍貴角地，禮聘國際設計名師全程參與，手作訂製精品39席，稀有數量僅獻給懂的人珍藏。</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">唯有限量值得典藏，稀有正南雅南路一席難求珍貴角地，禮聘國際設計名師全程參與，手作訂製精品38席，稀有數量僅獻給懂的人珍藏。</div>
       </div>
 
     </div>

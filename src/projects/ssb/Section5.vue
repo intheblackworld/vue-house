@@ -24,6 +24,7 @@
       </div> 
       </div>
       <div class="txt">
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Shopping area</div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">絢爛不夜城<br />富域滋養從容姿態</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">散步百米恰好的閒適感，在捷運府中搭上藍線舒心通勤，優雅一線直達台北車站、信義區、南港等精華地段；府中站外流行服飾百貨潮流聖地，令每一次回家都成為最期待的放鬆時光。</div>
       </div>
@@ -48,7 +49,7 @@
 .txt{
   float: left;
   position: relative;
-  padding-top: 9.5vw;
+  padding-top: 7vw;
   width: size(580);
   z-index: 3;
   margin-left: size(210);
