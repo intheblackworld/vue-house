@@ -431,6 +431,30 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '2022歲末年終感恩餐會',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/15/1.jpg'),
+            require('../news/s2/15/2.jpg'),
+            require('../news/s2/15/3.jpg'),
+            require('../news/s2/15/4.jpg'),
+            require('../news/s2/15/5.jpg'),
+            require('../news/s2/15/6.jpg'),
+          ],
+
+          desc: '',
+          links: [
+         /*        {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+       */
+          ],
+        },
+        {
           title: '祈安、祈福，立瑾WAY上樑大吉',
           subtitle: '',
           date: '',
