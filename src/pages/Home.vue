@@ -36,6 +36,7 @@
     >
       <Section5 />
     </vue-lazy-component>
+   
     <vue-lazy-component
       class="section"
       id="section6"
