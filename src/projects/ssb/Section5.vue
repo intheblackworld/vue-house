@@ -43,7 +43,7 @@
   background:#ECDDC0;
 &::after{content: "";clear: both;display: block;}
 }
-.w1{bottom:size(-120);left: 0;width: size(1920);z-index: 2;
+.w1{bottom:size(-120);left: 0;width: size(1920);z-index: 3;
 		height: size(250);}
 
 .txt{
