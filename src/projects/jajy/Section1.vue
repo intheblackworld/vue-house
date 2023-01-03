@@ -305,7 +305,7 @@ export default {
       showMask: false,
       slideList: [
         {
-          img: isMobile?require("./s1/slider/slider_1_m.jpg"):require("./s1/slider/slider_1.jpg"),
+          img: isMobile?require("./s1/slider/slider_3_m.jpg"):require("./s1/slider/slider_3.jpg"),
           name: "",
           area: "",
         },
