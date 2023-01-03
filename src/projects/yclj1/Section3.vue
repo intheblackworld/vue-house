@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="subtitle" data-aos="fade" data-aos-delay="200" >北歐莊園好宅幸福樂聚</div>
+      <div class="subtitle" data-aos="fade" data-aos-delay="200" >好宅幸福樂聚</div>
       <hr class="hr" data-aos="fade" data-aos-delay="300" >
       <div class="desc" data-aos="fade" data-aos-delay="400">
       宜誠【樂聚】穩踞「四鄉鎮重畫區」多核心：<br>
@@ -71,7 +71,7 @@
   font-size: size(40);
   padding: 2.2em 0 .8em;
   letter-spacing:0.06em;
-  color: #51858a;
+  color: #661C14;
   font-weight: 800;
   text-align: center;
   width: 100%;
@@ -90,8 +90,8 @@
   font-size: size(30);
   margin:4em auto 0.8em;
   letter-spacing:0.04em;
-  color: #51858a;
-  font-weight: 500;
+  color: #661C14;
+  font-weight: 700;
       transform: scale(1.2);
 }
 
@@ -202,7 +202,7 @@ border-bottom:1px solid currentColor;}
       width: 100%;
       height: 100%;
       display: block;
-   background: #245367;
+   background: #661C14;
    // border-radius: 50%;
    // border: 2.1px solid  #e38023;
       opacity: 1;

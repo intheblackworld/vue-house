@@ -1,6 +1,6 @@
 <template>
     <div class="section2">
-      <div class="title" data-aos="fade" data-aos-delay="0" >城青好境</div>
+      <div class="title" data-aos="fade" data-aos-delay="0" >城市之森</div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -63,7 +63,7 @@
   font-size: size(31);
   margin:1.5em auto 0.8em;
   letter-spacing:0.04em;
-  color: #80c5b6;
+  color: #F0C154;
   font-weight: 500;
       transform: scale(1.2);
 }

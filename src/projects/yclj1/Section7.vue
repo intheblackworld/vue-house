@@ -21,9 +21,8 @@
       <div class="desc" data-aos="fade" data-aos-delay="400">
       全齡化公設All in one敬邀菁英家庭同賞入主～<br v-if="isPC">
 日光Lobby社區迎賓門廳、Lagom樂感Lounge bar恰好空間、<br v-if="isPC">
-兒童遊戲區Aurora樂園、Gym健身房、Hygge 樂趣健美，<br v-if="isPC">
-健康諮詢教練顧問、舒壓樂活安心住好一次買好！
-
+兒童遊戲區Aurora樂園、投籃機、撞球檯與飛鏢機、<br v-if="isPC" />
+Gym健身房、Hygge 樂趣健美，舒壓樂活機能滿滿一次買好！
       </div>
      <!-- <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
@@ -75,7 +74,7 @@
   font-weight: 800;
   text-align: center;
   width: 100%;
-  color: #51858a;
+  color: #661C14;
       transform:translateY(-10%) scale(1.2);
 }
 
@@ -91,8 +90,8 @@
   font-size: size(30);
   margin:4em auto 0.8em;
   letter-spacing:0.04em;
-  color: #51858a;
-  font-weight: 500;
+  color: #661C14;
+  font-weight:700;
       transform: scale(1.2);
 }
 
@@ -114,7 +113,7 @@ border-bottom:1px solid currentColor;}
 .swipe {
 //  position: absolute;
   width: size(840);
-  height: size(560);
+  height: size(473);
   top: size(185);
   right: size(199);
   object-fit: cover;
@@ -202,7 +201,7 @@ border-bottom:1px solid currentColor;}
       width: 100%;
       height: 100%;
       display: block;
-   background: #245367;
+   background: #661C14;
    // border-radius: 50%;
    // border: 2.1px solid  #e38023;
       opacity: 1;
@@ -352,6 +351,10 @@ export default {
         {
           img: require('./s7/3.jpg'),
           name: 'LOUNGE 3D示意圖',
+        },
+        {
+          img: require('./s7/3.jpg'),
+          name: '景觀庭園3D示意圖',
         },
       ],
     }

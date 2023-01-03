@@ -56,8 +56,9 @@
       <hr class="hr" data-aos="fade" data-aos-delay="300" >
       <div class="desc" data-aos="fade" data-aos-delay="400">
         近取中壢好市多商場，連步行都好方便的怡然自得！<br v-if="isPC">
-區域有多座公園與民族路一線豐富生活機能，<br v-if="isPC">
-中壢地政事務所的公托、社福中心便民又利民。</div>
+區域有多座公園與民族路一線豐富生活機能，過嶺國中、頭洲國小鄰近就學，<br v-if="isPC">
+與中壢地政事務所結合桃園首座公托中心、社福中心滿足便民服務。</div>
+
      <!-- <ul class="desc">
         <li data-aos="fade-up" data-aos-delay="300">日月光廣場＋家樂福+延吉+學府商圈享樂全能購足</li>
         <li data-aos="fade-up" data-aos-delay="400">清水國小＋中正國中，書香校園承載孩子金色未來</li>
@@ -127,7 +128,7 @@
   font-size: size(30);
   margin:1.5em auto 0.6em;
   letter-spacing:0.04em;
-  color: #80c5b6;
+  color: #F0C154;
   font-weight: 500;
       transform: scale(1.2);
 }
@@ -239,7 +240,7 @@ border-bottom:1px solid currentColor;}
       width: 100%;
       height: 100%;
       display: block;
-   background: #80c5b6;
+   background: #F0C154;
    // border-radius: 50%;
    // border: 2.1px solid  #e38023;
       opacity: 1;
@@ -380,38 +381,38 @@ export default {
         },
         {
           img: require('./s4/1-2.jpg'),
-          name: 'A19',
-        },
-        {
-          img: require('./s4/1-3.jpg'),
-          name: 'A19',
-        },
-        {
-          img: require('./s4/1-4.jpg'),
           name: '66快速道路',
         },
         {
-          img: require('./s4/1-5.jpg'),
+          img: require('./s4/1-3.jpg'),
+          name: 'A18捷運高鐵共構桃園站',
+        },
+        {
+          img: require('./s4/1-4.jpg'),
           name: 'A18',
+        },
+        {
+          img: require('./s4/1-5.jpg'),
+          name: 'A19',
         },
       ],
 
       slideList2: [
         {
           img: require('./s4/2-1.jpg'),
-          name: '松勇公園',
-        },
-        {
-          img: require('./s4/2-2.jpg'),
           name: 'Costco',
         },
         {
+          img: require('./s4/2-2.jpg'),
+          name: '過嶺國中',
+        },
+        {
           img: require('./s4/2-3.jpg'),
-          name: '華泰名品城',
+          name: '頭洲國小',
         },
         {
           img: require('./s4/2-4.jpg'),
-          name: '中央大學',
+          name: '華泰名品城',
         },
         {
           img: require('./s4/2-5.jpg'),

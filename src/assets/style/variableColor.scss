@@ -1,6 +1,6 @@
 /* html, body */
-$bg:#035071;
-$bg_m:#035071;
+$bg:#661C14;
+$bg_m:#661C14;
 // $bg_m: url('~@/projects/yclj/s1/bgm.jpg');
 
 /* font-family */
@@ -10,7 +10,7 @@ $family2: "Noto Sans TC", sans-serif;
 $family3: "Noto Sans TC",sans-serif;
 
 /* navigation */
-$nav_bg: linear-gradient(to bottom, rgba(3,80,113,1) 0%,rgba(3,80,113,0.7) 65%,rgba(3,80,113,0.5) 81%,rgba(3,80,113,0) 100%);
+$nav_bg: linear-gradient(to bottom, #661C14 0%, #661C14CC 65%,  #661C1400 100%);
 $nav_btn_color: #fff;
 $nav_link_color: #fff;
 $nav_link_subtitle_color: #fff;
@@ -40,7 +40,7 @@ $mask_icon_color: #c82514;
 $order_bg_color: transparent;
 $order_bg_image: transparent;
 $order_bg_image_m:transparent;
-$order_title_color: #80c5b6;
+$order_title_color: #FFF;
 $order_subtitle_color: #fff;
 $order_input_label_color: #000;
 $order_input_color: #000 !important;
@@ -51,13 +51,13 @@ $order_input_focus_border: solid 1px rgba(0, 0, 0, 1) !important;
 $order_input_selected_color: solid 1px rgba(0, 0, 0, 1) !important;
 $order_check_desc_color: #fff !important;
 $order_check_span_color: #e9d388 !important;
-$order_submit_bg: #80c5b6 !important;
+$order_submit_bg: #C79F62 !important;
 $order_submit_color: #FFF !important;
 $order_sumbit_disable_bg: transparent !important;
 
 // contactInfo
-$contact_bg: #005878;
-$contact_bg_m: #005878;
+$contact_bg: #661C14;
+$contact_bg_m: #661C14;
 $contact_shadow: 0 0 80px 0 rgba(0, 0, 0, 0.2);
 
 $contact_btn_border: none;
@@ -87,14 +87,14 @@ $house_desc_color: #4d4d4d;
 
 // mobileNav
 $mobile_nav_background: #e9d388;
-$mobile_nav_color: #005878;
+$mobile_nav_color: #661C14;
 $mobile_nav_border: #fff;
-$mobile_nav_icon: #005878;
+$mobile_nav_icon: #661C14;
 
 $mobile_dialog_bg: #fff;
-$mobile_dialog_icon: #035071;
+$mobile_dialog_icon: #661C14;
 $mobile_dialog_desc: #000;
-$mobile_dialog_submit_bg: #035071;
+$mobile_dialog_submit_bg: #661C14;
 $mobile_dialog_submit_color: #fff;
 
 /* dialog */
