@@ -2,27 +2,27 @@
 <div class="section1">
 
 <div class="txt">
-<img src="./s1/t1.png" class="logo" data-aos="zoom-in" data-aos-delay="200"/>	
-<img src="./s1/t2.png" class="t1" data-aos="zoom-in" data-aos-delay="200" />
+<img loading="lazy" src="./s1/t1.png" class="logo" data-aos="zoom-in" data-aos-delay="200"/>	
+<img loading="lazy" src="./s1/t2.png" class="t1" data-aos="zoom-in" data-aos-delay="200" />
 </div>	
 
-<img class="t3" src="./s1/t3.png" data-aos="zoom-in" data-aos-delay="200"  />	
+<img loading="lazy" class="t3" src="./s1/t3.png" data-aos="zoom-in" data-aos-delay="200"  />	
 
 <div class="leafstyle">
-	<img class="leaf1" src="./s1/leaf1.png" />		
-	<img class="leaf2" src="./s1/leaf2.png" />		
+	<img loading="lazy" class="leaf1" src="./s1/leaf1.png" />		
+	<img loading="lazy" class="leaf2" src="./s1/leaf2.png" />		
 </div>
 
 <div class="main">
-	<img class="child" src="./s1/child.png" />
+	<img loading="lazy" class="child" src="./s1/child.png" />
 
 	
 <div class="floorstyle">
-	<img class="floor" src="./s1/floor.png" />	
-	<img class="shadow" src="./s1/shadow.png" />		
+	<img loading="lazy" class="floor" src="./s1/floor.png" />	
+	<img loading="lazy" class="shadow" src="./s1/shadow.png" />		
 	</div>
 </div>
-<img class="train" src="./s1/train.png" />	
+<img loading="lazy" class="train" src="./s1/train.png" />	
 
 
 
