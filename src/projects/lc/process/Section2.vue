@@ -956,6 +956,19 @@ export default {
           {
             o_title: '2021 立瑾WAY',
             o_subtitle: '已完售，預計2023年初完工。',
+            img: require('../process/list/23/1.jpg'),
+            title: '2023/1',
+            subtitle: 'R1~R3屋頂施工照片',
+            isFinished: true,
+            imgs: [
+              require('../process/list/23/1.jpg'),
+              require('../process/list/23/2.jpg'),
+              require('../process/list/23/3.jpg'),
+              require('../process/list/23/4.jpg'),
+              require('../process/list/23/5.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/22/1.jpg'),
             title: '2022/11',
             subtitle: '14樓頂板施工',
