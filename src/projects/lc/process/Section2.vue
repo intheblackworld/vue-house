@@ -958,7 +958,7 @@ export default {
             o_subtitle: '已完售，預計2023年初完工。',
             img: require('../process/list/23/1.jpg'),
             title: '2023/1',
-            subtitle: 'R1~R3屋頂施工照片',
+            subtitle: 'R1~R3屋突施工照片',
             isFinished: true,
             imgs: [
               require('../process/list/23/1.jpg'),
