@@ -40,7 +40,7 @@
   height:auto;
   position: relative;
   margin:0 auto 0;
-  padding: 8.5vw 0;
+  padding: 8.5vw 0;z-index: 3;
   background:#ECDDC0;
 &::after{content: "";clear: both;display: block;}
 }

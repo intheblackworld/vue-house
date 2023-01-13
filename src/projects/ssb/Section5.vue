@@ -40,7 +40,7 @@
   position: relative;
   margin:0 auto 0;
   padding: 8.5vw 0;
-  background:#ECDDC0;
+  background:#ECDDC0;z-index: 2;
 &::after{content: "";clear: both;display: block;}
 }
 .w1{bottom:size(-120);left: 0;width: size(1920);z-index: 3;

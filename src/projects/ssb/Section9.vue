@@ -79,6 +79,7 @@
   position: relative;z-index: 1;
   // background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
+  background: #40210D;
 }
 .bg{
   position: absolute;
