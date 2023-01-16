@@ -5,8 +5,8 @@ export default {
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14463.204348660613!2d121.45269935233136!3d25.006874099999997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346802a7a4be4d8b%3A0x623dadc4af82d6b0!2zMjIw5paw5YyX5biC5p2_5qmL5Y2A5Zub5bed6Lev5LiA5q61NOiZnw!5e0!3m2!1szh-TW!2stw!4v1671612883612!5m2!1szh-TW!2stw',
   googleLink: 'https://goo.gl/maps/aGHdwbu3EhvTKQca7',
   phone: '02-2954-9193',
-  fbLink: 'https://www.facebook.com/',
-  fbMessage: 'https://m.me/',
+  fbLink: 'https://www.facebook.com/100088481777151',
+  fbMessage: 'https://m.me/100088481777151',
   caseName: '尚新板',
   indigatorLength: 10,
 
