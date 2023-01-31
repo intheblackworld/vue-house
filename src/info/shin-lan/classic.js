@@ -13,54 +13,54 @@ export const case_list_1 = [
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/1.jpg')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/2.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/2.png')
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/3.jpg')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/4.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/4.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/5.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/5.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/6.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/6.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/7.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/7.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/8.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/8.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/9.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/9.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/10.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/10.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/11.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/11.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/12.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/12.png')
       },
     ],
     type_text: '欣聯建設Shin-Lan', // 內頁用
   },
   {
     title: '欣聯鉅星科技總部',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/1.jpg'),
+    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/3.jpg'),
     link: '/classic_case/1/2',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上7層，地下2層<br>棟數規劃：1棟，22戶<br>基地面積：467坪<br>建築設計：于丁亞建築師事務所<br>建案特色：<br>◎欣聯鉅星科技總部，位處新店區25米寶橋路首排，新店交流道3分鐘車程，步行7分鐘捷運七張站、超過6條公車路網，地理位置十分優異，車程12分鐘接軌新北環快及64快速道路，串聯大台北黃金產業鏈結，坐擁豐富資源，通勤、出差便利無虞。<br>◎挑高8.4米迎賓大廳，寬敞舒適空間展現大氣宏偉的格局，彰顯企業實力與形象。<br>◎室內無柱設計，方便辦公室設備與生產設備擺設，空間規劃好利用，宜廠宜辦。', // 內頁用
     desc_home: `樓層規劃：地上7層，地下2層<br>棟數規劃：1棟，22戶<br>基地面積：467坪<br>建築設計：于丁亞建築師事務所<br>建案特色：<br>◎欣聯鉅星科技總部，位處新店區25米寶橋路首排，新店交流道3分鐘車程，步行7分鐘捷運七張站、超過6條公車路網，地理位置十分優異，車程12分鐘接軌新北環快及64快速道路，串聯大台北黃金產業鏈結，坐擁豐富資源，通勤、出差便利無虞。<br>◎挑高8.4米迎賓大廳，寬敞舒適空間展現大氣宏偉的格局，彰顯企業實力與形象...`, // 首頁用
     imgs: [ // 內頁用
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/1.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/1.png')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/2.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/2.png')
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/3.jpg')
@@ -72,7 +72,7 @@ export const case_list_1 = [
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/5.jpg')
       },
       {
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/6.jpg')
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/6.png')
       },
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/7.jpg')
