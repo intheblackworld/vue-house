@@ -938,21 +938,25 @@ export default {
       item_list: [
          //預推個案
         {
-          title: '預推<br />個案',
-          title2: '預推個案',
-          desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />即將與您相見 COMING SOON',
+          title: '雙橡園',
+          title2: '雙橡園',
+          desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
           img: require('../works/12/1.jpg'),
           isEmpty: false,
-          info1: '新北市｜新莊副都心',
+          info1: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
           info2: '即將與您相見 COMING SOON',
           info3: '',
           contact: '',
           link: '',
           logo: require('../works/12/1.jpg'),
           imgs: [
-          isMobile?
-          require('../works/12/2m.jpg') :
-          require('../works/12/2.jpg'),],
+          //isMobile?
+          //require('../works/12/2m.jpg') :
+          //require('../works/12/2.jpg'),
+          require('../works/12/3.jpg'),
+          require('../works/12/5.jpg'),
+          require('../works/12/6.jpg'),
+          require('../works/12/7.jpg'),],
           hint: '',
           label: '',
         },
