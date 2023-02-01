@@ -138,7 +138,8 @@
   left: 0%;
   transition: left 1s ease-in-out;
   z-index: 0;
-  object-fit: cover;
+  object-fit: contain;
+  background: #666;
 
   &.base {
     z-index: 1;
@@ -430,6 +431,29 @@ export default {
       isTablet,
       tabIndex: 0,
       list: [
+        {
+          title: '2023新春開工祈安祈福',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/16/1.jpg'),
+            require('../news/s2/16/2.jpg'),
+            require('../news/s2/16/3.jpg'),
+            require('../news/s2/16/4.jpg'),
+            require('../news/s2/16/5.jpg'),
+          ],
+
+          desc: '',
+          links: [
+         /*        {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+       */
+          ],
+        },
         {
           title: '2022歲末年終感恩餐會',
           subtitle: '',
