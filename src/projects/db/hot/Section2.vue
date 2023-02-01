@@ -943,11 +943,11 @@ export default {
           desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
           img: require('../works/12/1.jpg'),
           isEmpty: false,
-          info1: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
-          info2: '即將與您相見 COMING SOON',
-          info3: '',
-          contact: '',
-          link: '',
+          info1: '新北市|副都心1%極限量<br />美式生活2-3房',
+          info2: '興建投資：精業建設',
+          info3: '雙校園Ｘ雙公園Ｘ雙捷運Ｘ雙商圈<br />家門就是校門 開窗就像開卷<br />副都心成家換屋第一志願',
+          contact: '貴賓專線｜02-2279-1188<br />接待會館｜<br>新莊區中原路101號對面',
+          link: 'https://gtcip.debang.tw/',
           logo: require('../works/12/1.jpg'),
           imgs: [
           //isMobile?
