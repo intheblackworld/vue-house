@@ -957,7 +957,7 @@ export default {
           require('../works/12/5.jpg'),
           require('../works/12/6.jpg'),
           require('../works/12/7.jpg'),],
-          hint: '',
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
         {
