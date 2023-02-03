@@ -198,17 +198,9 @@
 // @ is an alias to /src
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
-import yellow from './yellow.vue'
-import red from './red.vue'
-import cloud from './cloud.vue'
 
 export default {
   name: 'section9',
-  components: {
-    yellow,
-    red,
-    cloud,
-  },
 
   data() {
     return {

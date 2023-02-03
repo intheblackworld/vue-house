@@ -331,13 +331,9 @@ position: absolute;top: 0;left: -5%;
 import info from '@/info'
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
-import yellow from './yellow.vue'
 
 export default {
   name: 'section10',
-  components: {
-    yellow,
-  },
 
   mixins: [slider],
   props: ['viewIndex'],
