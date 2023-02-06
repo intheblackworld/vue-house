@@ -22,7 +22,8 @@
       <div class="img" data-aos="zoom-in"><img src="./all/img.png" alt="img"></div>
       <img src="./s1/logo_m.png" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo">
       <div class="t1" data-aos="zoom-in" data-aos-delay="400">擁有城市中的寧靜</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅｜45-64坪</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅｜45坪、<br />
+51、64坪一樓使用空間大</div>
     </div>
   </div>
 </template>
