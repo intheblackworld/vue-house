@@ -19,7 +19,7 @@
     <div class="txt">
       <img src="./s1/logo.png" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
       <img src="./s1/t.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="t1">
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅  ｜  82、91坪</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅 | 89、91坪<br />與75、80坪樓中樓</div>
       <img src="./s1/logo_m.png" v-if="isMobile" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
     </div>
   </div>
@@ -88,7 +88,7 @@
   color: #0083ca;
   text-align: center;
   width:size(515);
-    letter-spacing:0.09em;
+    letter-spacing:0.13em;
   font-weight: 800;
 .logo{
       width:size(157);float: left;
