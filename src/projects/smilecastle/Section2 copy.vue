@@ -11,13 +11,12 @@
       allowfullscreen
     ></iframe> -->
     <div class="video_box" v-if="!isMobile">
-        <div class="box" v-if="!isMobile"></div>
       <div :id="`youtube-player-${id}`" ref="player" class="video-ifame"></div>
     </div>
     <div class="video_box" v-else
       @click="isDialog = true">
     <img
-      src="data:image/svg+xml,%3Csvg fill='%23F60' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15'/%3E%3Cpath fill='%23FFF' d='M22.6,15.8l-11.3,6.5c-0.6,0.3-1.3-0.1-1.3-0.8v-13c0-0.7,0.7-1.1,1.3-0.8l11.3,6.5C23.2,14.6,23.2,15.4,22.6,15.8z'/%3E%3C/svg%3E"
+      src="data:image/svg+xml,%3Csvg fill='%23069' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='15'/%3E%3Cpath fill='%23FFF' d='M22.6,15.8l-11.3,6.5c-0.6,0.3-1.3-0.1-1.3-0.8v-13c0-0.7,0.7-1.1,1.3-0.8l11.3,6.5C23.2,14.6,23.2,15.4,22.6,15.8z'/%3E%3C/svg%3E"
       alt=""
       class="play-btn"
     ></div>
@@ -33,8 +32,8 @@
 <style lang="scss">
 @import '@/assets/style/function.scss';
 .video-ifame {
-  width: 100%;
-  height:100%;
+  width: 100.5%;
+  height:100.5%;
   position: absolute;
   top: 0;
   left: 0;
@@ -46,9 +45,8 @@
   // height: 100vh;
   overflow: hidden;
   // position: relative;
-  width: 100%;
-  height:auto;
-  padding:3vw 0 7vw 0;
+  height: size(800);
+  margin: 0 0 5vw 0;
   &::after {
     content: '';
     display: block;
@@ -61,21 +59,19 @@
   }
 }
 .video_box {
-  width:size(1500);
-  position: relative;
-  margin: auto;
+  width: 100%;
+  position: absolute;
   background: url('./s2/v.jpg') no-repeat center;
   background-size: cover;
   z-index: 2;
+  top:50%;
+  transform: translateY(-50%);
   left: 0;
-  height:size(844);
-  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(-1vw , -1vw);
-  &::before{content: "";position: absolute;display: block;
-  top: 0;left: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(-1vw , -1vw);}
-  }
+  overflow: hidden;
+  height:100%;
 }
 .video-bg {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   position: absolute;
   top: 0;
@@ -121,14 +117,14 @@
   .section2 {
     overflow: hidden;
     width: 100vw;
+    height: size-m(350);
     position: relative;
-  padding:3vw 0 20vw 0;
+  margin: 0 0 10vw 0;
   }
 
   .video_box {
+    position: absolute;
   z-index: 3;
-    width: 85%;
-    height: size-m(198);
   }
   .video-bg {
     width: size-m(1190);
@@ -162,9 +158,8 @@
    // @include img_c_m(32, 130);
 
    position: relative;
-   margin:auto;
+   margin:size-m(155) auto;
    width:size-m(40);
-   top: calc(50% - #{size-m(20)});
     cursor: pointer;
     z-index: 3;
   }
