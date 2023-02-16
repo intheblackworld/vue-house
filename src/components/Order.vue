@@ -263,6 +263,9 @@ export default {
         this.isSubmit = false;
         if (response.status === 200) {
           window.location.href = "formThanks";
+          
+          gtag('event', 'conversion', {'send_to': 'AW-11022043769/NpClCPSOg4IYEPmU3Icp'});
+
         }
       });
     },
