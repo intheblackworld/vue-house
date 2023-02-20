@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="s-title">
-          即將公開
+          熱銷中
         </div>
         <div class="content-title">
           鼎禾建設 <br />汐止北山段 琢壹
