@@ -1,5 +1,5 @@
 <template>
-  <div class="google-map" id="google-map">
+  <div class="google-map" id="google-map" v-if="info.address">
     <iframe
       title="googlemap"
       :src="googleSrc"
