@@ -84,7 +84,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" /><span>FB 諮詢</span>
           </span>
         </div>
-        <a class="btn flex-c btfanpage" :href="info.fbLink" target="_blank" data-aos="fade-down" data-aos-delay="300">
+        <a class="btn flex-c btfanpage" target="_blank" data-aos="fade-down" data-aos-delay="300" @click="gofb()">
           <span class="flex-c">
             <font-awesome-icon :icon="['fab', 'facebook-f']" /><span>前往粉絲專頁</span>
           </span>
@@ -149,6 +149,10 @@ export default {
       // if (!this.isMobile) return
       this.isShowMapDialog = true
     },
+    gofb(){
+      gtag('event', 'conversion', {'send_to': 'AW-11022043769/iuXBCK7T2Y0YEPmU3Icp'});
+      window.open(info.fbLink)
+    }
   },
 }
 </script>

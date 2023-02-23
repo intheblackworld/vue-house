@@ -45,6 +45,7 @@ export default {
       })
       e.preventDefault()
       window.location.href = `tel:${this.phone.replace('-', '')}`
+      gtag('event', 'conversion', {'send_to': 'AW-11022043769/I85oCKvT2Y0YEPmU3Icp'});
       setTimeout(() => {
         window.location.href = 'phoneThanks'
       }, 1000)

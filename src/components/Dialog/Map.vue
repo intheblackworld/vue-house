@@ -3,7 +3,7 @@
     <font-awesome-icon icon="map-marker-alt" />
     <div class="dialog-desc">地址</div>
     <div class="info" v-html="address"></div>
-    <a class="cta btsearch" :href="link" target="_blank">開啟導航</a>
+    <a class="cta btsearch" @click="goMap()" target="_blank">開啟導航</a>
   </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    goMap() {
+      window.open(link)
+      gtag('event', 'conversion', {'send_to': 'AW-11022043769/FxRICLHT2Y0YEPmU3Icp'});
+    }
+  },
 }
 </script>

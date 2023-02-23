@@ -261,10 +261,11 @@ export default {
         body: formData,
       }).then((response) => {
         this.isSubmit = false;
+        gtag('event', 'conversion', {'send_to': 'AW-11022043769/NpClCPSOg4IYEPmU3Icp'});
         if (response.status === 200) {
           window.location.href = "formThanks";
           
-          gtag('event', 'conversion', {'send_to': 'AW-11022043769/NpClCPSOg4IYEPmU3Icp'});
+          
 
         }
       });
