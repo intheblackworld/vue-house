@@ -20,7 +20,7 @@ export default {
 
   methods: {
     goMap() {
-      window.open(link)
+      window.open(this.link)
       gtag('event', 'conversion', {'send_to': 'AW-11022043769/FxRICLHT2Y0YEPmU3Icp'});
     }
   },
