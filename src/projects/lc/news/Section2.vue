@@ -432,6 +432,29 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '2023琢壹開工祈安祈福活動',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/17/1.jpg'),
+            require('../news/s2/17/2.jpg'),
+            require('../news/s2/17/3.jpg'),
+            require('../news/s2/17/4.jpg'),
+            require('../news/s2/17/5.jpg'),
+          ],
+
+          desc: '',
+          links: [
+         /*        {
+              title: '立瑾綻',
+              id: '1',
+              url: 'https://jhan.lc-h35.tw/',
+            },
+       */
+          ],
+        },
+        {
           title: '2023新春開工祈安祈福',
           subtitle: '',
           date: '',
