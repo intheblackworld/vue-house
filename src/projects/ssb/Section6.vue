@@ -123,6 +123,7 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
 		height: sizem(110);left: sizem(-100);}
 .img{
   width:sizem(80);bottom:sizem(35);
+  display: none;
 }
   .txt{
     position: relative;
@@ -135,9 +136,10 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
   }
   /* Swipe */
   .swipe {
+    margin-top: sizem(50);
     position: relative;
-    width: 100%;
-    height: sizem(280);
+    width: sizem(315);
+    height: sizem(588);
     top:0;
     left:0;
  background:#FFF0;
@@ -172,19 +174,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img:isMobile? require('./s6/01.png'):require('./s6/01.png'),
+          img:isMobile? require('./s6/01m.png'):require('./s6/01.png'),
           name: '',
         },
         {
-          img:isMobile? require('./s6/02.png'):require('./s6/02.png'),
+          img:isMobile? require('./s6/02m.png'):require('./s6/02.png'),
           name: '',
         },
         {
-          img:isMobile? require('./s6/03.png'):require('./s6/03.png'),
+          img:isMobile? require('./s6/03m.png'):require('./s6/03.png'),
           name: '',
         },
         {
-          img:isMobile? require('./s6/04.png'):require('./s6/04.png'),
+          img:isMobile? require('./s6/04m.png'):require('./s6/04.png'),
           name: '',
         },
       ],
