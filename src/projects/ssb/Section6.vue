@@ -4,9 +4,9 @@
       <wimg class="w1 absolute" />
       <mimg class="img absolute" />
       <div class="txt">
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">公設規劃</div>
-      <div class="title" data-aos="fade-up" data-aos-delay="200">建築團隊介紹</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字</div>
+      <!--div class="subtitle" data-aos="fade-up" data-aos-delay="200"></div-->
+      <div class="title" data-aos="fade-up" data-aos-delay="200">國際名師領銜美學新風尚</div>
+      <!--div class="desc" data-aos="fade-up" data-aos-delay="300">建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字</div-->
       </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
@@ -55,12 +55,12 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
   margin: 0 auto 0em;opacity: .5;
 }
 .txt{
-  display: none;
   position: relative;
   width: size(1500);
-  margin: 0em auto 2em auto;
+  margin: 0em auto 5em auto;
   z-index: 2;
   @include txt(size(18));
+  text-align: center;
 
 
   }
@@ -129,14 +129,14 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
     position: relative;
     width: sizem(310);
     margin:auto;
-    padding:2em 0 6em;
+    padding:3em 0 1em;
     left:0;
     top:0;
-    font-size: sizem(15);
+    font-size: sizem(13);
   }
   /* Swipe */
   .swipe {
-    margin-top: sizem(50);
+    margin-top: sizem(30);
     position: relative;
     width: sizem(315);
     height: sizem(588);
