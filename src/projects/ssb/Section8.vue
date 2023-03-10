@@ -64,7 +64,7 @@ float: right;
 .swipe {position: relative;
   float: left;
   width: size(840);
-  height: size(500);
+  height: size(560);
   margin-left: size(210);
 }
 @include swipe();
@@ -146,19 +146,12 @@ export default {
       slideList: [
         {
           img:isMobile? require('./s8/1m.png'):require('./s8/1.png'),
+          //img: require('./s8/1.png'),
           name: '',
         },
         {
           img: require('./s8/2.jpg'),
-          name: 'YKK AP情境示意圖，實際依現況為準',
-        },
-        {
-          img: require('./s8/3.jpg'),
-          name: 'TOTO衛浴情境示意圖，實際依現況為準',
-        },
-        {
-          img: require('./s8/4.jpg'),
-          name: '德國KRONOTEX情境示意圖，實際依現況為準',
+          name: '',
         },
       ],
     }

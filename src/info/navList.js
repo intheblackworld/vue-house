@@ -2,7 +2,7 @@ export default [
   /* */
   { name: '新板之尚', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
   { name: '生活風尚', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:0,  type: '' },
- // { name: '建築美尚', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '',offset:-60,mobileOffset:0, type: '' },
+  { name: '建築美尚', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '',offset:50,mobileOffset:0, type: '' },
   // { name: '樣品屋預留', imgSrc: '', subTitle: '', section: 'section9', svgSrc: '',offset:-60, mobileOffset:0 , type: '' },
   
   { name: '立即來電', imgSrc: '', subTitle: '', section: 'contact-info', svgSrc: '',offset:-60,mobileOffset:0, type: 'btn' },

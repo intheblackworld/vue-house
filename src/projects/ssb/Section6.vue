@@ -3,6 +3,11 @@
     <div class="section6">
       <wimg class="w1 absolute" />
       <mimg class="img absolute" />
+      <div class="txt">
+      <!--div class="subtitle" data-aos="fade-up" data-aos-delay="200"></div-->
+      <div class="title" data-aos="fade-up" data-aos-delay="200">國際名師領銜美學新風尚</div>
+      <!--div class="desc" data-aos="fade-up" data-aos-delay="300">建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字</div-->
+      </div>
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
@@ -11,21 +16,17 @@
               <div class="slide-name absolute" v-html="slide.name" v-if="slide.name"></div>
             </div>
           </transition-group>
-          <!-- 
+          
           <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div> -->
+          </div> 
           <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
         </div>
       </div>
-      <div class="txt">
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Modern mansion</div>
-      <div class="title" data-aos="fade-up" data-aos-delay="200">建築團隊介紹</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字建築團隊介紹文字，建築團隊介紹文字</div>
-      </div>
+      
 
     </div>
   </div>
@@ -56,9 +57,11 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
 .txt{
   position: relative;
   width: size(1500);
-  margin: 1em auto 0em auto;
+  margin: 0em auto 5em auto;
   z-index: 2;
   @include txt(size(18));
+  text-align: center;
+
 
   }
 /* Swipe */
@@ -66,7 +69,7 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
   position: relative;
   margin: auto;
   width: size(1500);
-  height: size(840);
+  height: size(812);
   // left: size(210);
   z-index: 3;
 }
@@ -120,21 +123,23 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
 		height: sizem(110);left: sizem(-100);}
 .img{
   width:sizem(80);bottom:sizem(35);
+  display: none;
 }
   .txt{
     position: relative;
     width: sizem(310);
     margin:auto;
-    padding:2em 0 6em;
+    padding:3em 0 1em;
     left:0;
     top:0;
-    font-size: sizem(15);
+    font-size: sizem(13);
   }
   /* Swipe */
   .swipe {
+    margin-top: sizem(30);
     position: relative;
-    width: 100%;
-    height: sizem(280);
+    width: sizem(315);
+    height: sizem(588);
     top:0;
     left:0;
  background:#FFF0;
@@ -169,7 +174,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/0.jpg'),
+          img:isMobile? require('./s6/01m.png'):require('./s6/01.png'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s6/02m.png'):require('./s6/02.png'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s6/03m.png'):require('./s6/03.png'),
+          name: '',
+        },
+        {
+          img:isMobile? require('./s6/04m.png'):require('./s6/04.png'),
           name: '',
         },
       ],

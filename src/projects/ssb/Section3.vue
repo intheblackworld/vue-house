@@ -108,7 +108,7 @@ float: right;
     height: auto;
     padding:10vw 0 0 0;
   }
-.w1{bottom:sizem(-15);width: sizem(700);
+.w1{bottom:sizem(0);width: sizem(700);
 		height: sizem(110);
   &::after{width:50%;}}
 .img{
