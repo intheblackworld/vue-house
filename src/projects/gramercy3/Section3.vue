@@ -290,10 +290,10 @@ export default {
       isTablet,
       isDialog: false,
       slideList: [
-        {
+     /*  {
           img: require('./s3/1.jpg'),
           name: '碧澄生態公園示意圖',
-        },
+        },   */
         {
           img: require('./s3/2.jpg'),
           name: '實景圖',
