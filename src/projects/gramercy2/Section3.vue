@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">天然森態！高綠覆率80%</div>
+        <div class="title" data-aos="fade-down" data-aos-delay="200">高綠覆率，超高氧芬多精</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        走出家門就是綠花園，「碧澄2」擁有大面積綠環境，最天然的芬多精，將城市文明的奢適一舉收藏於山嵐景觀之中，愜意悠然的生活氛圍，從此，愛上回家的感覺。
+        漫步社區與四季對話，愜意悠然的生活氛圍，從此愛上回家的感覺。
       </div>
       </div>
       <div class="pagination absolute flex-ac" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
@@ -50,7 +50,7 @@ left:size(210);width:11em;
     }
 .txt{
   position: absolute;
-  width: size(590);
+  width: size(500);
   left: size(210);
   top: size(270);
   font-stretch: normal;
