@@ -75,7 +75,7 @@
 </div>
       </div>
 
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">飯店寓所<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>桃園車站400米<svg v-if="!isMobile" viewBox="0 0 30 40" class="slash"><line x1="24.5" y1="5.5" x2="5.5" y2="34.5"/></svg><br v-else />日租月租<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>限時優惠搶購中</div>
+      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">桃園車站前<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>出租套房<svg v-if="!isMobile" viewBox="0 0 30 40" class="slash"><line x1="24.5" y1="5.5" x2="5.5" y2="34.5"/></svg><br v-else />月租２萬起<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>飯店管理</div>
     </div>
   </div>
 </template>
