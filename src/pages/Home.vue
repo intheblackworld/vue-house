@@ -13,12 +13,13 @@
     <vue-lazy-component class="section relative" id="section1" @init="init" style="z-index: 3;">
       <Section1 />
     </vue-lazy-component>
-    <vue-lazy-component
+
+    <!--vue-lazy-component
       class="section"
       id="section10"
     >
       <Section10 />
-    </vue-lazy-component>
+    </vue-lazy-component-->
 
     <vue-lazy-component
       class="section"
@@ -26,12 +27,12 @@
     >
       <Section5 />
     </vue-lazy-component>
-    <vue-lazy-component
+    <!--vue-lazy-component
       class="section"
       id="section6"
     >
       <Section6 />
-    </vue-lazy-component>
+    </vue-lazy-component-->
     <vue-lazy-component
       class="section"
       id="section7"
@@ -49,6 +50,7 @@
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component>
+    
     <vue-lazy-component
       class="section"
       id="section3"
@@ -124,11 +126,11 @@ import Section2 from '@/projects/we/Section2.vue'
 import Section3 from '@/projects/we/Section3.vue'
 import Section4 from '@/projects/we/Section4.vue'
 import Section5 from '@/projects/we/Section5.vue'
-import Section6 from '@/projects/we/Section6.vue'
+//import Section6 from '@/projects/we/Section6.vue'
 import Section7 from '@/projects/we/Section7.vue'
 import Section8 from '@/projects/we/Section8.vue'
 import Section9 from '@/projects/we/Section9.vue'
-import Section10 from '@/projects/we/Section10.vue'
+//import Section10 from '@/projects/we/Section10.vue'
 
 export default {
   name: 'home',
@@ -145,11 +147,11 @@ export default {
     Section3,
     Section4,
     Section5,
-    Section6,
+    //Section6,
     Section7,
     Section8,
     Section9,
-    Section10,
+    //Section10,
   },
 
   data() {

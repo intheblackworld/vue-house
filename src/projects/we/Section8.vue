@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="section8">
-      <img src="./s8/logo2.png" alt="" class="logo">
-  <!--    <div class="title">
+     <!--  <img src="./s8/logo2.png" alt="" class="logo">
+     <div class="title">
         威地段&emsp;輕首付&emsp;訂製宅&emsp;幸福住
       </div>
       <div class="subtitle">
@@ -19,8 +19,12 @@
   width: size(1920);
   height: size(900);
   max-height: size(900);
+  //background: url("./s8/bg.jpg") cover;
+  background-image: url('./s8/bg.jpg');
+  background-size: 100% 100%;
+  background-position: 0 0;
   position: relative;
-  background: #fff;
+  //background: #fff;
   font-size: size(56);
   font-weight: 900;
   font-stretch: normal;
@@ -82,6 +86,7 @@
     max-height: initial;
     overflow: hidden;
     font-size: sizem(21);
+    background-image: url('./s8/bg_m.jpg');
   }
 
   .g-block {
