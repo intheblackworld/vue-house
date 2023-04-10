@@ -8,7 +8,7 @@ import store from '@/store'
 // import md5 from 'crypto-js/md5'
 // import qs from 'qs'
 const devApi = 'http://localhost:9000/api'
-const prdApi = 'https://api.shin-hai.com'
+const prdApi = 'https://api.shin-lan.com'
 
 const baseURL = process.env.NODE_ENV === 'development' ? devApi : prdApi
 
