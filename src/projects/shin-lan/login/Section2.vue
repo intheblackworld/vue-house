@@ -10,13 +10,13 @@
             <div class="label">
               帳　號
             </div>
-            <el-input id="form-email" v-model="form.email" placeholder="請輸入Email"></el-input>
+            <el-input id="form-email" v-model="form.email" placeholder="請輸入身分證字號"></el-input>
           </div>
           <div class="row flex-ac flex-jb" data-aos="fade-down" data-aos-delay="200">
             <div class="label">
               密　碼
             </div>
-            <el-input id="form-phone" v-model="form.password" placeholder="請輸入密碼" type="password"></el-input>
+            <el-input id="form-phone" v-model="form.password" placeholder="請輸入生日" type="password"></el-input>
           </div>
           <el-button class="form-submit flex-c" type="primary" @click="login" :loading="isSubmit">確認送出</el-button>
           <div class="hint" v-if="isPC">
