@@ -188,6 +188,9 @@ export default {
     })
     // window.location = "https://ywh.nhc888.com.tw/"
   },
+  
+  
+
   mounted() {
     window.addEventListener('scroll', this.onScroll, false)
     // this.action = this.$refs.fullPage.api
@@ -254,3 +257,4 @@ export default {
   },
 }
 </script>
+
