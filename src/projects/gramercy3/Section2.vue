@@ -1,0 +1,382 @@
+<template>
+    <div class="section2">
+      <div class="w"></div>
+      
+      <div class="txt" v-if="!isMobile">
+        <div class="tree">
+        <img src="./all/tree1.png" alt="tree" class="tree1" loading="lazy">
+        <img src="./all/tree2.png" alt="tree" class="tree2" loading="lazy">
+        </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >大台北恣意暢行 近享北市繁華</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">捷運新店站5分鐘，10分鐘直上國道3號，台北車站22分鐘，交通路網四方串聯，捷運生活圈機能健全，自在穿梭雙北生活場域。<br>
+小碧潭商圈6分鐘，敦南商圈15分鐘，近鄰信義商圈時尚商城，9分鐘內家樂福、量販店、全聯福利中心等，逛街購物、日常採購自在便捷，構築與城市最美的距離。
+
+      </div>
+      </div>
+      <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+          <transition-group name="swipe-fade" mode="out-in">
+            <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+              <img :src="slide.img" alt="" loading="lazy">
+              <div class="slide-name absolute" v-html="slide.name"></div>
+            </div>
+          </transition-group>
+      <!--    -->  <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+          </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex" loading="lazy">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex" loading="lazy">
+          </div>
+        </div>
+      </div>
+      
+      <div class="txt" v-if="isMobile">
+        <div class="tree">
+        <img src="./all/tree1.png" alt="tree" class="tree1">
+        <img src="./all/tree2.png" alt="tree" class="tree2">
+        </div>
+      <div class="title" data-aos="fade-down" data-aos-delay="200" >大台北恣意暢行 近享北市繁華</div>
+      <div class="desc" data-aos="fade-down" data-aos-delay="300">
+        捷運新店站5分鐘，10分鐘直上國道3號，台北車站22分鐘，交通路網四方串聯，捷運生活圈機能健全，自在穿梭雙北生活場域。<br>
+小碧潭商圈6分鐘，敦南商圈15分鐘，近鄰信義商圈時尚商城，9分鐘內家樂福、量販店、全聯福利中心等，逛街購物、日常採購自在便捷，構築與城市最美的距離。
+      </div>
+      </div>
+    </div>
+</template>
+<style lang="scss" scoped>
+@import '@/assets/style/function.scss';
+
+.section2 {  
+  width:100%;
+  height:auto;
+  position: relative;
+  margin:0;
+  padding-top: 7.2em;
+  z-index: 2;
+  padding-bottom: 0.6vw;
+}
+$ww:size(88);
+.w{
+  position: absolute;
+width:size(580);
+height:calc( #{$ww} * 0.67 * 6);
+overflow: hidden;
+top:size(674);
+left: 0;
+  &::after{content: "";display: block;
+  width: calc(100% + #{$ww});
+  height:100%;
+  background: url("./all/w.png") 0 0;
+  background-size: $ww auto;
+  position: relative;
+      transform: translateX(-#{$ww});
+      animation: an 2s linear infinite;
+  }
+}
+.tree{
+  position: absolute;
+  top:size(-40);
+  right:size(10);
+  font-size: size(20);
+  img{margin: 0 0 0 1em;}
+  .tree1{width:2.95em;}
+  .tree2{width:2.3em;}
+}
+@keyframes an{
+    to{
+      transform: translateX(0);
+    }
+}
+.txt{
+  position: relative;
+  width: size(1500);
+  margin:0em auto 0em;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: justify;
+  font-size: size(19);
+  font-weight: 400;
+  line-height: 1.3;
+  z-index: 3;
+  }
+
+.title{
+  position: relative;
+  font-size: size(44);
+  margin:0 auto 0;
+  letter-spacing:0em;
+  color:$title;
+  font-weight: 800;
+}
+.desc {
+  margin:.7em auto 1.3em auto;
+  line-height: 2;
+  letter-spacing:0.05em;
+  list-style: circle;
+  overflow: hidden;
+  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
+  }
+}
+/* Swipe */
+.swipe {
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(850);
+  // left: size(210);
+  object-fit: cover;
+  z-index: 3;
+}
+.slide-name {
+    right:1.5em;
+    bottom:1em;
+    color: #fff;
+    font-size: size(15);
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.89px;
+    text-align: left;
+    color: #ffffff;
+   text-shadow:0 0.1em 0.3em #000;
+}
+
+.swipe-wrap {
+  width: 100%;
+  height: 100%;
+}
+.swipe-item {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// 過場動畫
+// begin 
+.swipe-fade-leave-to {
+  opacity: 0;
+  z-index: 0;
+}
+// end
+.swipe-fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.swipe-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+.swipe-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+// pagination
+.pagination {
+  width: auto;
+  bottom: -2.2em;
+  right: -0.5em;
+  justify-content: center;
+  font-size: size(20);
+
+}
+.pagination-dot {
+  padding: 0.25em;
+  margin: 0 0.2em;
+  cursor: pointer;
+  z-index: 4;
+
+  span {
+    display: block;
+    width:1em;
+    height:1em;
+    border-radius: 50%;
+    border: 0.2em solid  #ccc;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      display: block;
+    border-radius: 50%;
+    border:  0.105em solid  #068;
+      opacity: 1;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    &.active {
+      box-shadow: none;
+      &::before {
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        transform: scale(1.6);
+      }
+    }
+  }
+}
+
+
+.swipe-btns {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.75em;
+  z-index: 3;
+  font-size: size(20);
+
+  .prev-btn,
+  .next-btn {
+    width: 1em;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    height: 100vh;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 平板尺寸 */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+@media screen and (max-width: 767px) {
+  .section2 {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: initial;
+    padding-top: 0em;
+  }
+
+
+$ww:sizem(33);
+.w{
+width:sizem(150);
+top:sizem(170);
+left: auto;
+right: 0;
+height:calc( #{$ww} * 0.67 * 5);
+  &::after{
+  width: calc(100% + #{$ww});
+  background-size: $ww auto;
+  transform: translateX(-#{$ww});
+  }
+}
+.tree{
+  position: absolute;
+  top:calc(40% + (410 - 650 * .4) * 100vw / 375);
+  font-size: sizem(20);
+}
+
+  .txt{
+    position: relative;
+    width: sizem(310);
+    margin:1.5em auto 6em;
+    left:0;
+    top:0;
+    font-size: sizem(15);
+  }
+.title{
+    font-size: sizem(23);
+  letter-spacing:0.01em;
+}
+  /* Swipe */
+  .swipe {
+    position: relative;
+    width: 100%;
+    height: sizem(205);
+    top:0;
+    left:0;
+  }
+.swipe-item {
+  .slide-name {
+    font-size: sizem(12);
+  }
+}
+  .swipe-btns {
+  font-size: sizem(15);
+  }
+}
+
+</style>
+<script>
+// @ is an alias to /src
+import info from '@/info'
+import { isPC, isMobile, isTablet } from '@/utils'
+import slider from '@/mixins/slider.js'
+
+export default {
+  name: 'section2',
+
+  mixins: [slider],
+  props: ['viewIndex'],
+
+  data() {
+    return {
+      info,
+      isPC,
+      isMobile,
+      isTablet,
+      isDialog: false,
+      slideList: [
+        {
+          img: require('./s2/1.jpg'),
+          name: '生活環境示意圖',
+        },
+        {
+          img: require('./s2/2.jpg'),
+          name: '外觀結合實景拍攝優化',
+        },
+        {
+          img: require('./s2/3.jpg'),
+          name: '捷運新店站情境示意圖',
+        },
+        {
+          img: require('./s2/4.jpg'),
+          name: '情境示意圖',
+        },
+        {
+          img: require('./s2/5.jpg'),
+          name: '信義商圈情境示意圖',
+        },
+      ],
+    }
+  },
+
+  methods: {},
+
+  created() {},
+
+  mounted() {},
+
+  computed: {},
+
+  watch: {
+    viewIndex() {
+      if (this.viewIndex === 7) {
+        this.slideIndex = 0
+        console.log(this.slideIndex, 'slideIndex')
+      }
+    },
+  },
+}
+</script>
