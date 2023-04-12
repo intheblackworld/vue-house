@@ -15,41 +15,41 @@
       <Section1 />
     </vue-lazy-component>
 <!---->
-    <vue-lazy-component class="section" id="section2">
+    <vue-lazy-component class="section relative" id="section2">
       <Section2 />
     </vue-lazy-component> 
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section3"
     >
       <Section3 :viewIndex="viewIndex" />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section4"
     >
       <Section4 />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section5"
     >
       <Section5 />
     </vue-lazy-component>
     <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section6"
     >
       <Section6 />
     </vue-lazy-component>
      <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section7"
     >
       <Section7 />
     </vue-lazy-component>
      <vue-lazy-component
-      class="section"
+      class="section relative"
       id="section8"
     >
       <Section8 />
@@ -74,7 +74,7 @@
     >
       <Section11 />
     </vue-lazy-component> -->
-    <div class="section" id="contact">
+    <div class="section relative" id="contact">
       <ContactSection />
     </div>
     <MobileNav />
