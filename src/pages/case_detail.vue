@@ -5,7 +5,7 @@
         專屬<span data-aos="flip-right"></span>個案
       </div>
       <div class="list">
-        <img :src="current_item.img" alt="" class="list-cover">
+        <img :src="current_item.channel_covers[0]" alt="" class="list-cover">
         <div class="item flex-ac flex-jb">
           <div>客戶專區</div>
         </div>
@@ -29,7 +29,7 @@
       <div class="content-item">
         <div class="item-title gold">客戶專區</div>
         <div class="item-content">
-          <img :src="current_item.img" alt="" class="item-img">
+          <img :src="current_item.channel_covers[0]" alt="" class="item-img">
           <div v-if="has_files" class="download-btn flex-c" @click="$router.push(`/case/files/${$route.params.id}`)">觀看下載列表</div>
         </div>
       </div>
@@ -314,17 +314,8 @@ export default {
       if (this.case_list.length > 0) {
         const item = this.case_list.find((c) => c.id == this.$route.params.id)
         if (item.title) {
-          const case_item = hot_case.find((c) => c.title == item.title)
-          if (case_item) {
-            return {
-              ...case_item,
-              project_progress_covers: item.project_progress_covers,
-            }
-          } else {
-            return {
-              img: '',
-            }
-          }
+          // const case_item = hot_case.find((c) => c.title == item.title)
+          return item
         } else {
           return {
             img: '',
