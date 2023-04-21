@@ -406,8 +406,8 @@
 
   /* Swipe */
   .swipe {
-    @include img_l_m(375, 0, 0);
-    height: sizem(250);
+    @include img_l_m(375, 70, 0);
+    height: sizem(160);
     object-fit: cover;
   }
 
