@@ -83,13 +83,13 @@ background: linear-gradient(to bottom, rgb(79, 139, 242) 0%,rgba(118,202,247,1) 
   }
   .c1,.c2{width:100%;
   transform: translateX(0%);
-  animation: an 25s 0s linear infinite;
+  //animation: an 25s 0s linear infinite;
   top: -18vw;}
   .c2{
   left: 100%;}
   .c3{width: size(1000);
   transform: translateX(200%);
-  animation: an 50s linear infinite;
+  //animation: an 50s linear infinite;
   top: -23vw;}
   }
 @keyframes an{
