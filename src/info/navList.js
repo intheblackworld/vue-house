@@ -9,5 +9,5 @@ export default [
  
   { name: '立即來電', imgSrc: '', subTitle: '', section: 'contact-info', svgSrc: '',offset:0, mobileOffset: 0, type: 'btn' },
   { name: '地圖導航', imgSrc: '', subTitle: '', section: 'google-map', svgSrc: '',offset:0, mobileOffset: 0, type: 'btn' },
-  { name: '立即預約', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '',offset:0, mobileOffset: 0, type: 'btn' },
+  { name: '預約賞屋', imgSrc: '', subTitle: '', section: 'contact', svgSrc: '',offset:0, mobileOffset: 0, type: 'btn' },
 ]

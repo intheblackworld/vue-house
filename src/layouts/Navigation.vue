@@ -134,7 +134,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 70%;
   overflow: hidden;
   //padding-left: 30px;
   li {
@@ -252,7 +252,7 @@ z-index: 3;
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navigation {
-    height: 70px;
+    height: 100px;
     justify-content: center;
     &.min {
       .logo {

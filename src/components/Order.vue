@@ -457,6 +457,8 @@ left: 0;
     justify-content: space-between;
     //margin-bottom: 15px;
     background: $order_input_bg;
+    border:1px #d4d4d4 solid;
+
 
     &.house {
       margin-top: 50px;
@@ -598,6 +600,8 @@ height:calc( #{$ww} * 0.67 * 5);
     }
     .row {
       margin-bottom: 12px !important;
+      border:1px #d4d4d4 solid;
+      
 
       &.house {
         margin-top: 20px;

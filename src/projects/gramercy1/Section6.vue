@@ -23,7 +23,7 @@
       <div class="txt">
       <div class="title" data-aos="fade-down" data-aos-delay="200">國際級高規格<br>易控智慧居家系統 </div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
-        情境示意圖全屋式智慧環控全方位安全防護，備配智慧家居、E-TAG辨識系統、一卡通智慧門禁服務、智能物業管理APP，完美整合居家設備與家電，打造沉浸式個人情境氛圍！
+        全屋式智慧環控全方位安全防護，備配智慧家居、E-TAG辨識系統、一卡通智慧門禁服務、智能物業管理APP，完美整合居家設備與家電，打造沉浸式個人情境氛圍！
       </div>
       </div>
      <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">

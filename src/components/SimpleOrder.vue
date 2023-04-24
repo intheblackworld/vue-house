@@ -298,6 +298,7 @@ export default {
     align-items: center;
     margin-bottom: 15px;
     width: 920px;
+    
 
     &:nth-last-child(1) {
       margin-bottom: 0;
