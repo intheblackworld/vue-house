@@ -22,8 +22,8 @@
       <div class="img" data-aos="zoom-in"><img src="./all/img.png" alt="img"></div>
       <img src="./s1/logo_m.png" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo">
       <div class="t1" data-aos="zoom-in" data-aos-delay="400">擁有城市中的寧靜</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅｜45坪、<br />
-51、64坪一樓使用空間大</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅<br />
+51坪一樓使用空間大</div>
     </div>
   </div>
 </template>
@@ -65,16 +65,19 @@ background: linear-gradient(to bottom, rgb(79, 139, 242) 0%,rgba(118,202,247,1) 
   left: 0%;
   }
   .c1{width: size(720);
-  transform: translateX(25vw);
-  animation: an 40s -10s linear infinite;opacity: 0.9;
+  transform: translateX(-5vw);
+  //transform: translateX(25vw);
+  //animation: an 40s -10s linear infinite;opacity: 0.9;
   top: -10vw;}
   .c2{width: size(903);
-  transform: translateX(-9vw);opacity: 0.8;
-  animation: an 25s linear infinite;
+  transform: translateX(-50vw);opacity: 0.8;
+  //transform: translateX(-9vw);opacity: 0.8;
+  //animation: an 25s linear infinite;
   top: 6vw;}
   .c3{width: size(800);
-  transform: translateX(1vw);opacity: 0.8;
-  animation: an 25s -13s linear infinite;
+  transform: translateX(-60vw);opacity: 0.8;
+  //transform: translateX(1vw);opacity: 0.8;
+  //animation: an 25s -13s linear infinite;
   top: 6vw;}
   }
 @keyframes an{
@@ -147,12 +150,15 @@ background: linear-gradient(to bottom, rgb(79, 139, 242) 0%,rgba(118,202,247,1) 
 
 .c{
   .c1{width: sizem(300);
-  transform: translateX(50vw);
+  transform: translateX(-70vw);
+  //transform: translateX(50vw);
   top: 0vw;}
   .c2{width: sizem(400);
-  transform: translateX(50vw);
+  transform: translateX(-50vw);
+  //transform: translateX(50vw);
   top: 30vw;}
   .c3{width: sizem(350);
+  //transform: translateX(45vw);
   transform: translateX(45vw);
   top:39vw;}
 

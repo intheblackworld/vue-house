@@ -305,10 +305,6 @@ export default {
           img: require('./s4/1.jpg'),
           name: '現場外觀實景圖',
         },
-        {
-          img: require('./s4/2.jpg'),
-          name: '現場外觀實景圖',
-        },
       ],
     }
   },

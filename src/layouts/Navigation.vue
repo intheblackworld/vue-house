@@ -134,7 +134,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 70%;
   overflow: hidden;
   //padding-left: 30px;
   li {

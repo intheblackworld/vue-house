@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="txt">
-        <div class="title" data-aos="fade-down" data-aos-delay="200">高綠覆率，超高氧芬多精</div>
+        <div class="title" data-aos="fade-down" data-aos-delay="200">綠意環繞，清新好生活</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
         漫步社區與四季對話，愜意悠然的生活氛圍，從此愛上回家的感覺。
       </div>
