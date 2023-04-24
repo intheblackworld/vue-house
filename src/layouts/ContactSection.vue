@@ -1,5 +1,5 @@
 <template>
-  <div class="contact" id="contact">
+  <div class="contact">
     <Order />
     <HouseInfo />
   </div>
