@@ -51,7 +51,7 @@
   position: relative;
   margin:0;
   padding-top: 7.2em;
-  background: #eff4f2;
+  background: #fff;
   z-index: 2;
   padding-bottom: 0.6vw;
 }
