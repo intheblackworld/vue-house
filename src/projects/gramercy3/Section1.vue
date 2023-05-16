@@ -23,7 +23,7 @@
       <img src="./s1/logo_m.png" v-if="isMobile" data-aos="zoom-in" data-aos-delay="200" alt="logo" class="logo" loading="lazy">
       <div class="img" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="400" loading="lazy"><img src="./all/img.png" alt="img" loading="lazy"></div>
       <div class="t1" data-aos="zoom-in" data-aos-delay="400">華城路上唯一精品小豪宅</div>
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">輕總價｜限量19戶｜新店緻美22-25坪</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="400">輕總價｜限量19戶｜新店緻美23-25坪</div>
     </div>
   </div>
 </template>
