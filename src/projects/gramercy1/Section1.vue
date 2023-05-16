@@ -19,7 +19,7 @@
     <div class="txt">
       <img src="./s1/logo.png" v-if="!isMobile" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
       <img src="./s1/t.png" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="t1">
-      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅 | 89、91坪<br />與75、80坪樓中樓</div>
+      <div class="t2" data-aos="zoom-in" data-aos-delay="400">新店平面別墅 | 89坪<br />與75、80坪樓中樓</div>
       <img src="./s1/logo_m.png" v-if="isMobile" data-aos="zoom-in" data-aos-delay="0" alt="logo" class="logo">
     </div>
   </div>
