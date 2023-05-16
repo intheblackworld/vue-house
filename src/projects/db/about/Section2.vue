@@ -24,7 +24,6 @@
       <img src="./s2/i1.jpg" :alt="`${info.caseName}_i1`" class="img" data-aos="fade" data-aos-delay="300">
       <img src="./s2/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade" data-aos-delay="400">
       <div class="desc" data-aos="fade" data-aos-delay="500">
-        「得邦廣告」以短短三年的時間，成功推行總值160億的案量。<br /><br />
         以精緻服務為核心價值，為消費者全盤規劃、推薦最合適的美宅。並對建設公司，提供土地規劃、建築設計、環境規劃、景觀規劃、美學架構等全盤的建議。<br /><br />
         在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
       </div>
@@ -56,7 +55,6 @@
       <img src="./s2/i1.jpg" :alt="`${info.caseName}_i1`" class="img">
       <img src="./s2/logo.png" :alt="`${info.caseName}_logo`" class="logo">
       <div class="desc">
-        「得邦廣告」以短短三年的時間，成功推行總值160億的案量。<br /><br />
         以精緻服務為核心價值，為消費者全盤規劃、推薦最合適的美宅。並對建設公司，提供土地規劃、建築設計、環境規劃、景觀規劃、美學架構等全盤的建議。<br /><br />
         在房地產行銷的領域中，以領先業界的專業服務，建構「人」與「家」最堅固的橋樑。
       </div>
