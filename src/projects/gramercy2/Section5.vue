@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-down" data-aos-delay="200">2倍安全！<br>
+      <div class="title" data-aos="fade-down" data-aos-delay="200">基樁入岩3米<br>
 比法定規範更安心</div>
       <div class="desc" data-aos="fade-down" data-aos-delay="300">
         將基樁貫入岩盤，讓建築堅固穩定並增加建物抗滑動能力，使處於逆向坡的房屋更加穩固，並預防未來極端氣候，碧澄安全係數高於法定規範值2倍。
