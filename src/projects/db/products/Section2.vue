@@ -923,6 +923,25 @@ export default {
         //},
         //陽光
         {
+          title: 'SKY 1',
+          title2: 'SKY 1',
+          desc: '新北市｜洲子洋特區<br />16-33坪<br />大都會公園首席，水岸豪景地標',
+          img: require('../works/13/1.jpg'),
+          isEmpty: false,
+          info1: '新北市｜洲子洋特區<br />16-33坪<br>大都會公園首席，水岸豪景地標',
+          info2:
+            '建設公司：中德建設<br>坪數規劃：27-54坪',
+          info3:
+            '大都會公園首席，水岸豪景地標',
+          contact: '貴賓專線｜02-8295-1777<br />接待會館｜新北市五股區新城八路336號',
+          logo: require('../works/13/1.jpg'),
+          link: '',
+          imgs: [
+            require('../works/13/3.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+        },
+        {
           title: '陽光<br />PARK',
           title2: '陽光PARK',
           desc: '新北市｜新店區<br />27-54坪<br />新店陽光公園特區生態建築',
