@@ -4,8 +4,13 @@
     <h3 class="subtitle">
       Hot Case
     </h3>
-  <!--  <img src="./s4/1.jpg" alt="" class="img1" @click="$router.push('/hot?index=1#section1')"> -->
-    <img src="./s4/03.jpg" alt="" class="img4" @click="$router.push('/hot?index=1#section1')">
+  <!--  圖片寬度隨個數變化  字可以放在圖上(把t1t2拿掉)也可以直接打文字  index=1 是內頁設定  所以放新的請檢查一下-->
+    <div class="list">
+    <div class="img" @click="$router.push('/hot?index=1#section1')"><img src="./s4/05.jpg" alt="" /><span class="t1">淡水淡海段</span><span class="t2">琢渼</span></div>
+    <div class="img" @click="$router.push('/hot?index=2#section1')"><img src="./s4/04.jpg" alt="" /><span class="t1">汐止北山段</span><span class="t2">琢壹</span></div>
+  </div>
+
+
     <img src="./s4/bg.png" alt="" class="img3">
     <div class="btn flex-c" @click="$router.push('/hot')">瞭解更多</div>
   </div>
@@ -68,6 +73,20 @@
   color: #ff8200;
   white-space: nowrap;
 }
+.list{
+  @include img_l_pc(670, 190, 287);
+  display: flex;
+  gap: size(10);
+  font-size: size(23);
+  height:size(550);
+
+.img{flex: 1;position: relative;color: #fff;height: 100%;text-shadow: 0 2px 2px #0006;
+  cursor: pointer;
+  img{width: 100%;height: 100%;object-fit: cover;}
+.t1{position: absolute;color: #fff000;right: 1em;top: 1em;width: 1em;}
+.t2{position: absolute;right: 2.5em;top: 1em;width: 1em;}
+}
+}
 
 .img1 {
   @include img_l_pc(270, 190, 287);
@@ -125,7 +144,7 @@
 @media screen and (max-width: 767px) {
   .section4 {
     width: 100vw;
-    min-height: sizem(1000);
+    min-height: sizem(900);
     // max-height: sizem(812);
     // height: 100vh;
     // background-image: url('./mo/1/bg.png');
@@ -157,8 +176,13 @@
   .subtitle {
     @include div_l_m(375, 21, 141, 0);
     font-size: sizem(15);
-    text-align: center;
-    
+    text-align: center
+}
+.list{
+    @include img_l_m(355, 190, 10);
+  gap: sizem(10);
+  height:sizem(300);
+  font-size: sizem(13);
   }
 
   .img1 {
@@ -174,6 +198,7 @@
 
   .img3 {
     @include img_r_m(367, 640, 4);
+    top: auto;bottom: 0;
   }
 
   .btn {
