@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/17/1.jpg'),
+          title: '2023琢壹開工祈安祈福活動',
+        },
+        {
           img: require('../news/s2/16/1.jpg'),
           title: '2023新春開工祈安祈福',
         },
