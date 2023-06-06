@@ -3,14 +3,14 @@
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 0">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
+          <div v-for="(slide, i) in slideList1" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
             <img :src="slide.img" alt="" @load="imageLoaded = true">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex(1)">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex(1)">
         </div>
       </div>
     </div>
@@ -23,8 +23,8 @@
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex(2)">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex(2)">
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@
           </div>
         </transition-group>
         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex">
-          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex(3)">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex(3)">
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
       </a>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 0">
-      <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 1">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
@@ -664,7 +664,7 @@ export default {
           link: 'https://way.h35.tw/',
         },
       ],
-      slideList: [
+      slideList1: [
         {
           img: require('../works/3/1.jpg'),
         },
@@ -698,17 +698,9 @@ export default {
   },
 
   methods: {
-    preloadImages() {
-      const allImages = [...this.slideList, ...this.slideList2, ...this.slideList3].map(slide => slide.img);
-      allImages.forEach(imageSrc => {
-        const img = new Image();
-        img.src = imageSrc;
-      });
-    },
   },
 
   mounted() {
-    this.preloadImages();
   },
 
   created() {},
