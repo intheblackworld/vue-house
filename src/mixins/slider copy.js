@@ -2,10 +2,8 @@ export default {
   data() {
     return {
       slideIndex: 0,
-      slideIndex2: 0,
-      slideIndex3: 0,
       toggleTimer: false,
-      stopAutoPlay: true,
+      stopAutoPlay: false,
     }
   },
 
@@ -50,12 +48,14 @@ export default {
       this.slideIndex =
         this.slideIndex === 0 ? this.slideList.length - 1 : this.slideIndex - 1
     },
-    // 一個區塊有多個輪播組件
     addMultiIndex(index) {
+      const slideList = this[`slideList${index}`];
+      const slideIndex = this[`slideIndex${index}`];
+    
+      // 递增索引
       this[`slideIndex${index}`] =
-        this[`slideIndex${index}`] === this[`slideList${index}`].length - 1 ? 0 : this[`slideIndex${index}`] + 1
+        slideIndex === slideList.length - 1 ? 0 : slideIndex + 1;
     },
-
     decMultiIndex(index) {
       this[`slideIndex${index}`] =
         this[`slideIndex${index}`] === 0 ? this[`slideList${index}`].length - 1 : this[`slideIndex${index}`] - 1

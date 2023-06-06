@@ -46,16 +46,14 @@
           熱銷中
         </div>
         <div class="content-title">
-          鼎禾建設 <br />汐止北山段 琢壹
+          鼎禾建設 <br />淡水淡海段 琢渼
         </div>
-        <div class="content-desc">
-          前瞻台北新東區未來潛能<br />
-即將在汐止中興路．康寧街口與您相見！<br />
-豐彩機能、精工團隊、國際建材、時尚美學<br />
-鼎禾匠心 與您品味相約<br />
-在繁中之境  收藏一座心靈的微行館！ 
+        <div class="content-desc">每一刻動靜時分，都是黏人的風景<br />
+順應地理文化，移植安縵的理念，<br />以淨化為最高境界從「心」出發的建築，<br />
+一步步的公共建設，即將嶄新的未來<br />
+與您相遇的淡海漫旅
         </div>
-        <a class="btn flex-c" href="https://lc-h35.tw/contacts">
+        <a class="btn flex-c" href="https://zhuomei.tw/">
           聯絡預約
         </a>
         <!--
@@ -94,31 +92,28 @@
             <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isPC">
             <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
-          </div> -->
+          </div>
             <div class="pagination absolute flex-ac">
               <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goToMul(3, index)"><span :class="`${slideIndex3 === index ? 'active' : ''}`"></span></div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="s-title">
-          即將推出
+          熱銷中
         </div>
         <div class="content-title">
-          鶯歌鳳福段
+          鼎禾建設 <br />汐止北山段 琢壹
         </div>
-        <!-- <div class="content-desc">
-          2020年11月<br />
-          延續著住戶的期盼，<br />
-          今年11月19日於鶯歌鳳鳴重劃區，<br />
-          辦理開工動土祈福典禮，<br />
-          將接續公開新案「立瑾way」，<br />
-          只為給您最好的居家。<br />
-          <span>基地地址：鶯歌鳳鳴段</span>
+        <div class="content-desc">
+          前瞻台北新東區未來潛能<br />
+即將在汐止中興路．康寧街口與您相見！<br />
+豐彩機能、精工團隊、國際建材、時尚美學<br />
+鼎禾匠心 與您品味相約<br />
+在繁中之境  收藏一座心靈的微行館！ 
         </div>
-        <div class="btn flex-c">
-          官網預約
-        </div>
-        <img src="./s1/youtube.jpg" alt="" class="video"> -->
+        <a class="btn flex-c" href="https://lc-h35.tw/contacts">
+          聯絡預約
+        </a>
         <img src="./s1/rb.png" alt="" class="rb">
       </div>
     </div>
@@ -1074,6 +1069,21 @@ export default {
             '鶯歌鳳鳴 立瑾Way2020年11月<br>延續著住戶的期盼，<br>今年11月19日於鶯歌鳳鳴重劃區，<br>辦理開工動土祈福典禮，<br>將接續公開新案「立瑾way」，<br>只為給您最好的居家。<br>基地地址：鶯歌鳳鳴段',
         }, */
         {
+          img: require('../works/5/01.jpg'),
+          alt: '',
+          name: '琢渼',
+        },
+        {
+          img: require('../works/4/01.jpg'),
+          alt: '',
+          name: '琢壹',
+        },
+        {
+          img: require('../works/5/01.jpg'),
+          alt: '',
+          name: '琢渼',
+        },
+        {
           img: require('../works/4/01.jpg'),
           alt: '',
           name: '琢壹',
@@ -1100,6 +1110,20 @@ export default {
       ],
       */
       slideList2: [
+        {
+          img: require('../works/5/01.jpg'),
+          name: '3D模擬示意圖',
+        },
+     /*   {
+          img: require('../works/3/2.jpg'),
+          name: '3D模擬示意圖',
+        },
+        {
+          img: require('../works/3/3.jpg'),
+          name: '3D模擬示意圖',
+        },*/
+      ],
+      slideList3: [
         {
           img: require('../works/4/01.jpg'),
           name: '3D模擬示意圖',

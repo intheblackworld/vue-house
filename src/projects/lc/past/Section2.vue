@@ -3,8 +3,8 @@
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 0">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="" @load="imageLoaded = true">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -17,8 +17,8 @@
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 1">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList2" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+          <div v-for="(slide, i) in slideList2" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="" @load="imageLoaded = true">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -31,8 +31,8 @@
     <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 2">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
-          <div v-for="(slide, i) in slideList3" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
-            <img :src="slide.img" alt="">
+          <div v-for="(slide, i) in slideList3" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="" @load="imageLoaded = true">
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
@@ -632,7 +632,6 @@
 }
 </style>
 <script>
-// @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import slider from '@/mixins/slider.js'
 
@@ -648,6 +647,7 @@ export default {
       isMobile,
       isTablet,
       tabIndex: 0,
+      imageLoaded: false,
       contentList: [
         {
           title: '立瑾綻',
@@ -698,20 +698,17 @@ export default {
   },
 
   methods: {
-    // @slideChangeTransitionEnd="slideChanged"
-    // slideChanged(e) {
-    //   const swiper = this.$refs.mySwiper.swiper
-    //   if (swiper.isEnd) {
-    //     this.slideIndex = 0
-    //   } else if (swiper.isBeginning) {
-    //     this.slideIndex = swiper.slides.length - 3
-    //   } else {
-    //     this.slideIndex = swiper.activeIndex - 1
-    //   }
-    // },
+    preloadImages() {
+      const allImages = [...this.slideList, ...this.slideList2, ...this.slideList3].map(slide => slide.img);
+      allImages.forEach(imageSrc => {
+        const img = new Image();
+        img.src = imageSrc;
+      });
+    },
   },
 
   mounted() {
+    this.preloadImages();
   },
 
   created() {},
@@ -725,3 +722,4 @@ export default {
   },
 }
 </script>
+
