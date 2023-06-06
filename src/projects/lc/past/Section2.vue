@@ -674,13 +674,13 @@ export default {
       ],
       slideList2: [
         {
-          img: require('../works/2/1.jpg'),
+          img: require('../works/1/1.jpg'),
         },
         {
-          img: require('../works/2/2.jpg'),
+          img: require('../works/1/4.jpg'),
         },
         {
-          img: require('../works/2/4.jpg'),
+          img: require('../works/1/5.jpg'),
         },
       ],
       slideList3: [
