@@ -53,7 +53,7 @@
 一步步的公共建設，即將嶄新的未來<br />
 與您相遇的淡海漫旅
         </div>
-        <a class="btn flex-c" href="https://zhuomei.tw/">
+        <a class="btn flex-c" href="https://zhuomei.tw/" target="_blank">
           聯絡預約
         </a>
         <!--
@@ -111,7 +111,7 @@
 鼎禾匠心 與您品味相約<br />
 在繁中之境  收藏一座心靈的微行館！ 
         </div>
-        <a class="btn flex-c" href="https://lc-h35.tw/contacts">
+        <a class="btn flex-c" href="https://zhuoyi.tw/" target="_blank">
           聯絡預約
         </a>
         <img src="./s1/rb.png" alt="" class="rb">
