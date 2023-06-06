@@ -938,6 +938,23 @@ export default {
       item_list: [
          //預推個案
         {
+          title: '理享城',
+          title2: '理享城',
+          desc: '新北市｜洲子洋重劃新蘆特區<br />19-33坪<br />蘆洲下一站 萬坪公園城',
+          img: require('../works/14/1.jpg'),
+          isEmpty: false,
+          info1: '新北市｜洲子洋重劃<br />新蘆特區19-33坪<br />蘆洲下一站 萬坪公園城',
+          info2: '敬請期待 COMING SOON',
+          info3: '',
+          contact: '',
+          link: 'https://wl2.debang.tw/',
+          logo: require('../works/14/1.jpg'),
+          imgs: [
+            require('../works/14/2.jpg'),],
+          hint: '',
+          label: '',
+        },
+        {
           title: '雙橡園',
           title2: '雙橡園',
           desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
