@@ -26,7 +26,7 @@
       <div class="txt">
       <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Handmade boutique</div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">10大嚴選建材<br />建築經典訂製</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">採用精品歐日品牌-日本TOTO、英國McALPINE、歐系櫥櫃DORIS、韓國LG人造石檯面等銀建材，營造品味家居生活，銀級智慧建築結合了人臉辨識系統，24小時遠端監控哨兵，全面打造安心居家環境。
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">採用精品歐日品牌-日本TOTO、英國McALPINE、歐系櫥櫃DORIS、韓國LG人造石檯面等建材，營造品味家居生活，銀級智慧建築結合了人臉辨識系統，24小時遠端監控哨兵，全面打造安心居家環境。
 </div>
       </div>
     </div>
