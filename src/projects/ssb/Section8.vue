@@ -26,7 +26,8 @@
       <div class="txt">
       <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Handmade boutique</div>
       <div class="title" data-aos="fade-up" data-aos-delay="200">10大嚴選建材<br />建築經典訂製</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">建材優質選品-日本TOTO、德國KRONOTEX、義大利系統櫃體，營造品味家居生活。社區全智能管理系統搭配各戶智慧門鎖，全面打造安全安心家居。</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">採用精品歐日品牌-日本TOTO、英國McALPINE、歐系櫥櫃DORIS、韓國LG人造石檯面等銀建材，營造品味家居生活，銀級智慧建築結合了人臉辨識系統，24小時遠端監控哨兵，全面打造安心居家環境。
+</div>
       </div>
     </div>
   </div>
