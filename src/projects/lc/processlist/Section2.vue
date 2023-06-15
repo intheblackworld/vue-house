@@ -11,10 +11,11 @@
           <div class="process-subtitle">
             {{item.subtitle}}
           </div>
-          <div class="process-link flex-c">
+          <div class="process-link flex-c" v-if="item.isFinished">
             READ MORE
           </div>
         </div>
+        <div class="link" v-if="item.isFinished"></div>
       </div>
       <div class="process-item0"></div>
       <div class="process-item0"></div>
@@ -91,18 +92,19 @@
   min-height: size(537);
   margin-bottom: size(70);
   border: 1px solid #707070;
-  cursor: pointer;
   position: relative;
-  transition: background-color 0.5s;
 /*
   &:nth-child(n + 3) {
     opacity: 0.5;
   }
   */
-  &:hover{background: #0002;
-  .process-img{opacity: 0.8;}
+  .link{position: absolute;top: 0;left: 0;right: 0;bottom: 0;
+  cursor: pointer;
+  transition: background-color 0.5s;}
+  &:hover{
   .process-link {
   background-color: #ff9e00;}
+  .link{background: #0002;}
   }
 }
 .process-item0 {width: size(403);}
@@ -124,9 +126,10 @@
   width: 9em;
   height:2.2em;
   border-radius:1em;
+  cursor: pointer;
+  z-index: 2;
   background-color: #000;
   transition: background-color 0.3s;
-  cursor: pointer;
   font-size:calc(12px + 0.05vw);
   font-weight: normal;
   font-stretch: normal;
@@ -297,15 +300,27 @@ export default {
       tabIndex: 0,
       list: [
         {
-          img: require('../process/list/1/0.jpg'),
-          title: '2021 立瑾WAY',
-          subtitle: '已完售，預計2023年初完工。',
+          img: require('../works/5/01.jpg'),
+          title: '2023 琢渼',
+          subtitle: '熱銷中 ，預計2026年初完工',
+          isFinished: false,
+        },
+        {
+          img: require('../works/4/01.jpg'),
+          title: '2023 琢壹',
+          subtitle: '熱銷中 ，預計2026年初完工',
           isFinished: true,
         },
         {
           img: require('../works/3/1.jpg'),
           title: '2021 立瑾綻',
-          subtitle: '已完售，預計2023年初完工',
+          subtitle: '已完售，預計2023年底完工',
+          isFinished: true,
+        },
+        {
+          img: require('../process/list/1/0.jpg'),
+          title: '2021 立瑾WAY',
+          subtitle: '已完售，預計2023年底完工',
           isFinished: true,
         },
  /*       {

@@ -952,6 +952,112 @@ export default {
       ], */
       list: [
         //...Array(18).keys()].map((i) => ({
+        [ //琢渼
+          {
+            o_title: '2023 琢渼',
+            o_subtitle: '熱銷中 ，預計2026年初完工',
+            img: require('../process/list/25/1.jpg'),
+            title: '2023/03',
+            subtitle: ' 鋪面施工',
+            isFinished: true,
+            imgs: [
+              require('../process/list/25/1.jpg'),
+            ]
+          },
+        ],
+        [ //琢壹
+          {
+            o_title: '2023 琢壹',
+            o_subtitle: '熱銷中 ，預計2026年初完工',
+            img: require('../process/list/25/1.jpg'),
+            title: '2023/06',
+            subtitle: '連續壁工程查驗',
+            isFinished: true,
+            imgs: [
+              require('../process/list/25/1.jpg'),
+              require('../process/list/25/2.jpg'),
+              require('../process/list/25/3.jpg'),
+              require('../process/list/25/4.jpg'),
+              require('../process/list/25/5.jpg'),
+              require('../process/list/25/6.jpg'),
+            ]
+          },
+        ],
+        [ //立瑾綻
+          {
+            o_title: '2021 立瑾綻',
+            o_subtitle: '已完售，預計2023年初完工',
+            img: require('../process/list/24/1.jpg'),
+            title: '2023/03',
+            subtitle: '鋪面施工',
+            isFinished: true,
+            imgs: [
+              require('../process/list/24/1.jpg'),
+              require('../process/list/24/2.jpg'),
+              require('../process/list/24/3.jpg'),
+              require('../process/list/24/4.jpg'),
+              require('../process/list/24/5.jpg'),
+              require('../process/list/24/6.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/11/image001.jpg'),
+            title: '2022/04',
+            subtitle: ' 4FL灌漿完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/11/image001.jpg'),
+              require('../process/list/11/image003.jpg'),
+              require('../process/list/11/image005.jpg'),
+              require('../process/list/11/image007.jpg'),
+              require('../process/list/11/image009.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/10/image001.jpg'),
+            title: '2022/03',
+            subtitle: ' 3樓板灌漿前後施工照片',
+            isFinished: true,
+            imgs: [
+              require('../process/list/10/image001.jpg'),
+              require('../process/list/10/image003.jpg'),
+              require('../process/list/10/image005.jpg'),
+              require('../process/list/10/image007.jpg'),
+              require('../process/list/10/image009.jpg'),
+              require('../process/list/10/image011.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/8/1.jpg'),
+            title: '2022/02',
+            subtitle: ' 二樓板工務局勘驗+灌漿前後',
+            isFinished: true,
+            imgs: [
+              require('../process/list/8/1.jpg'),
+              require('../process/list/8/2.jpg'),
+              require('../process/list/8/3.jpg'),
+              require('../process/list/8/4.jpg'),
+              require('../process/list/8/5.jpg'),
+              require('../process/list/8/6.jpg'),
+              require('../process/list/8/7.jpg'),
+              require('../process/list/8/8.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/6/1.jpg'),
+            title: '2021/12',
+            subtitle: '基礎板鋼筋綁紮及混凝土灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/6/1.jpg'),
+              require('../process/list/6/2.jpg'),
+              require('../process/list/6/3.jpg'),
+              require('../process/list/6/4.jpg'),
+              require('../process/list/6/5.jpg'),
+              require('../process/list/6/6.jpg'),
+            ]
+          },
+        ],
         [ //立瑾way
           {
             o_title: '2021 立瑾WAY',
@@ -1217,81 +1323,6 @@ export default {
               require('../process/list/1/7.jpg'),
               require('../process/list/1/8.jpg'),
             ],
-          },
-        ],
-        [ //立瑾綻
-          {
-            o_title: '2021 立瑾綻',
-            o_subtitle: '已完售，預計2023年初完工',
-            img: require('../process/list/24/1.jpg'),
-            title: '2023/03',
-            subtitle: ' 鋪面施工',
-            isFinished: true,
-            imgs: [
-              require('../process/list/24/1.jpg'),
-              require('../process/list/24/2.jpg'),
-              require('../process/list/24/3.jpg'),
-              require('../process/list/24/4.jpg'),
-              require('../process/list/24/5.jpg'),
-              require('../process/list/24/6.jpg'),
-            ]
-          },
-          {
-            img: require('../process/list/11/image001.jpg'),
-            title: '2022/04',
-            subtitle: ' 4FL灌漿完成',
-            isFinished: true,
-            imgs: [
-              require('../process/list/11/image001.jpg'),
-              require('../process/list/11/image003.jpg'),
-              require('../process/list/11/image005.jpg'),
-              require('../process/list/11/image007.jpg'),
-              require('../process/list/11/image009.jpg'),
-            ]
-          },
-          {
-            img: require('../process/list/10/image001.jpg'),
-            title: '2022/03',
-            subtitle: ' 3樓板灌漿前後施工照片',
-            isFinished: true,
-            imgs: [
-              require('../process/list/10/image001.jpg'),
-              require('../process/list/10/image003.jpg'),
-              require('../process/list/10/image005.jpg'),
-              require('../process/list/10/image007.jpg'),
-              require('../process/list/10/image009.jpg'),
-              require('../process/list/10/image011.jpg'),
-            ]
-          },
-          {
-            img: require('../process/list/8/1.jpg'),
-            title: '2022/02',
-            subtitle: ' 二樓板工務局勘驗+灌漿前後',
-            isFinished: true,
-            imgs: [
-              require('../process/list/8/1.jpg'),
-              require('../process/list/8/2.jpg'),
-              require('../process/list/8/3.jpg'),
-              require('../process/list/8/4.jpg'),
-              require('../process/list/8/5.jpg'),
-              require('../process/list/8/6.jpg'),
-              require('../process/list/8/7.jpg'),
-              require('../process/list/8/8.jpg'),
-            ]
-          },
-          {
-            img: require('../process/list/6/1.jpg'),
-            title: '2021/12',
-            subtitle: '基礎板鋼筋綁紮及混凝土灌漿',
-            isFinished: true,
-            imgs: [
-              require('../process/list/6/1.jpg'),
-              require('../process/list/6/2.jpg'),
-              require('../process/list/6/3.jpg'),
-              require('../process/list/6/4.jpg'),
-              require('../process/list/6/5.jpg'),
-              require('../process/list/6/6.jpg'),
-            ]
           },
         ],
         /*{
