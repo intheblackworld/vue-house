@@ -432,6 +432,32 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '鼎禾建設–琢渼，開工動土慶典活動',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/18/1.jpg'),
+            require('../news/s2/18/2.jpg'),
+            require('../news/s2/18/3.jpg'),
+            require('../news/s2/18/4.jpg'),
+            require('../news/s2/18/5.jpg'),
+            require('../news/s2/18/6.jpg'),
+            require('../news/s2/18/7.jpg'),
+            require('../news/s2/18/8.jpg'),
+          ],
+
+          desc: '立瑾建築機構·鼎禾建設<br>淡水案開工動土大典<br><br>感謝貴賓齊聚一堂<br>見證我們的美好啟航<br><br>淡水卓然渼居<br>完美建築·即將誕生<br><br>鼎禾匠心 起筆每一個家的旅程用心值得等待～',
+          links: [
+                 {
+              title: '琢渼',
+              id: '1',
+              url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '2023琢壹開工祈安祈福活動',
           subtitle: '',
           date: '',
@@ -446,12 +472,11 @@ export default {
 
           desc: '',
           links: [
-         /*        {
-              title: '立瑾綻',
+            {
+              title: '琢壹',
               id: '1',
-              url: 'https://jhan.lc-h35.tw/',
+              url: 'https://zhuoyi.tw',
             },
-       */
           ],
         },
         {
