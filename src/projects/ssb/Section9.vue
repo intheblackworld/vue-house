@@ -64,7 +64,7 @@
 <path class="st2" d="M631,247.8H468.7"/>
 </svg>
 
-<div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜24-45坪｜挑高3米6</div>
+<div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜31-45坪｜挑高3米6</div>
     </div>
   </div>
 </template>

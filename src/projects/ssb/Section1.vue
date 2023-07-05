@@ -67,7 +67,7 @@
 
 <div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜挑高3米6
 </div>
-      <div class="t2"  data-aos="zoom-in" data-aos-delay="600">炫曜24-45坪</div>
+      <div class="t2"  data-aos="zoom-in" data-aos-delay="600">炫曜31-45坪</div>
     </div>
   </div>
 </template>
