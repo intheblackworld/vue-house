@@ -4,8 +4,8 @@ export default {
   address: '接待會館：台北市中正區齊東街70巷15號旁',
   // isMobile ? '接待中心：<br />106台北市大安區基隆路三段20-1號' : '接待中心：106台北市大安區基隆路三段20-1號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7229.442801339142!2d121.5252484!3d25.0435271!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97af1b8b009%3A0xba2c0a9a93d4c2d8!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5b-g5a2d5p2x6Lev5LqM5q61MjLomZ8!5e0!3m2!1szh-TW!2stw!4v1615173040430!5m2!1szh-TW!2st',
-  googleLink: 'https://goo.gl/maps/2y84Bx5YEPRqFfBi8',
+    'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d903.6848483301465!2d121.52775000000001!3d25.0429167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDAyJzM0LjUiTiAxMjHCsDMxJzM5LjkiRQ!5e0!3m2!1szh-TW!2stw!4v1688722830377!5m2!1szh-TW!2stw',
+  googleLink: 'https://goo.gl/maps/2RydbESHCv8s6c3GA',
   phone: '(02)2391-5577',
   fbLink:
     'https://www.facebook.com/中正H25-102637598419351/',
@@ -13,7 +13,7 @@ export default {
   caseName: '中正H25',
   houseInfos: [
     ['投資興建', '力天開發股份有限公司'],
-    ['建築設計', '呂大吉建築師事務所、許華山建築師事務所'],
+    ['建築設計', '呂大吉建築師事務所'],
     ['接待中心', '台北市中正區齊東街70巷15號旁'],
     ['建照號碼', '109建字第0215號'],
     ['企劃銷售', '力天開發股份有限公司'],
