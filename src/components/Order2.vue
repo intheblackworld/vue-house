@@ -106,7 +106,7 @@
           <div class="control" data-aos="fade-down" data-aos-delay="500">
             <div class="control-desc">
               新北市新店區安興路105號10樓之7<br />
-              P 02-2211-7711 / F 02-2212-3760
+              P (02)2211-3513 / F (02)2211-3875
             </div>
           </div>
           <div class="links flex-ac flex-js">
