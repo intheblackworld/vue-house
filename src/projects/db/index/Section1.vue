@@ -99,8 +99,8 @@
 }
 
 .t {
-  @include img_r_pc(1400, 0, 0);
-  top: calc(35% - 21vw);
+  @include img_r_pc(1920, 0, 0);
+  top: calc(35% - 25vw);
 }
 
 .title {

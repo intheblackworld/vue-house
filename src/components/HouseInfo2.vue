@@ -124,7 +124,7 @@ export default {
 }
 
 .logo {
-  @include img_l_pc(889, -50, 36);
+  @include img_l_pc(889, -50, 0);
 }
 
 .logot {
@@ -198,7 +198,7 @@ export default {
   }
 
   .logo {
-    @include img_r_m(500, 10, 0);
+    @include img_r_m(500, 10, -28);
   }
 
   .logot {
