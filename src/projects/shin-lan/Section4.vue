@@ -13,7 +13,7 @@
           <div class="flex-ac flex-jb">
             <div class="case-title" v-html="current_case.title"></div>
           </div>
-          <div class="case-desc" v-html="current_case.desc"></div>
+          <div class="case-desc" v-html="current_case.desc_home"></div>
           <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged" v-if="isMobile">
             <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide.img + index">
               <img :src="slide.img" :class="`item-img`" />

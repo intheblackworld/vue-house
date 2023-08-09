@@ -4,7 +4,7 @@
       <transition-group class="item-list flex" name="slide-fade" mode="out-in" tag="div">
         <div v-scroll-to="{ element: `#container2` }" class="item" v-for="(item) in current_media_list" :key="item.title + item.index" @click="handlePlay(item.index);isDialog=true">
           <img :src="item.img" alt="" class="video-img">
-          <div>
+          <div class="video-contant">
             <div class="video-title" v-html="item.title"></div>
             <div class="video-hr"></div>
             <div class="video-desc" v-html="item.desc"></div>
@@ -171,6 +171,13 @@
   }
 }
 
+.video-contant{
+  padding: size(0) size(15);
+  @include md {
+  padding: 0;
+  }
+}
+
 .video-title {
   font-size: size(28);
   font-weight: 500;
@@ -182,7 +189,7 @@
   color: #000;
   margin-top: size(25);
   @include md {
-    margin-top: sizem(25);
+    margin: sizem(25) auto sizem(0);
     font-size: sizem(24);
     font-weight: 500;
     font-stretch: normal;
@@ -191,6 +198,7 @@
     letter-spacing: normal;
     text-align: center;
     color: #000;
+    width: sizem(170);
   }
 }
 
@@ -205,7 +213,7 @@
 }
 
 .video-desc {
-  width: 60%;
+  width: 100%;
   font-size: size(18);
   font-weight: normal;
   font-stretch: normal;
