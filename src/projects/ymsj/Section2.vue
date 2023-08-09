@@ -200,9 +200,8 @@
   }
   .video_box {
     width: 100%;
-    position: absolute;
-    height: calc(100% + 200px * 2);
-    top: -200px;
+    position: absolute;height: 100%;
+    top: 0;
     left: 0;
     z-index: 5;
   }
