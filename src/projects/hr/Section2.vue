@@ -289,7 +289,7 @@ export default {
       slideList: [
         {
           img:require('./s2/1.jpg'),
-          name: '盛雲康寓外觀',
+          name: '智醫康寓外觀',
         },
         {
           img:require('./s2/2.jpg'),
