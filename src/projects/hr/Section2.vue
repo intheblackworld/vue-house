@@ -22,7 +22,7 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200" >智醫康寓</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">位於敏盛智醫城盛弘醫藥股份有限公司投資，並全力發展智醫康寓健康生活飯店寓所。<br />
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">位於敏盛智醫城-盛弘醫藥股份有限公司投資，並全力發展智醫康寓健康生活飯店寓所。<br />
 以AIoT打造全新智慧飯店管理系統，結合敏盛醫療體系內的資源，以「健康管理」與「健康生活」作為服務的骨幹，讓每一位旅客都能擁有美好生活的幸福住房體驗。<br />
 「健康」，是我們品牌的核心價值。</div>
       </div>
