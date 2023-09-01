@@ -295,6 +295,12 @@ export default {
         {
           icon: require('./s1/icon2.png'),
           type: 2,
+          desc: '【好房網】中和新成屋攀上8字頭！專家揭不敗原因：高總價也買單',
+          img: require('../newimg/18/2.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
           desc: '【鏡周刊】新北「這區」CP值高！親民房價擄獲大量首購族芳心',
           img: require('../newimg/17/1.jpg'),
         },
