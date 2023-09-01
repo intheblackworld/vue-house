@@ -392,6 +392,14 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【快樂王國】蘆洲捷運一站到家 新蘆特區水岸寓言',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/ZDl73OcOiuk',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:1,
           title: '【理享城】快樂王國2理享城｜蘆洲下一站 萬坪公園城',
           desc: '',
