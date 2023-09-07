@@ -997,10 +997,10 @@ export default {
         {
           title: '預推<br />個案',
           title2: '預推個案',
-          desc: '高雄市｜楠梓高大特區<br />敬請期待 COMING SOON',
+          desc: '高雄市｜S科技廊道正核心 高大特區<br />21-35坪<br />台灣十大建商 前進高雄代表作',
           img: require('../works/10/1.jpg'),
           isEmpty: false,
-          info1: '高雄市｜楠梓高大特區<br />敬請期待 COMING SOON',
+          info1: '高雄市｜S科技廊道正核心 高大特區<br />21-35坪<br />台灣十大建商 前進高雄代表作',
           info2: '敬請期待 COMING SOON',
           info3: '',
           contact: '',
