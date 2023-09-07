@@ -980,23 +980,6 @@ export default {
         {
           title: '預推<br />個案',
           title2: '預推個案',
-          desc: '基隆市｜站前特區<br />站前四鐵特區 國門廣場對坐<br />基隆山河海灣大景即將現身',
-          img: require('../works/11/1.jpg'),
-          isEmpty: false,
-          info1: '基隆市｜站前特區<br />敬請期待 COMING SOON',
-          info2: '敬請期待 COMING SOON',
-          info3: '',
-          contact: '',
-          link: '',
-          logo: require('../works/11/1.jpg'),
-          imgs: [
-            require('../works/11/2.jpg'),],
-          hint: '',
-          label: '',
-        },
-        {
-          title: '預推<br />個案',
-          title2: '預推個案',
           desc: '高雄市｜S科技廊道正核心 高大特區<br />21-35坪<br />台灣十大建商 前進高雄代表作',
           img: require('../works/10/1.jpg'),
           isEmpty: false,
@@ -1011,6 +994,24 @@ export default {
           hint: '',
           label: '',
         },
+        {
+          title: '預推<br />個案',
+          title2: '預推個案',
+          desc: '基隆市｜站前特區<br />站前四鐵特區 國門廣場對坐<br />基隆山河海灣大景即將現身',
+          img: require('../works/11/1.jpg'),
+          isEmpty: false,
+          info1: '基隆市｜站前特區<br />敬請期待 COMING SOON',
+          info2: '敬請期待 COMING SOON',
+          info3: '',
+          contact: '',
+          link: '',
+          logo: require('../works/11/1.jpg'),
+          imgs: [
+            require('../works/11/2.jpg'),],
+          hint: '',
+          label: '',
+        },
+        
         //快樂王國
         {
           title: '快樂<br />王國',
