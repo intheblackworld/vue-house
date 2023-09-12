@@ -46,7 +46,7 @@
       <!--
       <vue-lazy-component class="section" id="section9" style="">
          <Section9 />
-      </vue-lazy-component>
+      </vue-lazy-component>   -->
     <VideoSection1
       :playBtn="require('@/projects/great-intersection/video/play-btn.png')"
       title="影片區標題"
@@ -79,7 +79,7 @@
         },
       ]"
     />
-    -->
+ 
       <!-- 
       <vue-lazy-component class="section" id="section12" style="">
          <Section12 />
@@ -138,10 +138,10 @@ import Section8 from '@/projects/great-intersection/Section8.vue'
 import Section10 from '@/projects/great-intersection/Section10.vue'
 import Section11 from '@/projects/great-intersection/Section11.vue'
 import Section11_2 from '@/projects/great-intersection/Section11-2.vue'
+import VideoSection1 from '@/components/VideoSection1.vue'
 
 /* 
 import Section9 from '@/projects/great-intersection/Section9.vue'
-import VideoSection1 from '@/components/VideoSection1.vue'
  */
 
 export default {
@@ -166,9 +166,9 @@ export default {
     Section10,
     Section11,
     Section11_2,
+    VideoSection1,
     /*
     Section9,
-    VideoSection1,
     Section12,
     Section6,
     */
