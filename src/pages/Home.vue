@@ -56,25 +56,7 @@
         {
           title: '單影片1標題',
           img: require('@/projects/great-intersection/video/1.jpg'),
-          video: 'https://www.youtube.com/embed/5rrIx7yrxwQ?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '單影片2標題',
-          img: require('@/projects/great-intersection/video/2.jpg'),
-          video: 'https://www.youtube.com/embed/CiiggJ71tng?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '單影片3標題',
-          img: require('@/projects/great-intersection/video/3.jpg'),
-          video: 'https://www.youtube.com/embed/GKquUwHLkHc?&enablejsapi=1&playerapiid=ytplayer',
-          isPlay: false,
-        },
-        {
-          title: '單影片4標題',
-          img: require('@/projects/great-intersection/video/4.jpg'),
-          video: 'https://www.youtube.com/embed/q44byNXKSUI?&enablejsapi=1&playerapiid=ytplayer',
+          video: 'https://www.youtube.com/embed/n12AL8zWxdY?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
         },
       ]"
