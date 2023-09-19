@@ -49,12 +49,12 @@
       </vue-lazy-component>   -->
     <VideoSection1
       :playBtn="require('@/projects/great-intersection/video/play-btn.png')"
-      title="影片區標題"
+      title="勝麗交響曲"
       :close="require('@/projects/great-intersection/video/close.png')"
       :arrows="[require('@/projects/great-intersection/video/arrow-left.png'), require('@/projects/great-intersection/video/arrow-right.png')]"
       :slideList="[
         {
-          title: '單影片1標題',
+          title: '新站重劃區動能無限',
           img: require('@/projects/great-intersection/video/1.jpg'),
           video: 'https://www.youtube.com/embed/n12AL8zWxdY?&enablejsapi=1&playerapiid=ytplayer',
           isPlay: false,
