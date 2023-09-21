@@ -9,6 +9,9 @@
     </a>
 
 
+      <img src="./s1/style1.png" class="style style1" />
+      <img src="./s1/style2.png" class="style style2" />
+      <img src="./s1/style3.png" class="style style3" />
     <div class="imglt" data-aos="zoom-in" data-aos-delay="0" >
     <img src="./all/f2.png" class="f2" />
     </div>
@@ -20,7 +23,6 @@
     <img src="./s1/t1.png" class="t1" />
       <img src="./s1/light2.png" class="light" />
       <img src="./s1/logo.png" class="logo" />
-      <img src="./s1/style.png" class="style" />
 
   </div>
 </template>
@@ -29,17 +31,12 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  background: linear-gradient(to bottom, #F35A1F, #AF0028);
+  background: linear-gradient(to bottom, #f3861f, #F35A1F 30%, #AF0028);
   width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080);
   position: relative;
-  //overflow:hidden;
-  // background: url("./s1/bg.jpg") center;
-  // background-size: 100% auto;
-
-
 }
 
 .lineicon{
@@ -83,7 +80,7 @@ animation: an 3s -.4s ease-in-out infinite alternate;}
 animation: an 3s -.6s ease-in-out infinite alternate;}
 
 }
-.imgrc{position:absolute;top: 0%;right: 0;transform-origin: 100% 50%; z-index: 2;
+.imgrc{position:absolute;top: 0%;right: 0;transform-origin: 100% 50%; z-index:2;
 img{position:absolute;}
 .f1{width:size(600);top:size(84);right:size(-273);transform-origin: 90% 100%;transform: rotate(-4deg);
 animation: an 3s -.2s ease-in-out infinite alternate;}
@@ -136,20 +133,20 @@ animation: an3 3s ease-in-out infinite alternate;}
   position: absolute;
   width:size(906);
   top: size(190);
-  left:size(463);
+  left:size(458);
 }
 .logo{
   position: absolute;
   width:size(495);
   top: size(709);
-  left:size(731);
+  left:size(701);
 }
 
 .light{
   position: absolute;
   width:size(450);
   top: size(649);
-  right:size(455);
+  right:size(485);
   z-index: 2;
 }
 .style{
@@ -158,11 +155,13 @@ animation: an3 3s ease-in-out infinite alternate;}
   top: size(-180);
   left:size(-30);
   mix-blend-mode:plus-lighter;
-  z-index: 0;
+  z-index: 2;
   opacity: 1;
   animation: style 1s ease-in-out infinite alternate;
 
 }
+.style2{animation-delay: -.5s;}
+.style3{animation-delay: -1s;}
 
 @keyframes style{
   to{
@@ -211,20 +210,20 @@ animation: an3 3s ease-in-out infinite alternate;}
 .t1{
   width:sizem(300);
   top: sizem(170);
-  left:sizem(30);
+  left:sizem(25);
 }
 .logo{
   position: absolute;
   width:sizem(200);
   top: sizem(340);
-  left:sizem(85);
+  left:sizem(88);
 }
 
 .light{
   position: absolute;
   width:sizem(250);
   top: sizem(305);
-  right:sizem(-32);
+  right:sizem(-35);
   z-index: 2;
 
 }
