@@ -376,6 +376,14 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
+          type:1,
+          title: '【理享城】快樂王國2理享城',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/tdcdB3jC8z0',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:3,
           title: '【雙橡園】產官攜手新十大建設｜雙橡園贏接副都心起漲盛世',
           desc: '',
