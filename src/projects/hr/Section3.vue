@@ -24,10 +24,10 @@
       </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">周邊三大百貨、商圈<br>步行皆可達</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">鄰近桃園火車站商圈，步行５分鐘：<br>
-遠東百貨、新光三越、統領百貨、美食街、威秀影城，<br>
-生活機能便利，適合休閒、約會、洽公。
+      <div class="title" data-aos="fade-up" data-aos-delay="200">桃園火車站400米</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">步行5分鐘即享有桃園車站商圈的完整生活機能<br>
+台北車站30分鐘車程，商務通勤最佳選擇。<br>
+桃園機場35分鐘車程，旅客出入境最便利。
 </div>
       </div>
     </div>
