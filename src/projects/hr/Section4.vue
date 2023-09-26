@@ -76,11 +76,11 @@ float: left;
   font-weight: 500;
   line-height: 1.4;
   z-index: 1;
-  margin-right: 0;
+  // margin-right: 0;
   display: flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
   }
 
 .title{
