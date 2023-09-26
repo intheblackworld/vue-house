@@ -27,11 +27,13 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">康健生活新趨勢</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">健身房<br />
-馨據點-建構中即將完成<br />
-健康餐廳-建構中即將完成<br />
-智慧藥局-建構中即將完成
-</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">活力健身房<br />
+輕運動健康館<br />
+智醫診所&躍獅智醫城藥局<br />
+艾薇美 健康管理&醫美中心<br />
+躍獅樂活生活館-建置中即將完成<br /><br />
+
+可測量身體組成分析、體驗健身鏡等智慧健身器材，由藥師根據量測數據提供保健諮詢、營養補充建議。</div>
       </div>
     </div>
   </div>
@@ -314,6 +316,27 @@ export default {
           name: '健身房 實際以現場為主',
         },
         {
+          img:require('./s7/5.jpg'),
+          name: '輕運動健康館 實際以現場為主',
+        },
+        {
+          img:require('./s7/6.jpg'),
+          name: '智醫診所 實際以現場為主',
+        },
+        {
+          img:require('./s7/7.jpg'),
+          name: '躍獅智醫城藥局 實際以現場為主',
+        },
+        {
+          img:require('./s7/8.jpg'),
+          name: '艾薇美-櫃台 實際以現場為主',
+        },
+        {
+          img:require('./s7/9.jpg'),
+          name: '艾薇美-貴賓接待區 實際以現場為主',
+        },
+        /*
+        {
           img:require('./s7/2.jpg'),
           name: '馨據點-建構中 實際以現場為主',
         },
@@ -324,7 +347,7 @@ export default {
         {
           img:require('./s7/4.jpg'),
           name: '智慧藥局-建構中 實際以現場為主',
-        },
+        },*/
       ],
     }
   },

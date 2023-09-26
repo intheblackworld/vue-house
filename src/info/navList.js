@@ -1,9 +1,9 @@
 export default [
   /* */
-  { name: '上市品牌', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
-  { name: '車站商圈', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:0,  type: '' },
-  { name: '三大百貨', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:-60,mobileOffset:0, type: '' },
-  { name: '精緻飯店寓所', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
+  { name: '關於康寓', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
+  { name: '市區生活', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:0,  type: '' },
+  { name: '百貨商圈', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:-60,mobileOffset:0, type: '' },
+  { name: '精緻寓所', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
   { name: '商務服務', imgSrc: '', subTitle: '', section: 'section6', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
   { name: '康健生活', imgSrc: '', subTitle: '', section: 'section7', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
   { name: '交通資訊', imgSrc: '', subTitle: '', section: 'section8', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },

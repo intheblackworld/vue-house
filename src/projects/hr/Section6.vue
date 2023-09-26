@@ -26,9 +26,12 @@
       </div>
       <div class="txt">
       <div class="title" data-aos="fade-up" data-aos-delay="200">專為商務人士打造</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">智慧check in-建構中即將完成<br />
-餐飲服務-建構中即將完成<br />
-國際商務中心-建構中即將完成
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">智慧咖啡廳<br />
+自助洗衣房<br />
+行李寄放服務區<br />
+已付費包裹代收<br />
+智慧check in-測試中即將完成<br />
+健康餐飲服務-建置中即將完成
 </div>
       </div>
     </div>
@@ -308,19 +311,19 @@ export default {
       slideList: [
         {
           img:require('./s6/1.jpg'),
-          name: '智慧check in-建構中 實際以現場為主',
+          name: '智慧check in-測試中 實際以現場為主',
         },
         {
           img:require('./s6/2.jpg'),
           name: '餐飲服務-建構中 實際以現場為主',
-        },
+        },/*
         {
           img:require('./s6/3.jpg'),
           name: '國際商務中心-建構中 實際以現場為主',
-        },
+        },*/
         {
           img:require('./s6/4.jpg'),
-          name: '智慧大堂吧 實際以現場為主',
+          name: '智慧咖啡聽 實際以現場為',
         },
         {
           img:require('./s6/5.jpg'),

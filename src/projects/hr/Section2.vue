@@ -303,6 +303,10 @@ export default {
           img:require('./s2/4.jpg'),
           name: '接待區 實際以現場為主',
         },
+        {
+          img:require('./s2/5.jpg'),
+          name: '安全管制閘門 實際以現場為主',
+        },
       ],
     }
   },
