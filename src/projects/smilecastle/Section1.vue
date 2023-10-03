@@ -115,6 +115,15 @@ animation: an3 3s ease-in-out infinite alternate;}
   }
 }
 
+.lineicon{
+  position: fixed;
+  width: size(80);
+  height: size(80);
+  right: size(20);
+  bottom: size(120);
+  z-index: 99;
+}
+
 .txt{
   position: relative;
   // top:calc(50% + (253 - 540) * 100vw / 1920);

@@ -3,6 +3,9 @@
     <!-- 
     <img src="./s1/mo.jpg" class="t0" />
    -->
+   <a href="https://line.me/R/ti/p/@666gkgdi" target="_blank" v-if="!isMobile">
+    <img src="./s1/lineicon.png" class="lineicon" data-aos="zoom-in" data-aos-delay="200" /> 
+    </a>
     <div class="bg">
     <img src="./s1/bg.jpg" data-aos="fade" />
    </div>
@@ -85,6 +88,15 @@
   // background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
 }
+
+.lineicon{
+  position: fixed;
+  width: size(80);
+  height: size(80);
+  right: size(20);
+  bottom: size(120);
+  z-index: 99;
+}
 .bg{
   position: absolute;
   width:size(2000);height:auto;
@@ -147,6 +159,7 @@
   padding: 0 0 0.1em 0;
   width:size(620);
     }
+    
 
 }
 /* 螢幕尺寸標準 */

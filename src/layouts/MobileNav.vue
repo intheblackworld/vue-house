@@ -17,6 +17,10 @@
       <font-awesome-icon icon="map-marker-alt" />
       <div class="label">地圖導航</div>
     </a>
+    <a class="nav-item" href="https://line.me/R/ti/p/@666gkgdi" target="_blank">
+      <font-awesome-icon icon="map-marker-alt" />
+      <div class="label">Line</div>
+    </a>
     <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
       <CallDialog :phone="info.phone" />
     </el-dialog>
@@ -114,7 +118,7 @@ export default {
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
 
-    &:nth-child(4) {
+    &:nth-child(5) {
       border-right: none;
     }
   }
