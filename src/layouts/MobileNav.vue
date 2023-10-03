@@ -18,7 +18,7 @@
       <div class="label">地圖導航</div>
     </a>
     <a class="nav-item" href="https://line.me/R/ti/p/@666gkgdi" target="_blank">
-      <font-awesome-icon icon="map-marker-alt" />
+      <img src="../assets/img/lineicon.png" alt="立炘數位" />
       <div class="label">Line</div>
     </a>
     <el-dialog title :visible.sync="isShowCallDialog" width="90%" :modal-append-to-body="false">
@@ -111,12 +111,13 @@ export default {
   .nav-item {
     flex: 1;
     color: $mobile_nav_color;
-    font-size: 1rem;
+    font-size: 13px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-right: 1px solid $mobile_nav_border;
+    text-decoration:none;
 
     &:nth-child(5) {
       border-right: none;
@@ -129,8 +130,15 @@ export default {
     color: $mobile_nav_icon;
   }
 
+  img{
+    height: 23px !important;
+    width: auto;
+  }
+
+
   .label {
     text-align: center;
+    margin-top: 3px;
   }
 }
 
