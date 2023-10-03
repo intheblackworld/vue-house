@@ -376,6 +376,14 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【太陽帝國】摩天制震鋼骨 22-34坪高訂美學',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/v51wWBfoDgA',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:1,
           title: '【理享城】快樂王國2理享城',
           desc: '',
