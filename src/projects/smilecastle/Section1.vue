@@ -3,6 +3,9 @@
     <!-- 
     <img src="./s1/mo.jpg" class="t0" />
    -->
+   <a href="https://lin.ee/Ek7kHw1" target="_blank" v-if="!isMobile">
+    <img src="./s1/lineicon.png" class="lineicon" data-aos="zoom-in" data-aos-delay="200" /> 
+    </a>
     <img src="./s1/0.png" class="img0" data-aos="zoom-in" data-aos-delay="200" />
 
    
