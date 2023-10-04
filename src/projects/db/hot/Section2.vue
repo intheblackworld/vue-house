@@ -936,6 +936,24 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
+
+        {
+          title: '海揚V1',
+          title2: '海揚V1',
+          desc: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
+          img: require('../works/11/1.jpg'),
+          isEmpty: false,
+          info1: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
+          info2: '投資興建：漢翔建設<br />規劃坪數：16-27坪',
+          info3: '基隆帝王 港景首排<br />基隆的成就，我們的窗景<br />海洋新國門｜站前四鐵特區｜首開世界豪門',
+          contact: '貴賓專線｜02-2425-1111<br />接待會館｜<br>基隆市中山區中山一路265號',
+          link: 'https://seav1.debang.tw/',
+          logo: require('../works/11/1.jpg'),
+          imgs: [
+            require('../works/11/2.jpg'),],
+          hint: '',
+          label: '',
+        },
          //預推個案
         {
           title: '理享城',
@@ -991,23 +1009,6 @@ export default {
           logo: require('../works/10/1.jpg'),
           imgs: [
             require('../works/10/2.jpg'),],
-          hint: '',
-          label: '',
-        },
-        {
-          title: '預推<br />個案',
-          title2: '預推個案',
-          desc: '基隆市｜站前特區<br />站前四鐵特區 國門廣場對坐<br />基隆山河海灣大景即將現身',
-          img: require('../works/11/1.jpg'),
-          isEmpty: false,
-          info1: '基隆市｜站前特區<br />敬請期待 COMING SOON',
-          info2: '敬請期待 COMING SOON',
-          info3: '',
-          contact: '',
-          link: '',
-          logo: require('../works/11/1.jpg'),
-          imgs: [
-            require('../works/11/2.jpg'),],
           hint: '',
           label: '',
         },
