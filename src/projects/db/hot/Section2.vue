@@ -962,9 +962,9 @@ export default {
           img: require('../works/14/1.jpg'),
           isEmpty: false,
           info1: '新北市｜洲子洋重劃<br />新蘆特區19-33坪<br />蘆洲下一站 萬坪公園城',
-          info2: '敬請期待 COMING SOON',
-          info3: '',
-          contact: '',
+          info2: '投資興建：德裕建設股份有限公司<br />規劃坪數：16-33坪',
+          info3: '蘆洲下一站 萬坪公園城<br />蘆洲捷運 一站到家<br />新蘆特區公園水岸造鎮<br />2-3房捷運夢享家',
+          contact: '貴賓專線｜02-8292-3777<br />接待會館｜<br />新北市五股區成泰路三段356號旁',
           link: 'https://wl2.debang.tw/',
           logo: require('../works/14/1.jpg'),
           imgs: [
