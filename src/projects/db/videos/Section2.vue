@@ -376,6 +376,22 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
+          type:1,
+          title: '【高大之森】楠梓科技城 增值理想國',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/u-HebUtFZSk',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【理享城】新北地表奇蹟 萬坪水岸公園造鎮',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/22gsCcE5ccI',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:3,
           title: '【太陽帝國】摩天制震鋼骨 22-34坪高訂美學',
           desc: '',

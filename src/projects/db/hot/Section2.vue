@@ -937,6 +937,24 @@ export default {
       ],
       item_list: [
 
+      {
+          title: '預推<br>個案',
+          title2: '預推個案',
+          desc: '新北市｜新莊副都心<br />副都中心 天生為王 即將公開',
+          img: require('../works/15/1.jpg'),
+          isEmpty: false,
+          info1: '新北市｜新莊副都心<br />副都中心 天生為王 即將公開',
+          info2: '即將公開',
+          info3: '',
+          contact: '',
+          link: 'https://wen.debang.tw/',
+          logo: require('../works/15/1.jpg'),
+          imgs: [
+            require('../works/15/2.jpg'),],
+          hint: '',
+          label: '',
+        },
+
         {
           title: '海揚V1',
           title2: '海揚V1',
