@@ -968,8 +968,12 @@ export default {
           link: 'https://seav1.debang.tw/',
           logo: require('../works/11/1.jpg'),
           imgs: [
-            require('../works/11/2.jpg'),],
-          hint: '',
+            require('../works/11/3.jpg'),
+            require('../works/11/4.jpg'),
+            require('../works/11/5.jpg'),
+            require('../works/11/6.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
          //預推個案
@@ -986,8 +990,12 @@ export default {
           link: 'https://wl2.debang.tw/',
           logo: require('../works/14/1.jpg'),
           imgs: [
-            require('../works/14/2.jpg'),],
-          hint: '',
+            require('../works/14/3.jpg'),
+            require('../works/14/4.jpg'),
+            require('../works/14/5.jpg'),
+            require('../works/14/6.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
         {
@@ -1026,8 +1034,12 @@ export default {
           link: '',
           logo: require('../works/10/1.jpg'),
           imgs: [
-            require('../works/10/2.jpg'),],
-          hint: '',
+            require('../works/10/3.jpg'),
+            require('../works/10/4.jpg'),
+            require('../works/10/5.jpg'),
+            require('../works/10/6.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
         
