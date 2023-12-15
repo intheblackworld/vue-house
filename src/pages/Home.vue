@@ -109,7 +109,7 @@ import Loading from '@/components/Loading.vue'
 import UIkit from 'uikit';
 // import LeafFlow from '@/components/LeafFlow.vue'
 
-import Section1 from '@/projects/great-intersection/Section1.vue'
+import Section1 from '@/projects/great-intersection/Section1-3.vue'
 import Section2 from '@/projects/great-intersection/Section2.vue'
 import Section3 from '@/projects/great-intersection/Section3.vue'
 import Section4 from '@/projects/great-intersection/Section4.vue'
