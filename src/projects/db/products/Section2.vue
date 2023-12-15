@@ -923,6 +923,31 @@ export default {
         //},
         //陽光
         {
+          title: '神采<br />飛洋',
+          title2: '神采飛洋',
+          desc: '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />別人的是房 自己的才是家',
+          img: require('../works/3/0.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜洲子洋重劃區<br />2房(15、20坪)｜3房(25、33坪)<br />別人的是房 自己的才是家',
+          info2:
+            '投資興建：茂德建設股份有限公司<br />格局規劃：二房(15、20坪) 、 三房(25、33坪)',
+          info3:
+            '洲子洋中央核心區<br />坐擁公園×水岸×交通×生活機能<br />低總價、10%低自備、低月付',
+          contact:
+            '貴賓專線｜02-8295-1777<br />接待會館｜新北市五股區<br />新北市五股區新城八路336號',
+          link: 'https://hoh.h35.tw/',
+          logo: require('../works/3/0.jpg'),
+          imgs: [
+            require('../works/3/1.jpg'),
+            require('../works/3/2.jpg'),
+            require('../works/3/3.jpg'),
+            require('../works/3/4.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+        {
           title: 'SKY 1',
           title2: 'SKY 1',
           desc: '新北市｜洲子洋特區<br />16-33坪<br />大都會公園首席，水岸豪景地標',
