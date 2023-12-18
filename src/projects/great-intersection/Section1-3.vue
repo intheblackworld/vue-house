@@ -3,7 +3,7 @@
    <!--  
     <img class="a1" src="./s1/mo.jpg" alt="" />
   -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSehEuK9LP1pQfQd1vGEdzPb5N8LOeznDIa3u-yYdd275YWZvg/viewform" target="_blank">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUVKtkaITUuRdcHZZDr-L4Dgj3il54mSqe2kCevrcHwXkiqA/viewform" target="_blank">
     <img src="./s1/bg.png" v-if="!isMobile" alt="" />
     <img src="./s1/bgm.png" v-else alt="" />
     <!-- 
