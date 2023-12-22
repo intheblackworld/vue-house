@@ -7,7 +7,7 @@ export default {
   phone: '03-325-9925',
   fbLink: 'https://www.facebook.com/102447382596524',
   fbMessage: 'https://m.me/102447382596524',
-  caseName: '盛雲康寓',
+  caseName: '智醫康寓',
   indigatorLength: 10,
 
   houseInfos: [
