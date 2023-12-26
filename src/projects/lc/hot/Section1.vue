@@ -1073,6 +1073,7 @@ export default {
           alt: '',
           name: '琢渼',
         },
+        /*
         {
           img: require('../works/4/01.jpg'),
           alt: '',
@@ -1087,7 +1088,7 @@ export default {
           img: require('../works/4/01.jpg'),
           alt: '',
           name: '琢壹',
-        },
+        },*/
       ],
       /*
       slideList2: [

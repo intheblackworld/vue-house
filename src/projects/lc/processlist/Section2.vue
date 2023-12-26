@@ -308,7 +308,7 @@ export default {
         {
           img: require('../works/4/01.jpg'),
           title: '2023 琢壹',
-          subtitle: '熱銷中 ，預計2026年初完工',
+          subtitle: '已完售，預計2026年初完工',
           isFinished: true,
         },
         {

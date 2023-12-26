@@ -968,7 +968,20 @@ export default {
         [ //琢壹
           {
             o_title: '2023 琢壹',
-            o_subtitle: '熱銷中 ，預計2026年初完工',
+            o_subtitle: '已完售，預計2026年初完工',
+            img: require('../process/list/26/1_0.jpg'),
+            title: '2023/12',
+            subtitle: '地樑及大底灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/26/1_0.jpg'),
+              require('../process/list/26/2_0.jpg'),
+              require('../process/list/26/3_0.jpg'),
+              require('../process/list/26/4_0.jpg'),
+              require('../process/list/26/5_0.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/25/1.jpg'),
             title: '2023/06',
             subtitle: '連續壁工程查驗',
