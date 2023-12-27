@@ -6,8 +6,8 @@
     </h3>
   <!--  圖片寬度隨個數變化  字可以放在圖上(把t1t2拿掉)也可以直接打文字  index=1 是內頁設定  所以放新的請檢查一下-->
     <div class="list">
-    <div class="img" @click="$router.push('/hot?index=1#section1')"><img src="./s4/05.jpg" alt="" /><span class="t1">淡水淡海段</span><span class="t2">琢渼</span></div>
-    <div class="img" @click="$router.push('/hot?index=2#section1')"><img src="./s4/04.jpg" alt="" /><span class="t1">汐止北山段</span><span class="t2">琢壹</span></div>
+   <div class="img" @click="$router.push('/hot?index=1#section1')"><img src="./s4/05.jpg" alt="" /><span class="t1">淡水淡海段</span><span class="t2">琢渼</span></div>
+   <!--   <div class="img" @click="$router.push('/hot?index=2#section1')"><img src="./s4/04.jpg" alt="" /><span class="t1">汐止北山段</span><span class="t2">琢壹</span></div>-->
   </div>
 
 
