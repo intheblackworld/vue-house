@@ -1,6 +1,6 @@
 <template>
   <div class="section2">
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 0">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 4 === 0">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList1" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
@@ -8,13 +8,13 @@
             <div class="slide-name absolute" v-html="slide.name"></div>
           </div>
         </transition-group>
-        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+        <!-- <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
           <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex(1)">
           <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex(1)">
-        </div>
+        </div> --> 
       </div>
     </div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 1">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 4 === 1">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList2" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 3 === 2">
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 4 === 2">
       <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
         <transition-group name="swipe-fade" mode="out-in">
           <div v-for="(slide, i) in slideList3" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
@@ -42,6 +42,20 @@
         </div>
       </div>
     </div>
+    <div class="swipe absolute" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" v-if="contentIndex % 4 === 3">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList4" v-show="slideIndex === i && imageLoaded" :key="slide.img" :class="`swipe-item absolute`">
+            <img :src="slide.img" alt="" @load="imageLoaded = true">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
+          <img src="../about/s3/l.png" alt="" class="prev-btn" @click="decIndex(4)">
+          <img src="../about/s3/r.png" alt="" class="next-btn" @click="addIndex(4)">
+        </div>
+      </div>
+    </div>
     <div class="txt">
       <div class="content-title" v-html="contentList[contentIndex].title"></div>
       <div class="content-desc" v-html="contentList[contentIndex].desc"></div>
@@ -49,14 +63,17 @@
         官網賞析
       </a>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 0">
+  <!--  <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 4 === 0">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList1" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-    </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 1">
+    </div> --> 
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 4 === 1">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList2" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
-    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 3 === 2">
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 4 === 2">
       <div :class="`pagination-dot`" v-for="(slide, index) in slideList3" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+    </div>
+    <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC && contentIndex % 4 === 3">
+      <div :class="`pagination-dot`" v-for="(slide, index) in slideList4" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
     </div>
   </div>
 </template>
@@ -650,6 +667,10 @@ export default {
       imageLoaded: false,
       contentList: [
         {
+          title: '琢壹',
+          desc: '<b>鼎禾建設<br>汐止北山段 琢壹</b><br>前瞻台北新東區未來潛能<br />即將在汐止中興路．康寧街口與您相見！<br />豐彩機能、精工團隊、國際建材、時尚美學<br />鼎禾匠心 與您品味相約<br />在繁中之境  收藏一座心靈的微行館！ ',
+        },
+        {
           title: '立瑾綻',
           desc: '<b>鶯歌鳳福段 立瑾綻</b><br>2021年7月份<br>有多少少年年輕時在外打拼<br>只為了有天可以孝敬長輩<br>有多少已進入老邁的年紀<br>仍住著每天爬樓梯的老舊房子<br><b>立瑾建築</b>用心打造三代同堂的溫情住宅',
           link: 'https://jhan.lc-h35.tw/',
@@ -666,13 +687,18 @@ export default {
       ],
       slideList1: [
         {
+          img:isMobile? require('../works/4/01.jpg') : require('../works/4/1.jpg'),
+        },
+      ],
+      slideList2: [
+        {
           img: require('../works/3/1.jpg'),
         },
         {
           img: require('../works/3/2.jpg'),
         },
       ],
-      slideList2: [
+      slideList3: [
         {
           img: require('../works/1/1.jpg'),
         },
@@ -683,7 +709,7 @@ export default {
           img: require('../works/1/5.jpg'),
         },
       ],
-      slideList3: [
+      slideList4: [
         {
           img: require('../works/2/1.jpg'),
         },

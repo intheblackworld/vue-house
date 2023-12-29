@@ -300,6 +300,10 @@ export default {
       imgHeight: window.innerWidth * 0.156,
       slideList: [
         {
+          img: require('../works/4/01.jpg'),
+          name: '琢壹',
+        },
+        {
           img: require('../works/3/1.jpg'),
           name: '立瑾綻',
         },
