@@ -936,91 +936,7 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
-
-      {
-          title: '預推<br>個案',
-          title2: '預推個案',
-          desc: '新北市｜新莊副都心<br />副都中心 天生為王 即將公開',
-          img: require('../works/15/1.jpg'),
-          isEmpty: false,
-          info1: '新北市｜新莊副都心<br />副都中心 天生為王 即將公開',
-          info2: '即將公開',
-          info3: '',
-          contact: '',
-          link: 'https://wen.debang.tw/',
-          logo: require('../works/15/1.jpg'),
-          imgs: [
-            require('../works/15/2.jpg'),],
-          hint: '',
-          label: '',
-        },
-
-        {
-          title: '海揚V1',
-          title2: '海揚V1',
-          desc: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
-          img: require('../works/11/1.jpg'),
-          isEmpty: false,
-          info1: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
-          info2: '投資興建：漢翔開發股份有限公司<br />規劃坪數：16-27坪',
-          info3: '基隆帝王 港景首排<br />基隆的成就，我們的窗景<br />海洋新國門｜站前四鐵特區｜首開世界豪門',
-          contact: '貴賓專線｜02-2425-1111<br />接待會館｜<br>基隆市中山區中山一路265號',
-          link: 'https://seav1.debang.tw/',
-          logo: require('../works/11/1.jpg'),
-          imgs: [
-            require('../works/11/3.jpg'),
-            require('../works/11/4.jpg'),
-            require('../works/11/5.jpg'),
-            require('../works/11/6.jpg'),
-            ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
-         //預推個案
-        {
-          title: '理享城',
-          title2: '理享城',
-          desc: '新北市｜洲子洋重劃新蘆特區<br />19-33坪<br />蘆洲下一站 萬坪公園城',
-          img: require('../works/14/1.jpg'),
-          isEmpty: false,
-          info1: '新北市｜洲子洋重劃<br />新蘆特區19-33坪<br />蘆洲下一站 萬坪公園城',
-          info2: '投資興建：德裕建設股份有限公司<br />規劃坪數：16-33坪',
-          info3: '蘆洲下一站 萬坪公園城<br />蘆洲捷運 一站到家<br />新蘆特區公園水岸造鎮<br />2-3房捷運夢享家',
-          contact: '貴賓專線｜02-8292-3777<br />接待會館｜<br />新北市五股區成泰路三段356號旁',
-          link: 'https://wl2.debang.tw/',
-          logo: require('../works/14/1.jpg'),
-          imgs: [
-            require('../works/14/3.jpg'),
-            require('../works/14/4.jpg'),
-            require('../works/14/5.jpg'),
-            require('../works/14/6.jpg'),
-            ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
-        {
-          title: '雙橡園',
-          title2: '雙橡園',
-          desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
-          img: require('../works/12/1.jpg'),
-          isEmpty: false,
-          info1: '新北市|副都心1%極限量<br />美式生活2-3房',
-          info2: '興建投資：精業建設',
-          info3: '雙校園Ｘ雙公園Ｘ雙捷運Ｘ雙商圈<br />家門就是校門 開窗就像開卷<br />副都心成家換屋第一志願',
-          contact: '貴賓專線｜02-2279-1188<br />接待會館｜<br>新莊區中原路101號對面',
-          link: 'https://gtcip.debang.tw/',
-          logo: require('../works/12/1.jpg'),
-          imgs: [
-          //isMobile?
-          //require('../works/12/2m.jpg') :
-          //require('../works/12/2.jpg'),
-          require('../works/12/3.jpg'),
-          require('../works/12/5.jpg'),
-          require('../works/12/6.jpg'),
-          require('../works/12/7.jpg'),],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
+        // 高大之森
         {
           title: '高大<br />之森',
           title2: '高大之森',
@@ -1030,7 +946,7 @@ export default {
           info1: '高雄市｜S科技廊道正核心 高大特區<br />21-35坪<br />台灣十大建商 前進高雄代表作',
           info2: '投資興建：中德建設<br />規劃坪數：21-35坪',
           info3: '台灣十大建商<br />前進高雄代表作<br />高大特區Σ計畫<br />國際建材臻品<br />頂級設計美學',
-          contact: '貴賓專線｜07-364-8088<br />接待會館｜<br>高雄市楠梓區藍田路x大學西路口',
+          contact: '貴賓專線｜07-364-8088<br />接待會館｜高雄市楠梓區藍田路x大學西路口',
           link: '',
           logo: require('../works/10/1.jpg'),
           imgs: [
@@ -1042,54 +958,26 @@ export default {
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
-        
-        //快樂王國
-        {
-          title: '快樂<br />王國',
-          title2: '快樂王國',
-          desc: '新北市｜洲子洋重劃新蘆特區<br />21-30坪<br />蘆洲捷運 一站到家',
-          img: require('../works/8/0.jpg'),
+
+      // 文華苑
+      {
+          title: '文華苑',
+          title2: '文華苑',
+          desc: '新北市｜新莊副都心<br />副都中心 天生為王<br />中原、中華大道角地｜19-27坪',
+          img: require('../works/15/1.jpg'),
           isEmpty: false,
-          info1: '新北市｜洲子洋重劃新蘆特區<br />21-30坪<br />蘆洲捷運 一站到家',
-          info2: '投資興建：寶德建設<br />規劃坪數：21-30坪',
-          info3: '蘆洲捷運 一站到家<br />新蘆特區公園水岸造鎮<br />戶戶邊間 雙面採光<br />夢幻全能休閒會所',
-          contact: '貴賓專線｜02-8292-3777<br />接待會館｜<br>新北市五股區成泰路三段356號旁',
-          link: 'https://wl.debang.tw/',
-          logo: require('../works/8/0.jpg'),
+          info1: '新北市｜新莊副都心<br />副都中心 天生為王<br />中原、中華大道角地｜19-27坪',
+          info2: '投資興建：<br />規劃坪數：19-27坪',
+          info3: '百利唯一地，眾勢成一王<br />中原路X中華路黃金雙軸交會角地<br />副都心豪宅富人區唯一小坪數<br />優勢而起，轄勢而生<br />「文華苑」這一席不會再有了',
+          contact: '貴賓專線｜02-2279-1188<br />接待會館｜新莊區中原路101號對面',
+          link: 'https://wen.debang.tw/',
+          logo: require('../works/15/1.jpg'),
           imgs: [
-            require('../works/8/2.jpg'),
-            require('../works/8/3.jpg'),
-            require('../works/8/4.jpg'),
-            require('../works/8/5.jpg'),],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+            require('../works/15/2.jpg'),],
+          hint: '',
           label: '',
         },
-        //伴月灣
-        {
-          title: '伴月灣',
-          title2: '伴月灣',
-          desc: '新北市｜洲子洋重劃新蘆特區<br />19-24坪<br />面水岸 近捷運 鄰公園',
-          img: require('../works/9/1.jpg'),
-          isEmpty: false,
-          info1:
-            '新北市｜洲子洋重劃新蘆特區<br />19-24坪<br />面水岸 近捷運 鄰公園',
-          info2: '投資興建：中德建設<br />規劃坪數：19-24坪',
-          info3:
-            '水岸豪景第一排<br />蘆洲捷運站5分鐘<br />新蘆特區水岸宜居<br />前迎8800坪雙公園<br />背倚5600坪生態保護區',
-          contact:
-            '貴賓專線｜02-8292-2333<br />接待會館｜<br>新北市五股區新城八路336號',
-          link: 'https://wv.debang.tw/',
-          logo: require('../works/9/1.jpg'),
-          imgs: [
-            require('../works/9/2.jpg'),
-            require('../works/9/3.jpg'),
-            require('../works/9/4.jpg'),
-            require('../works/9/5.jpg'),
-          ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
-        //太陽
+        // 太陽
         {
           title: '太陽<br />帝國',
           title2: '太陽帝國',
@@ -1114,7 +1002,123 @@ export default {
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
-        //碧波白
+
+         // 海揚V1
+        {
+          title: '海揚V1',
+          title2: '海揚V1',
+          desc: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
+          img: require('../works/11/1.jpg'),
+          isEmpty: false,
+          info1: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
+          info2: '投資興建：漢翔開發股份有限公司<br />規劃坪數：16-27坪',
+          info3: '基隆帝王 港景首排<br />基隆的成就，我們的窗景<br />海洋新國門｜站前四鐵特區｜首開世界豪門',
+          contact: '貴賓專線｜02-2425-1111<br />接待會館｜基隆市中山區中山一路265號',
+          link: 'https://seav1.debang.tw/',
+          logo: require('../works/11/1.jpg'),
+          imgs: [
+            require('../works/11/3.jpg'),
+            require('../works/11/4.jpg'),
+            require('../works/11/5.jpg'),
+            require('../works/11/6.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+         // 理享城
+        {
+          title: '理享城',
+          title2: '理享城',
+          desc: '新北市｜洲子洋重劃新蘆特區<br />19-33坪<br />蘆洲下一站 萬坪公園城',
+          img: require('../works/14/1.jpg'),
+          isEmpty: false,
+          info1: '新北市｜洲子洋重劃<br />新蘆特區19-33坪<br />蘆洲下一站 萬坪公園城',
+          info2: '投資興建：德裕建設股份有限公司<br />規劃坪數：16-33坪',
+          info3: '蘆洲下一站 萬坪公園城<br />蘆洲捷運 一站到家<br />新蘆特區公園水岸造鎮<br />2-3房捷運夢享家',
+          contact: '貴賓專線｜02-8292-3777<br />接待會館｜<br />新北市五股區成泰路三段356號旁',
+          link: 'https://wl2.debang.tw/',
+          logo: require('../works/14/1.jpg'),
+          imgs: [
+            require('../works/14/3.jpg'),
+            require('../works/14/4.jpg'),
+            require('../works/14/5.jpg'),
+            require('../works/14/6.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+        // 伴月灣
+        {
+          title: '伴月灣',
+          title2: '伴月灣',
+          desc: '新北市｜洲子洋重劃新蘆特區<br />19-24坪<br />面水岸 近捷運 鄰公園',
+          img: require('../works/9/1.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜洲子洋重劃新蘆特區<br />19-24坪<br />面水岸 近捷運 鄰公園',
+          info2: '投資興建：中德建設<br />規劃坪數：19-24坪',
+          info3:
+            '水岸豪景第一排<br />蘆洲捷運站5分鐘<br />新蘆特區水岸宜居<br />前迎8800坪雙公園<br />背倚5600坪生態保護區',
+          contact:
+            '貴賓專線｜02-8292-2333<br />接待會館｜<br>新北市五股區新城八路336號',
+          link: 'https://wv.debang.tw/',
+          logo: require('../works/9/1.jpg'),
+          imgs: [
+            require('../works/9/2.jpg'),
+            require('../works/9/3.jpg'),
+            require('../works/9/4.jpg'),
+            require('../works/9/5.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+        // 雙橡園
+        {
+          title: '雙橡園',
+          title2: '雙橡園',
+          desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
+          img: require('../works/12/1.jpg'),
+          isEmpty: false,
+          info1: '新北市|副都心1%極限量<br />美式生活2-3房',
+          info2: '興建投資：精業建設',
+          info3: '雙校園Ｘ雙公園Ｘ雙捷運Ｘ雙商圈<br />家門就是校門 開窗就像開卷<br />副都心成家換屋第一志願',
+          contact: '貴賓專線｜02-2279-1188<br />接待會館｜<br>新莊區中原路101號對面',
+          link: 'https://gtcip.debang.tw/',
+          logo: require('../works/12/1.jpg'),
+          imgs: [
+          //isMobile?
+          //require('../works/12/2m.jpg') :
+          //require('../works/12/2.jpg'),
+          require('../works/12/3.jpg'),
+          require('../works/12/5.jpg'),
+          require('../works/12/6.jpg'),
+          require('../works/12/7.jpg'),],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+        
+        // 快樂王國
+        {
+          title: '快樂<br />王國',
+          title2: '快樂王國',
+          desc: '新北市｜洲子洋重劃新蘆特區<br />21-30坪<br />蘆洲捷運 一站到家',
+          img: require('../works/8/0.jpg'),
+          isEmpty: false,
+          info1: '新北市｜洲子洋重劃新蘆特區<br />21-30坪<br />蘆洲捷運 一站到家',
+          info2: '投資興建：寶德建設<br />規劃坪數：21-30坪',
+          info3: '蘆洲捷運 一站到家<br />新蘆特區公園水岸造鎮<br />戶戶邊間 雙面採光<br />夢幻全能休閒會所',
+          contact: '貴賓專線｜02-8292-3777<br />接待會館｜<br>新北市五股區成泰路三段356號旁',
+          link: 'https://wl.debang.tw/',
+          logo: require('../works/8/0.jpg'),
+          imgs: [
+            require('../works/8/2.jpg'),
+            require('../works/8/3.jpg'),
+            require('../works/8/4.jpg'),
+            require('../works/8/5.jpg'),],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+        // 碧波白
         {
           title: '碧波白',
           title2: '碧波白',
@@ -1145,7 +1149,7 @@ export default {
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
-        //神采
+        // 神采
         
       ],
     }

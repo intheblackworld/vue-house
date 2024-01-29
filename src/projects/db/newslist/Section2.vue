@@ -295,6 +295,36 @@ export default {
         {
           icon: require('./s1/icon2.png'),
           type: 2,
+          desc: '洲子洋重劃區親民價！「快樂王國」輕巧坪數2至3房成置產標的',
+          img: require('../newimg/23/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '快樂王國2理享城　蘆洲捷運5分鐘　洲子洋唯一萬坪公園造鎮計畫',
+          img: require('../newimg/22/1.png'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '高雄台積電2025營運 楠梓高大特區受惠 台積電員工首選',
+          img: require('../newimg/21/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '有台積電就是狂！高雄新案單月賣破500戶 銷售率37%全國最威',
+          img: require('../newimg/20/2.webp'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '台積電引領！打造高雄科技宜居新格局',
+          img: require('../newimg/19/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
           desc: '【好房網】中和新成屋攀上8字頭！專家揭不敗原因：高總價也買單',
           img: require('../newimg/18/2.jpg'),
         },
