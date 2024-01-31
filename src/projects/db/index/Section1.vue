@@ -38,11 +38,11 @@
     <div class="bottom"></div>
       <div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
-        <div @click="$router.push('/hot/#top')">
+        <div>
           <img src="./s1/pc1.jpg" alt v-if="!isMobile" />
           <img src="./s1/mo1.jpg" alt v-else />
-          <img src="./s1/pc2.jpg" class="img2" alt v-if="!isMobile" />
-          <img src="./s1/mo2.jpg" class="img2" alt v-else />
+          <img src="./s1/pc2.jpg" class="img2" alt v-if="!isMobile" @click="$router.push('/hot/#top')" />
+          <img src="./s1/mo2.jpg" class="img2" alt v-else  @click="$router.push('/hot/#top')"/>
           <img src="./close.png" alt class="close" @click="modal = false" />
         </div>
       </div>
