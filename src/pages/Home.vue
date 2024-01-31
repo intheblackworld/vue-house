@@ -9,7 +9,7 @@
       :options="options"
       id="fullpage"
     > -->
-    <div class="section relative" id="section1" @init="init" style="z-index: 3;">
+    <div class="section relative" id="section1" @init="init">
       <Section1 />
     </div>
 

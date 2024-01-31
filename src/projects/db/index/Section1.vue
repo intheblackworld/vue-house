@@ -36,6 +36,16 @@
       致力打造百年穩固、永世怡居的好建築。
     </h1> -->
     <div class="bottom"></div>
+      <div class="modal" v-if="modal">
+        <div class="mask" @click="modal = false"></div>
+        <div @click="$router.push('/hot/#top')">
+          <img src="./s1/pc1.jpg" alt v-if="!isMobile" />
+          <img src="./s1/mo1.jpg" alt v-else />
+          <img src="./s1/pc2.jpg" class="img2" alt v-if="!isMobile" />
+          <img src="./s1/mo2.jpg" class="img2" alt v-else />
+          <img src="./close.png" alt class="close" @click="modal = false" />
+        </div>
+      </div>
   </div>
 </template>
 
@@ -164,6 +174,57 @@
   }
 }
 
+.modal{  
+  width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mask{
+      background: rgba(0,0,0,.7);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      position: absolute;
+    }
+    > div{position: relative;}
+@keyframes oop {
+  40% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+    img{position: relative;
+      z-index: 122;
+      max-width: calc(100vw - 140px);
+      max-height: calc(100vh - 100px);
+      &.img2{
+        position: absolute;
+        top: 0;left: 0;
+    opacity: 1;
+    animation: oop 4s linear alternate infinite;
+
+      }
+    }
+    .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(130%);
+    cursor: pointer;
+    width: 30px;
+}
+}
+
 @media only screen and (max-width: 1440px) {
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
@@ -265,11 +326,24 @@
     text-align: center;
     color: #ffffff;
   }
+
+
+  .modal{  
+    img{
+      max-width: calc(100vw - 70px);
+      max-height: calc(100vh - 140px);
+    }
+    .close {
+    transform: translateY(-130%);
+  }
+}
+
 }
 </style>
 <script>
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
+import { setInterval } from 'timers'
 import info from '@/info'
 
 export default {
@@ -281,27 +355,33 @@ export default {
       isMobile,
       isTablet,
       info,
+      dog1: true,
+      dog2: false,
+      isPlay: false,
+      modal: true,
     }
   },
-
   methods: {
-    // @slideChangeTransitionEnd="slideChanged"
-    // slideChanged(e) {
-    //   const swiper = this.$refs.mySwiper.swiper
-    //   if (swiper.isEnd) {
-    //     this.slideIndex = 0
-    //   } else if (swiper.isBeginning) {
-    //     this.slideIndex = swiper.slides.length - 3
-    //   } else {
-    //     this.slideIndex = swiper.activeIndex - 1
-    //   }
-    // },
+    playMusic() {
+      if (this.isPlay) {
+        this.$refs.audio.pause()
+        this.isPlay = false
+      } else {
+        this.$refs.audio.play()
+        this.isPlay = true
+      }
+    },
   },
 
-  mounted() {},
+  mounted() {
+    this.$refs.audio.play()
+  },
 
-  created() {},
-
-  computed: {},
+  created() {
+    setInterval(() => {
+      this.dog1 = !this.dog1
+      this.dog2 = !this.dog2
+    }, 3000)
+  },
 }
 </script>
