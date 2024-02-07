@@ -1,6 +1,7 @@
 export default [
   /* */
   { name: '關於康寓', imgSrc: '', subTitle: '', section: 'section2', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },
+  { name: '優惠活動', imgSrc: '', subTitle: '', section: 'promotions', svgSrc: '',offset:-60,mobileOffset:0,  type: '' },
   { name: '市區生活', imgSrc: '', subTitle: '', section: 'section3', svgSrc: '',offset:-60,mobileOffset:0,  type: '' },
   { name: '百貨商圈', imgSrc: '', subTitle: '', section: 'section4', svgSrc: '',offset:-60,mobileOffset:0, type: '' },
   { name: '精緻寓所', imgSrc: '', subTitle: '', section: 'section5', svgSrc: '',offset:-60,mobileOffset:0 , type: '' },

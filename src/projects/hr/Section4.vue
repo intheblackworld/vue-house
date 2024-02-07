@@ -55,14 +55,6 @@
   right: 0;
   bottom: 0;
 }
-.bgbox{
-  position: absolute;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0.16) 100%);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
 .txt{
 float: left;
   position: relative;
