@@ -36,7 +36,7 @@
       <!-- <img v-if="currentItem.img" :src="currentItem.img" alt="" class="news-img"> -->
       <div class="news-desc" v-html="currentItem.desc"></div>
       <div class="pagination flex-c">
-        <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url">{{link.title}}</a>
+        <a class="pagi" target="_blank" v-for="(link, index) in currentItem.links" :key="'pagi' + index" :href="link.url" v-if="link.title">{{link.title}}</a>
       </div>
     </div>
   </div>
@@ -431,6 +431,28 @@ export default {
       isTablet,
       tabIndex: 0,
       list: [
+        {
+          title: '2024新春開工祈安祈福',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/19/1.jpg'),
+            require('../news/s2/19/2.jpg'),
+            require('../news/s2/19/3.jpg'),
+            require('../news/s2/19/4.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
         {
           title: '鼎禾建設–琢渼，開工動土慶典活動',
           subtitle: '',
