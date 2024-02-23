@@ -376,6 +376,22 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【文華苑】下個信義計畫區!新莊副都心「文華苑」擁房市利多',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/t5xe_ensFMY',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【文華苑】下個信義計畫區！新莊副都心「文華苑」擁房市利多 @newsebc',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/J0ih0dAlLBA',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:1,
           title: '【高大之森】楠梓科技城 增值理想國',
           desc: '',

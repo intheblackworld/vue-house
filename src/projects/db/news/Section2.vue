@@ -17,16 +17,16 @@
       </div>
       <div class="swipe news-img" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
-          <transition-group name="swipe-fade" mode="out-in">
+    <transition-group name="swipe-fade" mode="out-in">
       <div v-for="(slide, index) in slideList" v-show="slideIndex === index" :key="slide + index" :class="`swipe-item absolute`">
         <img :src="slide.src" alt="">
         <div class="caption" v-html="slide.caption" v-if="slide.caption"></div>
       </div>
-          </transition-group>
-          <div class="pagination absolute flex-ac">
+    </transition-group>
+          <div class="pagination absolute flex-ac" v-if="currentItem.imgs.length > 1">
             <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-          </div>
-          <div class="swipe-btns absolute flex-ac flex-jb">
+    </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="currentItem.imgs.length > 1">
             <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
             <img src="../all/next-btn.png" alt="" class="next-btn" @click="addIndex">
           </div>
@@ -701,6 +701,58 @@ export default {
       isTablet,
       tabIndex: 0,
       item_list: [
+        {
+          type: 2,
+          title: '【廣編】台積電來高雄威力太強　楠梓建案實登19天熱賣137戶',
+          subtitle: '',
+          date: '2024.02.22',
+          author: '圖、文／高大之森提供',
+          imgs: [
+            {
+              src: require('../newimg/25/1.jpg'),
+              caption: '受惠於台積電於高雄設廠發展，讓高大特區成為房地產熱區，其中「高大之森」受到許多置產族青睞。',
+            },
+          ],
+          desc:'台積電2奈米先進製程將在高雄楠梓園區增設第2廠，不排除第3廠，房價回不去了。受惠於台積電串聯各大科學園區建設發展，北高雄成高雄房市暢旺區，而身處在S科技廊帶正核心的楠梓已成為最熱門區域，其中尤以台北建商南下推案吸引眾多購屋置產客群注意，12月22日公開短短19天從實價登錄就可發現已銷售137戶，且在政府政策作多下，交通建設逐步到位，科技大廠和政府行政部門紛紛佈局設點，楠梓高大特區儼然成為南霸天置產熱區，承襲竹科昔日置產榮景。<br><br>台積電拍板高雄廠興建於楠梓產業園區，以園區基地規模來看，預計興建三座以上晶圓廠，擴大高雄楠梓投資發展，投資額上看兆元。高雄市政府多項重大建設也為楠梓發展提供絕對助力，如高大特區西側，新台17線僅15分鐘內可直達高鐵站、美術館特區；而未來捷運紫線更串聯高大特區和3座科學園區、5所學院，形成北高雄產-官-學-建設大動脈，而這裡，是所有交通要塞的交匯點，成為高雄剛性需求購屋客最佳買房增值選擇。<br><br>高大特區指標建案「高大之森」北台灣前三大建商茂德機構插旗南台灣高雄第一站，大台北重劃區推手看好楠梓區S科技廊帶正核心的高大特區，未來建設發展如同現在的竹科竹北高鐵特區和台北內科大直重劃區，現場銷售專案經理林鈺浩表示，農曆春節期間低調賣破200戶，相關周邊科技產業像是台積電、封裝大廠日月光工程師都默默低調團購預約，坐等先買先享受的漲幅空間。',
+          links: [
+            {
+              title: '原文',
+              id: '1',
+              url: 'https://house.ettoday.net/news/2687294',
+            },
+            {
+              title: '高大之森',
+              id: '2',
+              url: 'https://sigma.debang.tw/',
+            },
+          ],
+        },
+        {
+          type: 2,
+          title: '台積電來高雄威力太強 楠梓建案實登19天熱賣137戶',
+          subtitle: '',
+          date: '2024.02.22',
+          author: '房產網｜陳瑀倫',
+          imgs: [
+            {
+              src: require('../newimg/24/1.jpg'),
+              caption: '台積電來高雄威力太強 楠梓建案實登19天熱賣137戶。（業者提供）',
+            },
+          ],
+          desc:'台積電2奈米先進製程將在高雄楠梓園區增設第2廠，不排除第3廠，房價回不去了。受惠於台積電串聯各大科學園區建設發展，北高雄成高雄房市暢旺區，而身處在S科技廊帶正核心的楠梓已成為最熱門區域，其中尤以台北建商南下推案吸引眾多購屋置產客群注意，尤其是全台科技新貴和企業主關注，12月22日公開短短19天從實價登錄就可發現已銷售137戶，且在政府政策作多下，交通建設逐步到位，科技大廠和政府行政部門紛紛佈局設點，楠梓高大特區儼然成為南霸天置產熱區，承襲竹科昔日置產榮景。<br><br>高雄市府作多 高大特區已成大高雄房市潛力熱區<br><br>高雄市政府多項重大建設也為楠梓發展提供絕對助力，如高大特區西側，新台17線僅15分鐘內可直達高鐵站、美術館特區；而未來捷運紫線更串聯高大特區和3座科學園區、5所學院，形成北高雄產-官-學-建設大動脈，而這裡，是所有交通要塞的交匯點。成為高雄剛性需求購屋客最佳買房增值選擇。台積電拍板高雄廠興建於楠梓產業園區，以園區基地規模來看，預計興建三座以上晶圓廠，擴大高雄楠梓投資發展，投資額上看兆元，錯過竹科內科，從高大特區實價登錄均價可窺見，聰明購屋置產客以實際行動不再錯過台積電護盤讓財富翻倍良機。<br><br>12月底公開 區域指標建案高大之森春節低調賣破200戶<br><br>高大特區指標建案「高大之森」北台灣前三大建商茂德機構插旗南台灣高雄第一站，大台北重劃區推手看好楠梓區S科技廊帶正核心的高大特區，未來建設發展如同現在的竹科竹北高鐵特區和台北內科大直重劃區，現場銷售專案經理林鈺浩表示，全案於12/22公開銷售，短短19天就銷售137戶，從實價登錄都可以看到，更在農曆春節期間低調賣破200戶，相關周邊科技產業像是台積電、封裝大廠日月光工程師都默默低調團購預約，坐等先買先享受的漲幅空間，在台積電周邊設廠加持下，「高大之森」將會是南台灣最閃耀的科技重鎮房市指標。',
+          links: [
+            {
+              title: '原文',
+              id: '1',
+              url: 'https://house.chinatimes.com/20240222002638-264401',
+            },
+            {
+              title: '高大之森',
+              id: '2',
+              url: 'https://sigma.debang.tw/',
+            },
+          ],
+        },
         {
           type: 2,
           title: '洲子洋重劃區親民價！「快樂王國」輕巧坪數2至3房成置產標的',

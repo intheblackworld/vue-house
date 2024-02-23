@@ -295,6 +295,18 @@ export default {
         {
           icon: require('./s1/icon2.png'),
           type: 2,
+          desc: '【廣編】台積電來高雄威力太強　楠梓建案實登19天熱賣137戶',
+          img: require('../newimg/25/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
+          desc: '台積電來高雄威力太強 楠梓建案實登19天熱賣137戶',
+          img: require('../newimg/24/1.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
           desc: '洲子洋重劃區親民價！「快樂王國」輕巧坪數2至3房成置產標的',
           img: require('../newimg/23/1.jpg'),
         },
