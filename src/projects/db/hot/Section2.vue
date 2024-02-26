@@ -947,7 +947,7 @@ export default {
           info2: '投資興建：中德建設<br />規劃坪數：21-35坪',
           info3: '台灣十大建商<br />前進高雄代表作<br />高大特區Σ計畫<br />國際建材臻品<br />頂級設計美學',
           contact: '貴賓專線｜07-364-8088<br />接待會館｜高雄市楠梓區藍田路x大學西路口',
-          link: '',
+          link: 'https://sigma.debang.tw/',
           logo: require('../works/10/1.jpg'),
           imgs: [
             require('../works/10/3.jpg'),
