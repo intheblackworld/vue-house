@@ -922,6 +922,55 @@ export default {
          // label: '',
         //},
         //陽光
+
+        // 海揚V1
+        {
+          title: '海揚V1',
+          title2: '海揚V1',
+          desc: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
+          img: require('../works/11/1.jpg'),
+          isEmpty: false,
+          info1: '基隆市｜站前四鐵特區<br />16-27坪<br />基隆帝王 港景首排',
+          info2: '投資興建：漢翔開發股份有限公司<br />規劃坪數：16-27坪',
+          info3: '基隆帝王 港景首排<br />基隆的成就，我們的窗景<br />海洋新國門｜站前四鐵特區｜首開世界豪門',
+          contact: '貴賓專線｜02-2425-1111<br />接待會館｜基隆市中山區中山一路265號',
+          link: 'https://seav1.debang.tw/',
+          logo: require('../works/11/1.jpg'),
+          imgs: [
+            require('../works/11/3.jpg'),
+            require('../works/11/4.jpg'),
+            require('../works/11/5.jpg'),
+            require('../works/11/6.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+
+        // 雙橡園
+        { 
+          title: '雙橡園',
+          title2: '雙橡園',
+          desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
+          img: require('../works/12/1.jpg'),
+          isEmpty: false,
+          info1: '新北市|副都心1%極限量<br />美式生活2-3房',
+          info2: '興建投資：精業建設',
+          info3: '雙校園Ｘ雙公園Ｘ雙捷運Ｘ雙商圈<br />家門就是校門 開窗就像開卷<br />副都心成家換屋第一志願',
+          contact: '貴賓專線｜02-2279-1188<br />接待會館｜<br>新莊區中原路101號對面',
+          link: 'https://gtcip.debang.tw/',
+          logo: require('../works/12/1.jpg'),
+          imgs: [
+          //isMobile?
+          //require('../works/12/2m.jpg') :
+          //require('../works/12/2.jpg'),
+          require('../works/12/3.jpg'),
+          require('../works/12/5.jpg'),
+          require('../works/12/6.jpg'),
+          require('../works/12/7.jpg'),],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+
         {
           title: '神采<br />飛洋',
           title2: '神采飛洋',
