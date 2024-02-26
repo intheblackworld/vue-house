@@ -122,40 +122,40 @@ export const hot_case = [
     media_link: '', // 首頁用
     desc_home: `1.走公園回家：<br>奇岩站旁低密度開發之生態住宅區，以60%綠覆率深植5大公園，讓家享有自然健康綠意<br><br>2.擁自然採光：<br>基地雙面臨路，方正完整採光充足，全案配置2-3房，適居等質社區規劃<br><br>3.享平面車位：<br>超脫小宅限制，全案配置坡平車位，且可設置充電樁，愛車配件不委屈...` // 首頁用
   },
-  {
-    title: '欣聯大心',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/0.jpg'),
-    imgs: [
-      {
-        title: '封面',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/0.jpg')
-      },
-      {
-        title: '捷運',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/1.jpg')
-      },
-      {
-        title: '捷運',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/2.jpg')
-      },
-      {
-        title: '商圈',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/3.jpg')
-      },
-      {
-        title: '超市',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/4.jpg')
-      },
-      {
-        title: '高效空間美學',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/5.jpg')
-      },
-    ], // 內頁用
-    desc: '南勢角捷運2分鐘 景安雙軌共構6分鐘 坐享4大商圈環繞 獨擁6大全齡公設 三十年專業欣聯建設 實力菁英團隊、嚴謹慎密工程、現代管理技術 SC基座 分棟建築單純安全 全齡養心六大公設', // 內頁用
-    link: '/hot_case/4',
-    media_link: '', // 首頁用
-    desc_home: `南勢角捷運2分鐘 景安雙軌共構6分鐘 坐享4大商圈環繞 獨擁6大全齡公設 三十年專業欣聯建設 實力菁英團隊、嚴謹慎密工程、現代管理技術 SC基座 分棟建築單純安全 全齡養心六大公設` // 首頁用
-  },
+  //{ 
+  //  title: '欣聯大心',
+  //  img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/0.jpg'),
+  //  imgs: [
+  //    {
+  //      title: '封面',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/0.jpg')
+  //    },
+  //    {
+  //      title: '捷運',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/1.jpg')
+  //    },
+  //    {
+  //      title: '捷運',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/2.jpg')
+  //    },
+  //   {
+  //      title: '商圈',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/3.jpg')
+  //    },
+  //    {
+  //      title: '超市',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/4.jpg')
+  //    },
+  //    {
+  //      title: '高效空間美學',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯大心/5.jpg')
+  //    },
+  // ], // 內頁用
+  //  desc: '南勢角捷運2分鐘 景安雙軌共構6分鐘 坐享4大商圈環繞 獨擁6大全齡公設 三十年專業欣聯建設 實力菁英團隊、嚴謹慎密工程、現代管理技術 SC基座 分棟建築單純安全 全齡養心六大公設', // 內頁用
+  //  link: '/hot_case/4',
+  //  media_link: '', // 首頁用
+  //  desc_home: `南勢角捷運2分鐘 景安雙軌共構6分鐘 坐享4大商圈環繞 獨擁6大全齡公設 三十年專業欣聯建設 實力菁英團隊、嚴謹慎密工程、現代管理技術 SC基座 分棟建築單純安全 全齡養心六大公設` // 首頁用
+  //},
   //{
     //title: '幸福好境',
     //img: require('@/projects/shin-lan/shin-lan/work/幸福好境/0.jpg'),
@@ -229,7 +229,7 @@ export const hot_case = [
     <b>坪數規劃</b>｜23-33坪  6000坪綠景大棟距<br>三重都心最珍稀「欣聯詠心」<br>鄰近溪尾、碧華熱鬧商圈，隔壁走兩步就有全聯<br>
     <b>貴賓專線</b>｜02-2980-0888<br>
     <b>接待會館</b>｜新北市三重區元富二街&amp;元信一街旁`, // 內頁用
-    link: '/hot_case/5',
+    link: '/hot_case/4',
     media_link: '', // 首頁用
     desc_home: `<b>新北市｜三重區</b><br>
     27-54坪  仁義核心 綠景帝王<br>
