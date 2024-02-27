@@ -368,7 +368,7 @@ export default {
     init() {
       this.pageIndex = 0
       if (this.isPC) {
-        this.count = 6
+        this.count = 9
       } else {
         this.count = 999
       }
