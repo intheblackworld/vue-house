@@ -295,6 +295,12 @@ export default {
         {
           icon: require('./s1/icon2.png'),
           type: 2,
+          desc: '台積電設廠旋風再起！楠梓這案公開19天實登即137戶引注目',
+          img: require('../newimg/26/01.jpg'),
+        },
+        {
+          icon: require('./s1/icon2.png'),
+          type: 2,
           desc: '【廣編】台積電來高雄威力太強　楠梓建案實登19天熱賣137戶',
           img: require('../newimg/25/1.jpg'),
         },
