@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '新北市淡水區大義街25號',
+  address: '淡水區中山北路一段215號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.7412912591144!2d121.44060991551235!3d25.178211938648065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a555cabc8beb%3A0xf82a537f49f6e700!2zMjUx5paw5YyX5biC5reh5rC05Y2A5aSn576p6KGXMjXomZ8!5e0!3m2!1szh-TW!2stw!4v1662434304075!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/A7Arfro4Tk8ZgkUEA',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.7086050955895!2d121.44173547608186!3d25.179315232423484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a5559fd38325%3A0x5cf25008d13bcf69!2zMjUx5paw5YyX5biC5reh5rC05Y2A5Lit5bGx5YyX6Lev5LiA5q61MjE16Jmf!5e0!3m2!1szh-TW!2stw!4v1709890544111!5m2!1szh-TW!2stw',
+  googleLink: 'https://maps.app.goo.gl/gHbFYBQsBgxoWQFDA',
   phone: '02-7728-7777',
   fbLink: 'https://www.facebook.com/ntpc.tamsui/',
   fbMessage: 'https://m.me/ntpc.tamsui/',
