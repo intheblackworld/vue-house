@@ -43,7 +43,7 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 .section2 {
-  background: linear-gradient(to bottom, #AF0028, #F39801);
+  background: linear-gradient(to bottom, #f55754,#e55733, #F39801);
   // height: 100vh;
   overflow: hidden;
   // position: relative;

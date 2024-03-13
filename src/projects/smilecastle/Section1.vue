@@ -8,21 +8,25 @@
     <img src="./s1/lineicon.png" class="lineicon" data-aos="zoom-in" data-aos-delay="200" /> 
     </a>
 
-
-      <img src="./s1/style1.png" class="style style1" />
-      <img src="./s1/style2.png" class="style style2" />
-      <img src="./s1/style3.png" class="style style3" />
     <div class="imglt" data-aos="zoom-in" data-aos-delay="0" >
-    <img src="./all/f2.png" class="f2" />
+    <img src="./s1/f1.png" class="f1" />
+    <img src="./s1/f2.png" class="f2" />
     </div>
    <div class="imgrc" data-aos="zoom-in" data-aos-delay="0">
-    <img src="./all/f1.png" class="f1" />
+    <img src="./s1/f3.png" class="f3" />
+    <img src="./s1/img.png" class="img" />
+    <img src="./s1/name.png" class="name" />
+    <img src="./s1/b.png" data-aos="zoom-in" data-aos-delay="300" class="b" />
     </div>
+    <img src="./s1/txt.png" class="txt" v-if="!isMobile" />
+    <img src="./s1/txtm.png" class="txt" v-else />
+    <!-- 
     <div class="txt">
     </div>
     <img src="./s1/t1.png" class="t1" />
       <img src="./s1/light2.png" class="light" />
       <img src="./s1/logo.png" class="logo" />
+   -->
 
   </div>
 </template>
@@ -31,7 +35,7 @@
 @import '@/assets/style/function.scss';
 
 .section1 {
-  background: linear-gradient(to bottom, #f3861f, #F35A1F 30%, #AF0028);
+  background: linear-gradient(to bottom, #f45a72, #f55754);
   width: 100%;
   height: 100vh;
   min-height: size(900);
@@ -52,43 +56,50 @@
   width: 100%;height:auto;
   top:0;
   left:0;object-fit: cover;
-   opacity: .5;
+   opacity: .2;
   }
 .img0{
     position: absolute;left:size(-120);;width:size(820);
   bottom:size(-520);transform-origin: 0% 50%;
   }
 
-.imglt{position:absolute;top: 0;left: 0;transform-origin: 0% 0%; z-index: 2;
+.imglt{position:absolute;top: 0;left: 0;transform-origin: 0% 0%; z-index: 2;height: 100%;
 img{position:absolute;}
-.f1{width:size(227);top:size(-435);left:size(295);
-  transform: rotate(-153.43deg);transform-origin: 90% 100%;
-animation: an1 3s -.5s ease-in-out infinite alternate;
+.f1{width:size(700);
+  left:size(-100);
+  top:calc(40% + #{size(-20 - 1080*.4)});
+  transform: rotate(3deg);
+  transform-origin: 10% 10%;
+animation: an 3s -.5s ease-in-out infinite alternate;
 }
-.f2{width:size(600);top:size(345);left:size(-90);
-  transform-origin: -10% -10%;transform: rotate(4deg);
-animation: an 3s ease-in-out infinite alternate;}
-.f3{width:size(100);top:size(-390);left:size(150);
-  transform: rotate(132.06deg);transform-origin: 90% 100%;
-animation: an2 3s -.8s ease-in-out infinite alternate;}
-.f4{width:size(444);top:size(-19);left:size(-155);
-  transform-origin: 0% 0%;transform: rotate(3deg);
-animation: an 3s -.2s ease-in-out infinite alternate;}
-.f5{width:size(351);top:size(-70);left:size(51);transform-origin: 0% 0%;transform: rotate(5deg);
-animation: an 3s -.4s ease-in-out infinite alternate;}
-.f6{width:size(290);top:size(7);left:size(224);transform-origin: 0% 0%;transform: rotate(4deg);
-animation: an 3s -.6s ease-in-out infinite alternate;}
-
+.f2{width:size(570);
+  left:size(140);
+  top:calc(60% + #{size(410 - 1080*.6)});
+  transform: rotate(-5deg);
+  transform-origin: 50% 50%;
+animation: an 3s -1s ease-in-out infinite alternate;
 }
-.imgrc{position:absolute;top: 0%;right: 0;transform-origin: 100% 50%; z-index:2;
+}
+.imgrc{position:absolute;top: 0%;right: 0;transform-origin: 100% 50%; z-index:2;height: 100%;
 img{position:absolute;}
-.f1{width:size(600);top:size(84);right:size(-273);transform-origin: 90% 100%;transform: rotate(-4deg);
-animation: an 3s -.2s ease-in-out infinite alternate;}
-.f2{width:size(145);top:size(195);right:size(-101);transform-origin: 90% 100%;transform: rotate(-3deg);
-animation: an 3s -.4s ease-in-out infinite alternate;}
-.f3{width:size(170);top:size(-370);right:size(-250);
-transform: rotate(-29.76deg);transform-origin: 90% 100%;
-animation: an3 3s ease-in-out infinite alternate;}
+.f3{width:size(1030);right:size(-180);
+  top:calc(60% + #{size(150 - 1080*.6)});
+  transform: rotate(2deg);
+  transform-origin: 90% 90%;
+animation: an 3s  ease-in-out infinite alternate;
+}
+.img{left:size(-593);
+  height:100%;
+  max-height:size(980);
+  top:calc(20% + #{size(180 - 1080*.2)});
+}
+.name{width:size(210);right:size(605);
+  top:calc(20% + #{size(688 - 1080*.2)});
+  filter:drop-shadow(0px 0px 5px #dd423f);
+}
+.b{width:size(225);right:size(600);
+  top:size(95);
+}
 
 }
 @keyframes an{
@@ -96,36 +107,12 @@ animation: an3 3s ease-in-out infinite alternate;}
     transform: rotate(0deg);
   }
 }
-@keyframes an1{
-  to{
-    transform: rotate(-156.43deg);
-  }
-}
-@keyframes an2{
-  to{
-    transform: rotate(129.06deg);
-  }
-}
-@keyframes an3{
-  to{
-    transform: rotate(-27.76deg);
-  }
-}
-
 .txt{
-  position: relative;
-  // top:calc(50% + (253 - 540) * 100vw / 1920);
- //  left:size(-260);
-  top:calc(50% + (375 - 1080 * 0.5) * 100vw / 1920);
-  font-size: size(40);
-  line-height: 1.7;
-  color: #310;
-  text-align: center;
-  width:size(630);
-    letter-spacing:0.07em;
-    padding: 0;
-  font-weight: 300;
-  margin: auto;
+  position: absolute;
+  left:size(388);
+  top:calc(10% + #{size(333 - 1080*.1)});
+  width:size(873);
+  margin: auto;z-index: 3;
 
 }
 
@@ -142,32 +129,6 @@ animation: an3 3s ease-in-out infinite alternate;}
   left:size(701);
 }
 
-.light{
-  position: absolute;
-  width:size(450);
-  top: size(649);
-  right:size(485);
-  z-index: 2;
-}
-.style{
-  position: absolute;
-  width:size(1900);
-  top: size(-180);
-  left:size(-30);
-  mix-blend-mode:plus-lighter;
-  z-index: 2;
-  opacity: 1;
-  animation: style 1s ease-in-out infinite alternate;
-
-}
-.style2{animation-delay: -.5s;}
-.style3{animation-delay: -1s;}
-
-@keyframes style{
-  to{
-    opacity: 0;
-  }
-}
 
 
 /* 螢幕尺寸標準 */
@@ -187,23 +148,34 @@ animation: an3 3s ease-in-out infinite alternate;}
   bottom:sizem(-230);transform-origin: 0% 50%;
   }
 .imglt{
-.f1{width:sizem(183);top:sizem(-90);left:sizem(-40);}
-.f2{width:sizem(230);top:sizem(-30);left:sizem(-50);}
-.f3{width:sizem(50);top:sizem(-240);left:sizem(70);}
-.f4{width:sizem(222);top:sizem(-62);left:sizem(-135);}
-.f5{width:sizem(176);top:sizem(-68);left:sizem(-11);}
-.f6{width:sizem(145);top:sizem(-26);left:sizem(73);}
+.f1{width:sizem(250);left:sizem(-30);
+  top:calc(10% + #{sizem(-30 - 604*.1)});
+}
+.f2{width:sizem(240);left:sizem(15);
+  top:calc(40% + #{sizem(120 - 604*.4)});}
 
 }
 .imgrc{
-.f1{width:sizem(200);top:sizem(430);right:sizem(-65);}
-.f2{width:sizem(45);top:sizem(255);right:sizem(-30);}
-.f3{width:sizem(60);top:sizem(65);right:sizem(-110);}
+.f3{width:sizem(420);right:sizem(-150);
+  top:calc(90% + #{sizem(200 - 604*.9)});}
+.img{left:sizem(-80);
+  height:63%;
+  //min-height:sizem(375);
+  max-height:sizem(1375);
+  top:sizem(235);
+  transform: translateX(-30%);
+}
+.name{width:sizem(110);top:sizem(505);right:sizem(105);
+  top:calc(50% + #{sizem(505 - 604*.5)});
+}
+.b{width:sizem(115);top:sizem(130);right:sizem(30);
+  top:sizem(130);
+}
 }
 .txt{
-  font-size: sizem(20);
-  top:calc(50% + (260 - 302) * 100vw / 375);
-  width:sizem(300);
+  top:calc(50% + (130 - 302) * 100vw / 375);
+  width:sizem(214);
+  left:sizem(34);
 }
 
 
