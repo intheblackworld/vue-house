@@ -376,6 +376,14 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
+          type:1,
+          title: '【文華苑】副都中心 天生為王',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/ovidZIXFWZA',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:3,
           title: '【文華苑】下個信義計畫區!新莊副都心「文華苑」擁房市利多',
           desc: '',
