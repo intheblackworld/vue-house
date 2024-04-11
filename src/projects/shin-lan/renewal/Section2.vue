@@ -2,10 +2,10 @@
   <div class="section2">
     <div class="container">
       <div class="type-tab flex-ac flex-ja" v-if="isMobile">
-        <div :class="`tab ${$route.query.type == 2 ? '' : 'active'}`" @click="$router.push('/renewal?type=1')">
+        <div :class="`tab ${$route.query.type == 1 ? 'active' : ''}`" @click="$router.push('/renewal?type=1')">
           萬華段都更
         </div>
-        <div :class="`tab ${$route.query.type == 2 ? '' : 'active'}`" @click="$router.push('/renewal?type=2')">
+        <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
           松山延壽段都更
         </div>
       <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
@@ -197,14 +197,12 @@
           <img src="../renewal/type2/01.jpg" alt="" class="img img1 mb1">
           <img src="../renewal/type2/02.jpg" alt="" class="img img1 mb1">
           <img src="../renewal/type2/03.jpg" alt="" class="img img1 mb2">
-          <img src="../renewal/type2/04.jpg" alt="" class="img img1 mb2">
+          <img src="../renewal/type2/04.jpg" alt="" class="img img1 mb2"> 
           <img src="../renewal/type2/05.jpg" alt="" class="img img1 mb2">
           <img src="../renewal/type2/06.jpg" alt="" class="img img1 mb2">
           <img src="../renewal/type2/07.jpg" alt="" class="img img1 mb2">
           <img src="../renewal/type2/08.jpg" alt="" class="img img1 mb2">
       </div>
-
-
       </div>
 
       <!--
