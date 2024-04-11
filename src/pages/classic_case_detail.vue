@@ -191,8 +191,8 @@
   margin: 0 auto 0 0;
   width: size(370);
   @include md {
-    width: sizem(335);
-    margin: 0 sizem(-12.5);
+    width: sizem(326);
+    margin: 0 sizem(-10.5);
   }
 }
 
@@ -229,8 +229,10 @@
   // height: size(333);
 
   @include md {
-    width: sizem(335);
+    width: 100%;
     height: sizem(294);
+    text-align: center;
+    //object-fit: contain;
   }
 }
 

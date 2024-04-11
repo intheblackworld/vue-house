@@ -205,7 +205,7 @@
   margin-top: size(25);
   @include md {
     margin: sizem(25) auto sizem(0);
-    font-size: sizem(24);
+    font-size: sizem(18);
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -355,9 +355,8 @@
 }
 .video_box {
   width: 100%;
-  position: fixed;
-  height: calc(100% + 200px * 2);
-  top: -200px;
+  position: fixed;height: 100%;
+    top: 0;
   left: 0;
   z-index: 5;
 

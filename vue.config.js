@@ -28,7 +28,7 @@ module.exports = {
     https: false,
     proxy: {
       '/api': {
-        target: 'https://api.shin-hai.com',
+        target: 'https://api.shin-lan.com',
         pathRewrite: { '^/api': '' },
         secure: false,
       },

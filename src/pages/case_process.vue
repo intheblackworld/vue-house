@@ -298,14 +298,15 @@ export default {
       if (this.case_list.length > 0) {
         const item = this.case_list.find((c) => c.id == this.$route.params.id)
         if (item.title) {
-          const case_item = hot_case.find((c) => c.title == item.title)
-          if (case_item) {
-            return case_item
-          } else {
-            return {
-              img: '',
-            }
-          }
+          return item
+          // const case_item = hot_case.find((c) => c.title == item.title)
+          // if (case_item) {
+          //   return case_item
+          // } else {
+          //   return {
+          //     img: '',
+          //   }
+          // }
         } else {
           return {
             img: '',

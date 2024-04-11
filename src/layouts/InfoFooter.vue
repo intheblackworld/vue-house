@@ -128,6 +128,7 @@ export default {
 .links {
   @include md {
     @include img_r_m(106, 208, 33);
+    z-index: 100;
   }
 }
 

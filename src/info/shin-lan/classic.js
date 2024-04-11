@@ -2,11 +2,138 @@
 // 欣聯建設Shin-Lan 經典案例
 export const case_list_1 = [
   {
-    title: '幸福好境',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/2.jpg'),
+    title: '欣聯大心',
+    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/11.png'),
     link: '/classic_case/1/1',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
+    desc: '樓層規劃：地上14層，地下3層<br>棟數規劃：3棟，105戶<br>基地面積：430坪<br>建築設計：黃翔龍建築師事務所<br>構造種類：SRC+RC<br>坪數資料：2房-21/29坪、3房-38/40坪 <br>國小學區：復興國小<br>國中學區：中和國中<br><br>建案特色：<br>1.近捷運站：距離南勢角捷運站約300公尺(走路約３分鐘)，距離公車站牌約300公尺(走路約3分鐘)。相當適合通勤族。位於巷弄內相對安靜，生活機能佳，景安雙軌共構6分鐘 坐享4大商圈環繞。<br><br>2.生活機能方便：欣聯大心位於興南商圈，距離興南夜市約350公尺(走路約5分鐘)。附近超商林立，與和平街黃昏市場約450公尺(走路約5分鐘)，採買方便。<br><br>3.全案分為A、B、C三棟，SC基座、分棟建築單純安全，標準層為1~3房18~40坪規劃。 <br><br>4.全齡養心六大公設，入住優齡化全天候保全好放心。', // 內頁用
+    desc_home: `樓層規劃：地上14層，地下3層<br>棟數規劃：3棟，105戶<br>基地面積：430坪<br>建築設計：黃翔龍建築師事務所<br>構造種類：SRC+RC<br>坪數資料：2房-21/29坪、3房-38/40坪 <br>國小學區：復興國小<br>國中學區：中和國中<br><br>建案特色：<br>1.近捷運站：距離南勢角捷運站約300公尺(走路約３分鐘)，距離公車站牌約300公尺(走路約3分鐘)。相當適合通勤族。位於巷弄內相對安靜，生活機能佳，景安雙軌共構6分鐘 坐享4大商圈環繞...`, // 首頁用
+    imgs: [ // 內頁用
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/10.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/01.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/02.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/03.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/04.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/05.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/06.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/07.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯大心/09.png')
+      },
+    ],
+    type_text: '欣聯建設Shin-Lan', // 內頁用
+  },
+  {
+    title: '欣聯心',
+    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/1.jpg'),
+    link: '/classic_case/1/2',
+    cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
+    desc: '樓層規劃：地上14層，地下4層<br>棟數規劃：1棟，68戶，7戶店面<br>基地面積：320坪<br>建築設計：葉日明建築師事務所<br>建案特色：<br>◎位於新店區的欣聯心，近國道3號及雙捷運七張站、大坪林站，家樂福與裕隆城商圈比鄰，生活機能完整。<br>◎大廳挑高6米，住家挑高3米2 ，全天候保全物業管理，入內舒適安全且溫馨，戶數單純雙電梯，格局方正坪效佳。<br>◎戶戶大面落地窗通風採光絕佳，高樓可遠眺中興路稀有20米林蔭大道。<br>◎建築設計上，立面以沉穩色彩創造醒目俐落的線條，並傳達空間明亮與機能舒適的健康感受，「欣聯心」以低調又出色，簡單卻豐富的設計，不只是建築與人心連心，也是連結未來時尚，美學與品味心連心。', // 內頁用
+    desc_home: `樓層規劃：地上14層，地下4層<br>棟數規劃：1棟，68戶，7戶店面<br>基地面積：320坪<br>建築設計：葉日明建築師事務所<br>建案特色：<br>◎位於新店區的欣聯心，近國道3號及雙捷運七張站、大坪林站，家樂福與裕隆城商圈比鄰，生活機能完整。<br>◎大廳挑高6米，住家挑高3米2 ，全天候保全物業管理，入內舒適安全且溫馨，戶數單純雙電梯，格局方正坪效佳。<br>◎戶戶大面落地窗通風採光絕佳，高樓可遠眺中興路稀有20米林蔭大道...`, // 首頁用
+    imgs: [ // 內頁用
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/1.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/2.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/3.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/4.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/5.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/6.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/7.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/8.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/9.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/10.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/11.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯心/12.png')
+      },
+    ],
+    type_text: '欣聯建設Shin-Lan', // 內頁用
+  },
+  {
+    title: '欣聯鉅星科技總部',
+    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/3.jpg'),
+    link: '/classic_case/1/3',
+    cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
+    desc: '樓層規劃：地上7層，地下2層<br>棟數規劃：1棟，22戶<br>基地面積：467坪<br>建築設計：于丁亞建築師事務所<br>建案特色：<br>◎欣聯鉅星科技總部，位處新店區25米寶橋路首排，新店交流道3分鐘車程，步行7分鐘捷運七張站、超過6條公車路網，地理位置十分優異，車程12分鐘接軌新北環快及64快速道路，串聯大台北黃金產業鏈結，坐擁豐富資源，通勤、出差便利無虞。<br>◎挑高8.4米迎賓大廳，寬敞舒適空間展現大氣宏偉的格局，彰顯企業實力與形象。<br>◎室內無柱設計，方便辦公室設備與生產設備擺設，空間規劃好利用，宜廠宜辦。', // 內頁用
+    desc_home: `樓層規劃：地上7層，地下2層<br>棟數規劃：1棟，22戶<br>基地面積：467坪<br>建築設計：于丁亞建築師事務所<br>建案特色：<br>◎欣聯鉅星科技總部，位處新店區25米寶橋路首排，新店交流道3分鐘車程，步行7分鐘捷運七張站、超過6條公車路網，地理位置十分優異，車程12分鐘接軌新北環快及64快速道路，串聯大台北黃金產業鏈結，坐擁豐富資源，通勤、出差便利無虞。<br>◎挑高8.4米迎賓大廳，寬敞舒適空間展現大氣宏偉的格局，彰顯企業實力與形象...`, // 首頁用
+    imgs: [ // 內頁用
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/1.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/2.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/3.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/4.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/5.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/6.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/7.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/8.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/9.jpg')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯鉅星科技總部/10.jpg')
+      },
+    ],
+    type_text: '欣聯建設Shin-Lan', // 內頁用
+  },
+  {
+    title: '幸福好境',
+    img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/2.jpg'),
+    link: '/classic_case/1/4',
+    cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上11層，地下3層<br>棟數規劃：1棟，壹層二戶，21戶住家<br>基地面積：153坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎戶戶設有前後陽台，雙面採光，雙併設計戶數單純<br>◎捷運環狀線幸福站距100米，1高2快機場捷運四通八達<br>◎近頭前萬坪運動公園，生活機能健全', // 內頁用
+    desc_home: '樓層規劃：地上11層，地下3層<br>棟數規劃：1棟，壹層二戶，21戶住家<br>基地面積：153坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎戶戶設有前後陽台，雙面採光，雙併設計戶數單純<br>◎捷運環狀線幸福站距100米，1高2快機場捷運四通八達<br>◎近頭前萬坪運動公園，生活機能健全', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福好境/4.jpg')
@@ -35,9 +162,10 @@ export const case_list_1 = [
   {
     title: '東園綻',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/東園綻/0.jpg'),
-    link: '/classic_case/1/2',
+    link: '/classic_case/1/5',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上9層，地下2層<br>棟數規劃：1棟，壹層四戶，32戶住家<br>基地面積：188.76坪<br>建築設計：唐吉生建築師事務所<br>建案特色：<br>◎基地前庭退縮並規劃後院，石材外觀精品住家<br>◎戶戶雙面採光，格局方正無暗房<br>◎文教核心校園圍繞，警察局百米守護，圖書館50米書海相鄰，健全醫療機構西園醫院200米', // 內頁用
+    desc_home: '樓層規劃：地上9層，地下2層<br>棟數規劃：1棟，壹層四戶，32戶住家<br>基地面積：188.76坪<br>建築設計：唐吉生建築師事務所<br>建案特色：<br>◎基地前庭退縮並規劃後院，石材外觀精品住家<br>◎戶戶雙面採光，格局方正無暗房<br>◎文教核心校園圍繞，警察局百米守護，圖書館50米書海相鄰，健全醫療機構西園醫院200米', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/東園綻/162873991.jpg')
@@ -66,9 +194,10 @@ export const case_list_1 = [
   {
     title: '幸福捷境',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福捷境/0.jpg'),
-    link: '/classic_case/1/3',
+    link: '/classic_case/1/6',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上11層，地下4層<br>棟數規劃：1棟，壹層四戶，34戶住家<br>基地面積：238坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎戶戶設有前後陽台，雙面採光<br>◎捷運環狀線幸福站距100米，1高2快機場捷運四通八達<br>◎頭前重劃區生活機能健全', // 內頁用
+    desc_home: '樓層規劃：地上11層，地下4層<br>棟數規劃：1棟，壹層四戶，34戶住家<br>基地面積：238坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎戶戶設有前後陽台，雙面採光<br>◎捷運環狀線幸福站距100米，1高2快機場捷運四通八達<br>◎頭前重劃區生活機能健全', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/幸福捷境/1.jpg'),
@@ -94,9 +223,10 @@ export const case_list_1 = [
   {
     title: '芳朵',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/芳朵/0.jpg'),
-    link: '/classic_case/1/4',
+    link: '/classic_case/1/7',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上12層，地下2層<br>棟數規劃：1棟，112戶住家<br>基地面積：342坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎位於萬芳醫院捷運站旁步行3分鐘<br>◎採創意式4米2之錯層樓板規劃方式，用最小的空間，創造最大的經濟價值，可遠眺101<br>◎外觀聘日本大阪建築大師呂佳隆打造', // 內頁用
+    desc_home: '樓層規劃：地上12層，地下2層<br>棟數規劃：1棟，112戶住家<br>基地面積：342坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎位於萬芳醫院捷運站旁步行3分鐘<br>◎採創意式4米2之錯層樓板規劃方式，用最小的空間，創造最大的經濟價值，可遠眺101<br>◎外觀聘日本大阪建築大師呂佳隆打造', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/芳朵/0.jpg'),
@@ -119,9 +249,10 @@ export const case_list_1 = [
   {
     title: '湖山妍',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/湖山妍/lakemountain1.jpg'),
-    link: '/classic_case/1/5',
+    link: '/classic_case/1/8',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上14層，地下3層<br>棟數規劃：1棟，34戶住家<br>基地面積：373坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎日湖生活圈養身居心地 <br>◎錯層包廂式陽台全攬窗外綠意，建築與自然生態和諧織景 <br>◎三二行館設計團隊之作，旅日呂佳隆建築師之手', // 內頁用
+    desc_home: '樓層規劃：地上14層，地下3層<br>棟數規劃：1棟，34戶住家<br>基地面積：373坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎日湖生活圈養身居心地 <br>◎錯層包廂式陽台全攬窗外綠意，建築與自然生態和諧織景 <br>◎三二行館設計團隊之作，旅日呂佳隆建築師之手', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/湖山妍/lakemountain1.jpg'),
@@ -141,9 +272,10 @@ export const case_list_1 = [
   {
     title: '巷上至善',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/巷上至善/cloudseabig1.jpg'),
-    link: '/classic_case/1/6',
+    link: '/classic_case/1/9',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上11層，地下3層<br>棟數規劃：1棟，42戶住家<br>基地面積：415坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎坐擁「內湖科技園區」、「大直美麗華商圈」經濟雙核心捷運交通帶動人潮及橫跨西湖<br>◎近西湖捷運、碧湖公園、萬坪休閒綠地<br>◎日式造景中庭，禮賓車道，全天候保全管理', // 內頁用
+    desc_home: '樓層規劃：地上11層，地下3層<br>棟數規劃：1棟，42戶住家<br>基地面積：415坪<br>建築設計：呂佳隆建築師事務所<br>建案特色：<br>◎坐擁「內湖科技園區」、「大直美麗華商圈」經濟雙核心捷運交通帶動人潮及橫跨西湖<br>◎近西湖捷運、碧湖公園、萬坪休閒綠地<br>◎日式造景中庭，禮賓車道，全天候保全管理', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/巷上至善/cloudseabig1.jpg'),
@@ -160,9 +292,10 @@ export const case_list_1 = [
   {
     title: '巷上雲海',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/巷上雲海/cloudsea1.jpg'),
-    link: '/classic_case/1/7',
+    link: '/classic_case/1/10',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上9層，地下2層<br>棟數規劃：1棟，49戶住家<br>基地面積：165坪<br>建築設計：劉文岱建築師事務所<br>建案特色：<br>◎坐擁「內湖科技園區」、「大直美麗華商圈」經濟雙核心捷運交通帶動人潮及橫跨西湖<br>◎近西湖捷運、碧湖公園、萬坪休閒綠地<br>◎低調奢華簡約大氣外觀設計', // 內頁用
+    desc_home: '樓層規劃：地上9層，地下2層<br>棟數規劃：1棟，49戶住家<br>基地面積：165坪<br>建築設計：劉文岱建築師事務所<br>建案特色：<br>◎坐擁「內湖科技園區」、「大直美麗華商圈」經濟雙核心捷運交通帶動人潮及橫跨西湖<br>◎近西湖捷運、碧湖公園、萬坪休閒綠地<br>◎低調奢華簡約大氣外觀設計', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/巷上雲海/cloudsea1.jpg'),
@@ -176,9 +309,10 @@ export const case_list_1 = [
   {
     title: '愛時代',
     img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/愛時代/istyle.jpg'),
-    link: '/classic_case/1/8',
+    link: '/classic_case/1/11',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '樓層規劃：地上9層，地下3層<br>棟數規劃：1棟，40戶住家<br>基地面積：184坪<br>建築設計：周文斌建築師事務所<br>建案特色：<br>◎位置交通樞紐，步行5分抵文德捷運站<br>◎鄰近內湖科學園區<br>◎格局方正採光通風舒適', // 內頁用
+    desc_home: '樓層規劃：地上9層，地下3層<br>棟數規劃：1棟，40戶住家<br>基地面積：184坪<br>建築設計：周文斌建築師事務所<br>建案特色：<br>◎位置交通樞紐，步行5分抵文德捷運站<br>◎鄰近內湖科學園區<br>◎格局方正採光通風舒適', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/愛時代/istyle.jpg'),
@@ -205,6 +339,7 @@ export const case_list_2 = [
     link: '/classic_case/2/1',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國104年興建，地下四層地上十四層，和裕投資CO.LTD.', // 內頁用
+    desc_home: '民國104年興建，地下四層地上十四層，和裕投資CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/和裕投資辦公大樓/heyu1.jpg'),
@@ -230,6 +365,7 @@ export const case_list_2 = [
     link: '/classic_case/2/2',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國105年興建，地下三層地上七層，總樓地板面積：10902.69平方公尺，冠彰建設CO.LTD.', // 內頁用
+    desc_home: '民國105年興建，地下三層地上七層，總樓地板面積：10902.69平方公尺，冠彰建設CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/崇德發中山華園辦公大樓/cdfe1.jpg'),
@@ -255,6 +391,7 @@ export const case_list_2 = [
     link: '/classic_case/2/3',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國105年興建，地下二層地上三層，總樓地板面積：2685.385平方公尺，力通國際開發CO.LTD.', // 內頁用
+    desc_home: '民國105年興建，地下二層地上三層，總樓地板面積：2685.385平方公尺，力通國際開發CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/林口力通/litung1.jpg'),
@@ -277,6 +414,7 @@ export const case_list_2 = [
     link: '/classic_case/2/4',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國102年興建，地下四層地上十三層，總樓地板面積：4238.43平方公尺', // 內頁用
+    desc_home: '民國102年興建，地下四層地上十三層，總樓地板面積：4238.43平方公尺', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/復興北路辦公大樓/fushin1.jpg'),
@@ -302,6 +440,7 @@ export const case_list_2 = [
     link: '/classic_case/2/5',
     cate: 2, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國99年興建，地下一層地上七層，總樓地板面積：1718.69平方公尺，成坊建設CO.LTD.', // 內頁用
+    desc_home: '民國99年興建，地下一層地上七層，總樓地板面積：1718.69平方公尺，成坊建設CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明城科技/mingchun.jpg'),
@@ -315,6 +454,7 @@ export const case_list_2 = [
     link: '/classic_case/2/6',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國95年興建，地下三層地上十層，總樓地板面積：5652.56 平方公尺，旭記建設CO.LTD.', // 內頁用
+    desc_home: '民國95年興建，地下三層地上十層，總樓地板面積：5652.56 平方公尺，旭記建設CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/麗池PARTY/LiChiParty.jpg'),
@@ -328,6 +468,7 @@ export const case_list_2 = [
     link: '/classic_case/2/7',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國95年興建，地下二層地上十二層，總樓地板面積：7414.05 平方公尺，長耀建設', // 內頁用
+    desc_home: '民國95年興建，地下二層地上十二層，總樓地板面積：7414.05 平方公尺，長耀建設', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/長耀GLORY/glory.jpg'),
@@ -341,6 +482,7 @@ export const case_list_2 = [
     link: '/classic_case/2/8',
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     desc: '民國94年興建，地下三層地上十層，總地板面積：4408.42平方公尺，長耀建設CO.LTD.', // 內頁用
+    desc_home: '民國94年興建，地下三層地上十層，總地板面積：4408.42平方公尺，長耀建設CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/寬庭/kuanting.jpg'),
@@ -353,6 +495,7 @@ export const case_list_2 = [
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.jpg'),
     link: '/classic_case/2/9',
     desc: '民國93年興建，地下二層地上八層，總地板面積：2207平方公尺，長耀建設CO.LTD.', // 內頁用
+    desc_home: '民國93年興建，地下二層地上八層，總地板面積：2207平方公尺，長耀建設CO.LTD.', // 首頁用
     imgs: [ // 內頁用
       {
         img: require('@/projects/shin-lan/shin-lan/work/合聯營造/明湖青庭/minhu1.jpg'),
@@ -365,6 +508,7 @@ export const case_list_2 = [
     img: require('@/projects/shin-lan/shin-lan/work/合聯營造/大安逸品/daan1.jpg'),
     link: '/classic_case/2/10',
     desc: '民國98年興建，地下一層地上七層，成坊建設CO.LTD.', // 內頁用
+    desc_home: '民國98年興建，地下一層地上七層，成坊建設CO.LTD.', // 首頁用
     cate: 1, // 0 全部，1 住宅，2 辦公室與場辦
     imgs: [ // 內頁用
       {
