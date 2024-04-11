@@ -8,8 +8,11 @@
     </div>
     </div>
     <div class="type-tab flex-ac flex-jb" v-if="isPC">
-      <div :class="`tab ${$route.query.type == 2 ? '' : 'active'}`" @click="$router.push('/renewal?type=1')">
+      <div :class="`tab ${$route.query.type == 1 ? 'active' : ''}`" @click="$router.push('/renewal?type=1')">
         萬華段都更
+      </div>
+      <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
+        松山延壽段都更
       </div>
     <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
         XXX段都更
@@ -83,7 +86,7 @@
 }
 
 .type-tab {
-  @include img_l_pc(330, 0, 341);
+  @include img_l_pc(400, 0, 341);
   top: auto;
   bottom: size(75);
 
