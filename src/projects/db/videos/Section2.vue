@@ -377,6 +377,14 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:1,
+          title: '【高大之森】｜置產跟隨台積電，高雄買最好',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/fPYc9WgIYxU',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:1,
           title: '【文華苑】副都中心 天生為王',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
