@@ -376,6 +376,22 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【理享城】｜洲子洋地王 公園大造鎮',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/xQDEbm8ya0U',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【理享城】｜新北地表奇蹟 萬坪水岸公園造鎮',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/mJV274uXwH4',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
           type:1,
           title: '【文華苑】｜副都心超越信義計畫十年增值盛世',
           desc: '',
