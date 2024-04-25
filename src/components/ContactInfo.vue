@@ -117,7 +117,7 @@ export default {
 height: 120%;left: 0;top: -10%;
   margin: 0 auto;
   right: 0;
-background:  radial-gradient(ellipse at center,  #7B080FFF 20%,#7B080F00 65%);}
+background:  radial-gradient(ellipse at center,  rgb(155, 0, 5) 20%,#87000400 65%);}
   }
 .img{
   width:size(177);z-index: 2;

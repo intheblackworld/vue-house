@@ -285,7 +285,7 @@ export default {
   background-size: 110vw auto;
   background-position: top;
   pointer-events: unset !important;
-  background: #7B080F;
+  background: #870004;
 
   input,
   textarea,
@@ -499,12 +499,12 @@ export default {
 }
   .order-bg {
     //background-color: $order_bg_color;
-    background-image: $order_bg_image_m;
+    //background-image: $order_bg_image_m;
     background-size: contain;
     padding-top: 0;
     margin: 0;
     position: relative;
-    z-index: 2;
+   // z-index: 2;
 
     > img {
       display: block;

@@ -1,10 +1,10 @@
 <template>
   <div class="section9">
     <!-- 
-    <div class="bg">
-    <img src="./s1/bg.jpg" data-aos="fade" />
-   </div>
    -->
+    <div class="bg">
+    <img src="./s9/bg.webp" data-aos="fade" />
+   </div>
       <mimg class="img absolute" />
 
 
@@ -64,7 +64,7 @@
 <path class="st2" d="M631,247.8H468.7"/>
 </svg>
 
-<div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜31-45坪｜挑高3米6</div>
+<div class="t1" data-aos="zoom-in" data-aos-delay="400">捷運府中站｜壓軸45坪｜挑高3米6</div>
     </div>
   </div>
 </template>
@@ -76,7 +76,9 @@
   width: 100%;
   height: size(900);
   // overflow: hidden;
-  position: relative;z-index: 1; background: radial-gradient(55.85% 45.67% at 50% 50%, #FF9093 2%, #E75B6F 19%, #C91944 41%, #BE0033 52%, #98041F 68%, #7B080F 84%);
+  position: relative;z-index: 1; 
+  background: #870004;
+  //background: radial-gradient(55% 80% at 50% 30%, #FF9093 2%, #E75B6F 19%, #C91944 60%, #BE0033 84%,);
 
   // background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
@@ -92,9 +94,13 @@
   transform: rotate(20deg)scale(.8)translateX(10%);}
 }
 */
+.bg{
+  position: absolute;width: 100%;top: 0;left: 0;
+  img{width: 100%;}
+}
 .img{
   width:size(1068);left: size(-200);top:size(40);
-  margin: 0 auto 0em;opacity: .5;
+  margin: 0 auto 0em;opacity: .59;
 }
 
 .txt{
@@ -138,13 +144,18 @@
   .section9 {
   height: sizem(460);
   }
+.bg{width: 120%;top: 0;left:-10%;
+  img{width: 100%;}
+}
+  
+  /*
 .bg{
   width:sizem(1175);
   top:sizem(-300);
   right:sizem(-190);
   transform: scaleY(-1);
   img{}
-}
+}*/
 .img{
   width:sizem(198);left: sizem(88);top:sizem(75);
   margin: 0 auto 0em;opacity: 1;
