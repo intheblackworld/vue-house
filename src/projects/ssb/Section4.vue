@@ -41,14 +41,13 @@
   position: relative;
   margin:0 auto 0;
   padding: 8.5vw 0;z-index: 3;
-  background:#ECDDC0;
 &::after{content: "";clear: both;display: block;}
 }
 .w1{bottom:size(-110);left: 0;width: size(1920);z-index: 2;
 		height: size(250);
   &::after{content: "";position: absolute;width: 80%;
 height: 100%;right: 0;top: 0;
-background: linear-gradient(-20deg, #ECDDC0FF 20%,#ECDDC000 65%);}
+background: linear-gradient(-20deg, #EDE8DDFF 20%,#EDE8DD00 65%);}
 }
 .img{
   width:size(440);right: size(-70);bottom:size(-170);z-index: 2;

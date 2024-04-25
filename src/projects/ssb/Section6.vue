@@ -38,6 +38,7 @@
   height:auto;
   position: relative;
   padding: 10vw 0 15vw;
+  background: radial-gradient(55.85% 45.67% at 50% 50%, #FF9093 2%, #E75B6F 30%, #C91944 60%, #BE0033 80%,);
 &::after{content: "";clear: both;display: block;}
 }
 .w1{bottom:size(-30);left: 0;width: size(1920);z-index: 1;
@@ -46,7 +47,7 @@
 height: 120%;left: 0;top: -10%;
   margin: 0 auto;
   right: 0;
-background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
+background:  radial-gradient(55% 45% at 50% 50%,  #BE0033FF 20%,#BE003300 65%);}
   }
 .img{
   width:size(177);left:0;
@@ -61,6 +62,7 @@ background:  radial-gradient(ellipse at center,  #40210DFF 20%,#40210D00 65%);}
   z-index: 2;
   @include txt(size(18));
   text-align: center;
+  .title{color: #ffd78c;}
 
 
   }

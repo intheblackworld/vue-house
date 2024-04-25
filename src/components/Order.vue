@@ -285,6 +285,7 @@ export default {
   background-size: 110vw auto;
   background-position: top;
   pointer-events: unset !important;
+  background: #7B080F;
 
   input,
   textarea,

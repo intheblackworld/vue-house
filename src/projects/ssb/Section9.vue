@@ -1,10 +1,10 @@
 <template>
   <div class="section9">
     <!-- 
-   -->
     <div class="bg">
     <img src="./s1/bg.jpg" data-aos="fade" />
    </div>
+   -->
       <mimg class="img absolute" />
 
 
@@ -74,13 +74,15 @@
 
 .section9 {
   width: 100%;
-  height: size(650);
+  height: size(900);
   // overflow: hidden;
-  position: relative;z-index: 1;
+  position: relative;z-index: 1; background: radial-gradient(55.85% 45.67% at 50% 50%, #FF9093 2%, #E75B6F 19%, #C91944 41%, #BE0033 52%, #98041F 68%, #7B080F 84%);
+
   // background: url("./s1/bg.jpg") center;
   // background-size: 100% auto;
-  background: #40210D;
+//  background: #40210D;
 }
+/*
 .bg{
   position: absolute;
   width:size(3700);
@@ -89,8 +91,9 @@
   img{width: 100%;
   transform: rotate(20deg)scale(.8)translateX(10%);}
 }
+*/
 .img{
-  width:size(1068);left: size(-200);top:size(-140);
+  width:size(1068);left: size(-200);top:size(40);
   margin: 0 auto 0em;opacity: .5;
 }
 
@@ -98,7 +101,7 @@
   position: relative;
   // top:calc(50% + (253 - 540) * 100vw / 1920);
  //  left:size(-260);
-  top:size(190);
+  top:size(320);
   font-size: size(54);
   line-height: 1.5;
   color: #fff;
