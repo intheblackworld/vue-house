@@ -123,8 +123,8 @@
   .logo{
   width:size(630);
 	.st0{fill:#FFF;filter: drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.8));}
-	.st1{fill:#DCBF8B;}
-	.st2{fill:none;stroke:#DCBF8B;stroke-width:1;}
+	.st1{fill:#FFF;}
+	.st2{fill:none;stroke:#FFF;stroke-width:1;}
 }
   
 .t1{
