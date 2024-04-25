@@ -956,6 +956,15 @@ export default {
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2026年初完工',
+            img: require('../process/list/28/1.jpg'),
+            title: '2024/04',
+            subtitle: ' 擋土工程進場',
+            isFinished: true,
+            imgs: [
+              require('../process/list/28/1.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/25/1.jpg'),
             title: '2023/03',
             subtitle: ' 鋪面施工',
@@ -969,6 +978,18 @@ export default {
           {
             o_title: '2023 琢壹',
             o_subtitle: '已完售，預計2026年初完工',
+            img: require('../process/list/27/1.jpg'),
+            title: '2024/04',
+            subtitle: 'B1底板灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/27/1.jpg'),
+              require('../process/list/27/2.jpg'),
+              require('../process/list/27/3.jpg'),
+              require('../process/list/27/4.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/26/1_0.jpg'),
             title: '2023/12',
             subtitle: '地樑及大底灌漿',
