@@ -955,22 +955,13 @@ export default {
         [ //琢渼
           {
             o_title: '2023 琢渼',
-            o_subtitle: '熱銷中 ，預計2026年初完工',
+            o_subtitle: '熱銷中 ，預計2027年初完工',
             img: require('../process/list/28/1.jpg'),
             title: '2024/04',
             subtitle: ' 擋土工程進場',
             isFinished: true,
             imgs: [
               require('../process/list/28/1.jpg'),
-            ]
-          },
-          {
-            img: require('../process/list/25/1.jpg'),
-            title: '2023/03',
-            subtitle: ' 鋪面施工',
-            isFinished: true,
-            imgs: [
-              require('../process/list/25/1.jpg'),
             ]
           },
         ],
