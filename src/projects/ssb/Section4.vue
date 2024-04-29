@@ -25,9 +25,15 @@
       </div> 
       </div>
       <div class="txt">
-      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Time to relax</div>
-      <div class="title" data-aos="fade-up" data-aos-delay="200">府中慢漫走<br />隨手採集生活靈感</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">步出府中站，沿著風格小店、香氣馥郁的咖啡館輕移腳步，隨手拾起即是精彩亮點，府中生活如同走進藝文展演走廊，每一處細節都值得細細欣賞，稀鬆的日常在這裡也有了個人風格。</div>
+      <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Give Me Five</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200">尚新板5告讚<br />五大必買理由</div>
+      <ul class="desc" data-aos="fade-up" data-aos-delay="300">
+        <li :class="slideIndex===0?'active':''"><span>生活一級棒：</span>板橋最大黃石市場、國際觀光湳雅夜市、學區、 亞東醫院，一應俱全。</li>
+        <li :class="slideIndex===1?'active':''"><span>交通一級棒：</span>黃金板南線，五鐵共構、九線公車近在咫尺。</li>
+        <li :class="slideIndex===2?'active':''"><span>商機一級棒：</span>生活一級棒：板橋最大黃石市場、國際觀光湳雅夜市、學區、 亞東醫院，一應俱全。</li>
+        <li :class="slideIndex===3?'active':''"><span>未來一級棒：</span>府中雙城未來10年願景計畫進行中，府中美好未來與您雙向奔赴。</li>
+        <li :class="slideIndex===4?'active':''"><span>增值一級棒：</span>府中區上市上櫃各大財團爭相插旗進駐，都市更新改建持續進行中。</li>
+      </ul>
       </div>
     </div>
   </div>
@@ -59,12 +65,21 @@ background: linear-gradient(-20deg, #EDE8DDFF 20%,#EDE8DD00 65%);}
 .txt{
 float: right;
   position: relative;
-  padding-top: 6vw;
+  padding-top: 0vw;
   width: size(580);
   z-index: 3;
   margin-right: size(210);
   color: #555;
   @include txt(size(18));
+
+  .desc{font-size:1em;
+    overflow:visible;
+    span{display: block;float: left;margin:0 0 .1em 0; transition: font-weight .3s,transform .3s;}
+    li{transition: color .3s;
+   }
+    .active{color: #000;
+      span{font-weight: 700;transform: scale(1.1);transform-origin: 80% 50%;}}
+  }
   }
 
 /* Swipe */
@@ -118,6 +133,14 @@ float: right;
     font-size: sizem(15);
     padding:2em 0 8em;
     margin: auto;
+  .desc{
+    span{float: none;}
+    li{transition: color .3s;display: none;margin: 0;
+      &.active{display: block;
+      span{transform-origin: 0% 50%;}}
+   }
+    
+  }
   }
   /* Swipe */
   .swipe {
@@ -156,28 +179,31 @@ export default {
       slideList: [
         {
           img: require('./s4/1.jpg'),
-          name: '林家花園',
+          name: '生活一級棒：府中商圈實景圖',
         },
         {
           img: require('./s4/2.jpg'),
-          name: '老地方咖啡',
+          name: '交通一級棒：高鐵示意圖',
         },
         {
           img: require('./s4/3.jpg'),
-          name: '誠品生活',
+          name: '科技園區一級棒：情境示意圖',
         },
         {
           img: require('./s4/4.jpg'),
-          name: '435藝文特區',
+          name: '未來一級棒：情境示意圖',
         },
         {
           img: require('./s4/5.jpg'),
-          name: '門前隱味',
+          name: '增值一級棒：情境示意圖',
         },
+
+        /*
         {
           img: require('./s4/6.jpg'),
           name: '食三麵屋',
         },
+        */
       ],
     }
   },

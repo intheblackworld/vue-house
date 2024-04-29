@@ -175,7 +175,8 @@ export default {
         },
         {
           img: require('./s3/4.jpg'),
-          name: '萬坪公園︱都心奢華綠帶',
+          name: '新板特區︱市政核心焦點',
+          //name: '萬坪公園︱都心奢華綠帶',
         },
       ],
     }

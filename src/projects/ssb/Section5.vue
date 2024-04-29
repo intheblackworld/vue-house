@@ -156,7 +156,7 @@ export default {
         },
         {
           img: require('./s5/3.jpg'),
-          name: '湳雅夜市',
+          name: '國際級觀光湳雅夜市',
         },
         {
           img: require('./s5/4.jpg'),
