@@ -18,6 +18,7 @@
     </div-->
 
     <img src="./s1/title.png" class="titile" data-aos="zoom-in" data-aos-delay="500" /> 
+    <img src="./s1/logo.png" class="logo" data-aos="zoom-in" data-aos-delay="700" /> 
   </div>
 </template>
 
@@ -70,9 +71,16 @@
 
 .titile{
   position: absolute;
-  top:calc(50% + (260 - 1080 * 0.5) * 100vw / 1920);
+  top:calc(50% + (250 - 1080 * 0.5) * 100vw / 1920);
   right:size(180);
   width: size(700);
+}
+
+.logo{
+  position: absolute;
+  top:calc(50% + (780 - 1080 * 0.5) * 100vw / 1920);
+  right:size(260);
+  width: size(497);
 }
 
 .t0{
@@ -105,13 +113,13 @@
   margin: auto 0 auto auto;
 
   //filter: drop-shadow(0 0 7px #eff);
-
+/*
   .logo{
   width:size(630);
 	.st0{fill:#FFF;filter: drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.8));}
 	.st1{fill:#DCBF8B;}
 	.st2{fill:none;stroke:#DCBF8B;stroke-width:1;}
-}
+}*/
   
 .t1{
     display: block;
@@ -158,14 +166,14 @@ transform: rotate(90deg);
 }
 
 .img1{
-  top:sizem(350);
+  top:sizem(320);
   left:sizem(40);
   width: sizem(300);
 }
 
 
 .light3{
-  top:sizem(230);
+  top:sizem(210);
   right: sizem(-30);
   width: sizem(420);
   mix-blend-mode: screen;
@@ -177,15 +185,23 @@ transform: rotate(90deg);
   width: sizem(320);
 }
 
+.logo{
+  top: auto;
+  bottom:sizem(20);
+  right:0;left: 0;margin:0 auto;
+  width: sizem(200);
+}
+
 
 .txt{
   font-size: sizem(22.5);
   top:calc(50% + (331 - 667 * .5) * 100vw / 375);
   width:auto;
   margin: auto;
+  /*
 .logo{
   width:sizem(278);
-}
+}*/
   .t2{
   width:sizem(278);
     }

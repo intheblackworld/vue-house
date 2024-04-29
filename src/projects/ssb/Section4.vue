@@ -135,7 +135,9 @@ float: right;
     margin: auto;
   .desc{
     span{float: none;}
-    li{transition: color .3s;display: none;margin: 0;
+    li{transition: color .3s;display: none;margin: 0;float: none;
+      width: 100%;
+      min-height: 5em;
       &.active{display: block;
       span{transform-origin: 0% 50%;}}
    }
