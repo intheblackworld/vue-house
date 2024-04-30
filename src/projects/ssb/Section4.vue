@@ -30,7 +30,7 @@
       <ul class="desc" data-aos="fade-up" data-aos-delay="300">
         <li :class="slideIndex===0?'active':''"><span>生活一級棒：</span>板橋最大黃石市場、國際觀光湳雅夜市、學區、 亞東醫院，一應俱全。</li>
         <li :class="slideIndex===1?'active':''"><span>交通一級棒：</span>黃金板南線，五鐵共構、九線公車近在咫尺。</li>
-        <li :class="slideIndex===2?'active':''"><span>商機一級棒：</span>生活一級棒：板橋最大黃石市場、國際觀光湳雅夜市、學區、 亞東醫院，一應俱全。</li>
+        <li :class="slideIndex===2?'active':''"><span>科技園區一級棒：</span>T-park科技園區進駐，google、amazon等各大企業總部帶來無限商機。</li>
         <li :class="slideIndex===3?'active':''"><span>未來一級棒：</span>府中雙城未來10年願景計畫進行中，府中美好未來與您雙向奔赴。</li>
         <li :class="slideIndex===4?'active':''"><span>增值一級棒：</span>府中區上市上櫃各大財團爭相插旗進駐，都市更新改建持續進行中。</li>
       </ul>
