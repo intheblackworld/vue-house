@@ -1,20 +1,11 @@
 <template>
-  <div class="section10">
-    <img loading="lazy" src="./s10/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
-    <img loading="lazy" src="./s10/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    <img loading="lazy" src="./s10/style_1.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0">
-    <img loading="lazy" src="./s10/style_2.png" :alt="`${info.caseName}_img`" class="hill3"  data-aos-delay="0">
-    <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
-    <img loading="lazy" src="./mobile/01/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">
-    <img loading="lazy" src="./s1/text_box.png" :alt="`${info.caseName}_img`" class="text-box" data-aos="fade-up" data-aos-delay="0">
-   
-    <div class="title3" data-aos="fade-up" data-aos-delay="400">
-      人生幾何 能夠如此心動
-    </div>
-    <div class="title4" data-aos="fade-up" data-aos-delay="600">
-      2897-9888
-    </div>
+  <div class="section1">
+    <img loading="lazy" src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg">
+    <img loading="lazy" src="./s1/img.png" :alt="`${info.caseName}_img`" class="img">
 
+    <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
+    <img loading="lazy" src="./s1/logol.png" :alt="`${info.caseName}_img`" class="logol" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
+    <img loading="lazy" src="./s10/t1.png" :alt="`${info.caseName}_img`" class="title1">
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
 </template>
@@ -22,39 +13,32 @@
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 
-.section10 {
+.section1 {
   width: 100%;
   height: 100vh;
   min-height: size(900);
   max-height: size(1080); 
-  overflow: hidden;
+ // overflow: hidden;
   position: relative;
-  background-image: url('./s1/bg.jpg');
+ /* background-image: url('./s1/bg.jpg');
   background-size: cover;
-  background-attachment: fixed;
-  // margin: 0 0 size(400) 0
+  background-attachment: fixed; */
 }
-
-.bg-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  object-fit: cover;
-  margin-top: 0;
-  // opacity: 0.5;
-}
-
+.bg{position: absolute;top:0;left: 0;width: 100%;height: 100%;object-fit: cover;}
+.img{position: absolute;bottom:size(122);bottom:calc(50% + #{size(122 - 1080 * .5)});right:size(-92);width: size(718);z-index: 3;}
+.logo{position: absolute;top:size(370);top:calc(50% + #{size(370 - 1080 * .5)});left:size(150);width: size(766);z-index: 3;filter:drop-shadow(7px 7px 5px #000);}
+.logol{position: absolute;top:size(605);top:calc(50% + #{size(605 - 1080 * .5)});left:size(150);width: size(766);z-index: 3;mix-blend-mode: screen;}
+.title1{position: absolute;bottom:size(182);bottom:calc(50% + #{size(182 - 1080 * .5)});left:size(163);width: size(996);z-index: 3;filter:drop-shadow(7px 7px 5px #000);}
 .new-text {
   @include img_r_pc(500, 1010, 30);
-  top:calc(40% + ( 1000 - 1080 * 0.4) * 100vw / 1920);
-  font-size: size(25);
+  top:auto;
+  bottom: 1em;
+  right: 1.2em;
+  font-size: size(16);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: 0.06em;
   text-align: right;
   color: #ffffff;
   z-index: 10;
@@ -62,136 +46,69 @@
   text-shadow: 0em 0em 0.3em #000;
 }
 
-.grass {
-  @include img_r_pc(1600, 0, -50);
-  top: auto;
-  bottom: 0;
-  transform-origin: bottom;
-  animation: grass 2s ease-in-out alternate infinite;
-}
 
-@keyframes grass {
-  to {
-    transform: skewX(-5deg);
-  }
-}
-
+/*
 .logo {
-  @include img_c_pc(400, 350);
+  @include img_l_pc(880, 220 , 155);
+  top:calc(50% + ( 220 - 1080 * 0.5) * 100vw / 1920);
 }
 
 .bird {
-  @include img_r_pc(530, 0, 60);
-  top: auto;
-  bottom: 0;
+  @include img_r_pc(500, 0, 300);
+  top:calc(50% + ( 300 - 1080 * 0.5) * 100vw / 1920);
   z-index: 9;
 }
 
 @keyframes cloud {
   to {
-    transform: translateX(-40px);
+    transform: translateX(-10%);
   }
 }
 .cloud1 {
-  @include img_r_pc(622, 30, 80);
+  @include img_r_pc(1200, 750, 100);
+  top:calc(50% + ( 750 - 1080 * 0.5) * 100vw / 1920);
   animation: cloud 2.5s ease-in-out alternate infinite;
-  z-index: 5;
 }
 .cloud2 {
-  @include img_l_pc(1057, 750, 0);
+  @include img_l_pc(1035, 900, 300);
+  top:calc(50% + ( 900 - 1080 * 0.5) * 100vw / 1920);
   animation: cloud 4s ease-in-out alternate infinite;
-  z-index: 5;
-}
-.hill3 {
-  @include img_l_pc(1656, 0, 0);
-  top: auto;
-  bottom: 0;
 }
 .hill2 {
-  @include img_r_pc(970, 0, 0);
-}
-.logo {
-  @include img_c_pc(600, 320);
-}
-.text-box {
-  @include img_l_pc(71, 560, 690);
-}
-.style1 {
-  @include img_l_pc(438, 0, -40);
+  @include img_r_pc(1446, 0, 0);
   top: auto;
-  bottom: 0;
-}
-.style2 {
-  @include img_l_pc(481, 0, -40);
-  top: auto;
-  bottom: 0;
-}
-.style3 {
-  @include img_r_pc(494, 0, 0);
-  top: auto;
-  bottom: 0;
-}
-.style4 {
-  @include img_r_pc(1045, 0, -100);
-  top: auto;
-  bottom: 0;
-}
-.title1 {
-}
-
-.title-en {
-  @include img_c_pc(1166, 5);
-}
-
-.title1 {
-  @include img_c_pc(235, 169);
-}
-
-.title2 {
-  @include img_c_pc(410, 578);
-  font-size: size(28.3);
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(9.89);
-  text-align: left;
-  color: #ffffff;
-  white-space: nowrap;
+  bottom: size(-100);
 }
 
 .title3 {
-  @include img_c_pc(520, 490);
-  font-size: size(30);
+  @include img_l_pc(770, 450, 200);
+  top:calc(50% + ( 450 - 1080 * 0.5) * 100vw / 1920);
+  font-size: size(50);
   font-family: 'Noto Sans TC';
-  font-weight: 600;
   font-stretch: normal;
+  font-weight: 600;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: size(20);
+  letter-spacing:0.087EM;
   text-align: center;
-  color: #ffffff;
+  color: #ffc74a;
   white-space: nowrap;
 }
 
 .title4 {
-  @include img_l_pc(764, 543, 610);
-  font-size: size(78.6);
+  @include img_l_pc(1000, 540, 220);
+  top:calc(50% + ( 540 - 1080 * 0.5) * 100vw / 1920);
+  text-shadow: 0 0 5px #1b4a20;
   font-family: 'Noto Sans TC';
-  font-weight: bold;
+  font-size: size(40);
+  font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
-  letter-spacing: size(3);
-  text-align: center;
-  color: #F5F4C4;
-  white-space: nowrap;
-
-  span {
-    font-size: size(90.6);
-    letter-spacing: size(9.06);
-  }
-}
+  line-height: 1.5;
+  letter-spacing: 0.09em;
+  text-align: left;
+  color: #fff;
+}*/
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -199,154 +116,56 @@
 }
 
 @media screen and (max-width: 767px) {
-  .section10 {
-    width: 100vw;
-    background-image: url('./mobile/01/bg_m.jpg');
-    min-height: sizem(752);
-    max-height: sizem(667);
-    height: 100vh;
-    // margin: 0 0 -12vw 0;
-     background-size: auto size-m(780);
-     background-position:center center;
-    overflow: hidden;
-    position: relative;
+  .section1 {
+    height:calc(100vh - 63px);
+    min-height: sizem(604);
+    max-height: sizem(750);
+    background-size: auto size-m(750);
   }
 
   .new-text {
-  @include img_c_pc(1100, 1010);
-  top:calc(50% + ( 670 - 667 * 0.5) * 100vw / 375);
-  font-size: size(80);
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  z-index: 10;
-  white-space: nowrap;
-  text-shadow: 0em 0em 0.3em #000;
-}
-
-  .grass {
-    // @include img_r_pc(1600, 0, -50);
-    top: auto;
-    bottom: 0;
-    transform-origin: bottom;
-    animation: grass 2s ease-in-out alternate infinite;
+    @include img_c_m(375, 0);
+    top:auto;
+    bottom: 1em;
+    font-size: sizem(15);
+    text-align: center;
   }
-
-  @keyframes grass {
-    to {
-      transform: skewX(-5deg);
-    }
-  }
-
   .logo {
-    @include img_c_m(250, 220);
+    @include img_c_m(250, 30);
+  top:calc(40% + ( 30 - 604 * 0.4) * 100vw / 375);
   }
 
   .bird {
-    @include img_c_m(280, 350);
+    @include img_c_m(220, 330);
+  top:calc(50% + ( 320 - 604 * 0.5) * 100vw / 375);
   }
 
-  @keyframes cloud {
-    to {
-      transform: translateX(-40px);
-    }
-  }
   .cloud1 {
-    @include img_r_m(400, 10, -40);
-    animation: cloud 2.5s ease-in-out alternate infinite;
+    @include img_r_m(500, 550, -100);
+  top:calc(90% + ( 470 - 604 * 0.9) * 100vw / 375);
   }
   .cloud2 {
-    @include img_l_m(400, 630, 80);
-    animation: cloud 4s ease-in-out alternate infinite;
+    @include img_l_m(300, 620, -90);
+  top:calc(80% + ( 480 - 604 * 0.8) * 100vw / 375);
   }
-    .hill2 {
-    @include img_r_m(500, -50, 0);
-    top:calc(50% + ( -50 - 667 * 0.5) * 100vw / 375);
-  }
-    .hill3 {
-    @include img_l_m(850, 600, 0);
-    top:calc(50% + ( 600 - 667 * 0.5) * 100vw / 375);
-  }
-
-  .style1 {
-    @include img_r_m(368, 0, -20);
+  .hill2 {
+    @include img_c_m(435, 0);
     top: auto;
     bottom: 0;
   }
-  .style2 {
-    @include img_l_pc(481, 0, -40);
-    top: auto;
-    bottom: 0;
-  }
-  .style3 {
-    @include img_r_m(238, 0, 0);
-    top: auto;
-    bottom: 0;
-  }
-  .style4 {
-    @include img_r_pc(1045, 0, -100);
-    top: auto;
-    bottom: 0;
-  }
-
-  .title-en {
-    @include img_l_m(337, 15, 18);
-  }
-
-  .title1 {
-    @include img_c_m(92, 115);
-  }
-  .text-box {
-  @include img_l_m(35, 425, 45);
-}
-
-  .title2 {
-    @include img_c_m(161, 220);
-    font-size: sizem(8);
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(3.89);
-    text-align: left;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
   .title3 {
-    @include img_c_m(300, 380);
-    font-size: sizem(20);
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(7.3);
-    text-align: center;
-    color: #ffffff;
-    white-space: nowrap;
+    @include img_c_m(350, 180);
+  top:calc(40% + ( 180 - 604 * 0.4) * 100vw / 375);
+    font-size: sizem(23);
   }
 
   .title4 {
-    @include img_r_m(200, 415, 80);
+    @include img_c_m(300, 220);
+  top:calc(40% + ( 220 - 604 * 0.4) * 100vw / 375);
     text-shadow: 0 0 5px #1b4a20;
     font-family: 'Noto Sans TC';
-    font-weight: bold;
-    font-size: sizem(41);
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: sizem(2.73);
-    text-align: center;
-    color: #F5F4C4;
-    white-space: nowrap;
-    span {
-      font-size: sizem(31.5);
-      font-weight: 900;
-      letter-spacing: sizem(3.15);
-    }
+    font-size: sizem(22);
+  text-align:center;
   }
 }
 </style>
@@ -356,7 +175,7 @@ import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 
 export default {
-  name: 'section10',
+  name: 'section1',
 
   data() {
     return {

@@ -1,11 +1,8 @@
 <template>
   <div>
     <div class="contact-info" id="contact-info" data-aos="fade" data-aos-delay="0">
-      <img class="logo" src="@/assets/img/contact-logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
-      <img src="../projects/ymsy/s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
-      <img src="../projects/ymsy/s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    
-    <img src="../projects/ymsy/s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0">
+      <img class="logo" src="@/projects/ymsy/s1/logo.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
+      <img class="logol" src="@/projects/ymsy/s1/logol.png" :alt="info.caseName" data-aos="fade-down" data-aos-delay="0" />
       <!-- <img
         v-if="isMobile"
         class="logo"
@@ -100,12 +97,14 @@ export default {
 
 .contact-info {
   background-size: cover;
-  background-image: url('../assets/img/bg.jpg');
+  background-image: url('~@/projects/ymsy/s1/bg.jpg');
+  background-position: center;
   //box-shadow: $contact_shadow;
   display: flex;
   flex-direction: column;
   align-content: center;
   // justify-content: space-between;
+    justify-content:center;
   position: relative;
   z-index: 3;
   //width: 1200px;
@@ -154,7 +153,13 @@ export default {
   width: $contact_logo_pc_width;
   height: auto;
   // height:;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;filter:drop-shadow(6px 6px 4px #000);
+}
+.logol {
+  width: $contact_logo_pc_width;
+  height: auto;
+  // height:;
+  margin: 0 auto 40px;mix-blend-mode: screen;
 }
 .info {
   width: 880px;

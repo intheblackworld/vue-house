@@ -1,24 +1,14 @@
 <template>
   <div class="section1">
-    <img loading="lazy" src="./s1/main.png" :alt="`${info.caseName}_img`" class="bird">
-    <img loading="lazy" src="./s1/cloud_2.png" :alt="`${info.caseName}_img`" class="cloud cloud2">
-    <img loading="lazy" src="./s1/cloud_1.png" :alt="`${info.caseName}_img`" class="cloud cloud1">
-    <img loading="lazy" src="./s1/style.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isPC">
-    <img loading="lazy" src="./mobile/01/style_m.png" :alt="`${info.caseName}_img`" class="hill2"  data-aos-delay="0" v-if="isMobile">
-    <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isPC">
-    <img loading="lazy" src="./mobile/01/logo_m.png" :alt="`${info.caseName}_img`" class="logo" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">
-    <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
-      北市稀有 近三千坪大基地
-    </div>
-    <div class="title3" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
-      北市稀有 近三千坪大基地
-    </div>
-    <div class="title4" data-aos="fade-up" data-aos-delay="600" v-if="isPC">
-      北投生活圈｜李天鐸莊園｜捷運<span>2-3</span>房
-    </div>
-    <div class="title4" data-aos="fade-up" data-aos-delay="600" v-if="isMobile">
-      北投生活圈<br>李天鐸莊園｜捷運<span>2-3</span>房
-    </div>
+  <!-- <img loading="lazy" src="./s1/pc.jpg" :alt="`${info.caseName}_img`" class="t01"> -->  
+    <img loading="lazy" src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg absolute">
+    <div class="img absolute" data-aos="fade-left">
+    <img loading="lazy" src="./s1/img.png" :alt="`${info.caseName}_img`" ></div>
+
+    <img loading="lazy" src="./s1/logo.png" :alt="`${info.caseName}_img`" class="logo absolute" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1500">
+    <img loading="lazy" src="./s1/logol.png" :alt="`${info.caseName}_img`" class="logol absolute" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="2000">
+    <img loading="lazy" src="./s1/t1.png" :alt="`${info.caseName}_img`" class="title1 absolute" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1500" v-if="isPC">
+    <img loading="lazy" src="./s1/t1m.png" :alt="`${info.caseName}_img`" class="title1 absolute" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1500" v-else>
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
 </template>
@@ -31,18 +21,25 @@
   height: 100vh;
   min-height: size(900);
   max-height: size(1080); 
-  overflow: hidden;
+ // overflow: hidden;
   position: relative;
-  background-image: url('./s1/bg.jpg');
+ /* background-image: url('./s1/bg.jpg');
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
+.t01{position: absolute;z-index: 3;top:-30px;left: 0;opacity: .0;width: 100%;}
+.bg{top:0;left: 0;width: 100%;height: 100%;object-fit: cover;}
+.img{bottom:size(122);bottom:calc(50% + #{size(122 - 1080 * .5)});right:size(-92);width: size(718);z-index: 3;
+img{width: 100%;}}
+.logo{top:size(370);top:calc(50% + #{size(370 - 1080 * .5)});left:size(150);width: size(766);z-index: 3;filter:drop-shadow(7px 7px 5px #000);}
+.logol{top:size(605);top:calc(50% + #{size(605 - 1080 * .5)});left:size(150);width: size(766);z-index: 3;mix-blend-mode: screen;}
+.title1{bottom:size(182);bottom:calc(50% + #{size(182 - 1080 * .5)});left:size(163);width: size(1110);z-index: 3;filter:drop-shadow(7px 7px 5px #000);}
 .new-text {
   @include img_r_pc(500, 1010, 30);
   top:auto;
   bottom: 1em;
   right: 1.2em;
-  font-size: size(18);
+  font-size: size(16);
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
@@ -55,6 +52,7 @@
 }
 
 
+/*
 .logo {
   @include img_l_pc(880, 220 , 155);
   top:calc(50% + ( 220 - 1080 * 0.5) * 100vw / 1920);
@@ -115,7 +113,7 @@
   letter-spacing: 0.09em;
   text-align: left;
   color: #fff;
-}
+}*/
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -129,6 +127,13 @@
     max-height: sizem(750);
     background-size: auto size-m(750);
   }
+.img{
+  bottom:calc(50% + #{sizem(70 - 604 * .5)});
+  right:sizem(-60);width: sizem(250);
+}
+.logo{top:calc(50% + #{sizem(170 - 604 * .5)});left:sizem(32);width: sizem(300);filter:drop-shadow(5px 5px 4px #000);}
+.logol{top:calc(50% + #{sizem(260 - 604 * .5)});left:sizem(32);width: sizem(300);z-index: 3;mix-blend-mode: screen;}
+.title1{bottom:calc(50% + #{sizem(80 - 604 * .5)});left:sizem(32);width: sizem(180);filter:drop-shadow(5px 5px 4px #000);}
 
   .new-text {
     @include img_c_m(375, 0);
@@ -137,6 +142,7 @@
     font-size: sizem(15);
     text-align: center;
   }
+  /*
   .logo {
     @include img_c_m(250, 30);
   top:calc(40% + ( 30 - 604 * 0.4) * 100vw / 375);
@@ -174,6 +180,7 @@
     font-size: sizem(22);
   text-align:center;
   }
+  */
 }
 </style>
 <script>

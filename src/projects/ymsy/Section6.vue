@@ -2,15 +2,13 @@
   <div class="section6">
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="200">
-        星級莊園人生<br />
-        回家逛美術館
+        日系居家品味<br />
+        禪意慢時光
       </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="400" v-if="isPC">
-        呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。知名新銳創作者蔡尉成作品《片片》迎賓，讓藝術之美滋養心靈，才知道最奢侈的不過是生活。
-      </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="400" v-if="isMobile">
-        呼吸陽明山的風，漫步近3千坪夢想藍圖，在動感的日常中感動。恰如其分地收納多項匠心公設、精緻飯店物管。知名新銳創作者蔡尉成作品《片片》迎賓。
-      </div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="400">
+        以初心為始，與大自然為伍。<br />
+        蟲鳴、花香相伴，日系禪意設計，<br />
+        療癒日常感官，拾起恬靜時光。</div>
     </div>
     <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
 
@@ -19,7 +17,7 @@
     <img loading="lazy" src="./s6/img.jpg" :alt="`${info.caseName}_img`" class="img1" data-aos="fade-up" data-aos-delay="800" v-if="isPC">
 
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
-    <div class="new-text-1">蔡尉成雕塑創作《片片》w148 x 129 x H252cm</div>
+    <div class="new-text-1">藝術家蔡尉成雕塑作品《片片》w148 x 129 x H252cm</div>
     <div class="new-text-2">現場實景</div>
 
 

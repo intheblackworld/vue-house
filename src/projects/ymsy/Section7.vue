@@ -9,11 +9,11 @@
         擁抱一座森林花園<br />
         四時寫意 有景也有情
       </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-        在鳥語花香之地享受北市難得的香榭大道，百年樟樹、櫻花繽紛、梔緬、楓香綻滿四季，舞動名為生命與自然的樂章。門前庭園搖曳清新生命力，哲思散策、親子同樂、鄰里交流，難得清幽的秘境。
-      </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
-        在鳥語花香之地享受北市難得的香榭大道，百年樟樹、櫻花繽紛、梔緬、楓香綻滿四季，舞動名為生命與自然的樂章。
+      <div class="desc" data-aos="fade-up" data-aos-delay="200">
+        百年樟樹、櫻花繽紛、梔緬、楓香綻滿四季，<br />
+舞動名為生命與自然的樂章。<br />
+綠植生牆、忘憂步道、門前庭園搖曳清新生命力，<br />
+在鳥語花香之地享受北市難得的清幽秘境。
       </div>
       <div class="new-text">銷售企劃：興益發建設自建自售</div>
     </div>

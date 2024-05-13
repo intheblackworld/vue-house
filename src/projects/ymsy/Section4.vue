@@ -6,16 +6,19 @@
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
-        城市浪漫詩人<br />
-        10分完美的生活
+        薇閣、奎山明星私校<br />
+        文教上質生活
       </div>
       <div class="desc-1" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-        掌握時間的人更容易掌握機運，而每一次的選擇與追求，都攸關品味。<br>
-        只要10分鐘，在城市裡穿梭、在巷弄中編織，讓風景成詩，送給未來的自己。
+        日式老屋、露天風呂、親山步道<br />
+        從家出發的微旅行，探索獨有魅力<br />
+        樂享北投傲視全台北，71%的高綠覆率<br />
+        慢慢活、好好活，不必遠求他方<br />
+        近在城市裡，從容揮灑人生新頁
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="200">
         10分鐘捷運紅線洲美快，一杯咖啡的時間品味市中心<br />
-        10分鐘好市多、關渡科技園區，愛、生活、雄心不需妥協<br />
+        10分鐘好市多、關渡科技園區，愛、生活、事業不需妥協<br />
         10分鐘優質文教區，世界這本大書何必遠求<br />
         10分鐘北投溫泉地、陽明山保育地，享受國家級的款待
       </div>
@@ -77,7 +80,7 @@
 
 .title {
   @include img_r_pc(597, 174, 84);
-  font-size: size(65);
+  font-size: size(60);
   font-weight: 800;
   font-stretch: normal;
   font-style: normal;

@@ -1,11 +1,7 @@
 <template>
   <div class="section3">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">這是我家<br>樹山丘</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">這是我家<br />樹山丘</div>
-    <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-      開窗四季，令人意猶未盡
-    </div>
-    <div class="subtitle" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+    <div class="title" data-aos="fade-up" data-aos-delay="0">李天鐸森態莊園<br>築夢人間桃源</div>
+    <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
       開窗四季，令人意猶未盡
     </div>
     <!--div class="subtitle-text" v-if="isMobile">
@@ -77,15 +73,15 @@
 }
 
 .title {
-  @include img_r_pc(360, 80, 360);
-  top:calc(50% + ( 400 - 1080 * 0.5) * 100vw / 1920);
+  @include img_l_pc(360, 192, 710);
+  // top:calc(50% + ( 400 - 1080 * 0.5) * 100vw / 1920);
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
-  font-size: size(90);
+  font-size: size(84);
   font-family: 'Noto Sans TC';
   font-weight: 900;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.1;
   letter-spacing: normal;
   text-align: left;
   color: #fff;
@@ -94,8 +90,8 @@
 }
 
 .subtitle {
-  @include img_r_pc(420, 300, 300);
-  top:calc(50% + ( 620 - 1080 * 0.5) * 100vw / 1920);
+  @include img_l_pc(500, 372, 710);
+  // top:calc(50% + ( 620 - 1080 * 0.5) * 100vw / 1920);
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
   font-size: size(35);
   font-family: 'Noto Sans TC';
@@ -103,7 +99,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.71;
-  letter-spacing: size(2);
+  letter-spacing: 0.08em;
   text-align: left;
   color: #fff;
   z-index: 3;

@@ -5,11 +5,14 @@
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
-        懂生活的你<br />
-        只選樹山丘
+        李天鐸全案規劃<br />
+        自然系和風之作
       </div>
       <div class="desc" data-aos="fade-up" data-aos-delay="200">
-        盡情享受豪奢公設，飯店式物業管理、景觀健身房、廚藝教室、閱覽室、KTV、Lounge Bar、高科技維安，體驗最尊爵的生活
+        呼吸陽明山的風，漫步近3千坪夢想藍圖，<br />
+        李天鐸建築師將設計畫筆，交還由大地揮灑，<br />
+        揉合新東方美學精神，恰如其分地收納多項匠心公設。<br />
+        讓藝術之美滋養心靈，才知道最奢侈的不過是生活。<br /><br />參考：臺北市政府都市發展局
       </div>
     </div>
 

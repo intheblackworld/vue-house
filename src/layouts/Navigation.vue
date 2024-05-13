@@ -149,7 +149,7 @@ export default {
     transition: all .3s;
   }
   &.min {
-    height: 90px;
+    height:size(70);
     .logo {
       opacity: 1;
       width: size(218);

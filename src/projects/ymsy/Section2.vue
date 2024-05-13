@@ -1,11 +1,12 @@
 <template>
   <div class="section2">
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isPC">一樣的台北市，不一樣的樹山丘</div>
-    <div class="title" data-aos="fade-up" data-aos-delay="0" v-if="isMobile">一樣的台北市 <br />不一樣的樹山丘</div>
+    <div class="title" data-aos="fade-up" data-aos-delay="0">捷運紅線上 戀上都會桃花源</div>
     <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <div class="new-text-l">3D透視合成示意圖</div>
     <img loading="lazy" src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
+    <!-- <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash"> -->
+    <div class="hr absolute">
+    <img loading="lazy" src="./s2/light.png" :alt="`${info.caseName}_img`" class="light absolute" v-if="isPC"></div>
     <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
     </Map>
   </div>
@@ -33,6 +34,26 @@
   margin-top: 0;
   z-index: 2;
 }
+@keyframes light {
+  0% {
+    transform: rotate(0deg)scale(0);
+  }
+  50% {
+    transform: rotate(0deg)scale(0);
+  }
+  75% {
+    transform: rotate(90deg)scale(1);
+  }
+  100% {
+    transform: rotate(180deg)scale(0);
+  }
+}
+.hr{top: size(-4);right: size(-10);z-index: 3;
+width: 50%;height: size(8);background: radial-gradient(ellipse at center, #FFF 0%,#FFF0 70%);mix-blend-mode: screen;
+.light{width: size(168);mix-blend-mode: screen;left: 0;right: 0;margin: auto;top:size(-168 * .5 + 4);
+  animation: light 4s linear infinite;
+}
+}
 
 .flash {
   @include img_r_pc(1000, -40, -238);
@@ -49,9 +70,9 @@
 
 .title {
   @include img_c_pc(1300, 80);
-  top:calc(40% + ( 80 - 1080 * 0.4) * 100vw / 1920);
+  top:calc(25% + #{size(80 - 1080 * .25)});
   font-family: 'Noto Sans TC';
-  font-weight: 600;
+  font-weight: 500;
   font-size: size(60);
   font-stretch: normal;
   font-style: normal;
@@ -61,6 +82,7 @@
   color: #ffffff;
   z-index: 3;
   white-space: nowrap;
+  text-shadow: 5px 5px 3px #000;
 }
 
 .new-text {
@@ -149,6 +171,9 @@
     text-align: center;
   }
 }
+.hr{top: sizem(-3);right: -20%;
+width: 100%;height: sizem(6);}
+
 
   .flash {
     @include img_l_m(1041, 709, -232);
