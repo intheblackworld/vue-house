@@ -7,7 +7,12 @@
       <div class="title" data-aos="fade-in" data-aos-delay="0">
         興益發建設
       </div>
-      <div class="desc" data-aos="fade-in" data-aos-delay="200">
+      <div class="desc" data-aos="fade-in" data-aos-delay="200" v-if="isPC">
+        獨到精準眼光，精耕生活美學<br>
+讓愛家的人更愛家<br>
+經典業績 中山官邸／世界首席／詠大直／新悦城／民生1號院／民生臻愛
+      </div>
+      <div class="desc" data-aos="fade-in" data-aos-delay="200" v-else>
         獨到精準眼光，精耕生活美學<br>
 讓愛家的人更愛家
       </div>
