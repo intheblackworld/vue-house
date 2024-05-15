@@ -152,7 +152,7 @@ export default {
     height:size(70);
     .logo {
       opacity: 1;
-      width: size(218);
+      width: size(360);
     }
   }
 }
