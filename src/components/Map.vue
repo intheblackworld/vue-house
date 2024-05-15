@@ -1,8 +1,8 @@
 <template>
-  <div class="map" id="map" refs="map" @scroll="handleScroll">
+  <div class="map" :id="mapId" ref="map" @scroll="handleScroll">
     <img :src="hand" alt :class="`hand ${showMask ? 'active' : ''}`" />
     <img class="map-bg" :src="bgSrc" alt ref="mapbg" />
-    <img class="map-text" :src="bgText" alt />
+    <img class="map-text" :src="bgText" alt v-if="bgText" />
     <div :class="`mask ${showMask ? 'active' : ''}`">
     </div>
     <img
@@ -43,12 +43,13 @@
 import { isMobile } from '@/utils'
 export default {
   name: 'map',
-  props: ['tagList', 'bgSrc', 'hand', 'bgText'],
+  props: ['tagList', 'bgSrc', 'scrX', 'hand', 'bgText', 'mapId'],
   data() {
     return {
       isMobile,
       map: '',
       showMask: false,
+      mapId: this._uid // 使用组件的唯一ID
     }
   },
   mounted() {
@@ -56,14 +57,14 @@ export default {
 
     if (this.isMobile) {
       setTimeout(() => {
-        // const map = document.querySelector('.map')
-        const mapBg = document.querySelector('.map-bg')
+        const map = this.$refs.map
+        const mapBg = this.$refs.mapbg
         const text = document.querySelector('.map .text')
         if (text) {
           text.style.left = `${mapBg.clientWidth / 2 - 100}px`
         }
-
-        // map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 - 10, 0)
+       console.log(this.scrX);
+       map.scrollTo(mapBg.clientWidth / 2 - window.innerWidth / 2 + this.scrX, 0)
       }, 1200)
 
       setTimeout(() => {

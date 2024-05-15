@@ -1,8 +1,8 @@
 <template>
   <div class="section5">
+    <hrV />
     <img loading="lazy" src="./s5/flower.png" :alt="`${info.caseName}_img`" class="flower" data-aos="fade-in" data-aos-delay="0">
-    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
-
+    
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
         李天鐸全案規劃<br />
@@ -33,7 +33,6 @@
         <div class="next-btn" @click="addIndex"></div>
       </div>
     </div>
-    <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -41,9 +40,7 @@
 
 .section5 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  height:size(900);
   position: relative;
   //overflow-x: hidden;
   // min-height: size(900);
@@ -88,7 +85,7 @@
 }
 
 .title {
-  @include img_l_pc(597, 230, 84);
+  @include img_l_pc(597, 150, 84);
   font-size: size(75);
   font-weight: bold;
   font-stretch: normal;
@@ -101,7 +98,7 @@
 }
 
 .desc {
-  @include img_l_pc(660, 483, 79);
+  @include img_l_pc(660, 403, 79);
   font-size: size(22);
   font-weight: 500;
   font-stretch: normal;
@@ -110,18 +107,19 @@
   letter-spacing: normal;
   text-align: left;
   color: #000000;
+    font-family: 'Noto Sans TC';
 }
 
 .flower {
   @include img_l_pc(285, 0, 580);
   top: auto;
-  bottom: calc(50% + -24vw);
+  bottom:size(-85);
   z-index: 2;
 }
 
 /* Swipe */
 .swipe {
-  @include div_r_pc(1129, 901, 95, 0);
+  @include div_r_pc(1129, 900, 0, 0);
   object-fit: cover;
   // background: #0344;
 }
@@ -187,7 +185,8 @@
     top: 1.2em;
     color: #fff;
     font-size: size(18);
-    font-weight: bold;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -361,34 +360,21 @@
     text-align: center;
   }
 
-  .flash {
-    @include img_l_m(1041, 709, -232);
-    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
-    animation: flash 1s ease-in-out alternate infinite;
-    opacity: 0;
-    z-index: 3;
-  }
-
-  @keyframes flash {
-    to {
-      opacity: 1;
-    }
-  }
   .title {
-    @include img_c_m(292, 66);
+    @include img_c_m(320, 35);
     font-size: sizem(36.6);
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.22;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #006b31;
     white-space: nowrap;
   }
 
   .desc {
-    @include img_c_m(339, 170);
+    @include img_c_m(310, 145);
     font-size: sizem(12);
     font-weight: 500;
     font-stretch: normal;
@@ -401,8 +387,7 @@
   }
 
   .flower {
-    @include img_r_m(77, 69, -25);
-    top: calc(50% + (-960 - 1080 * 0.5) * 100vw / 1920);
+    @include img_r_m(90, 60, 0);
     z-index: 2;
   }
 
@@ -576,9 +561,13 @@
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 import slider from '@/mixins/slider.js'
+import hrV from '@/projects/ymsy/hr.vue'
 
 export default {
   name: 'section5',
+  components: {
+    hrV,
+  },
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -593,122 +582,62 @@ export default {
       slideList: [
         {
           img: isMobile
-            ? require('./mobile/05/slider_1.jpg')
+            ? require('./s5/slider_1m.jpg')
             : require('./s5/slider_1.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_2.jpg')
+            ? require('./s5/slider_2m.jpg')
             : require('./s5/slider_2.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_3.jpg')
+            ? require('./s5/slider_3m.jpg')
             : require('./s5/slider_3.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_4.jpg')
+            ? require('./s5/slider_4m.jpg')
             : require('./s5/slider_4.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_5.jpg')
+            ? require('./s5/slider_5m.jpg')
             : require('./s5/slider_5.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_6.jpg')
+            ? require('./s5/slider_6m.jpg')
             : require('./s5/slider_6.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_7.jpg')
+            ? require('./s5/slider_7m.jpg')
             : require('./s5/slider_7.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_8.jpg')
+            ? require('./s5/slider_8m.jpg')
             : require('./s5/slider_8.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_9.jpg')
+            ? require('./s5/slider_9m.jpg')
             : require('./s5/slider_9.jpg'),
           name: '現場實景',
         },
         {
           img: isMobile
-            ? require('./mobile/05/slider_10.jpg')
+            ? require('./s5/slider_10m.jpg')
             : require('./s5/slider_10.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_11.jpg')
-            : require('./s5/slider_11.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_12.jpg')
-            : require('./s5/slider_12.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_13.jpg')
-            : require('./s5/slider_13.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_14.jpg')
-            : require('./s5/slider_14.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_15.jpg')
-            : require('./s5/slider_15.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_16.jpg')
-            : require('./s5/slider_16.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_17.jpg')
-            : require('./s5/slider_17.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_18.jpg')
-            : require('./s5/slider_18.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_19.jpg')
-            : require('./s5/slider_19.jpg'),
-          name: '現場實景',
-        },
-        {
-          img: isMobile
-            ? require('./mobile/05/slider_20.jpg')
-            : require('./s5/slider_20.jpg'),
           name: '現場實景',
         },
       ],

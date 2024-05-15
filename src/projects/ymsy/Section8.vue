@@ -10,8 +10,6 @@
       </div>
       
     </div>
-    <div class="new-text01" v-if="isMobile">銷售企劃：興益發建設自建自售</div>
-    <div class="new-text02" v-if="isMobile">銷售企劃：興益發建設自建自售</div>
     <div class="team-list" v-if="isPC">
       <div class="team" v-for="slide in slideList" :key="slide.desc">
         <img loading="lazy" :src="slide.img" :alt="`${info.caseName}_img`" class="team-img" data-aos="fade-up" data-aos-delay="300">
@@ -394,7 +392,7 @@
 @media screen and (max-width: 767px) {
   .section8 {
     width: 100vw;
-    height: sizem(1500);
+    height: sizem(1400);
     min-height: auto;
     max-height: initial;
     // background-image: url('./all/section_bg.jpg');
@@ -408,7 +406,7 @@
 
   .team-item {
     width: 100vw;
-    height: sizem(750);
+    height: sizem(700);
   }
 
    .team-item span{

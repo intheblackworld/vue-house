@@ -2,8 +2,6 @@
   <div class="section7">
     <img loading="lazy" src="./s7/flower.png" :alt="`${info.caseName}_img`" class="flower grass" v-if="isPC">
     <img loading="lazy" src="./mobile/07/flower.png" :alt="`${info.caseName}_img`" class="flower" v-if="isMobile" data-aos="fade" data-aos-delay="200">
-    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash" v-if="isMobile">
-
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
         擁抱一座森林花園<br />
@@ -15,7 +13,6 @@
 綠植生牆、忘憂步道、門前庭園搖曳清新生命力，<br />
 在鳥語花香之地享受北市難得的清幽秘境。
       </div>
-      <div class="new-text">銷售企劃：興益發建設自建自售</div>
     </div>
     <div class="img-list" v-if="isPC">
       <img loading="lazy" src="./s7/img_1.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-in" data-aos-delay="300">
@@ -105,12 +102,13 @@
 }
 
 .desc {
-  @include img_l_pc(650, 480, 65);
+  @include img_l_pc(650, 460, 65);
   font-size: size(22);
   font-weight: 500;
+  font-family: 'Noto Sans TC';
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.97;
+  line-height: 2.5;
   letter-spacing: normal;
   text-align: left;
   color: #000000;
@@ -379,13 +377,6 @@
     // background-position: 0 0;
     // background-attachment: fixed;
   }
-  .flash {
-    @include img_l_m(1041, 709, -232);
-    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
-    animation: flash 1s ease-in-out alternate infinite;
-    opacity: 0;
-    z-index: 3;
-  }
 
    .new-text {
   @include img_c_pc(1100, 1010);
@@ -401,12 +392,6 @@
   white-space: nowrap;
   text-shadow: 0em 0em 0.3em #000;
 }
-
-  @keyframes flash {
-    to {
-      opacity: 1;
-    }
-  }
   .title {
     @include img_l_m(262, 50, 30);
     font-size: sizem(32);

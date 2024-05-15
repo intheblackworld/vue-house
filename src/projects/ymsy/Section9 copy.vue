@@ -1,8 +1,7 @@
 <template>
   <div class="section9">
-    <hrV />
     <img loading="lazy" src="./s9/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-      <Map :bgSrc="bgSrc" v-else :hand="hand" :scrX="scrX" class="bg-img"></Map>
+    <img loading="lazy" src="./s9/bgm.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-else>
     <div class="content">
       <div class="title" data-aos="fade-in" data-aos-delay="0">
         興益發建設
@@ -16,6 +15,27 @@
       </div>
     </div>
 
+    <!--div class="new-text">銷售企劃：興益發建設自建自售</div
+      <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">-->
+    </Map>
+
+    <!-- <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true" data-aos="fade-down" data-aos-delay="800">
+      <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
+        <transition-group name="swipe-fade" mode="out-in">
+          <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
+            <img loading="lazy" :src="slide.img" alt="">
+            <div class="slide-name absolute" v-html="slide.name"></div>
+          </div>
+        </transition-group>
+        <div class="pagination absolute flex-ac" v-if="isPC">
+          <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+        </div>
+      </div>
+      <div class="swipe-btns absolute flex-ac flex-jb">
+        <div class="prev-btn" @click="decIndex"></div>
+        <div class="next-btn" @click="addIndex"></div>
+      </div>
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -121,7 +141,7 @@
 .label {
     @include img_r_pc(750, 60, 50);
   color: #fff;
-  text-shadow: 0 2px 2px #000;z-index: 3;
+  text-shadow: 0 2px 2px #000;
   }
 
   
@@ -192,13 +212,11 @@
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 import Map from '@/components/Map.vue'
-import hrV from '@/projects/ymsy/hr.vue'
 
 export default {
   name: 'section9',
   components: {
     Map,
-    hrV,
   },
   data() {
     return {
@@ -207,9 +225,8 @@ export default {
       isMobile,
       isTablet,
       isDialog: false,
-      bgSrc: require('./s9/bg.jpg'),
-      hand: require('./mobile/02/swipe-here.png'),
-      scrX: '50',
+      bgSrc: require('./mobile/09/bg.jpg'),
+      hand: require('./mobile/09/swipe-here.png'),
     }
   },
 

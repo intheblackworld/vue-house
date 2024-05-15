@@ -1,7 +1,8 @@
 <template>
   <div class="section1">
   <!-- <img loading="lazy" src="./s1/pc.jpg" :alt="`${info.caseName}_img`" class="t01"> -->  
-    <img loading="lazy" src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg absolute">
+    <img loading="lazy" src="./s1/bg.jpg" :alt="`${info.caseName}_img`" class="bg absolute" v-if="isPC">
+    <img loading="lazy" src="./s1/bgm.jpg" :alt="`${info.caseName}_img`" class="bg absolute" v-else>
     <div class="img absolute" data-aos="fade-left">
     <img loading="lazy" src="./s1/img.png" :alt="`${info.caseName}_img`" ></div>
 
@@ -23,14 +24,12 @@
   max-height: size(1080); 
  // overflow: hidden;
   position: relative;
- /* background-image: url('./s1/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed; */
 }
 .t01{position: absolute;z-index: 3;top:-30px;left: 0;opacity: .0;width: 100%;}
 .bg{top:0;left: 0;width: 100%;height: 100%;object-fit: cover;}
 .img{bottom:size(122);bottom:calc(50% + #{size(122 - 1080 * .5)});right:size(-92);width: size(718);z-index: 3;
-img{width: 100%;}}
+img{width: 100%; animation: 3s bird ease-in-out alternate infinite;
+transform-origin: 100% 70%;}}
 .logo{top:size(370);top:calc(50% + #{size(370 - 1080 * .5)});left:size(150);width: size(766);z-index: 3;filter:drop-shadow(7px 7px 5px #000);}
 .logol{top:size(605);top:calc(50% + #{size(605 - 1080 * .5)});left:size(150);width: size(766);z-index: 3;mix-blend-mode: screen;}
 .title1{bottom:size(182);bottom:calc(50% + #{size(182 - 1080 * .5)});left:size(163);width: size(1110);z-index: 3;filter:drop-shadow(7px 7px 5px #000);}
@@ -52,68 +51,12 @@ img{width: 100%;}}
 }
 
 
-/*
-.logo {
-  @include img_l_pc(880, 220 , 155);
-  top:calc(50% + ( 220 - 1080 * 0.5) * 100vw / 1920);
-}
 
-.bird {
-  @include img_r_pc(500, 0, 300);
-  top:calc(50% + ( 300 - 1080 * 0.5) * 100vw / 1920);
-  z-index: 9;
-}
-
-@keyframes cloud {
+@keyframes bird {
   to {
-    transform: translateX(-10%);
+    transform: skewX(2deg) rotate(-3deg);
   }
 }
-.cloud1 {
-  @include img_r_pc(1200, 750, 100);
-  top:calc(50% + ( 750 - 1080 * 0.5) * 100vw / 1920);
-  animation: cloud 2.5s ease-in-out alternate infinite;
-}
-.cloud2 {
-  @include img_l_pc(1035, 900, 300);
-  top:calc(50% + ( 900 - 1080 * 0.5) * 100vw / 1920);
-  animation: cloud 4s ease-in-out alternate infinite;
-}
-.hill2 {
-  @include img_r_pc(1446, 0, 0);
-  top: auto;
-  bottom: size(-100);
-}
-
-.title3 {
-  @include img_l_pc(770, 450, 200);
-  top:calc(50% + ( 450 - 1080 * 0.5) * 100vw / 1920);
-  font-size: size(50);
-  font-family: 'Noto Sans TC';
-  font-stretch: normal;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing:0.087EM;
-  text-align: center;
-  color: #ffc74a;
-  white-space: nowrap;
-}
-
-.title4 {
-  @include img_l_pc(1000, 540, 220);
-  top:calc(50% + ( 540 - 1080 * 0.5) * 100vw / 1920);
-  text-shadow: 0 0 5px #1b4a20;
-  font-family: 'Noto Sans TC';
-  font-size: size(40);
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: 0.09em;
-  text-align: left;
-  color: #fff;
-}*/
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -128,59 +71,20 @@ img{width: 100%;}}
     background-size: auto size-m(750);
   }
 .img{
-  bottom:calc(50% + #{sizem(70 - 604 * .5)});
-  right:sizem(-60);width: sizem(250);
+  bottom:calc(60% + #{sizem(123 - 750 * .6)});
+  right:sizem(-39);width: sizem(320);
 }
-.logo{top:calc(50% + #{sizem(170 - 604 * .5)});left:sizem(32);width: sizem(300);filter:drop-shadow(5px 5px 4px #000);}
-.logol{top:calc(50% + #{sizem(260 - 604 * .5)});left:sizem(32);width: sizem(300);z-index: 3;mix-blend-mode: screen;}
-.title1{bottom:calc(50% + #{sizem(80 - 604 * .5)});left:sizem(32);width: sizem(180);filter:drop-shadow(5px 5px 4px #000);}
+.logo{top:calc(15% + #{sizem(88 - 750 * .15)});left:sizem(42);width: sizem(282);filter:drop-shadow(5px 5px 4px #000);}
+.logol{top:calc(15% + #{sizem(174 - 750 * .15)});left:sizem(42);width: sizem(282);z-index: 3;mix-blend-mode: screen;}
+.title1{bottom: auto;top:calc(20% + #{sizem(227 - 750 * .2)});left:0;right: 0;margin:0 auto;width: sizem(250);filter:drop-shadow(5px 5px 4px #000);}
 
   .new-text {
     @include img_c_m(375, 0);
     top:auto;
     bottom: 1em;
-    font-size: sizem(15);
-    text-align: center;
+    font-size: sizem(12);
+    text-align: right;padding: 0 1em 0 0;
   }
-  /*
-  .logo {
-    @include img_c_m(250, 30);
-  top:calc(40% + ( 30 - 604 * 0.4) * 100vw / 375);
-  }
-
-  .bird {
-    @include img_c_m(220, 330);
-  top:calc(50% + ( 320 - 604 * 0.5) * 100vw / 375);
-  }
-
-  .cloud1 {
-    @include img_r_m(500, 550, -100);
-  top:calc(90% + ( 470 - 604 * 0.9) * 100vw / 375);
-  }
-  .cloud2 {
-    @include img_l_m(300, 620, -90);
-  top:calc(80% + ( 480 - 604 * 0.8) * 100vw / 375);
-  }
-  .hill2 {
-    @include img_c_m(435, 0);
-    top: auto;
-    bottom: 0;
-  }
-  .title3 {
-    @include img_c_m(350, 180);
-  top:calc(40% + ( 180 - 604 * 0.4) * 100vw / 375);
-    font-size: sizem(23);
-  }
-
-  .title4 {
-    @include img_c_m(300, 220);
-  top:calc(40% + ( 220 - 604 * 0.4) * 100vw / 375);
-    text-shadow: 0 0 5px #1b4a20;
-    font-family: 'Noto Sans TC';
-    font-size: sizem(22);
-  text-align:center;
-  }
-  */
 }
 </style>
 <script>

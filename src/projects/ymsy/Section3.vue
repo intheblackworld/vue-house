@@ -1,5 +1,6 @@
 <template>
   <div class="section3">
+    <hrV />
     <div class="title" data-aos="fade-up" data-aos-delay="0">李天鐸森態莊園<br>築夢人間桃源</div>
     <div class="subtitle" data-aos="fade-up" data-aos-delay="200">
       開窗四季，令人意猶未盡
@@ -7,10 +8,8 @@
     <!--div class="subtitle-text" v-if="isMobile">
       現場實景
     </div-->
-    <div class="new-text">銷售企劃：興益發建設自建自售</div>
     <img loading="lazy" src="./s3/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isPC">
-    <img loading="lazy" src="./mobile/03/bg.jpg" :alt="`${info.caseName}_img`" class="img" v-if="isMobile">
-    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
+    <img loading="lazy" src="./s3/bgm.jpg" :alt="`${info.caseName}_img`" class="img" v-else>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -25,14 +24,6 @@
   // background-image: url('./s1/01_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
-}
-
-.flash {
-  @include img_r_pc(1000, -31, -238);
-  top:calc(50% + ( -31 - 1080 * 0.5) * 100vw / 1920);
-  animation: flash 1s ease-in-out alternate infinite;
-  opacity: 0;
-  z-index: 3;
 }
 .new-text {
   @include img_r_pc(500, 1010, 30);
@@ -51,20 +42,9 @@
   text-shadow: 0em 0em 0.3em #000;
 }
 
-@keyframes flash {
-  to {
-    opacity: 1;
-  }
-}
-
 .img {
   position: relative;
   width: 100%;
-  /*
-  @include img_c_pc(1902, 0);
-  top:calc(50% + ( 10 - 1080 * 0.5) * 100vw / 1920);
-  bottom: 0;
-  z-index: 1;*/
 }
 
 .bird {
@@ -145,12 +125,6 @@
     left: -4%;
     bottom: 0;
   }
-  .flash {
-    @include img_l_m(1041, 709, -232);
-    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
-    z-index: 3;
-  }
-
   .img {
     @include img_r_m(375, 0, 0);
     height: sizem(750);
@@ -165,14 +139,14 @@
   }
 
   .title {
-    @include img_l_m(250, 30, 30);
-    font-size: sizem(48);
+    @include img_c_m(375, 40);
+    font-size: sizem(40);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.2;
     letter-spacing: 1px;
-    text-align: left;
+    text-align: center;
     color: #fff;
     text-orientation: upright;
     z-index: 3;
@@ -180,14 +154,14 @@
   }
 
   .subtitle {
-    @include img_l_m(280, 150, 30);
+    @include img_c_m(375, 150);
     font-size: sizem(20);
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.71;
     letter-spacing: size(5.61);
-    text-align: left;
+    text-align: center;
     color: #fff;
     text-orientation: upright;
     z-index: 3;
@@ -214,9 +188,13 @@
 // @ is an alias to /src
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
+import hrV from '@/projects/ymsy/hr.vue'
 
 export default {
   name: 'section3',
+  components: {
+    hrV,
+  },
 
   data() {
     return {

@@ -1,13 +1,10 @@
 <template>
   <div class="section2">
-    <div class="title" data-aos="fade-up" data-aos-delay="0">捷運紅線上 戀上都會桃花源</div>
-    <div class="new-text">銷售企劃：興益發建設自建自售</div>
+    <hrV />
+    <div class="title" data-aos="fade-up" data-aos-delay="0">捷運紅線上<br v-if="isMobile"> 戀上都會桃花源</div>
     <div class="new-text-l">3D透視合成示意圖</div>
     <img loading="lazy" src="./s2/bg.jpg" :alt="`${info.caseName}_img`" class="bg-img" v-if="isPC">
-    <!-- <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash"> -->
-    <div class="hr absolute">
-    <img loading="lazy" src="./s2/light.png" :alt="`${info.caseName}_img`" class="light absolute" v-if="isPC"></div>
-    <Map :bgSrc="bgSrc" v-if="isMobile" :hand="hand">
+    <Map :bgSrc="bgSrc" v-if="isMobile" :scrX="scrX" :hand="hand">
     </Map>
   </div>
 </template>
@@ -34,39 +31,7 @@
   margin-top: 0;
   z-index: 2;
 }
-@keyframes light {
-  0% {
-    transform: rotate(0deg)scale(0);
-  }
-  50% {
-    transform: rotate(0deg)scale(0);
-  }
-  75% {
-    transform: rotate(90deg)scale(1);
-  }
-  100% {
-    transform: rotate(180deg)scale(0);
-  }
-}
-.hr{top: size(-4);right: size(-10);z-index: 3;
-width: 50%;height: size(8);background: radial-gradient(ellipse at center, #FFF 0%,#FFF0 70%);mix-blend-mode: screen;
-.light{width: size(168);mix-blend-mode: screen;left: 0;right: 0;margin: auto;top:size(-168 * .5 + 4);
-  animation: light 4s linear infinite;
-}
-}
 
-.flash {
-  @include img_r_pc(1000, -40, -238);
-  animation: flash 1s ease-in-out alternate infinite;
-  opacity: 0;
-  z-index: 3;
-}
-
-@keyframes flash {
-  to {
-    opacity: 1;
-  }
-}
 
 .title {
   @include img_c_pc(1300, 80);
@@ -171,19 +136,10 @@ width: 50%;height: size(8);background: radial-gradient(ellipse at center, #FFF 0
     text-align: center;
   }
 }
-.hr{top: sizem(-3);right: -20%;
-width: 100%;height: sizem(6);}
-
-
-  .flash {
-    @include img_l_m(1041, 709, -232);
-    top:calc(50% + ( -13 - 667 * 0.5) * 100vw / 375);
-    z-index: 3;
-  }
-
   .title {
     @include img_c_m(350, 30);
-    font-size: sizem(35);
+    font-size: sizem(30);
+  text-shadow: 1px 3px 3px #000;
   }
 }
 </style>
@@ -192,11 +148,13 @@ width: 100%;height: sizem(6);}
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 import Map from '@/components/Map.vue'
+import hrV from '@/projects/ymsy/hr.vue'
 
 export default {
   name: 'section2',
   components: {
     Map,
+    hrV,
   },
 
   data() {
@@ -208,6 +166,7 @@ export default {
       isShow: true,
       bgSrc: require('./mobile/02/bg.jpg'),
       hand: require('./mobile/02/swipe-here.png'),
+      scrX: 50,
     }
   },
 

@@ -1,22 +1,22 @@
 <template>
   <div class="section4">
+    <hrV />
     <img loading="lazy" src="./s4/fly_1.png" :alt="`${info.caseName}_img`" class="fly1" data-aos="fade-up" data-aos-delay="0">
     <img loading="lazy" src="./s4/fly_2.png" :alt="`${info.caseName}_img`" class="fly2" data-aos="fade-up" data-aos-delay="0">
-    <img loading="lazy" src="./s2/flash.png" :alt="`${info.caseName}_img`" class="flash">
 
     <div class="content">
       <div class="title" data-aos="fade-up" data-aos-delay="0">
         薇閣、奎山明星私校<br />
         文教上質生活
       </div>
-      <div class="desc-1" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+      <div class="desc-1" data-aos="fade-up" data-aos-delay="200">
         日式老屋、露天風呂、親山步道<br />
         從家出發的微旅行，探索獨有魅力<br />
         樂享北投傲視全台北，71%的高綠覆率<br />
         慢慢活、好好活，不必遠求他方<br />
         近在城市裡，從容揮灑人生新頁
       </div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="200">
+      <div class="desc" v-if="isPC" data-aos="fade-up" data-aos-delay="200">
         10分鐘捷運紅線洲美快，一杯咖啡的時間品味市中心<br />
         10分鐘好市多、關渡科技園區，愛、生活、事業不需妥協<br />
         10分鐘優質文教區，世界這本大書何必遠求<br />
@@ -41,7 +41,6 @@
         <div class="next-btn" @click="addIndex"></div>
       </div>
     </div>
-    <div class="new-text">銷售企劃：興益發建設自建自售</div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -49,17 +48,8 @@
 
 .section4 {
   width: 100%;
-  height: 100vh;
-  min-height: size(900);
-  max-height: size(1080);
+  height: size(1050);
   position: relative;
-  //overflow-x: hidden;
-  // min-height: size(900);
-  // background-image: url('./s2/bg.jpg');
-  // background-size: 100% 100%;
-  // background-position: 0 0;
-  // background-attachment: fixed;
-  // overflow: hidden;
 }
 
 .bg-img {
@@ -71,11 +61,6 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
-  // opacity: 0.5;
-
-  // &:nth-child(1) {
-  //   position: relative;
-  // }
 }
 
 .title {
@@ -107,45 +92,35 @@
   white-space: nowrap;
 }
 .desc {
-  @include img_r_pc(602, 483, 79);
-  font-size: size(22);
+  @include img_r_pc(602, 550, 75);
+  font-family: 'Noto Sans TC';
+  font-size: size(19);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.97;
+  line-height: 2.5;
   letter-spacing: normal;
   text-align: left;
   color: #000000;
   white-space: nowrap;
 }
 .desc-1 {
-  @include img_r_pc(602, 350, 79);
-  font-size: size(18);
+  @include img_r_pc(602, 350, 75);
+  font-family: 'Noto Sans TC';
+  font-size: size(19);
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1.7;
   letter-spacing: normal;
   text-align: left;
   color: #000000;
   white-space: nowrap;
 }
 
-.flash {
-  @include img_r_pc(1000, -40, -238);
-  animation: flash 1s ease-in-out alternate infinite;
-  opacity: 0;
-  z-index: 3;
-}
-
-@keyframes flash {
-  to {
-    opacity: 1;
-  }
-}
 
 .fly1 {
-  @include img_r_pc(109, 140, 80);
+  @include img_r_pc(109, 120, 10);
 }
 
 .fly2 {
@@ -154,7 +129,7 @@
 
 /* Swipe */
 .swipe {
-  @include div_l_pc(1172, 901, 95, 0);
+  @include div_l_pc(1170, 900, 80, 0);
   object-fit: cover;
   // background: #0344;
 }
@@ -177,26 +152,6 @@
 .swipe-fade-leave-active {
   transition: all 1s ease;
 }
-
-// begin
-// .swipe-left-leave-to {
-//   margin-left: -100vw;
-//   z-index: 0;
-// }
-// // end
-// .swipe-left-enter {
-//   opacity: 0.5;
-//   margin-left: 0;
-//   z-index: 1;
-// }
-
-// .swipe-left-enter-active {
-//   transition: all 0.5s ease;
-// }
-
-// .swipe-left-leave-active {
-//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-// }
 
 .swipe-wrap {
   width: 100%;
@@ -221,7 +176,7 @@
     color: #fff;
     font-family: 'Noto Sans TC';
     font-size: size(18);
-    font-weight: bold;
+    font-weight:500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.6;
@@ -230,19 +185,6 @@
     text-shadow: 0 0.3em 1em #000;
   }
 
-  // &:nth-child(1) {
-  //   z-index: 1;
-  //   // opacity: 1;
-  // }
-
-  // &.base {
-  //   z-index: 1;
-  //   opacity: 1;
-  // }
-  // &.active {
-  //   z-index: 2;
-  //   // opacity: 1;
-  // }
 }
 
 .pagination {
@@ -380,11 +322,6 @@
     height: sizem(750);
     min-height: auto;
     max-height: initial;
-    // background-image: url('./all/section_bg.jpg');
-    // background-attachment: scroll;
-    // background-size: 100% 100%;
-    // background-position: 0 0;
-    // background-attachment: fixed;
   }
 
   .new-text {
@@ -396,15 +333,9 @@
     color: #fff;
   text-shadow: 0em 0em 0.3em #000;
 }
-
-  .flash {
-    @include img_l_m(1041, 709, -232);
-    top:calc(50% + ( -85 - 667 * 0.5) * 100vw / 375);
-    z-index: 3;
-  }
   .title {
-    @include img_l_m(262, 50, 30);
-    font-size: sizem(36.6);
+    @include img_l_m(262, 40, 30);
+    font-size: sizem(30);
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
@@ -427,13 +358,25 @@
     color: #000000;
     white-space: nowrap;
   }
+  .desc-1 {
+    @include img_c_m(301, 150);
+    font-size: sizem(12);
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.01;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    white-space: nowrap;
+  }
 
   .fly1 {
-    @include img_r_m(70, 40, 20);
+    @include img_r_m(70, 30, 0);
   }
 
   .fly2 {
-    @include img_l_m(43, 129, 10);
+    @include img_l_m(43, 105, 10);
   }
 
   /* Swipe */
@@ -606,9 +549,13 @@
 import { isPC, isMobile, isTablet } from '@/utils'
 import info from '@/info'
 import slider from '@/mixins/slider.js'
+import hrV from '@/projects/ymsy/hr.vue'
 
 export default {
   name: 'section4',
+  components: {
+    hrV,
+  },
 
   mixins: [slider],
   props: ['viewIndex'],
@@ -622,38 +569,34 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: isMobile ? require('./mobile/04/slider_1.jpg') : require('./s4/slider_1.jpg'),
+          img: isMobile ? 
+          require('./s4/slider_1m.jpg') :
+          require('./s4/slider_1.jpg'),
           name: '捷運復興崗站',
-          // desc: '270度翠綠簇擁<br />開窗就享無垠綠景',
         },
         {
-          img: isMobile ? require('./mobile/04/slider_2.jpg') : require('./s4/slider_2.jpg'),
-          name: 'COSTCO美式生活',
-          // desc: '大福路大興路環抱<br />地段價值更珍貴',
+          img: isMobile ? 
+          require('./s4/slider_2m.jpg') :
+          require('./s4/slider_2.jpg'),
+          name: '捷運復興崗站',
         },
         {
-          img: isMobile ? require('./mobile/04/slider_3.jpg') : require('./s4/slider_3.jpg'),
+          img: isMobile ? 
+          require('./s4/slider_3m.jpg') :
+          require('./s4/slider_3.jpg'),
           name: '北投圖書館',
         },
         {
-          img: isMobile ? require('./mobile/04/slider_4.jpg') : require('./s4/slider_4.jpg'),
-          name: '北投溫泉博物館',
-        },
-        {
-          img: isMobile ? require('./mobile/04/slider_5.jpg') : require('./s4/slider_5.jpg'),
-          name: '三層崎公園',
-        },
-        {
-          img: isMobile ? require('./mobile/04/slider_6.jpg') : require('./s4/slider_6.jpg'),
+          img: isMobile ? 
+          require('./s4/slider_4m.jpg') :
+          require('./s4/slider_4.jpg'),
           name: '地熱谷',
         },
         {
-          img: isMobile ? require('./mobile/04/slider_7.jpg') : require('./s4/slider_7.jpg'),
-          name: '薇閣高級中學',
-        },
-        {
-          img: isMobile ? require('./mobile/04/slider_8.jpg') : require('./s4/slider_8.jpg'),
-          name: '貴子坑',
+          img: isMobile ? 
+          require('./s4/slider_5m.jpg') :
+          require('./s4/slider_5.jpg'),
+          name: '北投溫泉博物館',
         },
       ],
     }
