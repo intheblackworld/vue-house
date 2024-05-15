@@ -17,9 +17,10 @@
     <vue-lazy-component class="section" id="section2">
       <Section2 />
     </vue-lazy-component> 
+    <!-- 
     <vue-lazy-component class="section" id="promotions">
       <Promotions />
-    </vue-lazy-component> 
+    </vue-lazy-component>  -->
     <vue-lazy-component
       class="section"
       id="section3"
@@ -131,7 +132,7 @@ import Indigator from '@/components/Indigator.vue'
 
 import Section1 from '@/projects/hr/Section1.vue'
 import Section2 from '@/projects/hr/Section2.vue'
-import Promotions from '@/projects/hr/promotions.vue'
+// import Promotions from '@/projects/hr/promotions.vue'
 import Section3 from '@/projects/hr/Section3.vue'
 import Section4 from '@/projects/hr/Section4.vue'
 import Section5 from '@/projects/hr/Section5.vue'
@@ -156,7 +157,7 @@ export default {
     MobileNav,
     Section1,
     Section2,
-    Promotions,
+    // Promotions,
     Section3,
     Section4,
     Section5,
