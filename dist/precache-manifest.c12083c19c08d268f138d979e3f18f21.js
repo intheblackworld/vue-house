@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "378fe5a94b97f3c9061f",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.c835f688.js"
+    "revision": "76a693c0aaa9b8304871",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.89b45ad5.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "66feef4f506ff996680d",
+    "revision": "18c5618ac098aa01ea3e",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "66feef4f506ff996680d",
-    "url": "/js/app.cf8a668d.js"
+    "revision": "18c5618ac098aa01ea3e",
+    "url": "/js/app.4c61d5a5.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -124,12 +124,12 @@ self.__precacheManifest = [
     "url": "/js/news.fd08350b.js"
   },
   {
-    "revision": "e9b01a47b2a5d83fe0d7",
-    "url": "/css/renewal.6efe7687.css"
+    "revision": "22426edd4bcb273ffaa9",
+    "url": "/css/renewal.6cd45059.css"
   },
   {
-    "revision": "e9b01a47b2a5d83fe0d7",
-    "url": "/js/renewal.bc1937b7.js"
+    "revision": "22426edd4bcb273ffaa9",
+    "url": "/js/renewal.59a473fc.js"
   },
   {
     "revision": "47832eee01bf1bb5a092256706bfcf5d",
@@ -376,6 +376,10 @@ self.__precacheManifest = [
     "url": "/img/4.efce040e.jpg"
   },
   {
+    "revision": "e79e6edc035b7281e228efc9258f9625",
+    "url": "/img/1.e79e6edc.jpeg"
+  },
+  {
     "revision": "a16ddf16b028c79917d2c11666978e31",
     "url": "/img/2.a16ddf16.jpg"
   },
@@ -498,6 +502,10 @@ self.__precacheManifest = [
   {
     "revision": "f426426df3921ee0ceec145d8c680d75",
     "url": "/img/img10.f426426d.jpg"
+  },
+  {
+    "revision": "5cf6c36c98466c2e17850c495553813c",
+    "url": "/img/4.5cf6c36c.jpeg"
   },
   {
     "revision": "efa491c7a41d66f88c2f655cbf0d7ebb",
@@ -628,12 +636,12 @@ self.__precacheManifest = [
     "url": "/img/11.fa20eae7.png"
   },
   {
-    "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
-    "url": "/img/404-bg.a72458d2.png"
-  },
-  {
     "revision": "83b895381b36762de13a44776987de43",
     "url": "/img/404-bg-m.83b89538.png"
+  },
+  {
+    "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
+    "url": "/img/404-bg.a72458d2.png"
   },
   {
     "revision": "14ce8dbbc31bcbda547a7fb575457066",
@@ -772,6 +780,10 @@ self.__precacheManifest = [
     "url": "/img/lakemountain2.1a707510.jpg"
   },
   {
+    "revision": "f5a81a679cf3c74c64c4809a04e27246",
+    "url": "/img/9.f5a81a67.jpeg"
+  },
+  {
     "revision": "87e783f0af8034d4c3a74860ca6fb5df",
     "url": "/img/10.87e783f0.png"
   },
@@ -808,8 +820,16 @@ self.__precacheManifest = [
     "url": "/img/0.72c37d51.jpg"
   },
   {
+    "revision": "00f61ec585fbc459a54568e1343a1784",
+    "url": "/img/7.00f61ec5.jpeg"
+  },
+  {
     "revision": "d701e844613309ce16071f56d35f51c0",
     "url": "/img/欣聯鉅星.d701e844.jpg"
+  },
+  {
+    "revision": "5203d738f6cc9e76672549b06deb801a",
+    "url": "/img/3.5203d738.jpg"
   },
   {
     "revision": "6b650705de973b47b71b684f55fe9378",
@@ -876,6 +896,10 @@ self.__precacheManifest = [
     "url": "/img/4.34d28ab3.jpg"
   },
   {
+    "revision": "dc4e2bae0833e39ba4f22f8ce4318959",
+    "url": "/img/5.dc4e2bae.jpeg"
+  },
+  {
     "revision": "e5a340ce05b15ee762df265824498ffa",
     "url": "/img/cdfe1.e5a340ce.jpg"
   },
@@ -890,6 +914,10 @@ self.__precacheManifest = [
   {
     "revision": "7d2e72d3db5e6e8d38b2ca19d5a85e1d",
     "url": "/img/3.7d2e72d3.jpg"
+  },
+  {
+    "revision": "a7eb7eb3da752cd2e2218236e203b953",
+    "url": "/img/6.a7eb7eb3.jpeg"
   },
   {
     "revision": "e92ac04b7a8de37618f2316a04fb6c87",
@@ -922,6 +950,10 @@ self.__precacheManifest = [
   {
     "revision": "a3075e689d18ba83636d16c10300f4c3",
     "url": "/img/2.a3075e68.jpg"
+  },
+  {
+    "revision": "8f66dadac8b5739d35c95d777fcddcb7",
+    "url": "/img/8.8f66dada.jpeg"
   },
   {
     "revision": "2c803baee91c9f35e7a60d36e2f92943",
@@ -1168,6 +1200,10 @@ self.__precacheManifest = [
     "url": "/img/LiChiParty.8132632d.jpg"
   },
   {
+    "revision": "9bb04251035abfccc431fb8edb121f6e",
+    "url": "/img/2.9bb04251.jpeg"
+  },
+  {
     "revision": "a68a064d3038cf8800bd817bd543bfe6",
     "url": "/img/02.a68a064d.png"
   },
@@ -1176,16 +1212,16 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "522b0ba0480ca96d1b4c4e0c41fdc36b",
+    "revision": "18143d828d9a51bb7b21b81ba574a518",
     "url": "/index.html"
-  },
-  {
-    "revision": "b81798ad1201c16a82e43a126c8eb988",
-    "url": "/favicon.png"
   },
   {
     "revision": "dc9077cc2c651a99cbc8102117341c8e",
     "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
+    "revision": "b81798ad1201c16a82e43a126c8eb988",
+    "url": "/favicon.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
