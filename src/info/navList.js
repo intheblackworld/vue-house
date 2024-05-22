@@ -5,7 +5,7 @@ export default [
   { name: '最新消息', link: '/news' },
   { name: '影音專區', link: '/medias' },
   { name: '企業責任', link: '/company' },
-  { name: '都更專區', link: '/renewal' },
+  { name: '都更專區', link: '/renewal?type=1' },
   { name: '會員專區', link: '/member' },
   { name: '聯絡我們', link: '/contacts' },
 ]
