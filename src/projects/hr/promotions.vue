@@ -7,7 +7,7 @@
       <div class="title" data-aos="fade-up" data-aos-delay="200" >2024公寓式酒店優質體驗<br>
 「請你吃早餐」住宿方案！</div>
       <div class="desc" data-aos="fade-up" data-aos-delay="300">
-－活動期間：2024/2/15 起至 2024/5/15止 。<br>
+－活動期間：2024/5/15 起至 2024/8/15止 。<br>
 －專案優惠價：NT$30,000起/月。<br v-if="isMobile" />　(不同房型、人數價格有差異)<br>
 －活動贈送：免費享用20日份早餐(一人使用)<br>
 　*限量30間 售完為止* <br><br>
