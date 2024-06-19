@@ -6,7 +6,7 @@ export const medias = [
     desc: '南勢角捷運2分鐘，景安雙軌共構6分鐘，坐享4大商圈環繞，獨擁6大全齡公設。',
     img: require('@/projects/shin-lan/shin-lan/video/欣聯大心.jpg'),
     video: '',
-    id: '2H8IoGtmU9k', // youtube video  link id
+    id: 'C-GIgK4ILPE', // youtube video  link id
   },
   {
     index: 1,
