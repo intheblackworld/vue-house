@@ -157,7 +157,10 @@
 </div>
       </div>
 
-      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">桃園車站前<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>飯店寓所<svg v-if="!isMobile" viewBox="0 0 30 40" class="slash"><line x1="24.5" y1="5.5" x2="5.5" y2="34.5"/></svg><br v-else />月租3萬起<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>尊榮禮遇</div>
+      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">桃園車站前<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>飯店寓所</div>
+	  <div class="t2"  data-aos="zoom-in" data-aos-delay="800">113.07.01停止月租方案</div>
+	  <!-- 
+      <div class="t1"  data-aos="zoom-in" data-aos-delay="600">桃園車站前<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>飯店寓所<svg v-if="!isMobile" viewBox="0 0 30 40" class="slash"><line x1="24.5" y1="5.5" x2="5.5" y2="34.5"/></svg><br v-else />月租3萬起<svg viewBox="0 0 10 10" class="dot"><polygon points="6.3,3.7 8.6,5 6.3,6.3 5,8.6 3.7,6.3 1.4,5 3.7,3.7 5,1.4 "/></svg>尊榮禮遇</div> -->
     </div>
   </div>
 </template>
@@ -234,6 +237,10 @@
   .slash{height:1.25em;margin: -0.1em 0 0.1em;fill:none;stroke:currentColor;stroke-width:2;
     vertical-align:middle;}
     }
+  .t2{
+  font-size:0.6em;color:#444C;
+  display: block;
+  padding:.7em 0;}
 }
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
@@ -264,7 +271,7 @@
   margin:0 auto .8em;
   }
   .logo4{width:7%;margin: -0.2em 0em 0.2em -0.1em;}
-  div{margin: 0 .7em 0 -.7em;
+  div{margin: 0 .3em 0 -.3em;
   }
   }
   .t1{
