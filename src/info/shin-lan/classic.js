@@ -36,6 +36,12 @@ export const case_list_1 = [
       {
         img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯詠心1/10.png')
       },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯詠心1/11.png')
+      },
+      {
+        img: require('@/projects/shin-lan/shin-lan/work/欣聯建設/欣聯詠心1/12.png')
+      },
     ],
     type_text: '欣聯建設Shin-Lan', // 內頁用
   },
