@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "ac6a3b5fc627334b617c",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.17351f9d.js"
+    "revision": "490aa347a2b651bc5842",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.8fcd745d.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "4f5442b8c84f72eef25f",
+    "revision": "f4552eb87774244a4074",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "4f5442b8c84f72eef25f",
-    "url": "/js/app.67908f8f.js"
+    "revision": "f4552eb87774244a4074",
+    "url": "/js/app.bf3a358d.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -204,12 +204,12 @@ self.__precacheManifest = [
     "url": "/img/1.ed297a09.jpg"
   },
   {
-    "revision": "535877f50039c0cb49a6196a5b7517cd",
-    "url": "/fonts/element-icons.535877f5.woff"
-  },
-  {
     "revision": "732389ded34cb9c52dd88271f1345af9",
     "url": "/fonts/element-icons.732389de.ttf"
+  },
+  {
+    "revision": "535877f50039c0cb49a6196a5b7517cd",
+    "url": "/fonts/element-icons.535877f5.woff"
   },
   {
     "revision": "2ddb16ddee8a6d0dec46cb92d78650f4",
@@ -228,6 +228,10 @@ self.__precacheManifest = [
     "url": "/img/topbg.9942627d.jpg"
   },
   {
+    "revision": "ad6c901eabcb3196bd55a0d4be77468a",
+    "url": "/img/05.ad6c901e.png"
+  },
+  {
     "revision": "608fb8dfb10440d4b37d49ecb8e285e8",
     "url": "/img/img_page2_duty_04.608fb8df.jpg"
   },
@@ -244,12 +248,12 @@ self.__precacheManifest = [
     "url": "/img/2.fb6cc7b4.jpg"
   },
   {
-    "revision": "9c2e1cfd6bef4769717dcd7002a893e9",
-    "url": "/img/cdfe3.9c2e1cfd.jpg"
+    "revision": "659d779d934b75fa58d0be335313017c",
+    "url": "/img/07.659d779d.png"
   },
   {
-    "revision": "2cb4f5ae10e6d1821d0fe989c97005a8",
-    "url": "/img/5.2cb4f5ae.jpg"
+    "revision": "9c2e1cfd6bef4769717dcd7002a893e9",
+    "url": "/img/cdfe3.9c2e1cfd.jpg"
   },
   {
     "revision": "2f9f61b42bc057e36b088fd469652339",
@@ -268,12 +272,12 @@ self.__precacheManifest = [
     "url": "/img/03.bfaae4fd.jpg"
   },
   {
-    "revision": "e976970676174290b598da4c8c94139f",
-    "url": "/img/10.e9769706.png"
+    "revision": "e8627e5b42d4c89be4c3cd92a000c387",
+    "url": "/img/08.e8627e5b.png"
   },
   {
-    "revision": "48ec49f3c0b16d7a8473c7ac5e5b5580",
-    "url": "/img/1.48ec49f3.jpg"
+    "revision": "e976970676174290b598da4c8c94139f",
+    "url": "/img/10.e9769706.png"
   },
   {
     "revision": "608b329838d0be904978d705ba532a80",
@@ -286,6 +290,10 @@ self.__precacheManifest = [
   {
     "revision": "08a9fde3f431e9ad5b14613f9fd0440f",
     "url": "/img/02_1.08a9fde3.jpg"
+  },
+  {
+    "revision": "36278b19c2e0d567b0a8c1c886c6a595",
+    "url": "/img/02.36278b19.png"
   },
   {
     "revision": "f36e8b51a5326b3b4ea355198ad294bf",
@@ -352,6 +360,10 @@ self.__precacheManifest = [
     "url": "/img/funflower2.3350ebe6.jpg"
   },
   {
+    "revision": "d1a3b80b09273242ea830ecc3155643c",
+    "url": "/img/09.d1a3b80b.png"
+  },
+  {
     "revision": "2d3e5166995d91b2bf606da89bb0263e",
     "url": "/img/img.2d3e5166.png"
   },
@@ -390,6 +402,10 @@ self.__precacheManifest = [
   {
     "revision": "02b9539d08453e66eb9fe97dbcd029b2",
     "url": "/img/img.02b9539d.jpg"
+  },
+  {
+    "revision": "481906a3c5f931b652b01b0531d44d2b",
+    "url": "/img/04.481906a3.png"
   },
   {
     "revision": "8b9debd1089799220c1a483d07c65711",
@@ -478,10 +494,6 @@ self.__precacheManifest = [
   {
     "revision": "4a7d152f62e2fb75aab866a00939620d",
     "url": "/img/bg.4a7d152f.png"
-  },
-  {
-    "revision": "e9d0cd912fbb4855586ce9a0496474a6",
-    "url": "/img/0.e9d0cd91.jpg"
   },
   {
     "revision": "ce1d9374de7b7536ce7619c18c9f98e5",
@@ -708,6 +720,10 @@ self.__precacheManifest = [
     "url": "/img/img_page2_duty_05.e4fd871f.jpg"
   },
   {
+    "revision": "97e3e5f41aa71ec1ef8c7a4667d6698f",
+    "url": "/img/00.97e3e5f4.png"
+  },
+  {
     "revision": "44f116fb3f38ca1776507aeecf895d54",
     "url": "/img/6.44f116fb.jpg"
   },
@@ -722,6 +738,10 @@ self.__precacheManifest = [
   {
     "revision": "5dccc8bed70f5d02dd6aaf383d9de65a",
     "url": "/img/1.5dccc8be.jpg"
+  },
+  {
+    "revision": "86e6351f2ede64157801b09fd475ecf7",
+    "url": "/img/03.86e6351f.png"
   },
   {
     "revision": "8db65b20c2338f95c2f6554e69f63985",
@@ -920,12 +940,8 @@ self.__precacheManifest = [
     "url": "/img/6.a7eb7eb3.jpeg"
   },
   {
-    "revision": "e92ac04b7a8de37618f2316a04fb6c87",
-    "url": "/img/4.e92ac04b.jpg"
-  },
-  {
-    "revision": "e2f566a340822a10daf41272ec345c77",
-    "url": "/img/2.e2f566a3.jpg"
+    "revision": "46e268811417978dd077ec1ae20765bd",
+    "url": "/img/06.46e26881.png"
   },
   {
     "revision": "275d154807a99d4e0a22a6c72f4efb6a",
@@ -946,6 +962,10 @@ self.__precacheManifest = [
   {
     "revision": "36d47c23d3d7eba00a42e4a0b8bf2367",
     "url": "/img/img1.36d47c23.jpg"
+  },
+  {
+    "revision": "02b7689b89271f0177b2feee2ade6fc9",
+    "url": "/img/10.02b7689b.png"
   },
   {
     "revision": "a3075e689d18ba83636d16c10300f4c3",
@@ -1092,10 +1112,6 @@ self.__precacheManifest = [
     "url": "/img/6.9d4691fa.png"
   },
   {
-    "revision": "5497b2b968fffc6b6cb044944770d61c",
-    "url": "/img/3.5497b2b9.jpg"
-  },
-  {
     "revision": "c0c8e7633749869fb1d8a9a1a003502f",
     "url": "/img/08.c0c8e763.jpg"
   },
@@ -1212,7 +1228,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "3dea2cafccf9248f4f4ce04424c05004",
+    "revision": "af020c239ca91858d0887c09239f7202",
     "url": "/index.html"
   },
   {
@@ -1220,12 +1236,12 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "dc9077cc2c651a99cbc8102117341c8e",
-    "url": "/google3d6eee54d2f3fc35.html"
-  },
-  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
