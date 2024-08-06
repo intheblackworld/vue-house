@@ -27,7 +27,7 @@
 </svg>
 
 <h3 class="t1">泰山市心｜明志商圈｜雙捷運站</h3>
-<h3 class="t2">2-3房智慧家</h3>
+<h3 class="t2">3房智慧家</h3>
 </div>
   </div>
 </template>
