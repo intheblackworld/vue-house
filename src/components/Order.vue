@@ -71,18 +71,30 @@
                 }"
               ></el-time-select>
             </div> -->
-            <!-- <div class="row">
-              <label>想看房型</label>
-              <el-select v-model="form.house" placeholder>
+             <div class="row">
+              <label>需求房型</label>
+              <el-select v-model="form.room_type" placeholder>
                 <el-option
-                  v-for="city in ['甜蜜2房', '幸福3房', '都想看看']"
+                  v-for="city in ['2房', '3房']"
                   :key="city"
                   :label="city"
                   :value="city"
                   no-data-text=""
                 ></el-option>
               </el-select>
-            </div> -->
+            </div> 
+            <div class="row">
+              <label>購屋預算</label>
+              <el-select v-model="form.budget" placeholder>
+                <el-option
+                  v-for="city in ['2000-2500萬', '3000-3500萬']"
+                  :key="city"
+                  :label="city"
+                  :value="city"
+                  no-data-text=""
+                ></el-option>
+              </el-select>
+            </div> 
             <!-- <div class="row">
               <label>E-mail</label>
               <el-input v-model="form.email" placeholder></el-input>
@@ -225,6 +237,8 @@ export default {
         name: '',
         phone: '',
         email: '',
+        room_type: '',
+        budget: '',
         city: '',
         area: '',
         msg: '',
@@ -292,6 +306,8 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
+      formData.append('room_type', this.form.room_type)
+      formData.append('budget', this.form.budget)
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
@@ -412,7 +428,7 @@ export default {
   }
 
   .group {
-    height: 250px;
+    height: 381px;
     margin-bottom: 40px;
 
     &:nth-child(1) {
