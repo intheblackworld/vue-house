@@ -936,6 +936,26 @@ export default {
         require('../works/1/4.jpg'),
       ],
       item_list: [
+        // 謙旭
+        {
+          title: '謙旭',
+          title2: '謙旭',
+          desc: '新北市｜林口區<br />105坪全時區綠墅<br />人生換幕 何須趕路 國際林口 康橋雙語',
+          img: require('../works/16/1.jpg'),
+          isEmpty: false,
+          info1: '新北市｜林口區<br />105坪全時區綠墅<br />人生換幕 何須趕路 國際林口 康橋雙語',
+          info2: '投資興建：興富謙建設<br />規劃坪數：105坪全時區綠墅',
+          info3: '國際林口隱富時區<br />康橋馬禮遜雙語校園<br />俯仰天地境界<br />浩瀚綠海為席',
+          contact: '貴賓專線｜02-2602-2345<br />接待會館｜林口區文化二路二段60號',
+          link: 'https://timeless.debang.tw/',
+          logo: require('../works/16/1.jpg'),
+          imgs: [
+            require('../works/16/2.jpg'),
+            ],
+          hint: '',
+          label: '',
+        },
+
         // 高大之森
         {
           title: '高大<br />之森',
