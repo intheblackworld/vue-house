@@ -7,7 +7,7 @@
       <img src="./s4/0a_04.png" :alt="`${info.caseName}_img`" class="bg-img bg-t0" v-if="isPC">
     <img src="./m/8/bg_b.png" :alt="`${info.caseName}_img`" class="bg-img bg-b" v-if="isMobile">
     <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
-    <img src="./m/8/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
+    <img src="./s7/img.png" :alt="`${info.caseName}_img`" class="img" data-aos="fade-up" data-aos-delay="200" v-if="isMobile">
     <div class="hr" data-aos="zoom-in-down" data-aos-delay="0"></div>
     <h3 class="title" data-aos="fade-up" data-aos-delay="0">建材一品</h3>
   </div>
