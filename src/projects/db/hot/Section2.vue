@@ -937,6 +937,7 @@ export default {
       ],
       item_list: [
         // 謙旭
+        /*
         {
           title: '謙旭',
           title2: '謙旭',
@@ -955,6 +956,7 @@ export default {
           hint: '',
           label: '',
         },
+        */
 
         // 高大之森
         {
