@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "f5793f0a4ee60831c633",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.db3d88c4.js"
+    "revision": "d7bc53f23ecbe83b623a",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.5aefb0b7.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "fcdab999f885a7cc34de",
+    "revision": "1af4a65a13ba2814c07a",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "fcdab999f885a7cc34de",
-    "url": "/js/app.f4784cd8.js"
+    "revision": "1af4a65a13ba2814c07a",
+    "url": "/js/app.4895410d.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -204,12 +204,12 @@ self.__precacheManifest = [
     "url": "/img/1.ed297a09.jpg"
   },
   {
-    "revision": "535877f50039c0cb49a6196a5b7517cd",
-    "url": "/fonts/element-icons.535877f5.woff"
-  },
-  {
     "revision": "732389ded34cb9c52dd88271f1345af9",
     "url": "/fonts/element-icons.732389de.ttf"
+  },
+  {
+    "revision": "535877f50039c0cb49a6196a5b7517cd",
+    "url": "/fonts/element-icons.535877f5.woff"
   },
   {
     "revision": "2ddb16ddee8a6d0dec46cb92d78650f4",
@@ -892,6 +892,10 @@ self.__precacheManifest = [
     "url": "/img/istyle_miditation.8cfb49f8.jpg"
   },
   {
+    "revision": "d97c71f62c44bdfbaf4266bb488f7316",
+    "url": "/img/2.d97c71f6.jpg"
+  },
+  {
     "revision": "c31b22c8ca9091fdbdcf1acd2b33c6bd",
     "url": "/img/4.c31b22c8.jpg"
   },
@@ -934,6 +938,10 @@ self.__precacheManifest = [
   {
     "revision": "c205ff2a39531365c7489ca533222de2",
     "url": "/img/fushin2.c205ff2a.jpg"
+  },
+  {
+    "revision": "c6845d10eb52bcbe5065cae60e0bd577",
+    "url": "/img/1.c6845d10.jpg"
   },
   {
     "revision": "7d2e72d3db5e6e8d38b2ca19d5a85e1d",
@@ -1140,6 +1148,10 @@ self.__precacheManifest = [
     "url": "/img/litung4.c145229e.jpg"
   },
   {
+    "revision": "2f8362c44f551f24aed8025fa596756b",
+    "url": "/img/3.2f8362c4.jpg"
+  },
+  {
     "revision": "5808bd31f9f50792561d0d608c5ed6c0",
     "url": "/img/img3.5808bd31.jpg"
   },
@@ -1236,7 +1248,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "2bb54278ab1adf063fc6ed848c91257f",
+    "revision": "08aa2f1ead13fb9906bc4868776d0afb",
     "url": "/index.html"
   },
   {
@@ -1248,11 +1260,11 @@ self.__precacheManifest = [
     "url": "/google3d6eee54d2f3fc35.html"
   },
   {
-    "revision": "b3417d0933b62494f8cce3a08fd910cd",
-    "url": "/sitemap.xml"
-  },
-  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "b3417d0933b62494f8cce3a08fd910cd",
+    "url": "/sitemap.xml"
   }
 ];
