@@ -36,7 +36,7 @@
       致力打造百年穩固、永世怡居的好建築。
     </h1> -->
     <div class="bottom"></div>
-      <div class="modal" v-if="modal">
+      <!--div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
           <img src="./s1/pc1.jpg" alt v-if="!isMobile" />
@@ -45,7 +45,7 @@
           <img src="./s1/mo2.jpg" class="img2" alt v-else  @click="$router.push('/hot/#top')"/>
           <img src="./close.png" alt class="close" @click="modal = false" />
         </div>
-      </div>
+      </div-->
   </div>
 </template>
 
