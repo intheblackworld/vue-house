@@ -923,6 +923,64 @@ export default {
         //},
         //陽光
 
+        // 碧波白
+        {
+          title: '碧波白',
+          title2: '碧波白',
+          desc: '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+          img: require('../works/1/0.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜新店區<br />23-49坪‧ 70‧78坪大戶雙併<br />走遍千山萬水 還是碧潭最美',
+          info2:
+            '投資興建：漢翔開發有限公司<br />坪數房型：23-49坪‧ 70‧78坪大戶雙併',
+          info3:
+            '碧潭水岸首席 <br />涵碧美學御所<br />澳洲PTW建築團隊巨鑄<br />2020 Muse Design Awards 建築設計、室內設計',
+          contact: '貴賓專線｜02-2913-1333<br />接待會館｜新店區北新路一段79號',
+          link: 'https://bbb.debang.tw/',
+          logo: require('../works/1/0.jpg'),
+          imgs: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
+          text: [
+            require('../works/1/1.jpg'),
+            require('../works/1/2.jpg'),
+            require('../works/1/3.jpg'),
+            require('../works/1/4.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+
+                // 伴月灣
+        {
+          title: '伴月灣',
+          title2: '伴月灣',
+          desc: '新北市｜洲子洋重劃新蘆特區<br />68坪 前庭後院 電梯透天<br />面水岸 近捷運 鄰公園',
+          img: require('../works/9/1.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜洲子洋重劃新蘆特區<br />68坪 前庭後院 電梯透天<br />面水岸 近捷運 鄰公園',
+          info2: '投資興建：中德建設<br />規劃坪數：68坪',
+          info3:
+            '水岸豪景第一排<br />蘆洲捷運站5分鐘<br />新蘆特區水岸宜居<br />前迎8800坪雙公園<br />背倚5600坪生態保護區',
+          contact:
+            '貴賓專線｜02-8292-2333<br />接待會館｜<br>新北市五股區新城八路336號',
+          link: 'https://wv.debang.tw/',
+          logo: require('../works/9/1.jpg'),
+          imgs: [
+            require('../works/9/2.jpg'),
+            require('../works/9/3.jpg'),
+            require('../works/9/4.jpg'),
+            require('../works/9/5.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+
         // 海揚V1
         {
           title: '海揚V1',
