@@ -269,6 +269,9 @@
     text-align: left;
     color: #000000;
   }
+.process-subtitle {
+  font-size: sizem(15);
+}
 
   .process-link {
     font-size: sizem(12);

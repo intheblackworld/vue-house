@@ -147,14 +147,14 @@
 
 .back {
   position: absolute;
-  right: 0;
+  right: .5em;
   bottom: 30px;
   font-size: size(20);
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.8;
-  letter-spacing: size(0.6);
+  letter-spacing:0.03em;
   text-align: left;
   color: #000000;
   cursor: pointer;
@@ -306,7 +306,7 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.33;
-    letter-spacing: size(0.81);
+    letter-spacing: 0.03em;
     text-align: left;
     color: #000000;
     z-index: 3;
@@ -625,6 +625,9 @@
     display: flex;
     flex-wrap: wrap;
   }
+.back {
+  font-size: sizem(15);
+}
 
   .process-b {
     border-top: 1px solid #707070;
@@ -716,10 +719,10 @@
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
-      line-height: 0.67;
-      letter-spacing: sizem(0.45);
+     // line-height: 0.67;
+    //  letter-spacing: sizem(0.45);
       text-align: left;
-      color: #000000;
+      color: #000;
       z-index: 3;
     }
 
