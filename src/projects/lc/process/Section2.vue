@@ -994,6 +994,17 @@ export default {
           {
             o_title: '2023 琢壹',
             o_subtitle: '已完售，預計2026年初完工',
+            img: require('../process/list/37/1.jpg'),
+            title: '2024/11',
+            subtitle: '七樓底版灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/37/1.jpg'),
+              require('../process/list/37/2.jpg'),
+              require('../process/list/37/3.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/35/1.jpg'),
             title: '2024/11',
             subtitle: '六樓底版灌漿',
