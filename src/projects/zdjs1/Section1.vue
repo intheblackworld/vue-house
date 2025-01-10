@@ -2,12 +2,21 @@
   <div class="bg">
     <img src="./s1/pc_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isPC">
     <img src="./s1/m_bg.jpg" :alt="`${info.caseName}_bg`" class="bg-img" v-if="isMobile">
-
     <img src="./s1/logo.png" :alt="`${info.caseName}_logo`" class="logo" data-aos="fade-up" data-aos-delay="0">
-
-    <a href="https://docs.google.com/presentation/d/1oECBdCmxzW2FDhR99856DyBWUE5v0HIP/edit?usp=sharing&ouid=106402782396343110158&rtpof=true&sd=true" class="btn1">
-      <img src="./s1/btn_1.png" :alt="`${info.caseName}_btn1`" data-aos="fade-up" data-aos-delay="400">
-    </a>
+    <div class="link">
+      <a href="https://docs.google.com/presentation/d/1oECBdCmxzW2FDhR99856DyBWUE5v0HIP/edit?usp=sharing&ouid=106402782396343110158&rtpof=true&sd=true" target="_blank">
+        1131209公告
+      </a>
+      <a href="hhttps://drive.google.com/file/d/10a08ECcj7JaruByuomLEhzfFiW2vuc-x/view?usp=drive_link" target="_blank">
+        公聽會公告
+      </a>
+      <a href="https://drive.google.com/file/d/1cXA4naGjriggGHGwdhFAJpjPD_jJgN08/view?usp=drive_link" target="_blank">
+        公聽會議程
+      </a>
+      <a href="https://drive.google.com/file/d/1F_ccxI3W0F_I4J2uebl87Q04EedAuLTK/view?usp=drive_link" target="_blank">
+        傳單
+      </a>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -40,7 +49,7 @@
 
 .logo {
   @include img_c_pc(396, 147);
-  top: calc(50% + 100vw * (207 - 504) / 1920);
+  top: calc(50% + 100vw * (150 - 504) / 1920);
 }
 
 .title {
@@ -48,26 +57,26 @@
   top: calc(50% + 100vw * (487 - 504) / 1920);
 }
 
-.btn1 {
-  @include img_l_pc(453, 754, 730);
-  top: calc(50% + 100vw * (750 - 504) / 1920);
-  transform: scale(0.9);
-  img {
-    width: 100%;
-  }
-}
-
-.btn2 {
-  @include img_r_pc(453, 754, 293);
-  top: calc(50% + 100vw * (850 - 504) / 1920);
-  transform: scale(0.9);
-  transition: all 0.3s;
-  transform-origin: 50% 100%;
-  img {
-    width: 100%;
-  }
+.link{
+  position: absolute;
+  left: 0;right: 0;bottom:size(50);margin:0 auto;
+  width: 20em;
+  font-size: size(50);display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5em;
+  a{position: relative;
+    display: inline-block;color: #fff;text-decoration: none;
+    background: linear-gradient(90deg, #FC9412, #FF0B6B);
+    width: 9em;border-radius: 1em;
+  padding: .5em 0;transition: transform 0.3s;
+  $m:.1em;
+  &::before{content: "";position: absolute;top: $m;left: $m;right: $m;bottom: $m;
+  border-radius: 1em;
+  border: 2px solid #fff;}
   &:hover {
-    transform: scale(1) translateY(-3%);
+    transform: scale(1.05) translateY(-3%);
+  }
   }
 }
 /* 平板尺寸 */
@@ -114,21 +123,10 @@
     top: calc(50% + 100vw * (203 - 302) / 375);
   }
 
-  .btn1 {
-    @include img_c_m(270, 358);
-    top: calc(50% + 100vw * (428 - 302) / 375);
-    img {
-      width: 100%;
-    }
-  }
-
-  .btn2 {
-    @include img_c_m(270, 470);
-    top: calc(50% + 100vw * (510 - 302) / 375);
-    img {
-      width: 100%;
-    }
-  }
+  .link{bottom: 1em;
+  width: 100%;
+  font-size: sizem(30);
+}
 }
 </style>
 
