@@ -16,6 +16,9 @@
       <a href="https://drive.google.com/file/d/1F_ccxI3W0F_I4J2uebl87Q04EedAuLTK/view?usp=drive_link" target="_blank">
         傳單
       </a>
+      <a href="https://drive.google.com/file/d/1d_OUBh97LkG8uV-MkDRfzhXBSasuVDn8/view?usp=sharing" target="_blank">
+        公聽會簡報
+      </a>
     </div>
   </div>
 </template>
@@ -60,7 +63,7 @@
 .link{
   position: absolute;
   left: 0;right: 0;bottom:size(50);margin:0 auto;
-  width: 20em;
+  width: 35em;
   font-size: size(50);display: flex;
   flex-wrap: wrap;
   justify-content: center;
