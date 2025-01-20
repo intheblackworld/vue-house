@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "a83626ed51becc6b2284",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.83b6eb49.js"
+    "revision": "7b5d956989a8c560e761",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.f3649cb6.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "e5768c1d4d3140d24006",
+    "revision": "a9376a301cd0f3cfaf36",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "e5768c1d4d3140d24006",
-    "url": "/js/app.ac7b9ae9.js"
+    "revision": "a9376a301cd0f3cfaf36",
+    "url": "/js/app.c4e0fa55.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -620,6 +620,10 @@ self.__precacheManifest = [
     "url": "/img/img_page_duty_04.d3bdc1c8.jpg"
   },
   {
+    "revision": "eec7d85a48a8de62e0d62ab4de9d6a1f",
+    "url": "/img/02.eec7d85a.jpg"
+  },
+  {
     "revision": "e647865c295f680de4eb0f8b8a411350",
     "url": "/img/img.e647865c.png"
   },
@@ -790,6 +794,10 @@ self.__precacheManifest = [
   {
     "revision": "0a11eb00eca71684b308cc3d02f266e4",
     "url": "/img/信義麗心2.0a11eb00.jpg"
+  },
+  {
+    "revision": "2d890d19c1fc399008d3669f2ce0e24c",
+    "url": "/img/04.2d890d19.jpg"
   },
   {
     "revision": "81814475f171b1ba0b786f7678b9ab59",
@@ -968,6 +976,10 @@ self.__precacheManifest = [
     "url": "/img/funflower3.275d1548.jpg"
   },
   {
+    "revision": "2853473994e75453338ba1cc6b9a1f39",
+    "url": "/img/03.28534739.jpg"
+  },
+  {
     "revision": "048a0957aa25e4261011b85062d9e324",
     "url": "/img/03.048a0957.png"
   },
@@ -1136,6 +1148,10 @@ self.__precacheManifest = [
     "url": "/img/6.9d4691fa.png"
   },
   {
+    "revision": "82574b4e2d1e414a6dd71e9e234ea5a4",
+    "url": "/img/01.82574b4e.jpg"
+  },
+  {
     "revision": "c0c8e7633749869fb1d8a9a1a003502f",
     "url": "/img/08.c0c8e763.jpg"
   },
@@ -1260,16 +1276,16 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "c5d8473e583a23c1241a16547d0f1c15",
+    "revision": "5373cfeed0a13f9cef1f60e6e69c9afc",
     "url": "/index.html"
-  },
-  {
-    "revision": "b81798ad1201c16a82e43a126c8eb988",
-    "url": "/favicon.png"
   },
   {
     "revision": "dc9077cc2c651a99cbc8102117341c8e",
     "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
+    "revision": "b81798ad1201c16a82e43a126c8eb988",
+    "url": "/favicon.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
