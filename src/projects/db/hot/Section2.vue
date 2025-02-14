@@ -958,6 +958,72 @@ export default {
         },
         */
 
+        // 高大新案
+        {
+          title: '即將<br />公開',
+          title2: '即將公開',
+          desc: '兆元楠梓 台積之王<br />即將公開COMING SOON',
+          img: require('../works/17/01.jpg'),
+          isEmpty: false,
+          info1: '即將公開COMING SOON',
+          info2: '',
+          info3: '',
+          contact: '',
+          link: 'https://pi.debang.tw/',
+          logo: require('../works/17/01.jpg'),
+          imgs: [
+            require('../works/17/02.jpg'),
+            ],
+          hint: '',
+          label: '',
+        },
+        
+        // 謙旭
+        {
+          title: '謙旭',
+          title2: '謙旭',
+          desc: '新北市｜林口區<br />105坪電梯別墅<br />林口全時區綠墅',
+          img: require('../works/18/01.jpg'),
+          isEmpty: false,
+          info1: '新北市｜林口區<br />105坪電梯別墅<br />林口全時區綠墅',
+          info2: '投資興建：興富謙建設<br />規劃坪數：105坪',
+          info3: '國際林口隱富時區<br />康橋雙語校園別墅特區<br />大安豪宅品牌精工團隊聯名',
+          contact: '貴賓專線｜02-2602-2345<br />接待會館｜新北市林口區文化二路二段60號',
+          link: 'https://timeless.debang.tw/',
+          logo: require('../works/18/01.jpg'),
+          imgs: [
+            require('../works/18/02.jpg'),
+            require('../works/18/03.jpg'),
+            require('../works/18/04.jpg'),
+            require('../works/18/05.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+
+        // 日進學
+        {
+          title: '日進學',
+          title2: '日進學',
+          desc: '新北市｜洲子洋重劃新蘆特區<br />22-32坪 2-3房<br />一站蘆洲 校園首排',
+          img: require('../works/19/01.jpg'),
+          isEmpty: false,
+          info1: '新北市｜洲子洋重劃新蘆特區<br />22-32坪 2-3房<br />一站蘆洲 校園首排',
+          info2: '投資興建：茂德建設<br />規劃坪數：22-32坪',
+          info3: '1分鐘進校園│成州國小正對面<br />3分鐘到公園│雙公園左擁右抱<br />5分鐘搭捷運│蘆洲捷運生活圈',
+          contact: '貴賓專線｜02-8292-3777<br />接待會館｜新北市五股區成泰路三段356號號旁',
+          link: 'https://wl3.debang.tw/',
+          logo: require('../works/19/01.jpg'),
+          imgs: [
+            require('../works/19/02.jpg'),
+            require('../works/19/03.jpg'),
+            require('../works/19/04.jpg'),
+            require('../works/19/05.jpg'),
+            ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
+
         // 高大之森
         {
           title: '高大<br />之森',
