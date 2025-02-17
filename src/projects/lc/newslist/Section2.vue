@@ -221,6 +221,14 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/20/1.jpg'),
+          title: '2025新春開工祈安祈福',
+        },
+        {
+          img: require('../news/s2/21/1.jpg'),
+          title: '2024年終感恩餐會',
+        },
+        {
           img: require('../news/s2/19/1.jpg'),
           title: '2024新春開工祈安祈福',
         },

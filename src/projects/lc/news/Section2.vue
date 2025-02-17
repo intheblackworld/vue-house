@@ -432,6 +432,49 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '2025新春開工祈安祈福',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/20/1.jpg'),
+            require('../news/s2/20/2.jpg'),
+            require('../news/s2/20/3.jpg'),
+            require('../news/s2/20/4.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
+          title: '2024年終感恩餐會',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/21/1.jpg'),
+            require('../news/s2/21/2.jpg'),
+            require('../news/s2/21/3.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '2024新春開工祈安祈福',
           subtitle: '',
           date: '',

@@ -959,6 +959,17 @@ export default {
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
+            img: require('../process/list/39/1.jpg'),
+            title: '2025/2',
+            subtitle: '地樑及大底灌漿',
+            isFinished: true,
+            imgs: [
+            require('../process/list/39/1.jpg'),
+            require('../process/list/39/2.jpg'),
+            require('../process/list/39/3.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/36/1.jpg'),
             title: '2024/11',
             subtitle: '土方工程',
