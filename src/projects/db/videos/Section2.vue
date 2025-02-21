@@ -374,6 +374,14 @@ export default {
       type: 1, // 1 線上熱銷, 2 完銷個案, 3 媒體影音
       currentType: 1,
       item_list: [
+      {
+          // icon: require('./s1/icon1.png'),
+          type:1,
+          title: '【日進學 】驚艷洲子洋 校園第一排 輕軌捷運宅',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/CEmR6lMm4f8',
+        },
         {
           // icon: require('./s1/icon1.png'),
           type:3,
