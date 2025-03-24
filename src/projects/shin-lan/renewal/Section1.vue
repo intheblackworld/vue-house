@@ -14,6 +14,9 @@
       <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
         松山延壽段都更
       </div>
+      <div :class="`tab ${$route.query.type == 3 ? 'active' : ''}`" @click="$router.push('/renewal?type=3')">
+        新莊區榮富段都更
+      </div>
     <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
         XXX段都更
       </div>  -->
@@ -87,6 +90,7 @@
 
 .type-tab {
   @include img_l_pc(400, 0, 341);
+  width: auto;
   top: auto;
   bottom: size(75);
 
@@ -100,6 +104,7 @@
     text-align: left;
     color: #808080;
     border-bottom: 1px solid #808080;
+    margin: 0 1em 0 0;
     cursor: pointer;
 
     &.active {

@@ -8,6 +8,9 @@
         <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
           松山延壽段都更
         </div>
+        <div :class="`tab ${$route.query.type == 3 ? 'active' : ''}`" @click="$router.push('/renewal?type=3')">
+          新莊區榮富段都更
+        </div>
       <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
           XXX段都更
         </div>  -->
@@ -204,6 +207,17 @@
           <img src="../renewal/type2/08.jpg" alt="" class="img img1 mb2">
       </div>
       </div>
+      <div class="typelist" v-if="$route.query.type==3" >
+        <div class="head flex-ac flex-jb">
+          <div class="current-tab">欣聯建設於新北市新莊區榮富段都市更新案</div>
+          <!-- <div class="pages flex-ac">
+            <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">{{page}}</div>
+          </div> -->
+        </div>
+        <div class="mb7">
+          <a href="https://xinzhuang.shin-lan.com/" target="_blank">文件</a>
+      </div>
+      </div>
 
       <!--
       <transition-group class="flex-ac flex-js wrap" name="slide-fade" mode="out-in">
@@ -281,6 +295,13 @@
   @include md {
     margin-bottom: sizem(60);
   }
+}
+.mb7 {
+  margin-bottom: size(60);
+  @include md {
+    margin-bottom: sizem(60);
+  }
+  a{}
 }
 
 .section2 {
