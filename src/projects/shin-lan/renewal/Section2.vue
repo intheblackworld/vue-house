@@ -272,7 +272,7 @@
           <ul>
     <li>一、後續相關會議均請相關權利人踴躍出席，俾使充分了解計畫內容並提供意見。</li>
     <li>二、本案計畫內容與最新動態網站 
-        <a href="https://www.shin-lan.com/都更專區" target="_blank">https://www.shin-lan.com/都更專區</a>
+        <a href="https://www.shin-lan.com/renewal?type=3" target="_blank">https://www.shin-lan.com/都更專區</a>
     </li>
     <li>三、本案都市更新相關諮詢<br>
         <span>欣聯建設開發股份有限公司</span><br>
