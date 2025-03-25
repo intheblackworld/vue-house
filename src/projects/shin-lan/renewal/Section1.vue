@@ -106,6 +106,7 @@
     border-bottom: 1px solid #808080;
     margin: 0 1em 0 0;
     cursor: pointer;
+    white-space: nowrap;
 
     &.active {
       color: #000;
