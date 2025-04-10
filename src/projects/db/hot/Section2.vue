@@ -958,6 +958,25 @@ export default {
         },
         */
 
+        // 國王大道
+        {
+          title: '即將<br />公開',
+          title2: '即將公開',
+          desc: 'YES,I DO 副都心最大百億造鎮<br />即將公開COMING SOON',
+          img: require('../works/20/01.jpg'),
+          isEmpty: false,
+          info1: '即將公開COMING SOON',
+          info2: '',
+          info3: '',
+          contact: '',
+          link: 'https://king.debang.tw/',
+          logo: require('../works/20/01.jpg'),
+          imgs: [
+            require('../works/20/02.jpg'),
+            ],
+          hint: '',
+          label: '',
+        },
         // 高大新案
         {
           title: '即將<br />公開',
