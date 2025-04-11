@@ -959,6 +959,17 @@ export default {
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
+            img: require('../process/list/44/1.jpg'),
+            title: '2025/3',
+            subtitle: 'B1底板灌漿',
+            isFinished: true,
+            imgs: [
+            require('../process/list/44/1.jpg'),
+            require('../process/list/44/2.jpg'),
+            require('../process/list/44/3.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/41/1.jpg'),
             title: '2025/2',
             subtitle: 'B2底版灌漿',
@@ -1017,6 +1028,17 @@ export default {
           {
             o_title: '2023 琢壹',
             o_subtitle: '已完售，預計2026年初完工',
+            img: require('../process/list/43/1.jpg'),
+            title: '2025/4',
+            subtitle: '十一樓底板灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/43/1.jpg'),
+              require('../process/list/43/2.jpg'),
+              require('../process/list/43/3.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/42/01.jpg'),
             title: '2025/3',
             subtitle: '十樓底板灌漿',
