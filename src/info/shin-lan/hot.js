@@ -81,7 +81,7 @@ export const hot_case = [
     img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/0.jpg'),
     imgs: [
       {
-        title: '主視覺',
+        title: '公設區域-交誼廳、信箱區',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/1.jpg')
       },
       {
