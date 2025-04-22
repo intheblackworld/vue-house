@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "7b5d956989a8c560e761",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.f3649cb6.js"
+    "revision": "484bee86b6eedcb1314a",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.3286b880.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "a818c83166232ea8532b",
+    "revision": "25cc55168b255e2ec22c",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "a818c83166232ea8532b",
-    "url": "/js/app.2aeecfe4.js"
+    "revision": "25cc55168b255e2ec22c",
+    "url": "/js/app.848b2190.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -892,8 +892,8 @@ self.__precacheManifest = [
     "url": "/img/bg.bb103f51.png"
   },
   {
-    "revision": "5dccc8bed70f5d02dd6aaf383d9de65a",
-    "url": "/img/1.5dccc8be.jpg"
+    "revision": "bcf948db0bfee37aae704a4d57139ac9",
+    "url": "/img/1.bcf948db.jpg"
   },
   {
     "revision": "86e6351f2ede64157801b09fd475ecf7",
@@ -1000,8 +1000,8 @@ self.__precacheManifest = [
     "url": "/img/6.33baa7c1.png"
   },
   {
-    "revision": "72c37d51dd7a160a94bc8e9e99a59d47",
-    "url": "/img/0.72c37d51.jpg"
+    "revision": "917e5c34169852cf933c47347e6d22b0",
+    "url": "/img/0.917e5c34.jpg"
   },
   {
     "revision": "00f61ec585fbc459a54568e1343a1784",
@@ -1480,16 +1480,12 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "8a8c17814e122e37d4185fea3948d94a",
+    "revision": "cb1e970aaf37cc9e939890f9452a403a",
     "url": "/index.html"
   },
   {
     "revision": "dc9077cc2c651a99cbc8102117341c8e",
     "url": "/google3d6eee54d2f3fc35.html"
-  },
-  {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
-    "url": "/robots.txt"
   },
   {
     "revision": "b81798ad1201c16a82e43a126c8eb988",
@@ -1498,5 +1494,9 @@ self.__precacheManifest = [
   {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
     "url": "/sitemap.xml"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "url": "/robots.txt"
   }
 ];
