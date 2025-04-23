@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "484bee86b6eedcb1314a",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.3286b880.js"
+    "revision": "74647d273dce191e6fa8",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.8569fe5d.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "25cc55168b255e2ec22c",
+    "revision": "c56b5510ff625c8a3a91",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "25cc55168b255e2ec22c",
-    "url": "/js/app.848b2190.js"
+    "revision": "c56b5510ff625c8a3a91",
+    "url": "/js/app.59c2bbee.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -780,12 +780,12 @@ self.__precacheManifest = [
     "url": "/img/11.fa20eae7.png"
   },
   {
-    "revision": "83b895381b36762de13a44776987de43",
-    "url": "/img/404-bg-m.83b89538.png"
-  },
-  {
     "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
     "url": "/img/404-bg.a72458d2.png"
+  },
+  {
+    "revision": "83b895381b36762de13a44776987de43",
+    "url": "/img/404-bg-m.83b89538.png"
   },
   {
     "revision": "14ce8dbbc31bcbda547a7fb575457066",
@@ -1000,8 +1000,8 @@ self.__precacheManifest = [
     "url": "/img/6.33baa7c1.png"
   },
   {
-    "revision": "917e5c34169852cf933c47347e6d22b0",
-    "url": "/img/0.917e5c34.jpg"
+    "revision": "95ed47de304ae8bff333febe5c57f2e8",
+    "url": "/img/0.95ed47de.jpg"
   },
   {
     "revision": "00f61ec585fbc459a54568e1343a1784",
@@ -1480,16 +1480,16 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "cb1e970aaf37cc9e939890f9452a403a",
+    "revision": "8e48d10cb9b13920464275f0aebac29c",
     "url": "/index.html"
-  },
-  {
-    "revision": "dc9077cc2c651a99cbc8102117341c8e",
-    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "b81798ad1201c16a82e43a126c8eb988",
     "url": "/favicon.png"
+  },
+  {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
