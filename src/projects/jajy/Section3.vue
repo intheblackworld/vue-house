@@ -10,7 +10,7 @@
 睿智眼界先行，建設接力達標，及早入主潛力湖子內<br />
 以地段定義價值、願景決定漲幅！</p>
     </div>
-    <Map :tagList="tagList" :bgSrc="bgSrc" :hand="hand"></Map>
+    <Map_T :tagList="tagList" :bgSrc="bgSrc" :hand="hand"></Map_T>
     <div class="mask" @click="showMask = false" v-show="showMask"></div>
     
   </div>
@@ -137,12 +137,12 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from "@/utils";
-import Map from '@/components/Map.vue'
+import Map_T from '@/components/Map.vue'
 import info from '@/info'
 export default {
   name: "section3",
   components: {
-    Map,
+    Map_T,
   },
   data() {
     return {

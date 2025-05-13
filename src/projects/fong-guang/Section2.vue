@@ -1,6 +1,6 @@
 <template>
   <div class="section2" id="scene">
-    <Map :tagList="tagList" :bgSrc="bgSrc" :bgSrcpng="bgSrcpng" :hand="hand"></Map>
+    <Map_T :tagList="tagList" :bgSrc="bgSrc" :bgSrcpng="bgSrcpng" :hand="hand"></Map_T>
     <div class="mask" @click="showMask = false" v-show="showMask"></div>
     
   </div>
@@ -48,12 +48,12 @@
 <script>
 // @ is an alias to /src
 import { isMobile } from "@/utils";
-import Map from '@/components/Map.vue'
+import Map_T from '@/components/Map.vue'
 import info from '@/info'
 export default {
   name: "section2",
   components: {
-    Map,
+    Map_T,
   },
   data() {
     return {
@@ -63,6 +63,7 @@ export default {
       bgSrc: require('./s2/map.jpg'),
       bgSrcpng: require('./s2/map.png'),
       hand: require('./s2/h.png'),
+      showMask: false,
     };
   },
   methods: {

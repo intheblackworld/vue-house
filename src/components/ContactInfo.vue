@@ -132,7 +132,7 @@
       <MessengerDialog :messenger="info.fbMessage" />
     </el-dialog>
     <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '500px'" :modal-append-to-body="false">
-      <MapDialog :link="info.googleLink" :address="info.address" />
+      <MapDialog :link="info.googleLink" :address="info.address" ></MapDialog>
     </el-dialog>
   </div>
 </template>

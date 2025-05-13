@@ -260,6 +260,7 @@ export default {
       showMask: isMobile,
       isShowDialog: false,
       link: '',
+      showMask: false,
     }
   },
 
