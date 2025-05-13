@@ -255,7 +255,7 @@ export default {
       const min = time.getMinutes();
       const sec = time.getSeconds();
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`;
-      /*
+      /**/
       fetch(
         `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&room_type=${this.form.room_type}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
       `,
@@ -263,7 +263,7 @@ export default {
           method: "GET",
         }
       );
-      */
+      
 
 
       
