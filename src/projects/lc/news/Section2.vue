@@ -432,6 +432,28 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '鼎禾建設琢壹上梁典禮',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/22/1.jpg'),
+            require('../news/s2/22/2.jpg'),
+            require('../news/s2/22/3.jpg'),
+            require('../news/s2/22/4.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '2025新春開工祈安祈福',
           subtitle: '',
           date: '',

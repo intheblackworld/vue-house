@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/22/1.jpg'),
+          title: '鼎禾建設琢壹上梁典禮',
+        },
+        {
           img: require('../news/s2/20/1.jpg'),
           title: '2025新春開工祈安祈福',
         },
