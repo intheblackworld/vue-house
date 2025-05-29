@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.93c42bc4.js"
   },
   {
-    "revision": "74647d273dce191e6fa8",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.8569fe5d.js"
+    "revision": "e057e97d7493b6f4278c",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.edea5748.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "c56b5510ff625c8a3a91",
+    "revision": "fdcac5fa4d1316be1c30",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "c56b5510ff625c8a3a91",
-    "url": "/js/app.59c2bbee.js"
+    "revision": "fdcac5fa4d1316be1c30",
+    "url": "/js/app.2e02ee9e.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -356,6 +356,10 @@ self.__precacheManifest = [
     "url": "/img/pic2.e8ca57cc.png"
   },
   {
+    "revision": "d3ae6f08028215b27f74dde0d17a096b",
+    "url": "/img/欣聯建設-欣聯詠心.d3ae6f08.jpg"
+  },
+  {
     "revision": "08d7b1a42273fa7f02e5406d9bea794c",
     "url": "/img/heyu5.08d7b1a4.jpg"
   },
@@ -532,6 +536,10 @@ self.__precacheManifest = [
     "url": "/img/bg.0482f397.png"
   },
   {
+    "revision": "ed47c5309b465ce0d94cdea8011bea14",
+    "url": "/img/04.ed47c530.jpg"
+  },
+  {
     "revision": "d4b0c78519b912b44f9eba11a5145996",
     "url": "/img/35.d4b0c785.png"
   },
@@ -622,6 +630,10 @@ self.__precacheManifest = [
   {
     "revision": "f426426df3921ee0ceec145d8c680d75",
     "url": "/img/img10.f426426d.jpg"
+  },
+  {
+    "revision": "a7271f805fd376e06e0e2dc78adc4c68",
+    "url": "/img/03.a7271f80.jpg"
   },
   {
     "revision": "5cf6c36c98466c2e17850c495553813c",
@@ -734,6 +746,10 @@ self.__precacheManifest = [
   {
     "revision": "eec7d85a48a8de62e0d62ab4de9d6a1f",
     "url": "/img/02.eec7d85a.jpg"
+  },
+  {
+    "revision": "296a34f4de3521297e9123da9c36213a",
+    "url": "/img/05.296a34f4.jpg"
   },
   {
     "revision": "e647865c295f680de4eb0f8b8a411350",
@@ -888,6 +904,10 @@ self.__precacheManifest = [
     "url": "/img/33.eaa57bd0.webp"
   },
   {
+    "revision": "2ca037a26fd11c7e66ca7fc3c654649a",
+    "url": "/img/02.2ca037a2.jpg"
+  },
+  {
     "revision": "bb103f51378649203d1d430fc14b7bc4",
     "url": "/img/bg.bb103f51.png"
   },
@@ -902,6 +922,10 @@ self.__precacheManifest = [
   {
     "revision": "8db65b20c2338f95c2f6554e69f63985",
     "url": "/img/topbg.8db65b20.jpg"
+  },
+  {
+    "revision": "da8d93d2982e79c71e3327cd15699ad8",
+    "url": "/img/01.da8d93d2.jpg"
   },
   {
     "revision": "f419e685c85dec714809a5341fe92b5b",
@@ -946,6 +970,10 @@ self.__precacheManifest = [
   {
     "revision": "81814475f171b1ba0b786f7678b9ab59",
     "url": "/img/01.81814475.jpg"
+  },
+  {
+    "revision": "e05209f9477270fb634fa9868417a211",
+    "url": "/img/02.e05209f9.jpg"
   },
   {
     "revision": "d56706269f843481bfa6d3f94eb9effb",
@@ -1288,6 +1316,10 @@ self.__precacheManifest = [
     "url": "/img/01.3ad43d5b.jpg"
   },
   {
+    "revision": "afd658c253ce006c0a458376905f96bf",
+    "url": "/img/03.afd658c2.jpg"
+  },
+  {
     "revision": "5f731c8f0dfe7f1c13ab20b340d757e5",
     "url": "/img/0.5f731c8f.jpg"
   },
@@ -1388,6 +1420,10 @@ self.__precacheManifest = [
     "url": "/img/glory.8ca15889.jpg"
   },
   {
+    "revision": "ba435a91a20d9c339eb8306d5e70fe85",
+    "url": "/img/04.ba435a91.jpg"
+  },
+  {
     "revision": "94d070236886c56e0e6ff1811ab12540",
     "url": "/img/cdfe5.94d07023.jpg"
   },
@@ -1460,6 +1496,10 @@ self.__precacheManifest = [
     "url": "/img/LiChiParty.8132632d.jpg"
   },
   {
+    "revision": "ef5b5ed63de8aef2a09091fcfc658656",
+    "url": "/img/01.ef5b5ed6.jpg"
+  },
+  {
     "revision": "29fc161144e544118df17158516bc781",
     "url": "/img/10.29fc1611.png"
   },
@@ -1480,7 +1520,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "8e48d10cb9b13920464275f0aebac29c",
+    "revision": "96f2534f022c21e857cdfc4e30bbbbf7",
     "url": "/index.html"
   },
   {
@@ -1492,11 +1532,11 @@ self.__precacheManifest = [
     "url": "/google3d6eee54d2f3fc35.html"
   },
   {
-    "revision": "b3417d0933b62494f8cce3a08fd910cd",
-    "url": "/sitemap.xml"
-  },
-  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "b3417d0933b62494f8cce3a08fd910cd",
+    "url": "/sitemap.xml"
   }
 ];

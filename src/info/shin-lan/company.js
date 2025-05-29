@@ -2,6 +2,21 @@
 export const company = [
   {
     index: 0,
+    date: '114/5/24',
+    title: '欣聯建設攜手台科大EMBA薩克斯風社與正信書院 關懷陽明養護中心',
+    subtitle: '',
+    desc: '【新聞稿／即時發布】<br>欣聯建設長年投入公益，5月24日攜手台科大EMBA薩克斯風社與正信書院慈善協會，前往陽明養護中心舉辦年度關懷捐贈活動，帶來音樂與溫情的午後時光。<br>活動中，薩克斯風社演奏多首懷舊金曲，喚起長者回憶，現場氣氛溫馨感人。院生們隨旋律輕聲哼唱，笑容滿面。<br>養護中心蕭主任感謝 欣聯建設多年不間斷的愛心捐贈與陪伴，表示這是院生每年最期待的活動。<br>欣聯建設董事長、同時也是正信書院慈善協會理事長的 林榮三先生表示：「今年很高興可以來與大家同樂，音樂是最溫柔的語言，也是一種陪伴的力量。我們希望透過這樣的活動，讓大家一同感受音樂。」<br>本次活動展現企業與學界攜手做公益的力量，為長者帶來關愛與歡樂。',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/6/01.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/02.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/03.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/04.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/05.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 1,
     date: '114/1/15',
     title: '欣聯建設開發股份有限公司 捐贈國立台灣科技大學理髮廳整建工程',
     subtitle: '',
@@ -15,7 +30,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 1,
+    index: 2,
     date: '111/8/27',
     title: '2022公益慈善音樂會',
     subtitle: '',
@@ -30,7 +45,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 2,
+    index: 3,
     date: '111/8/19',
     title: '北投區陽明養護中心',
     subtitle: '欣聯心、傳遞愛、愛心捐贈',
@@ -45,7 +60,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 3,
+    index: 4,
     date: '106/9/23',
     title: '陽明教養院',
     subtitle: '陽明教養院敬老關懷演出',
@@ -60,7 +75,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 4,
+    index: 5,
     date: '105/9/3',
     title: '兆如安養中心',
     subtitle: '兆如安養中心敬老關懷演出',
