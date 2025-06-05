@@ -1,15 +1,8 @@
 <template>
   <div>
     <div class="order-bg">
-      <!-- <img src="@/projects/fs/order/bg.png" alt="" class="bg-img"> -->
-      <!-- <img src="@/projects/fs/order/bg1.png" alt="" class="bg-img no-mix"> -->
-      <!-- <img src="@/projects/fs/order/bg_m.jpg" alt="" class="bg-img" v-if="isMobile"> -->
       <div class="order-tt"></div>
       <div class="order-top">
-        <!-- <div class="title-block">
-        <h3 class="title">{{order.title}}</h3>
-        <div class="subtitle">{{order.subTitle}}</div>
-      </div> -->
         <div class="order-title_text">
           <div class="order-title" v-html="order.title" v-if="order.title"></div>
           <div class="order-subtitle" v-html="order.subTitle" v-if="order.subTitle"></div>
@@ -149,8 +142,9 @@ import PolicyDialog from '@/components/PolicyDialog.vue'
 import info from '@/info'
 import { cityList, renderAreaList } from '@/info/address'
 import { isMobile } from '@/utils'
-import Loading from '@/components/Loading.vue'
-import VueRecaptcha from 'vue-recaptcha'
+import Loading from "@/components/Loading.vue";
+import VueRecaptcha from "vue-recaptcha";
+import Parallax from 'parallax-js'
 
 export default {
   name: 'order',
@@ -174,8 +168,6 @@ export default {
         city: '',
         area: '',
         msg: '',
-        time_start: '',
-        time_end: '',
       },
       checked: false,
       isSubmit: false,
@@ -185,47 +177,55 @@ export default {
     }
   },
 
+
   computed: {
     areaList() {
-      return renderAreaList(this.form.city)
+      return renderAreaList(this.form.city);
     },
   },
 
+  mounted() {
+    const elem = this.$refs.parallax2;
+    if (elem) {
+      var parallaxInstance = new Parallax(elem, {
+        relativeInput: true,
+        selector: '.parallax-item',
+      });
+    }
+  },
   methods: {
     showPolicyDialog() {
-      this.policyVisible = true
-      this.checked = true
+      this.policyVisible = true;
+    },
+    hidePolicyDialog() {
+      this.policyVisible = false;
     },
 
     alertValidate() {
-      const h = this.$createElement
+      const h = this.$createElement;
       this.$notify({
-        title: '請填寫必填欄位',
+        title: "請填寫必填欄位",
         message: h(
-          'i',
-          { style: 'color: #82191d' },
-          '「姓名、手機，並勾選個資法聲明」',
+          "i",
+          { style: "color: #82191d" },
+          "「姓名、手機」是必填欄位"
         ),
-      })
+      });
     },
 
-    // alertValidatePhone() {
-    //   const h = this.$createElement
-    //   this.$notify({
-    //     title: '手機格式錯誤',
-    //     message: h(
-    //       'i',
-    //       { style: 'color: #82191d' },
-    //       '格式範例：09xxxxxxxx',
-    //     ),
-    //   })
-    // },
+    alertPhoneValidate() {
+      const h = this.$createElement;
+      this.$notify({
+        title: "格式錯誤",
+        message: h("i", { style: "color: #82191d" }, "「手機」需為 10 碼數字"),
+      });
+    },
 
     submit() {
-      if (this.isSubmit) return
-      if (!this.isVerify) return
-      if (!this.checked) return
-      this.isSubmit = true
+      if (this.isSubmit) return;
+      if (!this.isVerify) return;
+      if (!this.checked) return;
+      this.isSubmit = true;
       if (
         !this.form.name ||
         !this.form.phone
@@ -234,19 +234,16 @@ export default {
         // !this.form.time_end
         // ||
         // !this.form.email ||
-        // !this.form.city ||
-        // !this.form.area
       ) {
-        this.alertValidate()
-        this.isSubmit = false
-        return
+        this.alertValidate('「姓名、手機」是必填欄位')
+        this.isSubmit = false;
+        return;
       }
-
-      // if (!/1{2}[0-9]{8}$/.test(this.form.phone)) {
-      //   this.alertValidatePhone()
-      //   this.isSubmit = false
-      //   return
-      // }
+      if (this.form.phone.length != 10) {
+        this.alertValidate('手機號碼請填10碼')
+        this.isSubmit = false;
+        return;
+      }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
       const utmMedium = urlParams.get('utm_medium')
@@ -257,8 +254,8 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      // formData.append('time_start', this.form.time_start)
-      // formData.append('time_end', this.form.time_end)
+      formData.append("message", this.form.msg);//case_code 新系統必要
+      formData.append("case_code", "fong-guang");//case_code 新系統必要
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -280,18 +277,28 @@ export default {
           method: 'GET',
         },
       )
-      fetch('contact-form.php', {
-        method: 'POST',
-        body: formData,
-      }).then((response) => {
-        this.isSubmit = false
-        if (response.status === 200) {
-          window.location.href = 'formThanks'
-        }
-      })
+      fetch("https://service-sys.lixin.com.tw/reserve/66d2ecd6-299b-4d65-b2a9-e05207d119ba", {
+      method: "POST",
+      body: formData,
+    })
+  .then((response) => {
+    if (response.status === 200) {
+      window.location.href = "formThanks";
+    } else {
+      return response.json().then(err => {
+        console.error("後端錯誤訊息：", err.message || "提交失敗");
+      });
+    }
+  })
+  .catch((error) => {
+    console.error("傳送失敗：", error.message || "無法連線或伺服器錯誤");
+  })
+  .finally(() => {
+    this.sending = false; // 提交結束後設為 false
+  });
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
