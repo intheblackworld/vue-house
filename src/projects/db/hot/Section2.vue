@@ -969,7 +969,7 @@ export default {
           info2: '',
           info3: '',
           contact: '',
-          link: '',
+          link: 'https://a2park.debang.tw/',
           logo: require('../works/21/1.jpg'),
           imgs: [
             require('../works/21/2.jpg'),
