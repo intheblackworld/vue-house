@@ -958,6 +958,25 @@ export default {
         },
         */
 
+        // 都匯天地
+        {
+          title: '即將<br />公開',
+          title2: '即將公開',
+          desc: '三重真好，A2最好<br />19-28坪全新視界即將為您揭曉<br />即將公開COMING SOON',
+          img: require('../works/21/1.jpg'),
+          isEmpty: false,
+          info1: '即將公開COMING SOON',
+          info2: '',
+          info3: '',
+          contact: '',
+          link: '',
+          logo: require('../works/21/1.jpg'),
+          imgs: [
+            require('../works/21/2.jpg'),
+            ],
+          hint: '',
+          label: '',
+        },
         // 國王大道
         {
           title: '即將<br />公開',
