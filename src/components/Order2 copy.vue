@@ -69,7 +69,6 @@ import { cityList, renderAreaList } from '@/info/address'
 import { isMobile } from '@/utils'
 import Loading from '@/components/Loading.vue'
 import VueRecaptcha from 'vue-recaptcha'
-import Parallax from 'parallax-js'
 
 export default {
   name: 'order',
@@ -104,41 +103,27 @@ export default {
     }
   },
 
-  mounted() {
-    const elem = this.$refs.parallax2;
-    if (elem) {
-      var parallaxInstance = new Parallax(elem, {
-        relativeInput: true,
-        selector: '.parallax-item',
-      });
-    }
+  computed: {
+    areaList() {
+      return renderAreaList(this.form.city)
+    },
   },
+
   methods: {
     showPolicyDialog() {
-      this.policyVisible = true;
-    },
-    hidePolicyDialog() {
-      this.policyVisible = false;
+      this.policyVisible = true
     },
 
     alertValidate() {
-      const h = this.$createElement;
+      const h = this.$createElement
       this.$notify({
-        title: "請填寫必填欄位",
+        title: '請填寫必填欄位',
         message: h(
-          "i",
-          { style: "color: #82191d" },
-          "「姓名、手機」是必填欄位"
+          'i',
+          { style: 'color: #82191d' },
+          '「姓名、手機」是必填欄位',
         ),
-      });
-    },
-
-    alertPhoneValidate() {
-      const h = this.$createElement;
-      this.$notify({
-        title: "格式錯誤",
-        message: h("i", { style: "color: #82191d" }, "「手機」需為 10 碼數字"),
-      });
+      })
     },
 
     submit() {
@@ -157,14 +142,9 @@ export default {
         // !this.form.city ||
         // !this.form.area
       ) {
-        this.alertValidate('「姓名、手機」是必填欄位')
-        this.isSubmit = false;
-        return;
-      }
-      if (this.form.phone.length != 10) {
-        this.alertValidate('手機號碼請填10碼')
-        this.isSubmit = false;
-        return;
+        this.alertValidate()
+        this.isSubmit = false
+        return
       }
       const urlParams = new URLSearchParams(window.location.search)
       const utmSource = urlParams.get('utm_source')
@@ -176,11 +156,10 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append("message", this.form.msg)//case_code 新系統必要
-      formData.append("case_code", "lc")//case_code 新系統必要
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
-      formData.append('room_type', this.form.type)
+      formData.append('city', this.form.city)
+      formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
       formData.append('utm_medium', utmMedium)
       formData.append('utm_content', utmContent)
@@ -200,26 +179,15 @@ export default {
           method: 'GET',
         },
       )
-      //caseid 在index.js裡設定
-        fetch("https://service-sys.lixin.com.tw/reserve/1d2db7f2-157b-4a33-acbc-f4abfde91846", {
-          method: "POST",
-          body: formData,
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            window.location.href = "formThanks";
-          } else {
-            return response.json().then(err => {
-              console.error("後端錯誤訊息：", err.message || "提交失敗");
-            });
-          }
-        })
-        .catch((error) => {
-          console.error("傳送失敗：", error.message || "無法連線或伺服器錯誤");
-        })
-        .finally(() => {
-          this.sending = false; // 提交結束後設為 false
-        });
+      fetch('contact-form.php', {
+        method: 'POST',
+        body: formData,
+      }).then((response) => {
+        this.isSubmit = false
+        if (response.status === 200) {
+          window.location.href = 'formThanks'
+        }
+      })
     },
   },
 }

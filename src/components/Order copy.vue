@@ -290,8 +290,6 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append("message", this.form.msg)//case_code 新系統必要
-      formData.append("case_code", "lc")//case_code 新系統必要
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
@@ -315,26 +313,15 @@ export default {
           method: 'GET',
         },
       )
-   //caseid 在index.js裡設定
-    fetch("https://service-sys.lixin.com.tw/reserve/1d2db7f2-157b-4a33-acbc-f4abfde91846", {
-      method: "POST",
-      body: formData,
-    })
-  .then((response) => {
-    if (response.status === 200) {
-      window.location.href = "formThanks";
-    } else {
-      return response.json().then(err => {
-        console.error("後端錯誤訊息：", err.message || "提交失敗");
-      });
-    }
-  })
-  .catch((error) => {
-    console.error("傳送失敗：", error.message || "無法連線或伺服器錯誤");
-  })
-  .finally(() => {
-    this.sending = false; // 提交結束後設為 false
-  });
+      fetch('contact-form.php', {
+        method: 'POST',
+        body: formData,
+      }).then(response => {
+        this.isSubmit = false
+        if (response.status === 200) {
+          window.location.href = 'formThanks'
+        }
+      })
     },
   },
 }
