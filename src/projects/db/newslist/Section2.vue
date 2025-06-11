@@ -4,6 +4,9 @@
       <div :class="`tab-item flex-c yellow`" v-show="item_list.filter(i => i.type === 1).length > 0" @click="currentType = 1">
         最新消息
       </div> 
+      <div :class="`tab-item flex-c blue`" v-show="item_list.filter(i => i.type === 3).length > 0" @click="currentType = 3">
+        公告資訊
+      </div>
       <div :class="`tab-item flex-c blue`" v-show="item_list.filter(i => i.type === 2).length > 0" @click="currentType = 2">
         媒體報導
       </div>
@@ -292,6 +295,12 @@ export default {
       type: 1, // 1 最新消息, 2 媒體報導
       currentType: 2,
       item_list: [
+        {
+          icon: require('./s1/icon3.png'),
+          type: 3,
+          desc: '得邦廣告資訊澄清公告',
+          img: require('../newimg/27/1.jpg'),
+        },
         {
           icon: require('./s1/icon2.png'),
           type: 2,

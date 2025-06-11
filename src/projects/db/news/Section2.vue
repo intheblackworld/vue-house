@@ -702,6 +702,22 @@ export default {
       tabIndex: 0,
       item_list: [
         {
+          type: 3,
+          title: '得邦廣告資訊澄清公告',
+          subtitle: '',
+          date: '2025.06.11',
+          author: '',
+          imgs: [
+            {
+              src: require('../newimg/27/2.jpg'),
+              caption: '',
+            },
+          ],
+          desc:'',
+          links: [
+          ],
+        },
+        {
           type: 2,
           title: '台積電設廠旋風再起！楠梓這案公開19天實登即137戶引注目',
           subtitle: '',

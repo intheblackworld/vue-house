@@ -130,13 +130,13 @@
     <PolicyDialog :policyVisible="policyVisible" />
 
 
-    <div class="modal" v-if="modal">
+    <!--div class="modal" v-if="modal">
         <div class="mask" @click="modal = false"></div>
         <div>
           <img src="../projects/db/contact/popup.jpg" alt >
           <img src="../projects/db/index/close.png" alt class="close" @click="modal = false" />
         </div>
-      </div>
+      </div-->
 
   </div>
   
