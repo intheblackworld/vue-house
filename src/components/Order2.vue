@@ -663,7 +663,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
 
-      .modal{  
+  .modal{  
     img{
       max-width: calc(100vw - 32px);
       max-height: calc(100vh - 100px);
