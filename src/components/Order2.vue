@@ -1,5 +1,7 @@
 <template>
+
   <div class="order-bg">
+
     <img src="../projects/db/contact/title.png" alt="聯絡我們" class="order-title" v-if="!isMobile">
     <img src="../projects/db/index/s7/title.png" alt="聯絡我們" class="order-title" v-if="isMobile">
     <img src="../projects/db/index/s7/資產 16@2x.png" alt="" class="info-img" data-aos="fade-down" data-aos-delay="500" v-if="isPC">
@@ -126,7 +128,18 @@
       <Loading :loading="isSubmit" :isOpacity="true" />
     </div>
     <PolicyDialog :policyVisible="policyVisible" />
+
+
+    <div class="modal" v-if="modal">
+        <div class="mask" @click="modal = false"></div>
+        <div>
+          <img src="../projects/db/contact/popup.jpg" alt >
+          <img src="../projects/db/index/close.png" alt class="close" @click="modal = false" />
+        </div>
+      </div>
+
   </div>
+  
 </template>
 
 <script>
@@ -170,6 +183,7 @@ export default {
       isVerify: false, // google 機器人驗證
       policyVisible: false,
       showValidateDialog: false,
+      modal: true,
     }
   },
 
@@ -575,8 +589,62 @@ export default {
   font-size: size(20) !important;
 }
 
+.modal{  
+  width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mask{
+      background: rgba(0,0,0,.7);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      position: absolute;
+    }
+    > div{position: relative;}
+@keyframes oop {
+  40% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+    img{position: relative;
+      z-index: 122;
+      max-width: calc(100vw - 140px);
+      max-height: calc(100vh - 100px);
+      &.img2{
+        position: absolute;
+        top: 0;left: 0;
+    opacity: 1;
+    animation: oop 4s linear alternate infinite;
+
+      }
+    }
+    .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(130%);
+    cursor: pointer;
+    width: 30px;
+}
+}
+
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+
+
   .order-title {
     font-size: 32px;
   }
@@ -594,6 +662,16 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
+
+      .modal{  
+    img{
+      max-width: calc(100vw - 32px);
+      max-height: calc(100vh - 100px);
+    }
+    .close {
+    transform: translateY(-130%);
+  }
+}
   .order-bg {
     // background-image: $order_bg_image_m;
     /*background-attachment: initial;
