@@ -9,8 +9,7 @@ export default {
   mechanism: '立瑾建築機構',
   fbLink: 'https://www.facebook.com/lichinconstruction',
   fbMessage: 'https://m.me/lichinconstruction',
-  caseName: '00',
-  //caseName: '立瑾建築機構',
+  caseName: '立瑾建築機構',
   indigatorLength: 10,
 
   houseInfos: [

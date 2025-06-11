@@ -201,7 +201,7 @@ export default {
         },
       )
       //caseid 在index.js裡設定
-        fetch("https://service-sys.lixin.com.tw/reserve/1d2db7f2-157b-4a33-acbc-f4abfde91846", {
+        fetch("https://service-sys.lixin.com.tw/reserve/10ac9a6c-3c35-4e41-bfe2-5d5f9931a462", {
           method: "POST",
           body: formData,
         })
