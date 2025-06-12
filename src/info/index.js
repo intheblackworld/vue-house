@@ -7,9 +7,9 @@ export default {
    phone: '04-2663-1999',
   fbLink: 'https://www.facebook.com/103362852445712',
   fbMessage: 'https://m.me/103362852445712',
-  caseName: '',
+  caseName: '勝麗交響曲',
   indigatorLength: 10,
-  caseId: 'great-intersection',
+  caseId: 'great-intersection', 
 
   houseInfos: [
    // ['投資興建', '龍瑩建設事業股份有限公司'],
@@ -19,7 +19,9 @@ export default {
    // ['相關連結', "<a href='https://wl.debang.tw/'>快樂王國</a>"],
   ],
   gtmCode: [''], // 可放置多個
-  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC',
+  recaptcha_site_key_v2: '6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC', //主2
+  //recaptcha_site_key_v2: "6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz", //主1
+  //recaptcha_site_key_v2: "6LdbrqAmAAAAAPj2D_6cBbflea1livK9Uud4FGmN", //主3
   recaptcha_site_key: '6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s', // recaptcha v3
   recaptcha_user_token: '6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa',
   order: {

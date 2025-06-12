@@ -102,6 +102,7 @@ import { cityList, renderAreaList } from "@/info/address";
 import { isMobile } from "@/utils";
 import Loading from "@/components/Loading.vue";
 import VueRecaptcha from "vue-recaptcha";
+import Parallax from 'parallax-js'
 
 export default {
   name: "order",
@@ -133,6 +134,7 @@ export default {
         msg: "",
         time_start: "",
         time_end: "",
+        email: "",//case_code 新系統必要
       },
       checked: false,
       isSubmit: false,
@@ -211,7 +213,9 @@ export default {
       formData.append("email", this.form.email);
       formData.append("contacttime", this.form.contacttime);
       formData.append("msg", this.form.msg);
+      formData.append("message", this.form.msg);//case_code 新系統必要
       formData.append("room_type", this.form.room_type);
+      formData.append("case_code", "fong-guang");//case_code 新系統必要
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append("city", this.form.city);
@@ -239,15 +243,26 @@ export default {
           method: "GET",
         }
       );
-      fetch("contact-form.php", {
-        method: "POST",
-        body: formData,
-      }).then((response) => {
-        this.isSubmit = false;
-        if (response.status === 200) {
-          window.location.href = "formThanks";
-        }
+      //caseid 在index.js裡設定
+    fetch("https://service-sys.lixin.com.tw/reserve/a342daa4-4855-403a-af8e-39790d1875fe", {
+      method: "POST",
+      body: formData,
+    })
+  .then((response) => {
+    if (response.status === 200) {
+      window.location.href = "formThanks";
+    } else {
+      return response.json().then(err => {
+        console.error("後端錯誤訊息：", err.message || "提交失敗");
       });
+    }
+  })
+  .catch((error) => {
+    console.error("傳送失敗：", error.message || "無法連線或伺服器錯誤");
+  })
+  .finally(() => {
+    this.sending = false; // 提交結束後設為 false
+  });
     },
   },
 };
