@@ -1,6 +1,6 @@
 <template>
   <div class="order-bg" ref="parallax2">
-   <!-- <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
+    <!-- <div class="c" data-aos="fade" data-aos-delay="0" data-aos-duration="1900">
       
       <div class="c1"><img src="@/projects/mzsy/all/3.png" alt="1"></div>
       <div class="c2"><img src="@/projects/mzsy/all/2.png" alt="3"></div>
@@ -24,42 +24,28 @@
             <div class="row" v-if="order.room_type">
               <label>需求房型</label>
               <el-select v-model="form.room_type" placeholder>
-                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city" no-data-text=""></el-option>
+                <el-option v-for="city in order.room_type" :key="city" :label="city" :value="city"
+                  no-data-text=""></el-option>
               </el-select>
             </div>
             <div class="row">
               <label>居住城市</label>
               <el-select v-model="form.city" placeholder>
-                <el-option
-                  v-for="city in cityList"
-                  :key="city.value"
-                  :label="city.label"
-                  :value="city.value"
-                  no-data-text="無數據"
-                ></el-option>
+                <el-option v-for="city in cityList" :key="city.value" :label="city.label" :value="city.value"
+                  no-data-text="無數據"></el-option>
               </el-select>
             </div>
             <div class="row">
               <label>居住地區</label>
               <el-select v-model="form.area" placeholder>
-                <el-option
-                  v-for="area in areaList"
-                  :key="area.value"
-                  :label="area.label"
-                  :value="area.value"
-                  no-data-text="請先選擇居住城市"
-                ></el-option>
+                <el-option v-for="area in areaList" :key="area.value" :label="area.label" :value="area.value"
+                  no-data-text="請先選擇居住城市"></el-option>
               </el-select>
             </div>
           </div>
           <div class="group">
             <div class="row" style="height: 100%">
-              <el-input
-                type="textarea"
-                :rows="7"
-                placeholder="請輸入您的留言 (選填)"
-                v-model="form.msg"
-              ></el-input>
+              <el-input type="textarea" :rows="7" placeholder="請輸入您的留言 (選填)" v-model="form.msg"></el-input>
             </div>
           </div>
         </div>
@@ -73,37 +59,23 @@
           </el-checkbox>
         </div>
         <div style="margin: 0 auto; z-index: 2" v-if="!isMobile">
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true"
+            :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
         <div style="margin: 0 auto; z-index: 2" v-if="isMobile">
-          <vue-recaptcha
-            :sitekey="info.recaptcha_site_key_v2"
-            @verify="isVerify = true"
-            :loadRecaptchaScript="true"
-          ></vue-recaptcha>
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2" @verify="isVerify = true"
+            :loadRecaptchaScript="true"></vue-recaptcha>
         </div>
-        <el-button
-          class="form-submit bt_registration"
-          type="primary"
-          :disabled="!checked || !isVerify"
-          @click="submit"
-          :loading="isSubmit"
-          >立即預約</el-button
-        >
+        <el-button class="form-submit bt_registration" type="primary" :disabled="!checked || !isVerify" @click="submit"
+          :loading="isSubmit">立即預約</el-button>
         <Loading :loading="isSubmit" :isOpacity="true" />
       </div>
     </div>
 
     <ContactInfo />
-<!--  -->   <GoogleMap />
-    <PolicyDialog
-      :policyVisible="policyVisible"
-      @hidePolicyDialog="hidePolicyDialog"
-    />
+    <!--  -->
+    <GoogleMap />
+    <PolicyDialog :policyVisible="policyVisible" @hidePolicyDialog="hidePolicyDialog" />
   </div>
 </template>
 
@@ -147,6 +119,7 @@ export default {
         msg: "",
         time_start: "",
         time_end: "",
+        email: "",//case_code 新系統必要
       },
       checked: false,
       isSubmit: false,
@@ -233,7 +206,9 @@ export default {
       formData.append("email", this.form.email);
       formData.append("contacttime", this.form.contacttime);
       formData.append("msg", this.form.msg);
+      formData.append("message", this.form.msg);//case_code 新系統必要
       formData.append("room_type", this.form.room_type);
+      formData.append("case_code", "mzsy1");//case_code 新系統必要
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append("city", this.form.city);
@@ -261,15 +236,28 @@ export default {
           method: "GET",
         }
       );
-      fetch("contact-form.php", {
+      //9faf7643-f510-4815-92b9-5cb9a8dc9281
+      //caseid 在index.js裡設定
+      //caseid 在index.js裡設定
+      fetch("https://service-sys.lixin.com.tw/reserve/9faf7643-f510-4815-92b9-5cb9a8dc9281", {
         method: "POST",
         body: formData,
-      }).then((response) => {
-        this.isSubmit = false;
-        if (response.status === 200) {
-          window.location.href = "formThanks";
-        }
-      });
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            window.location.href = "formThanks";
+          } else {
+            return response.json().then(err => {
+              console.error("後端錯誤訊息：", err.message || "提交失敗");
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("傳送失敗：", error.message || "無法連線或伺服器錯誤");
+        })
+        .finally(() => {
+          this.sending = false; // 提交結束後設為 false
+        });
     },
   },
 };
@@ -296,43 +284,67 @@ export default {
   right: -#{size(50)};
   width: size(148);
 }
-.o{
-  position: absolute;
-  top:size(5);
-  left:calc(50% - 10.5vw);
-  width: calc(2 * 10.5vw);
-  height:calc(2 * 10.5vw);
-  border-radius: 50%;
-background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 100%);}
 
-.c{
-      position: absolute;left:0;right:0;
-      top:size(680);
-        z-index: -1;
-      div{
-        position: absolute;
-        animation:an 5s ease-in-out infinite alternate;
-        img{width: 100%;}
-      }
-    .c1{
-      width:size(700);top:size(-150);right: size(-50);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-    animation-delay: -1s;
-      img{width: 100%;
-      transform:rotate(6deg);}}
-    .c2{
-      width:size(300);top:size(100);left: size(120);
-      transform:rotate(3deg);
-      transform-origin: 50% 50%;
-      img{width: 100%;
-      transform:rotate(-30deg);}}
-  }
-@keyframes an{
-    to{
-      transform: translateX(0);
-    }
+.o {
+  position: absolute;
+  top: size(5);
+  left: calc(50% - 10.5vw);
+  width: calc(2 * 10.5vw);
+  height: calc(2 * 10.5vw);
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(220, 60, 0, 0.12) 0%, rgba(220, 60, 0, 0) 100%);
 }
+
+.c {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: size(680);
+  z-index: -1;
+
+  div {
+    position: absolute;
+    animation: an 5s ease-in-out infinite alternate;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .c1 {
+    width: size(700);
+    top: size(-150);
+    right: size(-50);
+    transform: rotate(3deg);
+    transform-origin: 50% 50%;
+    animation-delay: -1s;
+
+    img {
+      width: 100%;
+      transform: rotate(6deg);
+    }
+  }
+
+  .c2 {
+    width: size(300);
+    top: size(100);
+    left: size(120);
+    transform: rotate(3deg);
+    transform-origin: 50% 50%;
+
+    img {
+      width: 100%;
+      transform: rotate(-30deg);
+    }
+  }
+}
+
+@keyframes an {
+  to {
+    transform: translateX(0);
+  }
+}
+
 .bg-img {
   width: 110%;
   position: absolute;
@@ -340,6 +352,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   right: -2%;
   pointer-events: none;
 }
+
 .order-bg {
   //background-color: $order_bg_color;
   //background-image: $order_bg_image;
@@ -354,10 +367,11 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   input,
   textarea,
   button {
-  // font-family: $family3;
+    // font-family: $family3;
     background: $order_submit_bg;
-  //  border-radius: $order_submit_borderradius !important;
+    //  border-radius: $order_submit_borderradius !important;
   }
+
   .order-top {
     //background-color: $order_bg_color;
     //background-image: url("~@/assets/img/contact_bg.jpg");
@@ -366,17 +380,18 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     background-position: bottom right;
     position: relative;
     padding: 5vw 0 0 0;
-   // padding-bottom: 500px;
+    // padding-bottom: 500px;
   }
+
   .order-title {
-  position: relative;
-   // font-family: $family1;
-  width: size(1500);
-    padding-top:0;
-    padding-bottom:0;
-    font-weight:700;
-  line-height:2.222;
-  font-size: size(49);
+    position: relative;
+    // font-family: $family1;
+    width: size(1500);
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 700;
+    line-height: 2.222;
+    font-size: size(49);
     letter-spacing: size(10);
     text-indent: size(10);
     text-align: center;
@@ -386,6 +401,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     display: inline-block;
     z-index: 3;
   }
+
   .order-title-img {
     width: 30vw;
     margin: 3vh auto;
@@ -421,7 +437,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-   // padding-bottom: 3rem;
+    // padding-bottom: 3rem;
     justify-content: space-between;
     z-index: 1;
   }
@@ -432,7 +448,8 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     align-items: flex-start;
     margin: 0 auto;
     justify-content: space-between;
-    > .group {
+
+    >.group {
       flex: 1;
       align-items: flex-start;
     }
@@ -449,14 +466,17 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       border-right: 1px solid rgba(0, 0, 0, 0.2);
       margin-right: 40px;
       padding-right: 40px;
+
       .row {
         width: 100%;
+
         // justify-content: flex-start;
         .el-input {
           width: auto;
         }
       }
     }
+
     &:nth-child(2) {
       .row {
         //justify-content: flex-end;
@@ -493,6 +513,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       padding-left: 15px;
       white-space: nowrap;
       line-height: 1.2;
+
       span {
         color: #ff0000;
       }
@@ -520,7 +541,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
   }
 
   .order {
-  //  width: 920px;
+    //  width: 920px;
     margin: 0 auto;
   }
 }
@@ -540,23 +561,30 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     top: 0;
   }
 
-.o{
-  position: absolute;
-  top:sizem(5);
-  left:calc(50% - 30vw);
-  width: calc(2 * 30vw);
-  height:calc(2 * 30vw);
+  .o {
+    position: absolute;
+    top: sizem(5);
+    left: calc(50% - 30vw);
+    width: calc(2 * 30vw);
+    height: calc(2 * 30vw);
   }
 
-.c{
-      top:sizem(0);
-    .c1{
-      width:sizem(200);top:sizem(80);right: sizem(250);
-      }
-    .c2{
-      width:sizem(100);top:sizem(10);left: sizem(280);
-      }
+  .c {
+    top: sizem(0);
+
+    .c1 {
+      width: sizem(200);
+      top: sizem(80);
+      right: sizem(250);
+    }
+
+    .c2 {
+      width: sizem(100);
+      top: sizem(10);
+      left: sizem(280);
+    }
   }
+
   .order-bg {
     //background-color: $order_bg_color;
     background-image: $order_bg_image_m;
@@ -566,15 +594,17 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     position: relative;
     //z-index: 2;
 
-    > img {
+    >img {
       display: block;
     }
+
     .order-title {
       width: 100%;
       padding-top: 10px;
       padding-bottom: 5px;
       font-size: calc(100vw * 30 / 375);
     }
+
     .order-title-img {
       width: 80vw;
     }
@@ -582,11 +612,12 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
     .order-subtitle {
       // display: none;
       font-size: 14px;
-    //  max-width: 80vw;
+      //  max-width: 80vw;
       margin: 0 auto;
       margin-bottom: 0;
       line-height: 1.5;
     }
+
     .order-top {
       background-image: $order_bg_image_m;
       background-size: contain;
@@ -594,6 +625,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       // top: 10vw;
       padding-bottom: 0;
     }
+
     .order {
       width: 85% !important;
       margin: 0 auto;
@@ -610,6 +642,7 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
       margin-bottom: 0px !important;
       border: none !important;
       padding-right: 0 !important;
+
       &:nth-child(1) {
         .row {
           .el-input {
@@ -618,16 +651,18 @@ background: linear-gradient(to bottom, rgba(220,60,0,0.12) 0%,rgba(220,60,0,0) 1
         }
       }
     }
+
     .row {
       margin-bottom: 12px !important;
 
       &.house {
         margin-top: 20px;
       }
+
       label {
         width: 40% !important;
         text-align: left;
-      font-size: 15px;
+        font-size: 15px;
       }
     }
 
