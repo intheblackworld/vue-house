@@ -7,7 +7,6 @@ export default {
   fbMessage: 'https://m.me/jadeforestvilla',
   googleLink: 'https://goo.gl/maps/8yUfkfkP87hLqZDk7',
   caseName: '幸福大院',
-
   houseInfos: [
     ['投資興建', '威力國際開發股份有限公司'],
     ['全案指導', '國揚實業股份有限公司'],

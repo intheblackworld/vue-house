@@ -145,8 +145,6 @@ export default {
       formData.append('phone', this.form.phone)
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
-      formData.append("message", this.form.msg)//case_code 新系統必要
-      formData.append("case_code", "sfdy");//case_code 新系統必要
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
@@ -161,27 +159,22 @@ export default {
       const min = time.getMinutes()
       const sec = time.getSeconds()
       const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
-      
-    //caseid 在index.js裡設定
-      fetch("https://service-sys.lixin.com.tw/reserve/79ea87eb-76d3-4ec9-a8db-39713b6b4956", {
-        method: "POST",
+      fetch(
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&phone=${this.form.phone}&email=${this.form.email}&cityarea=${this.form.city}${this.form.area}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+      `,
+        {
+          method: 'GET',
+        },
+      )
+      fetch('contact-form.php', {
+        method: 'POST',
         body: formData,
-      })
-      .then((response) => {
+      }).then(response => {
+        this.isSubmit = false
         if (response.status === 200) {
-          window.location.href = "formThanks";
-        } else {
-          return response.json().then(err => {
-            console.error("後端錯誤訊息：", err.message || "提交失敗");
-          });
+          window.location.href = 'formThanks'
         }
       })
-      .catch((error) => {
-        console.error("傳送失敗：", error.message || "無法連線或伺服器錯誤");
-      })
-      .finally(() => {
-        this.sending = false; // 提交結束後設為 false
-      });
     },
   },
 }
