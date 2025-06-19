@@ -374,10 +374,18 @@ export default {
       type: 1, // 1 線上熱銷, 2 完銷個案, 3 媒體影音
       currentType: 1,
       item_list: [
+        {
+          // icon: require('./s1/icon1.png'),
+          type:3,
+          title: '【日進學】五股5字頭 搶進北士科第一環',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/j3apYZJHGGY',
+        },
       {
           // icon: require('./s1/icon1.png'),
           type:1,
-          title: '【日進學 】驚艷洲子洋 校園第一排 輕軌捷運宅',
+          title: '【日進學】驚艷洲子洋 校園第一排 輕軌捷運宅',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/CEmR6lMm4f8',
