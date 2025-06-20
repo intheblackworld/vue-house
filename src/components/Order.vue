@@ -146,7 +146,7 @@ export default {
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
       formData.append("message", this.form.msg)//case_code 新系統必要
-      formData.append("case_code", "sfdy");//case_code 新系統必要
+      formData.append("case_code", "79ea87eb-76d3-4ec9-a8db-39713b6b4956");//case_code 新系統必要
       formData.append('city', this.form.city)
       formData.append('area', this.form.area)
       formData.append('utm_source', utmSource)
