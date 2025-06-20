@@ -215,7 +215,7 @@ export default {
       formData.append("msg", this.form.msg);
       formData.append("message", this.form.msg);//case_code 新系統必要
       formData.append("room_type", this.form.room_type);
-      formData.append("case_code", "great-intersection");//case_code 新系統必要
+      formData.append("case_code", "a342daa4-4855-403a-af8e-39790d1875fe");//case_code 新系統必要
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append("city", this.form.city);
