@@ -291,7 +291,7 @@ export default {
       formData.append('email', this.form.email)
       formData.append('msg', this.form.msg)
       formData.append("message", this.form.msg)//case_code 新系統必要
-      formData.append("case_code", "lc")//case_code 新系統必要
+      formData.append("case_code", "1d2db7f2-157b-4a33-acbc-f4abfde91846")//case_code 新系統必要
       // formData.append('time_start', this.form.time_start)
       // formData.append('time_end', this.form.time_end)
       formData.append('city', this.form.city)
