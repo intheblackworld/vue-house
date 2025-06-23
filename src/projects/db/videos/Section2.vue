@@ -377,6 +377,14 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type:3,
+          title: '【日進學】15分鐘北市科 5字頭親民價',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/C6TBQrS7bgo',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type:3,
           title: '【日進學】五股5字頭 搶進北士科第一環',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
