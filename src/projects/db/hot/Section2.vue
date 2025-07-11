@@ -979,15 +979,15 @@ export default {
         },
         // 國王大道
         {
-          title: '即將<br />公開',
-          title2: '即將公開',
-          desc: 'YES,I DO 副都心最大百億造鎮<br />即將公開COMING SOON',
+          title: '國王<br />大道',
+          title2: '國王大道',
+          desc: '新北市｜新莊副都心<br />國政副都心 百億城中城<br />公園 校園 水花園 成名在望15-28坪',
           img: require('../works/20/01.jpg'),
           isEmpty: false,
-          info1: '即將公開COMING SOON',
-          info2: '',
-          info3: '',
-          contact: '',
+          info1: '新北市｜新莊副都心<br />國政副都心 百億城中城<br />公園 校園 水花園 成名在望15-28坪',
+          info2: '投資興建：漢翔開發股份有限公司<br />規劃坪數：15-28坪',
+          info3: '壓軸千坪大基地大造鎮<br />三大科學產業園區環繞<br />三高三捷四特快，國家級重劃<br />三面臨路，公園取靜<br />珍稀小坪數，豪宅DNA<br />絕版住宅區ｘ副都心富人區',
+          contact: '貴賓專線｜02-8522-7337<br />接待會館｜新北市新莊區中華路三段×富貴路口',
           link: 'https://king.debang.tw/',
           logo: require('../works/20/01.jpg'),
           imgs: [
