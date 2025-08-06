@@ -13,7 +13,7 @@
         了解更多
       </div>
       <div class="item-list">
-        <div class="item flex flex-as flex-js" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(item.link)">
+        <div class="item flex flex-as flex-js" v-for="(item, index) in item_list" :key="item.title + index" @click="$router.push(`/news/${item.id}`)">
           <div>
             <div class="item-date" v-html="item.date"></div>
             <div class="item-btn">閱讀更多</div>
