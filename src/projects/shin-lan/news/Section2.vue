@@ -2,7 +2,7 @@
   <div class="section2">
     <div class="container">
       <transition-group class="item-list" name="slide-fade" mode="out-in" tag="div">
-        <div class="item flex flex-as flex-js" v-for="(item, index) in current_news_list" :key="item.title + index" @click="$router.push(item.link)">
+        <div class="item flex flex-as flex-js" v-for="(item, index) in current_news_list" :key="item.title + index" @click="$router.push(`/news/${item.id}`)">
           <img :src="item.imgs[0]" alt="" class="item-img" v-if="isMobile">
           <div>
             <div class="item-date" v-html="item.date"></div>

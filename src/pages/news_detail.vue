@@ -422,13 +422,13 @@ export default {
     },
   },
 
-  mounted() {
-    if (this.$route.params.id) {
-      let id = this.$route.params.id
-      this.current_news = news[id - 1]
-      this.slideList = this.current_news.imgs
-    }
-  },
+mounted() {
+  const id = parseInt(this.$route.params.id)
+  this.current_news = news.find(n => n.id === id)
+  if (this.current_news) {
+    this.slideList = this.current_news.imgs
+  }
+},
 
   watch: {},
 
