@@ -233,7 +233,7 @@
 .process-img {
   width: 100%;
   height: size(363);
-  object-fit: cover;
+  object-fit: cover;vertical-align: middle;
   // margin-bottom: size(10);
 }
 
@@ -959,6 +959,17 @@ export default {
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
+            img: require('../process/list/48/1.jpg'),
+            title: '2025/8',
+            subtitle: '二樓底版完成',
+            isFinished: true,
+            imgs: [
+            require('../process/list/48/1.jpg'),
+            require('../process/list/48/2.jpg'),
+            require('../process/list/48/3.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/47/1.jpg'),
             title: '2025/5',
             subtitle: '一樓底板灌漿',
