@@ -432,6 +432,29 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '立瑾建築機構-水尾段 開工動土慶典活動',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/24/1.jpg'),
+            require('../news/s2/24/2.jpg'),
+            require('../news/s2/24/3.jpg'),
+            require('../news/s2/24/4.jpg'),
+            require('../news/s2/24/5.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '立瑾建築機構-詠砌建設 謙里 開工動土慶典活動',
           subtitle: '',
           date: '',
