@@ -12,7 +12,7 @@
         <img :src="item.img" :alt="`${info.caseName}`">
         <div class="add"></div>
         <div class="content flex flex-ac wrap" v-if="!item.isEmpty">
-          <div class="item-title flex-c" v-html="isMobile ? item.title2 : item.title "></div>
+          <div class="item-title flex-c" v-html="isMobile ? item.title2 : item.title"></div>
           <div class="item-label" v-html="item.label"></div>
           <div class="item-desc flex-ac" v-html="item.desc"></div>
         </div>
@@ -27,7 +27,7 @@
         <div class="close" @click="closeProjectDialog"></div>
         <div class="product-title" v-html="dialogData.title2"></div>
         <div class="product-info1" v-html="dialogData.info1"></div>
-        <div class="hr"  v-if="dialogData.info2 || dialogData.info3 || dialogData.contact || dialogData.link"></div>
+        <div class="hr" v-if="dialogData.info2 || dialogData.info3 || dialogData.contact || dialogData.link"></div>
         <div class="txt">
           <div class="product-info2" v-html="dialogData.info2"></div>
           <div class="info-title" v-if="dialogData.info3">建案特色：</div>
@@ -59,10 +59,12 @@
         <div class="bottom"></div>
       </div>
       <div class="border-container">
-        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false"
+          @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide + i" :class="`swipe-item absolute`">
+              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide + i"
+                :class="`swipe-item absolute`">
                 <img :src="slide" alt="">
                 <div class="text" v-html="dialogData.hint"></div>
               </div>
@@ -115,6 +117,7 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+
   &:nth-child(1) {
     position: relative;
   }
@@ -166,7 +169,9 @@
     height: size(487);
     object-fit: cover;
   }
-  > span {
+
+  >span {
+
     &::before,
     &::after {
       content: '';
@@ -178,11 +183,13 @@
       right: 0.5em;
       top: 10em;
     }
+
     &::after {
       transform-origin: 50% 50%;
       transform: rotate(90deg);
     }
   }
+
   &::after {
     content: '';
     position: absolute;
@@ -193,6 +200,7 @@
     transition: all 0.3s;
     border: 1px solid #08b0;
   }
+
   &:hover:after {
     height: 100%;
     border: 1px solid #08b;
@@ -261,6 +269,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
+
   .product-close {
     position: absolute;
     top: 0;
@@ -282,6 +291,7 @@
   @include div_r_pc(40, 40, -45, -9);
   background-color: #008fbb;
   cursor: pointer;
+
   &::before,
   &::after {
     position: absolute;
@@ -295,6 +305,7 @@
     transform-origin: center;
     top: calc(50% - 1px);
   }
+
   &::before {
     transform: rotate(45deg);
   }
@@ -330,6 +341,7 @@
   color: #4d4d4d;
   white-space: nowrap;
 }
+
 .txt {
   @include img_l_pc(640, 305, 884);
   font-size: size(19);
@@ -341,6 +353,7 @@
   text-align: left;
   color: #008fbb;
 }
+
 .product-info2 {
   margin: 0 0 0.6em;
 }
@@ -402,6 +415,7 @@
   margin-top: size(48);
   overflow: hidden;
   justify-content: center;
+
   .text {
     white-space: pre;
     font-size: size(12);
@@ -440,8 +454,8 @@
   }
 }
 
-@media only screen and (max-width: 1440px) {
-}
+@media only screen and (max-width: 1440px) {}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -450,8 +464,7 @@
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
 @media screen and (max-width: 767px) {
   .section1 {
@@ -520,6 +533,7 @@
       border-color: transparent transparent #fff transparent;
     }
   }
+
   .section2 {
     width: 100vw;
     min-height: auto;
@@ -561,12 +575,15 @@
       height: sizem(305);
       object-fit: cover;
     }
-    > span {
+
+    >span {
+
       &::before,
       &::after {
         font-size: sizem(27.5);
       }
     }
+
     &::before,
     &::after {
       font-size: sizem(27.5);
@@ -584,6 +601,7 @@
       height: sizem(43);
       margin-right: sizem(15);
     }
+
     .item-title {
       width: 100%;
       font-size: sizem(20);
@@ -613,6 +631,7 @@
       font-size: sizem(24);
     }
   }
+
   .product-dialog {
     width: 100vw;
     height: 100vh;
@@ -738,6 +757,7 @@
     left: sizem(33);
     object-fit: cover;
     position: relative !important;
+
     .text {
       white-space: pre;
       font-size: sizem(12);
@@ -760,6 +780,7 @@
     opacity: 0;
     z-index: 0;
   }
+
   // end
   .swipe-fade-enter {
     opacity: 0;
@@ -805,6 +826,7 @@
     height: 100%;
     left: 0;
     z-index: 0;
+
     .slide-name {
       right: 1em;
       font-size: sizem(13);
@@ -867,6 +889,7 @@
         transform-origin: center;
         transform: scale(0);
       }
+
       &.active {
         &::before {
           content: '';
@@ -973,7 +996,7 @@ export default {
           logo: require('../works/21/2.jpg'),
           imgs: [
             require('../works/21/1.jpg'),
-            ],
+          ],
           hint: '',
           label: '',
         },
@@ -992,7 +1015,7 @@ export default {
           logo: require('../works/20/01.jpg'),
           imgs: [
             require('../works/20/02.jpg'),
-            ],
+          ],
           hint: '',
           label: '',
         },
@@ -1011,11 +1034,11 @@ export default {
           logo: require('../works/17/01.jpg'),
           imgs: [
             require('../works/17/02.jpg'),
-            ],
+          ],
           hint: '',
           label: '',
         },
-        
+
         // 謙旭
         {
           title: '謙旭',
@@ -1034,7 +1057,7 @@ export default {
             require('../works/18/03.jpg'),
             require('../works/18/04.jpg'),
             require('../works/18/05.jpg'),
-            ],
+          ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
@@ -1057,36 +1080,36 @@ export default {
             require('../works/19/03.jpg'),
             require('../works/19/04.jpg'),
             require('../works/19/05.jpg'),
-            ],
+          ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
 
         // 高大之森
-        {
-          title: '高大<br />之森',
-          title2: '高大之森',
-          desc: '高雄市｜高雄台積電<br />高大特區海景地王<br />21-35坪<br />台灣十大建商 前進高雄代表作',
-          img: require('../works/10/1.jpg'),
-          isEmpty: false,
-          info1: '高雄市｜高雄台積電<br />高大特區海景地王<br />21-35坪<br />台灣十大建商 前進高雄代表作',
-          info2: '投資興建：中德建設<br />規劃坪數：21-35坪',
-          info3: '台灣十大建商<br />前進高雄代表作<br />高大特區Σ計畫<br />國際建材臻品<br />頂級設計美學',
-          contact: '貴賓專線｜07-364-8088<br />接待會館｜高雄市楠梓區藍田路x大學西路口',
-          link: 'https://sigma.debang.tw/',
-          logo: require('../works/10/1.jpg'),
-          imgs: [
-            require('../works/10/3.jpg'),
-            require('../works/10/4.jpg'),
-            require('../works/10/5.jpg'),
-            require('../works/10/6.jpg'),
-            ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
+        //{
+        //title: '高大<br />之森',
+        //title2: '高大之森',
+        //desc: '高雄市｜高雄台積電<br />高大特區海景地王<br />21-35坪<br />台灣十大建商 前進高雄代表作',
+        //img: require('../works/10/1.jpg'),
+        //isEmpty: false,
+        //info1: '高雄市｜高雄台積電<br />高大特區海景地王<br />21-35坪<br />台灣十大建商 前進高雄代表作',
+        //info2: '投資興建：中德建設<br />規劃坪數：21-35坪',
+        //info3: '台灣十大建商<br />前進高雄代表作<br />高大特區Σ計畫<br />國際建材臻品<br />頂級設計美學',
+        //contact: '貴賓專線｜07-364-8088<br />接待會館｜高雄市楠梓區藍田路x大學西路口',
+        //link: 'https://sigma.debang.tw/',
+        //logo: require('../works/10/1.jpg'),
+        //imgs: [
+        //require('../works/10/3.jpg'),
+        //require('../works/10/4.jpg'),
+        //require('../works/10/5.jpg'),
+        //require('../works/10/6.jpg'),
+        //],
+        //hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+        //label: '',
+        //},
 
-      // 文華苑
-      {
+        // 文華苑
+        {
           title: '文華苑',
           title2: '文華苑',
           desc: '新北市｜新莊副都心<br />副都中心 天生為王<br />中原、中華大道角地｜19-27坪',
@@ -1129,8 +1152,8 @@ export default {
           label: '',
         },
 
-         
-         // 理享城
+
+        // 理享城
         {
           title: '理享城',
           title2: '理享城',
@@ -1148,13 +1171,13 @@ export default {
             require('../works/14/4.jpg'),
             require('../works/14/5.jpg'),
             require('../works/14/6.jpg'),
-            ],
+          ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
 
-        
-        
+
+
         // 快樂王國
         {
           title: '快樂<br />王國',
@@ -1176,9 +1199,9 @@ export default {
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
-        
+
         // 神采
-        
+
       ],
     }
   },
@@ -1220,9 +1243,9 @@ export default {
     },
   },
 
-  mounted() {},
+  mounted() { },
 
-  created() {},
+  created() { },
 
   computed: {},
 }

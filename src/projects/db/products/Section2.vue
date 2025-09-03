@@ -922,7 +922,28 @@ export default {
          // label: '',
         //},
         //陽光
-
+        // 高大之森
+        {
+          title: '高大<br />之森',
+          title2: '高大之森',
+          desc: '高雄市｜高雄台積電<br />高大特區海景地王<br />21-35坪<br />台灣十大建商 前進高雄代表作',
+          img: require('../works/10/1.jpg'),
+          isEmpty: false,
+          info1: '高雄市｜高雄台積電<br />高大特區海景地王<br />21-35坪<br />台灣十大建商 前進高雄代表作',
+          info2: '投資興建：中德建設<br />規劃坪數：21-35坪',
+          info3: '台灣十大建商<br />前進高雄代表作<br />高大特區Σ計畫<br />國際建材臻品<br />頂級設計美學',
+          contact: '貴賓專線｜07-364-8088<br />接待會館｜高雄市楠梓區藍田路x大學西路口',
+          link: 'https://sigma.debang.tw/',
+          logo: require('../works/10/1.jpg'),
+          imgs: [
+            require('../works/10/3.jpg'),
+            require('../works/10/4.jpg'),
+            require('../works/10/5.jpg'),
+            require('../works/10/6.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
         // 碧波白
         {
           title: '碧波白',
