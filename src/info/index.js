@@ -1,9 +1,9 @@
 import { isMobile } from '../utils/index'
 export default {
-  address: '台中市太平區立功路182號',
+  address: '台中市太平區立功路210號',
   googleSrc:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7281.02115119459!2d120.7144321!3d24.1538203!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x695ba004dc75cbc!2z5b6u56yR6I6K5ZyS!5e0!3m2!1szh-TW!2stw!4v1666334970905!5m2!1szh-TW!2stw',
-  googleLink: 'https://goo.gl/maps/vH4nH8VPRyD1aA6K6',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.486484306952!2d120.7126543760597!3d24.154665773135093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346922aa638aea73%3A0xbcf1daf063dcdba2!2zNDEx5Y-w5Lit5biC5aSq5bmz5Y2A56uL5Yqf6LevMjEw6Jmf!5e0!3m2!1szh-TW!2stw!4v1757672283591!5m2!1szh-TW!2stw',
+  googleLink: 'https://maps.app.goo.gl/R3FS79zFz14gjEuE9',
   phone: '04-2398-1111',
   fbLink: 'https://www.facebook.com/PC.SMILECASTLE',
   fbMessage: 'https://m.me/PC.SMILECASTLE',
