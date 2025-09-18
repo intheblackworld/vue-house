@@ -1,21 +1,24 @@
 <template>
   <div class="section2">
     <div class="tab flex-ac flex-jr">
-      <div :class="`tab-item flex-c yellow`" v-show="item_list.filter(i => i.type === 1).length > 0" @click="currentType = 1">
+      <div :class="`tab-item flex-c yellow`" v-show="item_list.filter(i => i.type === 1).length > 0"
+        @click="currentType = 1">
         線上熱銷
       </div>
-      <div :class="`tab-item flex-c blue`" v-show="item_list.filter(i => i.type === 2).length > 0" @click="currentType = 2">
+      <div :class="`tab-item flex-c blue`" v-show="item_list.filter(i => i.type === 2).length > 0"
+        @click="currentType = 2">
         完銷個案
       </div>
-      <div :class="`tab-item flex-c black`" v-show="item_list.filter(i => i.type === 3).length > 0" @click="currentType = 3">
+      <div :class="`tab-item flex-c black`" v-show="item_list.filter(i => i.type === 3).length > 0"
+        @click="currentType = 3">
         媒體影音
       </div>
     </div>
     <div class="container">
-      <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index" v-show="item.type === currentType">
+      <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index"
+        v-show="item.type === currentType">
         <iframe :src="item.video" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="content">
           <div class="item-label flex-c yellow" v-if="item.type === 1">線上熱銷</div>
           <div class="item-label flex-c blue" v-if="item.type === 2">完銷個案</div>
@@ -50,6 +53,7 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+
   &:nth-child(1) {
     position: relative;
   }
@@ -102,11 +106,10 @@
   transition: all 0.3s;
   cursor: pointer;
 
- /* &:hover {
+  /* &:hover {
     background: #00000003;
   }*/
-  .add {
-  }
+  .add {}
 
   iframe {
     width: size(966);
@@ -131,6 +134,7 @@
     letter-spacing: size(6.27);
     text-align: center;
     margin-bottom: 15px;
+
     &.blue {
       background-color: #008fbb;
       color: #fff;
@@ -145,6 +149,7 @@
       background-color: #333;
       color: #fff;
     }
+
     // margin-right: size(15);
   }
 
@@ -184,8 +189,8 @@
   }
 }
 
-@media only screen and (max-width: 1440px) {
-}
+@media only screen and (max-width: 1440px) {}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -194,8 +199,7 @@
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
 @media screen and (max-width: 767px) {
   .section2 {
@@ -303,6 +307,7 @@
       text-align: center;
       margin-top: sizem(29);
       margin-bottom: 15px;
+
       &.blue {
         background-color: #008fbb;
         color: #fff;
@@ -317,6 +322,7 @@
         background-color: #333;
         color: #fff;
       }
+
       // margin-right: size(15);
     }
 
@@ -376,7 +382,15 @@ export default {
       item_list: [
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 1,
+          title: '【日進學】三重生活圈 讓利5字頭｜全新完工',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/IERvlwi3HSE',
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 3,
           title: '【日進學】15分鐘北市科 5字頭親民價',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -384,15 +398,15 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【日進學】五股5字頭 搶進北士科第一環',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/j3apYZJHGGY',
         },
-      {
+        {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【日進學】驚艷洲子洋 校園第一排 輕軌捷運宅',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -400,7 +414,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【理享城】｜洲子洋地王 公園大造鎮',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -408,7 +422,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【理享城】｜新北地表奇蹟 萬坪水岸公園造鎮',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -416,7 +430,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【文華苑】｜副都心超越信義計畫十年增值盛世',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -424,7 +438,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【高大之森】｜置產跟隨台積電，高雄買最好',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -432,7 +446,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【文華苑】副都中心 天生為王',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -440,7 +454,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【文華苑】下個信義計畫區!新莊副都心「文華苑」擁房市利多',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -448,7 +462,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【文華苑】下個信義計畫區！新莊副都心「文華苑」擁房市利多 @newsebc',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -456,7 +470,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【高大之森】楠梓科技城 增值理想國',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -464,7 +478,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【理享城】新北地表奇蹟 萬坪水岸公園造鎮',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -472,7 +486,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【太陽帝國】摩天制震鋼骨 22-34坪高訂美學',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -480,7 +494,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【理享城】快樂王國2理享城',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -488,7 +502,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【雙橡園】產官攜手新十大建設｜雙橡園贏接副都心起漲盛世',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -496,7 +510,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【太陽帝國】PTW亞洲之最 國際鋼骨地標再創區域高價',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -504,7 +518,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【快樂王國】蘆洲捷運一站到家 新蘆特區水岸寓言',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -512,7 +526,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【理享城】快樂王國2理享城｜蘆洲下一站 萬坪公園城',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -520,7 +534,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【快樂王國】洲子洋新蘆特區 快樂王國夢享城 @EBC地產王',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -528,7 +542,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【快樂王國】與蘆洲站僅一橋之隔 「快樂王國」CP值高吸首購族',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -536,7 +550,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【太陽帝國】中和建案實登創天價 專家：鋼骨捷運是房價保證',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -544,7 +558,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:3,
+          type: 3,
           title: '【太陽帝國】雙和「華爾街天際線」現蹤！「太陽帝國」登區域最高價！ @這!不是新聞',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -552,7 +566,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【太陽帝國】PTW亞洲之最 美國建築設計雙料金獎肯定',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -560,7 +574,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【快樂王國】新蘆特區寓言 全家人的樂園',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -568,7 +582,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【太陽帝國】 『PTW亞洲之最 美國建築設計雙料金獎肯定』',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -576,7 +590,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【伴月灣】 『公園水岸雙首排 最強水岸休憩宅』',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -584,7 +598,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【太陽帝國】 『仰望雙和的新高度』',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -592,7 +606,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【神采飛洋】 HOUSE OF HAPPINESS｜設計師篇',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -607,7 +621,7 @@ export default {
         },
         {
           // icon: require('./s1/icon1.png'),
-          type:1,
+          type: 1,
           title: '【太陽帝國】不是王牌出手 雙和第一峰',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
@@ -679,9 +693,9 @@ export default {
     // },
   },
 
-  mounted() {},
+  mounted() { },
 
-  created() {},
+  created() { },
 
   computed: {},
 }
