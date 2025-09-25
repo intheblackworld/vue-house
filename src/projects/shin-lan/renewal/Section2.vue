@@ -294,6 +294,8 @@
           </ul>
         </div>
         <div class="mb7">
+          <a href="https://xinzhuang.shin-lan.com/downloads/擬訂新北市新莊區榮富段563地號等2筆土地都市更新權利變換計畫案(第二次專案小組版)114.05.pdf" target="_blank">擬訂新北市新莊區榮富段563地號等2筆土地都市更新權利變換計畫案(第二次專案小組版)114.05</a>
+          <a href="https://xinzhuang.shin-lan.com/downloads/變更(第一次)新北市新莊區榮富段563地號等2筆土地都市更新事業計畫案(第二次專案小組版)114.05.pdf" target="_blank">變更(第一次)新北市新莊區榮富段563地號等2筆土地都市更新事業計畫案(第二次專案小組版)114.05</a>
           <a href="https://xinzhuang.shin-lan.com/" target="_blank">前實施者-自主更新會<br>（新莊區榮富段563等2筆土地都市更新案）</a>
       </div>
       </div>
@@ -376,15 +378,18 @@
   }
 }
 .mb7 {
-  text-align: justify;
+  text-align: center;
   line-height: 1.6;
   font-size: size(18);
     @include md {
       font-size: sizem(15);
     }
-  a{display: block;color: #fff;background: #46b;border-radius: 1em ;
-    padding: .5em .5em;text-decoration: none;width: 25em;max-width: 100%;text-align: center;margin:1em auto 1em;
+  a{display:inline-block;color: #fff;background: #46b;border-radius: 1em ;
+    padding: .5em .5em;text-decoration: none;width: 25em;max-width: 100%;text-align: center;
+    margin:1em .5em 1em;
     &:hover{background: #1d3981;}
+    
+  @include md { margin:1em 0em 1em;}
   }
 }
 .mb8 {
