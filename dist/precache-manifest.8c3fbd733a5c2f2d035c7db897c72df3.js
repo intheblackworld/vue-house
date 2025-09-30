@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "089124c93f5567dc855c",
+    "revision": "c353af7b462415eeb4c3",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "089124c93f5567dc855c",
-    "url": "/js/app.3ec359e8.js"
+    "revision": "c353af7b462415eeb4c3",
+    "url": "/js/app.25b1d719.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -124,12 +124,12 @@ self.__precacheManifest = [
     "url": "/js/news.efcac0c9.js"
   },
   {
-    "revision": "84403ec5d34518e742bf",
-    "url": "/css/renewal.a7c9623b.css"
+    "revision": "b1d07838ed7c8386d372",
+    "url": "/css/renewal.08eb18cd.css"
   },
   {
-    "revision": "84403ec5d34518e742bf",
-    "url": "/js/renewal.dc0adf4d.js"
+    "revision": "b1d07838ed7c8386d372",
+    "url": "/js/renewal.67bf0958.js"
   },
   {
     "revision": "47832eee01bf1bb5a092256706bfcf5d",
@@ -812,12 +812,12 @@ self.__precacheManifest = [
     "url": "/img/11.fa20eae7.png"
   },
   {
-    "revision": "83b895381b36762de13a44776987de43",
-    "url": "/img/404-bg-m.83b89538.png"
-  },
-  {
     "revision": "a72458d20139ff9ae38f244cb4ac3cbe",
     "url": "/img/404-bg.a72458d2.png"
+  },
+  {
+    "revision": "83b895381b36762de13a44776987de43",
+    "url": "/img/404-bg-m.83b89538.png"
   },
   {
     "revision": "14ce8dbbc31bcbda547a7fb575457066",
@@ -1540,23 +1540,23 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "69542c4bffdb0072f9426f08957711db",
+    "revision": "35f007fc2d530594310e64b0d8fa7a2e",
     "url": "/index.html"
-  },
-  {
-    "revision": "b81798ad1201c16a82e43a126c8eb988",
-    "url": "/favicon.png"
   },
   {
     "revision": "dc9077cc2c651a99cbc8102117341c8e",
     "url": "/google3d6eee54d2f3fc35.html"
   },
   {
-    "revision": "b3417d0933b62494f8cce3a08fd910cd",
-    "url": "/sitemap.xml"
+    "revision": "b81798ad1201c16a82e43a126c8eb988",
+    "url": "/favicon.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "b3417d0933b62494f8cce3a08fd910cd",
+    "url": "/sitemap.xml"
   }
 ];
