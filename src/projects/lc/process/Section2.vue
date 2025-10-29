@@ -3,17 +3,18 @@
     <div class="head">
       <div class="breads">
         <router-link to="/">首頁</router-link> >
-        <router-link to="/process">工程進度</router-link> > 
+        <router-link to="/process">工程進度</router-link> >
       </div>
       <div class="title" v-html="list[this.$route.params.id][0].o_title"></div>
       <div class="subtitle" v-html="list[this.$route.params.id][0].o_subtitle"></div>
     </div>
     <div class="process-container">
-      <div class="process-item" v-for="(item, index) in list[this.$route.params.id]" :key="item.title + index" @click="showDialog(item.isFinished, index)">
+      <div class="process-item" v-for="(item, index) in list[this.$route.params.id]" :key="item.title + index"
+        @click="showDialog(item.isFinished, index)">
         <img :src="item.img" alt="" class="process-img">
         <div class="process-b">
           <div class="process-title">
-            {{item.title}}
+            {{ item.title }}
           </div>
           <div class="process-subtitle" v-html="item.subtitle">
           </div>
@@ -34,14 +35,16 @@
       <div class="dialog-content">
         <div class="dialog-head">
           <router-link to="/">首頁</router-link> >
-          <router-link to="/process">工程進度</router-link> > 
+          <router-link to="/process">工程進度</router-link> >
           <span @click="isDialog = false">{{ list[this.$route.params.id][0].o_title }}</span>
-           > {{ list[this.$route.params.id][dialogIndex].title }} - {{ list[this.$route.params.id][dialogIndex].subtitle }}
+          > {{ list[this.$route.params.id][dialogIndex].title }} - {{ list[this.$route.params.id][dialogIndex].subtitle
+          }}
         </div>
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(img, i) in list[this.$route.params.id][dialogIndex].imgs" v-show="slideIndex === i" :key="img + i" :class="`swipe-item absolute`">
+              <div v-for="(img, i) in list[this.$route.params.id][dialogIndex].imgs" v-show="slideIndex === i"
+                :key="img + i" :class="`swipe-item absolute`">
                 <img :src="img" :alt="img">
                 <!-- <div class="name absolute" v-html="slide.name"></div> -->
               </div>
@@ -51,7 +54,9 @@
               <div class="next-btn" @click="add"></div>
             </div>
             <div class="pagination absolute flex-ac" v-if="isPC">
-              <div :class="`pagination-dot`" v-for="(slide, index) in list[this.$route.params.id][dialogIndex].imgs" :key="slide.img + '-dot' + index" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              <div :class="`pagination-dot`" v-for="(slide, index) in list[this.$route.params.id][dialogIndex].imgs"
+                :key="slide.img + '-dot' + index" @click="goTo(index)"><span
+                  :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
             </div>
           </div>
         </div>
@@ -81,6 +86,7 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+
   &:nth-child(1) {
     position: relative;
   }
@@ -100,13 +106,15 @@
     text-align: left;
     margin-bottom: size(20);
     color: #000;
+
     a {
       color: #000;
       text-decoration: none;
       transition: all 0.3s;
       position: relative;
-      display:inline-block;
-      &:hover{
+      display: inline-block;
+
+      &:hover {
         color: #C00;
         text-decoration: underline;
       }
@@ -135,6 +143,7 @@
     color: #444444;
   }
 }
+
 .process-container {
   width: size(1920 - 304 * 2);
   margin: size(40) auto;
@@ -154,21 +163,23 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.8;
-  letter-spacing:0.03em;
+  letter-spacing: 0.03em;
   text-align: left;
   color: #000000;
   cursor: pointer;
-  &::before{
+
+  &::before {
     content: "";
     width: 3em;
     height: 1em;
     display: inline-block;
     border-bottom: 1px solid currentColor;
     border-left: 1px solid currentColor;
-    transform:skewX(-45deg);
+    transform: skewX(-45deg);
     transition: all 0.3s;
   }
-  &:hover:before{
+
+  &:hover:before {
     width: 4em;
 
   }
@@ -201,6 +212,7 @@
   color: #000000;
   margin-top: size(15);
 }
+
 .process-item {
   width: size(403);
   min-height: size(537);
@@ -211,19 +223,31 @@
   cursor: pointer;
   position: relative;
   transition: background-color 0.5s;
-  &:hover{background: #0002;
-  .process-img{opacity: 0.8;}
-  .process-link {
-  background-color: #ff9e00;}
-  .process-title{
-  background-color: #666;}
+
+  &:hover {
+    background: #0002;
+
+    .process-img {
+      opacity: 0.8;
+    }
+
+    .process-link {
+      background-color: #ff9e00;
+    }
+
+    .process-title {
+      background-color: #666;
+    }
   }
 
   // &:nth-child(n + 3) {
   //   opacity: 0.5;
   // }
 }
-.process-item0 {width: size(403);}
+
+.process-item0 {
+  width: size(403);
+}
 
 .process-b {
   border-top: 1px solid #707070;
@@ -233,7 +257,8 @@
 .process-img {
   width: 100%;
   height: size(363);
-  object-fit: cover;vertical-align: middle;
+  object-fit: cover;
+  vertical-align: middle;
   // margin-bottom: size(10);
 }
 
@@ -310,17 +335,20 @@
     text-align: left;
     color: #000000;
     z-index: 3;
-    a,span{
+
+    a,
+    span {
       color: #000;
       text-decoration: none;
       transition: all 0.3s;
       position: relative;
-      display:inline-block;
-      &:hover{
+      display: inline-block;
+
+      &:hover {
         color: #C00;
         text-decoration: underline;
       }
-      }
+    }
   }
 
   .dialog-content {
@@ -363,6 +391,7 @@
   opacity: 0;
   z-index: 0;
 }
+
 // end
 .swipe-fade-enter {
   opacity: 0;
@@ -485,6 +514,7 @@
       transform-origin: center;
       transform: scale(0);
     }
+
     &.active {
       &::before {
         content: '';
@@ -524,13 +554,14 @@
   .prev-btn {
     transform: rotate(-135deg);
   }
+
   .next-btn {
     transform: rotate(45deg);
   }
 }
 
-@media only screen and (max-width: 1440px) {
-}
+@media only screen and (max-width: 1440px) {}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -539,8 +570,7 @@
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
 @media screen and (max-width: 767px) {
   .section2 {
@@ -589,6 +619,7 @@
       letter-spacing: sizem(0.45);
       text-align: left;
       color: #000000;
+
       a {
         color: #000;
         text-decoration: none;
@@ -625,9 +656,10 @@
     display: flex;
     flex-wrap: wrap;
   }
-.back {
-  font-size: sizem(15);
-}
+
+  .back {
+    font-size: sizem(15);
+  }
 
   .process-b {
     border-top: 1px solid #707070;
@@ -661,7 +693,7 @@
     min-height: sizem(414);
     margin: 0 auto;
     margin-bottom: sizem(47);
-   // text-align: left;
+    // text-align: left;
 
     // &:nth-child(n + 3) {
     //   opacity: 0.5;
@@ -719,8 +751,8 @@
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
-     // line-height: 0.67;
-    //  letter-spacing: sizem(0.45);
+      // line-height: 0.67;
+      //  letter-spacing: sizem(0.45);
       text-align: left;
       color: #000;
       z-index: 3;
@@ -733,7 +765,7 @@
       left: 0;
       right: 0;
       margin: 0 auto;
-      top:calc(50% + 35px);
+      top: calc(50% + 35px);
       transform: translateY(-50%);
       position: absolute;
     }
@@ -749,14 +781,14 @@
 
   /* Swipe */
   .swipe {
-    width:100%;
+    width: 100%;
     height: sizem(400);
     z-index: 2;
     margin: sizem(25) 0;
     left: sizem(0);
     float: none;
     object-fit: cover;
-    
+
   }
 
   // begin
@@ -764,6 +796,7 @@
     opacity: 0;
     z-index: 0;
   }
+
   // end
   .swipe-fade-enter {
     opacity: 0;
@@ -878,6 +911,7 @@
         transform-origin: center;
         transform: scale(0);
       }
+
       &.active {
         &::before {
           content: '';
@@ -917,6 +951,7 @@
     .prev-btn {
       transform: rotate(-135deg);
     }
+
     .next-btn {
       transform: rotate(45deg);
     }
@@ -940,33 +975,43 @@ export default {
       isDialog: false,
       dialogIndex: 0,
       tabIndex: 0,
-     /*  slideList: [
-        [
-          {
-            img: require('../process/list/1/0.jpg'),
-            o_title: '2021 立瑾WAY',
-            o_subtitle: '已完售，預計2023年初完工。',
-
-            title: '2021/4',
-            subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
-            isFinished: true,
-          },
-        ],
-      ], */
+      /*  slideList: [
+         [
+           {
+             img: require('../process/list/1/0.jpg'),
+             o_title: '2021 立瑾WAY',
+             o_subtitle: '已完售，預計2023年初完工。',
+ 
+             title: '2021/4',
+             subtitle: '基礎工程啟動<br/>地下室開挖工程按部進行。',
+             isFinished: true,
+           },
+         ],
+       ], */
       list: [
         //...Array(18).keys()].map((i) => ({
         [ //琢渼
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
-            img: require('../process/list/51/1.jpg'),
+            img: require('../process/list/52/1.jpg'),
+            title: '2025/10',
+            subtitle: '六樓底版完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/52/1.jpg'),
+              require('../process/list/52/2.jpg'),
+              require('../process/list/52/3.jpg'),
+            ]
+          },
+          {
             title: '2025/10',
             subtitle: '五樓底版完成',
             isFinished: true,
             imgs: [
-            require('../process/list/51/1.jpg'),
-            require('../process/list/51/2.jpg'),
-            require('../process/list/51/3.jpg'),
+              require('../process/list/51/1.jpg'),
+              require('../process/list/51/2.jpg'),
+              require('../process/list/51/3.jpg'),
             ]
           },
           {
@@ -975,9 +1020,9 @@ export default {
             subtitle: '四樓底版完成',
             isFinished: true,
             imgs: [
-            require('../process/list/50/1.jpg'),
-            require('../process/list/50/2.jpg'),
-            require('../process/list/50/3.jpg'),
+              require('../process/list/50/1.jpg'),
+              require('../process/list/50/2.jpg'),
+              require('../process/list/50/3.jpg'),
             ]
           },
           {
@@ -986,9 +1031,9 @@ export default {
             subtitle: '三樓底版完成',
             isFinished: true,
             imgs: [
-            require('../process/list/49/1.jpg'),
-            require('../process/list/49/2.jpg'),
-            require('../process/list/49/3.jpg'),
+              require('../process/list/49/1.jpg'),
+              require('../process/list/49/2.jpg'),
+              require('../process/list/49/3.jpg'),
             ]
           },
           {
@@ -997,9 +1042,9 @@ export default {
             subtitle: '二樓底版完成',
             isFinished: true,
             imgs: [
-            require('../process/list/48/1.jpg'),
-            require('../process/list/48/2.jpg'),
-            require('../process/list/48/3.jpg'),
+              require('../process/list/48/1.jpg'),
+              require('../process/list/48/2.jpg'),
+              require('../process/list/48/3.jpg'),
             ]
           },
           {
@@ -1008,9 +1053,9 @@ export default {
             subtitle: '一樓底板灌漿',
             isFinished: true,
             imgs: [
-            require('../process/list/47/1.jpg'),
-            require('../process/list/47/2.jpg'),
-            require('../process/list/47/3.jpg'),
+              require('../process/list/47/1.jpg'),
+              require('../process/list/47/2.jpg'),
+              require('../process/list/47/3.jpg'),
             ]
           },
           {
@@ -1019,9 +1064,9 @@ export default {
             subtitle: 'B1底板灌漿',
             isFinished: true,
             imgs: [
-            require('../process/list/44/1.jpg'),
-            require('../process/list/44/2.jpg'),
-            require('../process/list/44/3.jpg'),
+              require('../process/list/44/1.jpg'),
+              require('../process/list/44/2.jpg'),
+              require('../process/list/44/3.jpg'),
             ]
           },
           {
@@ -1030,10 +1075,10 @@ export default {
             subtitle: 'B2底版灌漿',
             isFinished: true,
             imgs: [
-            require('../process/list/41/1.jpg'),
-            require('../process/list/41/2.jpg'),
-            require('../process/list/41/3.jpg'),
-            require('../process/list/41/4.jpg'),
+              require('../process/list/41/1.jpg'),
+              require('../process/list/41/2.jpg'),
+              require('../process/list/41/3.jpg'),
+              require('../process/list/41/4.jpg'),
             ]
           },
           {
@@ -1042,9 +1087,9 @@ export default {
             subtitle: '地樑及大底灌漿',
             isFinished: true,
             imgs: [
-            require('../process/list/39/1.jpg'),
-            require('../process/list/39/2.jpg'),
-            require('../process/list/39/3.jpg'),
+              require('../process/list/39/1.jpg'),
+              require('../process/list/39/2.jpg'),
+              require('../process/list/39/3.jpg'),
             ]
           },
           {
@@ -1053,9 +1098,9 @@ export default {
             subtitle: '土方工程',
             isFinished: true,
             imgs: [
-            require('../process/list/36/1.jpg'),
-            require('../process/list/36/2.jpg'),
-            require('../process/list/36/3.jpg'),
+              require('../process/list/36/1.jpg'),
+              require('../process/list/36/2.jpg'),
+              require('../process/list/36/3.jpg'),
             ]
           },
           {
@@ -1064,9 +1109,9 @@ export default {
             subtitle: '構台完成',
             isFinished: true,
             imgs: [
-            require('../process/list/31/1.jpg'),
-            require('../process/list/31/2.jpg'),
-            require('../process/list/31/3.jpg'),
+              require('../process/list/31/1.jpg'),
+              require('../process/list/31/2.jpg'),
+              require('../process/list/31/3.jpg'),
             ]
           },
           {
@@ -1629,7 +1674,7 @@ export default {
 
     add() {
       this.slideIndex =
-      this.slideIndex === this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 ? 0 : this.slideIndex + 1
+        this.slideIndex === this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 ? 0 : this.slideIndex + 1
     },
 
     dec() {
@@ -1637,7 +1682,7 @@ export default {
         this.slideIndex === 0 ? this.list[this.$route.params.id][this.dialogIndex].imgs.length - 1 : this.slideIndex - 1
     },
 
-    closeDialog() {},
+    closeDialog() { },
     // @slideChangeTransitionEnd="slideChanged"
     // slideChanged(e) {
     //   const swiper = this.$refs.mySwiper.swiper
@@ -1656,7 +1701,7 @@ export default {
     // this.slideList = this.list[this.$route.params.id]
   },
 
-  created() {},
+  created() { },
 
   computed: {},
 }
