@@ -1005,6 +1005,7 @@ export default {
             ]
           },
           {
+            img: require('../process/list/51/1.jpg'),
             title: '2025/10',
             subtitle: '五樓底版完成',
             isFinished: true,
