@@ -39,8 +39,10 @@
           <img :src="dialogData.imgs[0]" :alt="`${info.caseName}`" class="main" @click="selectImg(dialogData.imgs[0])">
           <div class="imgs" v-if="dialogData.imgs[1]">
             <img :src="dialogData.imgs[1]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[1])">
-            <img :src="dialogData.imgs[2]" v-if="dialogData.imgs[2]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[2])">
-            <img :src="dialogData.imgs[3]" v-if="dialogData.imgs[3]" :alt="`${info.caseName}`" @click="selectImg(dialogData.imgs[3])">
+            <img :src="dialogData.imgs[2]" v-if="dialogData.imgs[2]" :alt="`${info.caseName}`"
+              @click="selectImg(dialogData.imgs[2])">
+            <img :src="dialogData.imgs[3]" v-if="dialogData.imgs[3]" :alt="`${info.caseName}`"
+              @click="selectImg(dialogData.imgs[3])">
           </div>
         </div>
       </div>
@@ -55,15 +57,18 @@
         <div class="bottom"></div>
       </div>
       <div class="border-container">
-        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false"
+          @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide + i" :class="`swipe-item absolute`">
+              <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide + i"
+                :class="`swipe-item absolute`">
                 <img :src="slide" alt="">
               </div>
             </transition-group>
             <div class="pagination absolute flex-ac">
-              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
+              <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide + '-dot'"
+                @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
             </div>
             <div class="swipe-btns absolute flex-ac flex-jb">
               <img src="../all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
@@ -111,6 +116,7 @@
   display: block;
   object-fit: cover;
   margin-top: 0;
+
   &:nth-child(1) {
     position: relative;
   }
@@ -154,32 +160,51 @@
   background-color: #f7f8f8;
   margin: 0 size(18) size(50);
   position: relative;
-  cursor: pointer;position: relative;
+  cursor: pointer;
+  position: relative;
 
   img {
     width: 100%;
     height: size(487);
     object-fit: cover;
   }
-  > span{
-  &::before,
+
+  >span {
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1em;
+      height: 0.1em;
+      font-size: size(44);
+      background: #004ea2;
+      position: absolute;
+      right: 0.5em;
+      top: 10em;
+    }
+
+    &::after {
+      transform-origin: 50% 50%;
+      transform: rotate(90deg);
+    }
+  }
+
   &::after {
-    content: '';
-    width: 1em;
-    height: 0.1em;
-    font-size: size(44);
-    background: #004ea2;
+    content: "";
     position: absolute;
-    right: 0.5em;
-    top: 10em;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    border: 1px solid #08b0;
   }
-  &::after {
-    transform-origin: 50% 50%;
-    transform: rotate(90deg);
+
+  &:hover:after {
+    height: 100%;
+    border: 1px solid #08b;
+    transform: scale(1.04);
   }
-}
-  &::after{content: "";position: absolute; width: 100%;height:100%;top: 0;left: 0;transition: all 0.3s;border: 1px solid #08b0;}
-  &:hover:after{ height:100%;border: 1px solid #08b;transform: scale(1.04);}
 
   .content {
     height: size(130);
@@ -229,6 +254,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
+
   .product-close {
     position: absolute;
     top: 0;
@@ -250,6 +276,7 @@
   @include div_r_pc(40, 40, -45, -9);
   background-color: #008fbb;
   cursor: pointer;
+
   &::before,
   &::after {
     position: absolute;
@@ -263,6 +290,7 @@
     transform-origin: center;
     top: calc(50% - 1px);
   }
+
   &::before {
     transform: rotate(45deg);
   }
@@ -298,6 +326,7 @@
   color: #4d4d4d;
   white-space: nowrap;
 }
+
 .txt {
   @include img_l_pc(640, 305, 884);
   font-size: size(19);
@@ -309,6 +338,7 @@
   text-align: left;
   color: #008fbb;
 }
+
 .product-info2 {
   margin: 0 0 1.3em;
 }
@@ -358,6 +388,7 @@
   margin-top: size(48);
   overflow: hidden;
   justify-content: center;
+
   .text {
     white-space: pre;
     font-size: size(12);
@@ -396,8 +427,8 @@
   }
 }
 
-@media only screen and (max-width: 1440px) {
-}
+@media only screen and (max-width: 1440px) {}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
   .fullscreen {
     height: 100vh;
@@ -406,8 +437,7 @@
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
 @media screen and (max-width: 767px) {
   .section1 {
@@ -476,6 +506,7 @@
       border-color: transparent transparent #fff transparent;
     }
   }
+
   .section2 {
     width: 100vw;
     min-height: auto;
@@ -513,14 +544,14 @@
     border-bottom: none;
     cursor: pointer;
 
-    .add {
-    }
+    .add {}
 
     img {
       width: sizem(310);
       height: sizem(305);
       object-fit: cover;
     }
+
     &::before,
     &::after {
       font-size: sizem(27.5);
@@ -551,6 +582,7 @@
       text-align: left;
       color: #4d4d4d;
     }
+
     .item-title {
       width: 100%;
       font-size: sizem(20);
@@ -576,6 +608,7 @@
       color: #8e8e8e;
     }
   }
+
   .product-dialog {
     width: 100vw;
     height: 100vh;
@@ -703,13 +736,14 @@
     left: sizem(33);
     object-fit: cover;
     position: relative !important;
+
     .text {
       white-space: pre;
       font-size: sizem(12);
       transform: scale(0.9);
       transform-origin: 0 100%;
       line-height: 1.6;
-     //content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
+      //content: '本圖為示意圖,依核准之執照圖說及\A合約副圖為準,建設公司保有修改權';
       position: absolute;
       bottom: 0.3em;
       left: 0.3em;
@@ -725,6 +759,7 @@
     opacity: 0;
     z-index: 0;
   }
+
   // end
   .swipe-fade-enter {
     opacity: 0;
@@ -770,6 +805,7 @@
     height: 100%;
     left: 0;
     z-index: 0;
+
     .slide-name {
       right: 1em;
       font-size: sizem(13);
@@ -832,6 +868,7 @@
         transform-origin: center;
         transform: scale(0);
       }
+
       &.active {
         &::before {
           content: '';
@@ -906,22 +943,47 @@ export default {
         //  title: '陽明<br />迴鄉',
         //  title2: '陽明迴鄉',
         //  desc: '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
-         // img: require('../works/7/0.jpg'),
+        // img: require('../works/7/0.jpg'),
         //  isEmpty: false,
         //  info1:
         //    '台北市│新北投 翠嶺路<br />戶戶三面環景2-3房<br />薇閣富人特區　珍稀捷運雙併',
         //  info2: '投資興建：寶程國際<br />坪數房型：2-3房',
         //  info3:
         //    '陽明山下出將入相富人特區<br />高綠覆低建蔽濃蔭街廓<br />近擁薇閣高中郁郁文風<br />近享捷運新北投站增值通勤<br />戶戶三面採光通風，防疫級規劃',
-         // contact:
-         //   '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
+        // contact:
+        //   '賞屋專線｜02–28971888<br />迎賓會館｜台北市北投區中和街239號',
         //  link: 'https://ymvilla.debang.tw/',
-         // logo: require('../works/7/0.jpg'),
-         // imgs: [require('../works/7/1.jpg')],
-         // hint: '',
-         // label: '',
+        // logo: require('../works/7/0.jpg'),
+        // imgs: [require('../works/7/1.jpg')],
+        // hint: '',
+        // label: '',
         //},
         //陽光
+        // 太陽
+        {
+          title: '太陽<br />帝國',
+          title2: '太陽帝國',
+          desc: '新北市｜中和區<br />19-39坪 2-3房<br />雙和雙捷運地王 摩天鋼骨住宅',
+          img: require('../works/4/0.jpg'),
+          isEmpty: false,
+          info1:
+            '新北市｜中和區<br />19-39坪 2-3房<br />雙和雙捷運地王 摩天鋼骨住宅',
+          info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
+          info3:
+            '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
+          contact:
+            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區景新街337號',
+          link: 'https://ace.debang.tw/',
+          logo: require('../works/4/0.jpg'),
+          imgs: [
+            require('../works/4/1.jpg'),
+            require('../works/4/2.jpg'),
+            require('../works/4/3.jpg'),
+            require('../works/4/4.jpg'),
+          ],
+          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
+          label: '',
+        },
         // 高大之森
         {
           title: '高大<br />之森',
@@ -976,7 +1038,7 @@ export default {
           label: '',
         },
 
-                // 伴月灣
+        // 伴月灣
         {
           title: '伴月灣',
           title2: '伴月灣',
@@ -1020,13 +1082,13 @@ export default {
             require('../works/11/4.jpg'),
             require('../works/11/5.jpg'),
             require('../works/11/6.jpg'),
-            ],
+          ],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
 
         // 雙橡園
-        { 
+        {
           title: '雙橡園',
           title2: '雙橡園',
           desc: '新北市｜新莊副都心<br />雙校園 雙公園 雙捷運 雙商圈<br />副都心1%極限量',
@@ -1039,13 +1101,13 @@ export default {
           link: 'https://gtcip.debang.tw/',
           logo: require('../works/12/1.jpg'),
           imgs: [
-          //isMobile?
-          //require('../works/12/2m.jpg') :
-          //require('../works/12/2.jpg'),
-          require('../works/12/3.jpg'),
-          require('../works/12/5.jpg'),
-          require('../works/12/6.jpg'),
-          require('../works/12/7.jpg'),],
+            //isMobile?
+            //require('../works/12/2m.jpg') :
+            //require('../works/12/2.jpg'),
+            require('../works/12/3.jpg'),
+            require('../works/12/5.jpg'),
+            require('../works/12/6.jpg'),
+            require('../works/12/7.jpg'),],
           hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
           label: '',
         },
@@ -1208,9 +1270,9 @@ export default {
     },
   },
 
-  mounted() {},
+  mounted() { },
 
-  created() {},
+  created() { },
 
   computed: {},
 }

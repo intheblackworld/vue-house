@@ -1126,32 +1126,7 @@ export default {
           hint: '',
           label: '',
         },
-        // 太陽
-        {
-          title: '太陽<br />帝國',
-          title2: '太陽帝國',
-          desc: '新北市｜中和區<br />19-39坪 2-3房<br />雙和雙捷運地王 摩天鋼骨住宅',
-          img: require('../works/4/0.jpg'),
-          isEmpty: false,
-          info1:
-            '新北市｜中和區<br />19-39坪 2-3房<br />雙和雙捷運地王 摩天鋼骨住宅',
-          info2: '投資興建：美聯開發股份有限公司<br />規劃坪數：19-39坪',
-          info3:
-            '澳洲PTW建築團隊巨鑄<br />雙和第一高峰36層地標<br />全棟144隻BRB制震器',
-          contact:
-            '貴賓專線｜02-8668-7373<br />接待會館｜新北市中和區景新街337號',
-          link: 'https://ace.debang.tw/',
-          logo: require('../works/4/0.jpg'),
-          imgs: [
-            require('../works/4/1.jpg'),
-            require('../works/4/2.jpg'),
-            require('../works/4/3.jpg'),
-            require('../works/4/4.jpg'),
-          ],
-          hint: '本圖為示意圖,依核准之執照圖說及<br />合約副圖為準,建設公司保有修改權',
-          label: '',
-        },
-
+        
 
         // 理享城
         {
