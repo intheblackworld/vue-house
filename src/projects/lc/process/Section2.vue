@@ -258,6 +258,7 @@
   width: 100%;
   height: size(363);
   object-fit: cover;
+  vertical-align: middle;
   // margin-bottom: size(10);
 }
 
@@ -993,11 +994,62 @@ export default {
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
+<<<<<<< HEAD
             img: require('../process/list/48/1.jpg'),
+=======
+            img: require('../process/list/52/1.jpg'),
+>>>>>>> bf9dda6d2901bf04f407de023f905a0f2b4ca7c2
             title: '2025/10',
             subtitle: '六樓底版完成',
             isFinished: true,
             imgs: [
+<<<<<<< HEAD
+=======
+              require('../process/list/52/1.jpg'),
+              require('../process/list/52/2.jpg'),
+              require('../process/list/52/3.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/51/1.jpg'),
+            title: '2025/10',
+            subtitle: '五樓底版完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/51/1.jpg'),
+              require('../process/list/51/2.jpg'),
+              require('../process/list/51/3.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/50/1.jpg'),
+            title: '2025/9',
+            subtitle: '四樓底版完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/50/1.jpg'),
+              require('../process/list/50/2.jpg'),
+              require('../process/list/50/3.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/49/1.jpg'),
+            title: '2025/9',
+            subtitle: '三樓底版完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/49/1.jpg'),
+              require('../process/list/49/2.jpg'),
+              require('../process/list/49/3.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/48/1.jpg'),
+            title: '2025/8',
+            subtitle: '二樓底版完成',
+            isFinished: true,
+            imgs: [
+>>>>>>> bf9dda6d2901bf04f407de023f905a0f2b4ca7c2
               require('../process/list/48/1.jpg'),
               require('../process/list/48/2.jpg'),
               require('../process/list/48/3.jpg'),
