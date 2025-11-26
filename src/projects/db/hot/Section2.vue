@@ -1020,12 +1020,12 @@ export default {
         },
         // 都匯天地
         {
-          title: '即將<br />公開',
-          title2: '即將公開',
-          desc: '三重真好，A2最好<br />19-28坪全新視界即將為您揭曉<br />即將公開COMING SOON',
+          title: '成功<br />集美',
+          title2: '成功集美',
+          desc: '一橋雙子星，三重富人區<br />集美商圈 20-30坪世界觀<br />即將公開COMING SOON',
           img: require('../works/21/2.jpg'),
           isEmpty: false,
-          info1: '即將公開COMING SOON',
+          info1: '一橋雙子星，三重富人區<br />集美商圈 20-30坪世界觀<br />即將公開COMING SOON',
           info2: '',
           info3: '',
           contact: '',
