@@ -994,17 +994,23 @@ export default {
           {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
-<<<<<<< HEAD
-            img: require('../process/list/48/1.jpg'),
-=======
+            img: require('../process/list/53/1.jpg'),
+            title: '2025/11',
+            subtitle: '七樓底版完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/53/1.jpg'),
+              require('../process/list/53/2.jpg'),
+              require('../process/list/53/3.jpg'),
+              require('../process/list/53/4.jpg'),
+            ]
+          },
+          {
             img: require('../process/list/52/1.jpg'),
->>>>>>> bf9dda6d2901bf04f407de023f905a0f2b4ca7c2
             title: '2025/10',
             subtitle: '六樓底版完成',
             isFinished: true,
             imgs: [
-<<<<<<< HEAD
-=======
               require('../process/list/52/1.jpg'),
               require('../process/list/52/2.jpg'),
               require('../process/list/52/3.jpg'),
@@ -1049,7 +1055,6 @@ export default {
             subtitle: '二樓底版完成',
             isFinished: true,
             imgs: [
->>>>>>> bf9dda6d2901bf04f407de023f905a0f2b4ca7c2
               require('../process/list/48/1.jpg'),
               require('../process/list/48/2.jpg'),
               require('../process/list/48/3.jpg'),
