@@ -1002,7 +1002,6 @@ export default {
               require('../process/list/54/1.jpg'),
               require('../process/list/54/2.jpg'),
               require('../process/list/54/3.jpg'),
-              require('../process/list/54/4.jpg'),
             ]
           },
           {
