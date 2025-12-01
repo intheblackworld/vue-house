@@ -16,8 +16,8 @@
     </div>
     <div class="container">
       <div class="item flex-ac wrap" v-for="(item, index) in item_list" :key="item.title + index"
-        v-show="item.type === currentType">
-        <iframe :src="item.video" frameborder="0"
+        v-show="item.type === currentType" ref="videoItems">
+        <iframe v-if="item.showVideo" :src="item.video" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="content">
           <div class="item-label flex-c yellow" v-if="item.type === 1">線上熱銷</div>
@@ -383,10 +383,20 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type: 1,
+          title: '【高大之森2】高大首排 台積地王 高雄新矽谷贏接未來',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/8zXpbtuGzjo',
+          showVideo: true,
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 1,
           title: '【日進學】三重生活圈 讓利5字頭｜全新完工',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/IERvlwi3HSE',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -395,6 +405,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/C6TBQrS7bgo',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -403,6 +414,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/j3apYZJHGGY',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -411,6 +423,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/CEmR6lMm4f8',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -419,6 +432,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/xQDEbm8ya0U',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -427,6 +441,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/mJV274uXwH4',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -435,6 +450,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/IJ7VFko98pI',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -443,6 +459,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/fPYc9WgIYxU',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -451,6 +468,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/ovidZIXFWZA',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -459,6 +477,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/t5xe_ensFMY',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -467,6 +486,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/J0ih0dAlLBA',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -475,6 +495,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/u-HebUtFZSk',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -483,6 +504,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/22gsCcE5ccI',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -491,6 +513,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/v51wWBfoDgA',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -499,6 +522,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/tdcdB3jC8z0',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -507,6 +531,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/XWyWt5-qC_Y',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -515,6 +540,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/miz0lWMi83o',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -523,6 +549,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/ZDl73OcOiuk',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -531,6 +558,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/h081wRDMbYM',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -539,6 +567,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/a2xCLQD7ecU',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -547,6 +576,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/bLVDNXiN9Gg',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -555,6 +585,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/2NllXiMjN88',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -563,6 +594,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/0ogndmE3_GI',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -571,6 +603,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/hYJzFmd2mEg',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -579,6 +612,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/5dZlrQ6Rk0Q',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -587,6 +621,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/DmuwVtk30Sg',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -595,6 +630,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/YqpsA2Sa2vE',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -603,6 +639,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/irs0m1qWkl8',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -611,13 +648,15 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/qa-XGxKFT-4',
+          showVideo: false,
         },
         {
           type: 1,
           title: '【碧波白】五大建築獎',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
-          video: 'https://www.youtube.com/embed/Shj6X2xxyoQ'
+          video: 'https://www.youtube.com/embed/Shj6X2xxyoQ',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -626,6 +665,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/vBy5ZjC4Q9U',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon2.png'),
@@ -634,6 +674,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/F9Y7UvuctSE',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -642,6 +683,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/Z_hsfRlA4dg',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -650,6 +692,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/0BPv41BCVmk',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -658,6 +701,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/nkg8R28fa5U',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -666,6 +710,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/UcxPCDzs_yw',
+          showVideo: false,
         },
         {
           // icon: require('./s1/icon1.png'),
@@ -674,6 +719,7 @@ export default {
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
           video: 'https://www.youtube.com/embed/rXN9VphSzaw',
+          showVideo: false,
         },
       ],
     }
@@ -693,7 +739,24 @@ export default {
     // },
   },
 
-  mounted() { },
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = entry.target.dataset.index
+          this.item_list[index].showVideo = true
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.25 })
+
+    this.$nextTick(() => {
+      this.$refs.videoItems.forEach((el, idx) => {
+        el.dataset.index = idx
+        observer.observe(el)
+      })
+    })
+  },
 
   created() { },
 
