@@ -9,97 +9,132 @@
       <div class="news-title" v-html="current_news.title"></div>
       <div class="news-subtitle" v-if="current_news.subtitle" v-html="current_news.subtitle"></div>
       <div class="news-date" v-html="`日期： ${current_news.date} 作者：${current_news.author}`"></div>
-      <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged" v-if="slideList.length > 0">
-        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="slide + index">
-          <img :src="slide" :class="`item-img`" />
-          <div class="card-content"></div>
+      <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged"
+        v-if="slideList.length > 0">
+        <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="index">
+
+          <!-- slide 為圖片物件時 -->
+          <template v-if="typeof slide === 'object'">
+            <img :src="slide.src" class="item-img-bg" />
+            <img :src="slide.src" class="item-img" />
+            <div class="card-content">{{ slide.caption }}</div>
+          </template>
+
+          <!-- slide 是純圖片字串時 -->
+          <template v-else>
+            <img :src="slide" class="item-img-bg" />
+            <img :src="slide" class="item-img" />
+          </template>
+
         </swiper-slide>
+
         <div class="swiper-pagination" slot="pagination" v-if="isPC"></div>
         <div class="swiper-button-prev" slot="button-prev" v-if="isMobile"></div>
         <div class="swiper-button-next" slot="button-next" v-if="isMobile"></div>
       </swiper>
+
       <div class="news-desc" v-html="current_news.desc"></div>
       <div class="back-btn flex-c" @click="$router.push('/news')">回到最新消息</div>
     </div>
   </div>
 </template>
 <style lang="scss">
-.swiper-pagination{
+.swiper-pagination {
+  text-align: left;
+
   //宜娟把點選範圍條大版
-  .swiper-pagination-bullet{
-  width: 2em;
-  height: 2em;
-  margin: 0 !important;
-  opacity: 1;
-  position: relative;
-  transition:color .3s ;
-  color: #333;
-  background: none;
-  border-radius: 0;
-  &::before{
-    content: "";
-    width: 50%;
-    height:50%;
-    background: currentColor;
-    display: block;position: relative;
-    top: 25%;left: 25%;
+  .swiper-pagination-bullet {
+    width: 2em;
+    height: 2em;
+    margin: 0 !important;
+    opacity: 1;
+    position: relative;
+    transition: color .3s;
+    color: #333;
+    background: none;
+    border-radius: 0;
 
-  }
-  &::after{
-    content: "";
-    width: 50%;
-    height:50%;
-    background: #b18863;
-    display: block;position: absolute;
-    top: 25%;left: 25%;
-    border-radius: 50%;
-    transform:scale(0);
-    transition: transform 0.3s,border-radius 0.2s 0.2s;
+    &::before {
+      content: "";
+      width: 50%;
+      height: 50%;
+      background: currentColor;
+      display: block;
+      position: relative;
+      top: 25%;
+      left: 25%;
 
     }
-  &.swiper-pagination-bullet-active {
-  &::after{
-    border-radius: 0%;
-    transform:scale(1);
+
+    &::after {
+      content: "";
+      width: 50%;
+      height: 50%;
+      background: #b18863;
+      display: block;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s, border-radius 0.2s 0.2s;
+
     }
-  }
-  &:hover{
-  color: #666;}
+
+    &.swiper-pagination-bullet-active {
+      &::after {
+        border-radius: 0%;
+        transform: scale(1);
+      }
+    }
+
+    &:hover {
+      color: #666;
+    }
   }
 }
-.swiper-button-prev, .swiper-button-next {
+
+.swiper-button-prev,
+.swiper-button-next {
   top: 100%;
   height: 25px;
-  width:30%;
- // background-color: rgba(0, 0, 0, .5);
-  &::before{
+  width: 30%;
+
+  // background-color: rgba(0, 0, 0, .5);
+  &::before {
     content: "";
     position: relative;
     left: 20%;
     border: 1px solid #666;
     border-width: 0 0 1px 1px;
-    width: 50%;display: block;
+    width: 50%;
+    display: block;
     height: 40%;
-    transform:skewX(-45deg);
+    transform: skewX(-45deg);
 
   }
 }
 
-.swiper-button-prev{
+.swiper-button-prev {
   left: 0
 }
+
 .swiper-button-next {
-  right: 0;transform: scaleX(-1)
+  right: 0;
+  transform: scaleX(-1)
 }
 </style>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
 // begin
 .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
+
+/* .slide-fade-leave-active for below version 2.1.8 */
+  {
   // margin-top: 50px !important;
   opacity: 0;
 }
+
 // end
 .slide-fade-enter {
   margin-top: 10px !important;
@@ -126,12 +161,12 @@
   letter-spacing: 0.08em;
   text-align: justify;
 
-  .bg-img{
+  .bg-img {
     width: 100%;
 
     @include md {
-     height: 311px;
-     width: auto;
+      height: 311px;
+      width: auto;
     }
 
   }
@@ -163,6 +198,7 @@
 
 .swiper-container {
   width: size(1240);
+
   @include md {
     width: sizem(335);
     margin: 0 auto;
@@ -177,6 +213,7 @@
   margin: size(60) auto;
   padding-top: 0;
   flex-wrap: wrap;
+
   @include md {
     width: sizem(310);
     margin: sizem(30) auto;
@@ -193,31 +230,53 @@
 //     margin-top: 0;
 //   }
 // }
-
-.item-img {
-  width: size(1240);
+.swiper-slide {
+  position: relative;
   height: size(710);
-  object-fit: cover;
-  // height: size(333);
+  background: #333;
+  margin-bottom: size(60);
 
   @include md {
     width: sizem(335);
     height: sizem(200);
+    margin-bottom: sizem(60);
   }
 }
 
+.item-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .5;
+  filter: blur(10px);
+  z-index: 1;
+}
+
+.item-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+
+}
+
 .card-content {
-  font-size: size(28);
-  height: size(50);
+  position: absolute;
+  bottom: -1.5em;
+  right: 0em;
+  z-index: 3;
+  font-size: size(15);
   font-weight: 500;
   line-height: 1.29;
-  letter-spacing: size(1.4);
+  color: #333;
+
 
   @include md {
-    height: sizem(30);
-    font-size: sizem(23);
-    border-bottom: none;
-    text-align: center;
+    font-size: sizem(12);
   }
 }
 
@@ -249,7 +308,7 @@
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: size(1.4);
-  margin-top:0.7em;
+  margin-top: 0.7em;
 
   @include md {
     font-size: sizem(17);
@@ -263,8 +322,7 @@
   margin-top: size(20);
   margin-bottom: size(40);
 
-  @include md {
-  }
+  @include md {}
 }
 
 .news-date {
@@ -273,14 +331,14 @@
   margin-bottom: size(25);
 
   @include md {
-  font-size: size-m(14);  
+    font-size: size-m(14);
   }
- 
+
 }
 
 .back-btn {
   clear: both;
-    width: 10.7em;
+  width: 10.7em;
   height: 2.7em;
   font-size: size(15);
   font-weight: 500;
@@ -303,7 +361,7 @@
   }
 
   @include md {
-  font-size: sizem(15);
+    font-size: sizem(15);
   }
 }
 
@@ -422,16 +480,16 @@ export default {
     },
   },
 
-mounted() {
-  const id = parseInt(this.$route.params.id)
-  this.current_news = news.find(n => n.id === id)
-  if (this.current_news) {
-    this.slideList = this.current_news.imgs
-  }
-},
+  mounted() {
+    const id = parseInt(this.$route.params.id)
+    this.current_news = news.find(n => n.id === id)
+    if (this.current_news) {
+      this.slideList = this.current_news.imgs
+    }
+  },
 
   watch: {},
 
-  created() {},
+  created() { },
 }
 </script>
