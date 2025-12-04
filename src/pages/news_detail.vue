@@ -8,7 +8,10 @@
     <div class="container flex flex-jb flex-ab wrap">
       <div class="news-title" v-html="current_news.title"></div>
       <div class="news-subtitle" v-if="current_news.subtitle" v-html="current_news.subtitle"></div>
-      <div class="news-date" v-html="`日期： ${current_news.date} 作者：${current_news.author}`"></div>
+      <div class="news-date">
+        <span v-if="current_news.date">日期：{{ current_news.date }}</span>
+        <span v-if="current_news.author"> 作者：{{ current_news.author }}</span>
+      </div>
       <swiper :options="swiperOption" ref="mySwiper" class @slideChangeTransitionEnd="slideChanged"
         v-if="slideList.length > 0">
         <swiper-slide v-for="(slide, index) in slideList" :index="index" :key="index">
@@ -431,37 +434,33 @@ export default {
   },
 
   data() {
+    const baseOption = {
+      slidesPerView: isMobile ? 1 : 1,
+      spaceBetween: isTablet ? 20 : 0,
+      slidesPerColumn: isMobile ? 1 : 1,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: true,
+      },
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    }
+
     return {
       info,
       isPC,
       isMobile,
       isTablet,
       slideIndex: 0,
-      swiperOption: {
-        // direction: isMobile ? 'horizontal' : 'vertical',
-        slidesPerView: isMobile ? 1 : 1,
-        spaceBetween: isTablet ? 20 : 0,
-        slidesPerColumn: isMobile ? 1 : 1,
-        // allowSlidePrev: isMobile ? true : true,
-        // allowSlideNext: isMobile ? true : true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        // effect: 'fade',
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      },
+      swiperOption: baseOption,
       slideList: [],
-      // blockIndex: 0,
       current_news: {},
     }
   },
@@ -485,6 +484,17 @@ export default {
     this.current_news = news.find(n => n.id === id)
     if (this.current_news) {
       this.slideList = this.current_news.imgs
+
+      if (this.slideList.length <= 1) {
+        // 單張圖片，不輪播
+        this.swiperOption = {
+          ...this.swiperOption,
+          loop: false,
+          autoplay: false,
+          navigation: false,
+          pagination: false,
+        }
+      }
     }
   },
 
