@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.d114fc6a.js"
   },
   {
-    "revision": "04b222424fc6ba80ae0a",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.fe338641.js"
+    "revision": "cfefc6d3a0e52eddb1c1",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.04c62b24.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.6c419b55.js"
   },
   {
-    "revision": "72c9a9065b948f0b0e99",
+    "revision": "5c3508ce09121d2db95f",
     "url": "/css/app.d6ce1c15.css"
   },
   {
-    "revision": "72c9a9065b948f0b0e99",
-    "url": "/js/app.942c5db2.js"
+    "revision": "5c3508ce09121d2db95f",
+    "url": "/js/app.dd3a750f.js"
   },
   {
     "revision": "0c2eb17b2de4ab5b812d",
@@ -116,12 +116,12 @@ self.__precacheManifest = [
     "url": "/js/member.c4b3add7.js"
   },
   {
-    "revision": "f828cd8b4892e03544e7",
-    "url": "/css/news.6778cef4.css"
+    "revision": "03fb331efbbd8a7cb196",
+    "url": "/css/news.4189fbb4.css"
   },
   {
-    "revision": "f828cd8b4892e03544e7",
-    "url": "/js/news.db5583f1.js"
+    "revision": "03fb331efbbd8a7cb196",
+    "url": "/js/news.63581b55.js"
   },
   {
     "revision": "d686be3caf3c5f00748a",
@@ -1560,23 +1560,23 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "27d9bd864d6f45a7cdca64b95cf4541a",
+    "revision": "7b262de660fd59af8887a6c06590bd79",
     "url": "/index.html"
-  },
-  {
-    "revision": "b81798ad1201c16a82e43a126c8eb988",
-    "url": "/favicon.png"
-  },
-  {
-    "revision": "dc9077cc2c651a99cbc8102117341c8e",
-    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "/robots.txt"
   },
   {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
     "url": "/sitemap.xml"
+  },
+  {
+    "revision": "b81798ad1201c16a82e43a126c8eb988",
+    "url": "/favicon.png"
   }
 ];
