@@ -1,9 +1,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.php$ - [L]
+
+  # 如果是真實檔案或資料夾則直接存取
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.php [L]
-  php_flag display_errors 1
+
+  # 其餘導向 SPA 入口
+  RewriteRule . /index.html [L]
 </IfModule>

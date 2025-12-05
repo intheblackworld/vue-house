@@ -2,6 +2,24 @@
 export const news = [
 
    {
+    id: 12,
+    title: '欣聯彌勒家園熱銷媒體報導',
+    subtitle: '林榮三董事長為一貫道虔誠信徒，為了照顧親友對一貫道有所貢獻，於新北市深坑區規畫欣聯彌勒家園社區，提供親友以較親民價格入手。', // 內頁用
+    author: '', // 內頁用
+    date: '2025/11/12',
+    // 列表用描述
+    desc_short: '林榮三董事長為一貫道虔誠信徒，為了照顧親友對一貫道有所貢獻，於新北市深坑區規畫欣聯彌勒家園社區，提供親友以較親民價格入手。',
+    // 內頁用描述
+    desc: '#ETtoday房產雲<br>信徒才能買！深坑預售案奇葩定位　首批實登「虔誠價」出爐<br><a href="https://house.ettoday.net/news/3065900?from=ettoday_app" target="_block">https://house.ettoday.net/news/3065900?from=ettoday_app</a><br><br>#經濟日報<br>新北深坑奇特建案要價4字頭 只賣信仰「這宗教」親友<br><a href="https://house.udn.com/house/story/123590/9136865" target="_block">https://house.udn.com/house/story/123590/9136865</a>',
+    imgs: [ 
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/12/1.jpg'),
+    caption: "",
+  },
+    ]
+  },
+
+   {
     id: 11,
     title: '欣聯建設 × 合聯營造 七月雙案齊發',
     subtitle: '「彌勒家園」、「欣聯溪清」陸續開工 展現推案實力與節奏掌控力', // 內頁用

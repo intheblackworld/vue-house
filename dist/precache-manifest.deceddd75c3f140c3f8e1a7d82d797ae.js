@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/js/abou_ust.79620ddf.js"
   },
   {
-    "revision": "dbe495311b6e6b85c6e3",
-    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.6d841ab3.js"
+    "revision": "5abd9491e4c88ba54f4a",
+    "url": "/js/abou_ust~classic_case~company~hot_case~medias~news.a279f1a9.js"
   },
   {
     "revision": "5d190045650587044185",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.3e6f644b.js"
   },
   {
-    "revision": "c353af7b462415eeb4c3",
+    "revision": "c899b117611641ca6455",
     "url": "/css/app.f2465886.css"
   },
   {
-    "revision": "c353af7b462415eeb4c3",
-    "url": "/js/app.25b1d719.js"
+    "revision": "c899b117611641ca6455",
+    "url": "/js/app.4a46c4f4.js"
   },
   {
     "revision": "577165a7e31ae80e68ed",
@@ -116,12 +116,12 @@ self.__precacheManifest = [
     "url": "/js/member.2f282622.js"
   },
   {
-    "revision": "5cd5aa622b16549b51fb",
-    "url": "/css/news.6a8e2585.css"
+    "revision": "793591e35dcd145c1097",
+    "url": "/css/news.530b0623.css"
   },
   {
-    "revision": "5cd5aa622b16549b51fb",
-    "url": "/js/news.efcac0c9.js"
+    "revision": "793591e35dcd145c1097",
+    "url": "/js/news.cb76bd6f.js"
   },
   {
     "revision": "b1d07838ed7c8386d372",
@@ -1268,6 +1268,10 @@ self.__precacheManifest = [
     "url": "/img/29.0644b398.webp"
   },
   {
+    "revision": "0bed205a38c932e68f84a91b5390c8b2",
+    "url": "/img/1.0bed205a.jpg"
+  },
+  {
     "revision": "8a901b64f7b87b4dc980d67443492500",
     "url": "/img/img_page_duty_03.8a901b64.jpg"
   },
@@ -1540,12 +1544,8 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "35f007fc2d530594310e64b0d8fa7a2e",
+    "revision": "3b2d42e7a00ec755d210e297c30f65f2",
     "url": "/index.html"
-  },
-  {
-    "revision": "dc9077cc2c651a99cbc8102117341c8e",
-    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "b81798ad1201c16a82e43a126c8eb988",
@@ -1554,6 +1554,10 @@ self.__precacheManifest = [
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
   },
   {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
