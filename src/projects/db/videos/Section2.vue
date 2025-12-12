@@ -383,6 +383,15 @@ export default {
         {
           // icon: require('./s1/icon1.png'),
           type: 1,
+          title: '【成大之森】台南地王 成大首排',
+          desc: '',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/Vz4S3_OwgKE',
+          showVideo: true,
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 1,
           title: '【高大之森2】高大首排 台積地王 高雄新矽谷贏接未來',
           desc: '',
           // img: require('../hot/s1/imgbg.jpg'),
