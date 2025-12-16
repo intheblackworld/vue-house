@@ -996,6 +996,17 @@ export default {
             o_subtitle: '熱銷中 ，預計2027年初完工',
             img: require('../process/list/54/1.jpg'),
             title: '2025/11',
+            subtitle: '九樓底版完成',
+            isFinished: true,
+            imgs: [
+              require('../process/list/55/1.jpg'),
+              require('../process/list/55/2.jpg'),
+              require('../process/list/55/3.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/54/1.jpg'),
+            title: '2025/11',
             subtitle: '八樓底版完成',
             isFinished: true,
             imgs: [
