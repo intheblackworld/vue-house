@@ -317,13 +317,13 @@ export default {
         {
           img: require('../works/3/1.jpg'),
           title: '2021 立瑾綻',
-          subtitle: '已完售，預計2023年底完工',
+          subtitle: '已完售，於2023年完工',
           isFinished: true,
         },
         {
           img: require('../process/list/1/0.jpg'),
           title: '2021 立瑾WAY',
-          subtitle: '已完售，預計2023年底完工',
+          subtitle: '已完售，於2023年完工',
           isFinished: true,
         },
  /*       {

@@ -19,27 +19,19 @@
           </div>
         </slide>
       </carousel-3d>
-      <div class="carousel-controls ">
-        <button class="btn-next-case" @click="goToNextCase">
-          Next
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 20 20">
-            <polyline points="6 2 14 10 6 18" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <span v-html="nextCaseName"></span>
-        </button>
-      </div>
       <img src="../index/s5/s.png" alt="" class="shadow">
     </div>
-    <div :class="`section2 ${caseIndex === 0 ? 'show' : ''}`">
+    <div :class="`section2 ${(currentIndex === 0 || currentIndex === 3) ? 'show' : ''}`">
       <div class="border-container relative">
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
+        <!-- <img src="../works/2/1.jpg" alt="" class="img"> -->
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in innerSlideMap['lj57']" :key="slide.img" v-show="innerSlideIndex['lj57'] === i"
-                class="swipe-item absolute">
+              <div v-for="(slide, i) in slideList1" v-show="slideIndex1 === i" :key="slide.img"
+                :class="`swipe-item absolute`">
                 <img :src="slide.img" :alt="slide.name">
                 <div class="name absolute" v-html="slide.name"></div>
               </div>
@@ -88,16 +80,17 @@
         <img src="./s1/rb.png" alt="" class="rb">
       </div>
     </div>
-    <div :class="`section2 short ${caseIndex === 1 ? 'show' : ''}`">
+    <div :class="`section2 short ${(currentIndex === 1 || currentIndex === 4) ? 'show' : ''}`">
       <div class="border-container relative">
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
         </div>
+        <!-- <img src="../works/2/1.jpg" alt="" class="img"> -->
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in innerSlideMap['qianli']" :key="slide.img"
-                v-show="innerSlideIndex['qianli'] === i" class="swipe-item absolute">
+              <div v-for="(slide, i) in slideList2" v-show="slideIndex2 === i" :key="slide.img"
+                :class="`swipe-item absolute`">
                 <img :src="slide.img" :alt="slide.name">
                 <div class="name absolute" v-html="slide.name"></div>
               </div>
@@ -148,7 +141,7 @@
         <img src="./s1/rb.png" alt="" class="rb">
       </div>
     </div>
-    <div :class="`section2 short ${caseIndex === 2 ? 'show' : ''}`">
+    <div :class="`section2 short ${(currentIndex === 2 || currentIndex === 5) ? 'show' : ''}`">
       <div class="border-container relative">
         <div class="title-2">
           用<span>真心</span>打造住宅，用<span>真情</span>構築城市
@@ -156,8 +149,8 @@
         <div class="swipe" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
-              <div v-for="(slide, i) in innerSlideMap['zhuomei']" :key="slide.img"
-                v-show="innerSlideIndex['zhuomei'] === i" class="swipe-item absolute">
+              <div v-for="(slide, i) in slideList3" v-show="slideIndex3 === i" :key="slide.img"
+                :class="`swipe-item absolute`">
                 <img :src="slide.img" :alt="slide.name">
                 <div class="name absolute" v-html="slide.name"></div>
               </div>
@@ -278,44 +271,6 @@
   object-fit: cover;
 }
 
-.carousel-controls {
-  position: fixed;
-  right: 1em;
-  /* 右邊距離 */
-  top: 60%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 20;
-}
-
-.btn-next-case {
-  color: #606060;
-  font-size: size(18);
-  font-weight: 700;
-  padding: 0;
-  background-color: transparent;
-  border: 0px solid #ccc;
-  cursor: pointer;
-  text-align: right;
-  svg {
-    stroke: currentColor;
-    width: 3.5em;
-    //display: block;
-    margin: -.1em -.5em 0 -1.5em;
-    aspect-ratio: 1/1;
-  vertical-align: middle;
-  }
-  span{ font-size: 1.7em;
-    display: block;}
-}
-
-.btn-next-case:hover {
-
-  color: #ff8200;
-}
-
 .mask {
   width: 100%;
   height: 100%;
@@ -390,7 +345,7 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1.2;
-  letter-spacing: 0.1em;
+  letter-spacing: 3.4px;
   text-align: center;
   color: #606060;
   background-color: #fff;
@@ -444,6 +399,26 @@
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
+// begin
+// .swipe-left-leave-to {
+//   margin-left: -100vw;
+//   z-index: 0;
+// }
+// // end
+// .swipe-left-enter {
+//   opacity: 0.5;
+//   margin-left: 0;
+//   z-index: 1;
+// }
+
+// .swipe-left-enter-active {
+//   transition: all 0.5s ease;
+// }
+
+// .swipe-left-leave-active {
+//   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+// }
+
 .swipe-wrap {
   width: 100%;
   height: 100%;
@@ -474,6 +449,20 @@
     color: #fff;
     text-shadow: 0 0.1em 0.3em #000;
   }
+
+  // &:nth-child(1) {
+  //   z-index: 1;
+  //   // opacity: 1;
+  // }
+
+  // &.base {
+  //   z-index: 1;
+  //   opacity: 1;
+  // }
+  // &.active {
+  //   z-index: 2;
+  //   // opacity: 1;
+  // }
 }
 
 .pagination {
@@ -579,22 +568,22 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.35;
-  letter-spacing: 0.05em;
+  line-height: 1.2;
+  letter-spacing: size(4.25);
   text-align: left;
   color: #606060;
   white-space: nowrap;
 }
 
 .content-desc {
-  @include div_r_pc(423, 100, 440, 40);
+  @include div_r_pc(463, 100, 440, 0);
   font-size: size(20);
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.65;
   letter-spacing: size(1);
-  text-align: justify;
+  text-align: left;
   color: #606060;
 
   span {
@@ -722,15 +711,6 @@
     top: sizem(340) !important;
   }
 
-  .carousel-controls {
-    top: 59%;
-  right: 1em;
-
-    .btn-next-case {
-      font-size: sizem(13);
-    }
-  }
-
   .mask {
     width: 100%;
     height: 100%;
@@ -847,7 +827,7 @@
   /* Swipe */
   .swipe {
     width: sizem(375);
-    height: sizem(320);
+    height: sizem(260);
     z-index: 2;
     margin: sizem(25) 0;
     left: sizem(-36);
@@ -1132,110 +1112,56 @@ export default {
       isPC,
       isMobile,
       isTablet,
-
-      // carousel index（loop 後會是 0~5）
       currentIndex: 0,
-
       imgWidth: window.innerWidth * 0.187,
       imgHeight: window.innerWidth * 0.156,
-
-      /**
-       * 內層輪播 index（用建案 key）
-       * 之後加案子只要補 key，不會爆
-       */
-      innerSlideIndex: {
-        lj57: 0,
-        qianli: 0,
-        zhuomei: 0,
-      },
-
-      /**
-       * 主建案列表（唯一真實來源）
-       */
+      slideIndex1: 0,
+      slideIndex2: 0,
+      slideIndex3: 0,
       slideList: [
         {
-          key: 'lj57',
           img: require('../works/7/01.jpg'),
           alt: '立瑾57',
           name: '立瑾57',
         },
         {
-          key: 'qianli',
           img: require('../works/6/01.jpg'),
           alt: '謙里',
           name: '謙里',
         },
         {
-          key: 'zhuomei',
           img: require('../works/5/01.jpg'),
           alt: '琢渼',
           name: '琢渼',
         },
       ],
-
-      /**
-       * 各建案對應的內層輪播資料
-       */
-      innerSlideMap: {
-        lj57: [
-          {
-            img: require('../works/7/01.jpg'),
-            name: '3D模擬示意圖',
-          },
-        ],
-        qianli: [
-          {
-            img: require('../works/6/01.jpg'),
-            name: '3D模擬示意圖',
-          },
-        ],
-        zhuomei: [
-          {
-            img: require('../works/5/01.jpg'),
-            name: '3D模擬示意圖',
-          },
-        ],
-      },
-    }
-  },
-
-  computed: {
-    /**
-     * 實際建案 index
-     * 0/3 → 0, 1/4 → 1, 2/5 → 2
-     */
-    caseIndex() {
-      return this.currentIndex % this.slideList.length
-    },
-
-    /**
-     * 目前建案 key（lj57 / qianli / zhuomei）
-     */
-    currentCaseKey() {
-      const item = this.slideList[this.caseIndex]
-      return item ? item.key : null
-    },
-    // 下一個建案 key
-    nextCaseKey() {
-      const nextIndex = (this.caseIndex + 1) % this.slideList.length
-      return this.slideList[nextIndex].key
-    },
-
-    // 下一個建案名稱（顯示文字用）
-    nextCaseName() {
-      const key = this.nextCaseKey
-      const slide = this.slideList.find(s => s.key === key)
-      return slide ? slide.name : ''
+      slideList1: [
+        {
+          img: require('../works/7/01.jpg'),
+          name: '3D模擬示意圖',
+        },
+      ],
+      slideList2: [
+        {
+          img: require('../works/6/01.jpg'),
+          name: '3D模擬示意圖',
+        },
+      ],
+      slideList3: [
+        {
+          img: require('../works/5/01.jpg'),
+          name: '3D模擬示意圖',
+        },
+      ],
     }
   },
 
   watch: {
-    /**
-     * 切換建案時，重置該建案的內層輪播
-     */
-    currentCaseKey(newKey) {
-      if (newKey && this.innerSlideIndex[newKey] !== undefined) {
-        this.innerSlideIndex[newKey] = 0
+    currentIndex(index) {
+      if (index === 1 || index === 4) {
+        this.slideIndex1 = 0
+        this.slideIndex2 = 0
+        this.slideIndex3 = 0
       }
     },
   },
@@ -1245,17 +1171,8 @@ export default {
       this.currentIndex = index
       this.$refs.mycarousel.goSlide(index)
     },
-
     onAfterSlideChange(index) {
       this.currentIndex = index
-    },
-
-    // 點擊跳到下一個建案
-    goToNextCase() {
-      const index = this.slideList.findIndex(c => c.key === this.nextCaseKey)
-      if (index !== -1) {
-        this.goToSlide(index)
-      }
     },
   },
 
@@ -1264,20 +1181,19 @@ export default {
       this.imgWidth = window.screen.width * 0.6
       this.imgHeight = window.screen.width * 0.6 * (272 / 312)
     }
-
-    /**
-     * 路由指定建案
-     * ?case=lj57
-     * ?case=qianli
-     * ?case=zhuomei
-     */
-    const caseKey = this.$route.query.case
-    if (caseKey) {
-      const index = this.slideList.findIndex(c => c.key === caseKey)
-      if (index !== -1) {
-        this.goToSlide(index)
-      }
+    if (this.$route.query.index == 1) {
+      this.goToSlide(0)
+    }
+    if (this.$route.query.index == 2) {
+      this.goToSlide(1)
+    }
+    if (this.$route.query.index == 3) {
+      this.goToSlide(2)
     }
   },
+
+  created() { },
+
+  computed: {},
 }
 </script>
