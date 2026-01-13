@@ -6,7 +6,9 @@
       最新<span data-aos="flip-right"></span>消息
     </div>
     <div class="container flex flex-jb flex-ab wrap">
-      <div class="news-title" v-html="current_news.title"></div>
+      <div class="news-title" v-html="isMobile && current_news.title_m
+    ? current_news.title_m
+    : current_news.title"></div>
       <div class="news-subtitle" v-if="current_news.subtitle" v-html="current_news.subtitle"></div>
       <div class="news-date">
         <span v-if="current_news.date">日期：{{ current_news.date }}</span>
