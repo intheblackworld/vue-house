@@ -221,6 +221,10 @@ export default {
       list: [
         //...Array(18).keys()].map((i) => ({
         {
+          img: require('../news/s2/25/1.jpg'),
+          title: '2025年終感恩餐會',
+        },
+        {
           img: require('../news/s2/24/1.jpg'),
           title: '立瑾建築機構-水尾段 開工動土慶典活動',
         },

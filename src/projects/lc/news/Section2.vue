@@ -432,6 +432,29 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '2025年終感恩餐會',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/25/1.jpg'),
+            require('../news/s2/25/2.jpg'),
+            require('../news/s2/25/3.jpg'),
+            require('../news/s2/25/4.jpg'),
+            require('../news/s2/25/5.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '立瑾建築機構-水尾段 開工動土慶典活動',
           subtitle: '',
           date: '',
