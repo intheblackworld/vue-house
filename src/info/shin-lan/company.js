@@ -1,7 +1,21 @@
 /* 企業責任 */
 export const company = [
   {
-    index: 0,
+    index: 6,
+    date: '115/1/24',
+    title: '欣聯建設林榮三董事長、林琮凱特助攜手扶輪社關懷長者',
+    subtitle: '欣聯建設長期資助陽明養護中心已邁入十餘個年頭。',
+    desc: '林榮三董事長及林琮凱特助再次率領前往陽明養護中心，傳遞企業的長情陪伴。林董事長除經營企業外，更以台北市同德扶輪社服務計畫主委的身分結合社會資源，致力推動公益服務。<br><br><b>▌領袖帶頭實踐，世代傳承愛心</b><br>本次活動由林榮三董事長及林琮凱特助共同出席。林特助代表公司致贈豐富實用物資，展現企業新生代的關懷活力。<br><br><b>▌多元公益行動：十萬善款與音樂饗宴</b><br>在林董事長的積極籌劃下，本次公益行動整合了同德扶輪社、正信慈善協會、台科大EMBA薩克斯風社•物資捐贈、善款挹注 、音樂陪伴的三大力量<br><br><b>▌薩克斯風吹動的十年回憶</b><br>除了物資與捐款，現場最動人的風景是那悠揚的薩克斯風聲。台科大 EMBA 薩克斯風社的學長姐們放下平日的商場身分，化身音樂志工，演奏〈往事只能回味〉與〈青春嶺〉等經典老歌。看著長輩們隨著節奏拍手、重拾笑顏，這份跨越十年的陪伴，讓音樂不只是聲音，而是心靈的慰藉。',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/7/1.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/7/2.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/7/3.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/7/4.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 5,
     date: '114/5/24',
     title: '欣聯建設攜手台科大EMBA薩克斯風社與正信書院 關懷陽明養護中心',
     subtitle: '',
@@ -16,7 +30,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 1,
+    index: 4,
     date: '114/1/15',
     title: '欣聯建設開發股份有限公司 捐贈國立台灣科技大學理髮廳整建工程',
     subtitle: '',
@@ -30,7 +44,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 2,
+    index: 3,
     date: '111/8/27',
     title: '2022公益慈善音樂會',
     subtitle: '',
@@ -45,7 +59,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 3,
+    index: 2,
     date: '111/8/19',
     title: '北投區陽明養護中心',
     subtitle: '欣聯心、傳遞愛、愛心捐贈',
@@ -60,7 +74,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 4,
+    index: 1,
     date: '106/9/23',
     title: '陽明教養院',
     subtitle: '陽明教養院敬老關懷演出',
@@ -75,7 +89,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 5,
+    index: 0,
     date: '105/9/3',
     title: '兆如安養中心',
     subtitle: '兆如安養中心敬老關懷演出',
