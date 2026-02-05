@@ -2,6 +2,36 @@
 export const news = [
 
    {
+    id: 14,
+    title: '暖心旋律傳愛陽明',
+    title_m: '暖心旋律傳愛陽明',
+    subtitle: '欣聯建設、同德扶輪社、正信慈善協會與台科大EMBA共譜公益樂章', // 內頁用
+    author: '', // 內頁用
+    date: '2026/01/24',
+    // 列表用描述
+    desc_short: '欣聯建設、同德扶輪社、正信慈善協會與台科大EMBA共譜公益樂章',
+    // 內頁用描述
+    desc: '【2026年1月24日 】 欣聯建設、正信書院慈善協會、同德扶輪社及台科大 EMBA 薩克斯風社於今日走訪陽明養護中心，共同舉辦愛心捐贈與音樂饗宴。<br><br>活動現場由欣聯建設林榮三董事長及林琮凱特助捐贈實用物資，同德扶輪社亦由沈育豪社長代表捐贈新台幣十萬元善款，致力提升長輩的照顧品質。<br><br>除了實質支持，台科大 EMBA 薩克斯風社更帶來精彩演出，團員們演奏了〈月亮代表我的心〉、〈往事只能回味〉及〈青春嶺〉等經典老歌。悠揚的旋律發感謝狀，致謝各界將愛心與活力帶進中心，讓長者度過一個充滿溫暖與音樂的上午 ',
+    imgs: [ 
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/14/1.jpg'),
+    caption: "",
+  },
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/14/2.jpg'),
+    caption: "",
+  },
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/14/3.jpg'),
+    caption: "",
+  },
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/14/4.jpg'),
+    caption: "",
+  },
+    ]
+  },
+   {
     id: 13,
     title: '欣聯建設蟬聯114年度「誠信建商」殊榮 展現品牌實力',
     title_m: '欣聯建設蟬聯114年度<br>「誠信建商」殊榮 展現品牌實力',
