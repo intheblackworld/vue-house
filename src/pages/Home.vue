@@ -73,6 +73,12 @@
     >
       <Section5 />
     </vue-lazy-component>
+     <vue-lazy-component
+      class="section"
+      id="section8"
+    >
+      <Section8 />
+    </vue-lazy-component>
     <vue-lazy-component
       class="section"
       id="section6"
@@ -187,6 +193,7 @@ import Section4 from '@/projects/smilecastle/Section4.vue'
 import Section5 from '@/projects/smilecastle/Section5.vue'
 import Section6 from '@/projects/smilecastle/Section6.vue'
 import Section7 from '@/projects/smilecastle/Section7.vue'
+import Section8 from '@/projects/smilecastle/Section8.vue'
 /* 
 import Section8 from '@/projects/smilecastle/Section8.vue'
 import Section9 from '@/projects/smilecastle/Section9.vue'
@@ -212,8 +219,8 @@ export default {
     Section5,
     Section6,
     Section7,
-    /* 
     Section8,
+    /* 
     Section9,
     Section10,
     Section11,

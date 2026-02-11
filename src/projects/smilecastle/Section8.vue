@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="section8">
-      <img src="./s8/img.png" alt="img" class="img" />
-      <div class="box"></div>
+      <!--    -->  
       <div class="swipe" data-aos="fade" data-aos-delay="200" @mouseenter.stop="toggleTimer = false" @mouseleave.stop="toggleTimer = true">
+        <div class="box" v-if="!isMobile"></div>
         <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
           <transition-group name="swipe-fade" mode="out-in">
             <div v-for="(slide, i) in slideList" v-show="slideIndex === i" :key="slide.img" :class="`swipe-item absolute`">
@@ -11,107 +11,95 @@
               <div class="slide-name absolute" v-html="slide.name"></div>
             </div>
           </transition-group>
-         <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile">
-            <div class="prev-btn" @click="decIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%2300235E' stroke-width='6' points='31.5,57 4.5,30 31.5,3 '/%3E%3C/svg%3E" alt="_prev">
-            </div>
-            <div class="next-btn" @click="addIndex">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 60'%3E%3Cpolyline fill='none' stroke='%2300235E' stroke-width='6' points='3.5,3 30.5,30 3.5,57 '/%3E%3C/svg%3E" alt="_next">
-            </div>
+          <!-- <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="200" v-if="isPC">
+            <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
           </div>
+          <div class="swipe-btns absolute flex-ac flex-jb" v-if="isMobile" >
+            <img src="./all/prev-btn.png" alt="" class="prev-btn" @click="decIndex">
+            <img src="./all/next-btn.png" alt="" class="next-btn" @click="addIndex">
+          </div>  -->
         </div>
-     <div class="pagination absolute flex-ac" data-aos="fade-up" data-aos-delay="500" v-if="isPC">
-        <div :class="`pagination-dot`" v-for="(slide, index) in slideList" :key="slide.img + '-dot'" @click="goTo(index)"><span :class="`${slideIndex === index ? 'active' : ''}`"></span></div>
-      </div> 
       </div>
       <div class="txt">
-      <div class="title" data-aos="fade-up" data-aos-delay="200">MAG世界級地標推手</div>
-      <div class="desc" data-aos="fade-up" data-aos-delay="300">玫格設計公司，由日本設計師 前田利也共同創立，中日攜手為創作與眾不同的設計案與改善都市景觀，日益追求新造型、新建材、新技術，並有豐富的國際建築設計合作經驗。</div>
+      <div class="title" data-aos="fade-up" data-aos-delay="200" >寬敞別墅 盡享天倫之樂</div>
+      <div class="desc" data-aos="fade-up" data-aos-delay="300">把空間分層規劃，讓全家人住進理想生活。低樓層是迎賓用餐、充滿歡笑聲的社交中心；中樓層是日常起居空間，保有家庭成員的隱私；高樓層則是放鬆身心的觀景休閒平台。彼此親密相伴又保有獨立的自在感，讓生活每一天都簡單美好。</div>
       </div>
-    </div>
+    <div class="img" data-aos="zoom-in" data-aos-delay="0" >
+  </div>
+  </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/style/function.scss';
-
-.section8 {
+.section8 {  
   width:100%;
   height:auto;
   position: relative;
-  margin:0 auto 0;
-  padding:5vw 0 5vw;
-  // background:#FFF;
+  padding: 9vw 0 5vw;
 &::after{content: "";clear: both;display: block;}
 }
-.img{width: size(640);position: absolute;left: size(300);bottom: 5vw;
-z-index: 2;
+
+.img{position:absolute;top: 0;left: 0;transform-origin: 0% 0%;
+  z-index: 4;
+img{position:absolute;pointer-events: none;}
+> div{ transform: rotate(-56deg);
+  > div{transform: rotate(89deg) scaleY(-1);}
 }
+.f2{width:size(373);
+    top: 4vw;
+    left: -15vw;
+  transform-origin: 0% 0%;transform: rotate(4deg);
+animation: an 3s ease-in-out infinite alternate;}
+.f3{width:size(80);
+    top: -9vw;
+    left: -5vw;
+  transform: rotate(132deg);transform-origin: 90% 100%;
+animation: an2 3s -.8s ease-in-out infinite alternate;}
+.f4{width:size(444);
+    top: 2vw;
+    left: -13vw;
+  transform-origin: 0% 0%;transform: rotate(3deg);
+animation: an 3s -.2s ease-in-out infinite alternate;}
+.f5{width:size(330);
+    top: -14vw;
+    left: 0vw;transform-origin: 0% 0%;transform: rotate(-5deg);
+animation: an 3s -.4s ease-in-out infinite alternate;}
 
-.box{position: absolute;left:size(210);bottom: 5vw;
-background:  linear-gradient(to right, #00427A 0%, #112A49 50%, #04142A 100%);
-  width: size(1500);height:size(80);}
-
+}
+@keyframes an{
+  to{
+    transform: rotate(0deg);
+  }
+}
+@keyframes an2{
+  to{
+    transform: rotate(129deg);
+  }
+}
 .txt{
-float: left;
   position: relative;
-  padding-top:8vw;
-  width: size(700);
-  font-stretch: normal;
-  font-style: normal;
-  text-align: justify;
-  font-size: size(19);
-  font-weight: 600;
-  line-height: 1.4;
+  width: size(1500);
+  margin: 2em auto 3em auto;
   z-index: 2;
-  margin-left: size(250);
+  @include txt(size(18));
   }
-
-.title{
-  font-size:2.2em;
-  margin:0 auto 0;
-  color: #B00;
-}
-  .subtitle{font-size: 1.25em;
-    padding:.75em 0 0 0;
-  }
-.desc {
- // margin:1em auto;
-  padding:1em 0 0 0;
-  line-height: 1.6;
-  letter-spacing:0.05em;
-  font-weight: 300;
-  list-style: circle;
-  overflow: hidden;
-  li{list-style:inherit;float: left;margin: 0.3em 0 0.3em 1.4em;width:calc(100% - 1.4em);
-  }
-}
 
 /* Swipe */
-
-.swipe {position: relative;
-float: right;
- // position: absolute;
-  width: size(670);
-  height: size(844);
-// top: size(185);
- // left: size(210);
-  margin-right: size(190);
+.swipe {
+  position: relative;
+  margin: auto;
+  width: size(1500);
+  height: size(969);
+  // left: size(210);
   z-index: 3;
+  object-fit: cover;
+  .box{position: absolute;top: 0;left: 0;right: 0;bottom: 0;border:3px solid #fff;transform: translate(-1vw , 1vw);
+  &::before{content: "";position: absolute;display: block;
+  left: 0;bottom: 0;width: size(60);height:size(60);border:3px solid #fff;transform: translate(-1vw , 1vw);}
+  }
 }
-.slide-name {
-    right:1.5em;
-    bottom:1em;
-    color: #fff;
-    font-size: size(15);
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.89px;
-    text-align: left;
-    color: #ffffff;
-   text-shadow:0 0.1em 0.3em #000;
-}
+
+@include name();
 
 .swipe-wrap {
   width: 100%;
@@ -151,53 +139,35 @@ float: right;
 // pagination
 .pagination {
   width: auto;
-  bottom: size(10);
-  right:100%;
+  bottom: -2.2em;
+  right: -0.5em;
   justify-content: center;
   font-size: size(20);
+  .pagination-dot {
+    padding: 0.25em;
+    margin: 0 0.15em;
+    cursor: pointer;
+    z-index: 4;
 
-}
-.pagination-dot {
-  padding: 0.25em;
-  margin: 0 0.2em;
-  cursor: pointer;
-  z-index: 4;
-
-  span {
-    display: block;
-    width:1em;
-    height:1em;
-    border-radius: 50%;
-    border: 0.2em solid  $pagination;
-    position: relative;
-    transition: all 0.5s;
-
-    &::before {
-      content: '';
-      width: 60%;
-      height: 60%;
+    span {
       display: block;
-    border-radius: 50%;
-    border:  0.105em solid  $pagination-active;
-      opacity: 1;
-      position: absolute;
-      top: 20%;
-      left: 20%;
-      transition: all 0.3s;
-      transform-origin: center;
-      transform: scale(0);
+      width:3em;
+      height:12px;
+      position: relative;
+      &::before{content: "";
+      transition: transform 0.5s, background 0.5s;
+      display: block;width: 100%;height:100%;
+      background: $pagination;
+        transform: scaleY(.25);transform-origin: 50% 50%;
     }
-    &.active {
-      box-shadow: none;
-      &::before {
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        transform: scale(1.6);
+      &.active {
+        &::before{  transform: scaleY(1);
+      background:$pagination-active;
+    }
       }
     }
   }
+
 }
 .swipe-btns {
   width: 100%;
@@ -230,19 +200,35 @@ float: right;
   .section8 {
     width: 100%;
     height: auto;
-  padding:0 0 sizem(280) 0;
+    min-height: auto;
+    max-height: initial;
+  padding: 0;
   }
-.img{width: sizem(360);left:sizem(5);top:auto;bottom:0vw;}
-.box{left:0;bottom:0;top:auto;
-  width: sizem(375);height:sizem(50);}
+  .img{
+    > div{ transform: rotate(-37deg);}
+    .f2{width:sizem(110);
+    top: -3vw;
+    left: -4vw;}
+.f3{width:sizem(30);
+    top: -30vw;
+    left: 9vw;}
+.f4{width:sizem(131);
+    top: -1vw;
+    left: 2vw;}
+.f5{width:sizem(103);
+    top: 2vw;
+    left: -12vw;}
+
+  
+  }
   .txt{
     position: relative;
     width: sizem(320);
-    float: none;
-    margin:0em auto 0;
+    margin:2em auto 8em;
     left:0;
     top:0;
     font-size: sizem(15);
+  padding-top:0;
     .title{
       font-size:1.9em;
     }
@@ -253,22 +239,17 @@ float: right;
   /* Swipe */
   .swipe {
     position: relative;
-    width: sizem(310);
-    float: none;
-    height: sizem(357);
-    margin: sizem(50) auto 0;
-    top:auto;
-    left:auto;
+    width: 100%;
+    height: sizem(250);
+    top:0;
+    left:0;
   }
-.swipe-item {
-  .slide-name {
-    font-size: sizem(12);
+
+  .swipe-btns {
+  font-size: sizem(15);
   }
 }
-  .swipe-btns {width: 120%;
-  font-size: sizem(15);margin-left: -10%;
-  }
-}
+
 </style>
 <script>
 // @ is an alias to /src
@@ -292,19 +273,7 @@ export default {
       slideList: [
         {
           img: require('./s8/1.jpg'),
-          name: '台中 CBD時代廣場',
-        },
-        {
-          img: require('./s8/3.jpg'),
-          name: '台中 樹禾院',
-        },
-        {
-          img: require('./s8/2.jpg'),
-          name: '金山 凱悦酒店 3D示意',
-        },
-        {
-          img: require('./s8/4.jpg'),
-          name: '高雄 博愛香榭',
+          name: '',
         },
       ],
     }
@@ -320,7 +289,7 @@ export default {
 
   watch: {
     viewIndex() {
-      if (this.viewIndex === 3) {
+      if (this.viewIndex === 7) {
         this.slideIndex = 0
         console.log(this.slideIndex, 'slideIndex')
       }
