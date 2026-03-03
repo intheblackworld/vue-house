@@ -432,6 +432,30 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '2026新春開工祈安祈福',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/26/1.jpg'),
+            require('../news/s2/26/2.jpg'),
+            require('../news/s2/26/3.jpg'),
+            require('../news/s2/26/4.jpg'),
+            require('../news/s2/26/5.jpg'),
+            require('../news/s2/26/6.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+            //  title: '琢渼',
+            //  id: '1',
+            // url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '2025年終感恩餐會',
           subtitle: '',
           date: '',
