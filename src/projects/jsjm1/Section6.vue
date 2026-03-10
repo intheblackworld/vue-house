@@ -558,19 +558,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s6/1中山北路二段精品大道.jpg'),
+          img: require('./s6/1.jpg'),
           name: '中山北路二段精品大道',
         },
         {
-          img: require('./s6/2大倉久和.jpg'),
+          img: require('./s6/2.jpg'),
           name: '大倉久和',
         },
         {
-          img: require('./s6/3晶華飯店.jpg'),
+          img: require('./s6/3.jpg'),
           name: '晶華飯店',
         },
         {
-          img: require('./s6/4老爺酒店.jpg'),
+          img: require('./s6/4.jpg'),
           name: '老爺酒店',
         },
       ],

@@ -574,19 +574,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s5/1林森公園.jpg'),
+          img: require('./s5/1.jpg'),
           name: '林森公園',
         },
         {
-          img: require('./s5/2林森公園.jpg'),
+          img: require('./s5/2.jpg'),
           name: '林森公園',
         },
         {
-          img: require('./s5/3康樂公園.jpg'),
+          img: require('./s5/3.jpg'),
           name: '康樂公園',
         },
         {
-          img: require('./s5/4中山捷運站線型公園.jpg'),
+          img: require('./s5/4.jpg'),
           name: '中山捷運站線型公園',
         },
       ],

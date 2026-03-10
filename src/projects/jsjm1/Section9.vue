@@ -577,15 +577,15 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s9/1捷運中山國小站.jpg'),
+          img: require('./s9/1.jpg'),
           name: '捷運中山國小站',
         },
         {
-          img: require('./s9/2捷運中山站.jpg'),
+          img: require('./s9/2.jpg'),
           name: '捷運中山站',
         },
         {
-          img: require('./s9/3捷運雙連站.jpg'),
+          img: require('./s9/3.jpg'),
           name: '捷運雙連站',
         },
       ],

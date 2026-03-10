@@ -561,19 +561,19 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s8/1中山站商圈.jpg'),
+          img: require('./s8/1.jpg'),
           name: '中山站商圈',
         },
         {
-          img: require('./s8/2欣欣秀泰影城.jpg'),
+          img: require('./s8/2.jpg'),
           name: '欣欣秀泰影城',
         },
         {
-          img: require('./s8/3南京東路、新生北商圈.jpg'),
+          img: require('./s8/3.jpg'),
           name: '南京東路、新生北商圈',
         },
         {
-          img: require('./s8/4南京商圈、商業大樓.jpg'),
+          img: require('./s8/4.jpg'),
           name: '南京商圈、商業大樓',
         },
       ],

@@ -6,7 +6,7 @@
       <img src="./s2/title.png" alt="" class="title absolute" @click="playVideo">
       <div class="video absolute">
         <div :id="`youtube-player-${id}`" ref="player" class="video-iframe absolute"></div>
-        <img src="./s2/影片.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
+        <img src="./s2/vv.jpg" alt="" :class="`video-img absolute ${(isPlay == true) ? 'hide' : ''}`" @click="playVideo">
       </div>
     </div>
   </div>

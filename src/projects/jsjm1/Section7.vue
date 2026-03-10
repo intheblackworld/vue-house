@@ -721,31 +721,31 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s7/1台北光點.jpg'),
+          img: require('./s7/1.jpg'),
           name: '台北光點',
         },
         {
-          img: require('./s7/2北美館.jpg'),
+          img: require('./s7/2.jpg'),
           name: '北美館',
         },
         {
-          img: require('./s7/3蔡瑞月舞蹈社.jpg'),
+          img: require('./s7/3.jpg'),
           name: '蔡瑞月舞蹈社',
         },
         {
-          img: require('./s7/4當代藝術館.jpg'),
+          img: require('./s7/4.jpg'),
           name: '當代藝術館',
         },
         {
-          img: require('./s7/5南西誠品.jpg'),
+          img: require('./s7/5.jpg'),
           name: '南西誠品',
         },
         {
-          img: require('./s7/6光點旁的巷弄生活.jpg'),
+          img: require('./s7/6.jpg'),
           name: '光點旁的巷弄生活',
         },
         {
-          img: require('./s7/7赤峰街小器.jpg'),
+          img: require('./s7/7.jpg'),
           name: '赤峰街小器',
         },
       ],

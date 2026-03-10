@@ -571,10 +571,10 @@ export default {
       isDialog: false,
       slideList: [
         {
-          img: require('./s3/1中山北路二段.jpg'),
+          img: require('./s3/1.jpg'),
         },
         {
-          img: require('./s3/2中山北路二段.jpg'),
+          img: require('./s3/2.jpg'),
         },
       ],
     }
