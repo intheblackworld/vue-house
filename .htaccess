@@ -2,10 +2,13 @@
   RewriteEngine On
   RewriteBase /
 
+  # 排除 API
+  RewriteCond %{REQUEST_URI} !^/api
+
   # 如果是真實檔案或資料夾則直接存取
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
 
-  # 其餘導向 SPA 入口
-  RewriteRule . /index.html [L]
+  # SPA fallback
+  RewriteRule ^ index.html [L,QSA]
 </IfModule>
