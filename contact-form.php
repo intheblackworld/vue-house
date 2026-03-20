@@ -205,7 +205,7 @@ foreach ($tomail_arr as $email) {
     $email = trim($email); // 去空白
 
     if (!empty($email)) {
-        echo "有效收件人: " . $email . "<br>";
+        error_log("收件人: " . $email);
         $mail->AddAddress($email);
     }
 }
