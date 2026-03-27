@@ -432,6 +432,30 @@ export default {
       tabIndex: 0,
       list: [
         {
+          title: '琢渼上樑典禮',
+          subtitle: '',
+          date: '',
+          author: '',
+          imgs: [
+            require('../news/s2/27/1.jpg'),
+            require('../news/s2/27/2.jpg'),
+            require('../news/s2/27/3.jpg'),
+            require('../news/s2/27/4.jpg'),
+            require('../news/s2/27/5.jpg'),
+            require('../news/s2/27/6.jpg'),
+          ],
+
+          desc: '',
+          links: [
+                 {
+              title: '琢渼',
+              id: '1',
+             url: 'https://zhuomei.tw/',
+            },
+       
+          ],
+        },
+        {
           title: '2026新春開工祈安祈福',
           subtitle: '',
           date: '',
