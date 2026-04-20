@@ -9,13 +9,16 @@
     </div>
     <div class="type-tab flex-ac flex-jb" v-if="isPC">
       <div :class="`tab ${$route.query.type == 1 ? 'active' : ''}`" @click="$router.push('/renewal?type=1')">
-        萬華段都更
+        萬華區萬華段都更
       </div>
       <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
-        松山延壽段都更
+        松山區延壽段都更
       </div>
       <div :class="`tab ${$route.query.type == 3 ? 'active' : ''}`" @click="$router.push('/renewal?type=3')">
         新莊區榮富段都更
+      </div>
+      <div :class="`tab ${$route.query.type == 4 ? 'active' : ''}`" @click="$router.push('/renewal?type=4')">
+        大同區文昌段都更
       </div>
     <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
         XXX段都更
