@@ -118,7 +118,7 @@
   }
 
   .content {
-    height: size(130);
+    // height: size(130);
     width: 36%;
     padding: 0 0 0 size(75);
   }
@@ -166,7 +166,7 @@
   }
 
   .item-desc {
-    width: size(396);
+   // width: size(396);
     font-size: size(24);
     font-weight: normal;
     font-stretch: normal;
@@ -339,7 +339,7 @@
     }
 
     .item-desc {
-      width: sizem(202);
+     // width: sizem(202);
       font-size: sizem(16);
       font-weight: normal;
       font-stretch: normal;
@@ -380,6 +380,24 @@ export default {
       type: 1, // 1 線上熱銷, 2 完銷個案, 3 媒體影音
       currentType: 1,
       item_list: [
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 1,
+          title: '【日進學】校園豪門24．32坪 全新完工',
+          desc: '首購入主豪宅 機會錯過不再',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/MUnomlIlGDs',
+          showVideo: true,
+        },
+        {
+          // icon: require('./s1/icon1.png'),
+          type: 1,
+          title: '【國王大道】公園 校園 水花園 成名在望17-28坪',
+          desc: '入主，即是做主；未來，由你吩咐',
+          // img: require('../hot/s1/imgbg.jpg'),
+          video: 'https://www.youtube.com/embed/ellRdMdQaJg',
+          showVideo: true,
+        },
         {
           // icon: require('./s1/icon1.png'),
           type: 1,
