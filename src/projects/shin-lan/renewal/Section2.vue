@@ -3,13 +3,16 @@
     <div class="container">
       <div class="type-tab flex-ac flex-ja" v-if="isMobile">
         <div :class="`tab ${$route.query.type == 1 ? 'active' : ''}`" @click="$router.push('/renewal?type=1')">
-          萬華段都更
+          萬華區萬華段都更
         </div>
         <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
-          松山延壽段都更
+          松山區延壽段都更
         </div>
         <div :class="`tab ${$route.query.type == 3 ? 'active' : ''}`" @click="$router.push('/renewal?type=3')">
           新莊區榮富段都更
+        </div>
+        <div :class="`tab ${$route.query.type == 4 ? 'active' : ''}`" @click="$router.push('/renewal?type=4')">
+          大同區文昌段都更
         </div>
       <!--  <div :class="`tab ${$route.query.type == 2 ? 'active' : ''}`" @click="$router.push('/renewal?type=2')">
           XXX段都更
@@ -300,6 +303,24 @@
           <a href="https://h35.banner.tw/shin-lan/變更(第一次)新北市新莊區榮富段563地號等2筆土地都市更新事業計畫案(第二次專案小組版)114.05.pdf" target="_blank">變更(第一次)新北市新莊區榮富段563地號等2筆土地都市更新事業計畫案(第二次專案小組版)114.05</a>
           <a href="https://xinzhuang.shin-lan.com/" target="_blank">前實施者-自主更新會<br>（新莊區榮富段563等2筆土地都市更新案）</a>
       </div>
+      </div>
+      <div class="typelist" v-if="$route.query.type==4" >
+        <div class="head flex-ac flex-jb">
+          <div class="current-tab">欣聯建設於台北市大同區文昌段都市更新案</div>
+          <!-- <div class="pages flex-ac">
+            <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">{{page}}</div>
+          </div> -->
+        </div>
+        <div class="mb8">
+          <img src="../renewal/type4/1.webp" alt="">
+          <img src="../renewal/type4/2.webp" alt="">
+          <img src="../renewal/type4/3.webp" alt="">
+          <img src="../renewal/type4/4.webp" alt="">
+          <img src="../renewal/type4/5.webp" alt="">
+          <img src="../renewal/type4/6.webp" alt="">
+          <img src="../renewal/type4/7.webp" alt="">
+          <img src="../renewal/type4/8.webp" alt="">
+        </div>
       </div>
 
       <!--

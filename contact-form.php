@@ -196,14 +196,23 @@ if ($bCheck == true) { //if start
     }
     # 添加到 Googlde 資料DB End
 
+    /*
     foreach ($tomail_arr as $email) {
         $mail->AddAddress("$email");
     }
+        */
+foreach ($tomail_arr as $email) {
+    $email = trim($email); // 去空白
+
+    if (!empty($email)) {
+        error_log("收件人: " . $email);
+        $mail->AddAddress($email);
+    }
+}
 
     foreach ($tomail_admin_arr as $email_admin) {
         $mail->AddBCC("$email_admin");
     }
-
     // 新增固定 BCC 信箱
     $mail->AddBCC("xcatx@lixin.com.tw");
 
