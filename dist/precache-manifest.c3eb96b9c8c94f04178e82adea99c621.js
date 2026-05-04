@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.6c419b55.js"
   },
   {
-    "revision": "8263900f1b5fe3d2eb5a",
+    "revision": "a2641fdec1848cad6635",
     "url": "/css/app.d6ce1c15.css"
   },
   {
-    "revision": "8263900f1b5fe3d2eb5a",
-    "url": "/js/app.7c2583ff.js"
+    "revision": "a2641fdec1848cad6635",
+    "url": "/js/app.3de264f4.js"
   },
   {
     "revision": "168a4ac6dd1f7ee863df",
@@ -132,12 +132,12 @@ self.__precacheManifest = [
     "url": "/js/news.f2e07d2f.js"
   },
   {
-    "revision": "d3215e7f9afea1a605c9",
-    "url": "/css/renewal.81611eb1.css"
+    "revision": "c09518c15c6ad4289e66",
+    "url": "/css/renewal.eadd35f4.css"
   },
   {
-    "revision": "d3215e7f9afea1a605c9",
-    "url": "/js/renewal.16dcd1e1.js"
+    "revision": "c09518c15c6ad4289e66",
+    "url": "/js/renewal.117e4bca.js"
   },
   {
     "revision": "47832eee01bf1bb5a092256706bfcf5d",
@@ -240,12 +240,12 @@ self.__precacheManifest = [
     "url": "/img/2.02866ef7.jpg"
   },
   {
-    "revision": "535877f50039c0cb49a6196a5b7517cd",
-    "url": "/fonts/element-icons.535877f5.woff"
-  },
-  {
     "revision": "732389ded34cb9c52dd88271f1345af9",
     "url": "/fonts/element-icons.732389de.ttf"
+  },
+  {
+    "revision": "535877f50039c0cb49a6196a5b7517cd",
+    "url": "/fonts/element-icons.535877f5.woff"
   },
   {
     "revision": "8ba0e2193709672abb00f6056013dc4f",
@@ -1596,27 +1596,27 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "09f51ed6971975a8520248dcc8a66567",
+    "revision": "33b41ca689844d21be87ebb561f1ff74",
     "url": "/index.html"
-  },
-  {
-    "revision": "735ab4f94fbcd57074377afca324c813",
-    "url": "/robots.txt"
-  },
-  {
-    "revision": "b81798ad1201c16a82e43a126c8eb988",
-    "url": "/favicon.png"
   },
   {
     "revision": "d4e90ef62f55d2560d790f610991bae1",
     "url": "/.htaccess"
   },
   {
+    "revision": "dc9077cc2c651a99cbc8102117341c8e",
+    "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
+    "revision": "b81798ad1201c16a82e43a126c8eb988",
+    "url": "/favicon.png"
+  },
+  {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
     "url": "/sitemap.xml"
   },
   {
-    "revision": "dc9077cc2c651a99cbc8102117341c8e",
-    "url": "/google3d6eee54d2f3fc35.html"
+    "revision": "735ab4f94fbcd57074377afca324c813",
+    "url": "/robots.txt"
   }
 ];
