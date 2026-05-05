@@ -3,16 +3,16 @@
 export const renewal_list = [
   {
     title: '信義區永吉段都更',
-    img: require('@/projects/shin-lan/renewal/type5/0.png'),
+    img: require('@/projects/shin-lan/renewal/type5/1.jpg'),
     link: '/renewal?type=5',
-    status: '核定案件',
+    status: '審議中案件',
     location: '台北市信義區永吉段都市更新案',
   },
   {
     title: '大同區文昌段都更',
     img: require('@/projects/shin-lan/renewal/type4/0.jpg'),
     link: '/renewal?type=4',
-    status: '核定案件',
+    status: '審議中案件',
     location: '台北市大同區文昌段都市更新案',
   },
   {
@@ -26,7 +26,7 @@ export const renewal_list = [
     title: '松山區延壽段都更',
     img: require('@/projects/shin-lan/renewal/type2/0.jpg'),
     link: '/renewal?type=2',
-    status: '核定案件',
+    status: '審議中案件',
     location: '台北市松山延壽段都市更新案',
   },
   {

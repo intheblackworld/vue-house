@@ -13,11 +13,14 @@
             <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">{{page}}</div>
           </div> -->
         </div>
-          <div class="update-info">
+          <div class="update-info typr5">
+          <div class="img"><img src="../../shin-lan/renewal/type5/1.jpg" alt="">
+            <div class="caption">外觀3D模擬示意圖</div>
+          </div>
             <ul>
               <li>
                 <strong>更新單元範圍：</strong>
-                臺北市信義區永吉路二小段<br>
+                臺北市信義區永吉段二小段<br>
                 1-1、1-2、1-4、1-5、13-1、13-2、13-3、14、14-1、15、16、17、18、19、20、21、22、23、24、28、28-1、28-2、28-3、28-4、28-5、29、29-1
                 地號（共 27 筆）
               </li>
@@ -28,10 +31,6 @@
 
               <li>
                 <strong>興建規模：</strong> 地上 15 層、地下 5 層
-              </li>
-
-              <li>
-                <strong>透視圖：</strong>（請置入圖片）
               </li>
 
               <li>

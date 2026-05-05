@@ -11,6 +11,35 @@
             <div class="page-btn flex-c" v-for="(page, index) in pages" :key="`page-btn-${index}`" @click="changePage(index)">{{page}}</div>
           </div> -->
         </div>
+        
+        <div class="update-info">
+          <ul>
+            <li>
+              <strong>更新單元範圍：</strong>
+              臺北市松山區延壽段一小段 <br>418、419、420、421、422、423地號（共計 6 筆）
+            </li>
+
+            <li>
+              <strong>基地面積：</strong>
+              2365.31平方公尺
+            </li>
+
+            <li>
+              <strong>興建規模：</strong>
+              一幢兩棟，地上：11層和14層，地下：3層
+            </li>
+
+            <li>
+              <strong>實施者：</strong>
+              欣聯建設開發股份有限公司
+            </li>
+
+            <li>
+              <strong>規劃單位：</strong>
+              振皓工程顧問股份有限公司
+            </li>
+          </ul>
+        </div>
         <div class="mb6">
           <img src="../renewal/type2/01.jpg" alt="" class="img img1 mb1">
           <img src="../renewal/type2/02.jpg" alt="" class="img img1 mb1">

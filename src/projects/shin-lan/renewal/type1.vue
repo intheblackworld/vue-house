@@ -35,11 +35,6 @@
             </li>
 
             <li>
-              <strong>透視圖：</strong>
-              （請置入圖片）
-            </li>
-
-            <li>
               <strong>本案說明：</strong>
               100% 所有權人同意，為 168 都更專案
             </li>
@@ -66,40 +61,6 @@
 @import '@/assets/style/function.scss';
 @import '@/assets/style/renewal.scss';
 
-.typr1 {
-  .img {
-    position: relative;
-    float: right;
-    width: 40%;
-    margin-left: 24px;
-
-    .caption {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      padding: 0.3em 0.5em;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    img {
-      width: 100%;
-      vertical-align: bottom;
-    }
-
-    @include md {
-      width: 100%;
-      float: none;
-      margin: auto;
-
-      .caption {
-        font-size: 11px;
-      }
-    }
-  }
-
-
-}
 </style>
 <script>
 import { isPC, isMobile, isTablet } from '@/utils'
