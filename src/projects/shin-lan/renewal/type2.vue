@@ -39,16 +39,7 @@
               振皓工程顧問股份有限公司
             </li>
           </ul>
-        </div>
-        <div class="mb6">
-          <img src="../renewal/type2/01.jpg" alt="" class="img img1 mb1">
-          <img src="../renewal/type2/02.jpg" alt="" class="img img1 mb1">
-          <img src="../renewal/type2/03.jpg" alt="" class="img img1 mb2">
-          <img src="../renewal/type2/04.jpg" alt="" class="img img1 mb2"> 
-          <img src="../renewal/type2/05.jpg" alt="" class="img img1 mb2">
-          <img src="../renewal/type2/06.jpg" alt="" class="img img1 mb2">
-          <img src="../renewal/type2/07.jpg" alt="" class="img img1 mb2">
-          <img src="../renewal/type2/08.jpg" alt="" class="img img1 mb2">
+      
       </div>
       </div>
     </div>
