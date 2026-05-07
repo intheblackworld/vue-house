@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/js/about.6c419b55.js"
   },
   {
-    "revision": "a3b357e823d7eec08c95",
+    "revision": "18493cf7fdedb46a6966",
     "url": "/css/app.d6ce1c15.css"
   },
   {
-    "revision": "a3b357e823d7eec08c95",
-    "url": "/js/app.1e04e5e1.js"
+    "revision": "18493cf7fdedb46a6966",
+    "url": "/js/app.b7f6ba74.js"
   },
   {
     "revision": "0c2eb17b2de4ab5b812d",
@@ -132,12 +132,12 @@ self.__precacheManifest = [
     "url": "/js/news.f2e07d2f.js"
   },
   {
-    "revision": "a8e9ea6d9bb32cfc64de",
-    "url": "/css/renewal.ee345117.css"
+    "revision": "dddd9d4f9667a88ea7a8",
+    "url": "/css/renewal.46cc0181.css"
   },
   {
-    "revision": "a8e9ea6d9bb32cfc64de",
-    "url": "/js/renewal.e9ceeecb.js"
+    "revision": "dddd9d4f9667a88ea7a8",
+    "url": "/js/renewal.1afac2de.js"
   },
   {
     "revision": "47832eee01bf1bb5a092256706bfcf5d",
@@ -224,10 +224,6 @@ self.__precacheManifest = [
     "url": "/img/3.1916d3e9.webp"
   },
   {
-    "revision": "b393d197d20e64736447652b96becc70",
-    "url": "/img/06.b393d197.jpg"
-  },
-  {
     "revision": "0edfe62501ada4c5847caca402280368",
     "url": "/img/45.0edfe625.png"
   },
@@ -240,12 +236,12 @@ self.__precacheManifest = [
     "url": "/img/2.02866ef7.jpg"
   },
   {
-    "revision": "535877f50039c0cb49a6196a5b7517cd",
-    "url": "/fonts/element-icons.535877f5.woff"
-  },
-  {
     "revision": "732389ded34cb9c52dd88271f1345af9",
     "url": "/fonts/element-icons.732389de.ttf"
+  },
+  {
+    "revision": "535877f50039c0cb49a6196a5b7517cd",
+    "url": "/fonts/element-icons.535877f5.woff"
   },
   {
     "revision": "8ba0e2193709672abb00f6056013dc4f",
@@ -716,10 +712,6 @@ self.__precacheManifest = [
     "url": "/img/topbg.57b0d71c.jpg"
   },
   {
-    "revision": "7a95765cbeb90e8511703a64525df440",
-    "url": "/img/02.7a95765c.jpg"
-  },
-  {
     "revision": "fbe46f83bfa733425111711d77b0844d",
     "url": "/img/欣聯心.fbe46f83.jpg"
   },
@@ -922,10 +914,6 @@ self.__precacheManifest = [
   {
     "revision": "8abc259436c8a3a705eb93554b5b0d49",
     "url": "/img/4.8abc2594.jpg"
-  },
-  {
-    "revision": "e32a419ace977ee6e6ba6378b9371604",
-    "url": "/img/07.e32a419a.jpg"
   },
   {
     "revision": "79395760cc8d44f1fbb1546fd5117546",
@@ -1256,10 +1244,6 @@ self.__precacheManifest = [
     "url": "/img/46.541576c6.webp"
   },
   {
-    "revision": "5b4e87842cbe1f7fbe15ba3e511eddd1",
-    "url": "/img/05.5b4e8784.jpg"
-  },
-  {
     "revision": "36d47c23d3d7eba00a42e4a0b8bf2367",
     "url": "/img/img1.36d47c23.jpg"
   },
@@ -1330,10 +1314,6 @@ self.__precacheManifest = [
   {
     "revision": "8a901b64f7b87b4dc980d67443492500",
     "url": "/img/img_page_duty_03.8a901b64.jpg"
-  },
-  {
-    "revision": "47e32222f2e9154942bf9c4dd17f0fb2",
-    "url": "/img/01.47e32222.jpg"
   },
   {
     "revision": "662c4f838dcfe392c3ea7082fb611e87",
@@ -1444,20 +1424,12 @@ self.__precacheManifest = [
     "url": "/img/12.f99b4684.webp"
   },
   {
-    "revision": "c0c8e7633749869fb1d8a9a1a003502f",
-    "url": "/img/08.c0c8e763.jpg"
-  },
-  {
     "revision": "2186e669fb400e1529460e86753bc400",
     "url": "/img/1.2186e669.jpg"
   },
   {
     "revision": "5de3e041a35f92d64249dca2fdea91c1",
     "url": "/img/162873991.5de3e041.jpg"
-  },
-  {
-    "revision": "0ad297fce64bec008d190aaa7bbd80dd",
-    "url": "/img/04.0ad297fc.jpg"
   },
   {
     "revision": "e6b0c911af0ce15298cf30121e7e12fe",
@@ -1486,10 +1458,6 @@ self.__precacheManifest = [
   {
     "revision": "bccda831a2a67fd7c9a119c16fd24e60",
     "url": "/img/6.bccda831.jpg"
-  },
-  {
-    "revision": "f756bea960f6742ade3785569c1bb92b",
-    "url": "/img/03.f756bea9.jpg"
   },
   {
     "revision": "8ca15889ca1c5769e4e276bca80b9419",
@@ -1600,7 +1568,7 @@ self.__precacheManifest = [
     "url": "/img/cloudsea1.60e93c83.jpg"
   },
   {
-    "revision": "c6b33d017f4a50ebc1d3d3bca8c3137c",
+    "revision": "36009a64bcf995287521de0d3d192d84",
     "url": "/index.html"
   },
   {
@@ -1608,19 +1576,19 @@ self.__precacheManifest = [
     "url": "/.htaccess"
   },
   {
-    "revision": "b81798ad1201c16a82e43a126c8eb988",
-    "url": "/favicon.png"
-  },
-  {
     "revision": "dc9077cc2c651a99cbc8102117341c8e",
     "url": "/google3d6eee54d2f3fc35.html"
+  },
+  {
+    "revision": "735ab4f94fbcd57074377afca324c813",
+    "url": "/robots.txt"
   },
   {
     "revision": "b3417d0933b62494f8cce3a08fd910cd",
     "url": "/sitemap.xml"
   },
   {
-    "revision": "735ab4f94fbcd57074377afca324c813",
-    "url": "/robots.txt"
+    "revision": "b81798ad1201c16a82e43a126c8eb988",
+    "url": "/favicon.png"
   }
 ];

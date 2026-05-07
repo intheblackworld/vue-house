@@ -13,6 +13,9 @@
         </div>
         
         <div class="update-info">
+          <div class="img"><img src="../../shin-lan/renewal/type2/0.jpg" alt="">
+            <div class="caption">外觀3D模擬示意圖</div>
+          </div>
           <ul>
             <li>
               <strong>更新單元範圍：</strong>
