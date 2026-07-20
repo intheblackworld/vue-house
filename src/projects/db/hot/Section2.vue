@@ -982,6 +982,44 @@ export default {
         */
         // 都廳大院
         {
+          title: '榮富中平<br />幸福佳瑪',
+          title2: '榮富中平 幸福佳瑪',
+          desc: '榮富中平 幸福佳瑪<br />名校首席 隱富地王<br />榮富中平核心 幸福佳瑪商圈<br /即將公開COMING SOON',
+          img: require('../works/25/2.jpg'),
+          isEmpty: false,
+          info1: '榮富中平 幸福佳瑪<br />名校首席 隱富地王<br />榮富中平核心 幸福佳瑪商圈<br /即將公開COMING SOON',
+          info2: '投資興建：漢翔開發<br />規劃坪數：即將公開',
+          info3: '珍稀難再上新莊核心絕版地王<br />明星榮富國小文教綠洲正首席<br />佳瑪幸福中平商圈出門即繁華<br />緊鄰副都心千億經貿增值版圖<br />傳承歐洲村工藝美學再創巔峰',
+          contact: '貴賓專線：02-8993-6888<br />接待會館：新北市新莊區幸福路617號',
+          link: 'https://rongfu.debang.tw/',
+          logo: require('../works/25/2.jpg'),
+          imgs: [
+            require('../works/25/1.jpg'),
+          ],
+          hint: '',
+          label: '',
+        },
+        // 都廳大院
+        {
+          title: '永和水岸<br />重劃區',
+          title2: '永和水岸重劃區',
+          desc: '永和 | 水岸重劃區<br />永和新紀元<br />茂德25年凌空鉅獻<br /即將公開COMING SOON',
+          img: require('../works/24/2.jpg'),
+          isEmpty: false,
+          info1: '永和 | 水岸重劃區<br />永和新紀元<br />茂德25年凌空鉅獻<br /即將公開COMING SOON',
+          info2: '',
+          info3: '',
+          contact: '',
+          link: 'https://yonghe.debang.tw/',
+          logo: require('../works/24/2.jpg'),
+          imgs: [
+            require('../works/24/1.jpg'),
+          ],
+          hint: '',
+          label: '',
+        },
+        // 都廳大院
+        {
           title: '都廳<br />大院',
           title2: '都廳大院',
           desc: '新北市 | 新北市政特區<br />世界三重 舉世無雙<br />捷運先嗇宮站 豪景2-4房',
@@ -1022,13 +1060,13 @@ export default {
         {
           title: '成功<br />集美',
           title2: '成功集美',
-          desc: '一橋雙子星，三重富人區<br />集美商圈 20-30坪世界觀<br />即將公開COMING SOON',
+          desc: '一橋雙子星，三重富人區<br />集美商圈 20-30坪世界觀<br />世界的門戶 雙北的心臟',
           img: require('../works/21/2.jpg'),
           isEmpty: false,
-          info1: '一橋雙子星，三重富人區<br />集美商圈 20-30坪世界觀<br />即將公開COMING SOON',
-          info2: '',
-          info3: '',
-          contact: '',
+          info1: '一橋雙子星，三重富人區<br />集美商圈 20-30坪世界觀<br />世界的門戶 雙北的心臟',
+          info2: '投資興建：漢翔建設 眾德建設<br />規劃坪數：20-30坪',
+          info3: '買集美是聰明，住新集美是高明<br />一邊是集美商圈的萬物俱全<br />一邊是「新集美」富人區的居住特權<br />潮流西門町5分鐘<br />北車雙子星8分鐘',
+          contact: '貴賓專線｜02-2974-6688<br />接待會館｜新北市三重區水漾路一段136號旁',
           link: 'https://a2park.debang.tw/',
           logo: require('../works/21/2.jpg'),
           imgs: [
