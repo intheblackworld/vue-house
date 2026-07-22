@@ -982,8 +982,8 @@ export default {
         */
         // 都廳大院
         {
-          title: '榮富中平<br />幸福佳瑪',
-          title2: '榮富中平 幸福佳瑪',
+          title: '即將<br />公開',
+          title2: '即將公開',
           desc: '榮富中平 幸福佳瑪<br />名校首席 隱富地王<br />榮富中平核心 幸福佳瑪商圈<br /即將公開COMING SOON',
           img: require('../works/25/2.jpg'),
           isEmpty: false,
@@ -1001,8 +1001,8 @@ export default {
         },
         // 都廳大院
         {
-          title: '永和水岸<br />重劃區',
-          title2: '永和水岸重劃區',
+          title: '即將<br />公開',
+          title2: '即將公開',
           desc: '永和 | 水岸重劃區<br />永和新紀元<br />茂德25年凌空鉅獻<br /即將公開COMING SOON',
           img: require('../works/24/2.jpg'),
           isEmpty: false,
