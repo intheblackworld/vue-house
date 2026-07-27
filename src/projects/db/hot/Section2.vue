@@ -59,7 +59,7 @@
         <div class="bottom"></div>
       </div>
       <div class="border-container">
-        <div class="swipe news-img" data-aos="fade-right" data-aos-delay="200" @mouseenter.stop="toggleTimer = false"
+        <div  :class="`swipe news-img ${!dialogData.imgs[1] ? 'single-img' : ''}`" @mouseenter.stop="toggleTimer = false"
           @mouseleave.stop="toggleTimer = true">
           <div class="swipe-wrap relative" v-touch:swipe.left="decIndex" v-touch:swipe.right="addIndex">
             <transition-group name="swipe-fade" mode="out-in">
@@ -390,7 +390,7 @@
 .rb {
   @include img_r_pc(576, 610, 100);
   padding: 0 size(30);
-  background-color: #fff;
+  background:linear-gradient(to top, #fff 74%,#fff0 75%);
 }
 
 .logo {
@@ -639,10 +639,12 @@
   }
 
   .border-container {
-    @include div_l_m(375, 691, 277, 0);
-    width: sizem(375);
-    min-height: sizem(0);
-    height: auto;
+   // @include div_l_m(375, 691, 277, 0);
+   position: relative;
+   width: sizem(310);
+ left:0;right: 0;
+  top: 0;
+  margin: sizem(19) auto 0 auto;
     border: none;
   }
 
@@ -653,7 +655,7 @@
   }
 
   .product-title {
-    @include img_l_m(103, 364, 33);
+   //@include img_l_m(103, 284, 33);
     font-size: sizem(34);
     font-weight: normal;
     font-stretch: normal;
@@ -663,15 +665,21 @@
     text-align: left;
     color: #000000;
     white-space: nowrap;
+   position: relative;
+ left:0;right: 0;
+  top: 0;
   }
 
   .hr {
-    @include div_l_m(320, 2, 500, 32);
+    @include div_l_m(320, 2, 0, 0);
+   position: relative;
     background-color: #008fbb;
+  margin-top: sizem(18);
+  margin-bottom: sizem(18);
   }
 
   .product-info1 {
-    @include img_l_m(340, 420, 33);
+  //  @include img_l_m(340, 340, 33);
     font-size: sizem(15);
     font-weight: normal;
     font-stretch: normal;
@@ -681,12 +689,21 @@
     text-align: left;
     color: #4d4d4d;
     white-space: nowrap;
+   position: relative;
+ left:0;right: 0;
+  top: 0;
+  margin-top: sizem(18);
   }
 
   .txt {
-    @include img_l_m(330, 522, 30);
+  //  @include img_l_m(330, 442, 30);
     font-size: sizem(16);
+    width: 100%;
     padding: 0 0 10.5em 0;
+   position: relative;
+ left:0;right: 0;
+  top: 0; 
+  width: sizem(330);
   }
 
   .product-btn {
@@ -695,6 +712,7 @@
     width: 7.2em;
     height: 1.7333em;
     bottom: 8em;
+    line-height:1.7;
   }
 
   .rb {
@@ -702,7 +720,12 @@
   }
 
   .logo {
-    @include img_r_m(65, 370, 32);
+  //  @include img_r_m(65, 290, 32);
+  position: relative;
+  width: sizem(65);left:0;right: 0;
+  top: sizem(4);
+  float: right;
+  margin: 0 auto 0 0;
   }
 
   .logo-label {
@@ -751,13 +774,16 @@
   /* Swipe */
   .swipe {
     width: sizem(310);
-    height: sizem(267);
+    height: sizem(267);//267
     min-height: auto;
-    top: sizem(63);
-    left: sizem(33);
+   // top: sizem(19);
+   // left: sizem(33);
     object-fit: cover;
     position: relative !important;
-
+    margin-bottom: sizem(34);
+    &.single-img {
+  height: sizem(230); // 單圖
+}
     .text {
       white-space: pre;
       font-size: sizem(12);
@@ -981,7 +1007,7 @@ export default {
         },
         */
         // 都廳大院
-        {
+     /*  {
           title: '即將<br />公開',
           title2: '即將公開',
           desc: '榮富中平 幸福佳瑪<br />名校首席 隱富地王<br />榮富中平核心 幸福佳瑪商圈<br /即將公開COMING SOON',
@@ -1017,7 +1043,7 @@ export default {
           ],
           hint: '',
           label: '',
-        },
+        }, */
         // 都廳大院
         {
           title: '都廳<br />大院',
