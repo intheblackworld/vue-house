@@ -2,6 +2,36 @@
 export const news = [
 
    {
+    id: 15,
+    title: '長耀盃邀請企業共同投入賽事欣聯建設冠名贊助虎尾科大',
+    title_m: '長耀盃邀請企業共同投入賽事欣聯建設冠名贊助虎尾科大',
+    subtitle: '董事長特助代表頒發贊助獎金', // 內頁用
+    author: '', // 內頁用
+    date: '2026/07/30',
+    // 列表用描述
+    desc_short: '欣聯建設、同德扶輪社、正信慈善協會與台科大EMBA共譜公益樂章',
+    // 內頁用描述
+    desc: '2026年長耀盃籃球賽邁入全新階段，主辦單位宣布賽事全面升級，首度推出「大專強權 × SBL」未來聯盟交流賽，由國內大專勁旅直接挑戰SBL球隊，同時導入企業冠名贊助大學球隊，希望打造學生籃球與成人籃球接軌的平台，讓20歲左右、具備國家隊潛力的年輕球員，提前適應高強度競爭環境，也讓企業更早接觸優秀運動人才，開創台灣籃球培育新模式。',
+    imgs: [ 
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/15/1.jpg'),
+    caption: "",
+  },
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/15/2.jpg'),
+    caption: "",
+  },
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/15/3.jpg'),
+    caption: "",
+  },
+  {
+    src: require('@/projects/shin-lan/shin-lan/news/15/4.jpg'),
+    caption: "",
+  },
+    ]
+  },
+   {
     id: 14,
     title: '暖心旋律傳愛陽明',
     title_m: '暖心旋律傳愛陽明',
