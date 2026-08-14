@@ -2,11 +2,19 @@
 export const medias = [
   {
     index: 0,
+    title: '欣聯建設-欣聯詠心',
+    desc: '榮獲第25屆國家建築金獎 – 榮耀與肯定',
+    img: require('@/projects/shin-lan/shin-lan/video/欣聯建設-欣聯詠心.jpg'),
+    video: '',
+    id: 'IhyjVgEWaDw', // youtube video  link id
+  },
+  {
+    index: 0,
     title: '欣聯大心',
     desc: '南勢角捷運2分鐘，景安雙軌共構6分鐘，坐享4大商圈環繞，獨擁6大全齡公設。',
     img: require('@/projects/shin-lan/shin-lan/video/欣聯大心.jpg'),
     video: '',
-    id: '2H8IoGtmU9k', // youtube video  link id
+    id: 'C-GIgK4ILPE', // youtube video  link id
   },
   {
     index: 1,

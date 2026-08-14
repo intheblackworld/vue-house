@@ -90,12 +90,23 @@ export default new Router({
         },
 
         // 都更專區
+        /*
         {
           path: 'renewal',
           name: 'renewal',
           component: () =>
-            import(/* webpackChunkName: "renewal" */ './pages/renewal.vue')
+            import( './pages/renewal.vue')
         },
+        */
+        
+        // 都更專區
+{
+  path: 'renewal',
+  name: 'renewal',
+  component: () =>
+    import(/* webpackChunkName: "renewal" */ './pages/renewal.vue'),
+},
+
 
         // 會員專區
         {

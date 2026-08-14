@@ -1,7 +1,50 @@
 /* 企業責任 */
 export const company = [
   {
-    index: 0,
+    index: 6,
+    date: '115/1/24',
+    title: '欣聯建設林榮三董事長、林琮凱特助攜手扶輪社關懷長者',
+    subtitle: '欣聯建設長期資助陽明養護中心已邁入十餘個年頭。',
+    desc: '林榮三董事長及林琮凱特助再次率領前往陽明養護中心，傳遞企業的長情陪伴。林董事長除經營企業外，更以台北市同德扶輪社服務計畫主委的身分結合社會資源，致力推動公益服務。<br><br><b>▌領袖帶頭實踐，世代傳承愛心</b><br>本次活動由林榮三董事長及林琮凱特助共同出席。林特助代表公司致贈豐富實用物資，展現企業新生代的關懷活力。<br><br><b>▌多元公益行動：十萬善款與音樂饗宴</b><br>在林董事長的積極籌劃下，本次公益行動整合了同德扶輪社、正信慈善協會、台科大EMBA薩克斯風社•物資捐贈、善款挹注 、音樂陪伴的三大力量<br><br><b>▌薩克斯風吹動的十年回憶</b><br>除了物資與捐款，現場最動人的風景是那悠揚的薩克斯風聲。台科大 EMBA 薩克斯風社的學長姐們放下平日的商場身分，化身音樂志工，演奏〈往事只能回味〉與〈青春嶺〉等經典老歌。看著長輩們隨著節奏拍手、重拾笑顏，這份跨越十年的陪伴，讓音樂不只是聲音，而是心靈的慰藉。',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/7/1.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/7/2.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/7/3.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/7/4.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 5,
+    date: '114/5/24',
+    title: '欣聯建設攜手台科大EMBA薩克斯風社與正信書院 關懷陽明養護中心',
+    subtitle: '',
+    desc: '【新聞稿／即時發布】<br>欣聯建設長年投入公益，5月24日攜手台科大EMBA薩克斯風社與正信書院慈善協會，前往陽明養護中心舉辦年度關懷捐贈活動，帶來音樂與溫情的午後時光。<br>活動中，薩克斯風社演奏多首懷舊金曲，喚起長者回憶，現場氣氛溫馨感人。院生們隨旋律輕聲哼唱，笑容滿面。<br>養護中心蕭主任感謝 欣聯建設多年不間斷的愛心捐贈與陪伴，表示這是院生每年最期待的活動。<br>欣聯建設董事長、同時也是正信書院慈善協會理事長的 林榮三先生表示：「今年很高興可以來與大家同樂，音樂是最溫柔的語言，也是一種陪伴的力量。我們希望透過這樣的活動，讓大家一同感受音樂。」<br>本次活動展現企業與學界攜手做公益的力量，為長者帶來關愛與歡樂。',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/6/01.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/02.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/03.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/04.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/6/05.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 4,
+    date: '114/1/15',
+    title: '欣聯建設開發股份有限公司 捐贈國立台灣科技大學理髮廳整建工程',
+    subtitle: '',
+    desc: '欣聯建設開發股份有限公司捐贈國立台灣科技大學理髮廳整建工程，林董事長榮三及曾副董事長採芳，捐贈國立台灣科技大學理髮廳整建工程。<br>國立台灣科技大學（台科大）近日舉行了理髮廳揭牌落成儀式，欣聯建設合聯營造林榮三董事長及曾採芳副董事長捐贈學校內部理髮部設施。為學校提供更專業整潔、方便的理髮部，進一步促進學生整潔的形象與自信。<br>捐贈儀式在校園內舉行，欣聯建設 合聯營造的林榮三董事長與曾採芳副董事長，與台科大顏家鈺校長、周子銓副校長及陳舜田前校長等貴賓共同見證這一重要時刻。<br>這項捐贈不僅體現了欣聯建設與合聯營造了對教育事業的高度關注與責任感，也凸顯了企業與學校合作的必然意義。台科大提供更完善的校園設施，改善學生的生活條件，讓他們在更舒適與便利的環境中專心學習、發揮潛力。多回饋社會的行動，為台灣的教育發展與年輕一代的成長貢獻力量',
+    imgs: [
+      require('@/projects/shin-lan/shin-lan/csr/5/01.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/5/02.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/5/03.jpg'),
+      require('@/projects/shin-lan/shin-lan/csr/5/04.jpg'),
+    ],
+    slideIndex: 0,
+  },
+  {
+    index: 3,
     date: '111/8/27',
     title: '2022公益慈善音樂會',
     subtitle: '',
@@ -16,7 +59,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 1,
+    index: 2,
     date: '111/8/19',
     title: '北投區陽明養護中心',
     subtitle: '欣聯心、傳遞愛、愛心捐贈',
@@ -31,7 +74,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 2,
+    index: 1,
     date: '106/9/23',
     title: '陽明教養院',
     subtitle: '陽明教養院敬老關懷演出',
@@ -46,7 +89,7 @@ export const company = [
     slideIndex: 0,
   },
   {
-    index: 3,
+    index: 0,
     date: '105/9/3',
     title: '兆如安養中心',
     subtitle: '兆如安養中心敬老關懷演出',

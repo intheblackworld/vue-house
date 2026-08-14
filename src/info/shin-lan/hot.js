@@ -81,7 +81,7 @@ export const hot_case = [
     img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/0.jpg'),
     imgs: [
       {
-        title: '主視覺',
+        title: '公設區域-交誼廳、信箱區',
         img: require('@/projects/shin-lan/shin-lan/work/欣聯奇岩/1.jpg')
       },
       {
@@ -194,48 +194,48 @@ export const hot_case = [
    // media_link: '', // 首頁用
   //  desc_home: `` // 首頁用
   //},
-  {
-    title: '欣聯詠心',
-    img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/0.jpg'),
-    imgs: [
-      {
-        title: '封面',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/0.jpg')
-      },
-      {
-        title: '時尚地標',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/1.jpg')
-      },
-      {
-        title: '眾星雲集',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/2.jpg')
-      },
-      {
-        title: '環境地圖',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/3.jpg')
-      },
-      {
-        title: '綠景地王',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/4.jpg')
-      },
-      {
-        title: '大師巨作',
-        img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/5.jpg')
-      },
-    ], // 內頁用
-    desc: `<b>新北市｜三重區</b><br>
-    27-54坪  仁義核心 綠景帝王<br>
-    <b>企劃銷售</b>｜大心廣告有限公司<br>
-    <b>坪數規劃</b>｜23-33坪  6000坪綠景大棟距<br>三重都心最珍稀「欣聯詠心」<br>鄰近溪尾、碧華熱鬧商圈，隔壁走兩步就有全聯<br>
-    <b>貴賓專線</b>｜02-2980-0888<br>
-    <b>接待會館</b>｜新北市三重區元富二街&amp;元信一街旁`, // 內頁用
-    link: '/hot_case/4',
-    media_link: '', // 首頁用
-    desc_home: `<b>新北市｜三重區</b><br>
-    27-54坪  仁義核心 綠景帝王<br>
-    <b>企劃銷售</b>｜大心廣告有限公司<br>
-    <b>坪數規劃</b>｜23-33坪  6000坪綠景大棟距<br>三重都心最珍稀「欣聯詠心」<br>鄰近溪尾、碧華熱鬧商圈，隔壁走兩步就有全聯<br>
-    <b>貴賓專線</b>｜02-2980-0888<br>
-    <b>接待會館</b>｜新北市三重區元富二街&amp;元信一街旁` // 首頁用
-  },
+  //{
+  //  title: '欣聯詠心',
+  //  img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/0.jpg'),
+  //  imgs: [
+  //    {
+  //      title: '封面',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/0.jpg')
+   //   },
+   //   {
+  //      title: '時尚地標',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/1.jpg')
+  //    },
+  //    {
+  //      title: '眾星雲集',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/2.jpg')
+   //   },
+  //    {
+  //      title: '環境地圖',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/3.jpg')
+   //   },
+ //     {
+  //      title: '綠景地王',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/4.jpg')
+  //    },
+  //    {
+  //      title: '大師巨作',
+  //      img: require('@/projects/shin-lan/shin-lan/work/欣聯詠心/5.jpg')
+  //    },
+  //  ], // 內頁用
+  //  desc: `<b>新北市｜三重區</b><br>
+  //  27-54坪  仁義核心 綠景帝王<br>
+  //  <b>企劃銷售</b>｜大心廣告有限公司<br>
+  //  <b>坪數規劃</b>｜23-33坪  6000坪綠景大棟距<br>三重都心最珍稀「欣聯詠心」<br>鄰近溪尾、碧華熱鬧商圈，隔壁走兩步就有全聯<br>
+  //  <b>貴賓專線</b>｜02-2980-0888<br>
+  //  <b>接待會館</b>｜新北市三重區元富二街&amp;元信一街旁`, // 內頁用
+   // link: '/hot_case/4',
+  //  media_link: '', // 首頁用
+  //  desc_home: `<b>新北市｜三重區</b><br>
+  //  27-54坪  仁義核心 綠景帝王<br>
+  //  <b>企劃銷售</b>｜大心廣告有限公司<br>
+  //  <b>坪數規劃</b>｜23-33坪  6000坪綠景大棟距<br>三重都心最珍稀「欣聯詠心」<br>鄰近溪尾、碧華熱鬧商圈，隔壁走兩步就有全聯<br>
+  //  <b>貴賓專線</b>｜02-2980-0888<br>
+  //  <b>接待會館</b>｜新北市三重區元富二街&amp;元信一街旁` // 首頁用
+  //},
 ]
