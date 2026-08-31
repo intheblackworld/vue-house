@@ -992,6 +992,21 @@ export default {
         //...Array(18).keys()].map((i) => ({
         [ //琢渼
           {
+            o_title: '2026 立瑾57',
+            o_subtitle: '熱銷中',
+            img: require('../process/list/63/1.jpg'),
+            title: '2026/8',
+            subtitle: '第一撐勘驗',
+            isFinished: true,
+            imgs: [
+              require('../process/list/63/1.jpg'),
+              require('../process/list/63/2.jpg'),
+              require('../process/list/63/3.jpg'),
+              require('../process/list/63/4.jpg'),
+            ]
+          },],
+        [ //琢渼
+          {
             o_title: '2023 琢渼',
             o_subtitle: '熱銷中 ，預計2027年初完工',
             img: require('../process/list/61/1.jpg'),
@@ -1005,8 +1020,6 @@ export default {
             ]
           },
           {
-            o_title: '2023 琢渼',
-            o_subtitle: '熱銷中 ，預計2027年初完工',
             img: require('../process/list/60/1.jpg'),
             title: '2026/3',
             subtitle: '十四樓底版完成',
