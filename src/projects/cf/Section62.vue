@@ -39,12 +39,12 @@
         data-aos-delay="900"
       >
         <a
-          href="http://cf.h35.tw/"
+          href="http://cf-demo.h65.tw/"
           class="btn flex-c"
         >精品大樓
         </a>
         <a
-          href="http://cf.h35.tw/villa"
+          href="http://cf-demo.h65.tw/villa"
           class="btn flex-c"
         >透天別墅宅</a>
       </div>
