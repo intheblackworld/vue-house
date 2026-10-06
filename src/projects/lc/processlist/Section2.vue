@@ -303,6 +303,12 @@ export default {
       tabIndex: 0,
       list: [
         {
+          img: require('../works/6/01.jpg'),
+          title: '2026 謙里',
+          subtitle: '熱銷中 ',
+          isFinished: true,
+        },
+        {
           img: require('../works/7/01.jpg'),
           title: '2026 立瑾57',
           subtitle: '熱銷中 ',

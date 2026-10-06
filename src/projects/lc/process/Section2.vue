@@ -992,10 +992,49 @@ export default {
         //...Array(18).keys()].map((i) => ({
         [ //琢渼
           {
+            o_title: '2026 謙里',
+            o_subtitle: '熱銷中',
+            img: require('../process/list/66/1.jpg'),
+            title: '2026/09',
+            subtitle: '大底灌漿',
+            isFinished: true,
+            imgs: [
+              require('../process/list/66/1.jpg'),
+              require('../process/list/66/2.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/65/1.jpg'),
+            title: '2026/09',
+            subtitle: '安全支撐施作',
+            isFinished: true,
+            imgs: [
+              require('../process/list/65/1.jpg'),
+              require('../process/list/65/2.jpg'),
+              require('../process/list/65/3.jpg'),
+              require('../process/list/65/4.jpg'),
+              require('../process/list/65/4.jpg'),
+            ]
+          },
+          {
+            img: require('../process/list/64/1.jpg'),
+            title: '2026/5',
+            subtitle: '土方開挖、擋土柱工程',
+            isFinished: true,
+            imgs: [
+              require('../process/list/64/1.jpg'),
+              require('../process/list/64/2.jpg'),
+              require('../process/list/64/3.jpg'),
+              require('../process/list/64/4.jpg'),
+            ]
+          },
+        ],
+        [ //琢渼
+          {
             o_title: '2026 立瑾57',
             o_subtitle: '熱銷中',
             img: require('../process/list/63/1.jpg'),
-            title: '2026/8',
+            title: '2026/5',
             subtitle: '第一撐勘驗',
             isFinished: true,
             imgs: [
@@ -1004,7 +1043,8 @@ export default {
               require('../process/list/63/3.jpg'),
               require('../process/list/63/4.jpg'),
             ]
-          },],
+          },
+        ],
         [ //琢渼
           {
             o_title: '2023 琢渼',
