@@ -281,6 +281,12 @@
   text-align: left;
   color: #000;
   margin-bottom: size(15);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  box-sizing:border-box;
 
   @include md {
     padding: sizem(15) sizem(25);

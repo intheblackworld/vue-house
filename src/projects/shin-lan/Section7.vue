@@ -18,7 +18,7 @@
     </div>
     <div class="container">
       <div class="item-list" @click="$router.push('/company')">
-        <div class="item flex-c flex-jb" v-for="(item, index) in item_list" :key="item.name + index" @click="$router.push(item.link)">
+        <div class="item" v-for="(item, index) in item_list" :key="item.name + index" @click="$router.push(item.link)">
           <img v-if="isMobile" :src="item.imgs[0]" alt="" class="item-img">
           <div>
             <div class="item-date" v-html="item.date"></div>
@@ -42,10 +42,12 @@
 @import '@/assets/style/function.scss';
 .section7 {
   width: 100%;
-  height: size(494 + 480 + 100);
+  height:  auto;//size(494 + 480 + 100);
   background-size: cover;
   background-attachment: fixed;
  // background-color: #f7f8f8;
+ overflow: hidden;
+ 
 
   @include md {
     width: 100vw;
@@ -133,7 +135,7 @@
 }
 
 .item-list {
-  @include img_c_pc(1220, 50);
+//  @include img_c_pc(1220, 50);
 
   @include md {
     position: relative;
@@ -144,6 +146,10 @@
 
 .item {
   cursor: pointer;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+
 
   @include md {
     flex-wrap: wrap;
@@ -158,6 +164,7 @@
   }
 
   .item-img {
+    width: size(630);
     @include md {
       width: 100%;
     }
@@ -189,7 +196,7 @@
   letter-spacing: size(1.4);
   text-align: left;
   color: #000;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5em;
   @include md {
     font-size: sizem(18);
   }
@@ -204,7 +211,10 @@
   letter-spacing: size(1.92);
   text-align: left;
   color: #000;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5em;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   @include md {
     font-size: sizem(15);
   }
@@ -220,8 +230,15 @@
   text-align: left;
   color: #000;
   margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  box-sizing:border-box;
   @include md {
     font-size: sizem(15);
+  -webkit-line-clamp: 3;
   }
 }
 

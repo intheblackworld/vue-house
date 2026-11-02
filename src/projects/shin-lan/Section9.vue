@@ -25,7 +25,7 @@
   width: 100%;
   height: size(630 + 270 + 127);
   min-height: size(630 + 270 + 127);
-  max-height: auto;
+ // max-height: auto;
   background-size: cover;
   background-attachment: fixed;
   // background-color: #fff;

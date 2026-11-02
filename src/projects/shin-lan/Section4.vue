@@ -190,6 +190,12 @@
   letter-spacing: size(1.44);
   text-align: left;
   color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  box-sizing:border-box;
   @include md {
     font-size: sizem(15);
     font-weight: normal;

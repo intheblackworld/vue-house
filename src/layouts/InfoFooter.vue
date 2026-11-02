@@ -114,7 +114,7 @@ export default {
 }
 
 .container {
-  width: 1200px;
+  width: size(1200);
   height: size(313);
   margin: 0 auto;
   padding: size(40) 0;
