@@ -1616,11 +1616,11 @@ self.__precacheManifest = [
     "url": "/.htaccess"
   },
   {
-    "revision": "b3417d0933b62494f8cce3a08fd910cd",
-    "url": "/sitemap.xml"
-  },
-  {
     "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "b3417d0933b62494f8cce3a08fd910cd",
+    "url": "/sitemap.xml"
   }
 ];
