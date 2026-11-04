@@ -14,9 +14,9 @@
           </div> -->
         </div>
           <div class="update-info typr6">
-         <!-- <div class="img"><img src="../../shin-lan/renewal/type6/1.jpg" alt="">
+         <div class="img"><img src="../../shin-lan/renewal/type6/0.jpg" alt="">
             <div class="caption">外觀3D模擬示意圖</div>
-          </div> -->
+          </div>
             <ul>
               <li>
                 <strong>更新單元範圍：</strong>
@@ -40,6 +40,7 @@
                 <strong>規劃單位：</strong> 城市策略股份有限公司
               </li>
             </ul>
+            <!--
           <div class="img3"><img src="../../shin-lan/renewal/type6/1.jpg" alt="">
             <div class="caption">外觀3D模擬示意圖</div>
           </div>
@@ -51,7 +52,7 @@
           </div>
           <div class="img3"><img src="../../shin-lan/renewal/type6/4.jpg" alt="">
             <div class="caption">外觀3D模擬示意圖</div>
-          </div>
+          </div> -->
           </div>
       </div>
     </div>
