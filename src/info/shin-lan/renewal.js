@@ -2,6 +2,13 @@
 // 欣聯建設Shin-Lan 經典案例
 export const renewal_list = [
   {
+    title: '大安區大安段都更',
+    img: require('@/projects/shin-lan/renewal/type6/0.jpg'),
+    link: '/renewal?type=6',
+    status: '審議中案件',
+    location: '台北市大安區大安段都市更新案',
+  },
+  {
     title: '信義區永吉段都更',
     img: require('@/projects/shin-lan/renewal/type5/1.jpg'),
     link: '/renewal?type=5',
