@@ -1,0 +1,26 @@
+網站更新方法（project/shin-lan）
+1. 修改完成後，先打包。
+
+2. 開啟 CMD
+使用 cd 切換到本機 vue-house 專案資料夾（project/shin-lan 分支）。
+
+3. 登入遠端主機
+輸入以下指令：
+ssh -i C:\xcatx\web\id_rsa root@35.194.167.73
+注意：id_rsa 檔案與 vue-house 資料夾放在同一層，不是在 vue-house 裡面。路徑請依照自己電腦的實際位置修改。
+
+4. 進入 Server 專案資料夾
+登入成功後，最後一行會類似：
+root@shin-lan-backend:~#
+在 # 後面輸入：
+cd /var/www/vue-house
+
+5. 更新網站程式碼
+輸入：
+git pull origin project/shin-lan
+等待執行完成，看到檔案更新資訊（例如 +++、---）即代表有更新；如果顯示 Already up to date.，則代表目前已是最新版本。
+
+6. 退出遠端主機
+輸入：
+exit
+即可回到自己電腦。
